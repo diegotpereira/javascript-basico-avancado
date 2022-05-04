@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function replacer(key, value) {
+            if (typeof value === 'string') {
+                return undefined
+            }
+            return value
+        }
+        var foo = {
+            fundação: 'Mozilla',
+            modelo: 'caixa',
+            semana: 45,
+            transporte: 'carro',
+            mês: 7
+        }
+        var jsonString = JSON.stringify(foo, replacer)
+        console.log(jsonString);
+
+        // Criando um exemplo em JSON
+        function add() {
+            var secao = {
+            'fabricante': ['Sony'],
+            'modelo': {A2, B2},
+            'telas': ['16 polegas', 'slim'],
+            'estado': true
+        }
+            
+            localStorage.setItem('secao', JSON.stringify(secao))
+
+            var secaoRestaurada = JSON.parse(localStorage('secao'))
+        }
+        
+        add()
+    </script>
+</body>
+</html>
