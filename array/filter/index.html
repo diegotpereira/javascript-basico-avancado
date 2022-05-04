@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function ehGrandeSuficiente(valor) {
+            return valor >= 10
+        }
+        var filtrado = [12, 5, 8, 130, 44].filter(ehGrandeSuficiente)
+        console.log(filtrado);
+
+        // Filtrando entradas inválidas para JSON
+        var arr = [{
+            id: 15
+        }, {
+            id: -1
+        }, {
+            id: 0
+        }, {
+            id: 3
+        }, {
+            id: 12.2
+        }, {}, {
+            id: null
+        }, {
+            id: NaN
+        }, {
+            id: 'undefined'
+        }]
+        var entradasInvalidas = 0
+
+        function filtrarPorID(obj) {
+            if ('id' in obj && typeof(obj.id) === 'number' && !isNaN(obj.id)) {
+                return true
+            } else {
+                entradasInvalidas++
+
+                return false
+            }
+        }
+        var arrPorID = arr.filter(filtrarPorID)
+
+        console.log('Array filtrados\n', arrPorID);
+
+        console.log('Número de entradas inválidas = ', entradasInvalidas);
+
+        // Procurando em um array
+        var frutas = ['maça', 'banana', 'uvas', 'manga', 'laranja']
+
+        function filtrarItens(query) {
+            return frutas.filter(function(el) {
+                return el.toLowerCase().indexOf(query.toLowerCase()) > -1
+            })
+        }
+        console.log(filtrarItens('as'));
+        console.log(filtrarItens('an'));
+    </script>
+</body>
+
+</html>

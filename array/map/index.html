@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var numeros = [1, 4, 9]
+        var raizes = numeros.map(Math.sqrt)
+        console.log(numeros);
+        console.log(raizes);
+
+        // Mapeando um array de números usando uma 
+        // função callback que contém um argumento
+        var numeros = [1, 4, 9]
+        var duplas = numeros.map(function(num) {
+            return num * 2
+        })
+        console.log(numeros);
+        console.log(duplas);
+
+        // usando map genericamente
+        var map = Array.prototype.map
+        var a = map.call('Olá Mundo', function(x) {
+            return x.charCodeAt(0)
+        })
+        console.log(map);
+        console.log(a);
+
+        // usando map genericamente com querySelectorAll
+        var elementos = document.querySelectorAll('select option:checked')
+        var valor = [].map.call(elementos, function(obj) {
+            return obj.value
+        })
+        console.log(elementos);
+        console.log(valor);
+
+        // Usando map para inverter uma string
+        var str = '12345';
+        [].map.call(str, function(x) {
+            return x
+        }).reverse().join('')
+        console.log(str);
+    </script>
+</body>
+
+</html>

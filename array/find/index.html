@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const array1 = [5, 12, 8, 130, 44]
+
+        // O método find() retorna o valor do primeiro elemento 
+        // do array que satisfizer a função de teste provida. 
+        // Caso contrario, undefined é retornado.
+        const encontrado = array1.find(elemento => elemento > 10)
+
+        console.log(encontrado)
+
+        // Encontrar um objeto em um array por uma de suas propriedades
+        const inventario = [{
+            nome: 'maças',
+            quantidade: 2
+        }, {
+            nome: 'bananas',
+            quantidade: 0
+        }, {
+            nome: 'cerejas',
+            quantidade: 5
+        }]
+
+        function ehCereja(fruta) {
+            return fruta.nome === 'cerejas'
+        }
+        console.log(inventario.find(ehCereja));
+
+        // Utilizando arrow function
+        const inventario2 = [{
+            nome: 'maças',
+            quantidade: 2
+        }, {
+            nome: 'bananas',
+            quantidade: 0
+        }, {
+            nome: 'cerejas',
+            quantidade: 5
+        }]
+
+        const resultado = inventario.find(fruta => fruta.nome === 'cerejas')
+        console.log(inventario2.find(ehCereja));
+
+        // Encontrar um número primo em um array
+        function ehPrimo(elemento, index, array) {
+            var inicial = 2
+
+            while (inicial <= Math.sqrt(elemento)) {
+                if (elemento % inicial++ < 1) {
+                    return false
+                }
+            }
+            return elemento > 1
+        }
+        console.log([4, 6, 8, 12].find(ehPrimo));
+        console.log([4, 5, 8, 12].find(ehPrimo));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>indexOf</h1>
+    <p>O método indexOf() retorna o primeiro índice em que o elemento pode ser encontrado no array, retorna -1 caso o mesmo não esteja presente.</p>
+    <script>
+        var array = [2, 5, 9]
+
+        console.log(array.indexOf(2));
+        console.log(array.indexOf(7));
+
+        // Encontrar todas as ocorrências de um elemento
+        var indices = []
+        var array = ['a', 'b', 'a', 'c', 'a', 'd']
+        var elemento = 'a'
+        var idx = array.indexOf(elemento)
+
+        while (idx != -1) {
+            indices.push(idx)
+            idx = array.indexOf(elemento, idx + 1)
+        }
+        console.log(indices);
+
+        // Encontrar se um elemento existe ou não 
+        // e atualizar o array
+        function atualizarColecaoVegetais(vegetais, vegetal) {
+            if (vegetais.indexOf(vegetal) === -1) {
+                vegetais.push(vegetal)
+
+                console.log('Nova coleção de vegetais é : ' + vegetais);
+            } else if (vegetais.indexOf(vegetal) > -1) {
+                console.log(vegetal + ' já existe na coleção de vegetais.');
+            }
+        }
+        var vegetais = ['batata', 'tomate', 'pimenta', 'pimentao']
+
+        atualizarColecaoVegetais(vegetais, 'espinafre')
+
+        atualizarColecaoVegetais(vegetais, 'espinafre')
+    </script>
+</body>
+
+</html>

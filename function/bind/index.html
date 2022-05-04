@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>bind</h1>
+    <p>O método bind() cria uma nova função que, quando chamada, tem sua palavra-chave this definida com o valor fornecido, com uma sequência determinada de argumentos precedendo quaisquer outros que sejam fornecidos quando a nova função é chamada.</p>
+    <script>
+        const module = {
+            x: 42,
+            getX: function() {
+                return this.x
+            }
+        }
+        const unboundGetX = module.getX
+        console.log(unboundGetX);
+
+        const boundGetx = unboundGetX.bind(module)
+        console.log(boundGetx);
+    </script>
+</body>
+
+</html>

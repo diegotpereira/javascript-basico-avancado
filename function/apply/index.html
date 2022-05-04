@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>apply</h1>
+    <p>O método apply() chama uma função com um dado valor this e arguments providos como uma array (ou um objeto parecido com um array).</p>
+    <script>
+        Function.prototype.construct = function(aArgs) {
+            var fConstructor = this,
+                fNewConstr = function() {
+                    fConstructor.apply(this, aArgs);
+                };
+            fNewConstr.prototype = fConstructor.prototype;
+            return new fNewConstr();
+        };
+
+
+        function meuConstrutor() {
+            for (var nProp = 0; nProp < arguments.length; nProp++) {
+                this['propriedade' + nProp] = arguments[nProp]
+            }
+        }
+        var meuArray = [4, 'Olá Mundo!', false]
+        var minhaInstancia = meuConstrutor.construct(meuArray)
+
+        console.log(minhaInstancia.propriedade1);
+        console.log(minhaInstancia instanceof meuConstrutor);
+        console.log(minhaInstancia.constructor);
+    </script>
+</body>
+
+</html>
