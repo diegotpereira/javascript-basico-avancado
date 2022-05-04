@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const array1 = [1, 2, 3, 4]
+        const inicialValor = 0
+
+        // O método reduce() executa uma função reducer (fornecida por você) 
+        // para cada elemento do array, resultando num único valor de retorno.
+        const somarComInicial = array1.reduce(
+            (previoValor, atualValor) => previoValor + atualValor, inicialValor
+        )
+        console.log(somarComInicial);
+
+        // Contando valores iguais em um objeto
+        let nomes = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
+        let quantidadeNomes = nomes.reduce(function(todosNomes, nome) {
+            if (nome in todosNomes) {
+                todosNomes[nome]++
+            } else {
+                todosNomes[nome] = 1
+            }
+            return todosNomes
+        }, {})
+        console.log(quantidadeNomes);
+
+        // Agrupando objetos por uma propriedade
+        let pessoas = [{
+            nome: 'ALice',
+            idade: 21
+        }, {
+            nome: 'Max',
+            idade: 20
+        }, {
+            nome: 'Jane',
+            idade: 20
+        }]
+
+        function agruparPor(objetoArray, propriedade) {
+            return objetoArray.reduce(function(acc, obj) {
+                let chave = obj[propriedade]
+
+                if (!acc, [chave]) {
+                    acc[chave] = []
+                }
+                acc[chave].push(obj)
+
+                return acc
+            }, {})
+        }
+        let grupodePessoas = agruparPor(pessoas, 'idade')
+        console.log(grupodePessoas);
+
+        // Juntando arrays contidos num array de objetos 
+        // usando o operador spread e o valorInicial
+        var amigos = [{
+            nome: 'Ana',
+            livros: ['Revolução dos Bichos', 'Admiravél mundo novo'],
+            idade: 21
+        }, {
+            nome: 'Bob',
+            livros: ['One Love', 'Redemption song'],
+            idade: 26
+        }, {
+            nome: 'Alice',
+            livros: ['Evengelho segundo Jesus Cristo', 'Maquiavél'],
+            idade: 18
+        }]
+
+        // listar todos livros de amigos
+        var todosLivros = amigos.reduce(function(ant, atual) {
+            return [...ant, ...atual.livros]
+        }, ['Alfabeto'])
+
+        console.log(todosLivros);
+
+        // Removendo itens duplicados num array
+        let arr = [1, 2, 1, 2, 3, 5, 4, 5, 3, 4, 4, 4, 4]
+        let resultado = arr.sort().reduce((inicial, atual) => {
+            if (inicial.length === 0 || inicial[inicial.length - 1] !== atual) {
+                inicial.push(atual)
+            }
+            return inicial
+        }, [])
+        console.log(resultado);
+
+        // Substituindo .filter().map() por .reduce()
+        const numeros = [-5, 6, 2, 0, ]
+        const numerosPositivosDobrados = numeros.reduce((acumulador, atualValor) => {
+            if (atualValor > 0) {
+                const dobrado = atualValor * 2
+                acumulador.push(dobrado)
+            }
+            return acumulador
+        }, [])
+        console.log(numerosPositivosDobrados);
+    </script>
+</body>
+
+</html>

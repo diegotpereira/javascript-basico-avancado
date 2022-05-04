@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Criar objeto da string JSON</h2>
+    <p id="demo"></p>
+    <script>
+        let texto = '{"colaboradores" : [' +
+            '{"nome": "João", "sobrenome": "Silva"},' +
+            '{"nome": "Ana",  "sobrenome": "Souza"},' +
+            '{"nome": "Rosa", "sobrenome": "Maria"}' + ']}'
+
+        // O método JSON.parse() analisa uma string JSON, 
+        // construindo o valor ou um objeto JavaScript 
+        // descrito pela string. 
+        const obj = JSON.parse(texto)
+
+        document.getElementById("demo").innerHTML =
+            obj.colaboradores[1].nome + " " + obj.colaboradores[1].sobrenome
+    </script>
+</body>
+
+</html>

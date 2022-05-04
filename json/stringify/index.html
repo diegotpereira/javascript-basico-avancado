@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-
         function replacer(key, value) {
             if (typeof value === 'string') {
                 return undefined
@@ -23,23 +24,47 @@
             mês: 7
         }
         var jsonString = JSON.stringify(foo, replacer)
-        console.log(jsonString);
+            //console.log(jsonString);
 
         // Criando um exemplo em JSON
-        function add() {
-            var secao = {
-            'fabricante': ['Sony'],
-            'modelo': {A2, B2},
-            'telas': ['16 polegas', 'slim'],
-            'estado': true
-        }
-            
-            localStorage.setItem('secao', JSON.stringify(secao))
+        //function add() {
+        //    var secao = {
+        //        'fabricante': ['Sony'],
+        //        modelo: {
+        //            B2,
+        //            C2
+        //        },
+        //        'telas': ['16 polegas', 'slim'],
+        //        'estado': true
+        //    }
 
-            var secaoRestaurada = JSON.parse(localStorage('secao'))
+        //    localStorage.setItem('secao', JSON.stringify(secao))
+
+        //    var secaoRestaurada = JSON.parse(localStorage('secao'))
+        //}
+
+        //add()
+
+        var pessoa = {
+            nome: 'Diego Pereira',
+            git: 'github.com/diegotpereira'
         }
-        
-        add()
+
+        // Convertendo json para texto no javasctipt
+        var textoPessoa = JSON.stringify(pessoa)
+        console.log(textoPessoa);
+
+        // Convertendo texto para json no javasctipt
+        var pessoa = JSON.parse(textoPessoa)
+        console.log(pessoa);
+
+        // Gravando json no localStorage do browse
+        localStorage.setItem('pessoa', JSON.stringify(pessoa))
+
+        // Recuperando json do localStorage do browser
+        var dados = JSON.parse(localStorage.getItem('pessoa'))
+        console.log("A pessoa no localStorage é:" + JSON.stringify(dados));
     </script>
 </body>
+
 </html>
