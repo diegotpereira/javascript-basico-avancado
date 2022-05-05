@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>valueOf</h1>
+    <p>O método valueOf() retorna o valor primitivo do objeto especificado.</p>
+    <script>
+        function meuNumeroTipo(n) {
+            this.number = n
+        }
+        meuNumeroTipo.prototype.valueOf = function() {
+            return this.number
+        }
+        const objeto1 = new meuNumeroTipo(4)
+
+        console.log(objeto1 + 3);
+    </script>
+</body>
+
+</html>
