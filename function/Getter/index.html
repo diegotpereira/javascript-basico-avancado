@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>getter</h1>
+    <p>A sintaxe de get associa uma propriedade de um objeto a uma função que será chamada quando tal propriedade é acessada.</p>
+    <script>
+        const obj = {
+            log: ['a', 'b', 'c'],
+            get ultimo() {
+                if (this.log.length === 0) {
+                    
+                    return undefined
+                }
+                return this.log[this.log.length - 1]
+            }
+        }
+        console.log(obj.ultimo);
+
+        const obj1 = {
+            log: ['exemplo', 'teste'],
+            get ultimo() {
+                if(this.log.length === 0)
+                return undefined
+
+                return this.log[this.log.length - 1]
+            }
+        }
+        console.log(obj1.ultimo);
+
+        var log = ["teste"]
+        var objeto = {
+            get ultimo() {
+                if (log.length === 0) 
+
+                return undefined
+
+                return log[log.length -1]
+            }
+        }
+        console.log(objeto.ultimo);
+    </script>
+</body>
+</html>

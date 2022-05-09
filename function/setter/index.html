@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>setter</h1>
+    <p>A sintaxe set liga a propriedade da função para ser chamada quando existe uma tentativa de definir valor para essa propriedade.</p>
+    <script>
+        var expr = "foo"
+
+        var objeto = {
+            baz: "bar",
+            set[expr] (v)
+            {
+                this.baz = v
+            }
+        }
+        console.log(objeto.baz);
+        objeto.foo = "baz"
+        console.log(objeto.baz);
+    </script>
+</body>
+</html>

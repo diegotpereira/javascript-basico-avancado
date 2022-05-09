@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var o = {
+            a: 2,
+            m: function(b) {
+                return this.a + 1
+            }
+        }
+        console.log(o.m());
+        
+        var p = Object.create(o)
+        p.a = 12
+        console.log(p.m());
+
+        var u = {
+            a: 1
+        }
+        var a = ["yo", "whadup", "?"]
+
+        function f() {
+            return 2
+        }
+        var a = {
+            a: 1
+        }
+        var b = Object.create(a)
+        console.log(b.a);
+        var c = Object.create(b)
+        var d = Object.create(null)
+        console.log(d.hasOwnProperty);
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>arrow functiosn</h1>
+    <p>Uma expressão arrow function possui uma sintaxe mais curta quando comparada a uma expressão <br> de função (function expression) e não tem seu próprio this, arguments, super ou new.target. </p> 
+    <p>expressões de funções são melhor aplicadas para funções que não sejam métodos, e elas não podem ser usadas como construtoras (constructors).</p>
+    <script>
+        const materiais = [
+            "Hidrogenio",
+            "Helio",
+            "Litio",
+            "Berilio"
+        ]
+        console.log(materiais.map(material => material.length));
+
+        var elementos = [
+            'Hidrogenio',
+            'Helio',
+            'Litio',
+            'Berilio'
+        ]
+        elementos.map(function(elemento) {
+            return elemento.length
+        })
+
+        // Sem this separado
+        function Pessoa() {
+            this.idade = 0
+
+            setInterval(function crescer() {
+
+                this.idade++
+            }, 1000)
+        }
+        var p =  new Pessoa()
+        
+    </script>
+</body>
+</html>
