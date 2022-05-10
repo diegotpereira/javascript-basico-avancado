@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>replace</h1>
+    <p>O método replace() retorna uma nova string com algumas ou todas as correspondências <br> 
+        de um padrão substituídas por um determinado caractere (ou caracteres). O padrão pode ser <br> 
+        uma string ou uma RegExp, e a substituição pode ser uma string ou uma função a ser chamada para <br> 
+        cada correspondência. Se o padrão for uma string, apenas a primeira ocorrência será substituída.</p>
+    <script>
+        const CPFSemFormatacao = 'CPF é 25684677037'
+        const CPFFormatado = CPFSemFormatacao.replace('25684677037', '256.846.770-37')
+        console.log(CPFFormatado);
+
+        // Especificando uma função como parâmetro
+        function replacer(match, p1, p2, p3) {
+
+            return [p1, p2, p3].join(' - ')
+        }
+        var novaString = 'abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer)
+
+        console.log(novaString);
+
+        // Definindo uma expressão regular com replace()
+        var str =  'Joga bola Xdor...'
+        var novaString = str.replace(/xdor/i, 'Jogador')
+
+        console.log(novaString);
+
+        // Usando global e ignore com replace()
+        var re = /maças/gi
+        var str = 'As maças são redondas. As maças são suculentas.'
+        var novaString = str.replace(re, 'laranjas')
+
+        console.log(novaString);
+
+        // Trocando palavras em uma string
+        var re = /(\w+)\s(\w+)/
+        var str = 'Bob Marley'
+        var novaString = str.replace(re, '$2, $1')
+
+        console.log(novaString);
+
+        const frase = 'Frase com uma palavra-feia e tem outra palavra-feia no final'
+        const fraseAtualizada = frase.replace('palavra-feia', '********')
+
+        console.log(fraseAtualizada);
+    </script>
+</body>
+</html>
