@@ -21,6 +21,29 @@
             }
         }
         document.getElementById("demo").innerHTML = pessoa.nomeCompleto()
+
+        // Função construtora do Objeto
+        function Veiculo(a, b, c, d) {
+            this.marca = a
+            this.modelo = b
+            this.ano_matricula = c
+            this.cilindrada = d
+                // Método listar variáveis
+            this.listar_variaveis = listar_variaveis
+        }
+
+        function listar_variaveis() {
+            for (var index = 0; index <= 3; index++) {
+
+                document.write("Propriedade ", index, " = ", this[index], "<p/>")
+            }
+        }
+        var carro1 = new Veiculo()
+        carro1[0] = "Porche"
+        carro1[1] = "Carrera"
+        carro1[2] = "2002"
+        carro1[3] = 2400
+        carro1.listar_variaveis()
     </script>
 </body>
 

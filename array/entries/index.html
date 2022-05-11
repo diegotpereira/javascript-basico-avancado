@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>entries</h1>
+    <p>O método entries() retorna um novo objeto Array Iterator que contém os pares chave/valor para cada índice no array.</p>
+    <script>
+        var arr = ['a', 'b', 'c']
+        var eArr = arr.entries()
+
+        console.log(eArr.next().value);
+        console.log(eArr.next().value);
+        console.log(eArr.next().value);
+
+        var arr1 = ['a', 'b', 'c']
+        var eArr1 = arr1.entries()
+
+        for (let e of eArr1) {
+            console.log(e);
+        }
+    </script>
+</body>
+
+</html>

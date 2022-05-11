@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>eventos</h1>
+    <script>
+        function soma(x, y) {
+            var somar
+            somar = x + y
+
+            return (somar)
+        }
+        var total = soma(5, 4)
+        document.write("Resultado da soma: ", total)
+
+        function fact(num) {
+            var res = 1
+
+            for (var k = num; k >= 1; k--) {
+                res *= k
+            }
+            return (res)
+        }
+        // Programa Principal
+        for (var k = 1; k <= 10; k++) {
+            document.write(k, "! = ", fact(k), "<br />")
+        }
+        var x
+        x = prompt("Outro factorial a calcular: ")
+        document.write(x, "! = ", fact(x))
+    </script>
+</body>
+
+</html>

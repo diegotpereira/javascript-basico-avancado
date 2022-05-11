@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudança de site</title>
+</head>
+
+<body>
+    <h3>Atenção! As páginas Web que procura mudaram de local! Daqui a 10 segundos o seu browser será reencamlnhado para o novo local! <br> Por favor actualize as suas referências para o novo endereço
+        <a href="novo.html"> Novo.html</a>
+    </h3>
+    <script language="JavaScript">
+        window.setTimeout("expirou()", 10000); // Passados 10 segundos
+
+        function expirou() { // chama a função
+
+            window.open("novo.html");
+
+        }
+    </script>
+</body>
+
+</html>
