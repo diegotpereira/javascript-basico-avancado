@@ -1,0 +1,40 @@
+{
+    "esquadrao": "Esquadrão de Heróis",
+    "cidadeNatal": "Metro City",
+    "formado": 2016,
+    "baseSecreta": "Super tower",
+    "ativo": true,
+    "membros": [{
+            "nome": "Homem-Molecular",
+            "idade": 29,
+            "identidadeSecreta": "Dan Jukes",
+            "forcas": [
+                "resistência radiação",
+                "Tornando-se minúsculo",
+                "Explosão de radiação"
+            ]
+        },
+        {
+            "nome": "Feiticeira escarlate",
+            "idade": 39,
+            "identidadeSecreta": "Jane Wilson",
+            "forcas": [
+                "Soco de milhão de toneladas",
+                "Resistência a danos",
+                "Superhuman reflexes"
+            ]
+        },
+        {
+            "nome": "Fogo Eterno",
+            "idade": 1000000,
+            "identidadeSecreta": "desconhecida",
+            "forcas": [
+                "imortalidade",
+                "Imunidade ao Calor",
+                "Inferno",
+                "Teletransporte",
+                "viagem interdimensional"
+            ]
+        }
+    ]
+}
