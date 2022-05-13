@@ -1,0 +1,15 @@
+{
+    "clienteId": 1,
+    "cadastro": "2022-05-12",
+    "nome": "Bob",
+    "idade": 70,
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "animais": [
+        { "animal": "cachorro", "nome": "Fido" },
+        { "animal": "gato", "nome": "Felix" },
+        { "animal": "hamster", "nome": "luluzinha" },
+        { "animal": "coelho", "nome": "Pernalonga" },
+        { "animal": "bode", "nome": "Juvenildo" }
+    ]
+}
