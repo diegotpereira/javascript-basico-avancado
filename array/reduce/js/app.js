@@ -68,6 +68,8 @@ const sonsHtml = sons.reduce((acc, som) => {
 // ou 
 const sonstwoHtml = sons.reduce((acc, som)=> acc += `<li>${som}</li>`, "")
 
+document.getElementById('demo').innerHTML = sonstwoHtml
+
 // indexar lista de objetos pelo id
 const lista = [
 
@@ -91,3 +93,12 @@ const valorInicial = {}
 const carrosIndexadosPorId = lista.reduce(callback, valorInicial)
 
 console.log(carrosIndexadosPorId[3]);
+
+// exemplo 3
+const numerosReduce = [175, 50, 25]
+document.getElementById('dem').innerHTML = numerosReduce.reduce(minhaFun)
+
+function minhaFun(total, num) {
+
+    return total - num
+}
