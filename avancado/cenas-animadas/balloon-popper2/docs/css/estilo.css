@@ -1,0 +1,133 @@
+/* Botões */
+#btnVoltar {
+    top: 5%;
+}
+
+
+
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    background-image: url("../imagens/balloons-background.jpg");
+}
+.balloon {
+    width: 100px;
+    height: 200px;
+    top: 100vh;
+    position: absolute;
+    z-index: 11;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.balloon-red {
+    background-image: url(../imagens/balloon-red.png);
+}
+
+.balloon-yellow {
+    background-image: url(../imagens/balloon-yellow.png);
+}
+
+.balloon-blue {
+    background-image: url(../imagens/balloon-blue.png);
+}
+
+.balloon-violet {
+    background-image: url(../imagens/balloon-violet.png);
+}
+
+.balloon-green {
+    background-image: url(../imagens/balloon-green.png);
+}
+
+.balloon-black {
+    background-image: url(../imagens/balloon-black.png);
+}
+
+.balloon-orange {
+    background-image: url(../imagens/balloon-orange.png)
+}
+
+.plane-blue {
+    background-image: url(../imagens/plane.png);
+}
+.total-shadow {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    position: relative;
+    color: #293c6b;
+}
+.total-shadow h4 {
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+.lose {
+    display: none;
+}
+.win {
+    display: none;
+}
+.score-block {
+    background-color: #efefef;
+    width: 600px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px 20px 0 0;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 300px);
+    padding: 5px 0;
+    display: none;
+}
+.score-block p {
+    text-align: center;
+    font-weight: bold;
+}
+.score-block p {
+    color: #293c6b;
+}
+.point-row p {
+    color: #9752cc;
+}
+.score-row {
+    width: 100%;
+    float: left;
+}
+.start-game-window {
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.instructions {
+    background: rgba(255, 255, 255, 0.41);
+    text-align: center;
+    box-shadow: -1px -1px 2-px 1px #56565654;
+    padding: 50px;
+    color: #293c6b;
+}
+.instructions div:nth-child(2) {
+    margin-top: 50px;
+}
+ul {
+    color: #293c6b;
+    font-size: 2em;
+    text-align: left;
+}
+li {
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.5em;
+}

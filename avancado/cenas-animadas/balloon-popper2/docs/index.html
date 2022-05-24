@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo - Estourar Balões</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div id="btnVoltar"><a href="http://www.flywithbutchohare.com"><img src="imagens/back_btn.png" alt="Voltar"></a></div>
+    <div class="score-block">
+        <div class="score-row">
+            <p>Você estourou <span class="score">0</span> balões</p>
+        </div>
+        <div class="score-row point-row">
+            <p>Sua pontuação é <span class="points">0</span> pontos</p>
+        </div>
+    </div>
+    <div class="total-shadow">
+        <div class="total-block">
+            <div class="total-wrapper win">
+                <h1>Voe com Butch O'Hare</h1>
+                <h2>Obrigado por jogar!</h2>
+                <h4>Parabéns!</h4>
+                <img src="imagens/happy.png" alt="Vencedor">
+                <h4>Você estourou todos os 100 balões.</h4>
+                <h4>Sua pontuação total foi <span class="points">0</span></h4>
+                <div id="win-startsEarned"></div>
+                <h2>Você é um campeão!</h2>
+                <button id="win-start" class="restart purple-white-btn">Jogar Novamente</button>
+                <button id="win-back" class="cencel white-purple-btn">Voltar a todos os jogos</button>
+            </div>
+            <div class="total-wrapper lose">
+                <h1>Voe com Butch O'Hare</h1>
+                <h2>Obrigado por jogar!</h2>
+                <h3>Desculpe!</h3>
+                <img src="imagens/sad.png" alt="Perdeu">
+                <h4>Você estourou <span class="score">0</span> balões.</h4>
+                <h4>Sua pontuação total foi <span class="points">0</span></h4>
+                <div id="lose-startsEarned"></div>
+                <button id="lost-start" class="restart purple-white-btn">Jogar novamente</button>
+                <button id="lost-back" class="cencel white-purple-btn">Voltar a todos os jogos</button>
+            </div>
+        </div>
+    </div>
+    <div class="start-game-window">
+        <div class="instructions">
+            <div>
+                <img src="imagens/balloon-popper_logo.png" alt="Balões Estourados">
+                <ul><b>Como jogar</b></ul>
+                <li>Estoure os balões coloridos por 1 ponto</li>
+                <li>Certifique-se de estourar todos os balões coloridos antes que eles cheguem ao topo ou é Game Over</li>
+                <li>Evite os balões verdes com um "X", eles valem -5 pontos... então não os estoure!</li>
+            </div>
+        </div>
+        <h3 id="rdy-to-play">Você esta pronto para jogar?</h3>
+        <button class="start-game-button purple-white-btn">Jogar</button>
+        <button class="back-game-button white-purple-btn">Voltar a todos os jogos</button>
+    </div>
+</body>
+</html>
