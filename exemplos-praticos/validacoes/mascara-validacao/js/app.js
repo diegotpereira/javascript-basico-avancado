@@ -25,6 +25,20 @@ function MascaraCPF(cpf) {
     }
     return formataCampo(cpf, '000.000.000-00', event)
 }
+// Mascara Cep
+function MascaraCep(cep) {
+    if(mascaraInteiro(cep == false)) {
+        event.returnValue = false 
+    }
+    return formataCampo(cep, '00.000-000', event)
+}
+// mascara data
+function MascaraData(data) {
+    if (mascaraInteiro(data) == false) {
+        event.returnValue = false 
+    }
+    return formataCampo(data, '00/00/0000', event)
+}
 // formata de forma generica os campos
 function formataCampo(campo, Mascara, evento) {
     var bolMascara 
@@ -62,7 +76,6 @@ function formataCampo(campo, Mascara, evento) {
         return true 
     }
 }
-
 // funções de validação
 function ValidarCNPJ(ObjCnpj) {
     var cnpj = ObjCnpj.value 
@@ -88,47 +101,53 @@ function ValidarCNPJ(ObjCnpj) {
         alert('CNPJ Invalido')
 }
 // função validar cpf
-// function ValidarCPF(ObjCpf) {
-//     var cpf = ObjCpf.value 
-//     exp = /\.|\-/g
-
-//     cpf = cpf.toString().replace(exp, "")
-//     var digitoDigitado = eval(cpf.charAt(9) + cpf.charAt(10))
-//     var soma1 = 0;
-//     var soma2 = 0;
-//     var valor = 11;
-
-//     for(index = 0; index < 9; index++) {
-//         soma1 += eval(cpf.charAt(index) * (valor - 1))
-//         soma2 += eval(cpf.charAt(index) * valor)
-
-//         valor--
-//     }
-//     soma1 = (((soma1 * 10) % 11) == 10 ? 0: ((soma1 * 10) % 11))
-//     soma2 = (((soma2 + (2 * soma1)) * 10) % 11)
-
-//     var digitadoGerado = (soma1 * 10) + soma2 
-
-//     if (digitadoGerado != digitoDigitado) 
-//         alert('CPF Inválido')
-// }
-function ValidarCPF(Objcpf){
-    var cpf = Objcpf.value;
+function ValidarCPF(ObjCpf) {
+    var cpf = ObjCpf.value 
     exp = /\.|\-/g
-    cpf = cpf.toString().replace( exp, "" ); 
-    var digitoDigitado = eval(cpf.charAt(9)+cpf.charAt(10));
-    var soma1=0, soma2=0;
-    var vlr =11;
 
-    for(i=0;i<9;i++){
-            soma1+=eval(cpf.charAt(i)*(vlr-1));
-            soma2+=eval(cpf.charAt(i)*vlr);
-            vlr--;
-    }       
-    soma1 = (((soma1*10)%11)==10 ? 0:((soma1*10)%11));
-    soma2=(((soma2+(2*soma1))*10)%11);
+    cpf = cpf.toString().replace(exp, "")
+    var digitoDigitado = eval(cpf.charAt(9) + cpf.charAt(10))
+    var soma1 = 0;
+    var soma2 = 0;
+    var valor = 11;
 
-    var digitoGerado=(soma1*10)+soma2;
-    if(digitoGerado!=digitoDigitado)        
-            alert('CPF Invalido!');         
+    for(index = 0; index < 9; index++) {
+        soma1 += eval(cpf.charAt(index) * (valor - 1))
+        soma2 += eval(cpf.charAt(index) * valor)
+
+        valor--
+    }
+    soma1 = (((soma1 * 10) % 11) == 10 ? 0: ((soma1 * 10) % 11))
+    soma2 = (((soma2 + (2 * soma1)) * 10) % 11)
+
+    var digitadoGerado = (soma1 * 10) + soma2 
+
+    if (digitadoGerado != digitoDigitado) 
+        alert('CPF Inválido')
+}
+// valida CEP
+function ValidaCep(cep) {
+    exp = /\d{2}\.\d{3}\-\d{3}/
+
+    if (!exp.test(cep.value)) {
+        alert('Número de Cep Inválido!')
+    }
+}
+
+// Valida Telefone 
+function ValidaTelefone(tel) {
+    exp = /\(\d{2}\)\ \d{4}\-\d{4}/
+
+    if (!exp.test.tel.value) {
+        alert('Número de Telefone Inválido')
+    }
+}
+
+// Valida Data
+function ValidaData(data) {
+    exp = /\d{2}\/\d{2}\/\d{4}/
+
+    if (!exp.test(data.value)) {
+        alert('Data Inválida')
+    }
 }
