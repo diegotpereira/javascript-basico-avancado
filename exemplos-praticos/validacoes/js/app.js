@@ -9,6 +9,8 @@ function validar(e) {
         document.meuForm.nome.focus() ;
         return false;
     }
+
+    validarEmail()
     // if( document.meuForm.email.value == "" ) {
     //     alert( "Por favor, forneça seu email!" );
     //     document.meuForm.email.focus() ;
