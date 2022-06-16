@@ -1,0 +1,12 @@
+var imgObj = null 
+
+function init() {
+    imgObj = document.querySelector("#minhaImagem")
+    imgObj.style.position = 'relative'
+    imgObj.style.left = '0px'
+}
+function moverDireita() {
+    imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px'
+}
+
+window.onload = init
