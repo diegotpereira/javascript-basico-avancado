@@ -13,6 +13,8 @@ window.requestAnimFrame = (function() {
 
 $(document).ready(function() {
     $('#canvas').mousedown(function() {
+
+        alert('Cheguei aqui')
         configuracoes.velocity_x += 2
     }).mouseup(function() {
         configuracoes.velocity_x -= 2
