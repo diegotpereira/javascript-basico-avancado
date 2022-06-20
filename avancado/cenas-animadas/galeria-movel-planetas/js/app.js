@@ -1,6 +1,8 @@
-https://codepen.io/simoberny/pen/aqjEbz
+// https://codepen.io/simoberny/pen/aqjEbz
 var elemento = document.getElementById('mobile_control')
 var hammertime = new Hammer(elemento)
+
+var swiped_top = false
 
 hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL})
 hammertime.on('swipeleft', function(ev) {
@@ -8,6 +10,13 @@ hammertime.on('swipeleft', function(ev) {
 })
 hammertime.on('swiperight', function(ev) {
     cmover('next')
+})
+hammertime.on('swipeup', function(ev) {
+    swiped_top = true
+    abriModal()
+})
+hammertime.on('swipedown', function(ev) {
+    fecharModal()
 })
 
 function cmover(dir) {
@@ -29,6 +38,37 @@ function cmover(dir) {
         next_id = (planeta_id + 1)% n_planeta
     }
 }
+$('#open_menu').on('click', function() {
+    $('.menu').show()
+})
+$('#close').on('click', function() {
+    $('#.menu').hide()
+})
+$('.more').on('click', function() {
+    swiped_top = true 
+    abrirModal()
+})
+function abriModal() {
+    anime.timeline({})
+    .add({
+        targets: 'carousel',
+        translateY: ['100%', 0],
+        duration: 600,
+        easing: 'easeOutQuad'
+    })
+}
 
+function fecharModal() {
+    if (swiped_top) {
+        anime.timeline({})
+        .add({
+            targets: '.carousel',
+            translateY: [0, '100%'],
+            duration: 600,
+            easing: 'easeOutQuad'
+        })
+        swiped_top: false
+    }
+}
 var foto_planeta = ["https://i.kinja-img.com/gawker-media/image/upload/s--gBFsZfZv--/c_scale,fl_progressive,q_80,w_800/18mozgxwgu2ibjpg.jpg", "https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg", "http://cdn.sci-news.com/images/enlarge3/image_4461e-Jupiter.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Jewel_of_the_Solar_System.jpg/1280px-Jewel_of_the_Solar_System.jpg", "https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/275px-Neptune_Full.jpg", "http://annesastronomynews.com/wp-content/uploads/2012/02/Mercury-has-a-large-iron-core-which-generates-a-magnetic-field-and-is-heavily-cratered-with-regions-of-smooth-plains.-It-has-no-natural-satellites-and-no-substantial-atmosphere.jpg", "https://www.universetoday.com/wp-content/uploads/2008/10/Venus-e1489179310371.jpg"]
 var planeta = ["terra", "marte", "jupiter", "saturno", "urano", "netuno", "mercurio", "venus"]
