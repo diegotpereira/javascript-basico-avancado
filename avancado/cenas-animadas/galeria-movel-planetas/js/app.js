@@ -57,7 +57,7 @@ function cmover(dir) {
     top.removeClass('pt')
 
     if (planeta_id == 0) {
-        prev = $('#p1' + planeta_id)
+        prev = $('#p1' + (n_planeta-1))
         next = $('#p1' + (planeta_id + 1)%n_planeta)
     } else {
         prev = $('#p1' + (planeta_id - 1))
@@ -82,7 +82,7 @@ function cmover(dir) {
 
     $('.active').removeClass('active')
     $('#p' + planeta_id).addClass('active')
-    $('.info_back h1').text(planeta_id[next_id])
+    $('.info_back h1').text(planeta[next_id])
 
     if (swiped_top) {
         $('.info_back h1').each(function() {
@@ -144,7 +144,7 @@ function cmover(dir) {
 
     anime.timeline({})
     .add({
-        targets: '.planet_photo',
+        targets: '.planeta_foto',
         backgroundPosition: ['50% -75%', ani_dir + ' -85%'],
         opacity: {
             value: [1,0]
@@ -152,11 +152,11 @@ function cmover(dir) {
         duration: 700,
         easing: 'easeOutQuad',
         complete: function(anim) {
-            $('.planet_photo').css('background-image', 'url(' + photo_planet[next_id] + ')')
+            $('.planeta_foto').css('background-image', 'url(' + photo_planet[next_id] + ')')
         }
     })
     .add({
-        targets: '.planet_photo',
+        targets: '.planeta_foto',
         backgroundPosition: ['0% -85%', '50% -75%'],
         opacity: [0.2, 1],
         duration: 500,
