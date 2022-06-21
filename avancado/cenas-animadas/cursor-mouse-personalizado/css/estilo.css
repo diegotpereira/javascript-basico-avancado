@@ -1,0 +1,23 @@
+html {
+  background: #da4453;
+  background: linear-gradient(to right, #89216b, rgba(218, 85, 68, 0.3254901961));
+  mix-blend-mode: exclusion;
+  cursor: none;
+}
+
+.cursor {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 50%;
+  left: 50px;
+  margin: -24px 0 0 -24px;
+  border: 3px solid #f80759;
+  border-radius: 100px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: transform 0.3s ease-out;
+}
+.cursor.is-moving {
+  transform: scale 0.7;
+}/*# sourceMappingURL=estilo.css.map */
