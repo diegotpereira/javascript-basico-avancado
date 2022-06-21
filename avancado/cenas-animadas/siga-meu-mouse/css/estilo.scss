@@ -1,0 +1,16 @@
+@import "compass/css3";
+
+html {
+    background: #0E3741;
+}
+.circulo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+    background: #CB4B16;
+    border-radius: 80%;
+    backface-visibility: hidden;
+}
