@@ -1,0 +1,29 @@
+body {
+    background-color: #464343;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.square-large {
+    width: 200px;
+    height: 300px;
+    border: 2px solid #BFBFBF;
+    position:  relative;
+}
+.line {
+    width: 0;
+    height: 16px;
+    float: left;
+    border: none;
+    background: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    right: auto;
+}
