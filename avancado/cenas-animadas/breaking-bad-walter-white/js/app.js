@@ -54,6 +54,7 @@ function Walter() {
     this.formalSmokingMat = '#333'
     this.formalLegsMMat = '#222'
     this.formalSapatoMat = '#585858'
+    this.formalZipperMat = "white";
 
     this.hatMat = new THREE.MeshLambertMaterial({
         color: "#333",
@@ -77,6 +78,18 @@ function Walter() {
     })
     this.pupilaMat = new THREE.MeshLambertMaterial({
         color: '#333',
+        shading: THREE.FlatShading
+    })
+    this.skinMat = new THREE.MeshLambertMaterial({
+        color: '#e0bea5',
+        shading: THREE.FlatShading
+    })
+    this.barbaMat = new THREE.MeshLambertMaterial({
+        color: '#bb7344',
+        shading: THREE.FlatShading
+    })
+    this.zipperMat = new THREE.MeshLambertMaterial({
+        color: this.formalZipperMat,
         shading: THREE.FlatShading
     })
 
@@ -125,6 +138,20 @@ function Walter() {
     this.retinaDireita.position.y = 5
     this.retinaDireita.position.z = 168
 
+    // barba
+    var barba = new THREE.BoxGeometry(140, 130, 10)
+    this.barba = new THREE.Mesh(barba, this.barbaMat)
+    this.barba.position.x = 0
+    this.barba.position.y = 160
+    this.barba.positionz = -140
+
+    // mout
+    var mout = new THREE.BoxGeometry(90, 60, 50)
+    this.mout = new THREE.Mesh(mout, this.skinMat)
+    this.mout.position.x = 0
+    this.mout.position.y = 155
+    this.mout.position.z = -130
+
     // chapeu
     var chapeu = new THREE.BoxGeometry(320, 120, 290)
     this.chapeu = new THREE.Mesh(chapeu, this.hatMat)
@@ -167,6 +194,13 @@ function Walter() {
     this.maoDireita.position.y = -150
     this.maoDireita.position.z = 220
 
+    // zipper
+    var zipper = new THREE.BoxGeometry(80, 250, 10)
+    this.zipper = new THREE.Mesh(zipper, this.zipperMat)
+    this.zipper.position.x = 0
+    this.zipper.position.y = 0
+    this.zipper.position.z = 300
+
     // pernas
     var pernas = new THREE.BoxGeometry(10, 130, 5)
     this.pernas = new THREE.Mesh(pernas, this.smokingMat)
@@ -198,9 +232,12 @@ function Walter() {
     this.cabeca.add(this.retinaMeio)
     this.cabeca.add(this.retinaEsquerda)
     this.cabeca.add(this.retinaDireita)
+    this.cabeca.add(this.barba)
+    this.cabeca.add(this.mout)
 
     this.corpo.add(this.bracoEsquerdo)
     this.corpo.add(this.bracoDireito)
+    this.corpo.add(this.zipper)
     this.corpo.add(this.maoEsquerda)
     this.corpo.add(this.maoDireita)
     this.corpo.add(this.pernas)
