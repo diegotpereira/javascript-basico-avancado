@@ -1,0 +1,31 @@
+body {
+    background-color: #fad1ab;
+    padding: 0;
+    margin: 10em;
+    text-align: center;
+}
+.fa {
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    margin: 5px;
+}
+#facebook {
+    padding: 10px 17px 10px 20px;
+    color: #1c66c2;
+}
+#linkedin {
+    color: #1c66c2;
+}
+#github {
+    color: #000000;
+}
+#codepen {
+    color: #cccccc;
+}
+#twitter{
+    color:#44ccf6;
+  }
+  #stack{
+    color:#fe7a15;
+  }
