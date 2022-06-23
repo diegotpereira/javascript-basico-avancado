@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <h1>JavaScript animação com setInterval()</h1>
+    <p>
+    <label>Escolha a "taxa de quadros" na lista:</label>
+    <select id="taxaQuadros">
+        <option value="5">5 fps</option>
+        <option value="15">15 fps</option>
+        <option value="24" selected>24 fps</option>
+        <option value="40">40 fps</option>
+        <option value="60">60 fps</option>
+    </select>
+    </p>
+
+    <p>
+    <label>Escolha a distância percorrida em cada quadro:</label>
+    <select id="distancia">
+        <option value="1">1px</option>
+        <option value="5" selected>5px</option>
+        <option value="10">10px</option>
+        <option value="25">25px</option>
+        <option value="50">50px</option>
+    </select>
+    </p>
+
+    <div id="caixa"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
