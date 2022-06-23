@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.wrapper {
+    height: 80vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid blue;
+    background-color: lightblue;
+    color: #444;
+}
+.bola {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 20px;
+    bottom: 0;
+    left: calc(50% - 100px);
+    background-color: darkblue;
+    border-radius: 50%;
+}
