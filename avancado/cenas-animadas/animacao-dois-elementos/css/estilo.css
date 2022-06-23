@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.wrapper {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    color: #444;
+}
+.chutar {
+    position: absolute;
+    top: 150px;
+    left: 10%;
+    width: 100%;
+}
+.bola {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 100px;
+    left: 5%;
+}
+
+@media (min-width: 700px) {
+    .wrapper {
+        max-width: 600px;
+        border: 2px solid black;
+        border-radius: 20px;
+    }
+    .chutar {
+        width: 80%;
+    }
+    .bola {
+        width: 200px;
+        height: 200px;
+    }
+}
