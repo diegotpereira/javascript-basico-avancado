@@ -1,5 +1,6 @@
 var camera, cena, renderizador
 var mundo, walter
+var semiLuz, dirLuz, fundoLuz
 
 var container = {
     width: 0,
@@ -40,6 +41,24 @@ function init() {
 
 function mousemove() {}
 
+function addLuzes() {
+    semiLuz = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.6)
+
+    dirLuz = new THREE.DirectionalLight(0xffffff, .8)
+    dirLuz.position.set(200, 200, 2000)
+    dirLuz.costumizarSombra = true 
+    dirLuz.sombraEscuridao = .1
+
+    fundoLuz = new THREE.DirectionalLight(0xffffff, .4)
+    fundoLuz.position.set(-200, 200, 50)
+    fundoLuz.sombraEscuridao = .1
+    fundoLuz.costumizarSombra = true 
+
+    cena.add(fundoLuz)
+    cena.add(semiLuz)
+    cena.add(dirLuz)
+}
+
 function criarWalter() {
     walter = new Walter();
     cena.add(walter.threegroup)
@@ -60,6 +79,30 @@ function Walter() {
         color: "#333",
         shading: THREE.FlatShading,
     })
+    this.skinMat = new THREE.MeshLambertMaterial({
+        color: '#e0bea5',
+        shading: THREE.FlatShading
+    })
+    this.pupilaMat = new THREE.MeshLambertMaterial({
+        color: '#333',
+        shading: THREE.FlatShading
+    })
+    this.labioMat = new THREE.MeshLambertMaterial({
+        color: '#333',
+        shading: THREE.FlatShading
+    })
+    this.oculosMat = new THREE.MeshLambertMaterial({
+        color: 'white',
+        shading: THREE.FlatShading
+    })
+    this.barbaMat = new THREE.MeshLambertMaterial({
+        color: '#bb7344',
+        shading: THREE.FlatShading
+    })
+    this.zipperMat = new THREE.MeshLambertMaterial({
+        color: this.formalZipperMat,
+        shading: THREE.FlatShading
+    })
     this.smokingMat = new THREE.MeshLambertMaterial({
         color: this.formalSmokingMat,
         shading: THREE.FlatShading
@@ -71,27 +114,7 @@ function Walter() {
     this.sapatosMat = new THREE.MeshLambertMaterial({
         color: this.formalSapatoMat,
         shading: THREE.FlatShading
-    })
-    this.oculosMat = new THREE.MeshLambertMaterial({
-        color: 'white',
-        shading: THREE.FlatShading
-    })
-    this.pupilaMat = new THREE.MeshLambertMaterial({
-        color: '#333',
-        shading: THREE.FlatShading
-    })
-    this.skinMat = new THREE.MeshLambertMaterial({
-        color: '#e0bea5',
-        shading: THREE.FlatShading
-    })
-    this.barbaMat = new THREE.MeshLambertMaterial({
-        color: '#bb7344',
-        shading: THREE.FlatShading
-    })
-    this.zipperMat = new THREE.MeshLambertMaterial({
-        color: this.formalZipperMat,
-        shading: THREE.FlatShading
-    })
+    })    
 
     // cabeça
     var cabeca = new THREE.BoxGeometry(300, 350, 280)
@@ -152,12 +175,25 @@ function Walter() {
     this.mout.position.y = 155
     this.mout.position.z = -130
 
+    // labios
+    var labio = new THREE.BoxGeometry(40, 20, 50)
+    this.labio = new THREE.Mesh(labio, this.labioMat)
+    this.labio.position.x = 0
+    this.labio.position.y = 162
+    this.labio.position.z = -120
+
     // chapeu
     var chapeu = new THREE.BoxGeometry(320, 120, 290)
     this.chapeu = new THREE.Mesh(chapeu, this.hatMat)
     this.chapeu.position.x = 0
     this.chapeu.position.z = 0
     this.chapeu.position.y = 180
+
+    var chapeuBotao = new THREE.BoxGeometry(400, 40, 380)
+    this.chapeuBotao = new THREE.Mesh(chapeuBotao, this.hatMat)
+    this.chapeuBotao.position.x = 0
+    this.chapeuBotao.position.y = 0 
+    this.chapeuBotao.position.z = 100   
 
     // corpo
     var corpo = new THREE.BoxGeometry(300, 250, 600)
@@ -224,7 +260,7 @@ function Walter() {
 
     // grupo de elementos
     this.cabeca.add(this.chapeu)
-
+    this.cabeca.add(this.chapeuBotao)
     
     this.cabeca.add(this.oculosEsquerdo)
     this.cabeca.add(this.oculosDireito)
@@ -234,6 +270,7 @@ function Walter() {
     this.cabeca.add(this.retinaDireita)
     this.cabeca.add(this.barba)
     this.cabeca.add(this.mout)
+    this.cabeca.add(this.labio)
 
     this.corpo.add(this.bracoEsquerdo)
     this.corpo.add(this.bracoDireito)
@@ -254,5 +291,6 @@ function loop() {
     requestAnimationFrame(loop)
 }
 init()
+addLuzes()
 criarWalter()
 loop()
