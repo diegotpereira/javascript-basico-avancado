@@ -1,0 +1,64 @@
+.horizontalLista {
+    list-style: none outside none;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 0;
+}
+.horizontalLista::after,
+.horizontalLista:before {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.horizontalLista::after {
+    clear: both;
+}
+.horizontalLista li {
+    line-height: 20px;
+    float: right;
+}
+.ticker-list {
+    float: left;
+    width: 90%;
+}
+.ticker-pagination-list {
+    float: right;
+}
+.ticker-list li {
+    padding: 10px;
+}
+.ticker-list a {
+    color: #000;
+    text-decoration: none;
+}
+.ticker-page {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    border: solid 2px #0099ff;
+    margin: 2px;
+    cursor: pointer;
+}
+.ticker-page-active {
+    background: #0099ff;
+}
+.progresso {
+    height: 4px;
+    animation: progressbar-countdown;
+    animation-duration: 40s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-play-state: running;
+}
+@keyframes progressbar-countdown {
+    0% {
+        width: 0%;
+        background: rgba(0, 153, 255, 1);
+    }
+    100% {
+        width: 100%;
+        background: rgba(0, 153, 255, 1);
+    }
+}
