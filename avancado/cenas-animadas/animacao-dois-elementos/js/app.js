@@ -26,3 +26,8 @@ imagesLoaded(document, function() {
     })
 })
 
+var ola = function(nome) {
+    return `Olá, ${nome}`
+}
+
+console.log(ola);
