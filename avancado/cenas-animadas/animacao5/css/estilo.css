@@ -1,0 +1,20 @@
+#container {
+    max-width: 980px;
+}
+#container > div {
+    height: 240px;
+    width: 240px;
+    text-align: center;
+    margin: 20px;
+    float: left;
+    line-height: 240px;
+}
+.box1 {
+    background-color: pink;
+}
+.box2 {
+    background-color: aqua;
+}
+.box3 {
+    background-color: darkseagreen;
+}
