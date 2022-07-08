@@ -4,7 +4,7 @@ function animacaoPipeline() {
     h =window.innerHeight,
     palco = document.querySelector('#palco'),
     relva = document.querySelector('#relva'),
-    nuvem = document.getElementsByClassName('#nuvem')
+    nuvem = document.getElementsByClassName('nuvem')
 
     solEl = document.querySelector('#sol'),
     solElWidth = solEl.innerWidth,
@@ -25,10 +25,10 @@ function animacaoPipeline() {
     proprio.setupPalco = function() {
         relva.style.top = (h - 70) + 'px'
         palco.style.height = h + 'px'
-        palco.rodarAnimacao(nuvem[0], 33.0, {left: (w + 100)})
-        palco.rodarAnimacao(nuvem[1], 27.0, {left: (w + 100)})
-        palco.rodarAnimacao(nuvem[2], 39.0, {right: (w + 100)})
-        palco.rodarAnimacao(nuvem[3], 27.0, {left: (w + 100)})
+        proprio.rodarAnimacao(nuvem[0], 33.0, {left: (w + 100)})
+        proprio.rodarAnimacao(nuvem[1], 27.0, {left: (w + 100)})
+        proprio.rodarAnimacao(nuvem[2], 39.0, {right: (w + 100)})
+        proprio.rodarAnimacao(nuvem[3], 27.0, {left: (w + 100)})
         proprio.animarSol()
     }
     proprio.animarSol =  function() {
@@ -40,7 +40,7 @@ function animacaoPipeline() {
     }
     proprio.redefinirAnimacao = function(elem, css) {
         if (elem.id === 'nuvem3') {
-            elem.style.right = -400 + px
+            elem.style.right = -400 + 'px'
         } else {
             elem.style.left  = -400 + 'px'
         }
@@ -57,13 +57,40 @@ function animacaoPipeline() {
         atualMinuto = ( atualMinuto < 10 ? "0" : "" ) + atualMinuto
         atualSegundo = ( atualSegundo < 10 ? "0" : "") + atualSegundo
 
-        var tempoDia = ( atualHora < 12 ) ? 'AM' : 'PM'
+        var tempoDoDia = ( atualHora < 12 ) ? 'DIA' : 'NOITE'
 
         atualHora = ( atualHora > 12 ) ? atualHora - 12 : atualHora
 
-        atualHora ( atualHora == 0) ? 12 : atualHora
+        atualHora = ( atualHora == 0) ? 12 : atualHora
 
-        proprio.l
+        proprio.l(tempoDoDia + '' + atualHora)
 
+        if ((tempoDoDia == 'NOITE' && atualHora >= 9 && atualHora != 12) || (tempoDoDia ==  'DIA' && atualHora <= 8) ) {
+            palco.style.backgroundColor = '#333'
+            palco.style.display = 'block'
+            solEl.firstElementChild.src = luaDado
+        } else {
+            palco.style.backgroundColor = '#ccece4'
+            palco.style.display = 'block'
+            solEl.firstElementChild.src = solDado
+        }
+
+        // criar o display
+        var atualTempoString = atualHora + ":" + atualMinuto + ":" + atualSegundo + " " + tempoDoDia
+
+        // atualizar o tempo do display
+        tempo.innerHTML = atualTempoString
     }
+    proprio.l = function(mensagem) {
+        console.log(mensagem);
+    }
+    proprio._initialize()
 }
+
+var intervalo = setInterval(function() {
+    if (document.readyState === 'complete') {
+        clearInterval(intervalo)
+
+        var pipe = animacaoPipeline()
+    }
+}, 100);
