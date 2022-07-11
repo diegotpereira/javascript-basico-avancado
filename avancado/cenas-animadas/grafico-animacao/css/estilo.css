@@ -1,0 +1,96 @@
+body {
+    background-color: #34495e;
+}
+.skills-graph {
+    fill: transparent;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    margin: auto;
+}
+#javascript {
+    visibility: visible;
+    stroke: #ecf0f1;
+    animation-name: javascript;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    stroke-dasharray: 880;
+    stroke-dashoffset: 780;
+    animation-fill-mode: forwards;
+}
+@keyframes javascript {
+    0% {
+        stroke-dashoffset: 880;
+        stroke: white;
+    }
+    50% {
+        stroke: #ecf0f1;
+    }
+    100% {
+        stroke-dashoffset: 780;
+        stroke: #ecf0f1;
+    }
+}
+#html {
+    visibility: visible;
+    fill: transparent;
+    stroke: #95a5a6;
+    animation-name: html;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    stroke-dasharray: 691;
+    stroke-dashoffset: 271;
+    animation-fill-mode: forwards;
+}
+@keyframes html {
+    0% {
+        stroke-dashoffset: 691;
+        stroke: white;
+    }
+    50% {
+        stroke: #95a5a6;
+    }
+    100% {
+        stroke-dashoffset: 271;
+        stroke: #95a5a6;
+    }
+}
+#css {
+    visibility: visible;
+    fill: transparent;
+    stroke: #3dd0ac;
+    animation-name: css;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 172;
+    animation-fill-mode: forwards;
+}
+@keyframes css {
+    0% {
+        stroke-dashoffset: 502;
+        stroke: white
+    }
+    50% {
+        stroke: #3dd0ac;
+    }
+    100% {
+        stroke-dashoffset: 172;
+        stroke: #3dd0ac;
+    }
+}
