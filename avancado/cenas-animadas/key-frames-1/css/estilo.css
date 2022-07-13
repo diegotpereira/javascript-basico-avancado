@@ -1,0 +1,30 @@
+body {
+    text-align: center;
+    background: #fafafa;
+    position: relative;
+}
+.bola {
+    width: 10%;
+    top: 100px;
+    left: 5%;
+    position: absolute;
+    box-shadow: -3px 5px 0px rgba(0, 0, 0, 0.2);
+    padding-bottom: 10%;
+    border-radius: 50%;
+    background: #2098d1;
+}
+
+
+
+
+@keyframes mover {
+    from {
+        left: 5%;
+    }
+    to {
+        left: 85%;
+    }
+}
+.bola {
+    animation: 1s mover;
+}
