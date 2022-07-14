@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de Formulário</title>
+</head>
+<body>
+    <table id="table1">
+        <tr>
+          <td>First Name:</td>
+          <td><input type="text" id="nome" onkeyup="validar();" /></td>
+          <td><div id="errNome"></div></td>
+        </tr>
+        <tr>
+          <td>Last Name:</td>
+          <td><input type="text" id="sobreNome" onkeyup="validar();"/></td>
+          <td><div id="errSobrenome"></div></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><input type="text" id="email" onkeyup="validar();"/></td>
+          <td><div id="errEmail"></div></td>
+        </tr>
+        <tr>
+          <td>User Id:</td>
+          <td><input type="text" id="uid" onkeyup="validar();"/></td>
+          <td><div id="errUid"></div></td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td><input type="password" id="password" onkeyup="validar();"/></td>
+          <td><div id="errPassword"></div></td>
+        </tr>
+        <tr>
+          <td>Confirm Password:</td>
+          <td><input type="password" id="confirme" onkeyup="validar();"/></td>
+          <td><div id="errConfirme"></div></td>
+        </tr>
+        <tr>
+          <td><input type="button" id="criar" value="Criar" onclick="validar();finalValidar();"/></td>
+          <td><div id="errFinal"></div></td>
+        </tr>
+    </table>
+    <script src="js/app.js"></script>
+</body>
+</html>
