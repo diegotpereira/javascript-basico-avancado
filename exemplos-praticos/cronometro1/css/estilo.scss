@@ -1,0 +1,61 @@
+/* variaveis */
+$laranja: #ffa600;
+$cinza: #f3f3f3;
+$branco: #fff;
+$cor-base: $laranja;
+
+// Mixins
+@mixin transition {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+@mixin corners ($radius) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    -khtml-border-radius: $radius;
+}
+
+
+body{
+    background: $cor-base;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    height: 100%;
+}
+.wrapper {
+    width: 800px;
+    margin: 30px auto;
+    color: $branco;
+    text-align: center;
+}
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 2.6em;
+    text-transform: uppercase;
+}
+
+#segundos, #dezenas {
+    font-size: 2em;
+}
+
+button {
+    @include corners (5px);
+    background: $cor-base;
+    color: $branco;
+    border: solid 1px $branco;
+    text-decoration:none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 18px 10px;
+    width: 180px;
+    margin: 10px;
+    outline: none;
+    &:hover {
+        @include transition;
+        background: $branco;
+        border: solid 1px $branco;
+        color: $cor-base;
+    }
+}
