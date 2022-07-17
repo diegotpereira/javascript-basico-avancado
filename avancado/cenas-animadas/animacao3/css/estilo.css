@@ -1,6 +1,7 @@
 *, *:before, *:after {
   border: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -10,7 +11,7 @@
 }
 
 body {
-  background: rgb(135, 190, 255);
+  background: #87beff;
   color: #222;
   font: 1em "Anton", sans-serif;
   line-height: 1.5;
@@ -36,7 +37,7 @@ body {
 
 .progress-box {
   border-radius: 0 0 0.5em 0.5em;
-  border: 0.5em solid rgb(80, 80, 80);
+  border: 0.5em solid #505050;
   border-top: 0;
   height: 4em;
 }
@@ -44,10 +45,15 @@ body {
 .progress-fill {
   -webkit-animation: fillDirt 10s linear forwards;
           animation: fillDirt 10s linear forwards;
-  background: rgb(100, 50, 50);
-  transform: scaleY(0);
-  transform-origin: 50% 100%;
+  background: #643232;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
   transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
   width: 100%;
   height: 100%;
 }
@@ -77,55 +83,67 @@ body {
   width: 14em;
   height: 8em;
 }
+
 .dump-truck:nth-of-type(2) {
   -webkit-animation: backupL 10s ease-in-out 2 forwards;
           animation: backupL 10s ease-in-out 2 forwards;
   right: 50%;
-  transform: scaleX(-1) translateX(5em);
+  -webkit-transform: scaleX(-1) translateX(5em);
+          transform: scaleX(-1) translateX(5em);
 }
+
 .dump-truck:nth-of-type(2) .bucket {
   -webkit-animation: dump 10s linear 2;
           animation: dump 10s linear 2;
 }
+
 .dump-truck:nth-of-type(2) .dirt {
   -webkit-animation: rotateDirt 10s linear 2;
           animation: rotateDirt 10s linear 2;
 }
+
 .dump-truck:nth-of-type(2) .dirt-spill {
   -webkit-animation: pourDirt 10s linear 2;
           animation: pourDirt 10s linear 2;
 }
+
 .dump-truck:nth-of-type(2) .wheel {
   -webkit-animation: spinL 10s ease-in-out 2;
           animation: spinL 10s ease-in-out 2;
 }
+
 .dump-truck:last-of-type {
   -webkit-animation: backupR 10s 5s ease-in-out 2 forwards;
           animation: backupR 10s 5s ease-in-out 2 forwards;
   left: 50%;
-  transform: translateX(5em);
+  -webkit-transform: translateX(5em);
+          transform: translateX(5em);
 }
+
 .dump-truck:last-of-type .bucket {
   -webkit-animation: dump 10s 5s linear 2;
           animation: dump 10s 5s linear 2;
 }
+
 .dump-truck:last-of-type .dirt {
   -webkit-animation: rotateDirt 10s 5s linear 2;
           animation: rotateDirt 10s 5s linear 2;
 }
+
 .dump-truck:last-of-type .dirt-spill {
   -webkit-animation: pourDirt 10s 5s linear 2;
           animation: pourDirt 10s 5s linear 2;
 }
+
 .dump-truck:last-of-type .wheel {
   -webkit-animation: spinR 10s 5s ease-in-out 2;
           animation: spinR 10s 5s ease-in-out 2;
 }
 
 .front {
-  background: linear-gradient(rgb(255, 63, 48), rgb(255, 63, 48)) 2.7em 0.75em/0.2em 2em, linear-gradient(rgb(160, 160, 160), rgb(160, 160, 160)) 1em 3.5em/0.8em 0.2em, linear-gradient(rgb(80, 80, 80), rgb(80, 80, 80)) 3.3em 6.1em/0.5em 0.2em, linear-gradient(rgb(80, 80, 80), rgb(80, 80, 80)) 3.3em 6.8em/0.5em 0.2em, linear-gradient(83deg, rgb(40, 40, 40) 49%, rgba(40, 40, 40, 0) 50%) 1em 0.75em/5em 2em, radial-gradient(3.4em 4.6em at 33% 100%, rgba(255, 255, 255, 0) 49%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 59%, rgba(255, 255, 255, 0) 60%), radial-gradient(3.4em 4.6em at 33% 100%, rgba(255, 63, 48, 0) 49%, rgb(255, 63, 48) 50%);
+  background: linear-gradient(#ff3f30, #ff3f30) 2.7em 0.75em/0.2em 2em, linear-gradient(#a0a0a0, #a0a0a0) 1em 3.5em/0.8em 0.2em, linear-gradient(#505050, #505050) 3.3em 6.1em/0.5em 0.2em, linear-gradient(#505050, #505050) 3.3em 6.8em/0.5em 0.2em, linear-gradient(83deg, #282828 49%, rgba(40, 40, 40, 0) 50%) 1em 0.75em/5em 2em, radial-gradient(3.4em 4.6em at 33% 100%, rgba(255, 255, 255, 0) 49%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 59%, rgba(255, 255, 255, 0) 60%), radial-gradient(3.4em 4.6em at 33% 100%, rgba(255, 63, 48, 0) 49%, #ff3f30 50%);
   background-repeat: no-repeat;
-  border-radius: 10% 20% 5% 25%/10% 50% 5% 100%;
+  border-radius: 10% 20% 5% 25% / 10% 50% 5% 100%;
   top: 0.4em;
   left: 10.1em;
   width: 3.9em;
@@ -133,42 +151,48 @@ body {
 }
 
 .bucket {
-  background: repeating-linear-gradient(95deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 0.85em, rgba(0, 0, 0, 0.15) 0.9em, rgba(0, 0, 0, 0.15) 1.75em, rgba(0, 0, 0, 0.15) 1.8em) 0.1em 1.6em/7.8em 3.2em, linear-gradient(rgb(80, 80, 80), rgb(80, 80, 80)) 8em 0/2em 0.5em, linear-gradient(95deg, rgba(80, 80, 80, 0) 0.45em, rgb(80, 80, 80) 0.5em, rgb(80, 80, 80) 1.45em, rgba(80, 80, 80, 0) 1.5em) 7em 0/1.6em 5.5em, linear-gradient(rgba(80, 80, 80, 0) 1em, rgb(80, 80, 80) 1em) 0 0/7.5em 5.5em;
+  background: repeating-linear-gradient(95deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 0.85em, rgba(0, 0, 0, 0.15) 0.9em, rgba(0, 0, 0, 0.15) 1.75em, rgba(0, 0, 0, 0.15) 1.8em) 0.1em 1.6em/7.8em 3.2em, linear-gradient(#505050, #505050) 8em 0/2em 0.5em, linear-gradient(95deg, rgba(80, 80, 80, 0) 0.45em, #505050 0.5em, #505050 1.45em, rgba(80, 80, 80, 0) 1.5em) 7em 0/1.6em 5.5em, linear-gradient(rgba(80, 80, 80, 0) 1em, #505050 1em) 0 0/7.5em 5.5em;
   background-repeat: no-repeat;
-  border-radius: 0 0 0 25%/0 0 0 15%;
+  border-radius: 0 0 0 25% / 0 0 0 15%;
   top: 0;
   left: 0;
   width: 10em;
   height: 5.5em;
-  transform: rotate(0deg);
-  transform-origin: 22% 100%;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transform-origin: 22% 100%;
+          transform-origin: 22% 100%;
 }
 
 .dirt {
-  background: rgb(100, 50, 50);
-  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  background: #643232;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
   top: 1.1em;
   left: -3.2em;
   width: 7.4em;
   height: 3em;
-  transform: rotate(-25deg);
-  transform-origin: 50% 0;
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
   z-index: -1;
 }
 
 .dirt-spill {
-  background: rgb(100, 50, 50);
+  background: #643232;
   border-radius: 0.4em;
   top: 0;
   left: -5.25em;
-  transform: rotate(-40deg) scale(1, 1);
-  transform-origin: 5.25em 0em;
+  -webkit-transform: rotate(-40deg) scale(1, 1);
+          transform: rotate(-40deg) scale(1, 1);
+  -webkit-transform-origin: 5.25em 0em;
+          transform-origin: 5.25em 0em;
   width: 5.5em;
   height: 0.8em;
 }
 
 .base {
-  background: rgb(127, 91, 88);
+  background: #7f5b58;
   border-radius: 0.25em;
   top: 5.5em;
   left: 2em;
@@ -177,7 +201,8 @@ body {
 }
 
 .wheel {
-  background: radial-gradient(100% 100%, rgb(40, 40, 40) 9%, rgba(40, 40, 40, 0) 10%), radial-gradient(100% 100%, rgb(160, 160, 160) 29%, rgba(160, 160, 160, 0) 30%), linear-gradient(90deg, rgba(255, 255, 255, 0.15) 49%, rgba(255, 255, 255, 0) 50%), radial-gradient(100% 100%, rgb(40, 40, 40) 49%, rgba(40, 40, 40, 0) 50%);
+  background: radial-gradient(100% 100%, #282828 9%, rgba(40, 40, 40, 0) 10%), radial-gradient(100% 100%, #a0a0a0 29%, rgba(160, 160, 160, 0) 30%), -webkit-gradient(linear, left top, right top, color-stop(49%, rgba(255, 255, 255, 0.15)), color-stop(50%, rgba(255, 255, 255, 0))), radial-gradient(100% 100%, #282828 49%, rgba(40, 40, 40, 0) 50%);
+  background: radial-gradient(100% 100%, #282828 9%, rgba(40, 40, 40, 0) 10%), radial-gradient(100% 100%, #a0a0a0 29%, rgba(160, 160, 160, 0) 30%), linear-gradient(90deg, rgba(255, 255, 255, 0.15) 49%, rgba(255, 255, 255, 0) 50%), radial-gradient(100% 100%, #282828 49%, rgba(40, 40, 40, 0) 50%);
   border-radius: 50%;
   bottom: 0;
   width: 2.4em;
@@ -200,137 +225,180 @@ body {
 @-webkit-keyframes backupL {
   from, 50%, to {
     opacity: 0;
-    transform: scaleX(-1) translateX(20em);
+    -webkit-transform: scaleX(-1) translateX(20em);
+            transform: scaleX(-1) translateX(20em);
   }
   12.5%, 37.5% {
     opacity: 1;
-    transform: scaleX(-1) translateX(5em);
+    -webkit-transform: scaleX(-1) translateX(5em);
+            transform: scaleX(-1) translateX(5em);
   }
 }
 @keyframes backupL {
   from, 50%, to {
     opacity: 0;
-    transform: scaleX(-1) translateX(20em);
+    -webkit-transform: scaleX(-1) translateX(20em);
+            transform: scaleX(-1) translateX(20em);
   }
   12.5%, 37.5% {
     opacity: 1;
-    transform: scaleX(-1) translateX(5em);
+    -webkit-transform: scaleX(-1) translateX(5em);
+            transform: scaleX(-1) translateX(5em);
   }
 }
+
 @-webkit-keyframes backupR {
   from, 50%, to {
     opacity: 0;
-    transform: translateX(20em);
+    -webkit-transform: translateX(20em);
+            transform: translateX(20em);
   }
   12.5%, 37.5% {
     opacity: 1;
-    transform: translateX(5em);
+    -webkit-transform: translateX(5em);
+            transform: translateX(5em);
   }
 }
+
 @keyframes backupR {
   from, 50%, to {
     opacity: 0;
-    transform: translateX(20em);
+    -webkit-transform: translateX(20em);
+            transform: translateX(20em);
   }
   12.5%, 37.5% {
     opacity: 1;
-    transform: translateX(5em);
+    -webkit-transform: translateX(5em);
+            transform: translateX(5em);
   }
 }
+
 @-webkit-keyframes dump {
   from, 12.5%, 37.5%, to {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   20%, 30% {
-    transform: rotate(-40deg);
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
   }
 }
+
 @keyframes dump {
   from, 12.5%, 37.5%, to {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   20%, 30% {
-    transform: rotate(-40deg);
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
   }
 }
+
 @-webkit-keyframes rotateDirt {
   from, 19.9%, 30.1%, to {
     opacity: 0;
   }
   20%, 30% {
     opacity: 1;
-    transform: rotate(-40deg);
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
   }
   25% {
-    transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
   }
 }
+
 @keyframes rotateDirt {
   from, 19.9%, 30.1%, to {
     opacity: 0;
   }
   20%, 30% {
     opacity: 1;
-    transform: rotate(-40deg);
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
   }
   25% {
-    transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
   }
 }
+
 @-webkit-keyframes pourDirt {
   from, 20% {
-    transform: rotate(-40deg) scale(0, 0);
+    -webkit-transform: rotate(-40deg) scale(0, 0);
+            transform: rotate(-40deg) scale(0, 0);
   }
   25% {
-    transform: rotate(-40deg) scale(1, 1);
+    -webkit-transform: rotate(-40deg) scale(1, 1);
+            transform: rotate(-40deg) scale(1, 1);
   }
   30%, to {
-    transform: rotate(-25deg) scale(0.8, 0);
+    -webkit-transform: rotate(-25deg) scale(0.8, 0);
+            transform: rotate(-25deg) scale(0.8, 0);
   }
 }
+
 @keyframes pourDirt {
   from, 20% {
-    transform: rotate(-40deg) scale(0, 0);
+    -webkit-transform: rotate(-40deg) scale(0, 0);
+            transform: rotate(-40deg) scale(0, 0);
   }
   25% {
-    transform: rotate(-40deg) scale(1, 1);
+    -webkit-transform: rotate(-40deg) scale(1, 1);
+            transform: rotate(-40deg) scale(1, 1);
   }
   30%, to {
-    transform: rotate(-25deg) scale(0.8, 0);
+    -webkit-transform: rotate(-25deg) scale(0.8, 0);
+            transform: rotate(-25deg) scale(0.8, 0);
   }
 }
+
 @-webkit-keyframes spinL {
   from, 50%, to {
-    transform: rotate(-0.5turn);
+    -webkit-transform: rotate(-0.5turn);
+            transform: rotate(-0.5turn);
   }
   12.5%, 37.5% {
-    transform: rotate(-2.5turn);
+    -webkit-transform: rotate(-2.5turn);
+            transform: rotate(-2.5turn);
   }
 }
+
 @keyframes spinL {
   from, 50%, to {
-    transform: rotate(-0.5turn);
+    -webkit-transform: rotate(-0.5turn);
+            transform: rotate(-0.5turn);
   }
   12.5%, 37.5% {
-    transform: rotate(-2.5turn);
+    -webkit-transform: rotate(-2.5turn);
+            transform: rotate(-2.5turn);
   }
 }
+
 @-webkit-keyframes spinR {
   from, 50%, to {
-    transform: rotate(0);
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
   }
   12.5%, 37.5% {
-    transform: rotate(-2turn);
+    -webkit-transform: rotate(-2turn);
+            transform: rotate(-2turn);
   }
 }
+
 @keyframes spinR {
   from, 50%, to {
-    transform: rotate(0);
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
   }
   12.5%, 37.5% {
-    transform: rotate(-2turn);
+    -webkit-transform: rotate(-2turn);
+            transform: rotate(-2turn);
   }
 }
+
 @-webkit-keyframes hideLoad {
   from {
     visibility: visible;
@@ -339,6 +407,7 @@ body {
     visibility: hidden;
   }
 }
+
 @keyframes hideLoad {
   from {
     visibility: visible;
@@ -347,29 +416,38 @@ body {
     visibility: hidden;
   }
 }
+
 @-webkit-keyframes showFinish {
   from {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
     visibility: visible;
   }
   80% {
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   to {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
     visibility: visible;
   }
 }
+
 @keyframes showFinish {
   from {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
     visibility: visible;
   }
   80% {
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   to {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
     visibility: visible;
   }
-}/*# sourceMappingURL=estilo.css.map */
+}
+/*# sourceMappingURL=estilo.css.map */

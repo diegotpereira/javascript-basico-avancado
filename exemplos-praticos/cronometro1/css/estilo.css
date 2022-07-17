@@ -13,7 +13,7 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 100;
   font-size: 2.6em;
   text-transform: uppercase;
@@ -37,9 +37,12 @@ button {
   margin: 10px;
   outline: none;
 }
+
 button:hover {
+  -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   background: #fff;
   border: solid 1px #fff;
   color: #ffa600;
-}/*# sourceMappingURL=estilo.css.map */
+}
+/*# sourceMappingURL=estilo.css.map */

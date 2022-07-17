@@ -1,14 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   background-color: #fff;
 }
+
 body ul li {
   list-style-type: none;
 }
@@ -23,16 +25,19 @@ body ul li {
 ul#menu {
   display: none;
 }
+
 ul#menu li a {
   width: 100%;
   display: block;
   background-color: #679EB9;
   color: #000;
-  font-size: 1em;
+  font-size: 1.0em;
   padding: 1.5em 1.6em;
+  -webkit-transition: background 0.2s;
   transition: background 0.2s;
   text-decoration: none;
 }
+
 ul#menu a:hover {
   background-color: #4b85a2;
 }
@@ -49,12 +54,14 @@ ul#menu a:hover {
     margin-right: -5px;
   }
 }
+
 ul.hamburger li {
   height: 5px;
   background: black;
-  content: "";
+  content: '';
   position: relative;
-  transition: 0.25s ease-in-out;
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
 }
 
 .hidden {
@@ -62,23 +69,28 @@ ul.hamburger li {
 }
 
 .rot45deg {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   top: 10px !important;
 }
 
 .rot-45deg {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 ul.hamburger {
   display: block;
 }
+
 ul.hamburger li:nth-child(1) {
   top: 0;
 }
+
 ul.hamburger li:nth-child(2) {
   top: 5px;
 }
+
 ul.hamburger li:nth-child(3) {
   top: 10px;
 }
@@ -88,4 +100,5 @@ ul.hamburger li:nth-child(3) {
   margin: 1.2em 1.6em;
   height: 30px;
   cursor: pointer;
-}/*# sourceMappingURL=estilo.css.map */
+}
+/*# sourceMappingURL=estilo.css.map */

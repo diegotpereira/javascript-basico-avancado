@@ -11,7 +11,7 @@
   top: 25px;
   left: 25px;
   text-align: center;
-  padding: 1em 0.8em 0 0.8em;
+  padding: 1.0em 0.8em 0 0.8em;
   font-size: 1.4em;
 }
 
@@ -24,7 +24,7 @@ ul {
 
 li {
   float: left;
-  font-family: "Droid Sans", sans-serif;
+  font-family: 'Droid Sans', sans-serif;
   margin: 0 1em 0.1em 0;
   background-color: #000;
   color: #fff;
@@ -33,4 +33,5 @@ li {
   cursor: pointer;
   font-style: normal;
   list-style-image: none;
-}/*# sourceMappingURL=estilo.css.map */
+}
+/*# sourceMappingURL=estilo.css.map */
