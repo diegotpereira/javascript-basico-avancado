@@ -7,11 +7,11 @@ $branco: #fff;
 $cor-base: $verde;
 
 /*Mixins */
-// @mixin transition {
-//     -webkit-transition: all 0.5s ease-in-out;
-//     -moz-transition: all 0.5s ease-in-out;
-//     transition: all 0.5s ease-in-out;
-// }
+@mixin transition {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
 @mixin clear {
     &:after {
         content: "";
@@ -19,31 +19,65 @@ $cor-base: $verde;
         clear: both;
     }
 }
-// @mixin box-size {
-//     -webkit-box-sizing: border-box;
-//     -moz-box-sizing: border-box;
-//     box-sizing: border-box;
-// }
+@mixin box-size {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 @mixin transition {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-// @mixin fade {
-//     -moz-transition: all 1s ease-in;
-//     -moz-transition: all 0.3s ease-in-out;
-//     -webkit-transition: all 0.3s ease-in-out;
-// }
-// @mixin opacity {
-//     opacity: 0.4;
-//     filter: alpha(opacity = 40);
-//     @include fade;
-// }
+@mixin fade {
+    -moz-transition: all 1s ease-in;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+@mixin opacity {
+    opacity: 0.4;
+    filter: alpha(opacity = 40);
+    @include fade;
+}
 @mixin corners($radius) {
     -moz-border-radius: $radius;
     -webkit-border-radius: $radius;
     border-radius: $radius; 
     -khtml-border-radius: $radius; 
+}
+body {
+    background:$cor-base;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    color:$branco;
+    height:100%;
+    text-align:center;
+    font-size:18px;
+}
+
+.wrapper {
+    @include clear;
+    width: 100%;
+    margin: 0 auto;
+}
+canvas {
+    color: white;
+    border: $branco dashed 2px;
+    padding: 15px;
+}
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin: 5px 0;
+}
+h1 {
+    font-size: 2.6em;
+}
+h2 {
+    font-size: 1.6em;
+}
+p {
+    font-size: 1.6em;
 }
 #alfabeto {
     @include clear;
@@ -60,6 +94,7 @@ $cor-base: $verde;
     padding-top: 10px;
     background: $branco;
     color: $cor-base;
+    cursor:pointer;
     @include corners(5px);
     border: solid 1px $branco;
 
@@ -69,10 +104,37 @@ $cor-base: $verde;
         color: $branco;
     }
 }
+#minhas-palavras {
+    margin: 0;
+    display: block;
+    padding: 0;
+    display: block;
+}
+#minhas-palavras li {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 1.6em;
+}
+.ativo {
+    @include opacity;
+    cursor: default;
 
+    &:hover {
+        @include fade;
+        @include opacity;
+    }
+}
+#minhasVidas {
+    font-size: 1.6em;
+    text-align: center;
+    display: block;
+}
 botoes {
     @include corners (5px);
-    background-color: $cor-base;
+    background: $cor-base;
     color: $branco;
     border: solid 1px $branco;
     text-decoration: none;
@@ -99,18 +161,4 @@ botoes {
     #alfabeto {
         padding: 0 0 0 25px;
     }
-}
-body {
-    background:$cor-base;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-    color:$branco;
-    height:100%;
-    text-align:center;
-    font-size:18px;
-}
-
-.wrapper {
-    @include clear;
-    width: 100%;
-    margin: 0 auto;
 }

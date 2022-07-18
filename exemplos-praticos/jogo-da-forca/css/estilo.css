@@ -1,10 +1,53 @@
 /*Mixins */
+body {
+  background: #c1d72e;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #fff;
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+canvas {
+  color: white;
+  border: #fff dashed 2px;
+  padding: 15px;
+}
+
+h1, h2, h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
+h1 {
+  font-size: 2.6em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+p {
+  font-size: 1.6em;
+}
+
 #alfabeto {
   margin: 15px auto;
   padding: 0;
   max-width: 900px;
 }
-
 #alfabeto:after {
   content: "";
   display: table;
@@ -20,21 +63,62 @@
   padding-top: 10px;
   background: #fff;
   color: #c1d72e;
+  cursor: pointer;
   border-radius: 5px;
   -khtml-border-radius: 5px;
   border: solid 1px #fff;
 }
-
 #alfabeto li:hover {
   background: #c1d72e;
   border: solid 1px #fff;
   color: #fff;
 }
 
+#minhas-palavras {
+  margin: 0;
+  display: block;
+  padding: 0;
+  display: block;
+}
+
+#minhas-palavras li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 1.6em;
+}
+
+.ativo {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  -moz-transition: all 1s ease-in;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  cursor: default;
+}
+.ativo:hover {
+  -moz-transition: all 1s ease-in;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  -moz-transition: all 1s ease-in;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+#minhasVidas {
+  font-size: 1.6em;
+  text-align: center;
+  display: block;
+}
+
 botoes {
   border-radius: 5px;
   -khtml-border-radius: 5px;
-  background-color: #c1d72e;
+  background: #c1d72e;
   color: #fff;
   border: solid 1px #fff;
   text-decoration: none;
@@ -45,9 +129,7 @@ botoes {
   margin: 10px;
   outline: none;
 }
-
 botoes:hover {
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background: #fff;
   border: solid 1px #fff;
@@ -59,30 +141,8 @@ botoes:hover {
     padding: 0 0 0 15px;
   }
 }
-
 @media (max-width: 480px) {
   #alfabeto {
     padding: 0 0 0 25px;
   }
-}
-
-body {
-  background: #c1d72e;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color: #fff;
-  height: 100%;
-  text-align: center;
-  font-size: 18px;
-}
-
-.wrapper {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.wrapper:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/*# sourceMappingURL=estilo.css.map */
+}/*# sourceMappingURL=estilo.css.map */
