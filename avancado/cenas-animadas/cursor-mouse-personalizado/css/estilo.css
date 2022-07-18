@@ -1,7 +1,6 @@
 html {
   background: #da4453;
-  background: -webkit-gradient(linear, left top, right top, from(#89216b), to(#da554453));
-  background: linear-gradient(to right, #89216b, #da554453);
+  background: linear-gradient(to right, #89216b, rgba(218, 85, 68, 0.3254901961));
   mix-blend-mode: exclusion;
   cursor: none;
 }
@@ -17,14 +16,8 @@ html {
   border-radius: 100px;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
-
 .cursor.is-moving {
-  -webkit-transform: scale 0.7;
-          transform: scale 0.7;
-}
-/*# sourceMappingURL=estilo.css.map */
+  transform: scale 0.7;
+}/*# sourceMappingURL=estilo.css.map */

@@ -1,0 +1,12 @@
+body {
+  background: #f1f1f1;
+  margin-top: 2rem;
+}
+
+.tarefas {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.tarefas .erros {
+  display: none;
+}/*# sourceMappingURL=estilo.css.map */

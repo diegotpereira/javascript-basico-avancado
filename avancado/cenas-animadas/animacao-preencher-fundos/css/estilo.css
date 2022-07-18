@@ -1,61 +1,40 @@
 body {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background-color: #ccc;
   background-image: radial-gradient(#fff, #ccc);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   font-family: sans-serif;
   height: 100vh;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin: 0;
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   width: 64vmin;
 }
-
 .container .caixa {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background-color: #fff;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-sizing: border-box;
   display: flex;
   font-size: 4vmin;
   height: 35vmin;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin: 1vmin;
   padding: 3vmin;
   width: 30vmin;
 }
-
 .container .caixa:nth-child(1) {
   background-color: #f69;
 }
-
 .container .caixa:nth-child(2) {
   background-color: #ee0;
 }
-
 .container .caixa:nth-child(3) {
   background-color: #6c3;
 }
-
 .container .caixa:nth-child(4) {
   background-color: #6cf;
 }
@@ -74,26 +53,21 @@ body {
 @-webkit-keyframes fill {
   0% {
     border-radius: 50%;
-    -webkit-transform: translateY(150%) translateX(150%) scale(2);
-            transform: translateY(150%) translateX(150%) scale(2);
+    transform: translateY(150%) translateX(150%) scale(2);
   }
   100% {
     border-radius: 50%;
-    -webkit-transform: scale(2);
-            transform: scale(2);
+    transform: scale(2);
   }
 }
 
 @keyframes fill {
   0% {
     border-radius: 50%;
-    -webkit-transform: translateY(150%) translateX(150%) scale(2);
-            transform: translateY(150%) translateX(150%) scale(2);
+    transform: translateY(150%) translateX(150%) scale(2);
   }
   100% {
     border-radius: 50%;
-    -webkit-transform: scale(2);
-            transform: scale(2);
+    transform: scale(2);
   }
-}
-/*# sourceMappingURL=estilo.css.map */
+}/*# sourceMappingURL=estilo.css.map */

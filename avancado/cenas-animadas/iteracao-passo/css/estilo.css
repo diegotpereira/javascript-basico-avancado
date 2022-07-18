@@ -3,16 +3,10 @@ html, body {
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-family: 'Roboto', sans-serif;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   color: #231F20;
   font-size: 20px;
@@ -35,24 +29,16 @@ body {
   width: 130px;
   height: 130px;
   border-radius: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   font-size: 64px;
   position: relative;
-  -webkit-box-shadow: -1px 57px 80px -17px rgba(255, 73, 87, 0.25);
-          box-shadow: -1px 57px 80px -17px rgba(255, 73, 87, 0.25);
+  box-shadow: -1px 57px 80px -17px rgba(255, 73, 87, 0.25);
   overflow: hidden;
   z-index: 2;
 }
-
 .stepper span {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -61,15 +47,11 @@ body {
   position: absolute;
   top: 28px;
   left: 50%;
-  -webkit-transform: translateY(0) translateX(-50%);
-          transform: translateY(0) translateX(-50%);
+  transform: translateY(0) translateX(-50%);
 }
-
 .stepper span.active {
-  -webkit-transform: translateY(0) translateX(-50%);
-          transform: translateY(0) translateX(-50%);
+  transform: translateY(0) translateX(-50%);
 }
-
 .stepper span.hide {
   opacity: 0;
 }
@@ -78,8 +60,7 @@ body {
   position: absolute;
   top: -120px;
   left: 0;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -91,8 +72,7 @@ body {
   position: absolute;
   bottom: -57px;
   left: 0;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -113,38 +93,30 @@ body {
 
 @-webkit-keyframes github {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.2);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 
 @keyframes github {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.2);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
-
 .desc {
   position: absolute;
   top: 40px;
   left: 40px;
   color: #ffbac1;
-}
-/*# sourceMappingURL=estilo.css.map */
+}/*# sourceMappingURL=estilo.css.map */

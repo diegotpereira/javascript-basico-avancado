@@ -1,0 +1,106 @@
+$primario: #313e50;
+$cinza: #cdcdcd;
+$secundario: #1dd2af;
+
+%redefinir {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+%transition {
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+}
+body {
+    background: #f1f1f1;
+    margin-top: 2rem;
+}
+
+.tarefas {
+    max-width: 400px;
+    margin: 0 auto;
+    .erros {
+        display: none;
+        background: rgba(237, 28, 36, 0.7);
+        color: #fff;
+        padding: 14px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    ul {
+        @extend %redefinir;
+        background: #fff;
+    }
+    li,
+    .erros,
+    button,
+    input {
+        @extend %redefinir;
+        font: 18px/1.25em Helvetica, Arial, Sans-serif;
+    }
+}
+.tarefas-header {
+    display: inline-flex;
+    background: $primario;
+    justify-content: space-between;
+    width: 100%;
+    input,
+    button {
+        color: #fff;
+        box-sizing: border-box;
+        font-size: 1.25em;
+        padding: 14px;
+    }
+    input {
+        flex-grow: 2;
+    }
+    button {
+        @extend %transition;
+        background: $secundario;
+        border-left: 1px solid ($secundario * 1.05);
+
+        &:hover {
+            background: $secundario * 1.1;
+        }
+    }
+}
+.tarefas-body {
+    .tarefa {
+        display: block;
+        position: relative;
+        padding: 14px 40px 14px 14px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        &:last-child {
+            border-bottom: none;
+        }
+        &:hover > button {
+            opacity: 1;
+        }
+
+        &.completada {
+            color: $cinza;
+            text-decoration: line-through;
+        }
+    }
+    input {
+        margin-right: 10px;
+    }
+    button {
+        @extend %transition;
+        color: $cinza;
+        margin: 14px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+
+        &:hover {
+            color: #ed1c24;
+        }
+    }
+}
