@@ -1,0 +1,116 @@
+// */ variaveis */
+$laranja: #ffa600;
+$verde: #c1d72e;
+$azul: #82d2e5;
+$cinza: #f3f3f3;
+$branco: #fff;
+$cor-base: $verde;
+
+/*Mixins */
+// @mixin transition {
+//     -webkit-transition: all 0.5s ease-in-out;
+//     -moz-transition: all 0.5s ease-in-out;
+//     transition: all 0.5s ease-in-out;
+// }
+@mixin clear {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+// @mixin box-size {
+//     -webkit-box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+//     box-sizing: border-box;
+// }
+@mixin transition {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+// @mixin fade {
+//     -moz-transition: all 1s ease-in;
+//     -moz-transition: all 0.3s ease-in-out;
+//     -webkit-transition: all 0.3s ease-in-out;
+// }
+// @mixin opacity {
+//     opacity: 0.4;
+//     filter: alpha(opacity = 40);
+//     @include fade;
+// }
+@mixin corners($radius) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius; 
+    -khtml-border-radius: $radius; 
+}
+#alfabeto {
+    @include clear;
+    margin: 15px auto;
+    padding: 0;
+    max-width: 900px;
+}
+#alfabeto li {
+    float: left;
+    margin: 0 10px 10px 0;
+    list-style: none;
+    width: 35px;
+    height: 30px;
+    padding-top: 10px;
+    background: $branco;
+    color: $cor-base;
+    @include corners(5px);
+    border: solid 1px $branco;
+
+    &:hover {
+        background: $cor-base;
+        border: solid 1px $branco;
+        color: $branco;
+    }
+}
+
+botoes {
+    @include corners (5px);
+    background-color: $cor-base;
+    color: $branco;
+    border: solid 1px $branco;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 18px 10px;
+    width: 180px;
+    margin: 10px;
+    outline: none;
+
+    &:hover {
+        @include transition;
+        background: $branco;
+        border: solid 1px $branco;
+        color: $cor-base;
+    }
+}
+@media (max-width: 767px) {
+    #alfabeto {
+        padding: 0 0 0 15px;
+    }
+}
+@media (max-width: 480px) {
+    #alfabeto {
+        padding: 0 0 0 25px;
+    }
+}
+body {
+    background:$cor-base;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    color:$branco;
+    height:100%;
+    text-align:center;
+    font-size:18px;
+}
+
+.wrapper {
+    @include clear;
+    width: 100%;
+    margin: 0 auto;
+}
