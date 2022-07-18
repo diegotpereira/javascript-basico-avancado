@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</head>
+<body>
+    <div class="app">
+        <div class="container-fluid app-container">
+        <div class="row app-linha">
+            <div class="col-xs-4 jogar-caixa" id="0">
+                <div class="simbolo"></div>
+            </div>
+            <div class="col-xs-4 jogar-caixa" id="1">
+                <div class="simbolo"></div>
+            </div>
+            <div class="col-xs-4 jogar-caixa ultimo-direito" id="2">
+                <div class="simbolo"></div>
+            </div>
+            <div class="col-xs-4 jogar-caixa" id="3">
+                <div class="simbolo"></div>
+            </div>
+            <div class="col-xs-4 jogar-caixa" id="4">
+                <div class="simbolo"></div>
+            </div>
+            <div class="col-xs-4 jogar-caixa ultimo-direito" id="5">
+                <div class="simbolo"></div>
+            </div>
+            <div class="col-xs-4 jogar-caixa ultimo-botao" id="6">
+                <div class="simbolo"></div>
+            </div>
+            <div class="col-xs-4 jogar-caixa ultimo-botao" id="7">
+                <div class="simbolo"></div>
+            </div>
+            <div class="col-xs-4 jogar-caixa ultimo-direito ultimo-botao" id="8">
+                <div class="simbolo"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade app-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-size">
+        <div class="modal-content">
+          <h3 class="content heading">Aviso!!!</h3>
+          <hr class="warning-hr">
+          <div class="content body">
+            Por favor, economize seu tempo e nem pense que você é inteligente. 
+            <br><strong><em>EU SOU MAIS INTELIGENTE QUE VOCÊ! HA-HA-HA!!!</em></strong> <br>
+            Quer me desafiar? Escolha: <br>
+              <div class="center-block simbolo-opcoes">
+                  <button class="simbolo-opcao btn btn-default btn-md" data-dismiss="modal">X</button> Ou 
+                <button class="simbolo-opcao btn btn-default btn-md" data-dismiss="modal">O</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

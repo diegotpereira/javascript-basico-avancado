@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Yesteryear);
+@-webkit-keyframes vencedorAnim {
+  0% {
+    background-color: cyan;
+  }
+  100% {
+    background-color: #508ABB;
+  }
+}
+@keyframes vencedorAnim {
+  0% {
+    background-color: cyan;
+  }
+  100% {
+    background-color: #508ABB;
+  }
+}
+@keyframes vencedorAnim {
+  0% {
+    background-color: cyan;
+  }
+  100% {
+    background-color: #508ABB;
+  }
+}
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline-style: none;
+}
+
+.center-box, .app {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+html,
+body {
+  background-color: #d2dbdc;
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  width: 80%;
+  height: 70%;
+  max-width: 550px;
+  background-color: #508ABB;
+  box-sahdow: 0 50px 30px -5px rgba(0, 0, 0, 0.85);
+  border-radius: 10px;
+}
+.app .app-container,
+.app .app-row {
+  height: 100%;
+}
+
+.jogar-caixa, .simbolo-opcoes {
+  font-family: "Yesteryear", cursive;
+}
+
+.jogar-caixa {
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  height: 33.3333333333%;
+}/*# sourceMappingURL=estilo.css.map */

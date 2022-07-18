@@ -1,0 +1,144 @@
+@import url(https://fonts.googleapis.com/css?family=Yesteryear);
+
+$app-cor-fundo: #508ABB;
+$app-linha-altura: 100%;
+$vencedorAnimIniciarCor: cyan;
+$vencedorAnimFinalCor: #508ABB;
+
+@-webkit-keyframes vencedorAnim {
+    0% {
+        background-color: $vencedorAnimIniciarCor;
+    }
+    100% {
+        background-color: $vencedorAnimFinalCor;
+    }
+}
+@-moz-keyframes vencedorAnim {
+    0% {
+        background-color: $vencedorAnimIniciarCor;
+    }
+    100% {
+        background-color: $vencedorAnimFinalCor;
+    }
+}
+@-o-keyframes vencedorAnim {
+    0% {
+        background-color: $vencedorAnimIniciarCor;
+    }
+    100% {
+        background-color: $vencedorAnimFinalCor;
+    }
+}
+@keyframes vencedorAnim {
+    0% {
+        background-color: $vencedorAnimIniciarCor;
+    }
+    100% {
+        background-color: $vencedorAnimFinalCor;
+    }
+}
+@keyframes vencedorAnim {
+    0% {
+        background-color: $vencedorAnimIniciarCor;
+    }
+    100% {
+        background-color: $vencedorAnimFinalCor;
+    }
+}
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline-style: none;
+}
+.center-box {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+html,
+body {
+    background-color: #d2dbdc;
+    height: 100%;
+    width: 100%;
+}
+.app {
+    @extend .center-box;
+    width: 80%;
+    height: 70%;
+    max-width: 550px;
+    background-color: $app-cor-fundo;
+    box-shadow: 0 5px 30px -5px rgba(0, 0, 0, .85);
+    border-radius: 10px;
+
+    .app-container,
+    .app-linha {
+        height: $app-linha-altura;
+    }
+}
+.jogar-caixa, .simbolo-opcao {
+    font-family: 'Yesteryear', cursive;
+}
+.jogar-caixa {
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    height: $app-linha-altura / 3;
+    cursor: pointer;
+    position: relative;
+
+    &.ultimo-direito {
+        border-right: none;
+    }
+    
+}
+&.ultimo-botao {
+    border-bottom: none;
+}
+&.vencedor {
+    -webkit-animation: winAnim .2s ease-out infinite;
+    -moz-animation: winAnim .2s ease-out infinite;
+    -o-animation: winAnim .2s ease-out infinite;
+    animation: winAnim .2s ease-out infinite;
+    animation: winAnim .5s infinite;
+}
+.simbolo {
+    @extend .center-box;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 35px;
+    color: white;
+}
+.modal-content {
+    .content {
+        padding: 15px;
+        text-align: center;
+        margin: 0;
+
+        &.body {
+            line-height: 2;
+        }
+    }
+    .simbolo-opcoes {
+        width: 200px;
+        margin-top: 10px;
+        .simbolo-opcao {
+            &:first-child {
+                margin-right: 10px;
+            }
+            &:last-child {
+                margin-left: 10px;
+            }
+        }
+    }
+    .warning-hr {
+        margin: 0;
+    }
+}
