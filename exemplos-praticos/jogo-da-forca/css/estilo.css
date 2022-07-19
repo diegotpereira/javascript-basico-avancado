@@ -12,6 +12,7 @@ body {
   width: 100%;
   margin: 0 auto;
 }
+
 .wrapper:after {
   content: "";
   display: table;
@@ -25,7 +26,7 @@ canvas {
 }
 
 h1, h2, h3 {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 100;
   text-transform: uppercase;
   margin: 5px 0;
@@ -48,6 +49,7 @@ p {
   padding: 0;
   max-width: 900px;
 }
+
 #alfabeto:after {
   content: "";
   display: table;
@@ -68,6 +70,7 @@ p {
   -khtml-border-radius: 5px;
   border: solid 1px #fff;
 }
+
 #alfabeto li:hover {
   background: #c1d72e;
   border: solid 1px #fff;
@@ -98,6 +101,7 @@ p {
   -webkit-transition: all 0.3s ease-in-out;
   cursor: default;
 }
+
 .ativo:hover {
   -moz-transition: all 1s ease-in;
   -moz-transition: all 0.3s ease-in-out;
@@ -129,7 +133,9 @@ botoes {
   margin: 10px;
   outline: none;
 }
+
 botoes:hover {
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background: #fff;
   border: solid 1px #fff;
@@ -141,8 +147,10 @@ botoes:hover {
     padding: 0 0 0 15px;
   }
 }
+
 @media (max-width: 480px) {
   #alfabeto {
     padding: 0 0 0 25px;
   }
-}/*# sourceMappingURL=estilo.css.map */
+}
+/*# sourceMappingURL=estilo.css.map */
