@@ -46,6 +46,7 @@ computador = {
     jogarProximaRodada: undefined,
     moves: [],
     iniciarPontos: [0, 2, 4, 6, 8],
+    jogarProximaRodada: undefined,
     padraoCentral: false,
 
 
@@ -283,7 +284,11 @@ computador = {
         this.jogarProximaRodada = this.facaTerceiroMovimento
     },
     facaTerceiroMovimento: function facaTerceiroMovimento() {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> ec525fd8682f732438486780981dceb6833a48f2
     },
     facaMover: function facaMover(mover) {
         this.moves.push(mover)
