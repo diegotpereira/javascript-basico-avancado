@@ -115,7 +115,7 @@
     for(var i = 0; i < questoes[index].escolhas.length; i++) {
         item = $('<li>')
 
-        entrada = '<input type="radio" name="resposta" value=' + i + '/>'
+        entrada = '<input type="radio" name="resposta" value=' + i + ' />'
         entrada += questoes[index].escolhas[i]
         
         item.append(entrada)
@@ -126,11 +126,12 @@
 
   // Lê a seleção do usuário e envia o valor para um array
   function escolha() {
-    selecoes[contarQuestoes] = +$('entrada[name="resposta"]:checked').val()
+    selecoes[contarQuestoes] = +$('input[name="resposta"]:checked').val()
   }
   // Exibe o próximo elemento solicitado
   function exibirProxima() {
     quiz.fadeOut(function() {
+        
         $('#questao').remove()
 
         if (contarQuestoes < questoes.length) {
@@ -139,7 +140,7 @@
             quiz.append(proximaQuestao).fadeIn()
 
             if (!(isNaN(selecoes[contarQuestoes]))) {
-                $('entrada[value= '+selecoes[contarQuestoes] +']').prop('checked', true)
+                $('input[value= '+selecoes[contarQuestoes] +']').prop('checked', true)
             }
             // Controla a exibição do botão 'anterior'
             if (contarQuestoes === 1) {
@@ -169,7 +170,7 @@
             numCorreto++
         }
     }
-    pontuacao.append('Você tem ' + numCorreto + ' perguntas fora de ' + questoes.length+ ' certas')
+    pontuacao.append('Você acertou ' + numCorreto + ' respostas em ' + questoes.length+ ' questões.')
 
     return pontuacao
   }
