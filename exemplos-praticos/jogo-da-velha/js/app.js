@@ -51,7 +51,7 @@ computador = {
     quartoVencedorOpcoes: [{bloqueadoPonto: 0, vencedorOpcoes: [1, 3] }, { bloqueadoPonto: 2, vencedorOpcoes: [1, 5] }, { bloqueadoPonto: 6, vencedorOpcoes: [3, 7] }, { bloqueadoPonto: 8, vencedorOpcoes: [7, 5] }],
 
 
-    fazerPrimeiroMovimento: function fazerPrimeiroMovimento() {
+    facaPrimeiroMovimento: function facaPrimeiroMovimento() {
         var mover 
 
         mover = this.iniciarPontos[Math.round(Math.random() * (this.iniciarPontos.length - 1))]
@@ -440,6 +440,8 @@ computador = {
                         try {
                             for(var _iterador12 = jogoGrid[grade] [Symbol.iterator](), _passo12; !(_iteradorNormalCompleto12 = (_passo12 = _iterador12.next()).done);
                             _iteradorNormalCompleto12 = true) {
+                                var linha = _passo12.value 
+
                                 if (arrayHas(linha, hm)) {
                                     var _iteradorNormalCompleto13 = true;
                                     var _didIteradorErro13 = false;
@@ -526,7 +528,7 @@ computador = {
                                     var _iteradorErro16 = undefined;
 
                                     try {
-                                        for(var _iterador16 = linha[Symbol.iterator](), _passo16; !(_iteradorNormalCompleto16 = (_passo16.next()).done);
+                                        for(var _iterador16 = linha[Symbol.iterator](), _passo16; !(_iteradorNormalCompleto16 = (_passo16 = _iterador16.next()).done);
                                         _iteradorNormalCompleto16 = true) {
                                             var valor = _passo16.value 
 
@@ -597,7 +599,7 @@ computador = {
             var _iteradorErro17 = undefined;
 
             try {
-                jogoGridLoop: for(var _iterador17 = Object.keys(jogoGrid) [Symbol.iterator](), _passo17; !(_iteradorNormalCompleto17 = (_passo17.next()).done);
+                jogoGridLoop: for(var _iterador17 = Object.keys(jogoGrid) [Symbol.iterator](), _passo17; !(_iteradorNormalCompleto17 = (_passo17 = _iterador17.next()).done);
                 _iteradorNormalCompleto17 = true) {
                     var grade = _passo17.value 
 
@@ -1097,7 +1099,7 @@ computador = {
                             var _iteradorErro34 = undefined;
 
                             try {
-                                linhaLoop: for(var _iterador34 = linha[Symbol.iterator](), _passo34; !(_iteradorNormalCompleto34 = (_passo34 = _iterador34.nex()).done);
+                                linhaLoop: for(var _iterador34 = linha[Symbol.iterator](), _passo34; !(_iteradorNormalCompleto34 = (_passo34 = _iterador34.next()).done);
                                 _iteradorNormalCompleto34) {
                                     var valor = _passo34.value 
 
@@ -1319,7 +1321,7 @@ computador = {
 
                                     if (!arrayHas(humano.moves, valor) && !arrayHas(computador.moves, valor)) {
                                         computador.facaMover(valor)
-
+                                        reiniciarJogo()
                                         return false
                                     }
                                 }
@@ -1418,6 +1420,8 @@ computador = {
     vencedor: function vencedor() {
         console.log('computador ganhou!!!');
 
+        var vencedorPontos
+
         var _iteradorNormalCompleto43 = true;
         var _didIteradorErro43 = false;
         var _iteradorErro43 = undefined;
@@ -1432,7 +1436,7 @@ computador = {
                 var _iteradorErro44 = undefined;
 
                 try {
-                    gradeLinhaLoop: for(var _iterador44 = jogoGrid[grade] [Symbol.iterator](), _passo44; !(_iteradorNormalCompleto44 = (_passo44 = _iterador44.nex()).done);
+                    gradeLinhaLoop: for(var _iterador44 = jogoGrid[grade] [Symbol.iterator](), _passo44; !(_iteradorNormalCompleto44 = (_passo44 = _iterador44.next()).done);
                     _iteradorNormalCompleto44 = true) {
                         var linha = _passo44.value 
 
@@ -1441,7 +1445,7 @@ computador = {
                         var _iteradorErro45 = undefined;
 
                         try {
-                            for(var _iterador45 = linha[Symbol.iterator](), _passo45; !(_iteradorNormalCompleto45 = (_passo45 = _iterador45.nex()).done);
+                            for(var _iterador45 = linha[Symbol.iterator](), _passo45; !(_iteradorNormalCompleto45 = (_passo45 = _iterador45.next()).done);
                             _iteradorNormalCompleto45 = true) {
                                 var valor = _passo45.value 
 
@@ -1519,12 +1523,23 @@ computador = {
                 }
             }
         }
+        reiniciarJogo()
     },
     facaMover: function facaMover(mover) {
         this.moves.push(mover)
 
         $(jQMap.$jogarCaixa[mover]).children('.simbolo').text(configMap.computadorSimbolo || 'O')
     }
+}
+function reiniciarJogo() {
+    setTimeout(() => {
+        humano.moves.length = 0
+        computador.moves.length = 0
+        computador.vencedorPontos = undefined
+        jQMap.$jogarCaixa.removeClass('vencedor').children('.simbolo').text('')
+        computador.facaPrimeiroMovimento
+
+    }, 2000);
 }
 function argumentoJQMap(_jQMap) {
     if (_jQMap) {
@@ -1544,7 +1559,7 @@ function initApp() {
         var simbolo = $(this).text()
         configMap.humanoSimbolo = simbolo
         configMap.computadorSimbolo = simbolo ===  'X' ? 'O' : 'X'
-        computador.fazerPrimeiroMovimento()
+        computador.facaPrimeiroMovimento()
         jQMap.$jogarCaixa.on('click', humano.jogar)
     })
 
