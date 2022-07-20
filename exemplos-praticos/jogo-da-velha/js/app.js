@@ -350,7 +350,7 @@ computador = {
                     var _iteradorErro9 = undefined
 
                     try {
-                        for (var  _iterador9 = jogoGrid[grid] [Symbol.iterator](), _passo9; !(_iteradorNormalCompleto9 = (_passo9 = _iterador9.next()).done;
+                        for (var  _iterador9 = jogoGrid[grid] [Symbol.iterator](), _passo9; !(_iteradorNormalCompleto9 = (_passo9 = _iterador9.next()).done);
                             _iteradorNormalCompleto9 = true) {
                             var linha = _passo9.value
 
@@ -410,6 +410,217 @@ computador = {
                 } finally {
                     if (_didIteradorErro8) {
                         throw _iteradorErro8
+                    }
+                }
+            }
+            _this.jogarProximaRodada = _this.facaQuartoMovimento
+        }
+        //primeiro verifica se o computador está movendo o centro
+        if (this.padraoCentral) {
+            if (this.vencedorPontos !== undefined && !arrayHas(hm, this.vencedorPontos[0])) {
+                this.facaMover(this.vencedorPontos[0])
+                this.vencedor();
+
+                return 
+            }
+            if (this.vencedorPontos !== undefined && arrayHas(hm, this.vencedorPontos[0])) {
+                var _iteradorNormalCompleto11 = true;
+                var _didIteradorErro11 = false;
+                var _iteradorErro11 = undefined;
+
+                try{
+                    for(var _iterador11 = Object.keys(jogoGrid) [Symbol.iterator](), _passo11; !(_iteradorNormalCompleto11 = (_passo11 = _iterador11.next()).done);
+                    _iteradorNormalCompleto11 = true) {
+                        var grade = _passo11.value 
+
+                        var _iteradorNormalCompleto12 = true;
+                        var _didIteradorErro12 = false;
+                        var _iteradorErro12 = undefined;
+                        
+                        try {
+                            for(var _iterador12 = jogoGrid[grade] [Symbol.iterator](), _passo12; !(_iteradorNormalCompleto12 = (_passo12 = _iterador12.next()).done);
+                            _iteradorNormalCompleto12 = true) {
+                                if (arrayHas(linha, hm)) {
+                                    var _iteradorNormalCompleto13 = true;
+                                    var _didIteradorErro13 = false;
+                                    var _iteradorErro13 = undefined;
+
+                                    try {
+                                        for(var _iterador13 = linha[Symbol.iterator](), _passo13; !(_iteradorNormalCompleto13 = (_passo13 = _iteradorErro11.next()).done);
+                                        _iteradorNormalCompleto13 = true) {
+                                            var valor = _passo13.value 
+
+                                            if (!arrayHas(hm, valor)) {
+                                                this.facaMover(valor)
+                                            }
+                                        }
+                                    } catch (error) {
+                                        _didIteradorErro13 = true 
+                                        _iteradorErro13 = error
+                                    } finally {
+                                        try {
+                                            if (!_iteradorNormalCompleto13 && _iterador13.return) {
+                                                _iterador13.return()
+                                            }
+                                        } finally {
+                                            if (_didIteradorErro13) {
+                                                throw _iteradorErro13
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } catch (error) {
+                            _didIteradorErro12 = true 
+                            _iteradorErro12 = error
+                        } finally {
+                            try {
+                                if (!_iteradorNormalCompleto12 && _iterador12.return) {
+                                    _iterador12.return() 
+                                }
+                            } finally {
+                                if (_didIteradorErro12) {
+                                    throw _iteradorErro12
+                                }
+                            }
+                        }
+                    }
+                    // o código acima criou two_way_points
+                    // esvazie e redefina os pontos de ganho existentes
+                } catch (error) {
+                    _didIteradorErro11 = true 
+                    _iteradorErro11 = error
+                } finally {
+                    try {
+                        if (!_iteradorNormalCompleto11 && _iterador11.return) {
+                            _iterador11.return()
+                        }
+                    } finally {
+                        if (_didIteradorErro11) {
+                            throw _iteradorErro11
+                        }
+                    }
+                }
+                this.vencedorPontos = []
+                var _iteradorNormalCompleto14 = true;
+                var _didIteradorErro14 = false;
+                var _iteradorErro14 = undefined;
+
+                try {
+                    for(var _iterador14 = Object.keys[jogoGrid] [Symbol.iterator](), _passo14; !(_iteradorNormalCompleto14 = (_passo14 = _iterador14.next()).done);
+                    _iteradorNormalCompleto14 = true) {
+                        var grade = _passo14
+
+                        var _iteradorNormalCompleto15 = true;
+                        var _didIteradorErro15 = false;
+                        var _iteradorErro15 = undefined;
+
+                        try {
+                            for(var _iterador15 = jogoGrid[grade] [Symbol.iterator](), _passo15; !(_iteradorNormalCompleto15 = (_passo15 = _iterador15.next()).done); 
+                            _iteradorNormalCompleto15 = true) {
+                                var linha = _passo15.value 
+
+                                if (arrayHas(linha, tm[2])) {
+                                    var _iteradorNormalCompleto16 = true;
+                                    var _didIteradorErro16 = false;
+                                    var _iteradorErro16 = undefined;
+
+                                    try {
+                                        for(var _iterador16 = linha[Symbol.iterator](), _passo16; !(_iteradorNormalCompleto16 = (_passo16.next()).done);
+                                        _iteradorNormalCompleto16 = true) {
+                                            var valor = _passo16.value 
+
+                                            if (!arrayHas(tm, valor) && !arrayHas(hm, valor)) {
+                                                this.vencedorPontos.push(valor)    
+                                            }
+                                        }
+                                    } catch (error) {
+                                        _didIteradorErro16 = true 
+                                        _iteradorErro16 = error
+                                    } finally {
+                                        try {
+                                            if (!_iteradorNormalCompleto16 && _iterador16.return) {
+                                                _iterador16.return()
+                                            }
+                                        } finally {
+                                            if (_didIteradorErro16) {
+                                                throw _iteradorErro16
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } catch (error) {
+                            _didIteradorErro15 = true 
+                            _iteradorErro15 = error
+                        } finally {
+                            try {
+                                if (!_iteradorNormalCompleto15 && _iterador15.return) {
+                                    _iterador15.return()
+                                }
+                            } finally {
+                                if (_didIteradorErro15) {
+                                    throw _iteradorErro15
+                                }
+                            }
+                        }
+                        
+                    }
+                } catch (error) {
+                    _didIteradorErro14 = true 
+                    _iteradorErro14 = error
+                } finally {
+                    try {
+                        if (!_iteradorNormalCompleto14 && _iterador14.return) {
+                            _iterador14.return()
+                        }
+                    } finally {
+                        if (_didIteradorErro14) {
+                            throw _iteradorErro14
+                        }
+                    }
+                }
+                this.jogarProximaRodada = this.facaQuartoMovimento
+
+                return false
+            }
+            // chegou tão longe? humano está jogando inteligente
+            // humano jogou um dos meus jogoPontos desejados em seu primeiro movimento
+            // vamos ver o que ele está fazendo
+        }
+    },
+    facaQuartoMovimento: function facaQuartoMovimento() {
+        var hm = humano.moves,
+        tm = this.moves
+
+        if (this.vencedorPontos) {
+            var _iteradorNormalCompleto29 = true;
+            var _didIteradorErro29 = false;
+            var _iteradorErro29 = undefined;
+
+            try {
+                for(var _iterador29 = this.vencedorPontos[Symbol.iterator](), _passo29; !(_iteradorNormalCompleto29 = (_passo29 = _iterador29.next()).done); 
+                _iteradorNormalCompleto29 = true) {
+                    var ordernadoPonto = _passo29.value
+
+                    if (!(arrayHas(hm, ordernadoPonto))) {
+                        this.facaMover(ordernadoPonto)
+                        this.vencedor()
+
+                        return
+                    }
+                }
+            } catch (error) {
+                _didIteradorErro29 = true 
+                _iteradorErro29 = error
+            } finally {
+                try {
+                    if (!_iteradorNormalCompleto29 && _iterador29.return) {
+                        _iterador29.return()
+                    }
+                } finally {
+                    if (_didIteradorErro29) {
+                        throw _iteradorErro29
                     }
                 }
             }
