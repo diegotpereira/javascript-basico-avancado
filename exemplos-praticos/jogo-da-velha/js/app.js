@@ -284,11 +284,136 @@ computador = {
         this.jogarProximaRodada = this.facaTerceiroMovimento
     },
     facaTerceiroMovimento: function facaTerceiroMovimento() {
-<<<<<<< HEAD
+        var _this = this
 
-=======
-        
->>>>>>> ec525fd8682f732438486780981dceb6833a48f2
+        var definirVencedorPontos,
+        hm = humano.moves,
+        tm = this.moves,
+        terceiroMovimentoData = [{
+            computadorJogador: [0, 2],
+            segundoMovimentoData: {
+                vencedorPontos: 1,
+                terceiroMoverOpcoes: [{ opt: 4, metas: [6, 8] }, { opt: 6, metas: [3, 4] }, { opt: 8, metas: [4, 5] }],
+                humanoVencedorPonto: 7
+            }
+        },
+        {
+            computadorJogador: [0, 6],
+            segundoMovimentoData: {
+                vencedorPontos: 3,
+                terceiroMoverOpcoes: [{ opt: 4, metas: [2, 8] }, { opt: 2, metas: [1, 4] }, { opt: 8, metas: [4, 7] }],
+                humanoVencedorPonto: 1
+            }
+        },
+        {
+            computadorJogador: [6,8],
+            segundoMovimentoData: {
+                vencedorPontos: 7,
+                terceiroMoverOpcoes: [{ opt: 4, metas: [0, 2] }, { opt: 0, metas: [3, 4] }, { opt: 2, metas: [4, 5] }],
+                humanoVencedorPonto: 1
+            }
+        },
+        {
+            computadorJogador: [8, 2],
+            segundoMovimentoData: {
+                vencedorPontos: 5,
+                terceiroMoverOpcoes: [{ opt: 4, metas: [0, 6] }, { opt: 0, metas: [1, 4] }, { opt: 6, metas: [4, 7] }],
+                humanoVencedorPonto: 3
+            }
+        },
+        {
+            computadorJogador: [0, 8],
+            segundoMovimentoData: {
+                humanoEhMovimentoCentro: true 
+            }
+        },
+        {
+            computadorJogador: [2, 6],
+            segundoMovimentoData: {
+                humanoEhMovimentoCentro: true 
+            }
+        }
+    ]
+    definirVencedorPontos = function() {
+            _this.vencedorPontos = []
+            var _iteradorNormalCompleto8 = true;
+            var _didIteradorErro8 = false;
+            var _iteradorErro8 = undefined;
+
+            try {
+                jogoGridSegundoLoop: for(var _iterador8 = Object.keys(jogoGrid) [Symbol.iterator](), _passo8; !(_iteradorNormalCompleto8 = (_passo8 = _iterador8.next()).done);
+                _iteradorNormalCompleto8 = true) {
+                    var grid = _passo8.value 
+
+                    var _iteradorNormalCompleto9 = true
+                    var _didIteradorErro9 = false;
+                    var _iteradorErro9 = undefined
+
+                    try {
+                        for (var  _iterador9 = jogoGrid[grid] [Symbol.iterator](), _passo9; !(_iteradorNormalCompleto9 = (_passo9 = _iterador9.next()).done;
+                            _iteradorNormalCompleto9 = true) {
+                            var linha = _passo9.value
+
+                            if ((arrayHas(linha, [tm[0], tm[2]]) || arrayHas(linha, [tm[1], tm[2]])) &&
+                            !arrayHas(linha, tm[0]) && !arrayHas(linha, hm[1]) && !arrayHas(linha, hm[2])) {
+                                var _iteradorNormalCompleto10 = true;
+                                var _didIteradorErro10 = false;
+                                var _iteradorErro10 = undefined;
+
+                                try {
+                                    for(var _iterador10 = linha[Symbol.iterator](), _passo10; !(_iteradorNormalCompleto10 = (_passo10 = _iterador10.next()).done); _iteradorNormalCompleto10 = true) {
+                                        var valor = _passo10.value
+
+                                        if (!arrayHas(tm, valor)) {
+                                            _this.vencedorPontos.push(valor)
+                                        }
+                                    }
+                                } catch (error) {
+                                    _didIteradorErro10 = true 
+                                    _iteradorErro10 = error
+                                }finally {
+                                    try {
+                                        if (!_iteradorNormalCompleto10 && _iterador10.return) {
+                                            _iterador10.return()
+                                        }
+                                    }finally {
+                                        if (_didIteradorErro10) {
+                                            throw _iteradorErro10
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } catch (error) {
+                        _didIteradorErro9 = true 
+                        _iteradorErro9 = err
+                    } finally {
+                        try {
+                            if (!_iteradorNormalCompleto9 && _iterador9.return) {
+                                _iterador9.return()
+                            }
+                        } finally {
+                            if (_didIteradorErro9) {
+                                throw _iteradorErro9
+                            }
+                        }
+                    }
+                }
+            } catch (error) {
+                _didIteradorErro8 = true 
+                _iteradorErro8 = error
+            } finally {
+                try {
+                    if (!_iteradorNormalCompleto8 && _iterador8.return) {
+                        _iterador8.return()
+                    }
+                } finally {
+                    if (_didIteradorErro8) {
+                        throw _iteradorErro8
+                    }
+                }
+            }
+        }
     },
     facaMover: function facaMover(mover) {
         this.moves.push(mover)
