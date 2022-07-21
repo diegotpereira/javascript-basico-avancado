@@ -150,7 +150,7 @@ computador = {
                                 foundMatch = false 
 
                                 while(!foundMatch) {
-                                    var aleatorioJogoPonto = Math.random(Math.random() * (linha.length - 1))
+                                    var aleatorioJogoPonto = Math.round(Math.random() * (linha.length - 1))
         
                                     armadilha_em_dois_sentidos = linha[aleatorioJogoPonto]
         
@@ -239,7 +239,7 @@ computador = {
                     var _iteradorErro7 = undefined;
 
                     try {
-                        for(var _iterador7 = Object.keys(cfo)[Symbol.iterator](), _passo7; !(_iteradorNormalCompleto7 = (_passo7 = _iterador7.next()).done);
+                        for(var _iterador7 = cfo[opcao].humanoOpcoes[Symbol.iterator](), _passo7; !(_iteradorNormalCompleto7 = (_passo7 = _iterador7.next()).done);
                         _iteradorNormalCompleto7 = true) {
                             var _opcao = _passo7.value
 
@@ -793,7 +793,7 @@ computador = {
 
                             if (opcao.bloqueadoPonto === bloqueadoPonto) {
                                 this.vencedorOpcoes = opcao.vencedorOpcoes
-                                this.jogarProximaRodada = this.facaQuintoMovimento
+                                this.jogarProximaRodada = this.facaQuartoMovimento
 
                                 return false
                             }
@@ -839,7 +839,7 @@ computador = {
                                         var _iteradorErro27 = undefined;
 
                                         try {
-                                            for(var _iterador27 = linha[Symbol.iterator](), _passo27; !(_iteradorNormalCompleto27 = (_passo27.next()).done);
+                                            for(var _iterador27 = linha[Symbol.iterator](), _passo27; !(_iteradorNormalCompleto27 = (_passo27 = _iterador27.next()).done);
                                             _iteradorNormalCompleto27 = true) {
 
                                                 var valor = _passo27.value 
@@ -921,7 +921,7 @@ computador = {
                             if (!arrayHas(hm, opt) && !arrayHas(hm, metas1) && !arrayHas(hm, metas2)) {
                                 this.facaMover(opt)
                                 this.vencedorPontos = opcao.metas 
-                                this.jogarProximaRodada = this.facaQuintoMovimento
+                                this.jogarProximaRodada = this.facaQuartoMovimento
 
                                 return
                             }
@@ -1100,7 +1100,7 @@ computador = {
 
                             try {
                                 linhaLoop: for(var _iterador34 = linha[Symbol.iterator](), _passo34; !(_iteradorNormalCompleto34 = (_passo34 = _iterador34.next()).done);
-                                _iteradorNormalCompleto34) {
+                                _iteradorNormalCompleto34 = true) {
                                     var valor = _passo34.value 
 
                                     if (arrayHas(hm, valor)) {
