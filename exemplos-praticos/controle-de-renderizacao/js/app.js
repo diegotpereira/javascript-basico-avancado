@@ -1,14 +1,14 @@
-const Engine = Matter.Engine,
+const Mecanismo = Matter.Engine,
         Render = Matter.Render,
         World = Matter.World,
         Bodies = Matter.Bodies,
         Body = Matter.Body;
 
-const engine = Engine.create();
+const mecanismo = Mecanismo.create();
 
-const render = Render.create({
+const renderizar = Render.create({
   element: document.body,
-  engine: engine,
+  engine: mecanismo,
   options: {
     width: 800,
     height: 300,
@@ -38,10 +38,10 @@ const bola = Bodies.circle(90, 280, 20, {
         }
     }
 })
-World.add(engine.world, [paredeSuperior, paredeInferior, paredeEsquerda, paredeDireita, bola])
+World.add(mecanismo.world, [paredeSuperior, paredeInferior, paredeEsquerda, paredeDireita, bola])
 
-Engine.run(engine)
-Render.run(render)
+Mecanismo.run(mecanismo)
+Render.run(renderizar)
 
 document.querySelector('#horizontal').addEventListener('click', function() {
     Body.applyForce( bola, { x: bola.position.x, y: bola.position.y}, {x: 0.04, y:0})
