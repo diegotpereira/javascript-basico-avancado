@@ -7,7 +7,6 @@
     background-color: #508ABB;
   }
 }
-
 @keyframes vencedorAnim {
   0% {
     background-color: cyan;
@@ -16,7 +15,6 @@
     background-color: #508ABB;
   }
 }
-
 @keyframes vencedorAnim {
   0% {
     background-color: cyan;
@@ -25,7 +23,6 @@
     background-color: #508ABB;
   }
 }
-
 * {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -35,7 +32,7 @@
   outline-style: none;
 }
 
-.center-box, .app, .simbolo {
+.center-box, .simbolo, .app {
   margin: auto;
   position: absolute;
   top: 0;
@@ -56,41 +53,36 @@ body {
   height: 70%;
   max-width: 550px;
   background-color: #508ABB;
-  -webkit-box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.85);
-          box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.85);
   border-radius: 10px;
 }
-
 .app .app-container,
 .app .app-linha {
   height: 100%;
 }
 
 .jogar-caixa, .simbolo-opcao {
-  font-family: 'Yesteryear', cursive;
+  font-family: "Yesteryear", cursive;
 }
 
 .jogar-caixa {
   border-bottom: 2px solid #fff;
   border-right: 2px solid #fff;
-  height: 33.33333%;
+  height: 33.3333333333%;
   cursor: pointer;
   position: relative;
 }
-
 .jogar-caixa.ultimo-direito {
   border-right: none;
 }
-
 .jogar-caixa.ultimo-botao {
   border-bottom: none;
 }
-
 .jogar-caixa.vencedor {
-  -webkit-animation: winAnim .2s ease-out infinite;
-  animation: winAnim .2s ease-out infinite;
-  -webkit-animation: winAnim .5s infinite;
-          animation: winAnim .5s infinite;
+  -webkit-animation: winAnim 0.2s ease-out infinite;
+  animation: winAnim 0.2s ease-out infinite;
+  -webkit-animation: winAnim 0.5s infinite;
+          animation: winAnim 0.5s infinite;
 }
 
 .simbolo {
@@ -107,25 +99,19 @@ body {
   text-align: center;
   margin: 0;
 }
-
 .modal-content .content.body {
   line-height: 2;
 }
-
 .modal-content .simbolo-opcoes {
   width: 200px;
   margin-top: 10px;
 }
-
 .modal-content .simbolo-opcoes .simbolo-opcao:first-child {
   margin-right: 10px;
 }
-
 .modal-content .simbolo-opcoes .simbolo-opcao:last-child {
   margin-left: 10px;
 }
-
 .modal-content .warning-hr {
   margin: 0;
-}
-/*# sourceMappingURL=estilo.css.map */
+}/*# sourceMappingURL=estilo.css.map */
