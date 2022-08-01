@@ -155,4 +155,8 @@ function fazerLabirinto() {
     cellSize = labirintoTela.width / dificuldade
     labirinto = new Labirinto(dificuldade, dificuldade)
     desenhar = new DesenharLabirinto(labirinto, ctx, cellSize)
+
+    if (document.getElementById('labirintoContainer').style.opacity < "100") {
+        document.getElementById('labirintoContainer').style.opacity = "100"
+    }
 }
