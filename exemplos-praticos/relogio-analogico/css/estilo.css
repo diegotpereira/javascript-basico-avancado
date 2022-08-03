@@ -1,0 +1,54 @@
+.main {
+    display: flex;
+    padding: 2em;
+    height: 90vh;
+    justify-content: center;
+    align-items: middle;
+}
+
+.caixaRelogio,
+#relogio {
+    width: 100%;
+}
+.circulo {
+    fill: none;
+    stroke: #000;
+    stroke-width: 9;
+    stroke-miterlimit: 10
+}
+.mid-circle {
+    fill: #000;
+}
+.marcas-horas {
+    fill: none;
+    stroke: #000;
+    stroke-width: 9;
+    stroke-miterlimit: 10;
+}
+.ponteiro-hora {
+    fill: none;
+    stroke: #000;
+    stroke-width: 17;
+    stroke-miterlimit: 10;
+}
+.ponteiro-minuto {
+    fill: none;
+    stroke: #000;
+    stroke-width: 11;
+    stroke-miterlimit: 10;
+}
+.ponteiro-segundo {
+    fill: none;
+    stroke: #000;
+    stroke-width: 4;
+    stroke-miterlimit: 10;
+}
+.sizing-box {
+    fill: none;
+}
+#hora,
+#minuto,
+#segundo {
+    transform-origin: 300px 300px;
+    transition: transform .5s ease-in-out;
+}
