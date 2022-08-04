@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <script src="https://kit.fontawesome.com/5e8f72a981.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <span class="tempo">
+                5:00PM&nbsp;
+                <i class="fas fa-location-arrow"></i>
+            </span>
+            <div class="auto-falante"></div>
+            <div class="camera"></div>
+            <span class="service-battery">
+                <i class="fas fa-signal"></i>&nbsp;LTE&nbsp;<i class="fas fa-battery-three-quarters"></i>
+            </span>
+        </div>
+        <div class="entrada-resultados">
+            <input type="text" id="entrada" placeholder="Digite um número aqui">
+            <p id="resultados">
+                <span>Use o teclado ou o teclado abaixo</span><span>Em seguida, pressione enter ou ligue</span>
+            </p>
+        </div>
+        <div class="botoes">
+            <div class="botao" id="num-btn" numero="1"><p>1</p></div>
+            <div class="botao" id="num-btn" numero="2">
+                <p>2</p>
+                <span>ABC</span>
+            </div>
+            <div class="botao" id="num-btn" numero="3">
+                <p>3</p>
+                <span>DEF</span>
+            </div>
+            <div class="botao" id="num-btn" numero="4">
+                <p>4</p>
+                <span>GHI</span>
+            </div>
+            <div class="botao" id="num-btn" numero="5">
+                <p>5</p>
+                <span>JKL</span>
+            </div>
+            <div class="botao" id="num-btn" numero="6">
+                <p>6</p>
+                <span>MNO</span>
+            </div>
+            <div class="botao" id="num-btn" numero="7">
+                <p>7</p>
+                <span>PQRS</span>
+            </div>
+            <div class="botao" id="num-btn" numero="8">
+                <p>8</p>
+                <span>TUV</span>
+            </div>
+            <div class="botao" id="num-btn" numero="9">
+                <p>9</p>
+                <span>WXYZ</span>
+            </div>
+            <div class="botao"><i class="fas fa-asterisk"></i></div>
+            <div class="botao" id="num-btn" numero="0">
+                <p>0</p>
+                <span><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="botao">#</div>
+            <div class="botao fone-botao" id="fone-botao">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+        </div>
+        <div class="btn">
+            <div class="item contatos">
+                <i class="fas fa-user-circle"></i><span>Contatos</span>
+            </div>
+            <div class="item recentes">
+                <i class="fas fa-clock"></i><span>Recentes</span>
+            </div>
+            <div class="item keypad">
+                <div class="botoes">
+                    <div class="c"></div>
+                    <div class="c"></div>
+                    <div class="c"></div>
+                    <div class="c"></div>
+                    <div class="c"></div>
+                    <div class="c"></div>
+                    <div class="c"></div>
+                    <div class="c"></div>
+                    <div class="c"></div>
+                </div>
+                <span>keypad</span>
+            </div>
+            <div class="item favoritos">
+                <i class="fas fa-star"></i><span>Favoritos</span>
+            </div>
+
+            <div class="item correiodevoz">
+                <i class="fas fa-voicemail"></i><span>Correio de Voz</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
