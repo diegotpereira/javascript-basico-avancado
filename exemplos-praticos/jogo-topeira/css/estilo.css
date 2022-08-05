@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@font-face {font-family: "Titan One";src: url("../ttf/TitanOne-Regular.ttf")}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titan One', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000000dd;
+    background-color: #fff;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-transform: uppercase;
+    gap: 1.5rem;
+}
+.modal.hide {
+    display: none;
+}
+.modal > div {
+    cursor: default;
+}
+.modal .titulo {
+    text-align: center;
+    font-size: 1.5rem;
+}
+.modal .titulo h1 {
+    margin-top: 1.5rem;
+    color: #000;
+    background-image: url('../img/hammer.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding: 3rem 0;
+    font-family: 'Titan One', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.modal titulo span {
+    display: block;
+    font-size: 1rem;
+}
+.modal .help {
+    width: max-content;
+    margin: auto;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.modal .selecionar {
+    text-align: center;
+}
+.modal .botoes {
+    display: grid;
+    gap: 0.5rem;
+    width: max-content;
+    margin: auto;
+}
+.modal .botoes button {
+    width: 15rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #000;
+    border: 0;
+    border-radius: 50rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    text-transform: uppercase;
+}
+.modal .botoes button:nth-child(1) {
+    background-color: #00a8ff;
+    color: #fff;
+}
+.modal .botoes button:nth-child(2) {
+    background-color: #4cd137;
+    color: #fff;
+}
+.modal .botoes button:nth-child(3) {
+    background-color: #e84118;
+    color: #fff;
+}
+.modal .botoes button:nth-child(4) {
+    background-color: #000;
+    color: #fff;
+}
+.modal .botoes button:active {
+    transform: scale(0.95);
+}
+
+body {
+    position: relative;
+    background: url('../img/background.jpg');
+    min-height: 100vh;
+    max-height: 100vh;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    overflow: hidden;
+}
+.container *{
+    font-family: 'Titan One', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+    margin: auto;
+    width: min-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+.lado {
+    padding: 1rem;
+    display: block;
+}
+.novamente {
+    cursor: pointer;
+}
+.exibir * {
+    user-select: none;
+}
+.exbir {
+    display: grid;
+    gap: 1rem;
+    transform: translateX(-2.5rem);
+}
+.exibir main > div {
+    cursor: url('../img/hammer2.png'), auto;
+}
+.exibir .controles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1 fr;
+    gap: 1rem;
+}
+.exibir .iniciar {
+    cursor: pointer;
+}
+.exibir .iniciar:active {
+    transform: scale(0.95);
+}
+.exibir .controles > div {
+    color: #fff;
+    text-shadow: 0px 0px 4px #000;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #00000055;
+    border: 3px solid #111;
+}
+.exibir .controles .tempo,
+.exibir .controles .pontuacao {
+    position: relative;
+}
+.exibir .controles .tempo p,
+.exibir .controles .pontuacao p {
+    position: absolute;
+    left: 50%;
+    top: -30%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+}
+main {
+    position: relative;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.25rem;
+}
+main > div {
+    width: 10rem;
+    height: 10rem;
+}
+main .controles-laterais {
+    position: absolute;
+    right: 0;
+    width: 0;
+    transform: translateX(100%);
+}
+main .controles-laterais--container {
+    margin-left: 1rem;
+    padding: .75rem;
+    width: max-content;
+    height: max-content;
+    background-color: #00000055;
+    border: 3px solid #111;
+    display: grid;
+    border-radius: 5px;
+    gap: 1rem;
+}
+main .controles-laterais--container-2 {
+    display: none;
+}
+main .controles-laterais--container div {
+    position: relative;
+    cursor: pointer;
+}
+main .controles-laterais--container .settings {
+    height: 2.5rem;
+    width: 2.5rem;
+    -webkit-filter: drop-shadow(1px 1px 0px 1px #00000020);
+    filter: drop-shadow(1px 1px 0px 1px #00000020);
+    margin: auto;
+}
+main .controles-laterais--container .velocidade-nivel {
+    height: 2.5rem;
+    width: 2.5rem;
+    -webkit-filter: drop-shadow(1px 1px 0px 1px #00000020);
+    filter: drop-shadow(1px 1px 0px 1px #00000020);
+    margin: auto;
+}
+
+main .controles-laterais--container .tempo-nivel {
+    height: 2.5rem;
+    width: 2.5rem;
+    -webkit-filter: drop-shadow(1px 1px 0px 1px #00000020);
+    filter: drop-shadow(1px 1px 0px 1px #00000020);
+    margin: auto;
+}
+main .controles-laterais--container .volume-nivel {
+    height: 2.5rem;
+    width: 2.5rem;
+    -webkit-filter: drop-shadow(1px 1px 0px 1px #00000020);
+    filter: drop-shadow(1px 1px 0px 1px #00000020);
+    margin: auto;
+}
+main .controles-laterais--container img {
+    display: block;
+    width: inherit;
+    height: inherit;
+    user-select: none;
+}
+main .controles-laterais--container div:active {
+    transform: scale(0.90);
+}
+main .controles-laterais--container span {
+    color: #4cd137;
+    position: absolute;
+    text-shadow: 2px 2px 1px #000;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    font-size: 1.25rem;
+}
+
+.active {
+    cursor: pointer;
+}
+.active:active {
+    color: #bbb;
+}
+
+.buraco {
+    background: #00000055;
+    border-radius: 5px;
+    border: 3px solid #111;
+    position: relative;
+    overflow: hidden;
+}
+.topeira {
+    background-image: url(../img/mole.png);
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.5s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    top: 100%;
+}
+.up .topeira {
+    top: 10%;
+}
+.buraco img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+.hud {
+    display: flex;
+    width: 800px;
+    margin: auto;
+}
+.contar,
+.tempo {
+    background: #00000055;
+    border: 5px solid #00000088;
+    padding: 0;
+    width: 200px;
+}
+.tempo {
+    width: 400px;
+}
+.entreNome {
+    position: absolute;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+    flex-direction: column;
+    background: #000000cc;
+    z-index: 99;
+    display: none;
+    opacity: 0;
+}
+.entreNome {
+    font-family: 'Titan One', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.entreNome h2 {
+    font-weight: 100;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: #f33;
+    padding: 0;
+}
+.entreNome input[type='text'] {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 400;
+    color: #222;
+    text-shadow: 1px 1px 0px #00000030;
+    border: 2px solid #00000030;
+    border-radius: 1em;
+    padding: 0.5em 0em;
+    outline: none;
+}
+.placar {
+    position: absolute;
+    top: 0;
+    min-height: 100vh;
+    z-index: 99;
+    background: #000000cc;
+    color: #fff;
+    padding: 5rem;
+    transition: opacity 1s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: none;
+    width: 100%;
+}
+.placar * {
+    font-family: 'Titan One', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
