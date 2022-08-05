@@ -176,14 +176,15 @@ body {
     transform: translateX(-50%);
     font-size: 1.5rem;
 }
-/*
+
 main {
     position: relative;
-    display:grid;
+    display:
+    grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0.25rem;
 }
-*/  
+ 
 main > div {
     width: 10rem;
     height: 10rem;
@@ -259,7 +260,19 @@ main .controles-laterais--container span {
     z-index: 1;
     font-size: 1.25rem;
 }
-*/
+
+main .controles-laterais--container span.facil {
+    color: #00a8ff;
+}
+main .controles-laterais--container span.normal {
+    color: #4cd137;
+}
+main .controles-laterais--container span.dificil {
+    color: #e84118;
+}
+main .controles-laterais--container span.none {
+    display: none;
+}
 .active {
     cursor: pointer;
 }
@@ -291,7 +304,7 @@ main .controles-laterais--container span {
 }
 
 
-.up .topeira {
+.subir .topeira {
     top: 10%;
 }
 .buraco img {
