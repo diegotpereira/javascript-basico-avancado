@@ -123,28 +123,34 @@ body {
 .novamente {
     cursor: pointer;
 }
-.exibir * {
+ .exibir * {
     user-select: none;
 }
+
 .exbir {
     display: grid;
     gap: 1rem;
     transform: translateX(-2.5rem);
 }
+
 .exibir main > div {
     cursor: url('../img/hammer2.png'), auto;
 }
+
 .exibir .controles {
     display: grid;
     grid-template-columns: 1fr 1fr 1 fr;
     gap: 1rem;
 }
+
 .exibir .iniciar {
     cursor: pointer;
 }
+
 .exibir .iniciar:active {
     transform: scale(0.95);
 }
+
 .exibir .controles > div {
     color: #fff;
     text-shadow: 0px 0px 4px #000;
@@ -156,10 +162,12 @@ body {
     background-color: #00000055;
     border: 3px solid #111;
 }
+
 .exibir .controles .tempo,
 .exibir .controles .pontuacao {
     position: relative;
 }
+
 .exibir .controles .tempo p,
 .exibir .controles .pontuacao p {
     position: absolute;
@@ -168,12 +176,14 @@ body {
     transform: translateX(-50%);
     font-size: 1.5rem;
 }
+/*
 main {
     position: relative;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0.25rem;
 }
+*/  
 main > div {
     width: 10rem;
     height: 10rem;
@@ -249,13 +259,14 @@ main .controles-laterais--container span {
     z-index: 1;
     font-size: 1.25rem;
 }
-
+*/
 .active {
     cursor: pointer;
 }
 .active:active {
     color: #bbb;
 }
+
 
 .buraco {
     background: #00000055;
@@ -264,6 +275,7 @@ main .controles-laterais--container span {
     position: relative;
     overflow: hidden;
 }
+
 .topeira {
     background-image: url(../img/mole.png);
     position: relative;
@@ -277,6 +289,8 @@ main .controles-laterais--container span {
     transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
     top: 100%;
 }
+
+
 .up .topeira {
     top: 10%;
 }
@@ -302,6 +316,7 @@ main .controles-laterais--container span {
 .tempo {
     width: 400px;
 }
+
 .entreNome {
     position: absolute;
     display: flex;
@@ -324,6 +339,11 @@ main .controles-laterais--container span {
     font-size: 2rem;
     letter-spacing: 1px;
     color: #f33;
+    padding: 0;
+}
+.entreNome {
+    font-weight: 500;
+    color: #fff;
     padding: 0;
 }
 .entreNome input[type='text'] {
@@ -353,3 +373,70 @@ main .controles-laterais--container span {
 .placar * {
     font-family: 'Titan One', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+
+
+
+
+@media(max-width: 800px) {
+    .exibir {
+        transform: translateX(0);
+    }
+
+    main .controles-laterais {
+        position: relative;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        transform: translateX(0%);
+        grid-column: 1 / span 3;
+        gap: 1rem;
+    }
+    main .controles-laterais--container {
+        margin-left: 0;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5rem;
+        margin-top: 0.5rem;
+        padding: .75rem 1rem;
+    }
+    main .controles-laterais--container-2 {
+        margin-top: 0.5rem;
+        background-color: #00000055;
+        background-color: #fff;
+        box-shadow: 0px 2px 6px 3px #33333330;
+        display: grid;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        color: #fff;
+        text-decoration: none;
+    }
+    main .controles-laterais--container-2 p {
+        color: #3328fe;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    main .controles-laterais--container-2 img {
+        height: 2.5rem;
+    }
+    .powered-by {
+        display: none;
+    }
+}
+@media(max-width: 600px) {
+    :root {
+        font-size: 14px
+    }
+}
+@media (max-width: 500px) {
+    :root {
+      font-size: 12px
+    }
+  }
+  @media (max-width: 400px) {
+    :root {
+      font-size: 10px
+    }
+  }
