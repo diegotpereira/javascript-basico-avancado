@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row offset-sm-1">
+
+            <section class="header col-md-4 col-sm-10">
+                <h1>Visualizador do tempo</h1>
+                <p>Codificado com ❤ Por <a href="" target="_blank">Diego Pereira</a></p>
+            </section>
+
+            <section class="main col-md-7 col-sm-10">
+
+                <!-- seção de entradas -->
+                <section class="entradas">
+                    <input type="text" id="cidadeEntrada" placeholder="Digite qualquer cidade">
+                    <input type="submit" value="Enviar" id="add">
+                    <button placeholder="Enviar" id="add"></button>
+                </section>
+
+                <!-- seção de exibição -->
+                <section class="display">
+                    <div class="wrapper">
+                        <h2 id="cidadeSaida"></h2>
+                        <p id="descricao" data-text="welcome"></p>
+                        <p id="tempo"></p>
+                        <p id="vento"></p>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
