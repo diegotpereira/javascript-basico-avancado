@@ -31,5 +31,5 @@ btn.addEventListener('click', function() {
         tempo.innerHTML = `Temperatura: ${conversao(temperatura)} ºC`
         vento.innerHTML = `Velocidade do Vento: ${ventoVelocidade} km/h`
     })
-    // .catch(err => alert('Você digitou o nome da cidade errado'))
+    .catch(err => alert('Você digitou o nome da cidade errado'))
 })
