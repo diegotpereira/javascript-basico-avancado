@@ -1,0 +1,32 @@
+.jogo-container {
+    width: 500px;
+    height: 730px;
+    position: absolute;
+    /* left: 80px; */
+}
+.ceu {
+    /* background-image: url('../img/fb-game-background.png'); */
+    background-color: blue;
+    width: 500px;
+    height: 580px;
+    position: absolute;
+}
+.chao {
+    /* background-image: url('../img/bottom-background.png'); */
+    background-color: brown;
+    width: 500px;
+    height: 150px;
+    position: absolute;
+    top: 580px;
+    /* z-index: +1; */
+}
+
+.passaro {
+    /* background-image: url('flappy-bird.png'); */
+    background-color: yellow;
+    position: absolute;
+    width: 60px;
+    height: 45px;
+    left: 220px;
+    bottom: 100px;
+}
