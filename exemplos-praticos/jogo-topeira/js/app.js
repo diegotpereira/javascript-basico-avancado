@@ -1,8 +1,9 @@
 // Elementos
 const iniciar_sfx = new Audio('./mp3/start.mp3')
 const espiar_sfx = new Audio('./mp3/peep.mp3')
+const ding_sfx  = new Audio('./mp3/ding.mp3')
 
-const cronometro = document.querySelector('tempo span')
+const cronometro = document.querySelector('.tempo span')
 const velocidadeNivelDOM = document.querySelector('.velocidade-nivel')
 const tempoNivelDOM = document.querySelector('.tempo-nivel')
 
@@ -85,6 +86,7 @@ function espiar() {
     const aleatorioTempo = getAleatorioTempo()
     const buraco = aleatorioBuraco(buracos)
 
+    // Acessando a classe
     buraco.classList.add('subir')
 
     if (volume_nivel) {
@@ -139,14 +141,14 @@ function iniciarTempo() {
         tempoAcima = false
         tempo = 0
         iniciado = true 
-        // cronometro.textContent = `${getTempo()}`
+        cronometro.textContent = `${getTempo()}`
         espiar()
 
         contagemRegressiva = setInterval(() => {
             tempo++
 
-            // cronometro.textContent = `${getTempo() - tempo}`
-            // (getTempo() - tempo === 3 || getTempo() - tempo === 1) ? cronometro.style.color = '#f33' : cronometro.style.color = 'inherit'
+            cronometro.textContent = `${getTempo() - tempo}`;
+            (getTempo() - tempo === 3 || getTempo() - tempo === 1) ? cronometro.style.color = '#f33' : cronometro.style.color = 'inherit'
 
             if (tempo >= getTempo()) {
                 
@@ -157,6 +159,8 @@ function iniciarTempo() {
 
                 if (volume_nivel) {
                     
+                    ding_sfx.currentTime = 0
+                    ding_sfx.play()
                 }
                 setTimeout(() => {
 
