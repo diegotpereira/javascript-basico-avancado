@@ -2,9 +2,9 @@
 @font-face {font-family: "Titan One";src: url("../ttf/TitanOne-Regular.ttf")}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    /* margin: 0; */
+    /* padding: 0; */
+    /* box-sizing: border-box; */
     font-family: 'Titan One', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-family: 'Open Sans', sans-serif;
 }
@@ -178,9 +178,9 @@ body {
 }
 
 main {
-    position: relative;
-    display:
-    grid;
+    /* position: relative; */
+    /* display:
+    grid; */
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0.25rem;
 }
