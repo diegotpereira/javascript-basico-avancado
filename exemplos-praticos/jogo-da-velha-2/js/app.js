@@ -2,6 +2,10 @@
 
 window.addEventListener('load', app)
 
+let jogoPainel 
+let turn = 0
+let vencedor = false
+
 function app() {
 
     let addJogadorForm = document.getElementById('jogador-form')
