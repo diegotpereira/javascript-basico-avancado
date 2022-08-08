@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div>
+        <h1 class="cabecalho">Jogo da Velha</h1>
+    </div>
+    <div class="entre-jogadores">
+        <form id="jogador-form">
+            <div class="jogador-container">
+                <label for="jogador1">Jogador 1</label>
+                <input type="text" name="jogador1" id="jogador1" placeholder="digite o nome" class="entrada-campo">
+            </div>
+            <div class="jogador-container">
+                <label for="jogador2">Jogador 2</label>
+                <input type="text" name="jogador2" id="jogador2" placeholder="digite o nome" class="entrada-campo">
+            </div>
+            <input type="submit" value="Iniciar Jogo" class="enviar-btn">
+        </form>
+    </div>
+
+    <div class="painel__main hide-container">
+        <div class="painel__jogador-turn"></div>
+
+        <div class="painel__container">
+            <div class="painel__celula">
+                <div class="carta" data-id="0"></div>
+            </div>
+
+            <div class="painel__celula">
+                <div class="carta" data-id="1"></div>
+            </div>
+
+            <div class="painel__celula">
+                <div class="carta" data-id="2"></div>
+            </div>
+
+            <div class="painel__celula">
+                <div class="carta" data-id="3"></div>
+            </div>
+
+            <div class="painel__celula">
+                <div class="carta" data-id="4"></div>
+            </div>
+
+            <div class="painel__celula">
+                <div class="carta" data-id="5"></div>
+            </div>
+
+            <div class="painel__celula">
+                <div class="carta" data-id="6"></div>
+            </div>
+
+            <div class="painel__celula">
+                <div class="carta" data-id="7"></div>
+            </div>
+
+            <div class="painel__celula">
+                <div class="carta" data-id="8"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="redefinir redefinir--hidden">
+        <div class="redefinir__texto">
+
+        </div>
+        <button class="reptir-btn" value="Repetir">
+            <span class="limpar-painel">Limpar Painel</span>
+        </button>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
