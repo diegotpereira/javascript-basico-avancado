@@ -1,3 +1,5 @@
+// https://github.com/mitri-dvp/JavaScript-Whack-A-Mole
+
 // Elementos
 const iniciar_sfx = new Audio('./mp3/start.mp3')
 const espiar_sfx = new Audio('./mp3/peep.mp3')
