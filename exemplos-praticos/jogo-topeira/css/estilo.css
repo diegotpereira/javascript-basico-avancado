@@ -2,9 +2,9 @@
 @font-face {font-family: "Titan One";src: url("../ttf/TitanOne-Regular.ttf")}
 
 * {
-    /* margin: 0; */
-    /* padding: 0; */
-    /* box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Titan One', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-family: 'Open Sans', sans-serif;
 }
@@ -178,9 +178,8 @@ body {
 }
 
 main {
-    /* position: relative; */
-    /* display:
-    grid; */
+    position: relative;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0.25rem;
 }
@@ -386,10 +385,107 @@ main .controles-laterais--container span.none {
 .placar * {
     font-family: 'Titan One', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-
-
-
+tbody:first-of-type td:first-child {
+    position: relative;
+    color: #ffa500;
+}
+tbody:first-of-type td:first-child::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2rem;
+    width: 2rem;
+    background-color: #ffd90020;
+    content: '';
+    border-radius: 50%;
+    border: 2px solid #ffa500;
+}
+tbody:nth-of-type(2) td:first-child {
+    position: relative;
+    color: #ccc;
+}
+tbody:nth-of-type(2) td:first-child::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2rem;
+    width: 2rem;
+    background-color: #cccccc20;
+    content: '';
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    box-shadow: 1px 1px 0px 1px #00000020;
+}
+tbody:nth-of-type(3) td:first-child {
+    position: relative;
+    color: #a52a2a;
+}
+tbody:nth-of-type(3) td:first-child::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2rem;
+    width: 2rem;
+    background-color: #a52a2a20;
+    content: '';
+    border-radius: 50%;
+    border: 2px solid #a52a2a;
+    box-shadow: 1px 1px 0px 1px #00000020;
+}
+.pontuacao-botao {
+    color: #fff;
+    border: 0;
+    font-size: 1.25rem;
+    font-weight: lighter;
+    background-color: #f33;
+    position: absolute;
+    top: 0.2rem;
+    right: 0;
+    transform: translateX(110%); 
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+    outline: none;
+}
+.pontuacao-botao:active {
+    background-color: #c21e1e;
+}
+.block {
+    display: block;
+}
+.flex {
+    display: flex;
+}
+.opacity {
+    opacity: 1;
+}
+table {
+    margin: auto;
+    position: relative;
+}
+thead {
+    background-color: #f33;
+    font-size: 2rem;
+}
+tbody {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    background-color: rgb(255, 255, 255);
+}
+th {
+    font-weight: 400;
+    padding: 0.75rem 2rem;
+}
+td {
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 0.75rem;
+    border: 1px solid #bbb;
+}
 
 @media(max-width: 800px) {
     .exibir {
