@@ -52,6 +52,10 @@
     margin: 10px 0 10px;
     height: 54px;
 }
+
+.nome--estilo {
+    font-size: 22px;
+}
 .painel__container {
     width: 40%;
     background-color: pink;
@@ -82,9 +86,48 @@
     transform: translateY(-50%);
     font-family: "Permanent Marker";
 }
+
+.redefinir {
+    text-align: center;
+    margin: 20px auto 0;
+}
+.redefinir--hidden {
+    display: none;
+}
+.repetir-btn {
+    width: 25%;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    outline: none;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-top: 12px;
+    word-spacing: 3px;
+    background-color: #fff;
+}
+.repetir-btn:hover,
+.repetir-btn:active {
+    outline: none;
+    color: #fff;
+    background-color: #000;
+}
+.parabens {
+    font-size: 24px;
+}
+.u-r-vencedor {
+    font-size: 18px;
+    height: 18px;
+    line-height: 18px;
+    margin: 2px 0;
+}
 @media only screen and (max-width: 767px){
     .painel__celula {
         font-size: 16px;
         padding: 5px;
+    }
+    .repetir-btn {
+        width: 50%;
     }
 }
