@@ -23,7 +23,7 @@ window.onload = function() {
     new Date().getTime()
     duende.setAttribute("crossOrigin", " ")
     duende.onload = function() {
-        duende = changeBrightness(1.2, duende)
+        duende = alterarBrilho(1.2, duende)
 
     }
     finalDuende = new Image()
@@ -32,11 +32,11 @@ window.onload = function() {
     new Date().getTime()
     finalDuende.setAttribute("crossOrigin", " ")
     finalDuende.onload = function() {
-        finalDuende = changeBrightness(1.1, finalDuende)
+        finalDuende = alterarBrilho(1.1, finalDuende)
     }
 }
 
-function changeBrightness(fator, duende) {
+function alterarBrilho(fator, duende) {
     
     var virtCanvas = document.createElement("canvas")
     virtCanvas.width = 500
@@ -61,6 +61,17 @@ function changeBrightness(fator, duende) {
     return duendeSaidaPut
 
 }
+function exibirVitoriaBagunca(moves) {
+    document.getElementById('moves').innerHTML = "Você se moveu " + moves + "Passos."
+    toggleVisablity('Message-Container')
+}
+function toggleVisablity(id) {
+    if (document.getElementById(id).style.visibility == "visible") {
+        document.getElementById(id).style.visibility = "hidden"
+    } else {
+        document.getElementById(id).style.visibility = "visible"
+    }
+}
 
 window.onresize = function() {
 
@@ -75,6 +86,12 @@ window.onresize = function() {
         ctx.canvas.height - exibirLargura - exibirLargura / 100
     }
     cellSize = labirintoTela.width / dificuldade
+
+    if (jogador != null) {
+        
+        draw.redesenharLabirinto(cellSize)
+        jogador.redesenharJogador(cell)
+    }
 }
 function Labirinto(Width, Height) {
 
@@ -306,8 +323,14 @@ function desenharLabirinto(Labirinto, ctx, cellSize) {
 }
 function fazerLabirinto() {
 
+    if (jogador != undefined) {
+        jogador.unbindKeyDown()
+        jogador = null
+    }
+
     var e = document.getElementById('dificuldadeSel')
 
+    dificuldade = e.options[e.selectedIndex].value
     cellSize = labirintoTela.width / dificuldade
     labirinto = new Labirinto(dificuldade, dificuldade)
     desenhar = new desenharLabirinto(labirinto, ctx, cellSize)
@@ -315,4 +338,182 @@ function fazerLabirinto() {
     if (document.getElementById('labirintoContainer').style.opacity < "100") {
         document.getElementById('labirintoContainer').style.opacity = "100"
     }
+}
+function Jogador(labirinto, c, _cellsize, onComplete, duende = null) {
+
+    var ctx = c.getContext('2d')
+    var desenharDuende
+    var moves = 0
+
+    desenharDuende = desenharDuendeCirculo
+
+    if (duende != null) {
+        desenharDuende = desenharDuendeImg
+    }
+    var jogador = this 
+    var mapa = labirinto.map()
+
+    var cellCoords = {
+        x: labirinto.iniciarCoord().x,
+        y: labirinto.iniciarCoord().y 
+    }
+    var cellSize = _cellsize
+    var halfCellSize = cellSize / 2 
+
+    this.redesenharJogador = function(_cellsize) {
+        cellSize = _cellsize
+        desenharDuendeImg(cellCoords)
+    }
+    function desenharDuendeCirculo(coord) {
+        ctx.beginPath()
+        ctx.fillStyle = "yellow"
+
+        ctx.arc(
+            (coord.x + 1) * cellSize - halfCellSize,
+            (coord.y + 1) * cellSize - halfCellSize,
+            halfCellSize - 2,
+            0,
+            2 * Math.PI
+        )
+        ctx.fill()
+
+        if (coord.x === labirinto.endCoord().x && coord.y === labirinto.endCoord) {
+            onComplete(moves)
+            jogador.unbindKeyDown()
+        }
+    }
+    function desenharDuendeImg(coord) {
+        var offsetLeft = cellSize / 50
+        var offsetRight = cellSize / 25
+        ctx.drawImage(
+            duende,
+            0,
+            0,
+            duende.width,
+            duende.height,
+            coord.x * cellSize + offsetLeft,
+            coord.y * cellSize + offsetLeft,
+            cellSize - offsetRight,
+            cellSize - offsetRight
+        )
+        if (coord.x === maze.endCoord().x && coord.y === labirinto.endCoord().y) {
+            onComplete(moves)
+            jogador.unbindKeyDown()
+        }
+    }
+    function removerDuende(coord) {
+        var offsetLeft = cellSize / 50
+        var offsetRight = cellSize / 25 
+
+        ctx.clearRect(
+            coord.x * cellSize + offsetLeft,
+            coord.y * cellSize + offsetLeft,
+            cellSize - offsetRight,
+            cellSize - offsetRight
+        )
+    }
+    function verificar(e) {
+        var celula = map[cellCoords.x][cellCoords.y]
+        moves++ 
+
+        switch(e.keyCode) {
+            case 65:
+            case 37: 
+
+            if (celula.w == true ) {
+                removerDuende(cellCoords)
+
+                cellCoords = {
+                    x: cellCoords.x - 1,
+                    y: cellCoords.y
+                }
+                desenharDuende(cellCoords)
+            }
+            break;
+
+            case 87: 
+            case 38: 
+
+            if (celula.n == true) {
+                removerDuende(cellCoords)
+
+                cellCoords = {
+                    x: cellCoords.x,
+                    y: cellCoords.y - 1
+                }
+                desenharDuende(cellCoords)
+            }
+            break;
+
+            case 68:
+            case 39:
+
+            if (celula.e == true) {
+                removerDuende(cellCoords)
+
+                cellCoords = {
+                    x: cellCoords.x + 1,
+                    y: cellCoords.y
+                }
+                desenharDuende(cellCoords)
+            }
+            break;
+
+            case 83:
+            case 40: 
+
+            if (celula.s == true) {
+                removerDuende = {
+                    x: cellCoords.x,
+                    y: cellCoords.y + 1
+                }
+                desenharDuende(cellCoords)
+            }
+            break;
+        }
+    }
+    this.bindKeyDown = function() {
+        window.addEventListener('keydown', verificar, false)
+
+        $('#exibir').swipe({
+            swipe: function(
+                event, 
+                direction,
+                distance,
+                duration,
+                fingerCount,
+                fingerData
+            ) {
+                console.log(direction);
+
+                switch(direction) {
+                    case "subir":
+                        verificar({
+                            keyCode: 38
+                        })
+                    case "abaixo":
+                        verificar({
+                            keyCode: 40 
+                        })
+                    case "left":
+                        verificar({
+                            keyCode: 37
+                        })
+                    case "right": 
+                    verificar({
+                        keyCode: 39
+                    })
+                    break;
+                }
+            },
+            threshold: 00
+        })
+    }
+    this.unbindKeyDown = function() {
+        window.removeEventListener('keydown', verificar, false)
+        $('#exibir').swipe('destroy')
+    }
+    desenharDuende(labirinto.iniciarCoord())
+
+    this.bindKeyDown()
 }

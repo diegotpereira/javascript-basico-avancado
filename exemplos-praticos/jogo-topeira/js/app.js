@@ -1,18 +1,37 @@
+// https://github.com/mitri-dvp/JavaScript-Whack-A-Mole
+
 // Elementos
 const iniciar_sfx = new Audio('./mp3/start.mp3')
 const espiar_sfx = new Audio('./mp3/peep.mp3')
+const ding_sfx  = new Audio('./mp3/ding.mp3')
+const hit_sfx = new Audio('./mp3/hit.mp3');
+const hit2_sfx = new Audio('./mp3/hit2.mp3');
+const peep_sfx = new Audio('./mp3/peep.mp3')
 
-const cronometro = document.querySelector('tempo span')
+const cronometro = document.querySelector('.tempo span')
 const velocidadeNivelDOM = document.querySelector('.velocidade-nivel')
 const tempoNivelDOM = document.querySelector('.tempo-nivel')
 
-const hit_sfx = new Audio('./mp3/hit.mp3');
-const hit2_sfx = new Audio('./mp3/hit2.mp3');
+
 
 const buracos = document.querySelectorAll('.buraco')
+
 const contadora = document.querySelector('.pontuacao span')
+const placar = document.querySelector('.placar')
+const nomeContainer = document.querySelector('.entreNome')
+const nomeEntrada =  document.querySelector('input[type=text]')
+const tabela = document.querySelector('.pontuacoes')
+let placarTabela
+let classificacaoTabela
+if (localStorage.getItem('placar')) {
+    placarTabela = JSON.parse(localStorage.getItem('placar'))
+} else {
+    placarTabela = []
+}
+let pontuacaoFinal
 
 const iniciar = document.querySelector('.iniciar')
+const novamente = document.querySelector('.novamente')
 
 let volume_nivel = 1
 let velocidade_nivel = 1
@@ -34,9 +53,22 @@ modal.addEventListener('click', e => {
     switch(selecionar) {
 
         case 'e':
-            alterarVivelVelocidade(null, 3)
+            alterarNivelVelocidade(null, 3)
             alterarNivelTempo(null, '5')
         break;
+
+        case 'm':
+            alterarNivelVelocidade(null, 2)
+            alterarNivelTempo(null, '30')
+        break;
+
+        case 'd':
+            alterarNivelVelocidade(null, 2)
+            alterarNivelTempo(null, '10')
+        break;
+
+        default:
+            return
         
     }
     modal.classList.add('hide')
@@ -46,11 +78,14 @@ modal.addEventListener('click', e => {
 
 // Ouvintes de eventos (Listeners)
 iniciar.addEventListener('click', iniciarTempo)
+novamente.addEventListener('click', irMenu)
 
 buracos.forEach(buraco => buraco.addEventListener('mousedown', subir))
 buracos.forEach(buraco => buraco.addEventListener('touchstart', subir))
 
-velocidadeNivelDOM.addEventListener('click', alterarVivelVelocidade)
+nomeEntrada.addEventListener('keyup', entreNome)
+
+velocidadeNivelDOM.addEventListener('click', alterarNivelVelocidade)
 tempoNivelDOM.addEventListener('click', alterarNivelTempo)
 
 
@@ -76,7 +111,7 @@ function subir(e) {
             }
         }
         contar++
-        contar.textContent = `${contar}`
+        contadora.textContent = `${contar}`
     }
 }
 
@@ -85,10 +120,12 @@ function espiar() {
     const aleatorioTempo = getAleatorioTempo()
     const buraco = aleatorioBuraco(buracos)
 
+    // Acessando a classe
     buraco.classList.add('subir')
 
     if (volume_nivel) {
-        
+        peep_sfx.currentTime = 0
+        peep_sfx.play()
     }
     setTimeout(() => {
         if (!tempoAcima) espiar()
@@ -139,14 +176,14 @@ function iniciarTempo() {
         tempoAcima = false
         tempo = 0
         iniciado = true 
-        // cronometro.textContent = `${getTempo()}`
+        cronometro.textContent = `${getTempo()}`
         espiar()
 
         contagemRegressiva = setInterval(() => {
             tempo++
 
-            // cronometro.textContent = `${getTempo() - tempo}`
-            // (getTempo() - tempo === 3 || getTempo() - tempo === 1) ? cronometro.style.color = '#f33' : cronometro.style.color = 'inherit'
+            cronometro.textContent = `${getTempo() - tempo}`;
+            (getTempo() - tempo === 3 || getTempo() - tempo === 1) ? cronometro.style.color = '#f33' : cronometro.style.color = 'inherit'
 
             if (tempo >= getTempo()) {
                 
@@ -157,14 +194,70 @@ function iniciarTempo() {
 
                 if (volume_nivel) {
                     
+                    ding_sfx.currentTime = 0
+                    ding_sfx.play()
                 }
                 setTimeout(() => {
-
+                    placarAtualizador()
                 }, 1000)
             }
         }, 1000)
 
     }
+}
+function placarAtualizador() {
+    pontuacaoFinal = contar
+
+    nomeContainer.classList.add('flex')
+    setTimeout(() => {
+        nomeContainer.classList.add('opacity')
+    }, 100);
+}
+function entreNome(e) {
+
+    if (e.keyCode === 13) {
+        nome = this.value 
+        this.value = ''
+
+        nomeContainer.classList.remove('flex')
+        nomeContainer.classList.remove('opacity')
+        placar.classList.add('block')
+        placar.classList.add('opacity')
+        
+        placarTabela.push({ nome, pontuacao: pontuacaoFinal })
+        localStorage.setItem('placar', JSON.stringify(placarTabela))
+
+        classificacaoTabela = placarTabela.sort((a, b) => (a.pontuacao > b.pontuacao ? -1 : 1))
+
+        tabela.innerHTML = `
+        <button class="pontuacao-botao">X</button>
+        <thead>
+           <tr>
+              <th>#</th>
+              <th>Nome</th>
+              <th>Pontuação</th>
+           </tr>
+        </thead>`;
+
+        for(let i = 0; i < classificacaoTabela.length; i++) {
+
+            if(i > 7) break;
+
+            tabela.innerHTML += `
+            <tr>
+               <td>${i + 1}</td>
+               <td>${classificacaoTabela[i].nome}</td>
+               <td>${classificacaoTabela[i].pontuacao}</td>
+            </tr>`
+        }
+        tabela.querySelector('.pontuacao-botao').addEventListener('click', irMenu)
+    }
+}
+function irMenu() {
+    placar.classList.remove('block')
+    placar.classList.remove('opacity')
+    nomeContainer.classList.remove('flex')
+    nomeContainer.classList.remove('opacity')
 }
 function getTempo() {
     switch(tempo_nivel) {
@@ -182,7 +275,7 @@ function getTempo() {
             return 10
     }
 }
-function alterarVivelVelocidade(e, n) {
+function alterarNivelVelocidade(e, n) {
 
     const elemento = velocidadeNivelDOM.children[1]
     const atualNivel = n || +elemento.textContent

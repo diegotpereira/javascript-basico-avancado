@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica", sans-serif;
+    box-sizing: border-box;
+}
+.hide-container {
+    display: none;
+}
+
+.cabecalho {
+    text-align: center;
+    margin: 15px 0;
+    font-family: "Permanent Marker";
+}
+.entre-jogadores {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    position: relative;
+}
+.entrada-campo {
+    border: 2px solid #000;
+    outline: none;
+    padding: 4px 8px;
+    margin: 0 0 10px 4px;
+    font-size: 18px;
+}
+.entrada-campo:focus {
+    border: 2px solid #E15E32;
+}
+
+.enviar-btn {
+    border: 2px solid #000;
+    padding: 8px 8px;
+    font-size: 18px;
+    width: 250px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: #fff;
+}
+.enviar-btn:active, 
+.enviar-btn:focus {
+    outline: none;
+    border: 2px solid #E15E32;
+}
+.enviar-btn:hover {
+    background-color: #ece9e9;
+}
+.painel__jogador-turn {
+    text-align: center;
+    margin: 10px 0 10px;
+    height: 54px;
+}
+
+.nome--estilo {
+    font-size: 22px;
+}
+.painel__container {
+    
+    width: 40%;
+    background-color: pink;
+    margin: 0 auto;
+    font-size: 0;
+    border: 2px solid #000;
+    -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+}
+.painel__celula {
+    width: calc(100% / 3);
+    height: 87px;
+    display: inline-block;
+    font-size: 40px;
+    text-align: center;
+    border: 2px solid #000;
+    padding: 20px;
+    vertical-align: top;
+    font-family: "Permanent Marker";
+}
+.painel__celula--vencedor {
+    background-color: #f9738a;
+}
+
+.carta {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Permanent Marker";
+}
+
+.redefinir {
+    text-align: center;
+    margin: 20px auto 0;
+}
+.redefinir--hidden {
+    display: none;
+}
+.repetir-btn {
+    width: 25%;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    outline: none;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-top: 12px;
+    word-spacing: 3px;
+    background-color: #fff;
+}
+.repetir-btn:hover,
+.repetir-btn:active {
+    outline: none;
+    color: #fff;
+    background-color: #000;
+}
+.parabens {
+    font-size: 24px;
+}
+.u-r-vencedor {
+    font-size: 18px;
+    height: 18px;
+    line-height: 18px;
+    margin: 2px 0;
+}
+@media only screen and (max-width: 767px){
+    .painel__celula {
+        font-size: 16px;
+        padding: 5px;
+    }
+    .repetir-btn {
+        width: 50%;
+    }
+}
