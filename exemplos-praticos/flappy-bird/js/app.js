@@ -49,9 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         jogoExibir.appendChild(obstaculo)
         jogoExibir.appendChild(topoObstaculo)
 
-        jogoExibir.appendChild(obstaculo)
-        jogoExibir.appendChild(topoObstaculo)
-
         obstaculo.style.left = obstaculoRestante + 'px'
         topoObstaculo.style.left = obstaculoRestante +  'px'
 
@@ -80,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         let tempoId = setInterval(moverObstaculo, 20)
-        if(!ehFimDeJogo) setInterval(gerarObstaculo, 3000)
+        if(!ehFimDeJogo) setTimeout(gerarObstaculo, 3000)
     }
     gerarObstaculo()
 
