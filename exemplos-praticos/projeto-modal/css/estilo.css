@@ -103,7 +103,7 @@ body {
     transform: scale(1.1);
     color: var(--mainBlack);
 }
-#carrinho-item-preco {
+#cart-item-price {
     font-size: 0.8rem;
 }
 .btn-pink {
@@ -174,7 +174,7 @@ body {
     color: var(--mainWhite);
 }
 .store-item-value {
-    color: var(--mainYellow);
+    color: --mainYellow;
 }
 .search-box {
     background: var(--mainPink);
@@ -207,6 +207,7 @@ body {
     color: var(--mainPink);
     font-size: 3rem;
     transition: all 1s ease-in-out;
+    cursor: pointer;
 }
 .lightbox-close:hover {
     color: var(--mainYellow);

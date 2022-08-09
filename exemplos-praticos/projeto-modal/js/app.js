@@ -13,22 +13,22 @@
 
     let imagemContadora = 0
 
-    imagens.forEach(function(imagem) {
+    imagens.forEach(function(image) {
 
-        imagemLista.push(imagem.src)
+        imagemLista.push(image.src)
     })
 
     lojaItens.forEach(function(item) {
 
         item.addEventListener('click', function(e) {
 
-            let imagem = e.target.src 
+            let image = e.target.src 
 
-            luzCaixaItem.getElementsByClassName.backgroundImage = `url${imagem}`
+            luzCaixaItem.getElementsByClassName.backgroundImage = `url${image}`
 
             luzCaixa.classList.add('show')
 
-            imagemContadora = imagemLista.indexOf(imagem)
+            imagemContadora = imagemLista.indexOf(image)
         })
     })
 
@@ -36,13 +36,13 @@
 
     btnEsquerdo.addEventListener('click', function() {
 
-        imagemContadora++
+        imagemContadora--
 
         if (imagemContadora < 0) {
             
             imagemContadora = imagemLista.length - 1 
         }
-        luzCaixaItem.getElementsByClassName.backgroundImage = `url(${imagemLista[imagemContadora]})`
+        luzCaixaItem.style.backgroundImage = `url(${imagemLista[imagemContadora]})`
     })
 
     let btnDireito = document.querySelector('.btnRight')

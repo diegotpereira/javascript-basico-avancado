@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/estilo1.css">
 </head>
@@ -34,7 +35,7 @@
                         <p class="mb-0">51 999999999</p>
                     </div>
 
-                    <div id="carrinho-info" class="nav-info align-items-center cart-info d-flex justify-content between mx-lg-5">
+                    <div id="cart-info" class="nav-info align-items-center cart-info d-flex justify-content between mx-lg-5">
                         <span class="cart-info__icon mr-lg-3"><i class="fas fa-shopping-cart"></i></span>
                         <p class="mb-0 text-capitalize"><span id="item-contar">2</span> itens - $<span class="item-total">10.49</span></p>
                     </div>
@@ -48,15 +49,15 @@
                     <h1 class="text-capitalize">Bem vindo ao <strong class="banner-title">da vovó</strong></h1>
                     <a href="#store" class="btn banner-link text-uppercase my-2">Explorar</a>
                 </div>
-                <div class="cart" id="carrinho">
+                <div class="cart" id="cart">
                     <div class="cart-item d-flex justify-content-between text-capitalize my-3">
-                        <img src="" alt="" class="img fluid-rounded-circle" id="item-img">
+                        <img src="" alt="" class="img-fluid rounded-circle" id="item-img">
 
                         <div class="item-text">
-                            <p class="font-weight-bold mb-0" id="carrinho-item-titulo">carrinho item</p>
-                            <p class="mb-0" id="carrinho-item-preco">10.99</p>
+                            <p class="font-weight-bold mb-0" id="cart-item-titulo">carrinho item</p>
+                            <p class="mb-0" id="cart-item-price">10.99</p>
                         </div>
-                        <a href="#" class="cart-item-remove" id="carrinho-item-remove">
+                        <a href="#" class="cart-item-remove" id="cart-item-remove">
                             <i class="fas fa-trash"></i>
                         </a>
                     </div>
@@ -66,21 +67,21 @@
 
                         <div class="cart-item-text">
 
-                            <p class="font-weight-bold mb-0" id="carrinho-item-titulo">carrinho item</p>
-                            <p class="mb-0" id="carrinho-item-preco">10.99</p>
+                            <p class="font-weight-bold mb-0" id="cart-item-titulo">carrinho item</p>
+                            <p class="mb-0" id="cart-item-price">10.99</p>
                         </div>
-                        <a href="#" class="cart-item-remove" id="carrinho-item-remove">
+                        <a href="#" class="cart-item-remove" id="cart-item-remove">
                             <i class="fas fa-trash"></i>
                         </a>
                     </div>
 
                     <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
                         <h5>Total</h5>
-                        <h5> $<strong class="font-weight-bold" id="carrinho-total">10.00</strong></h5>
+                        <h5> $<strong class="font-weight-bold" id="cart-total">10.00</strong></h5>
                     </div>
 
                     <div class="cart-buttons-container mt-3 d-flex justify-content between">
-                        <a href="#" class="btn btn-outline-secondary btn-black text-uppercase" id="limpar-carrinho">Limpar carrinho</a>
+                        <a href="#" class="btn btn-outline-secondary btn-black text-uppercase" id="clear-cart">Limpar carrinho</a>
                         <a href="#" class="btn btn-outline-secondary text-uppercase btn-pink">Verificar</a>
                     </div>
                 </div>
@@ -88,7 +89,7 @@
         </div>
     </header>
 
-    <section class="about py-5" id="sobre">
+    <section class="about py-5" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-10 mx-auto col-md-6 my-5">
@@ -128,29 +129,29 @@
                 <form action="">
                     <div class="input-group mb-3">
                         <div class="input-group prepend">
-                            <span class="input-group text search-box" id="buscar-icone"><i class="fas fa-search"></i></span>
+                            <span class="input-group text search-box" id="search-icon"><i class="fas fa-search"></i></span>
                         </div>
-                        <input type="text" name="" id="buscar-item" class="form-control" placeholder="item...">
+                        <input type="text" name="" id="search-item" class="form-control" placeholder="item...">
                     </div>
                 </form>
             </div>
         </div>
 
-        <div class="row" class="store-items" id="loja-itens">
+        <div class="row" class="store-items" id="store-items">
 
             <!-- item unico -->
             <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets" data-item="doces">
                 <div class="card">
                     <div class="img-container">
-                        <img src="img/sweets-1.jpeg" alt="" class="card-img-top">
+                        <img src="img/sweets-1.jpeg" alt="" class="card-img-top store-img">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
                         </span>
                     </div>
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="loja-item-nome">item doce</h5>
-                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="loja-item-preco">5</strong></h5>
+                            <h5 id="store-item-name">item doce</h5>
+                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="store-item-price">5</strong></h5>
                         </div>
                     </div>
                 </div>
@@ -167,8 +168,8 @@
 
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="loja-item-nome">bolo de copo item</h5>
-                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="loja-item-preco">5</strong></h5>
+                            <h5 id="store-item-name">bolo de copo item</h5>
+                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="store-item-price">5</strong></h5>
                         </div>
                     </div>
                 </div>
@@ -186,8 +187,8 @@
 
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="loja-item-nome">bolo item</h5>
-                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="loja-item-preco">5</strong></h5>
+                            <h5 id="store-item-name">bolo item</h5>
+                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="store-item-price">5</strong></h5>
                         </div>
                     </div>
                 </div>
@@ -205,8 +206,8 @@
 
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="loja-item-nome">rosquinhas item</h5>
-                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="loja-item-preco">5</strong></h5>
+                            <h5 id="store-item-name">rosquinhas item</h5>
+                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="store-item-price">5</strong></h5>
                         </div>
                     </div>
                 </div>
@@ -223,8 +224,8 @@
 
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="loja-item-nome">rosquinhas item</h5>
-                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="loja-item-preco">10</strong></h5>
+                            <h5 id="store-item-name">rosquinhas item</h5>
+                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="store-item-price">10</strong></h5>
                         </div>
                     </div>
                 </div>
@@ -241,8 +242,8 @@
 
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="loja-item-nome">rosquinhas item</h5>
-                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="loja-item-preco">10</strong></h5>
+                            <h5 id="store-item-name">rosquinhas item</h5>
+                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="store-item-price">10</strong></h5>
                         </div>
                     </div>
                 </div>
@@ -260,8 +261,8 @@
 
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="loja-item-nome">rosquinhas item</h5>
-                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="loja-item-preco">10</strong></h5>
+                            <h5 id="store-item-name">rosquinhas item</h5>
+                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="store-item-price">10</strong></h5>
                         </div>
                     </div>
                 </div>
@@ -278,8 +279,8 @@
 
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="loja-item-nome">rosquinhas item</h5>
-                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="loja-item-preco">10</strong></h5>
+                            <h5 id="store-item-name">rosquinhas item</h5>
+                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="store-item-price">10</strong></h5>
                         </div>
                     </div>
                 </div>
@@ -296,8 +297,8 @@
 
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="loja-item-nome">doces item</h5>
-                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="loja-item-preco">15</strong></h5>
+                            <h5 id="store-item-name">doces item</h5>
+                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="store-item-price">15</strong></h5>
                         </div>
                     </div>
                 </div>
@@ -314,8 +315,8 @@
 
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="loja-item-nome">cupcakes item</h5>
-                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="loja-item-preco">15</strong></h5>
+                            <h5 id="store-item-name">cupcakes item</h5>
+                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="store-item-price">15</strong></h5>
                         </div>
                     </div>
                 </div>
@@ -332,8 +333,8 @@
 
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="loja-item-nome">cakes item</h5>
-                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="loja-item-preco">15</strong></h5>
+                            <h5 id="store-item-name">cakes item</h5>
+                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="store-item-price">15</strong></h5>
                         </div>
                     </div>
                 </div>
@@ -350,8 +351,8 @@
 
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between text-capitalize">
-                            <h5 id="loja-item-nome">doughnuts item</h5>
-                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="loja-item-preco">5</strong></h5>
+                            <h5 id="store-item-name">doughnuts item</h5>
+                            <h5 class="store-item-value">R$ <strong class="font-weight-bold" id="store-item-price">5</strong></h5>
                         </div>
                     </div>
                 </div>
