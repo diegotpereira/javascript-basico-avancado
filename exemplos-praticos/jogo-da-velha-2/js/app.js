@@ -19,8 +19,13 @@ let jogadorY = jogador("")
 // inicializar o app
 function app() {
 
+    let entradaCampo = document.querySelector('.entrada-campo').focus()
+    
     let addJogadorForm = document.getElementById('jogador-form')
     addJogadorForm.addEventListener('submit', addJogadores)
+
+    let repetirBtn = document.querySelector('.repetir-btn')
+    repetirBtn.addEventListener('click', redefinirPainel)
 }
 
 // addJogadores
@@ -62,6 +67,9 @@ function emRedimensionar() {
 }
 
 function construirPainel() {
+
+    let redefinirContainer = document.querySelector('.redefinir')
+    redefinirContainer.classList.remove('redefinir--hidden')
 
     emRedimensionar()
     addCelulaCliqueOuvinte()
@@ -186,6 +194,27 @@ function alterarPainelCabecalhoNomes() {
             <div class="u-r-vencedor"><div>`
         }
     }
+}
+
+function redefinirPainel() {
+    console.log('redefinindo');
+
+    jogoPainel = ['', '', '', '', '', '', '', '', '']
+
+    let celulaParaAddToken = document.querySelectorAll('.carta')
+    celulaParaAddToken.forEach(quadrado => {
+        quadrado.textContent = ''
+        quadrado.parentElement.classList.remove('painel__celula--vencedor')
+    })
+    turn = 0
+    vencedor = false 
+
+    let atualJogadorTexto = document.querySelector('.painel__jogador-turn')
+    atualJogadorTexto.innerHTML = `
+    <span class="nome--estilo">${jogadorX.nome}</span>, você está acima!
+    <div class="u-r-vencedor"></div>`
+
+    addCelulaCliqueOuvinte()
 }
 
 function addCelulaCliqueOuvinte() {

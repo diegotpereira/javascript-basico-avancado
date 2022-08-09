@@ -57,6 +57,7 @@
     font-size: 22px;
 }
 .painel__container {
+    
     width: 40%;
     background-color: pink;
     margin: 0 auto;
@@ -68,6 +69,7 @@
 }
 .painel__celula {
     width: calc(100% / 3);
+    height: 87px;
     display: inline-block;
     font-size: 40px;
     text-align: center;
