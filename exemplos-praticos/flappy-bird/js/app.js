@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (obstaculoRestante === -60) {
                 
+
                 clearInterval(tempoId)
 
                 jogoExibir.removeChild(obstaculo)
@@ -73,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 (passaroFundo < obstaculoBottom + 153 || passaroFundo > obstaculoBottom + gap - 200) ||
                 passaroFundo === 0) {
                 
+                    fimDeJogo()
                     clearInterval(tempoId)
             }
         }
