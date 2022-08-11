@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 80%;
+    justify-content: center;
+    margin-top: 3rem;
+    background: #828489;
+}
+
+.addItens-container {
+    background: #4d7ea8;
+}
+
+.addItens-container,
+.exibirItens-container {
+    margin: 1rem 0;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: 2px solid #272932;
+    box-shadow: 0 5px 10px #272932;
+}
+
+.addItens-titulo,
+.exibirItens-titulo {
+    text-transform: capitalize;
+}
+
+.addItens-titulo {
+    color: #b6c2d9;
+}
+
+.addItens-acao,
+.exibirItens-acao {
+    border: 2px solid #272932;
+    padding: 0 5rem 0;
+    text-transform: capitalize;
+    border-radius: 0.5rem;
+    display: none;
+}
+
+.addItens-entrada {
+    background: transparent;
+    border: none;
+    border-bottom: 5px solid #9e90a2;
+    width: 100%;
+    font-size: 2rem;
+    padding: 0.5rem;
+    color: #9e90a2;
+    text-transform: capitalize;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.addItens-enviar,
+.exibirItens-limpar {
+    display: block;
+    width: 90%;
+    margin: 2rem auto 0 auto;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    outline: none;
+}
+
+.addItens-enviar {
+    color: #b6c2d9;
+    background: transparent;
+    border: 3px solid #b6c2d9;
+    transition: all 2s ease;
+}
+
+.addItens-enviar:hover {
+    background: #b6c2d9;
+    color: #272932;
+}
+
+.exibirItens--container {
+    background: #b6c2d9;
+}
+
+.exibirItens-titulo {
+    color: #4d7ea8;
+    margin-bottom: 0.25rem;
+}
+
+.lista-de-compras {
+    display: grid;
+    grid-template-columns: 4fr 1 fr;
+    align-items: center;
+    border-radius: 0.4rem;
+    padding: 0.5rem;
+    transition: all 1s ease-in-out;
+    margin: 0.5rem 0;
+}
+
+.lista-de-compras:hover {
+    background: #828489;
+}
+
+.lista-de-compras__titulo {
+    text-align: left;
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: #272932;
+}
+
+
+.lista-de-compras__link {
+    color: red;
+    transition: all 2s linear;
+}
+
+.lista-de-compras:hover,
+.lista-de-compras__link {
+    transform: scale(2);
+}
+
+.exibirItens-limpar {
+    color: #4d7ea8;
+    background: transparent;
+    border: 3px solid #4d7ea8;
+    transition: all 2s ease;
+}
+
+.exibirItens-limpar {
+    background: #4d7ea8;
+    color:#272932;
+    outline:none;
+    background: transparent;
+}
+
+.alerta {
+    color: red;
+    border-color: red;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.sucesso {
+    color:rgb(32, 184, 32);
+    border-color: rgb(32, 184, 32);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        grid-template-columns: 50%;
+    }
+}
