@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="cabecalho">
+        <div class="container">
+            <h1 class="cabecalho__titulo">Anotações app</h1>
+            <h2 class="cabecalho__subtitulo">Tome notas e nunca se esqueça</h2>
+        </div>
+    </div>
+    <div class="acoes">
+        <div class="acoes__container acoes_container--espacado">
+            <a href="./index.html">Principal</a>
+            <span id="tempo-carimbo"></span>
+        </div>
+    </div>
+    <div class="container">
+        <input type="text" id="nota-titulo" class="titulo-entrada" placeholder="Nota titulo">
+        <textarea name="" id="nota-corpo" cols="30" rows="10" class="corpo-nota" placeholder="Digite o texto da nota"></textarea>
+        <button id="remover-nota" class="button--secundario">Remover nota</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.js"></script>
+    <script src="js/app-funcoes.js"></script>
+    <script src="js/app.editar.js"></script>
+
+</body>
+</html>
