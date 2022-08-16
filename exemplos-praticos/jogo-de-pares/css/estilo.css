@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'Work Sans', sans-serif;
+    src: url('WorkSans-Medium.ttf') format('truetype') 
+}
+html,
+body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.voltarBtn {
+    padding: 4px;
+    border-radius: 5px;
+    color: white;
+    background-color: #2B53B8;
+    text-decoration: none;
+    width: 190px;
+    height: 40px;
+    text-align: center;
+    grid-row: 2 / 3;
+    grid-column: 2 /3;
+    border: none;
+    font-size: 1.15em;
+    font-family: 'Work Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+#rpsTitulo {
+    text-align: center;
+    grid-row: 2 / 3;
+    grid-column: 1 / 5;
+    margin-bottom: 0;
+}
+
+.pontuacao {
+    text-align: right;
+    grid-row: 2 / 3;
+    grid-column: 1 / 5;
+    font-size: 1.25em;
+    margin: 0;
+}
+.pontuacao span {
+    color: #0063B2FF;
+    margin:  0 20px;
+    width: 20px;
+}
+
+#resultadosCon {
+    text-align: center;
+}
+
+#redefinirBtn {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 2em;
+    padding: 0.25em 0.75em;
+    background-color: #FEDE00;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+}
+
+#redefinirBtn:hover {
+    background-color: #0063B2FF;
+}
+
+#paresJogoPrincipal {
+    z-index: 0;
+    display: grid;
+    grid-template-columns: 1em 1fr 1fr 1em;
+    grid-template-rows: auto;
+    background-color: #A8D9F8;
+    grid-column: 1 / 6;
+    grid-row: 2 / 3;
+    color: black;
+    border-radius: 1em;
+    margin: 10px 10px 10px 10px;	
+	min-height: calc(100vh - 20px);
+	min-height: -o-calc(100vh - 20px); 
+	min-height: -webkit-calc(100vh - 20px); 
+	min-height: -moz-calc(100vh - 20px);
+} 
+
+.paresPrincipal {
+	grid-column: 2 / 4;
+	grid-row: 3 / 4;
+	display: grid;
+	grid-gap: 10px 5%;
+	grid-template-columns: repeat(5, 1fr);
+	margin: 5px 16%;
+}
+.voltar {
+	background-color: #6AB8EE;
+	border-radius: 1.5em;
+	text-align: center;
+	z-index: 10;
+	border: 5px solid #EBEBEB;
+	height: 100%;
+}
+.frente {
+	background-color: #B4F8C8;
+	border-radius: 15em;
+	text-align: center;
+	z-index: -1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 5px solid #EBEBEB;
+}
+.frente img {
+    width: 90%;
+}
+
+.card {
+	display: grid;
+	perspective: 1000px;
+	height: 125px;
+	width: 100px;
+	justify-self: center;
+	cursor: pointer;
+}
+
+.virarCartao {
+    transform: rotateX(180deg);
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.retornarCartao {
+    transform: rotateY(0deg);
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.maximaPontuacaoAnimada {
+    animation: textResize 2.5s linear;
+    animation-fill-mode: forwards;
+}
+
+@media screen and(max-width: 34em) {
+	.card {
+		height: 75px;
+		width: 60px;
+	}
+}
