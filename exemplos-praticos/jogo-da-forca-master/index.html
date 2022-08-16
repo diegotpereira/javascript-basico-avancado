@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+    <link href='http://fonts.googleapis.com/css?family=Arvo' rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <div id="carrasco">
+        <div style="height: 2em; margin-bottom: 3em;">
+            <div id="carrasco_final" class="forca"></div>
+        </div>
+        <div id="carrasco_animation">
+            <div id="carrasco_2" class="forca pole_h"></div>
+            <div id="carrasco_1" class="forca pole_v"></div>
+            <div id="carrasco_3" class="forca corda"></div>
+            <div id="carrasco_4" class="forca homem_cabeca"></div>
+            <div id="carrasco_5" class="forca homem_superior"></div>
+            <div id="carrasco_6" class="forca homem_inferior"></div>
+        </div>
+        <div style="height: 2em;">
+            <div id="carrasco_tentativas" class="forca"></div>
+        </div>
+
+        <form>
+            <div id="carrasco_tentativaCaixa" class="forca" style="height: 8em;">
+                <div style="height: 4em;">
+                    Adivinhe a palavra: <div id="carrasco_palavra"></div>
+                </div>
+                <input type="text" id="tentativa" onkeyup="Carrasco.tentativa(this.value); this.value = ''; return false;" placeholder="">
+            </div>
+            <div class="col-sm-3">
+                <button type="button" id="btn-iniciar" class="btn-lg btn-info" onclick="Carrasco.redefinir(); return false;">Novo Jogo</button>
+            </div>
+        </form>
+    </div>
+    <p style="margin-top: 3em;">
+        <a href="" class="github" alt="github">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+    </p>
+</body>
+</html>
