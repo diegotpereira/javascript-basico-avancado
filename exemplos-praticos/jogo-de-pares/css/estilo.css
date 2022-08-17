@@ -30,7 +30,7 @@ body {
 }
 #rpsTitulo {
     text-align: center;
-    grid-row: 2 / 3;
+    grid-row: 1 / 2;
     grid-column: 1 / 5;
     margin-bottom: 0;
 }
@@ -46,6 +46,25 @@ body {
     color: #0063B2FF;
     margin:  0 20px;
     width: 20px;
+}
+
+#rpsmodal {
+    top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 77777;
+	opacity: 0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+	position: fixed;  
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #A8D9F8;
 }
 
 #resultadosCon {
@@ -101,7 +120,7 @@ body {
 }
 .frente {
 	background-color: #B4F8C8;
-	border-radius: 15em;
+	border-radius: 1.5em;
 	text-align: center;
 	z-index: -1;
 	display: flex;
@@ -122,8 +141,21 @@ body {
 	cursor: pointer;
 }
 
+.frente {
+    transform: rotateY(180deg);
+}
+
+.frente, .voltar {
+    grid-row: 1 / 2;
+	grid-column: 1 / 2;
+	-webkit-backface-visibility: hidden; /* Safari */
+	backface-visibility: hidden;
+	width: 90px;
+	height: 115px;
+}
+
 .virarCartao {
-    transform: rotateX(180deg);
+    transform: rotateY(180deg);
     transition: transform 1s ease-in-out;
     transform-style: preserve-3d;
 }
@@ -134,14 +166,116 @@ body {
     transform-style: preserve-3d;
 }
 
+.paresInstrucoes {
+    grid-row: 4 / 5;
+	grid-column: 2 / 4;
+	text-align: center;
+}
+
+#paresModal {
+    top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 77777;
+	opacity: 0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;  
+	color: #A8D9F8;
+}
+
+#paresResultado {
+    font-size: 2em;
+}
+
 .maximaPontuacaoAnimada {
     animation: textResize 2.5s linear;
     animation-fill-mode: forwards;
 }
 
-@media screen and(max-width: 34em) {
+@keyframes textResize {
+	from {
+		font-size: 0.25em;
+	}
+	to {
+		font-size: 4em;
+	}
+}
+
+@media only screen and (min-width: 34em) and (max-width: 65em) {
+
+	.paresPrincipal {
+		margin: 5px 0;
+		grid-gap: 10px 3%;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(5, 1fr);
+	}
+
+	.pontuacao {
+		margin: 0 0 20px 0;
+	}
+
+	.card {
+		height: 150px;
+		width: 120px;
+	}
+
+	.frente, .voltar {
+		height: 140px;
+		width: 110px;
+	}
+
+}
+
+@media screen and (max-width: 34em) {
+	#rpsWrapper {
+		grid-template-rows: 1fr 1fr 1fr 6.5em;
+	}
+
+	.voltarBtn {
+		width: 165px;
+		height: 40px;
+		font-size: 1em;
+	}
+
+	#rpsTitulo {
+		margin-bottom: 20px;
+	}
+
+	.pontuacao {
+		font-size: 1em;
+	}
+
+	#paresPrincipalJogo {
+		grid-template-columns: 0.5em 1fr 1fr 0.5em;
+	}
+
+	.paresPrincipal {
+		margin: 30px 0;
+		grid-gap: 10px 3%;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(5, 1fr);
+	}
+
 	.card {
 		height: 75px;
 		width: 60px;
+	}
+
+	.frente, .voltar {
+		border-radius: 0.75em;
+		height: 65px;
+		width:50px;
+	}
+
+	#paresResultado {
+		font-size: 1.5em;
 	}
 }

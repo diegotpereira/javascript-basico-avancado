@@ -7,14 +7,25 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap"> -->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159648583-1"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-159648583-1');
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+    </style>
 </head>
 <body>
     <div id="paresJogoPrincipal">
-        <a href="github.com/diegotpereira" class="voltarBtn">Voltar ao site principal</a>
+        <a href="https://github.com/diegotpereira" class="voltarBtn">Voltar ao site principal</a>
         <h1 id="rpsTitulo">Pares</h1>
         <h3 class="pontuacao">
             <div>Temporizador: <span id="temporizador">0</span>

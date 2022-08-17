@@ -1,3 +1,7 @@
+function embaralhar(array) {
+    array.sort(() => Math.random() - 0.5)
+}
+
 let par1 = 'https://lauratoddcodes.github.io/Pairs-Game/images/book.svg'
 let par2 = 'https://lauratoddcodes.github.io/Pairs-Game/images/globe.svg'
 let par3 = 'https://lauratoddcodes.github.io/Pairs-Game/images/mortarboard.svg'
@@ -10,6 +14,8 @@ let par9 = 'https://lauratoddcodes.github.io/Pairs-Game/images/scissors.svg'
 let par10 = 'https://lauratoddcodes.github.io/Pairs-Game/images/testTubes.svg'
 
 let arr = [par1, par1, par2, par2, par3, par3, par4, par4, par5, par5, par6, par6, par7, par7, par8, par8, par9, par9, par10, par10]
+
+embaralhar(arr)
 
 function atribuirCartoes() {
 
@@ -215,6 +221,10 @@ document.getElementById('redefinirBtn').addEventListener('click', function() {
     maximaPontuacao.innerHTML = ""
     modal.style.opacity = "0"
     modal.style.pointerEvents = "none"
+
+    tempo = 0
+    embaralhar(arr)
+    atribuirCartoes()
     let jogoCompleto = 0
     
 })
