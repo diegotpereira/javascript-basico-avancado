@@ -1,0 +1,55 @@
+.tarefas li,
+.tarefas .erro,
+.tarefas button,
+.tarefas input, .tarefas ul {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+body {
+  background: #f1f1f1;
+  margin-top: 2rem;
+}
+
+.tarefas {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.tarefas .erro {
+  display: none;
+  background: rgba(237, 28, 36, 0.7);
+  color: #fff;
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+.tarefas ul {
+  background: #fff;
+}
+.tarefas li,
+.tarefas .erro,
+.tarefas button,
+.tarefas input {
+  font: 18px/1.25em Helvetica, Arial, Sans-serif;
+}
+
+.tarefa-header {
+  display: inline-flex;
+  background: #313e50;
+  justify-content: space-between;
+  width: 100%;
+}
+.tarefa-header input,
+.tarefa-header button {
+  color: #fff;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  padding: 14px;
+}
+.tarefa-header input {
+  flex-grow: 2;
+}/*# sourceMappingURL=estilo.css.map */
