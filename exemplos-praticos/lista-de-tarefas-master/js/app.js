@@ -8,7 +8,7 @@
             this.eventoTarefaLista()
         },
         cacheDom: function() {
-            this.tarefaEntrada = document.getElementById('entrada-tarefa')
+            this.tarefaEntrada = document.getElementById('input-tarefa')
             this.addBtn = document.getElementById('add-tarefa-btn')
             this.tarefaLista = document.getElementById('tarefas')
             this.tarefaListaFilho = this.tarefaLista.children
@@ -24,12 +24,16 @@
             // LIGAÇÃO DE EVENTOS DE CLIQUE A ELEMENTOS
             for(i = 0; i < this.tarefaListaFilho.length; i+= 1) {
                 // ADICIONAR EVENTO DE CLIQUE ÀS CAIXAS DE VERIFICAÇÃO
-                // chkBox = this.tarefaListaFilho[i].getElementsByTagName('input')[0]
-                // chkBox.onclick = this.completaTarefa.bind(this, this.tarefaListaFilho[i], chkBox)
+                chkBox = this.tarefaListaFilho[i].getElementsByTagName('input')[0]
+                chkBox.onclick = this.tarefaCompleta.bind(this, this.tarefaListaFilho[i], chkBox)
+
+                // ADICIONAR EVENTO DE CLIQUE PARA APAGAR BOTÃO
+                delBtn = this.tarefaListaFilho[i].getElementsByTagName('button')[0]
+                delBtn.onclick = this.deletarTarefa.bind(this, i)
             }
         },
         renderizar: function() {
-            var tarefaLi
+            var tarefaLi, tarefaCheckBox, tarefaVal, tarefaBtn, tarefaIconeLixeira
 
             // BUILD HTML
             tarefaLi = document.createElement('li')
@@ -52,22 +56,23 @@
             // INSERIR ICONE DE LIXEIRA NO BOTAO
             tarefaBtn.appendChild(tarefaIconeLixeira)
 
+            // ANEXAR ELEMENTOS A TAREFALI
             tarefaLi.appendChild(tarefaCheckBox)
             tarefaLi.appendChild(tarefaVal)
             tarefaLi.appendChild(tarefaBtn)
 
             this.tarefaLista.appendChild(tarefaLi)
         },
-        completaTarefa: function(i, chkBox) {
+        tarefaCompleta: function(i, chkBox) {
 
             if (chkBox.checked) {
                 i.className = 'tarefa completa'
 
             } else {
-                this.incompletaTarefa(i)
+                this.tarefaIncompleta(i)
             }
         },
-        incompletaTarefa: function() {
+        tarefaIncompleta: function() {
             i.className = 'tarefa'
         },
         entradaTecla: function(e) {
@@ -90,6 +95,10 @@
                 this.tarefaEntrada.value = ""
                 this.eventoTarefaLista()
             }
+        },
+        deletarTarefa: function(i) {
+            this.tarefaLista.children[i].remove()
+            this.eventoTarefaLista()
         },
         erro: function() {
             this.erroMensagem.style.display = 'block'
