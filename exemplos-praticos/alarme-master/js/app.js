@@ -2,7 +2,7 @@ function alarme() {
 
     clearInterval(intervalo)
     document.getElementById('relogio').src = 'img/alarm.gif'
-    alert('O tempo acabou');
+    alert('O tempo acabou')
 }
 
 var tempo = prompt('Digite o tempo em segundos:')
