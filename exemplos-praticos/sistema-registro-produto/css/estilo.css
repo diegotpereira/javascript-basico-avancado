@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: navajowhite;
+}
+
+.container {
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sidebar-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid black;
+    margin: 0;
+    padding: 0;
+}
+
+.content-bar-form {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    height: 500px;
+    background-color: skyblue;
+    border-radius: 8px;
+}
+
+.titulo-bar-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+label {
+    margin-left: 10px;
+}
+
+.entrada-produto {
+    display: flex;
+    width: 300px;
+    height: 25px;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.area-descricao {
+    display: flex;
+    width: 300px;
+    height: 100px;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.entrada-quantidade {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 25px;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.entrada-preco {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100px;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+/* .img-upload {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+  }
+  .input-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    margin-left: 55px;
+  } */
+
+.btn-enviar {
+    display: flex;
+    border-radius: 4px;
+    margin-top: 30px;
+    margin-left: 85px;
+    background-color: green;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.produto-saida {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+}
+
+#saida-itens-titulo {
+    display: flex;
+    justify-content: center;
+}
+
+.entrada-campo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.colecao {
+    display: flex;
+}
+
+.colecao-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 150px;
+    height: 200px;
+    margin: 20px;
+    border: 1px solid black;
+}
+
+.btn-limpar-posicao {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-posicao {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer {
+    text-align: center;
+}
