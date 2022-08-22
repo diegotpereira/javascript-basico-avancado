@@ -1,0 +1,348 @@
+* {
+    transition: 0.8s ease !important;
+}
+
+html {
+    height: 100%;
+    display: table;
+    margin: auto;
+}
+
+body {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    background: #f1f1f1;
+    font-family: 'Poiret One', cursive;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.holder {
+    margin: 0.23rem 0 0.23rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.escuro {
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.22);
+}
+
+.set {
+    position: absolute;
+    right: 1em;
+    top: 0;
+    z-index: 999;
+}
+
+.drop-toggle {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.drop-toggle i {
+    padding: 0.5em 0.55em;
+    background: #fff;
+    border-radius: 4px;
+    color: #555;
+}
+
+u.dropdown {
+    display: none;
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    margin-top: 0.5em;
+    margin: 0.5em auto;
+    background: #777;
+    min-width: 12em;
+    padding: 0;
+    border-radius: 0 0 0.2em 0.2em;
+}
+
+ul.dropdown li {
+    list-style-type: none;
+}
+
+ul.dropdown li a {
+    text-decoration: none;
+    padding: 0.5em 1em;
+    display: block;
+}
+
+.audio-tocar {
+    position: relative;
+    border: 1px solid #dfdfdf;
+    width: 50vw;
+    margin: 1rem auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+    background: #fff;
+    padding: 1rem;
+    height: auto;
+}
+
+.audio-tocar .usuario_avatar {
+    width: 100%;
+    justify-content: space-around;
+    margin: 0 auto;
+    position: relative;
+}
+
+.audio-tocar .suaurio_avatar .aovivo,
+.audio-tocar .usuario_avatar .ouvintes {
+    background: #fff;
+    padding: 8px 10px 0 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #555 !important;
+    border-radius: 4px;
+    margin: 3px;
+    text-align: center;
+}
+
+.aovivo i {
+    -moz-animation-duration: 1s;
+    -moz-animation-name: blink;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-direction: alternate;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: blink;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color: red;
+}
+
+@-moz-keyframes blink {
+    
+    from {
+        opacity: 1;
+    
+    } to {
+
+         opacity: 0;
+    }
+}
+
+@-webkit-keyframes blink {
+
+    from {
+        opacity: 1;
+    
+    } to {
+        opacity: 0
+    }
+}
+
+@keyframes blink {
+
+    from {
+        opacity: 1;
+    
+    } to {
+            opacity: 0;
+    }
+}
+
+.audio-tocar .usuario_avatar img {
+    display: block;
+    margin: 0 auto;
+    height: 100px;
+    width: 100px;
+    padding: 0.65em;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #dfdfdf;
+    background: #fff;
+    margin-top: -4em;
+}
+
+#dur:hover {
+    cursor: pointer;
+}
+
+.audio-tocar .cover img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.audio-tocar .titulo {
+    padding: 0;
+    margin-top: 2.5rem;
+    font-weight: 800;
+    font-size: 28px;
+}
+
+.audio-tocar .como {
+    padding: 6px 17px;
+    background: #fff;
+    font-size: 16px;
+    color: #555;
+    margin: 1rem 0;
+    font-weight: 900;
+    text-decoration: none;
+    position: relative;
+}
+
+.audio-tocar .tocador-controle {
+    align-items: center;
+    justify-content: center;
+    flex: 4;
+    position: relative;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+.audio-tocar .tocador-controles p {
+    color: #000;
+}
+
+.progress_bar {
+  border: 2px solid #ccc;
+  width: 100%;
+  min-height: 15px;
+  display: flex;
+  padding: 0.45em 0;
+  align-items: center;
+}
+
+.range {
+    position: relative;
+}
+
+.range input[type=range] {
+    appearance: none;
+    padding: 0;
+    width: 100%;
+    height: 22px;
+    cursor: pointer;
+    display: block;
+}
+
+.range input[type=range]:focus {
+    outline: none;
+}
+
+.range input[type=range][disabled] {
+    opacity: 0.3;
+    cursor: default;
+    background: transparent;
+}
+
+
+.audio-tocar #tocar-btn,
+.ctrl_btn {
+    margin: 0 1rem 2rem 0;
+    color: #363732;
+}
+
+.audio-tocar #tocar-btn {
+    padding: 1rem 1.2rem;
+    font-size: 24px;
+}
+
+.audio-tocar .ctrl_btn {
+    font-size: 22px;
+}
+
+.audio-tocar #tocar-btn:hover {
+    cursor: pointer;
+}
+
+.aduio-tocar .volumeControle {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: #363732;
+}
+
+.audio-tocar .volumeControle .wrapper {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: #363732;
+}
+
+.audio-tocar .volumeControle .wrapper:hover i.fa {
+    color: #363732;
+}
+
+.audio-tocar .volumeControle .externa {
+    border-radius: 2px;
+    box-shadow: -2px 3px 4px rgba(0, 0, 0, 0.23);
+    overflow: hidden;
+    height: 0.3rem;
+    flex-basis: 80%;
+    margin-left: 0.4rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.audio-tocar .volumeControle .externa .interna {
+    background-color: #363732;
+    width: 100%;
+    display: inline-block;
+    height: 100%;
+}
+
+.audio-tocar .volumeControle .externa:hover {
+    cursor: pointer;
+}
+
+.iniciar-tempo,
+.final-tempo {
+    font-size: 14px;
+    font-weight: 800;
+    font-family: 'Darker Grotesque', sans-serif;
+    transition: 1s ease-in-out;
+}
+
+.iniciar-tempo {
+    float: left;
+    position: relative;
+    left: 0;
+}
+
+.final-tempo {
+    float: right;
+    position: relative;
+    right: 0;
+}
+
+.ctrl {
+    display: flex;
+    justify-content: space-between;
+}
+
+.acao {
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.acao span {
+    font-size: 14px;
+    font-family: 'Darker Grotesque', sans-serif;
+}
+
+@media screen and (max-width: 950px) {
+    
+    .iniciar-tempo {
+        left: 0.85em;
+    }
+
+    .final-tempo {
+        right: 1em;
+    }
+}
