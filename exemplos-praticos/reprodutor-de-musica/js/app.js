@@ -156,7 +156,7 @@ $(function() {
         var target = e.target
 
         if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) {
-            $(this).next('.dropdown').hide()
+            $('.dropdown').hide()
         }
     })
 })
@@ -209,7 +209,8 @@ function trocarAzul() {
         'color' : '#fff'
     })
     $('.audio-tocar #tocar-btn').css({
-        'color' : '#fff'
+        'color' : '#fff',
+        'border-color': '#fff'
     })
     $('.ctrl_btn').css({
         'color': '#fff',
