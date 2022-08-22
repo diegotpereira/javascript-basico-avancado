@@ -9,10 +9,12 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
 
     <!-- JS -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
 </head>
 <body>
     <section id="nav-bar">
@@ -51,5 +53,44 @@
             </div>
         </nav>
     </section>
+
+    <div id="site">
+        <div id="content">
+            <form action="carrinho.html" id="shopping-cart" method="post">
+                <table class="shopping-cart">
+                    <thead>
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Quantidade</th>
+                            <th scope="col" colspan="2">Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                    </tbody>
+                </table>
+                <p id="sub-total">
+                    <strong>Sub Total</strong>: <span id="stotal"></span>
+                </p>
+                <ul id="shopping-cart-actions">
+                    <li>
+                        <input type="submit" value="Atualizar Carrinho" class="btn btn-sucess" name="atualizar" id="atualizar-carrinho">
+                    </li>
+                    <li>
+                        <input type="submit" value="Carrinho Vazio" class="btn btn-danger" name="deleta" id="carrinho-vazio">
+                    </li>
+                    <li>
+                        <a href="produto.html" class="btn btn-success">Continuar comprando</a>
+                    </li>
+                    <li>
+                        <a href="confirmar.html" class="btn tbn-success">Ir para confirmar</a>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <footer id="site-info">
+        Todos Direitos &copy; STP Software 2022
+    </footer>
 </body>
 </html>

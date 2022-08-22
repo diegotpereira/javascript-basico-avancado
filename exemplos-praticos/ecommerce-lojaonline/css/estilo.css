@@ -1,0 +1,160 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic);
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.topnav {
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 26px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #00CDCD;
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+}
+
+.navbar-nav li a {
+    float: right;
+    text-align: left;
+    font-size: 20px;
+}
+
+#nav-bar ul li a:hover {
+    color: #007bff !important;
+}
+
+.navbar {
+    background-color: #00CDCD;
+    margin-bottom: 20px;
+}
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-link {
+    color: #555!important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#slider {
+    width: auto;
+    height: 240px;
+}
+
+#site {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+form.add-no-carrinho p.btn {
+    text-align: center;
+    color: white;
+    background: green;
+    margin-bottom: 40px;
+}
+.btn {
+    display: inline-block;
+    background: #800;
+    color: white;
+    padding: 0.3em 1em;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid white;
+}
+
+ a.btn {
+	display: inline-block;
+	background: blue;
+	color: #fff;
+	font: 1em 'PT Serif', serif;
+	padding: 0.3em 1em;
+	text-align: center;
+	border-radius: 4px;
+	border: 1px solid #a00;
+}
+
+#shopping-cart {
+    margin: 1.5em 0;
+}
+
+.shopping-cart {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.shopping-cart th {
+    font-size: 1.3em;
+    padding: 0.3em;
+    width: 33.3%;
+    border: 1px solid #ddd;
+    text-transform: uppercase;
+}
+
+.shopping-cart td {
+    padding: 0.3em;
+    width: 33.3%;
+    border: 1px solid #ddd;
+}
+
+.shopping-cart tr:nth-child(even) {
+    background: #fafafa;
+}
+
+
+.shopping-cart td.pdelete {
+	text-align: center;
+}
+
+#shopping-cart-actions {
+    margin: 1.5em 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+#shopping-cart-actions li {
+    display: inline-block;
+    margin-right: 1.em;
+}
+
+#sub-total {
+    margin: 1.5em;
+    text-align: center;
+}
+
+#sub-total span {
+    margin-left: 1em;
+}
+
+#sub-total {
+    margin: 1em 0;
+}
