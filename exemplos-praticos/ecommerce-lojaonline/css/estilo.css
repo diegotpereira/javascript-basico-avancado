@@ -72,12 +72,34 @@
     padding: 0 1em;
 }
 
+form.add-no-carrinho div {
+    text-align: center;
+    color: black;
+}
+
+form.add-no-carrinho p {
+    text-align: center;
+    color: #00CDCD;
+}
+
 form.add-no-carrinho p.btn {
     text-align: center;
     color: white;
     background: green;
     margin-bottom: 40px;
 }
+
+form input.qtd {
+	width: 60px;
+	border: 2px solid #eee;
+	font: 1.5em 'PT Serif', serif;
+	background: #f9f9f9;
+	color: #000;
+	border-radius: 3px;
+	margin-left: 0.4em;
+	
+}
+
 .btn {
     display: inline-block;
     background: #800;
