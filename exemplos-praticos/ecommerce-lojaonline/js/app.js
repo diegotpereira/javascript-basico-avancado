@@ -98,6 +98,7 @@
 
             this.storage.setItem(this.carrinhoNome, this._toJSONString(carrinhoCopia))
         },
+
         exibirCarrinho: function() {
 
             console.log("exibindo carrinho...");
@@ -117,12 +118,14 @@
 
                     for(var i = 0; i < itens.length; ++i) {
 
+                        console.log(i);
+
                         var item = itens[i]
                         var produto = item.produto 
                         var preco = this.currency + " " + item.preco
                         var qtd = item.qtd
 
-                        var html = "<tr><td class='pnome'>" + produto + "</td>" + "<td class='pqtd'><input type='text' value='" + qtd + "' class='qtd'/></tr>"
+                        var html = "<tr><td class='pnome'>" + produto + "</td>" + "<td class='pqtd'><input type='text' value='" + qtd + "' class='qtd'/></td>"
                         
                             html += "<td class='ppreco'>" + preco + "</td><td class='pdeletar'><a href='' data-produto='" + produto + "'>&times;</a></td></tr>"
                             
@@ -164,11 +167,11 @@
                 if (carrinhoItens.length > 0) {
                     
                     var carrinhoTotal = this.storage.getItem(this.total)
-                    // var cartShipping = this.storage.getItem( this.shippingRates );
-					// var subTot = this._convertString( cartTotal ) + this._convertString( cartShipping );
+                    var carrinhoEnvio = this.storage.getItem( this.taxasEnvio );
+					var subTot = this._convertString( carrinhoTotal ) + this._convertString( carrinhoEnvio );
 				
-					// this.$subTotal[0].innerHTML = this.currency + " " + this._convertNumber( subTot );
-					// this.$shipping[0].innerHTML = this.currency + " " + cartShipping;
+					this.$subTotal[0].innerHTML = this.currency + " " + this._convertNumber( subTot );
+					this.$envio[0].innerHTML = this.currency + " " + carrinhoEnvio;
 
                 } else {
 
@@ -274,7 +277,69 @@
             var preco = texto.replace(self.currencyString, "").replace("", "")
 
             return preco
-        } 
+        },
+        deletarProduto: function() {
+
+            var self = this 
+
+            if (self.$formCarrinho.length) {
+                
+                var carrinho = this._toJSONOBject(this.storage.getItem(this.carrinhoNome))
+                var itens = carrinho.itens 
+
+                $(document).on('click', '.pdeletar a', function(e) {
+
+                    e.preventDefault()
+
+                    var produtoNome = $(this).data('produto')
+                    var novoItens = []
+
+                    for(var i = 0; i < itens.length; ++i) {
+
+                        var item = itens[i]
+                        var produto = item.produto 
+
+                        if (produto == produtoNome) {
+                            
+                            itens.splice(i, 1)
+                        }
+                    }
+
+                    novoItens = itens 
+
+                    var atualizarCarrinho = {}
+
+                    atualizarCarrinho.itens = novoItens
+
+                    var atualizandoTotal = 0
+                    var totalQtd = 0
+
+                    if (novoItens.length == 0) {
+                        
+                        atualizandoTotal = 0
+                        totalQtd = 0
+
+                    } else {
+
+                        for(var j = 0; j < novoItens.length; i++) {
+
+                            var prod = novoItens[j]
+                            var sub = prod.preco * prod.qtd
+
+                            atualizandoTotal += sub 
+                            totalQtd += prod.qtd
+                        }
+                    }
+                    self.storage.setItem(self.total, self._convertNumber(atualizandoTotal))
+                    self.storage.setItem(self.taxasEnvio, self._convertNumber(self._calcularEnvio(totalQtd)))
+
+                    self.storage.setItem(self,carrinhoNome, self._toJSONString(atualizandoTotal))
+
+                    $(this).parents('tr').remove()
+                    self.$subTotal[0].innerHTML = self.currency + " " + self.storage.getItem(self.total)
+                })
+            }
+        }
     }
 
     $(function() {
