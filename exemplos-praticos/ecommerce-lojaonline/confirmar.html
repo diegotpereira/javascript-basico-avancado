@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <!-- JS -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body id="checkout-page">
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: green;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="pull-right">
+                <a style="color: white; font-size: 30px" href="index.html">Loja Online -Website</a>
+            </div>
+            <div class="collpase navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link" style="color: white;">Principal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="produto.html" class="nav-link" style="color: white;">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="carrinho.html" class="nav-link" style="color: white;">Carrinho</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sobre.html" class="nav-link" style="color: white;">Sobre nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="servico.html" class="nav-link" style="color: white;">Seus serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="time.html" class="nav-link" style="color: white;">Seu Time</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contato.html" class="nav-link" style="color: white;">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <div id="site">
+        <div id="content">
+            <table class="shopping-cart" id="verificar-carrinho">
+                <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Qtd</th>
+                        <th scope="col">Preço</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <div id="precos">
+                <p id="envio">
+                    <strong>Envio</strong>: <span id="senvio"></span>
+                </p>
+
+                <p id="sub-total">
+                    <strong>Total</strong>: <span id="stotal"></span>
+                </p>
+            </div>
+            <form action="pedido.html" method="post" id="verificar-pedido-form" style="background-color: skyblue;">
+                <h2>Seus Detalhes</h2>
+
+                <fieldset id="fieldset-billing">
+                    <legend>Cobrança</legend>
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" data-type="string" data-message="Este campo não pode ficar vazio">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" data-type="expression" data-message="Não é um endereço de e-mail válido">
+                    </div>
+                    <div>
+                        <label for="cidade">Cidade</label>
+                        <input type="text" name="cidade" id="cidade" data-type="string" data-message="Este campo não pode ficar vazio">
+                    </div>
+                    <div>
+                        <label for="endereco">Endereço</label>
+                        <input type="text" name="endereco" id="endereco" data-type="string" data-message="Este campo não pode ficar vazio">
+                    </div>
+                    <div>
+                        <label for="cep">Cep</label>
+                        <input type="text" name="cep" id="cep" data-type="string" data-message="Este campo não pode ficar vazio">
+                    </div>
+                    <div>
+                        <label for="regiao">Localização</label>
+                        <select name="regiao" id="regiao" data-type="string" data-message="Este campo não pode ficar vazio">
+                            <option value="">Selecionar</option>
+                            <option value="Poa">Porto Alegre</option>
+                            <option value="Cxs">Caxias do Sul</option>
+                            <option value="Pel">Pelotas</option>
+                            <option value="Can">Canoas</option>
+                            <option value="Noi">Novo Hamburgo</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <div id="shipping-same">O mesmo que Faturamento <input type="checkbox" id="mesmo-que-faturamento"></div>
+
+                <fieldset id="fieldset-envio">
+                    <legend>Envio</legend>
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" data-type="string" data-message="Este campo não pode ficar vazio">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" data-type="expression" data-message="Não é um endereço de e-mail válido">
+                    </div>
+                    <div>
+                        <label for="cidade">Cidade</label>
+                        <input type="text" name="cidade" id="cidade" data-type="string" data-message="Este campo não pode ficar vazio">
+                    </div>
+                    <div>
+                        <label for="endereco">Endereço</label>
+                        <input type="text" name="endereco" id="endereco" data-type="string" data-message="Este campo não pode ficar vazio">
+                    </div>
+                    <div>
+                        <label for="cep">Cep</label>
+                        <input type="text" name="cep" id="cep" data-type="string" data-message="Este campo não pode ficar vazio">
+                    </div>
+                    <div>
+                        <label for="regiao">Localização</label>
+                        <select name="regiao" id="regiao" data-type="string" data-message="Este campo não pode ficar vazio">
+                            <option value="">Selecionar</option>
+                            <option value="Poa">Porto Alegre</option>
+                            <option value="Cxs">Caxias do Sul</option>
+                            <option value="Pel">Pelotas</option>
+                            <option value="Can">Canoas</option>
+                            <option value="Noi">Novo Hamburgo</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <center><p><input type="submit" value="Enviar" id="enviar-pedio" class="btn btn-sucess"></p></center>
+            </form>
+        </div>
+    </div>
+    <footer id="site-info">
+		Todos os Direitos &copy; DTP Software 2022
+	</footer>
+</body>
+</html>
