@@ -180,3 +180,12 @@ form input.qtd {
 #sub-total {
     margin: 1em 0;
 }
+
+body#checkout-page #site-info {
+	position: static;
+
+#content > h1,
+#verificar-pedido-formulario h2 {
+	font-size: 2em;
+	text-align: center;
+}

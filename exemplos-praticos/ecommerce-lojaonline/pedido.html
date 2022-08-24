@@ -6,42 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="css/estilo.css">
+
     <!-- script -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="js/app.js"></script>
 </head>
 <body id="checkout-page">
     <header id="masthead">
         <h1></h1>
     </header>
 
-    <div id="content">
-        <h1>Sues Pedidos</h1>
-        <table id="checkout-cart" class="shopping-cart">
-            <thead>
-                <tr>
-                    <th scope="col">Item</th>
-                    <th scope="col">Qtd</th>
-                    <th scope="col">Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-        <div id="precos">
-            <p id="envio">
-                <strong>Envio</strong>: <span id="senvio"></span>
-            </p>
-
-            <p id="sub-total">
-                <strong>Total</strong>: <span id="stotal"></span>
-            </p>
-        </div>
-
-        <div id="user-details">
-            <h2>Seus Dados</h2>
-            <div id="user-details-content"></div>
+    <div id="site">
+        <div id="content">
+            <h1>Sues Pedidos</h1>
+            <table id="verificar-carrinho" class="shopping-cart">
+                <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Qtd</th>
+                        <th scope="col">Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                </tbody>
+            </table>
+            <div id="precos">
+                <p id="envio">
+                    <strong>Envio</strong>: <span id="senvio"></span>
+                </p>
+    
+                <p id="sub-total">
+                    <strong>Total</strong>: <span id="stotal"></span>
+                </p>
+            </div>
+    
+            <div id="user-details">
+                <h2>Seus Dados</h2>
+                <div id="usuario-detalhes-conteudo"></div>
+            </div>
+            <form id="paypal-form" action="" method="post">
+                <input type="hidden" name="cmd" value="_cart" />
+                <input type="hidden" name="upload" value="1" />
+                <input type="hidden" name="business" value="" />
+                    
+                <input type="hidden" name="currency_code" value="" />
+                <input type="submit" id="paypal-btn" class="btn" value="Pague com PayPal" />
+            </form>
         </div>
     </div>
+    <footer id="site-info">
+		Todos os Direitos &copy; DTP Software 2022 
+	</footer>
 </body>
 </html>
