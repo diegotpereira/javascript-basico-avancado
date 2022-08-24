@@ -1,0 +1,39 @@
+
+
+.registro {
+    width: 100%;
+    user-select: none;
+    text-align: left;
+}
+
+.registro th {
+    height: 50px;
+    background-color: var(--cor-primaria);
+    padding-left: 20px;
+    font-size: 1.2rem;
+}
+
+.registro th:last-child {
+    padding: 0;
+    min-width: 140px;
+    text-center: center;
+}
+
+.registro tr:hover {
+    background-color: var(--cor-secundaria);
+}
+
+@media (max-width: 480px) {
+    .registro {
+        border-spacing: 5px;
+    }
+    .registro thead {
+        display: none;
+    }
+    .registro tr {
+        box-shadow: 0 1px 3px  var(--cor-escura)
+    }
+     .registro tr:hover{
+        background-color: inherit;
+    }
+}
