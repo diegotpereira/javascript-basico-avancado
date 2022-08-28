@@ -45,6 +45,12 @@
     cursor: pointer;
 }
 
+
+.modal-fechar:hover{
+    background-color: #FF4949;
+    color: white;
+}
+
 .modal-form {
     display: flex;
     justify-content: space-between;
@@ -54,7 +60,7 @@
 }
 
 .modal-campo {
-    width: calc(50% - 1opx);
+    width: calc(50% - 10px);
     height: 40px;
     outline-style: none;
     border-style: none;
