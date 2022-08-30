@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/canvas.css">
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.hammer.min.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <!-- conteúdo principal do jogo -->
+            <div class="content" id="jogo-content">
+
+                <!-- conteúdo principal do jogo -->
+                <div class="jogo-wrapper">
+
+                    <div class="pontuacao">Pontuação: </div>
+                    <div class="nivel">Nível: </div>
+                    <div class="vidas">Vidas: </div>
+
+                    <div class="controleSom">
+                        <img src="img/audio-icon-mute.png" alt="" id="mudo">
+                    </div>
+                    <!-- a tela é dividida em campos de 18x13 -->
+                    <div id="canvas-container">
+                        <div id="canvas-overlay-container">
+                            <div id="canvas-overlay-content">
+                                <div id="titulo">Pacman Canvas</div>
+                                <div><p id="texto">Clique aqui para jogar</p></div>
+                            </div>
+                        </div>
+
+                        <canvas id="meuCanvas" width="540" height="390">
+                            <p>Canvas não suportado</p>
+                        </canvas>
+                    </div>
+
+                    <div class="controles" id="jogo-botoes">
+                        
+
+                        <!-- Botões ANTIGOS -->
+                        <div>
+                            <span id="cima" class="controleBotao">&uarr;</span>
+                        </div>
+                        <div>
+                            <span id="esquerda" class="controleBotao">&larr;</span>
+                            <span id="baixo" class="controleBotao">&darr;</span>
+                            <span id="direita" class="controleBotao">&rarr;</span>
+                        </div>
+                    </div>
+
+                    <!-- Fim dos controles do jogo -->
+
+                    <!-- Menu Jogo -->
+                    <div class="controles" id="menu-botoes">
+                        <ul>
+                            <li class="botao" id="novoJogo">Novo Jogo</li>
+                            <li class="botao" id="pontuacaoMaxima">Pontuação Máxima</li>
+                            <li class="botao" id="instrucoes">Instruções</li>
+                            <li class="botao" id="info">Informçãos</li>
+                        </ul>
+                    </div>
+
+                    <!-- Fim do Menu Jogo -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+ 
+    <script src="js/app.js"></script>
+</body>
+</html>
