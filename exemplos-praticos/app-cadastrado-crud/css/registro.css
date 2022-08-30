@@ -13,10 +13,16 @@
     font-size: 1.2rem;
 }
 
+.registro td{
+    height: 50px;
+    padding-left: 20px;
+}
+
+.registro th:last-child,
 .registro th:last-child {
     padding: 0;
     min-width: 140px;
-    text-center: center;
+    text-align: center;
 }
 
 .registro tr:hover {
@@ -32,6 +38,15 @@
     }
     .registro tr {
         box-shadow: 0 1px 3px  var(--cor-escura)
+    }
+
+    .registro td:not(:first-child){
+        display:flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    .registro td{
+        margin:10px 0;
     }
      .registro tr:hover{
         background-color: inherit;

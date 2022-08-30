@@ -1,0 +1,235 @@
+
+
+/* ---------------- */
+
+body {
+    background-color: #000;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Links */
+
+* {
+    box-shadow: none !important;
+}
+
+.content, h1, h2, h3, p, div {
+    font-family: 'Press Start 2P', cursive;
+    font-weight: normal;
+}
+
+.content[id*=content]:not(#jogo-content) {
+    display: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.content img {
+    max-width: 100%;
+}
+
+.botao {
+    background: #c80a0a;
+    cursor: pointer;
+    padding: 8px;
+}
+
+#menu-botoes .botao {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+#menu-botoes .botao:hover, botao:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+#meuCanvas {
+    border: none;
+    display: block;
+    background: rgb(0, 0, 0);
+    width: 100%;
+    height: auto;
+}
+
+#canvas-container {
+    position: relative;
+}
+
+#canvas-overlay-container {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 540px;
+    max-width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+#canvas-overlay-content {
+    position: absolute;
+    top: 33%;
+    left: 0;
+    margin-top: 0;
+    max-width: 100%;
+    text-align: center;
+    width: 540px;
+    max-width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+#canvas-overlay-content #titulo {
+    text-transform: uppercase;
+    font-size: 150%;
+}
+
+.canvas {
+    position: absolute;
+    padding-top: 20px;
+}
+
+main {
+    width: 100%;
+    max-width: 660px;
+    margin: 10px auto;
+    position: static;
+    left: auto;
+}
+
+.content {
+    width: 100%; 
+    max-width: 540px; 
+    text-align: left; 
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    padding: 0;
+}
+
+.jogo  { 
+    max-width: 540px; 
+    margin: auto; 
+}
+
+body, html { 
+    font-size: 15px; 
+}
+
+
+/* Controles */
+.controle {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.controleBotao {
+    position: relative;
+    right: -65%;
+}
+
+
+/* */ 
+#jogo-botoes {
+    display: none;
+}
+#menu-botoes ul, .controles#menu-botoes ul li {
+    list-style: none;
+    padding: 0;
+}
+
+#menu-botoes ul li {
+    height: 40px;
+    line-height: 40px;
+    font-size: 120%;
+}
+
+.controleSom {
+    background: url('../img/audio-icon.png');
+    width: 73px;
+    height: 50px;
+    position: relative;
+    bottom: 5px;
+    background-size: 100%;
+    height: 25px;
+    width: 36px;
+    float: right;
+}
+
+#mute {
+    display: none;
+    width: 36px;
+    height: 25px;
+}
+
+.controleBotao {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    margin: 5px;
+    background: none repeat scroll 0% 0% #C80A0A;
+    line-height: 70px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+.controleBotao:hover, .controleBotao:active {
+    background: #c00202;
+}
+
+@media screen and (max-width: 1050px) {
+	html, body { background: rgb(0,0,0);}
+}
+@media screen and (max-width: 650px) {
+	.jogo { 
+        width: 93%;
+    }
+	.content { 
+        max-width: none; 
+    }
+	#menu-botoes .botao { 
+        background: rgba(255,255,255,0.1); 
+    }
+	.botao:hover { 
+        background: rgba(255,255,255,0.3); 
+    }
+	.botao#back { 
+        top: 0; 
+    }
+}
+
+@media screen and (max-width: 400px) {
+	
+	/* .nomobile {display: none; }
+	.mobile {display: block; } */
+	
+	html, body { 
+		overflow-x: hidden; 
+		height: 100%;
+	}
+	
+	.main { 
+        margin: 10px auto; 
+    }
+	.content { min-height: 0; }
+	
+	.controleBotao {
+		width: 60px;
+		height: 60px;
+		line-height: 40px;
+		font-size: 40px;
+	}
+    .controleBotao { 
+        right: -55%; 
+    }
+}

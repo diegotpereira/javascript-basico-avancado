@@ -9,14 +9,10 @@
         iniciar: function() {
 
             // propriedades
-
             this.carrinhoPrefix = 'Furniture-'
             this.carrinhoNome = this.carrinhoPrefix + 'cart'
             this.total =  this.carrinhoPrefix
             this.storage = sessionStorage
-            
-
-
 
             this.$formAddNoCarrinho = this.$elemento.find('form.add-no-carrinho')
             this.$formCarrinho = this.$elemento.find('#shopping-cart')
@@ -43,6 +39,16 @@
             this.exibirDetalhesUsuario()
             this.lidarFormularioPedido()
             this.preencherFormularioPayPal()
+
+            this.camposObrigatorios = {
+
+                expression: {
+                    value: /^([\w-\.]+)@((?:[\w]+\.)+)([a-z]){2,4}$/
+                },
+                str: {
+                    value: ""
+                }
+            }
         },
         criarCarrinho: function() {
 
@@ -57,6 +63,7 @@
                 this.storage.setItem(this.total, '0')
             }
         },
+        
         lidarFormAddCarrinho: function() {
             var self = this
             self.$formAddNoCarrinho.each(function() {
@@ -296,8 +303,67 @@
 
             if (this.$usuarioDetalhes.length) {
                 
-                if (this.storage.getItem('')) {
+                if (this.storage.getItem('envio-nome') == null) {
+
+                    var nome = this.storage.getItem('cobranca-nome')
+                    var email = this.storage.getItem('cobranca-email')
+                    var cidade = this.storage.getItem('cobranca-cidade')
+                    var endereco = this.storage.getItem('cobranca-endereco')
+                    var cep = this.storage.getItem('cobranca-cep')
+                    var regiao = this.storage.getItem('cobranca-regiao')
+
+                    var html = "<div class='detalhe'>"
+                        html += "<h2>Faturamento e envio</h2>"
+                        html += "<ul>"
+                        html += "<li>" + nome + "</li>"
+                        html += "<li>" + email + "</li>"
+                        html += "<li>" + cidade + "</li>"
+                        html += "<li>" + endereco + "</li>"
+                        html += "<li>" + cep + "</li>"
+                        html += "<li>" + regiao + "</li>"
+                        html += "</ul></div>"
                     
+                    this.$usuarioDetalhes[0].innerHTML = html 
+
+                } else {
+
+                    var nome = this.storage.getItem('cobranca-nome')
+                    var email = this.storage.getItem('cobranca-email')
+                    var cidade = this.storage.getItem('cobranca-cidade')
+                    var endereco = this.storage.getItem('cobranca-endereco')
+                    var cep = this.storage.getItem('cobranca-cep')
+                    var regiao = this.storage.getItem('cobranca-regiao')
+
+                    var snome = this.storage.getItem('envio-nome')
+                    var semail = this.storage.getItem('envio-email')
+                    var scidade = this.storage.getItem('envio-cidade')
+                    var sendereco = this.storage.getItem('envio-endereco')
+                    var scep = this.storage.getItem('envio-cep')
+                    var sregiao = this.storage.getItem('envio-regiao')
+
+                    var html = "<div class='detalhe'>"
+                        html += "<h2>Cobrança</h2>"
+                        html += "<ul>"
+                        html += "<li>" + nome + "</li>"
+                        html += "<li>" + email + "</li>"
+                        html += "<li>" + cidade + "</li>"
+                        html += "<li>" + endereco + "</li>"
+                        html += "<li>" + cep + "</li>"
+                        html += "<li>" + regiao + "</li>"
+                        html += "</ul></div>"
+
+                    var html = "<div class='detalhe direito'>"
+                        html += "<h2>Envio</h2>"
+                        html += "<ul>"
+                        html += "<li>" + snome + "</li>"
+                        html += "<li>" + semail + "</li>"
+                        html += "<li>" + scidade + "</li>"
+                        html += "<li>" + sendereco + "</li>"
+                        html += "<li>" + scep + "</li>"
+                        html += "<li>" + sregiao + "</li>"
+                        html += "</ul></div>"
+
+                    this.$usuarioDetalhes[0].innerHTML = html
                 }
             }
         },
@@ -367,13 +433,13 @@
                     inserirAntes('#paypal-btn')
 
                     $( "<div/>" ).html( "<input type='hidden' name='item_numero_" + n + "' value='SKU " + name + "'/>" ).
-					insertBefore( "#paypal-btn" );
+					inserirAntes( "#paypal-btn" );
 
                     $( "<div/>" ).html( "<input type='hidden' name='quantia_" + n + "' value='" + self._formatNumber( price, 2 ) + "'/>" ).
-					insertBefore( "#paypal-btn" );
+					inserirAntes( "#paypal-btn" );
 
                     $( "<div/>" ).html( "<input type='hidden' name='envio_" + n + "' value='" + self._formatNumber( singEnvio, 2 ) + "'/>" ).
-					insertBefore( "#paypal-btn" );
+					inserirAntes( "#paypal-btn" );
                 }
             }
         },
@@ -474,8 +540,9 @@
         _validarFormulario: function(form) {
 
             var self = this 
-            var campos = self.requiredFields
+            var campos = self.camposObrigatorios
             var $conjuntoVisivel = form.find('fieldset:visible')
+            var valido = true
 
             form.find('.message').remove()
 
@@ -540,12 +607,12 @@
                     var sCep = $('#scep', $set).val()
                     var sRegiao = $('#sregiao', $set).val()
 
-                    self.storage.setItem('cobranca-nome', sNome)
-                    self.storage.setItem('cobranca-email', sEmail)
-                    self.storage.setItem('cobranca-cidade', sCidade)
-                    self.storage.setItem('cobranca-endereco', sEndereco)
-                    self.storage.setItem('cobranca-cep', sCep)
-                    self.storage.setItem('cobranca-regiao', sRegiao)
+                    self.storage.setItem('envio-nome', sNome)
+                    self.storage.setItem('envio-email', sEmail)
+                    self.storage.setItem('envio-cidade', sCidade)
+                    self.storage.setItem('envio-endereco', sEndereco)
+                    self.storage.setItem('envio-cep', sCep)
+                    self.storage.setItem('envio-regiao', sRegiao)
                 }
             })
         }
