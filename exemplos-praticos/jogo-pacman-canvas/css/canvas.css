@@ -125,6 +125,18 @@ body, html {
 }
 
 
+.pontuacao {
+    width: 180px;
+}
+
+.pontuacao,
+.vidas,
+.nivel {
+    display: inline-block;
+}
+.vidas {
+    display: inline-block;
+}
 /* Controles */
 .controle {
     text-align: center;

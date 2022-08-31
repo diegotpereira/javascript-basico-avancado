@@ -11,6 +11,8 @@ function geral () {
 
     var mapConfig = "data/map.json";
 
+    console.log(mapConfig);
+
     function construirParede(context, gridX, gridY, width, height) {
 
         console.log("construirParede...");
@@ -25,10 +27,19 @@ function geral () {
         )
     }
 
+    function Timer() {
+        console.log("Temporizador");
+        this.redefinir = function() {
+
+            console.log("REdefinir");
+        }
+    }
+
     
 
     function Jogo() {
         
+        this.temporizador = new Timer()
 
         this.contagemPilulas 
 
@@ -49,7 +60,7 @@ function geral () {
                         if(xhr.overrideMimeType) xhr.overrideMimeType('application/json')
                     },
                     dataType: 'json',
-                    sucess: (data) => {
+                    success: (data) => {
 
                         console.log('configuração mapa carregando');
                         jogo.map = data 
@@ -63,7 +74,7 @@ function geral () {
             })
         }
 
-        this.getContagemPilulas = async () => {
+        this.getContagemPilulas = () => {
 
             console.log("contagemPilulas...");
             var temp = 0
@@ -71,7 +82,7 @@ function geral () {
             $.each(this.map.posY, function(i, item) {
                 $.each(this.posX, function() {
 
-                    if (this.type = "pill") {
+                    if (this.type == "pill") {
                         temp++
                     }
                 })
@@ -86,6 +97,19 @@ function geral () {
             // obter mapa de níveis
             this.map = await this.carregarConfiguracaoMapa()
             this.contagemPilulas = this.getContagemPilulas()
+
+            if (state === 0) {
+                
+                this.temporizador.redefinir()
+                jogo.redefinir()
+            }
+
+            console.log(state);
+
+            jogo.desenharCoracoes(pacman.vidas)
+
+            console.log("coraççoes");
+
         }
         this.construirParedes = function() {
 
@@ -103,9 +127,32 @@ function geral () {
             construirParede(context_paredes, 17, 0, 1, 6);
 			construirParede(context_paredes, 17, 7, 1, 6);
         }
+
+        /* Funções UI */
+        this.desenharCoracoes = function (contar) {
+
+            console.log("desenharCoracoes");
+
+            var html = ""
+
+            for(var i = 0; i < contar; i++) {
+
+                // html += "<img src='img/heart.png'>"
+                html += " <img src='img/heart.png'>";
+            }
+        
+            $(".vidas").html("Vidas: " + html);
+        }
+
+        this.redefinir = function() {
+            console.log("redefinir");
+
+        }
     }
 
     function pacman() {
+
+        this.vidas = 3
 
     }
     jogo = new Jogo()
