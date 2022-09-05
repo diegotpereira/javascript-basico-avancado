@@ -1,2 +1,2 @@
-export default () => 'Ola Mundo'
-export const nome = 'Bob'
+// export default () => 'Ola Mundo'
+// export const nome = 'Bob'

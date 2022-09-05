@@ -31,39 +31,5 @@
 // // C: { default: "Ola mundo", nome: "Bob" }
 // // D: Global object of module.js
 
-// // Qual é a saída?
-// class Pessoa {
-//     constructor(nome) {
-//         this.nome = nome
-//     }
-// }
-
-// const membro = new Pessoa('Joao')
-// console.log(typeof membro) // C: "object"
-
-// // A: "class"
-// // B: "function"
-// // C: "object"
-// // D: "string"
 
 
-// // Qual é a saída?
-// let novaLista = [1, 2, 3].push(4)
-
-// console.log(novaLista.push(5)) // D: Error
-
-// // A: [1, 2, 3, 4, 5]
-// // B: [1, 2, 3, 5]
-// // C: [1, 2, 3, 4]
-// // D: Error
-
-
-//  Qual é a saída?
-function dePizzaBob() {
-    return 'Aqui está a pizza!'
-}
-
-const deChocolateBob = () => "Aqui está o chocolate... agora vá para a academia já."
-
-console.log(dePizzaBob.prototype)
-console.log(deChocolateBob.prototype)

@@ -1221,6 +1221,459 @@
 // // D: undefined
 
 
+// // Qual é a saída?
+// class Pessoa {
+//     constructor(nome) {
+//         this.nome = nome
+//     }
+// }
+
+// const membro = new Pessoa('Joao')
+// console.log(typeof membro) // C: "object"
+
+// // A: "class"
+// // B: "function"
+// // C: "object"
+// // D: "string"
+
+
+// // Qual é a saída?
+// let novaLista = [1, 2, 3].push(4)
+
+// console.log(novaLista.push(5)) // D: Error
+
+// // A: [1, 2, 3, 4, 5]
+// // B: [1, 2, 3, 5]
+// // C: [1, 2, 3, 4]
+// // D: Error
+
+
+
+// //  Qual é a saída?
+// function dePizzaBob() {
+//   return 'Aqui está a pizza!'
+// }
+
+// const deChocolateBob = () => "Aqui está o chocolate... agora vá para a academia já."
+
+// console.log(dePizzaBob.prototype) // D: { constructor: ...} 
+// console.log(deChocolateBob.prototype) // undefined
+
+
+// // A: { constructor: ...}, { constructor: ...}
+// // B: {} { constructor: ...}
+// // C: { constructor: ...}, {}
+// // D: { constructor: ...}, undefined
+
+// //  Qual é a saída?
+// const pessoa = {
+//   nome: 'Bob',
+//   idade: 21
+// }
+
+// // entries() retorna uma array dos próprios pares [key, value] 
+// for(const[x, y] of  Object.entries(pessoa)) {
+//   console.log(x, y);
+// }
+
+// // A: nome Bob e idade 21
+// // B: ["nome", "Bob"] e ["idade", 21]
+// // C: ["nome", "idade"] e undefined
+// // D: Error
+
+
+// //  Qual é a saída?
+// function getItens(frutaLista, ...args, frutaFavorita) {
+//   return [...frutaLista, ...args, frutaFavorita]
+// }
+
+// getItens(["banana", "maca"], "pera", "laranja") // D: SyntaxError - Um parâmetro rest deve ser o último em uma lista de parâmetros.
+
+// // A: ["banana", "maca", "pera", "laranja"]
+// // B: [["banana", "maca"], "pera", "laranja"]
+// // C: ["banana", "maca", ["pera"], "laranja"]
+// // D: SyntaxError 
+
+// //  Qual é a saída?
+// function numeros(a, b) {
+//   if(a > b) console.log('a é maior');
+//   else (console.log('b é maior'))
+
+//   return 
+
+//   a + b
+// }
+
+// console.log(numeros(4, 2)) // a é maior, undefined
+// console.log(numeros(1, 2)) // b é maior, undefined
+
+// // A: a é maior, 6 e b é maior, 3
+// // B: a é maior, undefined e b é maior, undefined
+// // C: undefined e undefined
+// // D: SyntaxError
+// // Resposta B: a é maior, undefined e b é maior, undefined
+
+// //  Qual é a saída?
+// class Pessoa {
+//   constructor() {
+//     this.nome = 'Bob'
+//   }
+// }
+
+// Pessoa = class OutraPessoa {
+//   constructor() {
+//     this.nome = 'Peter'
+//   }
+// }
+
+// const membro = new Pessoa()
+
+// console.log(membro.nome) // B: "Peter"
+
+// // A: "Bob"
+// // B: "Peter"
+// // C: Error: cannot redeclare Pessoa
+// // D: SyntaxError
+
+// //  Qual é a saída?
+// const info = {
+//   // Symbol tipo primitivo que armazena um valor único
+//   [Symbol('a')]: 'b'
+// }
+
+// console.log(info)
+// //Object.keys() retorna um array de propriedades enumeraveis de um determinado objeto
+// console.log(Object.keys(info))
+
+// // A: {Symbol('a'): 'b'} e ["{Symbol('a')"]
+// // B: {} e []
+// // C: { a: "b" } e ["a"]
+// // D: {Symbol('a'): 'b'} e []
+
+// //  Qual é a saída?
+// const getLista = ([x, ...y]) => [x, y]
+// const getUsuario = usuario => { nome: usuario.nome; idade: usuario.idade }
+
+// const lista = [1, 2, 3, 4]
+// const usuario = { nome: 'Bob', idade: 21}
+
+// console.log(getLista(lista))
+// console.log(getUsuario(usuario))
+
+// // A: [1, [2, 3, 4]] e SyntaxError
+// // B: [1, [2, 3, 4]] e { name: "Bob", idade: 21 }
+// // C: [1, 2, 3, 4] e { name: "Bob", idade: 21 }
+// // D: Error e { name: "Bob", idade: 21 }
+// // Resposta A: [1, [2, 3, 4]] e SyntaxError (confirmar enunciado e resposta)
+
+
+// //  Qual é a saída?
+// const nome = 'Bob'
+
+// console.log(nome()) // C: TypeError
+
+// // A: SyntaxError
+// // B: ReferenceError
+// // C: TypeError
+// // D: undefined
+
+
+// // Qual o valor da saída?
+// const saida = `${[] && 'Im'}possível! Você deveria ${'' && `n't`} ver um terapeuta depois de tanto JavaScript lol`
+
+// console.log(saida) // B: Impossível! Você deveria ver um terapeuta depois de tanto JavaScript lol
+//                    // [] é um valor true, Com o operador &&, o valor do lado direito será retornado 
+//                    // se o valor do lado esquerdo for um valor verdadeiro. Nesse caso, o valor da esquerda []
+//                    // é um valor verdadeiro, então "Im'é retornado.
+
+// // A: possível! Você deveria ver um terapeuta depois de tanto JavaScript lol
+// // B: Impossível! Você deveria ver um terapeuta depois de tanto JavaScript lol
+// // C: possível! Você não deveria ver um terapeuta depois de tanto JavaScript lol
+// // D: Impossível! Você não deveria ver um terapeuta depois de tanto JavaScript lol
+
+
+// // Qual é o valor da saída?
+// // Com operador ||, podemos retornar o primeiro operando verdadeiro. Se todos os valores forem falsos, o último operando será retornado.
+// const um = false || {} || null //  (false || {} || null): o objeto vazio {} é um valor verdadeiro. Este é o primeiro (e único) valor verdadeiro, que é retornado. um é igual a {}.
+// const dois = null || false  || '' // (null || false || ""): todos os operandos são valores falsos. Isso significa que o último operando "" é retornado. dois é igual a "".
+// const tres = [] || 0 || true  // ([] || 0 || ""): o array vazio [] é um valor verdadeiro. Este é o primeiro valor verdadeiro, que é retornado. tres é igual a [].
+
+// console.log(um, dois, tres) // C: {} "" [] 
+
+// // A: false null []
+// // B: null "" true
+// // C: {} "" []
+// // D: null null true
+
+
+// // Qual é o valor da saída?
+// const minhaPromise = () => Promise.resolve('Eu resolvi!')
+
+// function primeiraFuncao() {
+//   minhaPromise().then(res => console.log(res))
+//   console.log('segunda');
+// }
+
+// async function segundaFuncao() {
+//   console.log(await minhaPromise());
+//   console.log('segunda');
+// }
+
+// primeiraFuncao() // segunda, Eu resolvi!
+// segundaFuncao() // Eu resolvi!, segunda
+
+// // A: Eu resolvi!, segunda e Eu resolvi!, segunda
+// // B: segunda, Eu resolvi! e segunda, Eu resolvi!
+// // C: Eu resolvi!, segunda e segunda, Eu resolvi!
+// // D: segunda, Eu resolvi! e Eu resolvi!, segunda
+
+
+// // Qual é o valor da saída?
+// const set = new Set()
+
+// set.add(1)
+// set.add('Bob')
+// set.add({ nome: 'Bob' })
+
+// for(let item of set) {
+//   console.log(item + 2) // C: 3, Bob2, [object Object]2 - O  operador "+" não é usado apenas para adicionar valores numéricos, mas também para concatenar strings.
+// }
+
+
+// // A: 3, NaN, NaN
+// // B: 3, 7, NaN
+// // C: 3, Bob2, [object Object]2
+// // D: "12", Bob2, [object Object]2
+
+
+// // Qual é o seu valor?
+// Promise.resolve(5) // C: Promise {<fulfilled>: 5}
+
+// // A: 5
+// // B: Promise {<pending>: 5}
+// // C: Promise {<fulfilled>: 5}
+// // D: Error
+
+
+// // Qual é o seu valor?
+// function compareMembros(pessoa1, pessoa2 = pessoa) {
+//   if (pessoa1 !== pessoa2) {
+//     console.log('Não é o mesmo!');
+     
+//   } else {
+//     console.log('Eles são os mesmos!');
+//   }
+// }
+
+// const pessoa = { nome: 'Bob' }
+
+// compareMembros(pessoa) // B: Eles são os mesmos!
+
+// // A: Não é o mesmo!
+// // B: Eles são os mesmos!
+// // C: ReferenceError
+// // D: SyntaxError// 
+
+// // Qual é o seu valor?
+// const corConfig = {
+//   vermelho: true,
+//   azul: false,
+//   verde: true,
+//   preto: true,
+//   amarelo: false
+// }
+
+// const cores = ['rosa', 'vermelho', 'azul']
+
+// console.log(corConfig.cores[1]) // D: TypeError
+
+// // A: true
+// // B: false
+// // C: undefined
+// // D: TypeError
+
+
+// // Qual é o seu valor?
+// console.log('❤️' === '❤️') // A: true
+
+// // A: true
+// // B: false
+
+// // Qual desses métodos modifica a matriz original?
+// const emojis = ['✨', '🥑', '😍'];
+
+// emojis.map(x => x + '✨');
+// emojis.filter(x => x !== '🥑');
+// emojis.find(x => x !== '🥑');
+// emojis.reduce((acc, cur) => acc + '✨');
+// emojis.slice(1, 2, '✨');
+// emojis.splice(1, 2, '✨');
+
+// // A: Todos eles
+// // B: map reduce slice splice
+// // C: map slice splice
+// // D: splice
+// // Resposta D: splice
+// // Com método splice, modificamos o array original excluindo, substituindo ou adicionando elementos.
+// // map, filter e slice retorna uma nova matriz, find retorna um elemento e reduce retorna um valor reduzido.
+
+// // Qual é a saída?
+// const comida = ['🍕', '🍫', '🥑', '🍔'];
+// const info = { comidaFavorita: comida[0]}
+
+// info.comidaFavorita = '🍝';
+
+// console.log(comida) // A: ['🍕', '🍫', '🥑', '🍔']
+
+// // A: ['🍕', '🍫', '🥑', '🍔']
+// // B: ['🍝', '🍫', '🥑', '🍔']
+// // C: ['🍝', '🍕', '🍫', '🥑', '🍔']
+// // D: ReferenceError
+
+// // O que esse método faz?
+// JSON.parse() // A: Analisa JSON para um valor JavaScript
+
+// // A: Analisa JSON para um valor JavaScript
+// // B: analisa um objeto JavaScript para JSON
+// // C: analisa qualquer valor JavaScript para JSON
+// // D: analisa JSON apenas para um objeto JavaScript
+
+
+// // Qual é o valor da saída?
+// let nome = 'Bob'
+
+// function getNome() {
+//   console.log(nome)
+
+//   let nome = 'Peter'
+// }
+
+// getNome() // D: ReferenceError
+
+// // A: Bob
+// // B: Peter
+// // C: undefined
+// // D: ReferenceError
+
+// // Qual é a saída?
+// function* geradorUm() {
+//   // Com a palavra-chave yield valores em uma função geradora.
+//   yield ['a', 'b', 'c']
+// }
+
+// function* geradorDois() {
+//   // Com a palavra-chave yield*, podemos gerar valores de outra função geradora ou objeto iterável.
+//   yield* ['a', 'b', 'c']
+// }
+
+// const um = geradorUm()
+// const dois = geradorDois()
+
+// console.log(um.next().value)
+// console.log(dois.next().value)
+
+// // A: a e a
+// // B: a e undefined
+// // C: ['a', 'b', 'c'] e a
+// // D: a e ['a', 'b', 'c']
+
+
+// // Qual é a saída?
+// console.log(`${(x => x )('Eu amo')} programar`) // A: Eu amo programar
+
+// // A: Eu amo programar
+// // B: undefined programar
+// // C: ${(x => x)('Eu amo') programar
+// // D: TypeError
+
+
+// // O que vai acontecer?
+// let config = {
+//   alert: setInterval(() => {
+//     console.log('Alerta!') // C: O setInterval retorno de chamada (callback) ainda será chamado a cada segundo
+//   }, 1000)
+// }
+
+// config = null
+
+// // A: O setInterval retorno de chamada (callback) não será invocado
+// // B: O setInterval retorno de chamada (callback) é invocado uma vez
+// // C: O setInterval retorno de chamada (callback) ainda será chamado a cada segundo
+// // D: Nós nunca invocamos config.alert(), config é null
+
+
+// // Quais métodos retornarão o valor 'Ola Mundo!'?
+// const meuMapa = new Map()
+// const minhaFunc = () => 'saudacao'
+
+// meuMapa.set(minhaFunc, 'Ola mundo')
+
+// // 1
+// meuMapa.get('saudacao')
+
+// // 2
+// meuMapa.get(minhaFunc)
+
+// // 3
+// meuMapa.get(() => 'saudacao')
+
+// // A: 1
+// // B: 2
+// // C: 2 2 3
+// // D: Todos eles
+// // Resposta B: 2
+
+
+// Qual é a saída?
+const pessoa = {
+  nome: 'Bob',
+  idade: 21
+}
+
+// Ambas as funções alterarIdade alterarIdadeEhNome têm um parâmetro padrão
+// Primeiro, invocamos a alterarIdade função e passamos passoa objeto como seu argumento
+const alterarIdade = (x = { ...pessoa }) => (x.idade += 1)
+
+// invocamos a função alterarIdadeEhNome, porém não passamos um parâmetro. 
+// Em vez disso, o valor de x é igual a um novo objeto: { ...pessoa }.
+const alterarIdadeEhNome = (x = {...pessoa }) => {
+  x.idade += 1
+  x.nome = 'Peter'
+}
+alterarIdade(pessoa)
+alterarIdadeEhNome()
+
+
+console.log(pessoa) // B: Como é um novo objeto, não afeta os valores das propriedades do pessoa objeto.
+
+// A: {name: "Peter", idade: 22}
+// B: {name: "Peter", idade: 23}
+// C: {name: "Bob", idade: 22}
+// D: {name: "Bob", idade: 23}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
