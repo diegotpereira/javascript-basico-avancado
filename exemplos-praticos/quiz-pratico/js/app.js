@@ -1624,55 +1624,206 @@
 // // Resposta B: 2
 
 
+// // Qual é a saída?
+// const pessoa = {
+//   nome: 'Bob',
+//   idade: 21
+// }
+
+// // Ambas as funções alterarIdade alterarIdadeEhNome têm um parâmetro padrão
+// // Primeiro, invocamos a alterarIdade função e passamos passoa objeto como seu argumento
+// const alterarIdade = (x = { ...pessoa }) => (x.idade += 1)
+
+// // invocamos a função alterarIdadeEhNome, porém não passamos um parâmetro. 
+// // Em vez disso, o valor de x é igual a um novo objeto: { ...pessoa }.
+// const alterarIdadeEhNome = (x = {...pessoa }) => {
+//   x.idade += 1
+//   x.nome = 'Peter'
+// }
+// alterarIdade(pessoa)
+// alterarIdadeEhNome()
+
+// console.log(pessoa) // B: Como é um novo objeto, não afeta os valores das propriedades do pessoa objeto.
+// // A: {name: "Peter", idade: 22}
+// // B: {name: "Peter", idade: 23}
+// // C: {name: "Bob", idade: 22}
+// // D: {name: "Bob", idade: 23}
+
+
+
+// // Qual das opções a seguir retornará 6 ?
+// function somarValues(x, y, z) {
+//   return x + y + z
+// }
+
+// // A: somarValues([...1, 2, 3])
+// // B: somarValues([...[1, 2, 3]])
+// // C: somarValues(...[1, 2, 3])
+// // D: somarValues([1, 2, 3])
+// // Resposta C: somar(...[1, 2, 3])
+
+
+// // Qual é a saída?
+// let num = 1
+// const lista = ['🥳', '🤠', '🥰', '🤪']
+// // Com operando +=, estamos incrementando o valor de num por 1.
+// // num tinha o valor inicial 1, então 1 + 1 é 2.
+// // O item no segundo índice na lista matriz é 🥰
+// // console.log(lista[2]) imprime🥰
+// console.log(lista[num += 1]) // B: 🥰 
+
+// // A: 🤠
+// // B: 🥰
+// // C: SyntaxError
+// // D: ReferenceError
+
+
+// // Qual é a saída?
+// const pessoa = {
+//   nome: 'Bob',
+//   sobrenome: 'Marley',
+//   pet: {
+//     nome: 'Scooby',
+//     raca: 'Labrador'
+//   },
+//   getNomeCompleto() {
+//     return `${this.nome} ${this.sobrenome}`
+//   }
+// }
+
+// console.log(pessoa.pet?.nome); // Bob
+// console.log(pessoa.pet?.familia?.nome) // undefined
+// console.log(pessoa.getNomeCompleto?.()) // Bob Marley 
+// console.log(membro.getSobrenome?.()) // ReferenceError
+
+// // Qual é a saída?
+// const mantimentos = ['banana', 'maca', 'amendoim']
+
+// if (mantimentos.indexOf('banana')) {
+//   console.log('Temos que comprar bananas!');
+
+// } else {
+//   console.log(`Não temos que comprar bananas!`) // B: Não temos que comprar bananas!
+// }
+
+// // A: Temos que comprar bananas!
+// // B: Não temos que comprar bananas!
+// // C: undefined
+// // D: 1
+// // Resposta Passamos a condição mantimentos.indexOf("banana") para a instrução if. 
+// // mantimentos.indexOf("banana")retorna 0, que é um valor falso. Como a condição na 
+// // instrução if é falsa, o código no bloco else é executado e Não temos que comprar bananas! é registrado.
+
+
+// // Qual é a saída?
+// const config = {
+//   linguagens: [],
+//   set linguage(lang) {
+//     return this.linguagens.push(lang)
+//   }
+// }
+
+// console.log(config.linguage) // D: undefined
+
+// // A: function linguage(lang) { this.linguagens.push(lang }
+// // B: 0
+// // C: []
+// // D: undefined
+
+
+// // Qual é a saída?
+// const nome = 'Bob Marley'
+
+// console.log(!typeof nome === 'object') // false 
+// console.log(!typeof nome === 'string'); // false
+
+// // A: false true
+// // B: true false
+// // C: false false
+// // D: true true
+// // Resposta typeof nameretorna "string"
+// // A string "string" é um valor verdadeiro, então !typeof nome retorna o valor booleano false.
+// // false === "object" e false === "string" ambos retornam false.
+
+
+// // Qual é a saída?
+// const add = x => y => z => {
+//   console.log(x, y, z)
+
+//   return x + y + z
+// }
+
+// add(4)(5)(6) // A: 4 5 6
+
+// // A: 4 5 6
+// // B: 6 5 4
+// // C: 4 function function
+// // D: undefined undefined 
+// // Resposta A função add retorna uma arrow function, 
+// ///                   que retorna uma arrow function, 
+// //                    que retorna uma arrow function (ainda comigo?). 
+// // A primeira função recebe um argumento x com o valor de 4. 
+// // Chamamos a segunda função, que recebe um argumento y com o valor 5. 
+// // Então invocamos a terceira função, que recebe um argumento z com o valor 6. 
+// /// Quando estamos tentando acessar o valor x, y e z dentro da última arrow function, 
+// // o mecanismo JS sobe na cadeia de escopo para encontrar os valores para x e de y acordo. Isso retorna 4 5 6.
+
+
+// // Qual é a saída?
+// async function* alcance(inicial, final) {
+
+//   for(let i =  inicial; i <= final; i++) {
+
+//     yield Promise.resolve(i)
+//   }
+// }
+
+// (async() => {
+//   const gen = alcance(1, 3);
+
+//   for await (const item of gen) {
+//     console.log(item) // C: 1 2 3
+//   }
+// })()
+
+// // A: Promise {1} Promise {2} Promise {3}
+// // B: Promise {<pending>} Promise {<pending>} Promise {<pending>}
+// // C: 1 2 3
+// // D: undefined undefined undefined
+
+
+// // Qual é a saída?
+// const minhaFunc = ({ x, y, z }) => {
+
+//   console.log(x, y, z);
+// }
+
+// minhaFunc(1, 2, 3) // D: undefined undefined undefined
+ 
+// // A: 1 2 3
+// // B: {1: 1} {2: 2} {3: 3}
+// // C: { 1: undefined } undefined undefined
+// // D: undefined undefined undefined
+
+
 // Qual é a saída?
-const pessoa = {
-  nome: 'Bob',
-  idade: 21
+function getMultar(velocidade, valor) {
+  const formatarVelocidade = new Intl.NumberFormat('pt-BR', {
+    style: 'unit',
+    unit: 'kilometer-per-hour'
+  }).format(velocidade)
+  const formatarValor = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(valor)
+
+  return `O motorista dirigiu ${formatarVelocidade} e tem que pagar ${formatarValor}`
 }
 
-// Ambas as funções alterarIdade alterarIdadeEhNome têm um parâmetro padrão
-// Primeiro, invocamos a alterarIdade função e passamos passoa objeto como seu argumento
-const alterarIdade = (x = { ...pessoa }) => (x.idade += 1)
-
-// invocamos a função alterarIdadeEhNome, porém não passamos um parâmetro. 
-// Em vez disso, o valor de x é igual a um novo objeto: { ...pessoa }.
-const alterarIdadeEhNome = (x = {...pessoa }) => {
-  x.idade += 1
-  x.nome = 'Peter'
-}
-alterarIdade(pessoa)
-alterarIdadeEhNome()
-
-
-console.log(pessoa) // B: Como é um novo objeto, não afeta os valores das propriedades do pessoa objeto.
-
-// A: {name: "Peter", idade: 22}
-// B: {name: "Peter", idade: 23}
-// C: {name: "Bob", idade: 22}
-// D: {name: "Bob", idade: 23}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// A: O motorista dirigiu 130 e tem que pagar 300
+// B: O motorista dirigiu 130 km/h e tem que pagar $ 300,00
+// C: O motorista dirigiu indefinido e tem que pagar indefinido
+// D: O motorista dirigiu 130,00 e tem que pagar 300,00
 
 
 
