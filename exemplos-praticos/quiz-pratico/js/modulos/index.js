@@ -31,5 +31,6 @@
 // // C: { default: "Ola mundo", nome: "Bob" }
 // // D: Global object of module.js
 
+import * as soma from './soma.js'
 
-
+soma.default(4)

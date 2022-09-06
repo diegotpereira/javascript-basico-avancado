@@ -1806,24 +1806,189 @@
 // // D: undefined undefined undefined
 
 
-// Qual é a saída?
-function getMultar(velocidade, valor) {
-  const formatarVelocidade = new Intl.NumberFormat('pt-BR', {
-    style: 'unit',
-    unit: 'kilometer-per-hour'
-  }).format(velocidade)
-  const formatarValor = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(valor)
+// // Qual é a saída?
+// function getMultar(velocidade, valor) {
+//   const formatarVelocidade = new Intl.NumberFormat('pt-BR', {
+//     style: 'unit',
+//     unit: 'kilometer-per-hour'
+//   }).format(velocidade)
+//   const formatarValor = new Intl.NumberFormat('pt-BR', {
+//     style: 'currency',
+//     currency: 'BRL'
+//   }).format(valor)
 
-  return `O motorista dirigiu ${formatarVelocidade} e tem que pagar ${formatarValor}`
+//   return `O motorista dirigiu a ${formatarVelocidade} e tem que pagar ${formatarValor}`
+// }
+
+// console.log(getMultar(130, 300)) // B: O motorista dirigiu 130 km/h e tem que pagar R$ 300,00
+// // A: O motorista dirigiu 130 e tem que pagar 300
+// // B: O motorista dirigiu 130 km/h e tem que pagar R$ 300,00
+// // C: O motorista dirigiu indefinido e tem que pagar indefinido
+// // D: O motorista dirigiu 130,00 e tem que pagar 300,00
+
+
+
+// // Qual é a saída?
+// const itensAssustadores = ['👻', '🎃', '🕸'];
+// ({ item: itensAssustadores[3]} = { item: '💀'});
+
+// console.log(itensAssustadores) // B: ["👻", "🎃", "🕸", "💀"]
+
+// // A: ["👻", "🎃", "🕸"]
+// // B: ["👻", "🎃", "🕸", "💀"]
+// // C: ["👻", "🎃", "🕸", { item: "💀" }]
+// // D: ["👻", "🎃", "🕸", "[object Object]"]
+
+
+// // Qual é a saída?
+// const nome = 'Bob Marley'
+// const idade = 21
+
+// console.log(Number.isNaN(nome)) // false
+// console.log(Number.isNaN(idade)) // false
+
+// console.log(isNaN(nome)) // true
+// console.log(isNaN(idade)) // false
+
+// // A: true false true false
+// // B: true false false false
+// // C: false false true false
+// // D: false true false true
+// // Resposta C: false false true false
+
+
+// // Qual é a saída?
+// const valorAleatorio = 21 
+// function getInfo() {
+//   console.log(typeof valorAleatorio);
+
+//   const valorAleatorio = 'Bob Marley'
+
+// }
+
+// getInfo()
+
+// // A: "number"
+// // B: "string"
+// // C: undefined
+// // D: ReferenceError
+// // Resposta D: ReferenceError - Na linha onde queremos registrar o valor de "typeof valorAleatorio", 
+// // a variável valorAleatorio ainda não foi inicializada: a ReferenceErroré lançado!
+
+
+// // Qual é a saída?
+// const minhaPromise = Promise.resolve('hum!!! alguns dados legais');
+
+// (async () => {
+
+//   try {
+//     console.log(await minhaPromise);
+
+//   } catch {
+    
+//     throw new Error('Opa não funcionou')
+
+//   } finally {
+//     console.log('Oh finalmente!') // C: hum!!! alguns dados legais Oh finalmente!
+//   }
+// })()
+
+// // A: hum!!! alguns dados legais
+// // B: Oh finalmente!
+// // C: hum!!! alguns dados legais Oh finalmente!
+// // D: Opa não funcionou Oh finalmente!
+
+
+// // Qual é a saída?
+// const emojis = ['🥑', ['✨', '✨', ['🍕', '🍕']]];
+
+// console.log(emojis.flat(1)) // B: ['🥑', '✨', '✨', ['🍕', '🍕']]
+
+
+// // A: ['🥑', ['✨', '✨', ['🍕', '🍕']]]
+// // B: ['🥑', '✨', '✨', ['🍕', '🍕']]
+// // C: ['🥑', ['✨', '✨', '🍕', '🍕']]
+// // D: ['🥑', '✨', '✨', '🍕', '🍕']
+
+
+// // Qual é a saída?
+// class Contar {
+//   constructor() {
+//     this.contar = 0
+//   }
+//   incrementar() {
+//     this.contar++
+//   }
+// }
+// const contarPrimeiro = new Contar()
+
+// contarPrimeiro.incrementar()
+// contarPrimeiro.incrementar()
+
+// const contarSegundo = contarPrimeiro
+// contarSegundo.incrementar()
+
+// console.log(contarPrimeiro.contar) // D: 3
+
+
+// // A: 0
+// // B: 1
+// // C: 2
+// // D: 3
+
+
+// Qual é a saída?
+const minhaPromise = Promise.resolve('Promise');
+
+function funcUm() {
+
+  setTimeout(() => console.log('Timeout 1!'), 0) // 3º Timeout 1!
+
+  minhaPromise.then(res => res).then(res => console.log(`${res} 1!`)) // 2º Promise 1!
+  console.log('Última linha 1!') // 1º Última linha 1!
 }
 
-// A: O motorista dirigiu 130 e tem que pagar 300
-// B: O motorista dirigiu 130 km/h e tem que pagar $ 300,00
-// C: O motorista dirigiu indefinido e tem que pagar indefinido
-// D: O motorista dirigiu 130,00 e tem que pagar 300,00
+async function funcDois () {
+  const res = await minhaPromise
+
+  console.log(`${res} 2!`) // 4º Promise 2!
+
+  setTimeout(() => console.log('Timeout 2!'), 0) // 6º Timeout 2!
+  console.log('Última linha 2!') // 5º Última linha 2!
+}
+funcUm() // 1º Última linha 1! 2º Promise 1! 3º Timeout 1!
+funcDois() // 4º Promise 2! 5º Última linha 2! 6º Timeout 2!
+
+// A: Promise 1! Última linha 1! Promise 2! Última linha 2! Timeout 1! Timeout 2!
+// B: Última linha 1! Timeout 1! Promise 1! Última linha 2! Promise2! Timeout 2!
+// C: Última linha 1! Promise 2! Última linha 2! Promise 1! Timeout 1! Timeout 2!
+// D: Timeout 1! Promise 1! Última linha 1! Promise 2! Timeout 2! Última linha 2!
+
+
+
+// Como podemos invocar soma de soma.js index.js?
+
+// soma.js
+export default function soma(x) {
+  return x + x;
+}
+
+// index.js
+import * as soma from './soma';
+
+// A: soma(4)
+// B: soma.soma(4)
+// C: soma.default(4)
+// D: O padrão não é importado com *, apenas exportações nomeadas
+
+
+
+
+
+
+
+
+
 
 
 
