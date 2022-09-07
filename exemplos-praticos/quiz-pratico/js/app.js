@@ -1937,63 +1937,166 @@
 // // D: 3
 
 
-// Qual é a saída?
-const minhaPromise = Promise.resolve('Promise');
+// // Qual é a saída?
+// const minhaPromise = Promise.resolve('Promise');
 
-function funcUm() {
+// function funcUm() {
 
-  setTimeout(() => console.log('Timeout 1!'), 0) // 3º Timeout 1!
+//   setTimeout(() => console.log('Timeout 1!'), 0) // 3º Timeout 1!
 
-  minhaPromise.then(res => res).then(res => console.log(`${res} 1!`)) // 2º Promise 1!
-  console.log('Última linha 1!') // 1º Última linha 1!
-}
+//   minhaPromise.then(res => res).then(res => console.log(`${res} 1!`)) // 2º Promise 1!
+//   console.log('Última linha 1!') // 1º Última linha 1!
+// }
 
-async function funcDois () {
-  const res = await minhaPromise
+// async function funcDois () {
+//   const res = await minhaPromise
 
-  console.log(`${res} 2!`) // 4º Promise 2!
+//   console.log(`${res} 2!`) // 4º Promise 2!
 
-  setTimeout(() => console.log('Timeout 2!'), 0) // 6º Timeout 2!
-  console.log('Última linha 2!') // 5º Última linha 2!
-}
-funcUm() // 1º Última linha 1! 2º Promise 1! 3º Timeout 1!
-funcDois() // 4º Promise 2! 5º Última linha 2! 6º Timeout 2!
+//   setTimeout(() => console.log('Timeout 2!'), 0) // 6º Timeout 2!
+//   console.log('Última linha 2!') // 5º Última linha 2!
+// }
+// funcUm() // 1º Última linha 1! 2º Promise 1! 3º Timeout 1!
+// funcDois() // 4º Promise 2! 5º Última linha 2! 6º Timeout 2!
 
-// A: Promise 1! Última linha 1! Promise 2! Última linha 2! Timeout 1! Timeout 2!
-// B: Última linha 1! Timeout 1! Promise 1! Última linha 2! Promise2! Timeout 2!
-// C: Última linha 1! Promise 2! Última linha 2! Promise 1! Timeout 1! Timeout 2!
-// D: Timeout 1! Promise 1! Última linha 1! Promise 2! Timeout 2! Última linha 2!
+// // A: Promise 1! Última linha 1! Promise 2! Última linha 2! Timeout 1! Timeout 2!
+// // B: Última linha 1! Timeout 1! Promise 1! Última linha 2! Promise2! Timeout 2!
+// // C: Última linha 1! Promise 2! Última linha 2! Promise 1! Timeout 1! Timeout 2!
+// // D: Timeout 1! Promise 1! Última linha 1! Promise 2! Timeout 2! Última linha 2!
 
 
 
 // Como podemos invocar soma de soma.js index.js?
 
-// soma.js
-export default function soma(x) {
-  return x + x;
-}
+// // soma.js
+// export default function soma(x) {
+//   return x + x;
+// }
 
-// index.js
-import * as soma from './soma';
+// // index.js
+// import * as soma from './soma';
 
-// A: soma(4)
-// B: soma.soma(4)
-// C: soma.default(4)
-// D: O padrão não é importado com *, apenas exportações nomeadas
+// // A: soma(4)
+// // B: soma.soma(4)
+// // C: soma.default(4)
+// // D: O padrão não é importado com *, apenas exportações nomeadas
+// // Resposta C: soma.default(4)
+
+// // Qual é a saída?
+// const manipulador = {
+//   set: () => console.log('Adicionado uma nova propriedade!'),
+//   get: () => console.log('Acessou a propriedade!'),
+// };
+// // O objeto Proxy é usado para definir comportamentos customizados para operações fundamentais 
+// // (por exemplo, pesquisa de propriedade, atribuição, enumeração, invocação de função, etc.).
+// const pessoa = new Proxy({}, manipulador)
+
+// pessoa.nome = 'Bob'
+// pessoa.nome 
+
+// // A: Adicionado uma nova propriedade!
+// // B: Acessou a propriedade!
+// // C: Adicionado uma nova propriedade! Acessou a propriedade!
+// // D: Nada é registrado
+// // Resposta C: Adicionado uma nova propriedade! Acessou a propriedade!
+
+// // Qual dos seguintes modificará o objeto pessoa?
+// const pessoa = { nome: 'Bob'}
+// // Object.seal() sela um Objeto, evitando que novas propriedades 
+// // sejam adicionadas à ele e marcando todas as propriedades existentes como não configuráveis.
+// Object.seal(pessoa) 
+
+// // A: pessoa.nome = "Evan Bacon"
+// // B: pessoa.idade = 21
+// // C: delete pessoa.nome
+// // D: Object.assign(pessoa, { idade: 21 })
+// // Resposta // A: pessoa.nome = "Evan Bacon"
 
 
+// // Qual dos seguintes modificará o objeto pessoa?
+// const pessoa = {
+//   nome: 'Bob Marley',
+//   endereco: {
+//     rua: 'rua teste'
+//   }
+// }
+// Object.freeze(pessoa)
+
+// // A: pessoa.nome = "Evan Bacon"
+// // B: delete pessoa.endereco
+// // C: pessoa.endereco.rua = "av teste"
+// // D: pessoa.pet = { nome: "Mara" }
+// // Resposta C: pessoa.endereco.rua = "av teste"
 
 
+// // Qual é a saída?
+// const add = x => x + x
+
+// function minhaFunc(num = 2, value = add(num)) {
+//   console.log(num, value);
+// }
+// minhaFunc() // 2 e 4
+// minhaFunc(3) // 3 e 6
+
+// // A: 2 4 e 3 6
+// // B: 2 NaN e 3 NaN
+// // C: 2 Error e 3 6
+// // D: 2 4 e 3 Error
+// // Resposta A: 2 4 e 3 6
 
 
+// // Qual é a saída?
+// class Contar {
+//   #numero = 10
 
+//   incrementa() {
+//     this.#numero++
+//   }
+//   getNum() {
+//     return this.#num
+//   }
+// }
+// const contar = new Contar()
+// contar.incrementa()
 
+// console.log(contar.#numero) // D: SyntaxError
 
+// // A: 10
+// // B: 11
+// // C: undefined
+// // D: SyntaxError
 
+// // O que está faltando?
+// const equipes = [
+//   {
+//     nome: 'Equipe 1', membros: ['Paulo', 'Lisa']
+//   },
+//   {
+//     nome: 'Equipe 2', membros: ['Laura', 'Time']
+//   }
+// ]
 
+// function* getMembros(membros) {
 
+//   for(let i = 0; i < membros.length; i++) {
+//     yield membros[i]
+//   }
+// }
 
+// function* getEquipes(equipes) {
+//   for(let i = 0; i < equipes.length; i++) {
 
+//   }
+// }
+// const obj = getEquipes(times)
+// obj.next()
+// obj.next()
+
+// // A: yield getMembros(times[i].membros)
+// // B: yield* getMembros(times[i].membros)
+// // C: return getMembros(times[i].membros)
+// // D: return yield getMembros(times[i].membros)
+// Resposta B: yield* getMembros(times[i].membros)
 
 
 // // Qual é a saída?
@@ -2294,3 +2397,159 @@ import * as soma from './soma';
 // // B: Sim é uma string!
 // // C: TypeError
 // // D: undefined// 
+
+// Qual é a diferença entre indefinido (undefined) e não definido (not undefined) em JavaScript?
+// Resposta A diferença é que undefined refere-se ao valor da variável 
+// e is not defined é uma mensagem de erro que indica que a variável não existe no programa que está a correr.
+
+// // Para qual valor de x os resultados das seguintes afirmações não são os mesmos?
+// if(x <= 100) {}
+// if(!(x > 100)) {}
+
+// // Qual será a saída do código a seguir?
+// var saida = (function(x) {
+//   delete x;
+//   return x;
+// })(0)
+
+// console.log(saida) // Saida: 0
+
+// // Qual será a saída do código a seguir?
+// var x = 1;
+// var saida = (function() {
+//   delete x;
+//   return x;
+// })()
+
+// console.log(saida) // Saida:  1
+
+// // Qual será a saída do código a seguir?
+// var x = { foo: 1 };
+// var saida = (function() {
+//   delete x.foo;
+//   return x.foo;
+// })()
+
+// console.log(saida) // Saida: undefined
+
+// // Qual será a saída do código a seguir?
+// var Colaborador = {
+//   compania: 'xyz'
+// }
+
+// var colaborador1 = Object.create(Colaborador)
+
+// delete colaborador1.compania
+
+// console.log(colaborador1.compania) // Saida: xyz
+
+// // O que está undefined x 1 em JavaScript
+// var arvores = ["pau-brasil", "baía", "cedro", "carvalho", "bordo"]
+// delete arvores[3]
+
+// console.log(arvores) // ['pau-brasil', 'baía', 'cedro', vazio, 'bordo']
+
+
+// // Qual será a saída do código a seguir?
+// var arvores = ["xyz", "xxxx", "teste", "rian", "maça"]
+// delete arvores[3];
+
+// console.log(arvores.length) // 5
+
+// // Qual será a saída do código a seguir?
+// var bar = true 
+
+// console.log(bar + 0) // 1
+// console.log(bar = "xyz") // xyz
+// console.log(bar + true) // xyztrue
+// console.log(bar + false) // xyzfalse
+
+// // Qual será a saída do código a seguir?
+// var z = 1, y = z = typeof y;
+// console.log(y) // undefined
+
+// Qual será a saída do código a seguir?
+// var foo = function bar() {
+//   return 12;
+// }
+
+// typeof bar() // Saida: ReferenceError
+
+
+// // Qual é a diferença entre declarar uma função nos formatos listados abaixo?
+// var foo = function() {
+
+// }
+
+// function bar() {
+
+// }
+
+// // Resposta A principal diferença é que função foo é definida em run-time e é chamada de expressão de função.
+// // Enquanto função bar é definida em parse-time e é chamada de instrução de função.
+
+
+// // Qual é a saída?
+
+// bar();
+
+// (function abc() {
+//   console.log('algo') // TypeError: bar(...) is not a function
+// })();
+
+// function bar() {
+//   console.log('bar foi chamado') // Saida bar foi chamado
+// }
+
+
+// // Qual será a saída do código a seguir?
+// var salario = "R$1000";
+
+// (function() {
+//   console.log('O salário original era ' + salario) // Saida O salário original era undefined
+
+//   var salario = "R$5000"
+
+//   console.log("Meu novo salario " + salario) // Saida Meu novo salario R$5000
+// })()
+
+// Qual é a diferença entre typeofe instanceof?
+// É aconselhado utilizar typeof para tipos de dado simples (textos, números e booleanos)
+// E o instanceof para dados mais complexos, como instâncias de uma classe.
+
+
+// //  Calcule o comprimento da matriz associativa
+// var contarArray = {
+//   A: 3,
+//   B: 4
+// };
+
+// contarArray["C"] = 1
+
+// var total = Object.keys(contarArray).length;
+
+// console.log(total) // 3
+
+// Diferença entre Function, Method e Constructor chamadas em JavaScript.
+// Resposta Métodos em JavaScript nada mais são do que propriedades de objetos que são funções.
+// Funções em Javascript são conhecidas como objetos de primeira classe (first-class objects). 
+// Isso porque tudo o que você pode fazer com um objeto, você pode fazer com funções. 
+// Na realidade uma função é um objeto do tipo Function.
+// O construtor é um método especial para criar e inicializar um objeto criado a partir de uma classe.
+
+
+// // Qual seria a saída do código a seguir?
+// function Usuario(nome) {
+//   this.nome = nome || 'Bonny'
+// }
+// var pessoa = new Usuario("xyz")["localizacao"] = "BRA"
+
+// console.log(pessoa) // Saida BRA 
+
+// O que são Service Workers e quando você pode usá-los?
+// Resposta Um service worker é um tipo especial de worker baseado em eventos, o qual é registrado para um determinado path e origem.
+// Na prática, ele é um arquivo JavaScript que pode controlar as páginas do site ao qual ele está associado, interceptando e modificando requisições e a navegação em si.
+
+// Descreva o padrão singleton em JavaScript
+// O Singleton Pattern diz que você pode ter apenas uma única instância de uma classe (ou, no caso do JavaScript, função construtora). Isso significa que uma vez que a classe for instanciada, 
+// você deve sempre retornar esta mesma instância em chamadas subsequentes.
