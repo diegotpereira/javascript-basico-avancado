@@ -2553,3 +2553,204 @@
 // Descreva o padrão singleton em JavaScript
 // O Singleton Pattern diz que você pode ter apenas uma única instância de uma classe (ou, no caso do JavaScript, função construtora). Isso significa que uma vez que a classe for instanciada, 
 // você deve sempre retornar esta mesma instância em chamadas subsequentes.
+
+
+// // Liste os recursos importantes do JavaScript ES6?
+// // Resposta : Template Strings
+// // Interpolação de Expressões
+// // Expressões incorporadas
+// // Strings de várias linhas sem hacks
+// // Formatação de string
+// // Marcação de string para escape HTML seguro, localização e muito mais
+// console.log('texto string linha 1\n' + 
+//             'texto string linha 2');
+
+// console.log(`texto string linha 1
+//            texto string linha 1`);
+
+// //  Interpolação de Expressões
+// //  Para encapsular expressões dentro de strings, você precisava utilizar a seguinte sintaxe:
+// var a = 5 
+// var b = 10 
+
+// console.log('Quinze é ' + (a + b) +  ' e \nnão ' + (2 * a + b) + '.');
+
+// // com template strings, você pode utilizar as substituições sintáticas tornando o código mais legível:
+// var c = 5
+// var d = 10
+
+// console.log(`Quinze é  ${c + b} e 
+//            não ${2 * a + b}`);
+
+// // Tagged template strings
+// var e = 5 
+// var f = 10
+
+// function tag(strings, ...values) {
+//   console.log(strings[0]);
+//   console.log(strings[1]);
+//   console.log(strings[0]);
+//   console.log(strings[1]);
+
+//   return 'Bazinga'
+// }
+
+// tag`Ola ${e = f} mundo ${e * f}`
+
+// // Substituição String
+// let nome = `Bob Marley`
+
+// console.log(`Olá, ${nome}`);
+
+// // String Multilinha
+// let msg = `ola \ 
+// mundo`
+
+// console.log(`${msg}`);
+
+// // operador de espalhamento
+// // O operador Spread permite que iteráveis ​​(arrays/objects/strings) 
+// // sejam expandidos em argumentos/elementos únicos.
+// function soma(x, y, z) {
+//   return x + y + z
+// }
+// const numeros = [10, 20, 30]
+
+// // usando operador de espalhamento
+// console.log(soma(...numeros));
+
+// // Usando Aplicar (ES5)
+// console.log(soma.apply(null, numeros));
+
+// // Copiando uma matriz:
+// let frutas = ['maça', 'Laranja', 'Banana']
+// let novoArrayFrutas = [...frutas]
+
+// console.log(novoArrayFrutas);
+
+// // Concatenando arrays:
+// let arr1 = ['A', 'B', 'C']
+// let arr2 = ['X', 'Y', 'Z']
+
+// let resultado = [...arr1, ...arr2]
+
+// console.log(resultado);
+
+// // Espalhando elementos junto com um elemento individual:
+// let frutos = ['Maça', 'Laranja', 'Banana']
+// let novoFrutos = ['Cereja', ...frutos]
+
+// console.log(novoFrutos);
+
+// // Espalhando elementos em chamadas de função:
+// let fruta = ['Maça', 'Laranja', 'Banana']
+
+// const getFrutas = (f1, f2, f3) => {
+//   console.log(`Frutas: ${f1}, ${f2} e ${f3}`);
+// }
+// getFrutas(...fruta)
+
+// // Sintaxe de propagação para literais de objeto:
+// var obj1 = { id: 101, nome: 'Bob Marley'}
+// var obj2 = { idade: 35, pais: 'BRA'}
+
+// const colaborador = {...obj1, ...obj2}
+
+// console.log(colaborador);
+
+
+// // O objeto "Set" permite que você armazene valores únicos de qualquer tipo, desde valores primitivos a referências a objetos.
+// let numeros = new Set([10, 20, 30, 40, 50])
+
+// console.log(numeros) // { 10, 20, 30, 40 }
+// console.log(typeof numeros) // Object
+
+// // valores padrão
+// function add(x = 10, y = 20) {
+//   console.log(x + y) // 40
+// }
+
+// add(10, 30)
+
+// // repeat()
+// const msg = 'Olá Mundo \n'
+
+// console.log(`${msg.repeat(3)}`);
+
+
+// // Arrow Function
+// let add = (x, y) => x  + y 
+
+// console.log(add(10, 20)) // 30
+
+// // Arrow Function com this 
+// var pessoa = {
+//   nome: 'Bob',
+//   acoes: ['bicicleta', 'caminhada', 'esqui', 'surf'],
+//   printAcoes: function() {
+//     var _this = this 
+
+//     this.acoes.forEach((acao) => {
+//       var str = _this.nome + " gosta de " + acao 
+
+//       console.log(str);
+//     })
+//   }
+// }
+// pessoa.printAcoes()
+
+
+// // Atribuição via desestruturação
+
+// // Exemplo 
+// const telefone = {
+
+//   titulo: 'iPhone',
+//   preco: 999,
+//   descricao: 'O iPhone é um smartphone desenvolvido pela Apple'
+// }
+
+// console.log(telefone.titulo);
+
+// // Exemplo com Atribuição via desestruturação
+// const { titulo, preco, descricao } = {
+//   titulo: 'iPhone',
+//   preco: 999,
+//   descricao: 'O iPhone é um smartphone desenvolvido pela Apple'
+// }
+// console.log(titulo)
+// console.log(preco)
+// console.log(descricao)
+
+
+// // Generators
+// function* generator(num){
+//   yield num + 10
+//   yield num + 20
+//   yield num + 30
+// }
+
+// let gen = generator(10)
+
+// console.log(gen.next().value) // 20
+// console.log(gen.next().value) // 30
+// console.log(gen.next().value) // 40
+
+// // Symbols
+// // Symbol (símbolo) é um tipo primitivo que armazena um valor único.
+// // Seu propósito é esse, servir como um identificador único.
+// const simbolo = Symbol()
+// const simbolo2 = Symbol(42)
+// const simbolo3 = Symbol('Ola')
+
+// console.log(typeof simbolo) // simbolo
+// console.log(simbolo3.toString()) // simbolo(ola)
+// console.log(Symbol('Ola') === Symbol('ola')) // false
+
+// // Iterador
+// const titulo = "ES6"
+// const iterador = titulo[Symbol.iterator]()
+
+// console.log(iterador.next().value) // E
+// console.log(iterador.next().value) // S
+// console.log(iterador.next().value) // 6
