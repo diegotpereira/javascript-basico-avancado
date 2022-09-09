@@ -1,6 +1,11 @@
 'use strict'
 
-
+const FANTASMAS = {
+    INKY: 'inky',
+	BLINKY: 'blinky',
+	PINKY: 'pinky',
+	CLYDE: 'clyde'
+}
 
 function geral () {
 
@@ -8,6 +13,8 @@ function geral () {
     var context
     var canvas_paredes, context_paredes
     var jogo
+
+    var inky, blinky, clyde, pinky;
 
     var mapConfig = "data/map.json";
 
@@ -30,14 +37,23 @@ function geral () {
     function Timer() {
         console.log("Temporizador");
 
-        this.tempo_iniciar
+        this.tempo_diferente = 0
+        this.tempo_iniciar = 0
+        this.tempo_parar = 0
 
         this.iniciar = function() {
             this.tempo_iniciar = new Date().getTime()
         }
+        this.parar = function() {
+            this.tempo_parar = new Date().getTime()
+            this.tempo_diferente += this.tempo_parar - this.tempo_iniciar
+            this.tempo_parar = 0
+            this.tempo_iniciar = 0
+        }
         this.redefinir = function() {
-
-            console.log("REdefinir");
+            this.tempo_diferente = 0
+            this.tempo_iniciar = 0
+            this.tempo_parar = 0
         }
     }
 
@@ -51,9 +67,11 @@ function geral () {
 
         this.iniciado = false
         this.pausar = true;
+        this.fimdejogo = false
         this.map    
 
         this.canvas = $('#meuCanvas').get(0);
+        this.corParede = "Blue"
         this.width = this.canvas.width
         this.height = this.canvas.height
 
@@ -90,10 +108,49 @@ function geral () {
 
             this.pausar = false;
             this.iniciado = true;
+            this.fecharMensagem()
 
             animacaoLoop();
         }
 
+        this.forcarRetomar = function() {
+            this.fecharMensagem()
+            this.pausar = false
+            this.temporizador.iniciar()
+        }
+
+        this.pausaRetomar = function() {
+            if (this.fimdejogo) {
+                console.log('Não é possível pausar/retomar. fimdejogo definido como verdadeiro.');
+
+                return
+            }
+            if(!this.iniciado) {
+                this.forceIniciarLoopAnimacao()
+
+            } else if (this.pausar) {
+                this.forcarRetomar()
+
+            } else {
+                this.pausarEhExibirMensagem('Pausar', 'Clique para retomar')
+            }
+        }
+        this.pausarEhExibirMensagem = function(titulo, texto) {
+            this.temporizador.parar()
+            this.pausar = true
+            this.exibirMensagem(titulo, texto)
+
+        }
+        this.exibirMensagem =  function(titulo, texto) {
+            $('#canvas-overlay-container').fadeIn(200)
+            if($('.controles').css('display') != 'none') $('.controles').slideToggle(200)
+            $('#canvas-overlay-content #titulo').text(titulo)
+            $('#canvas-overlay-content #text').html(texto)
+        }
+        this.fecharMensagem = function() {
+            $('#canvas-overlay-container').fadeOut(200)
+            $('.controles').slideToggle(200)
+        }
         this.getContagemPilulas = () => {
 
             console.log("contagemPilulas...");
@@ -128,6 +185,15 @@ function geral () {
 
             jogo.desenharCoracoes(pacman.vidas)
 
+            // inicializa Fantasmas, evita inundação de memória
+            if(pinky === null || pinky === undefined) {
+                pinky = new Fantasma(FANTASMAS.PINKY, 7, 5, 'img/pinky.svg', 2, 2)
+                inky = new Fantasma(FANTASMAS.INKY, 8, 5, 'img/inky.svg', 13, 11)
+                blinky = new Fantasma(FANTASMAS.BLINKY, 9, 5, 'img/blinky.svg', 13, 0)
+                clyde = new Fantasma(FANTASMAS.CLYDE, 10, 5, 'img/clyde.svg', 2, 11)
+            }
+
+
             console.log("coraççoes");
 
         }
@@ -141,6 +207,9 @@ function geral () {
             canvas_paredes.width = jogo.canvas.width
             canvas_paredes.height = jogo.canvas.height
             context_paredes = canvas_paredes.getContext('2d')
+
+            context_paredes.fillStyle = jogo.corParede;
+            context_paredes.strokeStyle = jogo.corParede
 
             //
             construirParede(context_paredes, 0, 0, 18, 1)   
@@ -225,7 +294,19 @@ function geral () {
         }
         
     }
+
+    function Direcao(nome, angulo1, angulo2, dirX, dirY) {
+        this.nome = nome 
+        this.angulo1 = angulo1
+        this.angulo2 = angulo2
+        this.dirX = dirX
+        this.dirY = dirY
+        this.equals = function(dir) {
+            return JSON.stringify(this) === JSON.stringify(dir)
+        }
+    }
     
+    var right = new Direcao("right", 0.25, 1.75, 1, 0)
 
     jogo = new Jogo()
 
@@ -241,6 +322,9 @@ function geral () {
         this.dirX = right.dirX
 		this.dirY = right.dirY
         this.vidas = 3
+
+        this.modoAnimal = false 
+        this.modoAnimalTemporizador = 0
 
 
     }
@@ -275,6 +359,15 @@ function geral () {
 
     })
 
+    /* -------------------- EVENT LISTENERS -------------------------- */
+    // Controles
+    window.addEventListener('keydown', fazerKeyDown, true)
+
+    // pausa
+    $('#canvas-container').click(function() {
+        if(!(jogo.fimdejogo === true)) jogo.pausaRetomar()
+    })
+
     function renderizarConteudo() {
 
         console.log("renderizarConteudo");
@@ -287,9 +380,9 @@ function geral () {
 
         if (jogo.map && jogo.map.posY && jogo.map.posY.length > 0) {
             
-            $each(jogo.map.posY, (i, row) => {
+            $.each(jogo.map.posY, (i, row) => {
                 irPara = row.row 
-                $each(row.posX, (j, column) => {
+                $.each(row.posX, (j, column) => {
                     if (column.type == "pill") {
                         context.arc(jogo.toPixelPos(column.col - 1) + 
                         pacman.radius, jogo.toPixelPos(irPara - 1) + 
@@ -310,6 +403,12 @@ function geral () {
         context.drawImage(canvas_paredes, 0 , 0)
 
         if (jogo.iniciado) {
+
+            // Fantasma
+            pinky.draw(context)
+            blinky.draw(context)
+            inky.draw(context)
+            clyde.draw(context)
             
             context.beginPath()
             context.arc(pacman.posX + pacman.radius, pacman.posY, pacman.radius,
@@ -328,6 +427,127 @@ function geral () {
         renderizarConteudo()
 
         setTimeout(animacaoLoop)
+    }
+    function fazerKeyDown(evt) {
+
+        switch(evt.keyCode) {
+            case 38: 
+               evt.preventDefault()
+
+            case 40:
+               evt.preventDefault()
+
+            case 32:
+                evt.preventDefault()
+
+                if (!(jogo.fimdejogo == true) &&
+                   $('#jogo-content').is(':visible')) 
+                jogo.pausaRetomar()
+
+                break;
+                
+        }
+    }
+
+    // direção de Sentinela
+    function direcaodeSentinela() {
+        this.dir = null
+        this.set = function(dir) {
+            this.dir = dir 
+        }
+        this.get = function() {
+            return this.dir
+        }
+    }
+
+    // Objeto fantasma em notação de construtor
+    function Fantasma(nome, gridPosX, gridPosY, imagem, gridBaseX, gridBaseY) {
+        this.nome = nome 
+        this.posX = gridPosX * 30 
+        this.posY = gridPosY * 30
+        this.iniciarPosX = gridPosX * 30
+        this.iniciarPosY = gridPosY * 30 
+        this.gridBaseX = gridBaseX
+        this.gridBaseY = gridBaseY
+        this.velocidade = jogo.fantasmaVelocidadeNormal
+        this.imagens = JSON.parse(
+            '{"normal" : {' +
+			`"${FANTASMAS.INKY}" : "0",` +
+			`"${FANTASMAS.PINKY}" : "1",` +
+			`"${FANTASMAS.BLINKY}" : "2",` +
+			`"${FANTASMAS.CLYDE}" : "3"` +
+			'},' +
+			'"frightened1" : {' +
+			'"left" : "", "up": "", "right" : "", "down": ""},' +
+			'"frightened2" : {' +
+			'"left" : "", "up": "", "right" : "", "down": ""},' +
+			'"dead" : {' +
+			'"left" : "", "up": "", "right" : "", "down": ""}}'
+        );
+
+        this.imagem = new Image()
+        this.imagem.src = imagem
+        this.fantasmaCasa = true 
+        this.deslumbrado = true 
+        this.morto = false 
+        
+        this.deslumbrar = function() {
+            this.alterarVelocidade(jogo.fantasmaVelocidadeDeslumbrado)
+
+            if(this.posX > 0) this.posX = this.posX - this.posX % this.velocidade
+            if(this.posY > 0) this.posY = this.posY -  this.posY % this.velocidade
+
+            this.deslumbrado = true 
+        }
+        this.deslumbrarImg = new Image()
+        this.deslumbrarImg.src = 'img/dazzled.svg'
+
+        this.deslumbrarImg2 = new Image()
+        this.deslumbrarImg2.src = 'img/dazzled2.svg'
+
+        this.mortoImg = new Image()
+        this.mortoImg.src = 'img/dead.svg'
+
+        this.direcao = right
+        this.radius = pacman.radius
+
+        this.draw = function(context) {
+            if (this.morto) {
+                context.drawImage(this.mortoImg, this.posX, this.posY, 2 * this.radius, 2 * this.radius)
+
+            } else if (this.deslumbrado) {
+                if (pacman.modoAnimalTemporizador < 50 && pacman.modoAnimalTemporizador % 8 > 1) {
+                    context.drawImage(this.deslumbrarImg2, this.posX, this.posY, 2 * this.radius, 2 * this.radius)
+
+                } else {
+                    context.drawImage(this.deslumbrarImg, this.posX, this.posY, 2 * this.radius, 2 * this.radius)
+                }
+            } else context.drawImage(this.imagem, this.posX, this.posY, 2 * this.radius, 2 * this.radius)
+        }
+        this.getCentroX = function() {
+            return this.posX + this.radius
+        }
+        this.getCentroY = function() {
+            return this.posY + this.radius
+        }
+    }
+    Fantasma.prototype = new Figure()
+
+
+    // Super Classe para Pacman e Fantasmas
+    function Figure() {
+
+        this.posX
+        this.posY 
+        this.velocidade
+        this.dirX = right.dirX 
+        this.dirY = right.dirY 
+        this.direcao 
+        this.parar = true
+        this.direcaodeSentinela = new direcaodeSentinela()
+        this.getProximaDirecao = function() {
+            console.log("Figura getProximaDirecao");
+        }
     }
 }
 
