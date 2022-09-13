@@ -2858,3 +2858,145 @@
 // // 2. function
 // // 3. 'Oi estou dentro exibirFunc'
 // // 4. ReferenceError: exibirFunc is not defined
+
+
+// // Qual seria a saída do código a seguir?
+
+// var colaboradorId = 'abc123';
+
+// function foo() {
+//   colaboradorId = '123bcd'
+
+//   return
+// }
+// foo()
+
+// console.log(colaboradorId) // 1. undefined
+
+// // 1. undefined
+// // 2. '123bcd'
+// // 3. 'abc123'
+// // 4. ReferenceError: colaboradorId is not defined
+
+// // Qual seria a saída do código a seguir?
+// var colaboradorId = 'abc123'
+
+// function foo() {
+//   colaboradorId = '123bcd'
+
+//   return
+
+//   function colaboradorId() {}
+// }
+// foo();
+
+// console.log(colaboradorId); // 3. abc123
+
+// // 1.undefined
+// // 2. '123bcd'
+// // 3. 'abc123'
+// // 4. ReferenceError: colaboradorId is not defined
+
+
+// // Qual seria a saída do código a seguir?
+// var colaboradorId = 'abc123'
+
+// function foo() {
+//   colaboradorId()
+
+//   return 
+
+//   function colaboradorId() {
+//     console.log(typeof colaboradorId);
+//   }
+// }
+
+// foo()
+
+
+// // 1. Indefinido
+// // 2. função
+// // 3. String
+// // 4. ReferenceError: colaboradorId não está definido
+
+// Resposta 2. função
+
+
+// // Qual seria a saída do código a seguir?
+
+// function foo() {
+
+//   colaboradorId()
+
+//   var produto = 'Carro'
+
+//   return 
+
+//   function colaboradorId() {
+
+//     console.log(produto); // undefined
+//   }
+// }
+
+// foo()
+
+// // 1. undefined
+// // 2. Type Error
+// // 3. 'Carro'
+// // 4. ReferenceError: produto is not defined
+
+// // Resposta 1. undefined
+
+// Resposta 1. undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function foo() {
+//   bar()
+
+//   function bar() {
+//     abc()
+
+//     console.log(typeof abc);
+//   }
+
+//   function abc() {
+//     console.log(typeof bar);
+//   }
+// }())
+
+// // 1. undefined undefined
+// // 2. Type Error
+// // 3. function function
+// // 4. ReferenceError: bar is not defined
+
+// // Resposta 3. function function
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+
+//   'use strict'
+
+//   var pessoa = {
+//     nome: 'Joao'
+//   }
+
+//   pessoa.salario = 'R$1000'
+//   pessoa['pais'] = 'BRA'
+
+//   Object.defineProperty(pessoa, 'telefoneNo', {
+//     value: '99999999999',
+//     enumerable: false
+//   })
+//   console.log(Object.keys(pessoa)); // 4. ["nome", "salario", "pais"]
+// })()
+
+//   // 1. Type Error
+//   // 2. undefined
+//   // 3. ["nome", "salario", "pais", "telefoneNo"]
+//   // 4. ["nome", "salario", "pais"]
+
+//   // Resposta 4. ["nome", "salario", "pais"] - enumerable é verdadeiro (true) se e somente se esta propriedade aparece durante enumeração das propriedades no objeto correspondente.
+                                                  // Valor padrão é false.
