@@ -2754,3 +2754,107 @@
 // console.log(iterador.next().value) // E
 // console.log(iterador.next().value) // S
 // console.log(iterador.next().value) // 6
+
+
+// // Qual saída do código?
+// var strA = 'olá'
+// var strB = strA
+
+// strB = 'Adeus!'
+
+// console.log(strA) // olá
+
+// // Qual saída do código?
+// var objA = { prop1: 42}
+// var objB = objA
+
+// objB = {}
+
+// console.log(objA) // {prop1: 42}
+
+// // Qual saída do código?
+// var arrA = [0, 1, 2, 3, 4, 5]
+// var arrB = arrA
+
+// arrB[0] = 42
+
+// console.log(arrA) // [42, 1, 2, 3, 4, 5]
+
+
+// // Qual saída do código?
+// var arrA = [0, 1, 2, 3, 4, 5]
+// var arrB = arrA.slice()
+
+// arrB[0] = 42
+
+// console.log(arrA) // [0,1,2,3,4,5]
+
+
+// // Qual saída do código?
+// var arrA = [{ prop1: 'valor da matriz A!!' }, { algumaProp: 'também o valor da matriz A!'}, 3, 4, 5]
+// var arrB = arrA.slice()
+
+// arrB[0].prop1 = 42
+// arrB[3] = 20
+
+// console.log(arrA) // [{prop1: 42}, {someProp: "also value of array A!"}, 3,4,5]
+
+// // Qual saída do código?
+// console.log(colaboradorId) // undefined
+
+// var colaboradorId = '19000'
+
+// // 1. Some Value
+// // 2. undefined
+// // 3. Type Error
+// // 4. ReferenceError: colaboradorId is not defined
+
+
+// // Qual saída do código?
+// var colaboradorId = '1234abe';
+
+// (function() {
+//   console.log(colaboradorId) // undefined
+
+//   var colaboradorId = '122345'
+// })()
+
+// // 1. '122345'
+// // 2. undefined
+// // 3. Type Error
+// // 4. ReferenceError: colaboradorId is not defined
+
+
+// // Qual saída do código?
+// var colaboradorId = '1234abe';
+
+// (function() {
+//   console.log(colaboradorId); // undefined
+
+//   var colaboradorId = '122345';
+
+//   (function() {
+
+//     var colaboradorId = 'abc1234';
+//   }())
+// }())
+
+// // 1. '122345'
+// // 2. undefined
+// // 3. '1234abe'
+// // 4. ReferenceError: colaboradorId is not defined
+
+
+// // Qual saída do código?
+// (function() {
+//   console.log(typeof exibirFunc);
+
+//   var exibirFunc = function() {
+//     console.log('Oi estou dentro exibirFunc'); // undefined
+//   }
+// }())
+
+// // 1. undefined
+// // 2. function
+// // 3. 'Oi estou dentro exibirFunc'
+// // 4. ReferenceError: exibirFunc is not defined
