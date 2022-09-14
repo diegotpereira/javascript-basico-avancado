@@ -1,4 +1,13 @@
-
+/* Google Web Fonts */
+@font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/PressStart2Play.eot');
+    src: url('../fonts/PressStart2Play.eot?iefix') format('eot'),
+         url('../fonts/PressStart2Play.woff') format('woff'),
+         url('../fonts/PressStart2Play.ttf') format('truetype');
+  }
 
 /* ---------------- */
 
@@ -9,6 +18,11 @@ body {
 }
 
 /* Links */
+.main a, .main a:link, .main a:active, .main a:visited {
+    padding: 5px;
+	background: #c80a0a;
+    color: rgb(255, 255, 255);
+}
 
 * {
     box-shadow: none !important;
