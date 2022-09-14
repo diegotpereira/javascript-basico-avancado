@@ -123,6 +123,15 @@ function geral () {
             clyde.deslumbrar()
         }
 
+        this.finalFantasmaAssustado = function() {
+            this.fantasmaAssustado = false 
+
+            inky.undeslumbrar()
+            pinky.undeslumbrar()
+            blinky.undeslumbrar()
+            clyde.undeslumbrar()
+        }
+
         this.verifiqueModoFantasma = function() {
             
             if (this.fantasmaAssustado) {
@@ -346,6 +355,7 @@ function geral () {
                 this.proxNivel()
             }
         }
+
         this.acabou = function() {
             this.pausar = true
             this.fimdejogo = true
@@ -530,6 +540,16 @@ function geral () {
             if(this.posY > 0) this.posY = this.posY -  this.posY % this.velocidade
 
             this.deslumbrado = true 
+        }
+
+        this.undeslumbrar = function() {
+
+            if(!this.morto) this.alterarVelocidade(jogo.fantasmaVelocidadeOfuscado)
+
+            if(this.posX > 0) this.posX = this.posX - this.posX % this.velocidade
+            if(this.posY > 0) this.posY = this.posY -  this.posY % this.velocidade
+
+            this.deslumbrado = false 
         }
         this.deslumbrarImg = new Image()
         this.deslumbrarImg.src = 'img/dazzled.svg'
@@ -800,7 +820,7 @@ function geral () {
         this.setDirecao = function(dir) {
             this.dirX = dir.dirX
             this.dirY = dir.dirY
-            this.angulo1 = dir.angula1
+            this.angulo1 = dir.angulo1
             this.angulo2 = dir.angulo2
             this.direcao = dir
         }
@@ -848,7 +868,7 @@ function geral () {
         this.presoY = 0
         this.congelados = false
 
-        this.congelados = function() {
+        this.congelar = function() {
             this.congelados = true 
         }
         this.descongelar = function() {
@@ -891,9 +911,9 @@ function geral () {
                 if ((campo === "pilula") || (campo === "pilulaPoder")) {
                     
                     if (((this.dirX == 1) && (entre(this.posX, jogo.paraPixelPos(gradeX) + this.radius - 5, jogo.paraPixelPos(gradeX + 1)))) ||
-                    ((this.dirX == -1) && (entre(this.posX, jogo.paraPixelPos(gradeX), jogo.paraPixelPos(gradeX) + 5))) ||
-                    ((this.dirY == 1) && (entre(this.posY, jogo.paraPixelPos(gradeY), this.radius - 5, jogo.paraPixelPos(gradeY + 1)))) ||
-                    ((this.dirY == -1) && (entre(this.posY, jogo.paraPixelPos(gradeY, jogo.paraPixelPos(gradeY) + 5))) ||
+                        ((this.dirX == -1) && (entre(this.posX, jogo.paraPixelPos(gradeX), jogo.paraPixelPos(gradeX) + 5))) ||
+                        ((this.dirY == 1) && (entre(this.posY, jogo.paraPixelPos(gradeY), this.radius - 5, jogo.paraPixelPos(gradeY + 1)))) ||
+                        ((this.dirY == -1) && (entre(this.posY, jogo.paraPixelPos(gradeY, jogo.paraPixelPos(gradeY) + 5))) ||
                     (campoACabecalho == "muro"))) {
                         
                         var s 
@@ -981,12 +1001,35 @@ function geral () {
                 
                 this.dirX = dir.dirX
                 this.dirY = dir.dirY
-                this.angulo1 = dir.angula1
+                this.angulo1 = dir.angulo1
                 this.angulo2 = dir.angulo2
                 this.direcao = dir
             }
         }
 
+        this.habilitarModoAnimal = function() {
+            this.modoAnimal = true
+            this.modoAnimalTemporizador = 240
+            console.debug("Modo animal ativado")
+
+            inky.deslumbrar()
+            pinky.deslumbrar()
+            blinky.deslumbrar()
+            clyde.deslumbrar()
+        }
+
+        this.desabilitarModoAnimal = function() {   
+
+            this.modoAnimal = false
+
+            console.debug("Modo animal desabilitado!")
+
+            inky.undeslumbrar()
+            pinky.undeslumbrar()
+            blinky.undeslumbrar()
+            clyde.undeslumbrar()
+
+        }
         this.mover = function() {
             if (!this.congelados) {
                 if (this.modoAnimalTemporizador > 0) {
@@ -1031,7 +1074,7 @@ function geral () {
                         this.boca = -1
                     }
 
-                    if (this.angula1 >= limiteMax1 || this.angulo2 <= limiteMax2) {
+                    if (this.angulo1 >= limiteMax1 || this.angulo2 <= limiteMax2) {
                         this.boca = 1
                     }
                     
@@ -1043,9 +1086,14 @@ function geral () {
             this.angulo1 += 0.05 
             this.angulo2 -= 0.05
 
-            if (this.angulo1 >= this.direcao.angula1 + 0.7 || this.angulo2 <= this.direcao.angulo2 - 0.7) {
+            if (this.angulo1 >= this.direcao.angulo1 + 0.7 || this.angulo2 <= this.direcao.angulo2 - 0.7) {
                 this.matarFinal()
             }
+        }
+
+        this.matar = function() {
+            this.congelar()
+            this.matarAnimacao()
         }
         this.matarFinal = function() {
 
@@ -1079,6 +1127,8 @@ function geral () {
     }
     pacman.prototype = new Figure()
     var pacman = new pacman();
+
+    console.log(pacman);
     jogo.construirParedes()
 
      // A ação começa aqui
