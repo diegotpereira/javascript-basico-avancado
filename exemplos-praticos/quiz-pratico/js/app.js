@@ -553,16 +553,16 @@
 
 // pessoa = null 
 
-// console.log(membros) // D: [{ name: "Bob" }]
+// console.log(membros) // D: [{ nome: "Bob" }]
 
 // // A: null
 // // B: [null]
 // // C: [{}]
-// // D: [{ name: "Bob" }]
+// // D: [{ nome: "Bob" }]
 
 // // Qual é a saída?
 // const pessoa = {
-//   name: 'Bob',
+//   nome: 'Bob',
 //   idade: 21
 // }
 
@@ -626,12 +626,12 @@
 
 // getInfo(pessoa, nascimento)
 
-// console.log(pessoa, nascimento) // A: { name: "Bob" }, "1997"
+// console.log(pessoa, nascimento) // A: { nome: "Bob" }, "1997"
 
-// // A: { name: "Bob" }, "1997"
-// // B: { name: "Peter" }, "1998"
-// // C: { name: "Bob" }, "1998"
-// // D: { name: "Peter" }, "1997"
+// // A: { nome: "Bob" }, "1997"
+// // B: { nome: "Peter" }, "1998"
+// // C: { nome: "Bob" }, "1998"
+// // D: { nome: "Peter" }, "1997"
 
 
 // // Qual é a saída?
@@ -1361,9 +1361,9 @@
 // console.log(getUsuario(usuario))
 
 // // A: [1, [2, 3, 4]] e SyntaxError
-// // B: [1, [2, 3, 4]] e { name: "Bob", idade: 21 }
-// // C: [1, 2, 3, 4] e { name: "Bob", idade: 21 }
-// // D: Error e { name: "Bob", idade: 21 }
+// // B: [1, [2, 3, 4]] e { nome: "Bob", idade: 21 }
+// // C: [1, 2, 3, 4] e { nome: "Bob", idade: 21 }
+// // D: Error e { nome: "Bob", idade: 21 }
 // // Resposta A: [1, [2, 3, 4]] e SyntaxError (confirmar enunciado e resposta)
 
 
@@ -1644,10 +1644,10 @@
 // alterarIdadeEhNome()
 
 // console.log(pessoa) // B: Como é um novo objeto, não afeta os valores das propriedades do pessoa objeto.
-// // A: {name: "Peter", idade: 22}
-// // B: {name: "Peter", idade: 23}
-// // C: {name: "Bob", idade: 22}
-// // D: {name: "Bob", idade: 23}
+// // A: {nome: "Peter", idade: 22}
+// // B: {nome: "Peter", idade: 23}
+// // C: {nome: "Bob", idade: 22}
+// // D: {nome: "Bob", idade: 23}
 
 
 
@@ -1741,7 +1741,7 @@
 // // B: true false
 // // C: false false
 // // D: true true
-// // Resposta typeof nameretorna "string"
+// // Resposta typeof nome retorna "string"
 // // A string "string" é um valor verdadeiro, então !typeof nome retorna o valor booleano false.
 // // false === "object" e false === "string" ambos retornam false.
 
@@ -2350,7 +2350,7 @@
 // C: [['Primeira', 'Seguna']]
 // D: 'Terceira'
 
-// // Qual deve ser o valor do método para registrar { name: 'Bob', idade: 22 }?
+// // Qual deve ser o valor do método para registrar { nome: 'Bob', idade: 22 }?
 // const chaves = ['nome', 'idade']
 // const valores = ['Bob', 22]
 
@@ -3000,3 +3000,729 @@
 
 //   // Resposta 4. ["nome", "salario", "pais"] - enumerable é verdadeiro (true) se e somente se esta propriedade aparece durante enumeração das propriedades no objeto correspondente.
                                                   // Valor padrão é false.
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var objA = {
+//     foo: 'foo',
+//     bar: 'bar'
+//   }
+//   var objB = {
+//     foo: 'foo',
+//     bar: 'bar'
+//   }
+//   console.log(objA == objB); // false 
+//   console.log(objA === objB); // false
+// }())                                               
+
+// // 1.false true
+// // 2. false false
+// // 3. true false
+// // 4. true true
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var objA = new Object({ foo: "foo "})
+//   console.log(objA);
+//   var objB = new Object({ foo: "foo" })
+//   console.log(objB);
+
+//   console.log(objA == objB); // false
+//   console.log(objA === objB); // false
+// }())
+
+// // 1. false true
+// // 2. false false
+// // 3. true false
+// // 4. true true
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var objA = Object.create({
+//     foo: 'foo'
+//   })
+//   var objB = Object.create({
+//     foo: 'foo'
+//   })
+//   console.log(objA == objB); // false
+//   console.log(objA === objB); // false
+// }())
+
+// // 1. false true
+// // 2. false false
+// // 3. true false
+// // 4. true true
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var objA = Object.create({
+//     foo: 'foo'
+//   })
+//   var objB = Object.create(objA)
+
+//   console.log(objA == objB); // false 
+//   console.log(objA === objB); // false
+// }())
+
+// // 1. false true
+// // 2. false false
+// // 3. true false
+// // 4. true true
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var objA = Object.create({
+//     foo: 'foo'
+//   })
+//   var objB = Object.create(objA)
+
+//   console.log(objA.toString() == objB.toString()); // true
+//   console.log(objA.toString() === objB.toString()); // true
+// }())
+
+// // 1. false true
+// // 2. false false
+// // 3. true false
+// // 4. true true
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+//   var objA = Object.create({
+//     foo: 'foo'
+//   })
+//   var objB = objA
+
+//   console.log(objA == objB); // true
+//   console.log(objA === objB); // true 
+//   console.log(objA.toString() == objB.toString()); // true 
+//   console.log(objA.toString() === objB.toString()); // true
+// }())
+
+// // 1. true true true false
+// // 2. true false true true
+// // 3. true true true true
+// // 4. true true false false
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var objA = Object.create({
+//     foo: 'foo'
+//   })
+//   var objB = objA
+
+//   objB.foo = 'bar'
+
+//   console.log(objA.foo); // bar
+//   console.log(objB.foo); // bar
+// }())
+
+// // 1. foo bar
+// // 2. bar bar
+// // 3. foo foo
+// // 4. bar foo
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+//   var objA = Object.create({
+//     foo: 'foo'
+//   })
+//   var objB = objA
+
+//   objB.foo = 'bar'
+
+//   delete objA.foo;
+//   console.log(objA.foo); // foo
+//   console.log(objB.foo); // foo
+
+// }())
+
+// // 1. foo bar
+// // 2. bar bar
+// // 3. foo foo
+// // 4. bar foo
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+// 	var objA = {
+// 		foo: 'foo'
+// 	};
+// 	var objB = objA;
+// 	objB.foo = 'bar';
+
+// 	delete objA.foo;
+// 	console.log(objA.foo); // undefined
+// 	console.log(objB.foo); // undefined
+// }());
+
+// // 1. foo bar
+// // 2. undefined undefined
+// // 3. foo foo
+// // 4. undefined bar
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var array = new Array('100')
+
+//   console.log(array); // ["100"]
+//   console.log(array.length); // 1
+// }())
+
+// // 1. undefined undefined
+// // 2. [undefined × 100] 100
+// // 3. ["100"] 1
+// // 4. ReferenceError: array is not defined
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+//   var array1 = []
+//   var array2 = new Array(100)
+//   var array3 = new Array(['1', '2', '3', 4, 5, 6])
+
+//   console.log(array1); // []
+//   console.log(array2); // []
+//   console.log(array3); // [Array[5]]
+//   console.log(array3.length); // 1
+// }())
+
+// // 1. [] [] [Array[5]] 1
+// // 2. [] [undefined × 100] Array[5] 1
+// // 3. [] [] ['1',2,'3',4,5.6] 5
+// // 4. [] [] [Array[5]] 5
+
+// // Resposta 1. [] [] [Array[5]] 1
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+
+//   var array = new Array('a', 'b', 'c', 'd', 'e')
+  
+//   array[10] = 'f'
+  
+
+//   delete array[10]
+
+//   console.log(array.length); // 11
+// }())
+
+// // 1. 11
+// // 2. 5
+// // 3. 6
+// // 4. undefined
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var animal = ['vaca', 'cavalo']
+
+//   animal.push('gato')
+//   animal.push('cachorro', 'rato', 'cabra')
+
+//   console.log(animal.length); // 6
+
+//   // 1. 4
+//   // 2. 5
+//   // 3. 6
+//   // 4. undefined
+// }())
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//     var array = [1, 2, 3, 4, 5]
+
+//     console.log(array.indexOf(2)); // 1
+//     console.log([{ nome: 'Joao'}, { nome: 'Joao'}].indexOf({ nome: 'Joao'})); // -1
+//     console.log([[1], [2], [3], [4]].indexOf([3])); // -1
+//     console.log('abcdefg'.indexOf('e')); // 4
+// }())
+
+// // 1. 1 -1 -1 4
+// // 2. 1 0 -1 4
+// // 3. 1 -1 -1 -1
+// // 4. 1 undefined -1 4
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+
+//   var array = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6]
+
+//   console.log(array.indexOf(2)); // 1
+//   console.log(array.indexOf(2, 3)); // 6
+//   console.log(array.indexOf(2, 10)); // -1
+// }())
+
+// // 1. 1 -1 -1
+// // 2. 1 6 -1
+// // 3. 1 1 -1
+// // 4. 1 undefined undefined
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var numeros = [2, 3, 4, 8, 9, 11, 13, 12, 16]
+//   var ate = numeros.filter(function(elemento, index) {
+//     return elemento % 2 === 0
+//   })
+
+//   console.log(ate); // [ 2, 4, 8, 12, 16 ]
+
+//   var contemDivisivelPor3 = numeros.some(function(elemento, index) {
+//     return elemento % 3 === 0
+//   })
+
+//   console.log(contemDivisivelPor3); // true
+  
+// }())
+
+// // 1. [ 2, 4, 8, 12, 16 ] [ 0, 3, 0, 0, 9, 0, 12]
+// // 2. [ 2, 4, 8, 12, 16 ] [ 3, 9, 12]
+// // 3. [ 2, 4, 8, 12, 16 ] true
+// // 4. [ 2, 4, 8, 12, 16 ] false
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var recipientes = [2, 0, false, "", '12', true]
+//   var recipientes = recipientes.filter(Boolean)
+
+//   console.log(recipientes);
+
+//   var recipientes = recipientes.filter(Number)
+
+//   console.log(recipientes);
+
+//   var recipientes = recipientes.filter(String)
+
+//   console.log(recipientes);
+
+//   var recipientes = recipientes.filter(Object)
+
+//   console.log(recipientes);
+
+// }())
+
+// // 1. [ 2, '12', true ] [ 2, '12', true ] [ 2, '12', true ] [ 2, '12', true ]
+// // 2. [false, true] [ 2 ] ['12'] [ ]
+// // 3. [2,0,false,"", '12', true] [2,0,false,"", '12', true] [2,0,false,"", '12', true] [2,0,false,"", '12', true]
+// // 4. [ 2, '12', true ] [ 2, '12', true, false ] [ 2, '12', true,false ] [ 2, '12', true,false]
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+
+//   var lista = ['foo', 'bar', 'joao', 'rita']
+
+//   console.log(lista.slice(1)); // ['bar', 'joao', 'rita']
+//   console.log(lista.slice(1, 3)); // ['bar', 'joao']
+//   console.log(lista.slice()); // ['foo', 'bar', 'joao', 'rita']
+//   console.log(lista.slice(2, 2)); // []
+//   console.log(lista); // [ 'foo', 'bar', 'joao', 'rita' ]
+
+// }())
+
+// // 1. [ 'bar', 'joao', 'rita' ] [ 'bar', 'joao' ] [ 'foo', 'bar', 'joao', 'rita' ] [] [ 'foo', 'bar', 'joao', 'rita' ]
+// // 2. [ 'bar', 'joao', 'rita' ] [ 'bar', 'joao','rita ] [ 'foo', 'bar', 'joao', 'rita' ] [] [ 'foo', 'bar', 'joao', 'rita' ]
+// // 3. [ 'joao', 'rita' ] [ 'bar', 'joao' ] [ 'foo', 'bar', 'joao', 'rita' ] [] [ 'foo', 'bar', 'joao', 'rita' ]
+// // 4. [ 'foo' ] [ 'bar', 'joao' ] [ 'foo', 'bar', 'joao', 'rita' ] [] [ 'foo', 'bar', 'joao', 'rita' ]
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var lista = ['foo', 'bar', 'joao']
+
+//   console.log(lista.splice(1)); // [ 'bar', 'john' ]
+//   console.log(lista.splice(1, 2)); // []
+//   console.log(lista); // ['foo']
+
+// }())
+
+// // 1. [ 'bar', 'john' ] [] [ 'foo' ]
+// // 2. [ 'bar', 'john' ] [] [ 'bar', 'john' ]
+// // 3. [ 'bar', 'john' ] [ 'bar', 'john' ] [ 'bar', 'john' ]
+// // 4. [ 'bar', 'john' ] [] []
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var arrayNum = [2, 8, 15, 16, 23, 42]
+
+//   arrayNum.sort()
+
+//   console.log(arrayNum); // 3. [ 15, 16, 2, 23, 42, 8 ]
+// }())
+
+// // 1. [2, 8, 15, 16, 23, 42]
+// // 2. [42, 23, 26, 15, 8, 2]
+// // 3. [ 15, 16, 2, 23, 42, 8 ]
+// // 4. [ 2, 8, 15, 16, 23, 42 ]
+
+
+// // Qual seria a saída do seguinte código ?
+// function funcA() {
+
+//   console.log("funcA", this);
+
+//   (function internaFuncA1() {
+//     console.log("internaFuncA1", this);
+
+//     (function internaFuncA2() {
+//       console.log("internaFuncA2", this);
+//     }())
+//   }())
+// }
+
+// console.log(funcA);
+
+// // 1. funcA Window {...} innerFunc1 Window {...} innerFunA2 Window {...}
+// // 2. undefined
+// // 3. Type Error
+// // 4. ReferenceError: this is not defined
+
+// // Resposta 1. funcA Window {...} innerFunc1 Window {...} innerFunA2 Window {...}
+
+
+// // Qual seria a saída do seguinte código ?
+// var obj = {
+//   mensagem: "Ola",
+
+//   internaMensagem: !(function() {
+//     console.log(this.mensagem); // undefined
+//   }())
+// }
+
+// console.log(obj.internaMensagem); // true
+
+// // 1. ReferenceError: this.mensagem is not defined
+// // 2. undefined
+// // 3. Type Error
+// // 4. undefined true
+
+
+// // Qual seria a saída do seguinte código ?
+// var obj = {
+//   mensagem: "Ola",
+
+//   internaMensagem: function() {
+//     return this.mensagem
+//   }
+// }
+
+// console.log(obj.internaMensagem()); // Ola
+
+// // 1. Ola
+// // 2. undefined
+// // 3. Type Error
+// // 4. ReferenceError: this.message is not defined
+
+
+// // Qual seria a saída do seguinte código ?
+
+// var obj = {
+//   mensagem: 'Ola',
+//   internaMensagem: function() {
+//     (function() {
+//       console.log(this.mensagem); // undefined
+//     }())
+//   }
+// }
+// console.log(obj.internaMensagem());
+
+
+// // 1. Type Error
+// // 2. Ola
+// // 3. undefined 
+// // 4. ReferenceError: this.mensagem is not defined
+
+
+// // Qual seria a saída do seguinte código ?
+// var obj = {
+//   mensagem: 'Ola',
+//   internaMensagem: function() {
+
+//     var self =  this;
+
+//     (function() {
+//       console.log(self.mensagem); // Ola
+//     }())
+//   }
+// }
+// console.log(obj.internaMensagem()); 
+
+// // 1. Type Error
+// // 2. 'Ola' 
+// // 3. undefined 
+// // 4. ReferenceError: self.mensagem is not defined
+
+
+// // Qual seria a saída do seguinte código ?
+// function minhaFunc() {
+//   console.log(this.mensagem); // undefined
+// }
+
+// minhaFunc.mensagem = 'Ola Joao'
+
+// console.log(minhaFunc()); 
+
+// // 1. Type Error
+// // 2. 'Hi John'
+// // 3. undefined 
+// // 4. ReferenceError: this.mensagem is not defined
+
+
+// Qual seria a saída do seguinte código ?
+
+// function minhaFunc() {
+//   console.log(minhaFunc.mensagem); // Ola Joao
+// }
+
+// minhaFunc.mensagem = 'Ola Joao'
+
+// console.log(minhaFunc()); 
+
+// // 1. Type Error
+// // 2. 'Ola Joao'
+// // 3. undefined
+// // 4. ReferenceError: this.message is not defined
+
+
+// // Qual seria a saída do seguinte código ?
+// function minhaFunc() {
+
+//   minhaFunc.mensagem = 'Ola Joao'
+
+//   console.log(minhaFunc.mensagem); // Ola Joao
+// }
+
+// console.log(minhaFunc()); 
+
+// // 1. Type Error
+// // 2. 'Ola Joao'
+// // 3. undefined
+// // 4. ReferenceError: this.message is not defined
+
+
+// // Qual seria a saída do seguinte código ?
+
+// function minhaFunc() {
+//   console.log(arguments.length);
+// }
+
+// console.log(minhaFunc()); // 0
+// console.log(minhaFunc("a", "b")); // 2
+// console.log(minhaFunc("a","b","c","d")); // 4
+
+// // 1. 2 2 2
+// // 2. 0 2 4
+// // 3. undefined
+// // 4. ReferenceError
+
+
+// // Qual seria a saída do seguinte código ?
+
+// function Pessoa(nome, idade) {
+//   this.nome = nome || "Joao";
+//   this.idade = idade || 24;
+//   this.exibirNome = function() {
+//     console.log(this.nome);
+//   }
+// }
+
+// Pessoa.nome = "Joao";
+// Pessoa.exibirNome = function() {
+//   console.log(this.nome);
+// }
+
+// var pessoa1 = new Pessoa('Joao');
+
+// pessoa1.exibirNome();
+
+// Pessoa.exibirNome();
+
+// // 1. Joao Pessoa
+// // 2. Joao Joao
+// // 3. Joao undefined
+// // 4. Joao Joao
+
+// // Resposta 1. Joao Pessoa -  VERIFICAR
+
+
+// // Qual seria a saída do seguinte código ?
+
+// function gerenciadorSenha() {
+//   var password = '12345678'
+//   this.usuarioNome = 'Joao'
+
+//   return {
+//     pwd: password
+//   }
+// }
+
+// var usuarioInfo = gerenciadorSenha()
+
+// console.log(usuarioInfo.pwd); // 12345678
+// console.log(usuarioInfo.usuarioNome); // undefined
+
+// // 1. 12345678 Window
+// // 2. 12345678 Joao
+// // 3. 12345678 undefined
+// // 4. undefined undefined
+
+
+// // Qual seria a saída do seguinte código ?
+// var colaboradorId = 'aq123'
+
+// function Colaborador() {
+//   this.colaboradorId = 'bq1uy'
+  
+// }
+
+// console.log(Colaborador.colaboradorId); // undefined
+
+// // 1. Reference Error
+// // 2. aq123
+// // 3. bq1uy
+// // 4. undefined
+
+
+// // Qual seria a saída do seguinte código ?
+
+// var colaboradorId = 'aq123'
+
+// function Colaborador() {
+//   this.colaboradorId = 'bq1uy'
+// }
+
+// console.log(new Colaborador().colaboradorId); // bq1uy
+
+// Colaborador.prototype.colaboradorId = 'kj182'
+// Colaborador.prototype.TrabalhoId = '1BJKSJ'
+
+// console.log(new Colaborador().TrabalhoId); // 1BJKSJ
+// console.log(new Colaborador().colaboradorId); // bq1uy
+
+// // 1. bq1uy 1BJKSJ bq1uy undefined
+// // 2. bq1uy 1BJKSJ bq1uy
+// // 3. bq1uy 1BJKSJ kj182
+// // 4. undefined 1BJKSJ kj182
+
+
+// // Qual seria a saída do seguinte código ?
+
+// var colaboradorId = 'aq123';
+// (function Colaborador() {
+//   try {
+//     throw 'foo123';
+
+//   } catch (colaboradorId) {
+//     console.log(colaboradorId); // foo123
+//   }
+//   console.log(colaboradorId); // aq123
+// }())
+
+// // 1. foo123 aq123
+// // 2. foo123 foo123
+// // 3. aq123 aq123
+// // 4. foo123 undefined
+
+
+// // Qual seria a saída do seguinte código ?
+// (function() {
+//   var saudacao = 'Ola Mundo';
+//   var cumprimentar = [].filter.call(saudacao, function(elemento, index) {
+//     return index > 5
+//   })
+
+//   console.log(cumprimentar); // 4. [ 'n', 'd', 'o' ]
+// }())
+
+// // 1. Ola Mundo
+// // 2. undefined
+// // 3. Mundo
+// // 4. [ 'n', 'd', 'o' ]
+
+
+// // Qual seria a saída do seguinte código ?
+// (function() {
+//   var fooConta = {
+//     nome: 'Joao',
+//     quantia: 4000,
+//     deduzaQuantia: function(quantia) {
+//       this.quantia -= quantia;
+
+//       return 'Total da quantia restante na conta: ' + this.quantia
+//     }
+//   }
+//   console.log(fooConta);
+
+//   var barConta = {
+//     nome: 'Joao',
+//     quantia: 6000
+//   };
+
+//   var retirarValorPor =  function(totalQuantia) {
+    
+//     return fooConta.deduzaQuantia.bind(barConta, totalQuantia) 
+//   }
+
+//   console.log(retirarValorPor(400)()); // Total da quantia restante na conta: 5600 Pegamos 6000 - 400 = 5600
+//   console.log(retirarValorPor(300)()); // Total da quantia restante na conta: 5300 Pegamos 5600 - 300 = 5300
+
+// }())
+
+// // 1. Total da quantia restante na conta: 5600 Total da quantia restante na conta: 5300
+// // 2. undefined undefined
+// // 3. Total da quantia restante na conta: 3600 Total da quantia restante na conta: 3300
+// // 4. Total da quantia restante na conta: 5600 Total da quantia restante na conta: 5600
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var fooConta = {
+//     nome: 'Joao',
+//     quantia: 4000,
+//     deduzaQuantia: function(quantia) {
+//       this.quantia -= quantia
+
+//       console.log(quantia);
+
+//       return this.quantia
+//     }
+//   }
+//   var barConta = {
+//     nome: 'Joao',
+//     quantia: 6000
+//   }
+
+//   var retirarValorPor = function(totalQuantia) {
+
+//     console.log(barConta.quantia);
+//     return fooConta.deduzaQuantia.apply(barConta, [totalQuantia])
+//   }
+
+//   console.log(retirarValorPor(400)); // 5600 Pegamos 6000 - 400 = 5600
+//   console.log(retirarValorPor(300)); // 5300 Pegamos 5600 - 300 = 5300
+//   console.log(retirarValorPor(200)); // 5100 Pegamos 5300 - 200 = 5100
+
+// }())
+
+// // 1. 5600 5300 5100
+// // 2. 3600 3300 3100
+// // 3. 5600 3300 5100
