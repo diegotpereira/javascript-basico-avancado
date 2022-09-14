@@ -3562,4 +3562,167 @@
 // // Resposta 1. Joao Pessoa -  VERIFICAR
 
 
-// Qual seria a saída do seguinte código ?
+// // Qual seria a saída do seguinte código ?
+
+// function gerenciadorSenha() {
+//   var password = '12345678'
+//   this.usuarioNome = 'Joao'
+
+//   return {
+//     pwd: password
+//   }
+// }
+
+// var usuarioInfo = gerenciadorSenha()
+
+// console.log(usuarioInfo.pwd); // 12345678
+// console.log(usuarioInfo.usuarioNome); // undefined
+
+// // 1. 12345678 Window
+// // 2. 12345678 Joao
+// // 3. 12345678 undefined
+// // 4. undefined undefined
+
+
+// // Qual seria a saída do seguinte código ?
+// var colaboradorId = 'aq123'
+
+// function Colaborador() {
+//   this.colaboradorId = 'bq1uy'
+  
+// }
+
+// console.log(Colaborador.colaboradorId); // undefined
+
+// // 1. Reference Error
+// // 2. aq123
+// // 3. bq1uy
+// // 4. undefined
+
+
+// // Qual seria a saída do seguinte código ?
+
+// var colaboradorId = 'aq123'
+
+// function Colaborador() {
+//   this.colaboradorId = 'bq1uy'
+// }
+
+// console.log(new Colaborador().colaboradorId); // bq1uy
+
+// Colaborador.prototype.colaboradorId = 'kj182'
+// Colaborador.prototype.TrabalhoId = '1BJKSJ'
+
+// console.log(new Colaborador().TrabalhoId); // 1BJKSJ
+// console.log(new Colaborador().colaboradorId); // bq1uy
+
+// // 1. bq1uy 1BJKSJ bq1uy undefined
+// // 2. bq1uy 1BJKSJ bq1uy
+// // 3. bq1uy 1BJKSJ kj182
+// // 4. undefined 1BJKSJ kj182
+
+
+// // Qual seria a saída do seguinte código ?
+
+// var colaboradorId = 'aq123';
+// (function Colaborador() {
+//   try {
+//     throw 'foo123';
+
+//   } catch (colaboradorId) {
+//     console.log(colaboradorId); // foo123
+//   }
+//   console.log(colaboradorId); // aq123
+// }())
+
+// // 1. foo123 aq123
+// // 2. foo123 foo123
+// // 3. aq123 aq123
+// // 4. foo123 undefined
+
+
+// // Qual seria a saída do seguinte código ?
+// (function() {
+//   var saudacao = 'Ola Mundo';
+//   var cumprimentar = [].filter.call(saudacao, function(elemento, index) {
+//     return index > 5
+//   })
+
+//   console.log(cumprimentar); // 4. [ 'n', 'd', 'o' ]
+// }())
+
+// // 1. Ola Mundo
+// // 2. undefined
+// // 3. Mundo
+// // 4. [ 'n', 'd', 'o' ]
+
+
+// // Qual seria a saída do seguinte código ?
+// (function() {
+//   var fooConta = {
+//     nome: 'Joao',
+//     quantia: 4000,
+//     deduzaQuantia: function(quantia) {
+//       this.quantia -= quantia;
+
+//       return 'Total da quantia restante na conta: ' + this.quantia
+//     }
+//   }
+//   console.log(fooConta);
+
+//   var barConta = {
+//     nome: 'Joao',
+//     quantia: 6000
+//   };
+
+//   var retirarValorPor =  function(totalQuantia) {
+    
+//     return fooConta.deduzaQuantia.bind(barConta, totalQuantia) 
+//   }
+
+//   console.log(retirarValorPor(400)()); // Total da quantia restante na conta: 5600 Pegamos 6000 - 400 = 5600
+//   console.log(retirarValorPor(300)()); // Total da quantia restante na conta: 5300 Pegamos 5600 - 300 = 5300
+
+// }())
+
+// // 1. Total da quantia restante na conta: 5600 Total da quantia restante na conta: 5300
+// // 2. undefined undefined
+// // 3. Total da quantia restante na conta: 3600 Total da quantia restante na conta: 3300
+// // 4. Total da quantia restante na conta: 5600 Total da quantia restante na conta: 5600
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var fooConta = {
+//     nome: 'Joao',
+//     quantia: 4000,
+//     deduzaQuantia: function(quantia) {
+//       this.quantia -= quantia
+
+//       console.log(quantia);
+
+//       return this.quantia
+//     }
+//   }
+//   var barConta = {
+//     nome: 'Joao',
+//     quantia: 6000
+//   }
+
+//   var retirarValorPor = function(totalQuantia) {
+
+//     console.log(barConta.quantia);
+//     return fooConta.deduzaQuantia.apply(barConta, [totalQuantia])
+//   }
+
+//   console.log(retirarValorPor(400)); // 5600 Pegamos 6000 - 400 = 5600
+//   console.log(retirarValorPor(300)); // 5300 Pegamos 5600 - 300 = 5300
+//   console.log(retirarValorPor(200)); // 5100 Pegamos 5300 - 200 = 5100
+
+// }())
+
+// // 1. 5600 5300 5100
+// // 2. 3600 3300 3100
+// // 3. 5600 3300 5100
