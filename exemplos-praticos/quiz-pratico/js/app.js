@@ -3726,3 +3726,397 @@
 // // 1. 5600 5300 5100
 // // 2. 3600 3300 3100
 // // 3. 5600 3300 5100
+
+
+
+//  Qual seria a saída do código a seguir?
+
+// (function saudarNovoCliente() {
+//   console.log('Ola ' + this.nome); // A. Ola Joao
+// }.bind({
+//   nome: 'Joao'
+// })())
+
+// // A. Ola Joao
+// // Reference Error
+// // Window
+// // undefined
+
+
+// //  Qual seria a saída do código a seguir?
+
+// function buscarDadosDoServidor(apiUrl) {
+//   var nome = "Joao";
+
+//   return {
+//     then: function(fn) {
+//       fn(nome)
+//     }
+//   }
+// }
+
+// buscarDadosDoServidor('www.google.com').then(function(nome) {
+//   console.log(nome); // Joao
+// })
+
+// // A. Joao
+// // B. undefined
+// // C. Reference Error
+// // D. fn is not defined
+
+
+// //  Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var arrayNumero = [2, 8, 15, 16, 23, 42]
+
+//   Array.prototype.sort = function(a, b) {
+//     return a - b 
+//   }
+
+//   arrayNumero.sort()
+
+//   console.log(arrayNumero); // [ 2, 8, 15, 16, 23, 42 ]
+// }());
+
+// (function() {
+
+//   var numeroArray = [2, 8, 15, 16, 23, 42]
+
+//   numeroArray.sort(function(a,b) {
+
+//     if (a == b) {
+      
+//       return 0;
+
+//     } else {
+//       return a < b ? -1 : 1;
+//     }
+//   })
+
+//   console.log(numeroArray); // [ 2, 8, 15, 16, 23, 42 ]
+// }());
+
+// (function() {
+
+//   var numeroArray = [2, 8, 15, 16, 23, 42]
+
+//   numeroArray.sort(function(a, b) {
+
+//     return a - b;
+//   })
+
+//   console.log(numeroArray); // [ 2, 8, 15, 16, 23, 42 ]
+// }());
+
+// // 1. [ 2, 8, 15, 16, 23, 42 ] [ 2, 8, 15, 16, 23, 42 ] [ 2, 8, 15, 16, 23, 42 ]
+// // 2 undefined undefined undefined
+// // 3. [42, 23, 16, 15, 8, 2] [42, 23, 16, 15, 8, 2] [42, 23, 16, 15, 8, 2]
+// // 4. Reference Error
+
+
+// //  Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   function digaOla() {
+
+//     var nome = "Ola Joao"
+
+//     return {
+
+//       nomeCompleto: nome
+//     }
+//   }
+//   console.log(digaOla().nomeCompleto); // Ola Joao
+// })()
+
+// // 1. Ola Joao
+// // 2. undefined
+// // 3. Reference Error
+// // 4. Uncaught TypeError: Cannot read property 'nomeCompleto' of undefined
+
+
+// //  Qual seria a saída do código a seguir?
+
+// function buscarNumero() {
+
+//   return (2, 4, 5)
+// }
+
+// var numero = buscarNumero()
+
+// console.log(numero); // 1. 5
+
+// // 1. 5
+// // 2. undefined
+// // 3. 2
+// // 4. (2,4,5)
+
+
+// //  Qual seria a saída do código a seguir?
+// function buscarNumero() {
+
+//   return;
+// }
+
+// var numero = buscarNumero()
+
+// console.log(numero); // undefined
+
+
+// // 1. null
+// // 2. undefined
+// // 3. ""
+// // 4. 0
+
+
+// // Qual seria a saída do código a seguir?
+// function mul(x) {
+
+//   return function(y) {
+
+//     return [x*y, function(z) {
+
+//       return x * y + z 
+//     }]
+//   }
+// }
+
+// console.log(mul(2)(3)[0]); // 2 * 3 + 0 = 6
+// console.log(mul(2)(3)[1](4)); // 2 * 3 * 1 + 4 = 10
+
+// // 1. 6, 10
+// // 2. undefined undefined
+// // 3. Reference Error
+// // 4. 10, 6
+
+// // Resposta 1. 6, 10
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// function mul(x) {
+
+//   return function(y) {
+
+//     return {
+//       resultado: x * y,
+//       soma: function(z) {
+
+//         return x * y + z 
+//       }
+//     }
+//   }
+// }
+
+// console.log(mul(2)(3).resultado); // 2 * 3 = 6
+// console.log(mul(2)(3).soma(4)); // 2 * 3 + 4 = 10
+
+// // 1. 6, 10
+// // 2. undefined undefined
+// // 3. Reference Error
+// // 4. 10, 6
+
+
+// // Qual das seguintes palavras-chave é usada para definir uma variável em Javascript?
+
+// A. var 
+// B. let 
+// C. ambos A e B 
+// D. Nenhuma das acima
+
+// Resposta C. As palavras-chave var e let são usadas para definir uma variável em Javascript.
+
+
+// // Ao encontrar declarações vazias, o que o Javascript Interpreter faz?
+
+// A. Lança um erro.
+// B. Ignora as declarações.
+// C. Dá um aviso.
+// D. Nenhuma das acima.
+
+// Resposta: B. Em Javascript, o interpretador ignorará as instruções vazias sempre que as encontrar.
+
+
+// Qual será a saída do seguinte trecho de código?
+
+// a = 5 + "9";
+
+// document.write(a); // 59 - o primeiro número é do tipo inteiro e o segundo do tipo string. O trecho de código dá prioridade ao tipo de string e os concatena devido ao operador '+'.
+
+// A. Erro de Compilação
+// B. 14
+// C. Erro tempo de execução 
+// D. 59
+
+
+// // Qual será a saída do seguinte trecho de código?
+// var a = "Escalador"
+// var resultado = a.substring(2, 4);
+
+// console.log(resultado); // ca
+
+// // A. al 
+// // B. ala
+// // C. ca
+// // D. calad
+
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// var x = 12;
+// var y = 8;
+// var res = eval("x + y")
+
+// console.log(res); // 20
+
+// // A. 20
+// // B. x + y
+// // C. 128 
+// // D. Nehuma
+
+
+// Qual palavra-chave é usada para verificar se uma determinada propriedade é válida ou não?
+
+// 1. in
+// 2. is in 
+// 3. exists 
+// 4. lies 
+
+// Resposta 1. in - A palavra-chave in é usada para verificar se a propriedade fornecida é válida ou não em Javascript.
+
+
+// Qual é o uso da tag <noscript> em Javascript?
+
+// 1. O conteúdo é exibido por navegadores não baseados em JS>
+// 2. Limpa todos os cookies e cache;
+// 3. Ambos 1 e 2.
+// 4. Nunhuma
+
+// Resposta 1. A tag <noscript> é exibida apenas por navegadores não JavaScript.
+
+
+// // Qual será a saída do seguinte trecho de código?
+// (function() {
+
+//   setTimeout(() => console.log(1), 2000)
+//   console.log(2);
+//   setTimeout(() => console.log(3), 0)
+//   console.log(4);
+// })();
+
+// // 1. 1234
+// // 2. 2341
+// // 3. 2431
+// // 4. 4321
+
+// // Resposta 3. 2431 - Primeiro o 2 é impresso com o console.log, então mesmo com um atraso de 0ms, 
+//                      // o 4 é impresso antes do 3 porque JS executa setTimeout com a API da Web, 
+//                      //  e assim toda a função é executada primeiro. Por último, após um atraso de 2000ms, o 1 é impresso.
+
+
+// // Qual será a saída do seguinte trecho de código?
+// (function(a) {
+
+//   return (function() {
+
+//     console.log(a); // 3. 21 - Mesmo que a seja definido na função externa, devido ao fechamento, as funções internas têm acesso a ela.
+
+//     a = 6;
+//   })()
+// })(21)
+
+// // 1. 6
+// // 2. NaN
+// // 3. 21
+// // 4. Nenhuma das acima 
+
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// function resolver(arr, rotacoes) {
+
+//   if(rotacoes == 0) return arr 
+
+//   for(let i = 0; i < rotacoes; i++) {
+
+//     let elemento = arr.pop()
+
+//     arr.unshift(elemento)
+//   }
+
+//   return arr
+// }
+
+// resolver([44, 1, 22, 111], 5)
+
+// 1. [111, 44, 1, 22]
+// 2. [44, 1, 22, 111]
+// 3. [111, 44, 1, 22]
+// 4. [1, 22, 111, 44]
+
+
+
+// // Qual será a saída para o seguinte trecho de código?
+
+// function Func() {
+
+//   document.getElementById("exemplo").innerHTML = Math.sqrt(81)
+// }
+
+// Func()
+
+// 1. 9
+// 2. 81
+// 3. Erro 
+// 4. 0 
+
+// Resposta 1. 9 - O método sqrt() retorna a raiz quadrada do parâmetro passado, que está em uma função javascript embutida.
+
+
+// Quando o valor de um operador é NULL, o typeof retornado pelo operador unário é:
+
+// 1. boolean
+// 2. undefined
+// 3. Object
+// 4. Integer
+
+// Resposta 3. Object - Qualquer valor NULL de operador sempre retornará typeof object.
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// var a = 1;
+// var b = 0;
+
+// while (a <= 3) {
+  
+//   a++;
+
+
+//   b += a * 2
+
+//   // print(b)
+//   console.log(b);
+// }
+
+// // 1. 4 10 18 
+// // 2. 1 2 3
+// // 3. 1 4 7
+// // 4. Nenhuma das acimas
+
+// // Resposta 1. 4 10 18 - O loop será executado 3 vezes, antes de atender à condição de saída. 
+//                       // O primeiro valor de b será 2 * 2 = 4, 
+//                       //            seguido por 4 + 3 * 2 = 10 e, 
+//                      // em seguida, o valor de 10 + 4 * 2 = 18.
+
+
+
+// O que a instrução “depurador” do Javascript faz?
+
+1. 
