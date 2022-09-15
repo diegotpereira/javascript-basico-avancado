@@ -152,11 +152,24 @@ body, html {
     display: inline-block;
 }
 /* Controles */
+.controles {
+    text-align: center;
+    margin-top: 15px;
+}
+.controles-section {
+    height: auto;
+    width: 47%;
+    display: inline-block;
+    margin: 0;
+    text-align: left;
+}
+
 .controle {
     text-align: center;
     margin-top: 15px;
 }
 
+.controles-right
 .controleBotao {
     position: relative;
     right: -65%;
@@ -255,6 +268,8 @@ body, html {
 		line-height: 40px;
 		font-size: 40px;
 	}
+
+    .controles-right
     .controleBotao { 
         right: -55%; 
     }
