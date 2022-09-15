@@ -75,7 +75,7 @@ function geral () {
         this.map   
         // numero de pilulas
         this.pilulaContar
-        this.contagemDePilulas
+        // this.contagemDePilulas
 
         this.nivel = 1
         this.recarregueNivel = function(h) {
@@ -402,10 +402,10 @@ function geral () {
             construirParede(context_paredes, 0, 0, 18, 1)   
             construirParede(context_paredes, 0, 12, 18, 1)
 
-            construirParede(context_paredes, 0, 0, 1, 6)
-            construirParede(context_paredes, 0, 7, 1, 6)
+            construirParede(context_paredes, 0, 0, 1, 6);
+            construirParede(context_paredes, 0, 7, 1, 6);
             construirParede(context_paredes, 17, 0, 1, 6);
-			construirParede(context_paredes, 17, 7, 1, 6);
+            construirParede(context_paredes, 17, 7, 1, 6);
 
             // ghost base
 			construirParede(context_paredes, 7, 4, 1, 1);
@@ -523,7 +523,7 @@ function geral () {
 			'"left" : "", "up": "", "right" : "", "down": ""},' +
 			'"frightened2" : {' +
 			'"left" : "", "up": "", "right" : "", "down": ""},' +
-			'"dead" : {' +
+			'"morto" : {' +
 			'"left" : "", "up": "", "right" : "", "down": ""}}'
         );
 
@@ -1128,7 +1128,7 @@ function geral () {
     pacman.prototype = new Figure()
     var pacman = new pacman();
 
-    console.log(pacman);
+    
     jogo.construirParedes()
 
      // A ação começa aqui
