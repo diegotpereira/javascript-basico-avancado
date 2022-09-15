@@ -4119,4 +4119,210 @@
 
 // O que a instrução “depurador” do Javascript faz?
 
-1. 
+// 1. Ele irá depurar todos os erros no progrma em tempo de execução 
+// 2. Ele atua como um ponto de interrupção em um programa.
+// 3. Ele depurará o erro na instrução atual, se houver.
+// 4. Tudo o que precede.
+
+// Resposta 2. A instrução 'debugger' é usada para configurar os pontos de interrupção em prováveis ​
+//​pontos de erro no trecho de código, usando a janela do depurador.
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// var a = Math.max()
+// var b = Math.min()
+
+// console.log(a); // -Infinity
+// console.log(b); // Infinity
+
+// 1. -Infinity Infinity
+// 2. Infinity -Infinity
+// 3. Infinity Infinity
+// 4. -Infinity -Infinity
+
+// Resposta 1. -Infinity Infinity - O método Math.max() retorna -Infinity por padrão 
+              // e o método Math.min() retorna o valor Infinity por padrão quando passado sem nenhum parâmetro.
+
+            
+// // Qual será a saída do seguinte trecho de código?
+
+// var a = Math.max() < Math.min(); 
+// var b = Math.max() > Math.min() 
+
+// console.log(a); // verdadeiro (true)
+// console.log(b); // falso (false)
+
+// 1. true false 
+// 2. false true 
+// 3. true true 
+// 4. false false 
+
+// Resposta 1. true true - Math.max() é menor que Math.min() porque Math.max() retorna -Infinity e Math.min() retorna Infinity.
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// var a = true + true + true * 3;
+
+// console.log(a); // 4. 5 - true é considerado o número 1 quando usado em qualquer expressão aritmética, portanto, a expressão é avaliada como 5.
+
+// // 1. 3
+// // 2. 0 
+// // 3. Erro 
+// // 4. 5
+
+
+// // Qual é a saída do seguinte trecho de código?
+
+// console.log(NaN === NaN); // 2. falso(false) - NaN não é considerado igual a NaN mesmo depois de usar o operador de igualdade estrita.
+
+// // 1. true
+// // 2. false 
+// // 3. undefined
+// // 4. Erro
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// console.log(typeof(NaN)); // 2. Number - é definido para ser do tipo número apesar de seu nome (não um número).
+
+// // 1. Object
+// // 2. Number
+// // 3. String
+// // 4. Nenhuma das acima 
+
+
+// // O que o método 'toLocateString()' faz em JS?
+// 1. Retorna uma representação de objeto localizada.
+// 2. Retorna uma string analisada. 
+// 3. Retorna uma representação de string localizada de um objeto. 
+// 4. Nenhuma das acimas.
+
+// Resposta 3. retorna uma representação de string específica local desse objeto usando a localidade do ambiente.
+
+
+// O processo no qual um objeto ou estrutura de dados é traduzido em um formato adequado 
+// para transferência em uma rede ou armazenamento é chamado?
+
+// 1. Serialização de Objetos. 
+// 2. Encapsulamento de Objetos.
+// 3. Herança de objeto.
+// 4. Nenhuma das acima.
+
+// Resposta 1. A Serialização de Objetos é o processo no qual um objeto ou estrutura de dados é traduzido em um formato adequado para transferência em uma rede ou armazenamento.
+
+
+// Qual função é usada para serializar um objeto em uma string JSON em Javascript?
+
+// 1. stringify()
+// 2. parse()
+// 3. convert() 
+// 4. Nenhuma das acima 
+
+// Resposta 1. A função JSON.stringify() é usada para converter um objeto JSON em formato de string.
+
+
+// Os 3 atributos básicos do objeto em Javascript são:
+
+// 1. classe, protótipo, parâmetros dos objetos.
+// 2. classe, protótipo, sinalizador extensível do objeto. 
+// 3. classe, parâmetros, sinalizador extensível do objeto. 
+// 4. classes, objeto nativo e sinalizador extensível de interfaces e objetos. 
+
+// Resposta 2 e 4 - Em geral para objetos em Javascript, os objetos são associados a 3 atributos básicos, Classe, protótipo, sinalizador extensível do objeto.
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// let soma = 0;
+// const a = [1, 2, 3];
+
+// a.forEach(buscarSoma);
+
+// console.log(soma); // 1. 6 - O trecho de código calcula a soma dos números em uma matriz, usando o método de loops forEach.
+
+// function buscarSoma(elemento) {
+
+//   soma += elemento
+// }
+
+// buscarSoma()
+
+// // 1. 6
+// // 2. 1
+// // 3. 2
+// // 4. Nenhuma das acima 
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// a = [1, 2, 3, 4, 5];
+
+// console.log(a.slice(2, 4)); // 1. 3, 4
+
+// 1. 3, 4
+// 2. 2, 3
+// 3. 2, 4, 5
+// 4. 2, 3, 4
+
+
+// // Qual será a saída do seguinte trecho de código?
+// console.log(parseInt("123Ola")); // 123
+// console.log(parseInt("Ola123")); // NaN 
+
+// // 1. 123 NaN 
+// // 2. 123Ola ola123
+// // 3. NaN NaN 
+// // 4. 123 123
+
+// // Resposta 1. - O método parseInt() converte uma string em um inteiro, se possível. Se a string começar com um número, ela converterá essa parte numérica e a retornará. Caso contrário, ele retornará NaN.
+
+
+// Quais das seguintes opções são closures em Javascript?
+
+// 1. variaveis 
+// 2. Funções 
+// 3. Objetos 
+// 4. Todos acima são
+
+// Resposta 4. Todos acima são
+
+
+// // Qual das opções a seguir não é uma framework Javascript?
+
+// 1. Node 
+// 2. Vue 
+// 3. React 
+// 4. Cassandra
+
+// Resposta 4. Cassandra 
+
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// var a = 'hello';
+// var soma = 0;
+
+// for(var i = 0; i < a.length; i++) {
+
+//   soma += (a[i] - 'a');
+// }
+
+// console.log(soma); // 1. NaN  - o a[i] - 'a' não é tipificado para um tipo inteiro e, portanto, o resultado é NaN.
+
+// // 1. 47 
+// // 2. NaN 
+// // 3. 0
+// // 4. Nenhuma das acima 
+
+
+// // Qual palavra-chave é usada para declarar uma função assíncrona em Javascript?
+
+// 1. async
+// 2. await
+// 3. setTimeout
+// 4. Nenhuma das acima
+
+// Resposta 1. async
