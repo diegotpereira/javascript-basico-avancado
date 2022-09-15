@@ -66,7 +66,7 @@ function geral () {
         
         this.temporizador = new Timer()
 
-        this.contagemPilulas
+        this.taxaAtualizacao = 33
 
         this.iniciado = false
         this.pausar = true;
@@ -75,8 +75,6 @@ function geral () {
         this.map   
         // numero de pilulas
         this.pilulaContar
-        // this.contagemDePilulas
-
         this.nivel = 1
         this.recarregueNivel = function(h) {
             $(h).html("Nivel: " + this.nivel)
@@ -86,7 +84,7 @@ function geral () {
         this.width = this.canvas.width
         this.height = this.canvas.height
 
-        // Estados globais da pílula
+        // Estados globais da pilula
         this.pilulaTamanho = 3
         this.pilulaPoderTamanhoMin = 2
         this.pilulaPoderTamanhoMax = 6
@@ -290,7 +288,6 @@ function geral () {
         
         this.getContagemPilulas = () => {
 
-            console.log("contagemPilulas...");
             var temp = 0;
 
             $.each(this.map.posY, function(i, item) {
@@ -310,7 +307,7 @@ function geral () {
 
             // obter mapa de níveis
             this.map = await this.carregarConfiguracaoMapa()
-            this.contagemPilulas = this.getContagemPilulas()
+            this.pilulaContar = this.getContagemPilulas()
 
             if (state === 0) {
                 this.temporizador.redefinir()
@@ -398,23 +395,24 @@ function geral () {
             context_paredes.fillStyle = jogo.corParede;
             context_paredes.strokeStyle = jogo.corParede
 
-            //
+            // exterior horizontal
             construirParede(context_paredes, 0, 0, 18, 1)   
             construirParede(context_paredes, 0, 12, 18, 1)
 
+            // exterior vertical
             construirParede(context_paredes, 0, 0, 1, 6);
             construirParede(context_paredes, 0, 7, 1, 6);
             construirParede(context_paredes, 17, 0, 1, 6);
             construirParede(context_paredes, 17, 7, 1, 6);
 
-            // ghost base
+            // base fantasma
 			construirParede(context_paredes, 7, 4, 1, 1);
 			construirParede(context_paredes, 6, 5, 1, 2);
 			construirParede(context_paredes, 10, 4, 1, 1);
 			construirParede(context_paredes, 11, 5, 1, 2);
 			construirParede(context_paredes, 6, 6, 6, 1);
 
-			// ghost base door
+			// porta base fantasma
 			context_paredes.fillRect(8 * 2 * pacman.radius, pacman.radius / 2 + 4 * 2 * pacman.radius + 5, 4 * pacman.radius, 1);
 
             // blocos únicos
@@ -591,13 +589,13 @@ function geral () {
                 
                 // Clyde não começa a perseguir antes de 2/3 de todas as pílulas serem consumidas e se o nível for < 4
                 if (this.nome == FANTASMAS.CLYDE) {
-                    if((jogo.nivel < 4) || ((jogo.contagemPilulas > 104 / 3))) this.parar = true
+                    if((jogo.nivel < 4) || ((jogo.pilulaContar > 104 / 3))) this.parar = true
                     else this.parar = false
                 }
 
                 // Inky começa após 30 pílulas e somente a partir do terceiro nível
                 if (this.nome == FANTASMAS.INKY) {
-                    if((jogo.nivel < 3) || ((jogo.contagemPilulas > 104 - 30))) this.parar = true 
+                    if((jogo.nivel < 3) || ((jogo.pilulaContar > 104 - 30))) this.parar = true 
                     else this.parar = false
                 }
 
@@ -791,6 +789,7 @@ function geral () {
         this.direcao 
         this.parar = true
         this.direcaodeSentinela = new direcaodeSentinela()
+
         this.getProximaDirecao = function() {
             console.log("Figura getProximaDirecao");
         }
@@ -927,7 +926,7 @@ function geral () {
                         } else {
 
                             s= PILULA_PONTOS
-                            jogo.contagemPilulas--
+                            jogo.pilulaContar--
                         }
                         jogo.map.posY[gradeY].posX[gradeX].type = "null"
                         jogo.pontuacao.add(s)
@@ -1316,7 +1315,7 @@ function geral () {
             jogo.verifiqueParaSubirNivel()
         }
 
-        setTimeout(animacaoLoop)
+        setTimeout(animacaoLoop, jogo.taxaAtualizacao)
     }
 
     function fazerKeyDown(evt) {
