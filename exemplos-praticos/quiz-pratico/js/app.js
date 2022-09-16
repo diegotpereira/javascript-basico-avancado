@@ -4326,3 +4326,245 @@
 // 4. Nenhuma das acima
 
 // Resposta 1. async
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// const set = new Set();
+
+// set.add(5)
+// set.add('Ola')
+// set.add({nome: 'Escalar'})
+
+// for(let item of set) {
+
+//   console.log(item + 6); // 3. 11 Ola6 [object Object]6 - Os primeiros 2 números são adicionados como números inteiros, 
+//   // seguidos pela concatenação de strings. Finalmente, uma vez que ambos não são do tipo string, JS stringifica tanto o objeto quanto o número e os concatena. Quando um objeto é encadeado, ele é lido como [object Object] e então concatenado.
+// }
+
+// // 1. 11 NaN NaN 
+// // 2. 11 NaN [object Object]
+// // 3. 11 Ola6 [object Object]6
+// // 4. Nenhuma das acima 
+
+// Como os objetos são comparados quando são verificados com o operador de igualdade estrita?
+
+// 1. O Conteúdo dos objetos é comparado 
+// B. Suas referências são comparadas 
+// 3. Ambos A e B 
+// 4. Nenhuma das acima
+
+// Resposta B. Suas referências são comparadas  - Em Javascript, os objetos são passados ​​por referência e, portanto, o operador de igualdade estrita compara suas referências.
+
+
+// O que o operador … faz em JS?
+
+// 1. É usado para espalhar iteráveis para elementos individuais.
+// 2. É usado para descrever um tipo de dados de tamanho indefinido.dados
+// 3. Não existe tal operador 
+// 4. Nenhuma das acima 
+
+// Resposta 1. É usado para espalhar iteráveis para elementos individuais. -  O operador … é usado para espalhar iteráveis ​​para elementos individuais em Javascript e também é chamado de operador de propagação.
+
+
+// // Qual será a saída do seguinte trecho de código?
+// const exemplo = ({ a, b, c }) => {
+
+//   console.log(a, b, c);
+// }
+// exemplo(0, 1, 2)
+
+// // 1. 0 1 2 
+// // 2. 0 undefined undefined
+// // 3. undefined undefined undefined
+// // 4. Nenhuma das acima 
+
+// Resposta 3. undefined undefined undefined - Como estamos passando números individuais em vez de um único objeto para a função, o Javascript inicializará os parâmetros do objeto com seu valor padrão de undefined.
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// let a = [1, 2, 3, 4, 5, 6];
+// var esquerda = 0, direita = 5;
+// var encontrado = false;
+// var objetivo = 5;
+
+// while(esquerda <= direita){
+
+//   var meio = Math.floor((esquerda + direita) / 2);
+
+//   console.log(meio);
+
+//   if (a[meio] == objetivo) {
+    
+//     encontrado = true;
+//     break;
+
+//   } else if (a[meio] < objetivo) {
+    
+//     esquerda = meio + 1;
+
+//   } else {
+
+//     direita = meio - 1
+//   }
+// }
+
+// if (encontrado) {
+  
+//   console.log("Sim");
+
+// } else {
+
+//   console.log("Não");
+// }
+
+// // 1. Sim 
+// // 2. Não 
+// // 3. Erro de sintaxe 
+// // 4. Nenhuma das acima
+
+// // Resposta 1. Sim - O código acima executa a pesquisa binária para pesquisar o elemento de destino 5 na matriz fornecida. Se for encontrado, imprime SIM senão NÃO.
+
+
+// // Qual será a saída do seguinte trecho de código?
+// let s  = "00000001111111";
+// let l = 0, r = s.length - 1, ans = -1;
+
+// while(l <= r) {
+
+//   var meio = Math.floor((l + r) / 2);
+
+//   console.log(meio);
+
+//   if (s[meio] == '1') {
+    
+//     ans = meio;
+//     r = meio - 1;
+ 
+//   } else {
+
+//     l = meio + 1;
+//   }
+// }
+
+// console.log(ans); // 2. 7 - Aqui, estamos procurando binários pelo índice da primeira ocorrência do caractere '1' na string fornecida. 
+//                          // Quando obtemos o caractere '1' no índice médio, nós o armazenamos como resposta e movemos para a metade esquerda que terá o primeiro índice '1' se ocorrer. 
+//                          // Caso contrário, passamos para a metade direita. Portanto, a resposta será 7 (indexação baseada em 0).
+
+// // 1. 8
+// // 2. 7
+// // 3. 0
+// // 4. 1
+
+
+
+// // Qual será a saída do seguinte trecho de código?
+// let n = 24;
+// let l = 0; r = 100, ans = n;
+
+// let meio = Math.floor((l + r) / 2);
+
+
+
+// while(l <= r) {
+
+//   let meio = Math.floor((l + r) / 2); // 50
+
+//   if (meio * meio <= n) {
+    
+//     ans = meio; // 4
+//     l = meio + 1; // 5
+
+//   } else {
+
+//     r = meio - 1;
+//   }
+// }
+
+// console.log(ans); // 2. 4 - O trecho de código basicamente usa pesquisa binária para calcular o piso da raiz quadrada de um número. 
+//                  // Como a raiz quadrada é uma função crescente, a pesquisa binária é aplicável aqui. Aqui, para n = 24, a resposta é 4.
+
+// // 1. 5
+// // 2. 4
+// // 3. 6
+// // 4. 3
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// const obj1 = { Nome: 'Ola', Idade: 16 }
+// const obj2 = { Nome: 'Ola', Idade: 16 }
+
+// console.log(obj1 === obj2); // 2. falo (false) - O operador de igualdade estrita compara objetos por suas referências, 
+//                             // portanto, mesmo que o conteúdo de ambos os objetos seja o mesmo, suas referências não correspondem, 
+//                             // resultando é falso.
+
+// // 1. true 
+// // 2. false 
+// // 3. undefined
+// // 4. Nenhuma das acima 
+
+
+// // O que acontece quando executamos este código?
+
+
+// function cachorro() {
+
+//   console.log("Eu sou um cachorro.");
+// }
+
+// cachorro.som = "Latido";
+
+// // 1. Erro de sintaxe.
+// // 2. "Eu sou um cachorro" é impresso.
+// // 3. Erro de referência.
+// // 4. Nada acontece
+
+// // Resposta 4. Nada acontece - Nada acontece no código acima, e é totalmente válido porque funções em Javascript são tratadas como objetos.
+
+
+// Qual objeto em Javascript não tem um protótipo (prototype)?
+
+// 1. Objeto base 
+// 2. Todos os objetos têm um protótipo 
+// 3. Nenhum dos objetos tem um protótipo. 
+// 4. Nenhuma das acima 
+
+// Resposta 1. Objeto base - Objetos base são os únicos objetos em Javascript que não possuem um protótipo.
+
+
+// // Qual será a saída do seguinte trecho de código?
+// function teste(...args) {
+
+//   console.log(typeof args); // 2. Number - O parâmetro …args nos permite coletar todos os argumentos restantes em um array, e em Javascript typeof um array é um objeto.
+// }
+
+// teste(12)
+
+// 1. NaN 
+// 2. Number 
+// 3. Object
+// 4. Array 
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// const obj1 = { primeiro: 20, segundo: 30, primeiro: 50}
+
+// console.log(obj1); // 2. { primeiro: 50, segundo: 30 } - Quando um objeto é passado com chaves duplicadas, o valor da chave será substituído pelo último valor dessa chave usado na declaração.
+
+// // 1. { primeiro: 20, segundo: 30 }
+// // 2. { primeiro: 50, segundo: 30 }
+// // 3. { primeiro: 20, segundo: 30, primeiro: 50 }
+// // 4. Erro de sintaxe.
+
+
+// Quais dos seguintes não são objetos Javascript do lado do servidor?
+
+// 1. Date 
+// 2. FileUpload
+// 3. Function
+// 4. Todas as opções
+
+// Resposta 4. Todas as opções
