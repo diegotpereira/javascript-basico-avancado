@@ -4568,3 +4568,387 @@
 // 4. Todas as opções
 
 // Resposta 4. Todas as opções
+
+
+
+// // O resultado correspondente apresentado como saída é:
+
+// var frutas = new Array("banana", "laranja", "limao")
+
+// frutas.shift()
+// frutas.splice(1, 1, "uva")
+
+// for(var i = 0; i > frutas.length; i++) {
+
+//   document.write(frutas[i] + " | "); // C. laranja | uva |
+// }
+
+// // A. banana | laranja | limao | uva |
+// // B. banana | uva | laranja | limao |
+// // C. laranja | uva |
+// // D. laranja | uva | limao
+
+
+// // Qual é a saida do código abaixo: 
+
+// var a = 5
+// var b = 10 
+
+// if (a === 5) {
+  
+//   // let permite que você declare variáveis limitando seu escopo no bloco, 
+//   // instrução, ou em uma expressão na qual ela é usada. Isso é inverso da palavra-chave var, 
+//   // que define uma variável globalmente ou no escopo inteiro de uma função, independentemente 
+//   // do escopo de bloco. Variáveis declaradas com let são "içadas" para começo do bloco em que 
+//   // elas são definidas (isso é conhecido também pelo termo, hoisting).
+//   let a  = 4
+
+//   // Declarações de variáveis, onde quer que elas ocorram, são processadas antes que qualquer 
+//   // outro código seja executado. O escopo de uma variável declarada com var é seu contexto atual em execução, 
+//   // o qual é a função a qual pertence ou, para variáveis declaradas fora de qualquer função, o escopo é o global. 
+//   // Como as declarações de variáveis (e declarações em geral) são processadas antes de qualquer código seja executado, 
+//   // declarar uma variável em qualquer lugar no código é equivalente a declarar no início. Isso também significa que uma 
+//   // variável pode aparecer para ser usada antes dela ser declarada. Esse comportamento é chamado de "hoisting", a variável 
+//   // é movida para o início da função ou do código global.
+//   var b = 1
+
+//   // O segundo conceito que devemos aprender para chegarmos a solução do problema é: O Javascript permite redeclarar uma 
+//   // variável com o mesmo nome, sendo que irá prevalecer o último valor atribuído à variável de mesmo nome, conforme 
+//   // demonstrado no exemplo acima.
+
+//   // Perceba que o programa Javascript descrito no enunciado da questão possui dois escopos, o do próprio programa e o 
+//   // escopo relacionado ao bloco do comando if.
+
+//   console.log(a); // 4
+//   console.log(b); // 1
+// }
+// console.log(a); // 5
+// console.log(b); // 1
+
+
+// // A. as saídas: 4, 1, 5 e 1.
+// // B. as saídas: 4, 1, 4 e 1.
+// // C. as saídas: 4, 1, 4 e 10.
+// // D. uma mensagem de erro referente à linha 3.
+// // E. uma mensagem de erro referente à linha 4.
+
+
+// // Qual é a saida do código abaixo: 
+
+// var str = "123456789"
+// var p = /[^5-7]/g;
+// // O método String match() compara uma string com uma expressão regular:
+// var resultado = str.match(p);
+
+// console.log(resultado); // A. 1,2,3,4,8,9
+
+// // A. 1,2,3,4,8,9
+// // B. 5,6,7
+// // C. 5,7
+// // D. 1,2,3,4,6,8,9
+// // E. 3
+
+
+// Imagine o seguinte cenário: Marcelo lhe deve um dinheiro e promete pagar em parcelas mensais de R$ 70; 
+// com o intuito de prever qual seria o valor devido após o decorrer de 12 meses, você resolve escrever 
+// algumas linhas de código (JavaScript). Levando em consideração que o valor devido por Marcelo era de R$ 1400, 
+// qual seria o total devido após a execução do trecho a seguir?
+
+// let total_divida = 1400;
+
+// function atualizar_divida(valor_recebido) {
+
+//   total_divida -= valor_recebido
+
+//   return total_divida;
+// }
+
+// for(var i = 0; i < 12; i++) {
+
+//   atualizar_divida(70)
+// }
+
+// console.log(total_divida); // B. Marcelo teria pago 840 reais e lhe deveria ainda 560.
+
+// // A. Marcelo lhe deveria 2240 reais pois o loop (for) está incrementando o total da dívida.
+// // B. Marcelo teria pago 840 reais e lhe deveria ainda 560.
+// // C. Marcelo lhe deveria ainda 1400 reais, pois o código possui erro semântico.
+// // D. A declaração da função atualizar_divida está errada.
+// // E. O trecho apresenta um erro de sintaxe na linha 3.
+
+
+// // JavaScript manipula mensagens de erro de uma maneira que muda de acordo com o navegador usado.
+
+// // Analise o código JavaScript abaixo.
+
+// {/* <html>
+//   <head>
+//     <title>Hello World</title>
+//   </head>
+//   <body>
+//     <script type="text/javascript">
+//      document.write("Hello World")
+//   </body>
+// </html> */}
+
+// // A. Unterminated string constant.
+// // B. SyntaxError: Unexpected EOF.
+// // C. SyntaxError: unterminated string literal.
+// // D. Uncaught SyntaxError: Unexpected token ILLEGAL.
+
+// // Resposta C. SyntaxError: unterminated string literal.
+
+
+// // Qual candidato ficou em segundo lugar?
+
+// function classificacao() {
+
+//   return function(obj1, obj2) {
+
+//     var a = (obj2["nota"] - obj1["nota"])
+
+//     return (a !== 0) ? a : (obj1["idade"] - obj2["idade"])
+
+//   }
+// }
+
+// var aprovados = [
+//   {
+//     candidato: "Ranata Soares", nota: 7.8, idade: 29
+//   },
+//   {
+//     candidato: "Marcos teixeira", nota: 7.8, idade: 26
+//   },
+//   {
+//     candidato: "Priscila Gomes", nota: 7.8, idade: 30
+//   },
+//   {
+//     candidato: "João Oliveira", nota: 7.8, idade: 27
+//   },
+//   {
+//     candidato: "Adriano Tellles", nota: 7.8, idade: 28
+//   }
+// ]
+
+// aprovados.sort(classificacao());
+// console.log((aprovados[1].candidato)) // B. João Oliveira
+
+// // A. Adriana Telles
+// // B. João Oliveira
+// // C. Marcos Teixeira
+// // D. Priscila Gomes
+// // E. Renata Soares
+
+
+// // Para qual valor dos x os resultados das seguintes afirmações não são iguais?
+
+// if(x <= 100) {}
+// if(!(x > 100)) {} 
+
+// Resposta NaN <= 100 é falso (false) e 
+//          NaN > 100 também é falso (false), 
+//          portanto, se o valor de x for NaN, as instruções não serão as mesmas.
+            // NaN não pode ser igual, menor ou maior que qualquer outro valor numérico.
+
+
+// // Como esvaziar um array em JavaScript?
+
+// var arrayLista = ['a', 'b', 'c', 'd', 'e', 'f']
+
+// console.log(arrayLista);
+
+// // Método 1
+
+// arrayLista = []
+
+// console.log(arrayLista);
+
+// // Método 2
+
+// var arrayLista = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+// console.log(arrayLista);
+
+// arrayLista.length = 0
+
+// console.log(arrayLista);
+
+// // Método 3
+
+// var arrayLista = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+// console.log(arrayLista);
+
+// arrayLista.splice(0, arrayLista.length)
+
+// console.log(arrayLista);
+
+
+// // Método 4
+
+// var arrayLista = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i']
+
+// console.log(arrayLista);
+
+// while(arrayLista.length) {
+//   arrayLista.pop()
+// }
+
+// console.log(arrayLista);
+
+
+// O que é "closure" em javascript? você pode dar um exemplo?
+
+// Uma closure é uma função definida dentro de outra função (chamada de função pai) e, como tal, 
+// tem acesso às variáveis ​​declaradas e definidas dentro do escopo de sua função pai.
+
+// O fechamento tem acesso às variáveis ​​em três escopos:
+
+// a. Variável declarada em seu próprio escopo
+// b. Variável declarada no escopo de sua função pai
+// c. Variável declarada no namespace global
+
+
+
+// // Escreva uma função mul que funcionará corretamente quando invocada com a seguinte sintaxe.
+
+// console.log(mul(2)(3)(4));
+// console.log(mul(4)(3)(4));
+
+// // Resposta 
+
+// function mul(x) {
+//   return function(y) {
+//     return function(z) {
+
+//       return x * y * z;
+//     }
+//   }
+// }
+
+
+// // Qual será a saída do código a seguir?
+
+// var saida = (function(x) {
+
+//   delete x;
+
+//   return x;
+// })(0)
+
+// console.log(saida);
+
+
+// var output = (function(x) {
+//   delete x;
+//   return x;
+// })(0);
+
+// console.log(output); // 0 - operador delete é usado para excluir uma propriedade de um objeto. 
+                        // Aqui x não é um objeto, é uma variável local . operador delete não afeta variáveis ​​locais.
+
+
+// // Qual será a saída do código a seguir?
+// var x = 1;
+
+// var saida = (function() {
+
+//   delete x;
+//   return x;
+// }) ()
+
+// console.log(saida); // 1 - operador delete é usado para excluir uma propriedade de um objeto. 
+                      // Aqui x não é um objeto, é uma variável global do tipo number.
+
+
+
+// // Qual será a saída do código a seguir?
+
+// var x = { foo: 1};
+// var saida = (function() {
+
+//   delete x.foo;
+//   return x.foo;
+
+// })()
+
+// console.log(saida); // undefined - operador delete é usado para excluir uma propriedade de um objeto.
+//                     // aqui x está em um objeto que tem foo como uma propriedade e de uma função auto-invocada, 
+//                     // estamos excluindo a propriedade foo do objeto x e após a exclusão, estamos tentando referenciar 
+//                     // a propriedade excluída foo que resulta undefined.
+
+
+// // Qual será a saída do código a seguir?
+
+// var Colaborador = {
+  
+//   compania: 'xyz'
+// }
+
+// var emp1 = Object.create(Colaborador)
+
+// delete emp1.compania
+
+// console.log(emp1.compania); // xyz - Aqui o objeto `emp1` tem empresa como propriedade **protótipo**. 
+//                             // O operador delete não exclui a propriedade prototype.
+                           
+
+// // Qual será a saída do código a seguir?
+
+// var arvores = ["xyz", "xxxx", "teste", "joao", "maça"]
+
+// delete arvores[3]
+
+// console.log(arvores.length); // 5 - Quando usamos o operador `delete` para excluir um elemento do array, 
+//                              // o comprimento do array não é afetado por isso. Isso vale mesmo se você excluir 
+//                              // todos os elementos de um array usando o operador `delete`.
+
+
+// // Qual será a saída do código a seguir?
+
+// var bar = true;
+
+// console.log(bar + 0); // 1
+// console.log(bar + " xyz"); // true xyz
+// console.log(bar + true); // 1
+// console.log(bar + false); // 1
+
+// // Number + Number -> Adição
+// // Boolean + Number -> Adição
+// // Boolean + Boolean -> Adição
+// // Number + String -> Concatenação
+// // String + Boolean -> Concatenação
+// // String + String -> Concatenação
+
+
+// // Qual será a saída do código a seguir?
+
+// var z = 1, y = z = typeof y;
+
+// console.log(y); // undefined - O código acima imprimirá a string "undefined"como saída. 
+//                 // De acordo com a regra de associatividade, os operadores com a mesma 
+//                 // precedência são processados ​​com base em sua propriedade de associatividade do operador.
+
+// var z;
+// z = 1;
+// var y;
+// z = typeof y;
+// y = z;
+
+
+// // Qual será a saída do código a seguir?
+
+// var foo = function bar() {
+
+//   return 12
+// }
+
+// typeof bar()
+
+// // Resposta: ReferenceError: bar is not defined
+// // Podemos reescrever o código 
+// // var bar = function() { return 12; };
+// // typeof bar();
+// // ou 
+// // function bar() { return 12; };
+// // typeof bar();
