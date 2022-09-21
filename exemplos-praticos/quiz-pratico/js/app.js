@@ -4954,9 +4954,210 @@
 // // typeof bar();
 
 
-// 
+// // Qual será a saída do código a seguir?
 
-var str1 = "Java";
-var str2 = "Java";
+// var str1 = "Java";
+// var str2 = "Java";
 
-console.log(str1 == str2);
+// console.log(str1 == str2); // saída: verdadeiro(true)
+
+
+// // Qual será a saída do código a seguir?
+
+// function setNome() {
+
+//   this.nome = 'Bob'
+// }
+
+// setNome()
+
+// console.log(this.nome); // saída A: Bob
+
+// // A: 'Bob'
+// // B: undefined
+// // C: An Error will be thrown
+// // D: null
+
+
+// // Qual será a saída do código a seguir?
+
+// function fun(num1) {
+
+//   var num2 = 6;
+
+//   function TDK() {
+
+//     var num3 = 10;
+
+//     console.log(num1 * num2 * num3);
+//   }
+//   return TDK;
+// }
+
+// var teste = fun(5)
+// teste()
+
+// // A: undefined
+// // B: 0
+// // C: 300
+// // D: infinity
+
+// // Resposta: C: 300
+
+
+// // Qual será a saída do código a seguir?
+
+// const animal = {
+//   animal_nome: "Gato",
+//   acao: function() {
+
+//     console.log(`${this.animal_nome} está fazendo ação`); // saída: undefined está fazendo ação
+//   }
+// }
+
+// setTimeout(animal.acao, 1000);
+
+// // A: Gato está fazendo ação
+// // B: undefined está fazendo ação
+// // C: null está fazendo ação
+// // D: error
+
+// // Resposta: B: undefined está fazendo ação
+
+
+// // Qual será a saída do código a seguir?
+
+// const animal = {
+//   animal_nome: 'gato',
+//   acao: function() {
+//     console.log(`${this.animal_nome} está fazendo ação`); // saída: C: gato está fazendo ação
+//   }
+// }
+
+// setTimeout(function() {
+//   animal.acao()
+// }, 1000)
+
+// // A: null está fazendo ação
+// // B: undefined está fazendo ação
+// // C: gato está fazendo ação
+// // D: error
+
+
+// // Qual será a saída do código a seguir?
+
+// function getFunc() {
+
+//   let valor = "Olá !";
+
+//   let func = new Function("console.log(valor)");
+
+//   return func 
+// }
+
+// getFunc()()
+
+// // A: Olá !
+// // B: error: value is not defined
+// // C: null
+
+// // Resposta: B: error: value is not defined
+
+
+// // Qual será a saída do código a seguir?
+
+// function getFunc() {
+
+//   let valor = "Olá amigos !";
+//   let func = () => {
+//     alert(valor)
+//   }
+
+//   return func;
+// }
+
+// getFunc()()
+
+// // A: Olá !
+// // B: error: valor is not defined
+// // C: Olá amigos !
+// // D: null
+
+// // Resposta: C: Olá amigos !
+
+
+// // Qual será a saída do código a seguir?
+
+// x = 1;
+
+// function func() {
+//   this.x = 2;
+
+//   return x;
+// }
+
+// let a = new func();
+
+// console.log(a.x); // saída: 2
+
+// // A: 1
+// // B: 2
+// // C: undefined
+
+
+// // Qual será a saída do código a seguir?
+
+// let arr = Array.from(Array(10).keys());
+
+// function func(a) {
+//   console.log(arguments.length); // saída: C: 1 10
+// }
+
+// func(arr);
+// func(...arr);
+
+// // A: 10 10
+// // B: 10 1
+// // C: 1 10
+// // D: 1 1
+
+
+// // Qual será a saída do código a seguir?
+
+// function func(a, b) {
+//   arguments[1] = 2;
+
+//   console.log(b); // saída: B. undefined
+// }
+// func(1)
+
+// // A: 2
+// // B: undefined
+// // C: 1
+// // D: null
+
+
+// // Qual será a saída do código a seguir?
+
+// var x = 3
+// var obj = {
+//   x: 2,
+//   foo: {
+//     x: 1,
+//     bar: function() {
+
+//       return this.x; 
+//     }
+//   }
+// }
+
+// var func = obj.foo.bar;
+// console.log(func()); // saída: 3
+// console.log(obj.foo.bar()); // saída: 1
+
+// // A: 3 1
+// // B: undefined 1
+// // C: 1 1
+// // D: 2 1
+
+// // Resposta: A: 3 1
