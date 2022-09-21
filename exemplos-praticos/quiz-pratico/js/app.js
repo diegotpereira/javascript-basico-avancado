@@ -4952,3 +4952,11 @@
 // // ou 
 // // function bar() { return 12; };
 // // typeof bar();
+
+
+// 
+
+var str1 = "Java";
+var str2 = "Java";
+
+console.log(str1 == str2);
