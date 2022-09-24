@@ -6018,3 +6018,5 @@
 // console.log(nomeCompletoArray); // saída 0 : {Seu Nome Completo é: 'Maria Souza'}
 //                                       // 1 : {Seu Nome Completo é: 'João Gonçalves'}
 //                                       // 2 : {Seu Nome Completo é: 'Pedro Silva'}
+
+
