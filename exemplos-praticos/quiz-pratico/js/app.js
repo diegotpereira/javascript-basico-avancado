@@ -5161,3 +5161,860 @@
 // // D: 2 1
 
 // // Resposta: A: 3 1
+
+// // Qual será a saída do código a seguir?
+
+// var foo = function foo() {
+//   console.log(foo === foo); // saída: verdadeiro(true)
+// }
+// foo()
+
+// // A: false
+// // B: true
+// // C: error
+
+
+// // Qual será a saída do código a seguir?
+
+// function buscarIdade() {
+//   'use strict'; 
+
+//   idade = 21;
+
+//   console.log(idade);
+// }
+
+// buscarIdade()
+
+// // A: 21
+// // B: undefined
+// // C: ReferenceError
+// // D: TypeError
+
+// // Resposta: C: ReferenceError
+
+
+// // Qual será a saída do código a seguir?
+
+// const obj = { 1: 'a', 2: 'b', 3: 'c'}
+// const set = new Set([1, 2, 3, 4, 5])
+
+// console.log(obj.hasOwnProperty('1')); // saída: vardadeiro
+// console.log(obj.hasOwnProperty(1)); // saída: verdadeiro
+// console.log(set.has('1')); // saída: falso
+// console.log(set.has(1)); // saída: verdadeiro
+
+// // A: false true false true
+// // B: false true true true
+// // C: true true false true
+// // D: true true true true
+
+// // Resposta: C: true true false true
+
+
+// // Qual será a saída do código a seguir?
+
+// var num = "10";
+
+// (function() {
+//   console.log(num); // undefined
+
+//   var num = "50"
+
+//   console.log(num); // 50
+// })()
+
+// // A: undefined 50
+// // B: 50 50
+// // C: 10 10
+
+// // Resposta: A: undefined 50
+
+// Objetos
+
+// // Qual será a saída do código a seguir?
+
+// let a = 3
+// let b = new Number(3)
+// let c = 3
+
+// console.log(a == b); // verdadeiro(true)
+// console.log(a === b); // falso(false)
+// console.log(b === c); // falso(false)
+
+// // A: true false true
+// // B: false false true
+// // C: true false false
+// // D: false true true
+
+
+// // Qual será a saída do código a seguir?
+
+// const telegramGrupo = {
+//   nome: 'TimeDev'
+// }
+
+// const { nome: DTP } = telegramGrupo
+
+// console.log(DTP); // saída: TimeDev
+
+// // A: null
+// // B: Error will be thrown
+// // C: TimeDev
+// // D: undefined
+
+
+// // Qual será a saída do código a seguir?
+// let meuNome = 'Bob'
+// let grupoNome = meuNome
+
+// meuNome = 'DevPeter'
+
+// console.log(grupoNome); // Bob 
+
+// const obj1 = {
+//   id: 1,
+//   nome: 'Bob'
+// }
+
+// const obj2 = obj1
+// obj2.nome = 'DevPeter'
+
+// console.log(obj1); // {id: 1, nome: 'DevPeter'}
+
+// // A: Bob , { id: 1, nome: 'Bob' }
+// // B: DevPeter,{ id: 1, nome: 'Bob' }
+// // C: DevPeter,{ id: 1, nome: 'DevPeter' }
+// // D: Bob,{ id: 1, nome: 'DevPeter' }
+
+
+// // Qual será a saída do código a seguir?
+
+// function saudar(pessoa) {
+  
+//   if (pessoa == { nome: 'Bob'}) {
+    
+//     return 'Olá Bob'
+
+//   } else {
+//     return 'Olá Peter'
+//   }
+// }
+// console.log(saudar({ nome: 'Bob'})); // saída: B. Olá Peter
+
+// // A. Olá Bob 
+// // B. Olá Peter
+
+
+// // Qual será a saída do código a seguir?
+
+// const amostra = ["xyz", "abc", "teste", "bob", "maça"]
+
+// delete amostra[3]
+
+// console.log(amostra.length); // saída: 5
+
+// // A: 4
+// // B: 5
+// // C: Error updating the constant variable.
+
+
+// // Qual será a saída do código a seguir?
+
+// let array = [ 1, 2, 3, 4, 5, 6]
+// let [a, b, , ...rest] = array;
+
+// console.log(a); // 1
+// console.log(b); // 2
+// console.log(c); // c is not defined
+// console.log(rest); 
+
+// let c
+
+// // A: 1, 2, 3, [ 4, 5, 6 ]
+// // B: 1, 2, c is not defined
+// // C: 1, 2, NaN, undefined
+// // D: 1, 2, c is not defined, [4, 5, 6]
+
+// // Resposta: c is not defined
+
+
+// // Qual será a saída do código a seguir?
+
+// let array1 = [1, 2, 3, 4, 5, 6]
+// let array2 = array1 
+// array2.push(7, 8, 9, 10)
+
+// console.log(array1); // saída [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// console.log(array2.sort()); // saída [1, 10, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// // A: [ 1, 2, 3, 4, 5, 6 ], [ 1, 10, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9, 9 ]
+// // B: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 10, 2, 3, 4, 5, 6, 7, 8, 9]
+// // C: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 7, 8, 9, 10 ], [ 1, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9, 9, 10 ]
+// // D: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 7, 8, 9, 10 ], [ 1, 2, 3, 4, 5, 6 ]
+
+
+// // Qual será a saída do código a seguir?
+
+// let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// function verifiqueNum(num) {
+//   return num >= 4
+// }
+
+// let novoArray1 = [array.map((item) => {
+//   return item 
+// })].filter(verifiqueNum)
+
+// let novoArray2 = array.filter(verifiqueNum).map((item) => {
+//   return item
+// })
+
+
+// console.log(novoArray1); // saída: []
+// console.log(novoArray2); // saída: [ 4, 5, 6, 7, 8, 9, 10 ]
+
+// // A: [ [] ], [ [ 4, 5, 6, 7, 8, 9, 10 ] ]
+// // B: NaN, []
+// // C: [], [ 4, 5, 6, 7, 8, 9, 10 ]
+// // D: [ [] ], [ 5, 6, 7, 8, 9, 10 ]
+
+
+// // Qual será a saída do código a seguir?
+
+// let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// function verifiqueNum(num) {
+//   return num > 4
+// }
+
+// let novoArray = [array.filter(verifiqueNum).map((item, index) => {
+//   return item - array[index]
+// }).reduce((acc, curr) => {
+//   return acc + curr
+// })]
+
+// console.log(novoArray); // saída: A. [24]
+
+// A: [ 24 ]
+// B: 24
+// C: NaN
+// D: Undefined
+
+
+// // Qual será a saída do código a seguir?
+
+// const arrayA = [10, 20, 30, 40]
+// const reduzir = (acumulador, atualValor) => acumulador + atualValor
+
+// console.log(arrayA.reduce(reduzir)); // saída: 100
+// console.log(arrayA.reduce(reduzir, 50)); // saída: 150
+
+
+// // Qual será a saída do código a seguir?
+
+// var total = 0
+// var numeros = [1, 2, 3, 4, 5, 6, 7];
+// // 0 + 1 = 1
+// // 1 + 2 = 3
+// // 3 + 3 = 6
+// // 6 + 4 = 10
+// // 10 + 5 = 15
+// // 15 + 6 = 21
+// // 21 + 7 = 28
+
+// for(var i = 0; i < numeros.length; i++) {
+//   total += numeros[i]
+// }
+
+// console.log(total); // saída: 28
+
+
+// // Qual será a saída do código a seguir com reduce?
+
+// var numeros = [1, 2, 3, 4, 5, 6, 7]
+// var total = numeros.reduce(function(total, numero) {
+//   return total + numero
+// }, 0)
+
+// console.log(total); // saída: 28
+
+
+// // Qual será a saída do código a seguir com reduce?
+
+// const numerosLista = [1, 2, 3]
+// const total = numerosLista.reduce((total, atualElemento) => total + atualElemento)
+
+// console.log(total); // saída 
+
+
+
+// // Qual será a saída do código a seguir?
+
+// function soma(arr) {
+
+//   let somar = 0;
+
+//   for(const valor of arr) {
+
+//     somar += valor
+//   }
+//   return somar
+// }
+
+// console.log(soma([1, 3, 5, 7])); // saída 16
+
+
+// // Qual será a saída do código a seguir com reduce?
+
+// function soma(arr) {
+
+//   const reduzir = (soma, valor) => soma + valor;
+//   const inicialValor = 0
+
+//   return arr.reduce(reduzir, inicialValor)
+// }
+
+// console.log(soma([1, 3, 5, 7])); // saída: 16
+
+
+// // Qual será a saída do código a seguir com reduce?
+
+// const array = ["Giuliana", 1, 2, 3, "Lucas", 3, "Renan"]
+// let resultado = array.reduce((singular, item) => {
+
+//   return singular.includes(item) ? singular : [...singular, item]
+// }, [])
+
+// console.log(resultado); // saída: ['Giuliana', 1, 2, 3, 'Lucas', 'Renan']
+
+
+// // Qual será a saída do código a seguir com reduce?
+
+// const linhaItens = [
+//   {
+//     descricao: 'Ovos(Duzia)',
+//     quantidade: 1,
+//     preco: 3,
+//     total: 3
+//   },
+//   {
+//     descricao: 'Queijo',
+//     quantidade: 0.5,
+//     preco: 5,
+//     total: 2.5
+//   },
+//   {
+//     descricao: 'Manteiga',
+//     quantidade: 2,
+//     preco: 6,
+//     total: 12
+//   }
+// ]
+
+// console.log(linhaItens.map(li => li.total).reduce((soma, valor) => soma + valor, 0)); // saída: 17.5
+// console.log(linhaItens.reduce((soma, linha) => soma + linha.total, 0)); // saída: 17.5
+
+
+// // Qual será a saída do código a seguir com reduce?
+
+// const numeros = [-5, 6, 2, 0]
+// const numerosPositivosDuplicados = numeros.reduce((acumulador, atualValor) => {
+
+//   if (atualValor > 0) {
+    
+//     const duplicado = atualValor * 2
+
+//     acumulador.push(duplicado)
+//   }
+
+//   return acumulador
+// }, [])
+
+// console.log(numerosPositivosDuplicados); // saída: [12, 4]
+
+
+// // Adivinhe a seguinte saída?
+
+// const facaAlgumaCoisa = (a, b) => {
+//   return [a + b, a - b, a * b, a / b]
+// }
+
+// let [...rest] = facaAlgumaCoisa(4, 2)
+
+// console.log(rest * rest);
+
+
+// // A: [ 36, 4, 64, 4 ]
+// // B: 18
+// // C: NaN
+// // D: rest is not defined
+
+// // Resposta: C: NaN
+
+
+// // Adivinhe a seguinte saída?
+
+// const facaAlgumaCoisa = (a, b) => {
+//   return [a + b, a - b, a * b, a / b]
+// }
+
+// let algumaVariavel = 5
+// let [...rest] = facaAlgumaCoisa(4, 2)
+
+// // console.log(rest); 6, 2, 8, 2
+
+// algumaVariavel = rest.reduce((acc, total)=> {
+//   return 0 + total
+// })
+
+// console.log(algumaVariavel); // saída: 2
+
+// // A: 960
+// // B: 192
+// // C: NaN
+// // D: 2
+
+
+// // Adivinhe a seguinte saída?
+
+// const numeros = [1, 2, 3, 4, 5, 6]
+// const res = numeros.forEach((item) => {
+//   return item * item
+// })
+
+// console.log(res); // D: Undefined
+
+// // A: null
+// // B: [ 1, 4, 9, 16, 25, 36 ]
+// // C: [1, 2, 3, 4, 5, 6]
+// // D: Undefined
+
+
+// // Adivinhe a seguinte saída?
+
+// let array = [1, 2, 3]
+// let array2 = array
+// let array3 = [...array]
+
+// console.log(array.concat(4)); // saída: [1, 2, 3, 4]
+// console.log(array2.concat(5)); // saída: [1, 2, 3, 5]
+// console.log(array3.concat(6, 7)); // saída: [1, 2, 3, 6, 7]
+
+// // A: [ 1, 2, 3, 4 ], [ 1, 2, 3, 5 ], [ 1, 2, 3, 6, 7 ]
+// // B: [ 1, 2, 3, 4, 5 ], [ 1, 2, 3, 4, 5 ], [ 1, 2, 3, 6, 7 ]
+// // C: [ 1, 2, 3 ], [ 1, 2, 3, 4, 5 ], [ 1, 2, 3, 6, 7 ]
+// // D: [ 1, 2, 3, 4 ], [ 1, 2, 3, 5 ], [ 1, 2, 3, 6, 7 ]
+
+// // Resposta: A: [ 1, 2, 3, 4 ], [ 1, 2, 3, 5 ], [ 1, 2, 3, 6, 7 ]
+
+
+// // Qual é o resultado?
+
+// let obj = {
+//   for: 1,
+//   let: 2,
+//   return: 3
+// }
+
+// console.log(obj.for + obj.let + obj.return); // saída: 6
+
+
+// // Qual é o resultado?
+
+// let codigos = {
+//   "49": "Alemanhã",
+//   "41": "Suiça",
+//   "44": "Grã Bretanhã",
+//   "1": "EUA"
+// }
+
+// for(let codigo in codigos) {
+//   console.log(codigo); // saída: 1, 41, 44, 49 - ordem de unidades de código UTF-16
+// }
+
+
+// // Qual é o resultado?
+
+// let a = {}
+// let b = a 
+
+// console.log(a == b); // verdadeiro(true)
+// console.log(a === b); // verdadeiro(true)
+
+
+// // O que a função Usuario retorna?
+
+// function Usuario(nome) {
+//   this.nome = nome
+//   this.ehAdmin = false
+// }
+
+// let usuario = new Usuario("Jack")
+
+// Resposta: O valor de this é retornado implicitamente.
+
+
+// // Qual é o resultado?
+
+// function Usuario() {
+
+//   if (new.target) {
+//     console.log("Olá"); // saída: Olá
+//   }
+// }
+
+// Usuario()
+
+// new Usuario()
+
+
+// // Qual é o resultado?
+
+// function grandeUsuario(){
+
+//   this.nome = "Bob"
+
+//   return {
+//     nome: "Peter"
+//   }
+// }
+
+// function pequenoUsuario() {
+
+//   this.nome = "Bob"
+
+//   return "Bonny"
+// }
+
+// console.log(new grandeUsuario().nome); // saída: Peter
+// console.log(new pequenoUsuario().nome); // saída: Bob
+
+// Resposta Peter, Bob - Se return for chamado com um objeto, 
+// então o objeto será retornado em vez disso. Se return for chamado com um primitivo, ele será ignorado.
+
+
+// // A chamada do construtor é válida?
+
+// function Usuario(){
+//   this.nome = "Admin"
+// }
+
+// let usuario = new Usuario
+
+// // Resposta: Podemos omitir parênteses após new, se não tiver argumentos. 
+// // Omitir parênteses aqui não é considerado um “bom estilo”, mas a sintaxe é permitida por especificação.
+
+// // Qual é o resultado?
+
+// alert(1 || 0) // saída: 1
+// alert(null || 1) // saída: 1
+// alert(null || 0 || 1) // saída: 1
+// alert(undefined || null || 0) // saída: 0
+
+// // Qual é o resultado?
+
+// alert(1 && 0) // saída: 0
+// alert(1 && 5) // saída: 5
+// alert(null && 5) // saída: null
+// alert(0 && "não importa o que") // saída: 0
+
+
+// // Qual é o resultado?
+
+// alert(!!"string não vazia") // saída: verdadeiro(true)
+// alert(!!null) // saída: falso(false)
+
+
+// // Qual é o resultado?
+// console.log(NaN ** 0); // saída: 1
+
+
+// // Qual é o resultado?
+
+// let n = 2;
+// n *= 3 + 5
+
+// console.log(n); // saída 16
+
+
+// // Qual é a saída do programa?
+
+// var numero1 = 12
+// var numero2 = '12'
+
+// console.log('saída 1: ', numero1 == numero2); // vardadeiro(true)
+// console.log('saída 2: ', numero1 === numero2); // falso(false)
+
+
+// // Qual é a saída do programa?
+
+// var meu_numero = 100
+// meu_numero.NEGATIVE_INFINITY
+
+// console.log(meu_numero);  // saída 100
+
+
+// // Qual é a saída do programa?
+
+// const arr = [1, 2, 3, 4]
+
+// for(var i = 0; i < arr.length; i++) {
+//   setTimeout(function() {
+//     console.log(i); // saída: 4 4 4 4
+//   }, 10)
+// }
+
+
+// // Qual é a saída do programa?
+
+// var arr1 = [5]
+// var arr2 = new Array(5)
+
+// console.log(arr1); // saída: [5]
+// console.log(arr2); // saída: [vazio x 5]
+
+
+// // Qual é a saída do programa?
+
+// var a = [1, 2, 3]
+
+// a[10] = 99
+
+// console.log(a); // saída: [1, 2, 3, vazio x 7, 99]
+// console.log(a[6]); // saída: undefined
+
+
+// // Qual é a saída do programa?
+
+// var a = {},
+//     b = { key: 'b'},
+//     c = { key: 'c'}
+
+// a[b] = 123 
+// a[c] = 456
+
+// console.log(a[b]); // saída 456
+
+
+// // Qual é a saída do programa?
+
+
+// function saudar() {
+
+//   return {
+//     mensagem: 'ola'
+//   }
+// }
+
+// var a = saudar()
+
+// console.log(a); // saída: {mensagem: 'ola'}
+
+
+// // Qual é a saída do programa?
+
+// const a = [1, 2, 3]
+// const b = [1, 2, 3]
+// const c = "1,2,3"
+
+// console.log(a == c); // saída: verdadeiro(true)
+// console.log(a == b); // saída: falso(false)
+
+
+// // Qual é a saída do programa?
+
+// var usuario1 = { nome: 'Bob', org: "dev"}
+// var usuario2 = { nome: 'Bob', org: "dev"}
+// var cachorro = { nome: 'cachorro', idade: 10}
+// var gato = { nome: 'gato', idade: 10}
+
+// var compare_usuario = JSON.stringify(usuario1) === JSON.stringify(usuario2)
+// var compare_animal = JSON.stringify(cachorro) === JSON.stringify(gato)
+
+// console.log(compare_usuario); // saída: verdadeiro(true)
+// console.log(compare_animal); // saída: falso(false)
+
+
+// // Qual é a saída do programa?
+
+// var a = "1 + 5 - 3"
+// var b = "10 / 2" + 6
+
+// console.log(eval(a)); // saída: 3
+// console.log(eval(b)); // saída: 0.38461538461538464
+
+
+// // Qual é a saída do programa?
+
+// var promessa1 = new Promise(function(resolve, reject) {
+//   setTimeout(resolve, 500, 'um')
+// })
+
+// var promessa2 = new Promise(function(resolve, reject) {
+//   setTimeout(resolve, 100, 'dois')
+// })
+
+// Promise.race([promessa1, promessa2]).then(function(valor) {
+//   console.log(valor);
+// })
+
+// // Resposta: dois
+
+
+// // Qual é a saída do programa?
+
+// Promise.all([Promise1, Promise2, Promise3])
+// .then(result => {
+//   console.log(result);
+// })
+// .catch(error => {
+//   console.log(`Erro nas promessas ${error}`);
+// })
+
+// // Resposta: Promise1 is not defined
+
+
+// // Qual é a saída do programa?
+
+// const funcaoUnaria = a => console.log(a + 10); // saída: 15
+// funcaoUnaria(5)
+
+
+// // Qual é a saída do programa?
+
+// const superiorOrdemFunc = () => console.log('Olá Mundo!'); // saída: Olá Mundo!
+// const superiorOrdem = RetornarsuperiorOrdemFunc => RetornarsuperiorOrdemFunc()
+
+// superiorOrdem(superiorOrdemFunc)
+
+
+// // Qual é a saída do programa?
+
+// var frutas = [ "Banana", "Laranja", "Limão", "Maça", "Manga"]
+// var citrus = frutas.slice(1, 3)
+
+// console.log(frutas); // saída: ['Banana', 'Laranja', 'Limão', 'Maça', 'Manga']
+// console.log(citrus); // saída: ['Laranja', 'Limão']
+
+// // Usando emenda
+// var frutas = ["Banana", "Laranja", "Maça", "Manga"]
+
+// frutas.splice(2, 0, "Limão", "Kiwi")
+
+// console.log(frutas); // saída: ['Banana', 'Laranja', 'Limão', 'Kiwi', 'Maça', 'Manga']
+
+
+// // Qual é a saída do programa?
+
+// var obj1 = [{ id: 1, nome: 'Bob'}, { id: 2, nome: 'Peter'}]
+
+// console.log(JSON.stringify(obj1)); // saída: [{"id":1,"nome":"Bob"},{"id":2,"nome":"Peter"}]
+
+// var obj2 = '{ "id": 9, "nome": "Bob", "idade": "20", "cidade": "Porto Alegre" }'
+
+// console.log(JSON.parse(obj2)); // saída: {id: 9, nome: 'Bob', idade: '20', cidade: 'Porto Alegre'}
+
+
+// // Qual é a saída do programa?
+
+// const a = [1, 2, 3]
+// const ex1 = a.forEach((num, index) => {
+
+// })
+
+// const ex2 = a.map(num => {
+//   return num * 2
+// })
+
+// console.log(ex1); // saída: undefined
+// console.log(ex2); // saída: [2, 4, 6]
+
+
+// // Qual é a saída do programa?
+
+// var a = (! +[] + [] + ![])
+
+// console.log(a.length); // saída: 9
+
+
+// // Qual é a saída do programa?
+
+// console.log(018 - 017); // saída: 3
+// console.log(undefined * 2); // saída: NaN
+// console.log(null * 2); // saída: 0
+// console.log("" * 2); // saída: 0
+
+
+// // Qual é a saída do programa?
+
+// var numeros = [1, 4, 9]
+// var dobros = numeros.map(function(num) {
+
+//   return num * 2 
+// })
+
+// console.log(dobros); // saída: [2, 8, 18]
+
+
+// // Qual é a saída do programa?
+
+// var listaProdutos = ["geladeira", "fogão", "coifa"]
+// var listaEmMaiuscula = listaProdutos.map(primeiraEmMaiuscula)
+
+// function primeiraEmMaiuscula(elemento) {
+
+//   return elemento.charAt(0).toUpperCase() + elemento.slice(1)
+// }
+
+// console.log("Array Original : " + listaProdutos); // saída: Array Original : geladeira,fogão,coifa
+// console.log("Array retornado pelo método map() : " + listaEmMaiuscula); // saída: Array retornado pelo método map() : Geladeira,Fogão,Coifa
+
+
+// // Qual é a saída do programa?
+
+// var arrayNomes = [
+//   {
+//     nome: 'Maria',
+//     sobrenome: 'Souza'
+//   },
+//   {
+//     nome: 'João',
+//     sobrenome: 'Gonçalves'
+//   },
+//   {
+//     nome: 'Pedro',
+//     sobrenome: 'Silva'
+//   }
+// ]
+
+// var nomeCompleto = arrayNomes.map(concatenarNomes)
+// var nomeCompletoArray = arrayNomes.map(concatenarNomesArrayObjetos)
+
+// function concatenarNomes(elemento) {
+
+//   let nome = elemento.nome + " " + elemento.sobrenome
+
+  
+
+//   return nome
+// }
+
+// console.log(nomeCompleto); // saída: ['Maria Souza', 'João Gonçalves', 'Pedro Silva']
+
+// // Também podemos devolver o resultado como uma array de objetos.
+
+// function concatenarNomesArrayObjetos(elemento) {
+
+  
+//   let nomeArrayObjetos = {}
+
+//   nomeArrayObjetos["Seu Nome Completo é"] = elemento.nome + " " + elemento.sobrenome
+
+//   return nomeArrayObjetos
+
+// }
+
+// console.log(nomeCompletoArray); // saída 0 : {Seu Nome Completo é: 'Maria Souza'}
+//                                       // 1 : {Seu Nome Completo é: 'João Gonçalves'}
+//                                       // 2 : {Seu Nome Completo é: 'Pedro Silva'}
