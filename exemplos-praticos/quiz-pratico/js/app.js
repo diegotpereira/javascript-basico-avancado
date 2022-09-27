@@ -6020,3 +6020,110 @@
 //                                       // 2 : {Seu Nome Completo é: 'Pedro Silva'}
 
 
+
+// // Qual é a saída do programa?
+
+// setTimeout(function(){
+//   console.log('primeira linha');
+// }, 0)
+
+// console.log('segunda linha');
+
+// console.log('terceira linha');
+
+// // Resposta: segunda linha
+//           // terceira linha
+//           // primeira linha
+
+
+// // Qual é a saída do programa?
+
+// var str = "As melhores coisas da vida são de graça"
+// var patt = new RegExp("m")
+
+// var rest_teste = patt.test(str)
+// var res_exec = patt.exec(str)
+
+// console.log(rest_teste); // verdadeiro(true)
+// console.log(res_exec); // ['m', index: 3, input: 'As melhores coisas da vida são de graça', groups: undefined]
+
+
+// // Qual é a saída do programa?
+
+// var x = { nome: 'Bob' }
+// var y = Object.assign({}, x)
+
+// console.log(y); // saída: {nome: 'Bob'}
+
+
+// // Qual é a saída do programa?
+
+// var data = new Date()
+// var n = data.toISOString()
+
+// console.log(n); // YYYY-MM-DDTHH:mm:ss.sssZ
+
+
+// // Qual é a saída do programa?
+
+// var a 
+
+// console.log(typeof a); // saída: undefined
+// console.log(typeof null); // saída Object
+
+
+// // Qual é a saída do programa?
+
+// var array = [1, 2, 6, 5, 3, 2, 6]
+
+// console.log(...new Set(array)); // saída: 1 2 6 5 3
+
+// console.log(array.filter((item, index) => array.indexOf(item) === index)); // saída: [1, 2, 6, 5, 3]
+
+// console.log(array.reduce((uniq, item) => uniq.includes(item) ? uniq : [...uniq, item], [])); // saída: [1, 2, 6, 5, 3]
+
+
+// // Qual é a saída do programa?
+
+// let usuario = new Object()
+
+// usuario.nome = 'Bob'
+// usuario.idade = 20
+
+// console.log(usuario); // {nome: 'Bob', idade: 20}
+
+// delete usuario.idade
+
+// console.log(usuario); // {nome: 'Bob'}
+
+
+// // Qual é a saída do programa?
+
+// let nome = 'Bob'
+
+// const idade = 18
+
+// nome = "Peter"
+// idade = 20
+
+// console.log(nome);
+// console.log(idade);
+
+// // Resposta: TypeError: Assignment to constant variable.
+
+
+// // Qual é a saída do programa?
+
+// var numero = ["Um", "Dois", "Três", "Quatro"]
+
+// console.log(numero.pop()); // saída: Quatro
+// console.log(numero.shift()); //  saída: Um
+
+
+// // Qual é a saída do programa?
+
+// var estudante = { nome: 'Bob', idade: 20}
+
+// delete estudante.idade
+
+// console.log(estudante); // saída: {nome: 'Bob'}
