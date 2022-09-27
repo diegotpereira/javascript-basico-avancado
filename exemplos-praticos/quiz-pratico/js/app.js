@@ -6127,3 +6127,350 @@
 // delete estudante.idade
 
 // console.log(estudante); // saída: {nome: 'Bob'}
+
+// // Qual é a saída do programa abaixo?
+
+// function altura() {
+
+//   var altura = 123.56;
+//   var tipo = (altura >= 190) ? "alto" : "curto";
+
+//   return tipo;
+// }
+
+// altura()
+
+// // a) curto
+// // b) 123.56
+// // c) alto
+// // d) 190
+
+// // Resposta a. curto
+
+
+// // Qual é a saída do programa abaixo?
+
+// function javascript() {
+
+//   document.getElementById("demo").innerHTML = Math.abs(-7.25)
+// }
+
+// javascript()
+
+// a) -7.25
+// b) 7.25
+// c) -7
+// d) 7
+
+// Resposta B. 7,25
+
+
+// // Qual é a saída do programa abaixo?
+
+// var a = 5, b = 1;
+// var obj = {a : 10}
+
+// with(obj) {
+
+//   alert(b)
+// }
+
+// // a) 1
+// // b) 10
+// // c) 5
+// // d) Error
+
+// Resposta: a - Primeiramente o intérprete verifica obj para a propriedade b.
+//               Mas ele não encontra nenhuma propriedade b, então pega o valor de fora do objeto dentro do trecho de código JavaScript.
+
+
+// // Qual é um trecho de código JavaScript mais eficiente?
+
+// for(var num = 10; num >= 1; num--) {
+//   document.writeln(num)
+// }
+
+// var num = 10;
+
+// while(num >= 1) {
+//   document.writeln(num)
+//   num++;
+// }
+
+// a) Código 1
+// b) Código 2
+// c) Código 1 e Código 2
+// d) Não é possível comparar
+
+// Resposta: a - O código 1 seria um código JS mais eficiente. 
+//               De fato, o segundo código entrará em erro de tempo de execução, 
+//               pois o valor de num nunca será menor ou igual a um.
+
+
+
+// // // Qual será a saída do seguinte código JavaScript?
+
+// // function imprimirArray(a) {
+
+// //   var len = a.length, i = 0;
+
+// //   if(len == 0) 
+// //      console.log("Array Vazio");
+// //   else {
+
+// //     do {
+// //       console.log(a[i]);
+// //     } while(++i < len)
+// //   }
+// // }
+
+// // imprimirArray()
+
+// // // a) Imprime "Array Vazio"
+// // // b) Imprime 0 no comprimento do array
+// // // c) Imprime os números no array na ordem
+// // // d) Imprime os números no array na ordem inversa
+
+// Resposta: c Explicação: A instrução do/while cria um loop que executa um bloco de código javascript uma vez, 
+//                         antes de verificar se a condição é verdadeira, então repetirá o loop enquanto a condição for verdadeira. 
+//                         Portanto, o iterador percorre o array e os imprime na ordem normal.
+
+
+// // O que acontece no seguinte trecho de código JavaScript:
+
+//   var js = 0;
+
+//   while(js > 10) {
+
+//     console.log(js);
+//     js++;
+//   }
+
+// // a) Uma exceção é lançada
+// // b) Os valores de js são registrados ou armazenados em um determinado local ou armazenamento
+// // c) O valor de js de 0 a 9 é exibido no console
+// // d) Um erro é exibido
+
+// // Resposta: c Explicação: Em JavaScript, Console.log é uma função predefinida que aceita o valor como argumento. 
+//                           //  No momento da execução do código, console.log imprime esse valor no argumento para o console.
+
+
+// Qual será a saída do seguinte código JavaScript?
+
+// Qual dos seguintes tipos de escopo o JavaScript usa?
+
+// a) Sequencial
+// b) Segmental
+// c) Lexical
+// d) Literal
+
+// Resposta: c - Explicação: JavaScript, como a maioria das linguagens de programação atuais, emprega escopo léxico. Isso significa que as funções são executadas com o escopo da variável em vigor quando foram definidas, em vez do escopo da variável em vigor quando são invocadas.
+
+
+// Qual é a diferença básica entre JavaScript e Java?
+
+// a) As funções são consideradas como campos
+// b) As funções são valores, e não há distinção rígida entre métodos e campos
+// c) As variáveis ​​são específicas
+// d) Não há diferença
+
+// Resposta: b - Explicação: Java é uma linguagem de programação orientada a objetos, enquanto JS é uma linguagem de script orientada a objetos. 
+                          // A principal diferença entre JavaScript e Java é que funções são valores, enquanto métodos e campos não são claramente definidos.
+
+
+                        
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// var quiz = [1, 2, 3];
+// var js = [6, 7, 8];
+// var resultado = quiz.concat(js);
+
+// document.writeln(resultado) // saída 1, 2, 3, 6, 7, 8
+
+// // a) 1, 2, 3, 6, 7, 8
+// // b) 123
+// // c) 1, 2, 3
+// // d) Error
+
+
+// Qual será a função do seguinte programa JavaScript?
+
+var escopo = "js escopo";
+
+function verifiqueEscopo() {
+
+  var escopo = "javascript escopo";
+
+  function f() {
+
+    return escopo;
+  }
+  return f;
+}
+
+// a) Retorna o valor no escopo
+// b) Retorna o valor nulo
+// c) Mostra uma mensagem de erro
+// d) Retorna a exceção
+
+// Resposta a - Explicação: O Ambiente Léxico é um objeto que está conectado com cada função em execução, bloco de código e o script como um todo em JavaScript. O valor em scope é retornado pelo snippet de código acima.
+
+
+// Que tipo de linguagem JavaScript é
+
+// 1. Orientado a Objeto
+// 2. Baseado em objetos
+// 3. Linguagem de montagem
+// 4. Alto nível
+
+// Resposta: B. JavaScript não é uma linguagem puramente baseada em OOP (programação orientada a objetos) como PHP, 
+// java ou muitas outras linguagens, embora seja uma linguagem baseada em objetos. Não é a linguagem baseada em OOP, 
+// porque não possui três propriedades básicas de linguagens de programação orientadas a objetos, como polimorfismo, encapsulamento e herança.
+
+
+// // Qual das opções a seguir é a saída correta para o seguinte código JavaScript:
+
+// var x = 5, y = 1;
+// var obj = { x: 10 }
+
+// while(obj) {
+//   console.log(y); // saída A. 1
+// }
+
+// // a. 1
+// // b. Error
+// // c. 10
+// // d. 5
+
+
+// Em JavaScript, o que é um bloco de instrução?
+
+// 1. Bloco condicional
+// 2. bloco que combina várias instruções em uma única instrução composta
+// 3. bloco condicional e uma única instrução
+// 4. bloco que contém uma única instrução
+
+// Resposta B. Um bloco de instrução pode ser entendido como o conjunto de zero ou mais instruções. 
+// Em geral, um bloco de instrução tem definição comum "que combina uma ou várias instruções em uma única instrução para facilitar.
+
+
+// Quando o intérprete encontra uma declaração vazia, o que ele fará
+
+// a. Mostra um aviso
+// b. Solicita o preenchimento da declaração
+// c. Lança um erro
+// d. Ignora as declarações
+
+// Resposta: D. Ignora as declarações - Em JavaScript, quando o interpretador encontra uma instrução vazia, 
+                                     // ele normalmente ignora ou não responde a essa instrução vazia. 
+                                     // As declarações vazias também às vezes são muito úteis, como usamos 
+                                     // as declarações vazias para criar loops para nada.
+
+                            
+// // O que acontecerá se o seguinte código JavaScript for executado?
+
+// var contar = 0;
+
+// while(contar < 10) {
+
+//   console.log(contar);
+//   contar++;
+// }
+
+// // a. Um erro é exibido
+// // b. Uma exceção é lançada
+// // c. Os valores da variável de contagem são registrados ou armazenados em um local ou armazenamento específico
+// // d. O valor da contagem de 0 a 9 é exibido no console
+
+// // Resposta: C. A função "console.log()" usada na função acima é uma das funções predefinidas do JavaScript. 
+//              // Ele recebe valores como argumentos passados ​​a ele e exibe esse valor em argumentos dentro do console quando o código é executado.
+
+
+// // Qual das opções a seguir é a saída correta para o seguinte código JavaScript:
+
+// var grade = 'C';
+// var resultado;
+
+// switch(grade) {
+
+//   case 'A':
+//     resultado += " 10";
+//     break;
+
+//   case 'B': 
+//     resultado += " 9";
+//     break;
+
+//   case 'C':
+//     resultado += " 8"
+//     break;
+
+//   default:
+//     resultado += " 0"
+// }
+
+// console.log(resultado); // saída: C. undefined 8
+
+
+// // a. 10
+// // b. 9
+// // c. 8
+// // d. 0
+
+
+// // Qual das opções a seguir é a saída correta para o seguinte código JavaScript:
+
+// var x = 3;
+// var y = 2;
+// var z = 0;
+
+// if(x == y)
+//   console.log(x);
+
+// else if(x == y)
+//    console.log(x);
+
+// else 
+//    console.log(z);
+
+// // a. 3
+// // b. 0
+// // c. Error
+// // d. 2
+
+// Resposta: b. 0
+
+
+// Qual das seguintes variáveis ​​tem precedência sobre as outras se os nomes forem os mesmos?
+
+// a. Variavel global 
+// b. O elemento local
+// c. Os dois acima
+// d. Nenhuma das acima
+
+// Resposta B. Explicação: Em JavaScript, a variável local tem precedência sobre a variável global 
+// se o nome das variáveis ​​locais e globais for o mesmo.
+
+
+// Qual das opções a seguir é usada como início literal hexadecimal?
+
+// a. 00
+// b. 0x
+// c. 0X
+// d. Tanto 0x quanto 0X
+
+// Resposta: D. Explicação: Em geral, X e x podem ser usados ​​para denotar os valores hexadecimais, 
+// portanto, qualquer literal inteiro que comece com 0X ou 0x denota um número hexadecimal.
+
+
+// Quando há um valor indefinido ou infinito durante uma computação aritmética em um programa, o JavaScript imprime?
+
+// a. Imprime um erro de exceção
+// b. Imprime um erro de estouro
+// c. Exibe "Infinito"
+// d. Imprime o valor como tal
+
+// Resposta: C. Explicação: No caso em que o resultado de qualquer expressão aritmética estar além do maior número representável, 
+// o JavaScript imprime o infinito. Da mesma forma, se o resultado de qualquer operação numérica estiver além do maior número negativo, 
+// o JavaScript imprime infinito negativo.
