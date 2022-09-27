@@ -6474,3 +6474,34 @@ function verifiqueEscopo() {
 // Resposta: C. Explicação: No caso em que o resultado de qualquer expressão aritmética estar além do maior número representável, 
 // o JavaScript imprime o infinito. Da mesma forma, se o resultado de qualquer operação numérica estiver além do maior número negativo, 
 // o JavaScript imprime infinito negativo.
+
+
+// // Qual das opções a seguir é a saída correta para o código JavaScript fornecido?
+
+// var porrada = new Function("num1", "num2", "return Math.pow(num1, num2)");
+// document.writeln(porrada(2,3)); // saída: 8
+
+// // 1. 8
+// // 2. 3
+// // 3. 6
+// // 4. Error
+
+// // Qual das opções a seguir é a saída correta para o código JavaScript fornecido?
+
+//   function codigo(id, nome) {
+
+//     this.id = id;
+//     this.nome = nome;
+//   }
+
+//   function pCodigo(id, nome) {
+
+//     codigo.call(this, id, nome)
+//   }
+
+//   console.log(new pCodigo(004, "James Dio").nome);
+
+// // 1. James Dio
+// // 2. compilation error
+// // 3. runtime error
+// // 4. undefined
