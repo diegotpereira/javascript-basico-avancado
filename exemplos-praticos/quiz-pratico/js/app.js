@@ -6021,6 +6021,112 @@
 
 
 
+// // Qual é a saída do programa?
+
+// setTimeout(function(){
+//   console.log('primeira linha');
+// }, 0)
+
+// console.log('segunda linha');
+
+// console.log('terceira linha');
+
+// // Resposta: segunda linha
+//           // terceira linha
+//           // primeira linha
+
+
+// // Qual é a saída do programa?
+
+// var str = "As melhores coisas da vida são de graça"
+// var patt = new RegExp("m")
+
+// var rest_teste = patt.test(str)
+// var res_exec = patt.exec(str)
+
+// console.log(rest_teste); // verdadeiro(true)
+// console.log(res_exec); // ['m', index: 3, input: 'As melhores coisas da vida são de graça', groups: undefined]
+
+
+// // Qual é a saída do programa?
+
+// var x = { nome: 'Bob' }
+// var y = Object.assign({}, x)
+
+// console.log(y); // saída: {nome: 'Bob'}
+
+
+// // Qual é a saída do programa?
+
+// var data = new Date()
+// var n = data.toISOString()
+
+// console.log(n); // YYYY-MM-DDTHH:mm:ss.sssZ
+
+
+// // Qual é a saída do programa?
+
+// var a 
+
+// console.log(typeof a); // saída: undefined
+// console.log(typeof null); // saída Object
+
+
+// // Qual é a saída do programa?
+
+// var array = [1, 2, 6, 5, 3, 2, 6]
+
+// console.log(...new Set(array)); // saída: 1 2 6 5 3
+
+// console.log(array.filter((item, index) => array.indexOf(item) === index)); // saída: [1, 2, 6, 5, 3]
+
+// console.log(array.reduce((uniq, item) => uniq.includes(item) ? uniq : [...uniq, item], [])); // saída: [1, 2, 6, 5, 3]
+
+
+// // Qual é a saída do programa?
+
+// let usuario = new Object()
+
+// usuario.nome = 'Bob'
+// usuario.idade = 20
+
+// console.log(usuario); // {nome: 'Bob', idade: 20}
+
+// delete usuario.idade
+
+// console.log(usuario); // {nome: 'Bob'}
+
+
+// // Qual é a saída do programa?
+
+// let nome = 'Bob'
+
+// const idade = 18
+
+// nome = "Peter"
+// idade = 20
+
+// console.log(nome);
+// console.log(idade);
+
+// // Resposta: TypeError: Assignment to constant variable.
+
+
+// // Qual é a saída do programa?
+
+// var numero = ["Um", "Dois", "Três", "Quatro"]
+
+// console.log(numero.pop()); // saída: Quatro
+// console.log(numero.shift()); //  saída: Um
+
+
+// // Qual é a saída do programa?
+
+// var estudante = { nome: 'Bob', idade: 20}
+
+// delete estudante.idade
+
+// console.log(estudante); // saída: {nome: 'Bob'}
 
 // // Qual é a saída do programa abaixo?
 
@@ -6368,461 +6474,3 @@ function verifiqueEscopo() {
 // Resposta: C. Explicação: No caso em que o resultado de qualquer expressão aritmética estar além do maior número representável, 
 // o JavaScript imprime o infinito. Da mesma forma, se o resultado de qualquer operação numérica estiver além do maior número negativo, 
 // o JavaScript imprime infinito negativo.
-
-
-// // Qual será a saída?
-
-// function minhaFunc() {
-
-//   console.log(nome);
-//   console.log(idade);
-
-//   var nome = 'Bootstrap'
-//   let idade = 21
-// }
-// minhaFunc()
-
-// // A. undefined and ReferenceError
-// // B. Bootstrap and undefined
-// // C. ReferenceError and 21
-// // D. Bootstrap and ReferenceError
-
-// // Resposta: A. undefined and ReferenceError
-
-
-// // Qual é a saída do código a seguir?
-
-// for(var i = 0; i < 3; i++) {
-
-//   setTimeout(() => console.log(i), 1) // saída: C. 3 3 3
-// }
-
-// // A. 1 1 1
-// // B. 3 2 1
-// // C. 3 3 3
-// // D. 1 2 3
-
-
-// // Qual deles é o verdadeiro?
-
-// const passaro = {
-
-//   tamanho: 'pequeno'
-// }
-
-// const rato = {
-  
-//   nome: 'Mickey',
-//   pequeno: true
-// }
-
-// // A. rato[passaro["tamanho"]] não é válido
-// // B. rato.passaro.tamanho não é válido
-// // C. rato[passaro.tamanho] não é válido
-// // D. Todos são válidos
-
-// // Resposta: B. rato.passaro.tamanho não é válido
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// let x = 10
-
-// document.write(x, " , ", toString(x)) // saída: 10 , [object Undefined]
-
-// // A. 10 , 10
-// // B. 10 , undefined
-// // C. 10 , [object Undefined]
-// // D. None of the above
-
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// let x = 10
-
-// console.log(typeof x, " , ", typeof String(x)); // saída: A. number, string - No código JavaScript acima, 
-                                                  // estamos usando o método String() que é um método global para converter números em string. 
-                                                  // Assim, a instrução typeof String(x) retornará string .
-
-// // A. number , string
-// // B. number , number
-// // C. object , string
-// // D. object , object
-
-
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// let x = "10"
-// let y = + x
-
-// console.log(typeof y); // saída: D. number - Em JavaScript, o operador unário + pode ser usado para converter uma variável em um número. 
-//                                           // Portanto, a declaração seja y = + x; converterá variável em número.
-
-// // A. string
-// // B. object
-// // C. undefined
-// // D. number
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// try {
-  
-//   const carros = {
-
-//     compania: 'Honda'
-//   }
-
-//   Object.seal(carros)
-//   delete carros.compania
-
-//   console.log(carros.compania);
-
-// } catch (error) {
-
-//   console.log(error.message);
-// }
-
-// // A. undefined
-// // B. Honda
-// // C. ValueError
-// // D. TypeError
-
-// // Resposta: B. Honda - No código JavaScript acima, selamos o objeto e a 
-// // propriedade seal não permite que o objeto seja excluído. Portanto, a empresa não será excluída.
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// try {
-  
-//   const carros = {
-
-//     empresa: 'Honda'
-//   }
-
-//   delete carros.empresa
-
-//   console.log(carros.empresa);
-
-// } catch (error) {
-  
-//   console.log(error.message);
-// }
-
-// // A. undefined
-// // B. Honda
-// // C. ValueError
-// // D. TypeError
-
-// // Resposta A. undefined - No código JavaScript acima, a instrução delete cars.company; excluirá a propriedade.
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// console.log(Math.round(107.5)); // saída: C. 108
-
-// // A. 107.5
-// // B. 107
-// // C. 108
-// // D. 107.00
-
-
-// O que o método getTime() do objeto Date retorna?
-
-// A. Data no formato DD-MM-AAAA
-// B. Data no formato DD MON YYYY
-// C. Data no formato MON, DD YYYY
-// D. Número de milissegundos desde 1º de janeiro de 1970
-
-// Resposta D. Número de milissegundos desde 1º de janeiro de 1970
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// const atual = new Date()
-
-// console.log(atual); // saída: Tue Sep 27 2022 15:33:46 GMT-0300 (Horário Padrão de Brasília)
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// const valores = [10, 20, 30]
-// const resultado = valores.map(meuFuncao)
-
-// console.log("Resultado: ", resultado);
-
-// function meuFuncao(valor, indice, array) {
-
-//   return valor * valor
-// }
-
-// // 1. Resultado: 10,20,30
-// // 2. Resultado: 10*10,20*20,30*30
-// // 3. Resultado: 100,400,900
-// // 4. ValueError
-
-// // Resposta: 3. Resultado: 100,400,900 - map cria novo array e multiplica por cada elemento
-//                                       // 10 * 10 = 100
-//                                       // 20 * 20 = 400
-//                                       // 30 * 30 = 900
-
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// const arr = [10, 20, 30]
-// let resultado = 0
-
-// arr.forEach(minhaFuncao)
-
-// console.log("Resultado: ", resultado);
-
-// function minhaFuncao(valor, indice, array) {
-
-//   resultado += valor
-// }
-
-// // 1. Resultado: 60
-// // 2. Resultado: 102030
-// // 3. Resultado: 10,20,30
-// // 4. ValueError
-
-// // Resposta 1. Resultado: 60 - usamos o método forEach() que é usado para chamar uma função (uma função de retorno de chamada) uma vez para cada elemento do array
-//                            // e na função de retorno de chamada, estamos adicionando os elementos do array.
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// var carros = ["Honda", "Hyundai", "Mahindra"]
-// var resultado = carros.unshift("Toyota", "Tata")
-
-// console.log("[", resultado, "]" , carros); // saída: A. ['Toyota', 'Tata', 'Honda', 'Hyundai', 'Mahindra']
-
-// // A. [5] Toyota,Tata,Honda,Hyundai,Mahindra
-// // B. [5]Honda,Hyundai,Mahindra,Toyota,Tata
-// // C. [2] Toyota,Tata
-// // D. [5] Honda,Hyundai,Toyota,Tata,Mahindra
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// var carros = ["Honda", "Hyundai", "Mahindra"]
-// var resultao = carros.shift()
-
-// console.log("Resultado: ", carros); // saída: 3. ['Hyundai', 'Mahindra']
-
-// // 1. Result: Honda,Hyundai,Mahindra
-// // 2. Result: Honda
-// // 3. Result: Hyundai,Mahindra
-// // 4. Result: Honda,Mahindra
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// var valores = [10, 20, 30, 40]
-// var resultado = valores.reduceRight(function(x,y){
-
-//   return (x+y)
-// })
-
-// console.log("Resultado: " + resultado); // saída: D. Resultado: 100
-
-// // A) Resultado: 40
-// // B) Resultado: 70
-// // C) Resultado: 90
-// // D) Resultado: 100
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// var msgs = new Array("Ola", "Hey", "Manhã!")
-
-// for(i = 0; i < msgs.length; i++) {
-
-//   document.write(msgs[i] + " | "); // saída: A. Ola | Hey | Manhã
-// }
-
-// // A) Ola | Hey | Manhã! |
-// // B) Ola | Hey |
-// // C) ValueError
-// // D) TypeError
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// let carros1 = ['Honda', 'Hyundai']
-// let carros2 = carros1
-
-// carros1.push('Mahindra')
-
-// document.write(carros1 + "---" + carros2) // saída: B. Honda, Hyundai, Mahinda --- Honda, Hyundai, Mahinda - 
-//                                          // No JavaScript, os arrays são objetos e os elementos do array são armazenados por referência.
-//                                          // Portanto, quando um valor de matriz é copiado, qualquer alteração na matriz copiada também refletirá na matriz original.
-//                                          // Assim, os valores de carros1 e carros2 são os mesmos.
-
-
-// // A) Honda,Hyundai,Mahinda---Honda,Hyundai
-// // B) Honda,Hyundai,Mahinda---Honda,Hyundai,Mahinda
-// // C) Honda,Hyundai ---Honda,Hyundai
-// // D) [Honda,Hyundai,Mahinda]---[Honda,Hyundai,Mahinda]
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// let carros = ['Honda', 'Hyundai']
-// carros.push('Mahindra')
-
-// document.write(typeof carros + " " + carros) // saída: C. object Honda,Hyundai,Mahindra
-
-// // A. array Honda,Hyundai,Mahindra
-// // B. string Honda,Hyundai,Mahindra
-// // C. object Honda,Hyundai,Mahindra
-// // D. object "Honda", "Hyundai", "Mahindra"
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// const array = ['h', 'e', 'l', 'l', 'o']
-
-// document.write(array[0])
-// document.write(array[1])
-
-// // A. he
-// // B. undefinedh
-// // C. ValueError
-// // D. TypeError
-
-// // Resposta A. he
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// let x = "Ola, IncluirAjuda!";
-
-// document.getElementById("teste").innerHTML = x.slice(-13, -1) // saída B. IncluirAjuda - O valor negativo conta a partir do final da string.
-
-// // A) IncluirAjuda!
-// // B) IncluirAjuda
-// // C) ValueError
-// // D) Ola,
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// let str1 = new String("IncluirAjuda!")
-// let str2 = new String("IncluirAjuda!")
-
-// document.getElementById("teste").innerHTML = (str1 == str2) // saída: B. falso(false)
-//                                                             // No código acima, str1 e str2 são os objetos.
-//                                                             // No JavaScript, a comparação de dois objetos retorna false.
-
-
-// // A) verdadeiro
-// // B) falso
-// // C) Verdadeiro
-// // D) Falso
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// let str = "IncluirAjuda"
-
-// document.getElementById("teste").innerHTML = str.length; // saída B. 12
-
-// // A) 11
-// // B) 12
-// // C) ValorErro
-// // D) Erro de sintaxe
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// function add(a, b) {
-
-//   return a+b;
-// }
-
-// document.getElementById("teste").innerHTML = add; // saída: function add(a, b) { return a+b; }
-
-// // A. SyntaxError
-// // B. ValueError
-// // C. 0
-// // D. function add(a, b) { return a+b; }
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// var x = (10 + 20) * 5;
-
-// document.getElementById("teste").innerHTML = x; // saída: B. 150 - No código acima, a expressão é (10 + 20) * 5. 
-                                                  // A precedência de () é maior do que qualquer outro operador.
-                                                  // Este (10 + 20) será avaliado primeiro.
-
-// // A) 110
-// // B) 150
-// // C) TypeError
-// // D) ValueError
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// var x = 10 + 20 * 5;
-
-// document.getElementById("teste").innerHTML = x; // saída: A. 110 
-//                                                 // A precedência do operador de multiplicação (*) é maior que o operador de adição (+).
-//                                                 // Este 20*5 será avaliado primeiro.
-// // A) 110
-// // B) 150
-// // C) TypeError
-// // D) ValorErro
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// var x = 5;
-
-// document.getElementById("teste").innerHTML = ++x; // saída: C. 6
-
-// // A) 4
-// // B) 5
-// // C) 6
-// // D) 7
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// var a = 10 + 20 + "5";
-
-// document.getElementById("teste").innerHTML = a; // saída: B. 305
-
-// // A) 35
-// // B) 305
-// // C) TypeError
-// // D) ValorErro
-
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// var nome = "Alex" + " " + "Alvin";
-
-// document.getElementById("teste").innerHTML = nome; // saída: A. Alex Alvin
-
-// // A) Alex Alvin
-// // B) AlexAlvin
-// // C) TypeError
-// // D) ValueError
-
-// // Qual será a saída do seguinte código JavaScript?
-
-// var a;
-
-// document.getElementById("teste").innerHTML = a + 1; // saída: D. NaN
-
-// // A) 0
-// // B) undefined
-// // C) 1
-// // D) NaN
