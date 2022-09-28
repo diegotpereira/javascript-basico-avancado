@@ -6476,6 +6476,7 @@ function verifiqueEscopo() {
 // o JavaScript imprime infinito negativo.
 
 
+
 // // Qual das opções a seguir é a saída correta para o seguinte código JavaScript:
 
 // var a = 0;
@@ -6497,9 +6498,80 @@ function verifiqueEscopo() {
 // // C) 013
 // // D) 01
 
+// // Qual das opções a seguir é a saída correta para o código JavaScript fornecido?
+
+// var porrada = new Function("num1", "num2", "return Math.pow(num1, num2)");
+// document.writeln(porrada(2,3)); // saída: 8
+
+// // 1. 8
+// // 2. 3
+// // 3. 6
+// // 4. Error
+
+// // Qual das opções a seguir é a saída correta para o código JavaScript fornecido?
+
+//   function codigo(id, nome) {
+
+//     this.id = id;
+//     this.nome = nome;
+//   }
+
+//   function pCodigo(id, nome) {
+
+//     codigo.call(this, id, nome)
+//   }
+
+//   console.log(new pCodigo(004, "James Dio").nome);
+
+// // 1. James Dio
+// // 2. compilation error
+// // 3. runtime error
+// // 4. undefined
+
+
+// // Qual das opções a seguir é a saída correta para o seguinte código JavaScript fornecido:
+
+// function suaFuncao() {
+
+//   document.getElementById("teste").innerHTML = Math.cbrt(2); // saída: D. 1.2599210498948732
+
+//   // A) 972
+//   // B) 81
+//   // C) 9
+//   // D) 1.2599210498948732
+
+// }
+
+// suaFuncao()
+
+
+// // Qual é a saída do programa abaixo:
+
+
+// var a = 0
+// var b = 0
+
+// while (a < 3) {
+  
+//   a++
+
+//   b += a
+
+//   console.log(b); // saída: a. 1 3 6
+//                  // 0 + 1 = 1
+//                  // 1 + 2 = 3
+//                  // 3 + 3 = 6
+// }
+
+// // a. 136
+// // b. 123
+// // c. 013
+// // d. 01
+
 
 
 // // Qual das opções a seguir seria a saída correta para o código JavaScript fornecido?
+
 
 // var comprimento = 5;
 // var x = 5;
@@ -6589,6 +6661,164 @@ function verifiqueEscopo() {
 
 // // Qual é a saída do código abaixo?
 
+// var tamanho = 5;
+// var x = 5;
+// var tamanho = 4;
+
+// for(var j = tamanho; j > 0; j--) {
+
+//   console.log(x); // saída: A. 5555
+//   // xx = x - 2;
+// }
+
+// // A) 5555
+// // B) 5321
+// // C) 531
+// // D) 531-1-3
+
+
+
+// // Qual é a saída?
+
+// var a = "Global"
+// var x = a.lastIndexOf("G")
+
+// console.log(x); // saída: 0
+
+
+// // Qual é a saída?
+
+// var minhaVar = Boolean('false')
+
+// document.getElementById('demo').innerHTML = minhaVar;
+
+// // A) undefined
+// // B) error 
+// // C) true 
+// // D) false 
+
+
+// // Qual é a saída do código a seguir?
+
+// function x() {
+
+//   console.log(2 + 5 + "8"); // saída: C. 78
+// }
+
+// x()
+
+// // A) 258
+// // B) 7
+// // C) 78
+// // D) Erro de compilação
+
+
+// // Qual é a saída do código a seguir?
+
+// num1 = 5
+
+// function cal() {
+
+//   num1 = 10
+//   num2 = 5
+
+//   num3 = num2 * num1 
+
+//   console.log(num3); // saída: B. 50
+// }
+
+// cal()
+
+// // A) 25
+// // B) 50
+// // C) 100
+// // D) Erro
+
+
+// // Qual é a saída do código a seguir?
+
+// var a = 10;
+
+// if(a == a++)
+
+// console.log(a); // saída D. 11
+
+// // A) Error
+// // B) 10
+// // C) 1010
+// // D) 11
+
+
+// // Qual é a saída do código a seguir?
+
+// a = 8 + 8;
+
+// console.log(16); // saída: A) 16
+
+// // A) 16
+// // B) Erro de compilação 
+// // C) 88
+// // D) Erro de tempo de execução
+
+
+// // Qual é a saída do código a seguir?
+
+// x = 7 + "7";
+
+// console.log(x); // saída: D. 77
+
+// // A) Erro 
+// // B) 7
+// // C) 14 
+// // D) 77
+
+
+
+// // Qual será a saída do código abaixo?
+
+// class Rect {
+
+//   constructor(h, w) {
+
+//     this.height = h;
+//     this.width = w;
+//   }
+
+//   get foo() {
+//     return this.foo();
+//   }
+
+//   foo() {
+//     return this.height * this.width
+//   }
+// }
+
+// const sq = new Rect(5, 20)
+
+// console.log(sq.foo()); // saída: B. 100
+
+// // A) this.height * this.width
+// // B) 100
+// // C) Error 
+// // D) 5 * 20
+
+
+// // Qual será a saída do código abaixo?
+
+// var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+// var minhaArray = array.filter(v => v % 3 === 0);
+
+// console.log(minhaArray); saída: C. [3, 6, 9, 12, 15]
+
+// A) [1, 2, 4, 5, 7, 8, 10, 11, 13, 14]
+// B) minhaArray
+// C) [3, 6, 9, 12, 15]
+// D) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+
+// // Qual será a saída do código abaixo?
+
+
 // var x = 5
 // var y = 2
 // var z = x % y 
@@ -6612,3 +6842,127 @@ function verifiqueEscopo() {
 // // B) um dois
 // // C) error 
 // // D) undefined
+
+// document.getElementById("demo").innerHTML = z; // saída: A. 1
+
+// // A) 1
+// // B) 2
+// // C) 3
+// // D) 4
+
+
+// // Qual será a saída do código abaixo?
+
+// var x = 123e5;
+
+// document.getElementById("demo").innerHTML = x; // saída: B. 12300
+
+// // A) 0.0123
+// // B) 12300
+// // C) Error 
+// // D) undefined
+
+
+// // Qual será a saída do código abaixo?
+
+// function minhaFuncao() {
+
+//   var res = "";
+
+//   res = res + Number.isFinite(5-2)
+
+//   document.getElementById("demo").innerHTML = res; // saída B. verdadeiro(true)
+// }
+
+// minhaFuncao()
+
+// // A) 4
+// // B) true 
+// // C) false 
+// // D) error
+
+
+// // Qual será a saída do código abaixo?
+
+// function saida(opcao) {
+
+//   return (opcao ? "sim" : "nao")
+// }
+
+// ans = true;
+
+// console.log(saida(ans)); // saída: A. sim
+
+// // A) sim
+// // B) nao
+// // C) Erro em tempo de execução
+// // D) Erro de compilação
+
+
+// // Qual será a saída do código abaixo?
+
+// var obj = {
+
+//   length: 20,
+//   height: 35
+// }
+
+// if('breadth' in obj === false) {
+
+//   obj.breadth = 12
+// }
+
+// console.log(obj.breadth); // saída: B. 12
+
+// // A) 20
+// // B) 12
+// // C) undefined
+// // D) error 
+
+
+// // Qual será a saída do código abaixo?
+
+// function calAltura() {
+
+//   var altura = 123.56;
+//   var tipo = (altura >= 190) ? "alto" : "curto";
+
+//   console.log(tipo); // saída: D. curto
+
+//   return tipo;
+
+// }
+
+// calAltura()
+
+// // A) 123.56
+// // B) 190
+// // C) alto
+// // D) curto
+
+
+// // Qual será a saída do código abaixo?
+
+// let a = "Ola";
+// let b = " mundo"
+
+// console.log(a + b); // saída: C. Ola mundo
+
+// // A) Ola 
+// // B) mundo 
+// // C) Ola mundo 
+// // D) undefined
+
+
+// Qual será a saída do código abaixo?
+
+
+function saida(object) {
+
+  var lugar = object ? object.lugar : "Italia";
+
+  return "limpar: " + lugar;
+}
+
+console.log(saida({ lugar:India}));
+
