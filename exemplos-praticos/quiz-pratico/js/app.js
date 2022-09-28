@@ -6474,3 +6474,141 @@ function verifiqueEscopo() {
 // Resposta: C. Explicação: No caso em que o resultado de qualquer expressão aritmética estar além do maior número representável, 
 // o JavaScript imprime o infinito. Da mesma forma, se o resultado de qualquer operação numérica estiver além do maior número negativo, 
 // o JavaScript imprime infinito negativo.
+
+
+// // Qual das opções a seguir é a saída correta para o seguinte código JavaScript:
+
+// var a = 0;
+// var b = 0;
+
+// while (a < 3) {
+  
+//   a++;
+//   b += a;
+
+//   console.log(b); // saída: A. 136
+                     // 0 += 1 = 1
+                     // 1 += 2 = 3
+                     // 3 += 3 = 6
+// }
+
+// // A) 136
+// // B) 123
+// // C) 013
+// // D) 01
+
+
+
+// // Qual das opções a seguir seria a saída correta para o código JavaScript fornecido?
+
+// var comprimento = 5;
+// var x = 5;
+// var comprimento = 4;
+
+// for(var j = comprimento; j >= 0; j--) {
+
+//   console.log(x); // saída: D. 5 3 1 -1 -3 - O valor da variável x diminuirá 2 vezes quando o corpo do loop for executado 
+//                                    // e o corpo executará 4 vezes até que o valor da variável de j seja 0.
+//   x = x - 2
+// }
+
+// // A) 5 5 5 5
+// // B) 5 3 2 1
+// // C) 5 3 1
+// // D) 5 3 1 -1 -3
+
+
+// // Qual das opções a seguir seria a saída correta para o código JavaScript fornecido?
+
+// var x = 0;
+
+// for(x;x < 10; x++)
+//    console.log(x); // saída: C. 0 1 2 3 4 5 6 7 8 9
+
+//   // A) 10
+//   // B) erro
+//   // C) 0 1 2 3 4 5 6 7 8 9
+//   // D) 5
+
+
+// // Considere o seguinte trecho de código JavaScript:
+
+// function fun() {
+
+//   if(0 === undefined)
+//      debugger;
+// } 
+
+// // Qual é o papel da instrução "debugger"?
+
+// // A) É um tipo de palavra-chave que é usada para depurar todo o programa de uma só vez
+// // B) Não fará nada, embora seja um ponto de interrupção
+// // C) Ele irá depurar o erro nessa declaração
+// // D) Todos acima mencionados
+
+// // Resposta B. Um programa pode conter vários erros como erros de sintaxe, erros lógicos, etc, 
+// // e para muitos deles não há mensagens de alerta e também não há indicações para encontrar os erros.
+// // Portanto, para encontrar a localização do erro e corrigi-lo, o desenvolvedor configura os pontos 
+// // de interrupção no código duvidoso usando a janela do debugger.
+
+
+// // Qual das opções a seguir é a saída correta para o código JavaScript fornecido?
+
+// const obj = { 
+//   prop:12
+// }
+
+// Object.preventExtensions(obj)
+
+// console.log(Object.isExtensible(obj)); // saída: D. falso(false) - Object.preventExtensions() apenas impede a inclusão de 
+//                                                                 // novas propriedades que já foram adicionadas a um objeto.
+//                                                                 // Essa mudança não é reversível, o que significa que uma vez 
+//                                                                 // que um objeto se torna não extensível, ele não pode ser 
+//                                                                 // alterado para extensível.
+
+// // A) 12
+// // B) error
+// // C) true
+// // D) false
+
+
+// // // Qual é a saída do código abaixo?
+
+// // function x() {
+
+// //   console.log(2 + 5 + "8"); // saída: D. 78
+// // }
+
+// // // A) 258
+// // // B) Error 
+// // // C) 7
+// // // D) 78
+
+// x()
+
+
+// // Qual é a saída do código abaixo?
+
+// var x = 5
+// var y = 2
+// var z = x % y 
+
+// console.log(z); // saída: B. 1
+
+// // A) 0
+// // B) 1
+// // C) 2
+// // D) 5
+
+
+// // Qual é a saída do código abaixo?
+
+// txt1 = "um";
+// txt1 += "dois"
+
+// console.log(txt1); // saída: A. umdois
+
+// // A) umdois
+// // B) um dois
+// // C) error 
+// // D) undefined
