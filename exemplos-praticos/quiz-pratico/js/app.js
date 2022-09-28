@@ -6954,15 +6954,3 @@ function verifiqueEscopo() {
 // // D) undefined
 
 
-// Qual será a saída do código abaixo?
-
-
-function saida(object) {
-
-  var lugar = object ? object.lugar : "Italia";
-
-  return "limpar: " + lugar;
-}
-
-console.log(saida({ lugar:India}));
-
