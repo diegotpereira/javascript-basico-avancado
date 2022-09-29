@@ -6294,27 +6294,27 @@
 // // d) Error
 
 
-// Qual será a função do seguinte programa JavaScript?
+// // Qual será a função do seguinte programa JavaScript?
 
-var escopo = "js escopo";
+// var escopo = "js escopo";
 
-function verifiqueEscopo() {
+// function verifiqueEscopo() {
 
-  var escopo = "javascript escopo";
+//   var escopo = "javascript escopo";
 
-  function f() {
+//   function f() {
 
-    return escopo;
-  }
-  return f;
-}
+//     return escopo;
+//   }
+//   return f;
+// }
 
-// a) Retorna o valor no escopo
-// b) Retorna o valor nulo
-// c) Mostra uma mensagem de erro
-// d) Retorna a exceção
+// // a) Retorna o valor no escopo
+// // b) Retorna o valor nulo
+// // c) Mostra uma mensagem de erro
+// // d) Retorna a exceção
 
-// Resposta a - Explicação: O Ambiente Léxico é um objeto que está conectado com cada função em execução, bloco de código e o script como um todo em JavaScript. O valor em scope é retornado pelo snippet de código acima.
+// // Resposta a - Explicação: O Ambiente Léxico é um objeto que está conectado com cada função em execução, bloco de código e o script como um todo em JavaScript. O valor em scope é retornado pelo snippet de código acima.
 
 
 // Que tipo de linguagem JavaScript é
@@ -6954,3 +6954,175 @@ function verifiqueEscopo() {
 // // D) undefined
 
 
+// // Qual será a saída do código abaixo?
+
+// var a = [1, 2, 3, 4, 5];
+
+// var novoArray = a.slice(0, 3)
+
+// console.log(novoArray); // saída: A. [1, 2, 3]
+
+// // A) [1, 2, 3]
+// // B) [4, 5]
+// // C) [1, 2, 3, 4]
+// // D) [1, 2, 3, 4, 5]
+
+
+// // Qual será a saída do código abaixo? 
+
+// var soma = 0;
+// var arr = [10, 15, 20, 30]
+
+// arr.forEach(function minhaFuncao(elemento) {
+
+//   soma = soma + elemento 
+// })
+
+// console.log(soma); // saída: B. 75
+
+// // A) 70
+// // B) 75
+// // C) 10
+// // D) Erro 
+
+
+// // Qual será a saída do código abaixo?
+
+// var valores = ["um", "dois", "tres"]
+// var ans = valores.shift()
+
+// console.log(ans); // saída: A. um
+
+// // A) um 
+// // B) dois 
+// // C) tres 
+// // D) Erro 
+
+
+// // Qual será a saída do código abaixo?
+
+// var arr = [1, 2, 3]
+// var rev = arr.reverse()
+
+// console.log(rev); // saída: B. [3, 2, 1]
+
+// // A) 1, 2, 3
+// // B) 3, 2, 1
+// // C) 3 
+// // D) 1
+
+
+// // Qual será a saída do código abaixo?
+
+// function emp(id, nome) {
+
+//   this.id = id;
+//   this.nome = nome 
+// }
+
+// e = new emp(103, "Bob Marley")
+
+// console.log(e.id + " " + e.nome); // saída: C. 103 Bob Marley
+
+// // A) 103 bob Marley
+// // B) 103 
+// // C) 103 Bob Marley
+// // D) Bob Marley
+
+
+// // Qual será a saída do código abaixo?
+
+// var emp = new Object() 
+
+// emp.nome = "Bob Marley"
+// emp.profissão = "cantor"
+
+// console.log(emp.nome + ", " + "profissão: " + emp.profissão); // saída: B. Bob Marley, profissão: cantor
+
+// // A) profissão: cantor
+// // B) Bob Marley, profissão: cantor
+// // C) Bob Marley
+// // D) cantor
+
+
+// // Qual será a saída do código abaixo?
+
+// function Colaborador(nome, salario) {
+
+//   this.nome = nome 
+//   this.salario = salario 
+//   this.alterarSalario = AlterarSalario
+
+//   function AlterarSalario(outroSalario) {
+
+//     this.salario = outroSalario
+//   }
+// }
+
+// colaborador = new Colaborador("João Santos", 3000)
+// colaborador.alterarSalario(4500)
+
+// console.log(colaborador.nome + ", " + "salário: " + colaborador.salario); // saída: D. João Santos, salário: 4500
+
+// // A) João Santos, salário: 3000
+// // B) João Santos
+// // C) salário: 4500
+// // D) João Santos, salário: 4500
+
+
+// // Qual será a saída do código abaixo?
+
+// const obj = {
+
+//   10: 'do',
+//   21: 're',
+//   23: 'mi'
+// }
+
+// console.log(Object.entries(obj)[2]); // saída: D. ['23', 'mi']
+
+// // A) ['mi', '23']
+// // B) ['10', 'do']
+// // C) ['21', 're']
+// // D) ['23', 'mi']
+
+
+// // Qual será a saída do código abaixo?
+
+// const obj1 = {
+
+//   a: 10,
+//   b: 15,
+//   c: 18
+// }
+
+// const obj2 = Object.assign({
+//   c: 7,
+//   d: 1,
+// }, obj1)
+
+// console.log(obj2.c, obj2.d); // saída: B. 18, 1
+
+// A) 7,1
+// B) 18, 1
+// C) undefined
+// D) Error 
+
+
+// Qual será a saída do código abaixo?
+
+function Pessoa() {
+
+  this.nome = 'bob'
+}
+
+function Obj() {
+
+  Obj.call(this)
+}
+
+Obj.prototype = Object.create(Pessoa.prototype)
+
+const app = new Obj()
+
+console.log(app.nome);
