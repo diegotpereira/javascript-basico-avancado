@@ -7109,20 +7109,43 @@
 // D) Error 
 
 
+// // Qual será a saída do código abaixo?
+
+// function Pessoa() {
+
+//   this.nome = 'bob';
+// }
+
+// function obj() {
+
+//   obj.call(this);
+// }
+
+// obj.prototype = Object.create(Pessoa.prototype);
+
+// const app = new obj();
+
+// console.log(app.nome);
+
+
+// // Qual será a saída do código abaixo?
+
+// const objeto1 = {}
+
+// Object.defineProperties(objeto1, {
+
+//   propriedade: {
+//     value: 10
+//   }
+// })
+
+// console.log(objeto1.propriedade); // saída: B. 10
+
+// // A) 0
+// // B) 10
+// // C) undefined
+// // D) Erro 
+
+
 // Qual será a saída do código abaixo?
 
-function Pessoa() {
-
-  this.nome = 'bob'
-}
-
-function Obj() {
-
-  Obj.call(this)
-}
-
-Obj.prototype = Object.create(Pessoa.prototype)
-
-const app = new Obj()
-
-console.log(app.nome);
