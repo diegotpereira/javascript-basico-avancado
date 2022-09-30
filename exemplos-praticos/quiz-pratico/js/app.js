@@ -7147,5 +7147,168 @@
 // // D) Erro 
 
 
+// // Qual será a saída do código abaixo?
+
+// var x = 8;
+
+// if(x > 9) {
+
+//   console.log(9);
+
+// } else {
+
+//   console.log(x); // saída: C. 8
+// }
+
+// // A) 9
+// // B) 0
+// // C) 8
+// // D) Undefined
+
+
 // Qual será a saída do código abaixo?
 
+
+
+// // EXPLIQUE O RESULTADO DA SAÍDA:
+
+// localStorage.setItem('teste', 100500);
+// location.reload(true)
+// localStorage.setItem('teste1', 100501)
+
+// setTimeout(function() {
+
+//   localStorage.setItem('teste2', 100502)
+// })
+
+// setTimeout(function() {
+
+//   localStorage.setItem('teste3', 100503)
+// }, 100)
+
+// console.log(localStorage.getItem('teste'));
+// console.log(localStorage.getItem('teste1'));
+// console.log(localStorage.getItem('teste2'));
+// console.log(localStorage.getItem('teste3'));
+
+
+// // Qual é a saída do programa abaixo?
+
+// function paraLibras(quilos) {
+
+//   if (isNaN(quilos)) {
+    
+//     return 'Não é um número! Não pode ser um peso.'
+//   }
+
+//   return quilos * 2.2;
+// }
+
+// console.log(paraLibras('isto é um teste')); // saída: Não é um número! Não pode ser um peso.
+// console.log(paraLibras('100')); // saída: 220.00000000000003
+
+
+// // Qual é a saída do programa abaixo?
+
+// function soma(a, b, c) {
+
+//   return a + b + c;
+// }
+
+// const nums = [15, 25, 35]
+
+// console.log(soma(...nums)); // saída: 75
+
+
+
+// // Qual é a saída do programa abaixo?
+
+// function criarContador() {
+
+//   let contar = 0;
+
+//   function incrementar(){
+
+//     contar++
+
+//     console.log(contar);
+//   }
+
+//   return incrementar;
+// }
+
+// const add = criarContador()
+// add() // 1
+// add() // 2
+// add() // 3
+
+
+// // Qual é a saída do programa abaixo?
+
+// var estudante = {
+
+//   nome: "Bob",
+//   buscarNome: function() {
+
+//     console.log(this.nome); // saída: Bob
+//   }
+// }
+
+// estudante.buscarNome()
+
+
+// // Qual é a saída do programa abaixo?
+
+// var estudante = {
+//   nome: 'Bob',
+//   buscarNome: function() {
+
+//     console.log(this.nome);
+//   }
+// }
+
+// var outroEstudante = {
+//   nome: 'Peter'
+// }
+
+// estudante.buscarNome.call(outroEstudante) // saída: Peter
+
+
+// // Qual é a saída do programa abaixo?
+
+// function digaOi() {
+
+//   console.log("Ola " + this.nome); // saída: Ola Bob
+// }
+
+// var pessoa = { nome: 'Bob'}
+
+// digaOi.call(pessoa)
+
+
+// // Qual é a saída do programa abaixo?
+
+// function digaOi(adjetivo) {
+
+//   console.log("Ola " + this.nome + ", você é " + adjetivo ); // saída: Ola Bob, você é incrível
+// }
+
+// var obj = { nome: 'Bob'}
+
+// digaOi.call(obj, "incrível")
+
+
+// // Qual é a saída do programa abaixo?
+
+// const pessoa = {
+//   nome: 'Bob'
+// }
+
+// function saudacao(saudar, mensagem) {
+
+//   return `${ saudar } ${ this.nome }. ${ mensagem }`
+// }
+
+// let resultado = saudacao.apply(pessoa, ['Ola', 'Como você está?'])
+
+// console.log(resultado); // saída: Ola Bob. Como você está?
