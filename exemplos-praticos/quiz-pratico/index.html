@@ -7,7 +7,201 @@
     <title>Document</title>
 </head>
 <body>
-    Qual é a saída?
+
+    <h2>JAVA QUIZ PRATICO</h2>
+
+    <p id="demo"></p>
+    <p id="teste"></p>
+    <!-- Qual é a saída?
+    <p id="exemplo"></p>
+
+    <h2>EVENTOS NO DOM</h2>
+
+    Qual é a saída? <br><br>
+    <button onclick="console.log('Um')" onclick="console.log('Dois')">
+        Clique aqui
+    </button>
+
+    <br><br>A: Um <br>
+    B: Dois <br>
+    C: Um Dois <br>
+    D: Dois Um <br><br> -->
+
+    <!-- Resposta: A: um -->
+
+    <!-- Qual é a saída? <br><br>
+
+    <button id="botao1" onclick="console.log('Um')">
+        Clique aqui
+    </button>
+
+    <br><br>A: Um <br>
+    B: Dois <br>
+    C: Um Dois <br>
+    D: Dois Um <br><br> -->
+
+    <!-- Resposta: B: Dois -->
+
+    <!-- <script>
+        const botao1 = document.getElementById('botao1')
+
+        botao1.onclick = function() {
+
+            console.log('Dois');
+        }
+    </script> -->
+
+    <!-- Qual é a saída? <br><br>
+
+    <button id="botao2" onclick="console.log('Um')">
+        Clique Aqui
+    </button>
+
+    <br><br>A: Um <br>
+    B: Dois <br>
+    C: Um Dois <br>
+    D: Dois Um <br><br> -->
+
+    <!-- Resposta: C: Um Dois -->
+
+    <!-- <script>
+        const botao2 = document.getElementById('botao2')
+
+        botao2.addEventListener('click', function() {
+            console.log('Dois');
+        })
+    </script> -->
+
+    <!-- Qual é a saída? <br><br>
+
+    <button id="botao3" onclick="console.log('Um')">
+        Clique Aqui
+    </button>
+
+    <br><br>A: Um <br>
+    B: Dois Três<br>
+    C: Três Dois <br>
+    D: Um Dois Três <br><br> -->
+
+    <!-- Resposta C: Três Dois -->
+    
+    <!-- <script>
+        const botao3 = document.getElementById('botao3')
+
+        botao3.addEventListener('click', function() {
+            console.log('Dois');
+        })
+
+        botao3.onclick = function() {
+            console.log('Três');
+        }
+    </script> -->
+
+
+
+     <!-- Qual é a saída? <br><br>
+
+     <button id="botao4">
+        Clique Aqui
+     </button>
+
+     <br><br>A: Um<br>
+     B: Dois<br>
+     C: Um Dois<br>
+     D: Dois Um<br><br> -->
+
+     <!-- Resposta: C. Um Dois -->
+
+     <!-- <script>
+        const botao4 = document.getElementById('botao4')
+
+        botao4.addEventListener('click', function() {
+            console.log('Um');
+        })
+
+        botao4.onclick = function() {
+            console.log('Dois');
+        }
+     </script> -->
+
+    <!-- Qual é a saída? <br><br>
+
+    <button id="botao5">
+    Clique Aqui
+    </button>
+
+    <br><br>A: Um Dois Três<br>
+    B: Um Dois<br>
+    C: Um Três<br>
+    D: Três Dois Um<br><br> -->
+
+    <!-- Resposta: C. Um Três -->
+
+    <!-- <script>
+        const botao5 = document.getElementById('botao5')
+
+        botao5.addEventListener('click', function() {
+            console.log('Um');
+        })
+
+        botao5.onclick = function() {
+            console.log('Dois');
+        }
+
+        botao5.setAttribute('onclick', "console.log('Três')")
+    </script> -->
+
+
+     <!-- Qual é a saída? <br><br>
+
+     <button id="botao6" onclick="console.log('Um')">
+        Clique Aqui
+     </button>
+
+     <br><br>A: Um Dois<br>
+        B: Um Três<br>
+        C: Um Dois Três<br>
+        D: Três Dois Um<br> -->
+
+        <!-- Resposta: C: Um Dois Três -->
+
+        <!-- <script>
+            const botao6 = document.getElementById('botao6')
+
+            botao6.addEventListener('click', function() {
+                console.log('Dois');
+            })
+
+            botao6.addEventListener('click', function() {
+                console.log('Três');
+            },  false)
+        </script> -->
+
+        <!-- Qual é a saída com método map()? -->
+        <!-- <form method="post">
+            <input type="checkbox" name="" id="chkGeladeira" value="Geladeira">Geladeira <br />
+            <input type="checkbox" name="" id="chkFogao" value="Fogão">Fogão <br />
+            <input type="checkbox" name="" id="chkCoifa" value="Coifa">Coifa <br />
+
+            <input type="button" value="Exibir Itens Selecionados" id="btnEnviar" onclick="exibirSelecionados()"> <br />
+        </form>
+
+        <p id="resultado"></p>
+
+        <script>
+
+            function exibirSelecionados() {
+
+                var elementos = document.querySelectorAll('input[type=checkbox]:checked')
+                var itensSelecionados = [].map.call(elementos, elemento => {
+                    return elemento.value
+                })
+
+                document.getElementById("resultado").innerHTML = "Você Selecionou: " + itensSelecionados // saída: qualquer item selecionado.
+            }
+        </script> -->
+    
+
     <script src="js/app.js"></script>
     <script type="module" src="js/modulos/contar.js"></script>
     <script type="module" src="js/modulos/index.js"></script>

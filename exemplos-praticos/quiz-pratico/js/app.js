@@ -553,16 +553,16 @@
 
 // pessoa = null 
 
-// console.log(membros) // D: [{ name: "Bob" }]
+// console.log(membros) // D: [{ nome: "Bob" }]
 
 // // A: null
 // // B: [null]
 // // C: [{}]
-// // D: [{ name: "Bob" }]
+// // D: [{ nome: "Bob" }]
 
 // // Qual é a saída?
 // const pessoa = {
-//   name: 'Bob',
+//   nome: 'Bob',
 //   idade: 21
 // }
 
@@ -626,12 +626,12 @@
 
 // getInfo(pessoa, nascimento)
 
-// console.log(pessoa, nascimento) // A: { name: "Bob" }, "1997"
+// console.log(pessoa, nascimento) // A: { nome: "Bob" }, "1997"
 
-// // A: { name: "Bob" }, "1997"
-// // B: { name: "Peter" }, "1998"
-// // C: { name: "Bob" }, "1998"
-// // D: { name: "Peter" }, "1997"
+// // A: { nome: "Bob" }, "1997"
+// // B: { nome: "Peter" }, "1998"
+// // C: { nome: "Bob" }, "1998"
+// // D: { nome: "Peter" }, "1997"
 
 
 // // Qual é a saída?
@@ -1361,9 +1361,9 @@
 // console.log(getUsuario(usuario))
 
 // // A: [1, [2, 3, 4]] e SyntaxError
-// // B: [1, [2, 3, 4]] e { name: "Bob", idade: 21 }
-// // C: [1, 2, 3, 4] e { name: "Bob", idade: 21 }
-// // D: Error e { name: "Bob", idade: 21 }
+// // B: [1, [2, 3, 4]] e { nome: "Bob", idade: 21 }
+// // C: [1, 2, 3, 4] e { nome: "Bob", idade: 21 }
+// // D: Error e { nome: "Bob", idade: 21 }
 // // Resposta A: [1, [2, 3, 4]] e SyntaxError (confirmar enunciado e resposta)
 
 
@@ -1644,10 +1644,10 @@
 // alterarIdadeEhNome()
 
 // console.log(pessoa) // B: Como é um novo objeto, não afeta os valores das propriedades do pessoa objeto.
-// // A: {name: "Peter", idade: 22}
-// // B: {name: "Peter", idade: 23}
-// // C: {name: "Bob", idade: 22}
-// // D: {name: "Bob", idade: 23}
+// // A: {nome: "Peter", idade: 22}
+// // B: {nome: "Peter", idade: 23}
+// // C: {nome: "Bob", idade: 22}
+// // D: {nome: "Bob", idade: 23}
 
 
 
@@ -1741,7 +1741,7 @@
 // // B: true false
 // // C: false false
 // // D: true true
-// // Resposta typeof nameretorna "string"
+// // Resposta typeof nome retorna "string"
 // // A string "string" é um valor verdadeiro, então !typeof nome retorna o valor booleano false.
 // // false === "object" e false === "string" ambos retornam false.
 
@@ -2350,7 +2350,7 @@
 // C: [['Primeira', 'Seguna']]
 // D: 'Terceira'
 
-// // Qual deve ser o valor do método para registrar { name: 'Bob', idade: 22 }?
+// // Qual deve ser o valor do método para registrar { nome: 'Bob', idade: 22 }?
 // const chaves = ['nome', 'idade']
 // const valores = ['Bob', 22]
 
@@ -2829,6 +2829,3946 @@
 // }
 
 // console.log(encontrarVogais("Valeu"));
+// // Qual saída do código?
+// var strA = 'olá'
+// var strB = strA
+
+// strB = 'Adeus!'
+
+// console.log(strA) // olá
+
+// // Qual saída do código?
+// var objA = { prop1: 42}
+// var objB = objA
+
+// objB = {}
+
+// console.log(objA) // {prop1: 42}
+
+// // Qual saída do código?
+// var arrA = [0, 1, 2, 3, 4, 5]
+// var arrB = arrA
+
+// arrB[0] = 42
+
+// console.log(arrA) // [42, 1, 2, 3, 4, 5]
+
+
+// // Qual saída do código?
+// var arrA = [0, 1, 2, 3, 4, 5]
+// var arrB = arrA.slice()
+
+// arrB[0] = 42
+
+// console.log(arrA) // [0,1,2,3,4,5]
+
+
+// // Qual saída do código?
+// var arrA = [{ prop1: 'valor da matriz A!!' }, { algumaProp: 'também o valor da matriz A!'}, 3, 4, 5]
+// var arrB = arrA.slice()
+
+// arrB[0].prop1 = 42
+// arrB[3] = 20
+
+// console.log(arrA) // [{prop1: 42}, {someProp: "also value of array A!"}, 3,4,5]
+
+// // Qual saída do código?
+// console.log(colaboradorId) // undefined
+
+// var colaboradorId = '19000'
+
+// // 1. Some Value
+// // 2. undefined
+// // 3. Type Error
+// // 4. ReferenceError: colaboradorId is not defined
+
+
+// // Qual saída do código?
+// var colaboradorId = '1234abe';
+
+// (function() {
+//   console.log(colaboradorId) // undefined
+
+//   var colaboradorId = '122345'
+// })()
+
+// // 1. '122345'
+// // 2. undefined
+// // 3. Type Error
+// // 4. ReferenceError: colaboradorId is not defined
+
+
+// // Qual saída do código?
+// var colaboradorId = '1234abe';
+
+// (function() {
+//   console.log(colaboradorId); // undefined
+
+//   var colaboradorId = '122345';
+
+//   (function() {
+
+//     var colaboradorId = 'abc1234';
+//   }())
+// }())
+
+// // 1. '122345'
+// // 2. undefined
+// // 3. '1234abe'
+// // 4. ReferenceError: colaboradorId is not defined
+
+
+// // Qual saída do código?
+// (function() {
+//   console.log(typeof exibirFunc);
+
+//   var exibirFunc = function() {
+//     console.log('Oi estou dentro exibirFunc'); // undefined
+//   }
+// }())
+
+// // 1. undefined
+// // 2. function
+// // 3. 'Oi estou dentro exibirFunc'
+// // 4. ReferenceError: exibirFunc is not defined
+
+
+// // Qual seria a saída do código a seguir?
+
+// var colaboradorId = 'abc123';
+
+// function foo() {
+//   colaboradorId = '123bcd'
+
+//   return
+// }
+// foo()
+
+// console.log(colaboradorId) // 1. undefined
+
+// // 1. undefined
+// // 2. '123bcd'
+// // 3. 'abc123'
+// // 4. ReferenceError: colaboradorId is not defined
+
+// // Qual seria a saída do código a seguir?
+// var colaboradorId = 'abc123'
+
+// function foo() {
+//   colaboradorId = '123bcd'
+
+//   return
+
+//   function colaboradorId() {}
+// }
+// foo();
+
+// console.log(colaboradorId); // 3. abc123
+
+// // 1.undefined
+// // 2. '123bcd'
+// // 3. 'abc123'
+// // 4. ReferenceError: colaboradorId is not defined
+
+
+// // Qual seria a saída do código a seguir?
+// var colaboradorId = 'abc123'
+
+// function foo() {
+//   colaboradorId()
+
+//   return 
+
+//   function colaboradorId() {
+//     console.log(typeof colaboradorId);
+//   }
+// }
+
+// foo()
+
+
+// // 1. Indefinido
+// // 2. função
+// // 3. String
+// // 4. ReferenceError: colaboradorId não está definido
+
+// Resposta 2. função
+
+
+// // Qual seria a saída do código a seguir?
+
+// function foo() {
+
+//   colaboradorId()
+
+//   var produto = 'Carro'
+
+//   return 
+
+//   function colaboradorId() {
+
+//     console.log(produto); // undefined
+//   }
+// }
+
+// foo()
+
+// // 1. undefined
+// // 2. Type Error
+// // 3. 'Carro'
+// // 4. ReferenceError: produto is not defined
+
+// // Resposta 1. undefined
+
+// Resposta 1. undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function foo() {
+//   bar()
+
+//   function bar() {
+//     abc()
+
+//     console.log(typeof abc);
+//   }
+
+//   function abc() {
+//     console.log(typeof bar);
+//   }
+// }())
+
+// // 1. undefined undefined
+// // 2. Type Error
+// // 3. function function
+// // 4. ReferenceError: bar is not defined
+
+// // Resposta 3. function function
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+
+//   'use strict'
+
+//   var pessoa = {
+//     nome: 'Joao'
+//   }
+
+//   pessoa.salario = 'R$1000'
+//   pessoa['pais'] = 'BRA'
+
+//   Object.defineProperty(pessoa, 'telefoneNo', {
+//     value: '99999999999',
+//     enumerable: false
+//   })
+//   console.log(Object.keys(pessoa)); // 4. ["nome", "salario", "pais"]
+// })()
+
+//   // 1. Type Error
+//   // 2. undefined
+//   // 3. ["nome", "salario", "pais", "telefoneNo"]
+//   // 4. ["nome", "salario", "pais"]
+
+//   // Resposta 4. ["nome", "salario", "pais"] - enumerable é verdadeiro (true) se e somente se esta propriedade aparece durante enumeração das propriedades no objeto correspondente.
+                                                  // Valor padrão é false.
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var objA = {
+//     foo: 'foo',
+//     bar: 'bar'
+//   }
+//   var objB = {
+//     foo: 'foo',
+//     bar: 'bar'
+//   }
+//   console.log(objA == objB); // false 
+//   console.log(objA === objB); // false
+// }())                                               
+
+// // 1.false true
+// // 2. false false
+// // 3. true false
+// // 4. true true
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var objA = new Object({ foo: "foo "})
+//   console.log(objA);
+//   var objB = new Object({ foo: "foo" })
+//   console.log(objB);
+
+//   console.log(objA == objB); // false
+//   console.log(objA === objB); // false
+// }())
+
+// // 1. false true
+// // 2. false false
+// // 3. true false
+// // 4. true true
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var objA = Object.create({
+//     foo: 'foo'
+//   })
+//   var objB = Object.create({
+//     foo: 'foo'
+//   })
+//   console.log(objA == objB); // false
+//   console.log(objA === objB); // false
+// }())
+
+// // 1. false true
+// // 2. false false
+// // 3. true false
+// // 4. true true
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var objA = Object.create({
+//     foo: 'foo'
+//   })
+//   var objB = Object.create(objA)
+
+//   console.log(objA == objB); // false 
+//   console.log(objA === objB); // false
+// }())
+
+// // 1. false true
+// // 2. false false
+// // 3. true false
+// // 4. true true
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var objA = Object.create({
+//     foo: 'foo'
+//   })
+//   var objB = Object.create(objA)
+
+//   console.log(objA.toString() == objB.toString()); // true
+//   console.log(objA.toString() === objB.toString()); // true
+// }())
+
+// // 1. false true
+// // 2. false false
+// // 3. true false
+// // 4. true true
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+//   var objA = Object.create({
+//     foo: 'foo'
+//   })
+//   var objB = objA
+
+//   console.log(objA == objB); // true
+//   console.log(objA === objB); // true 
+//   console.log(objA.toString() == objB.toString()); // true 
+//   console.log(objA.toString() === objB.toString()); // true
+// }())
+
+// // 1. true true true false
+// // 2. true false true true
+// // 3. true true true true
+// // 4. true true false false
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var objA = Object.create({
+//     foo: 'foo'
+//   })
+//   var objB = objA
+
+//   objB.foo = 'bar'
+
+//   console.log(objA.foo); // bar
+//   console.log(objB.foo); // bar
+// }())
+
+// // 1. foo bar
+// // 2. bar bar
+// // 3. foo foo
+// // 4. bar foo
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+//   var objA = Object.create({
+//     foo: 'foo'
+//   })
+//   var objB = objA
+
+//   objB.foo = 'bar'
+
+//   delete objA.foo;
+//   console.log(objA.foo); // foo
+//   console.log(objB.foo); // foo
+
+// }())
+
+// // 1. foo bar
+// // 2. bar bar
+// // 3. foo foo
+// // 4. bar foo
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+// 	var objA = {
+// 		foo: 'foo'
+// 	};
+// 	var objB = objA;
+// 	objB.foo = 'bar';
+
+// 	delete objA.foo;
+// 	console.log(objA.foo); // undefined
+// 	console.log(objB.foo); // undefined
+// }());
+
+// // 1. foo bar
+// // 2. undefined undefined
+// // 3. foo foo
+// // 4. undefined bar
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var array = new Array('100')
+
+//   console.log(array); // ["100"]
+//   console.log(array.length); // 1
+// }())
+
+// // 1. undefined undefined
+// // 2. [undefined × 100] 100
+// // 3. ["100"] 1
+// // 4. ReferenceError: array is not defined
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+//   var array1 = []
+//   var array2 = new Array(100)
+//   var array3 = new Array(['1', '2', '3', 4, 5, 6])
+
+//   console.log(array1); // []
+//   console.log(array2); // []
+//   console.log(array3); // [Array[5]]
+//   console.log(array3.length); // 1
+// }())
+
+// // 1. [] [] [Array[5]] 1
+// // 2. [] [undefined × 100] Array[5] 1
+// // 3. [] [] ['1',2,'3',4,5.6] 5
+// // 4. [] [] [Array[5]] 5
+
+// // Resposta 1. [] [] [Array[5]] 1
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+
+//   var array = new Array('a', 'b', 'c', 'd', 'e')
+  
+//   array[10] = 'f'
+  
+
+//   delete array[10]
+
+//   console.log(array.length); // 11
+// }())
+
+// // 1. 11
+// // 2. 5
+// // 3. 6
+// // 4. undefined
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var animal = ['vaca', 'cavalo']
+
+//   animal.push('gato')
+//   animal.push('cachorro', 'rato', 'cabra')
+
+//   console.log(animal.length); // 6
+
+//   // 1. 4
+//   // 2. 5
+//   // 3. 6
+//   // 4. undefined
+// }())
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//     var array = [1, 2, 3, 4, 5]
+
+//     console.log(array.indexOf(2)); // 1
+//     console.log([{ nome: 'Joao'}, { nome: 'Joao'}].indexOf({ nome: 'Joao'})); // -1
+//     console.log([[1], [2], [3], [4]].indexOf([3])); // -1
+//     console.log('abcdefg'.indexOf('e')); // 4
+// }())
+
+// // 1. 1 -1 -1 4
+// // 2. 1 0 -1 4
+// // 3. 1 -1 -1 -1
+// // 4. 1 undefined -1 4
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+
+//   var array = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6]
+
+//   console.log(array.indexOf(2)); // 1
+//   console.log(array.indexOf(2, 3)); // 6
+//   console.log(array.indexOf(2, 10)); // -1
+// }())
+
+// // 1. 1 -1 -1
+// // 2. 1 6 -1
+// // 3. 1 1 -1
+// // 4. 1 undefined undefined
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var numeros = [2, 3, 4, 8, 9, 11, 13, 12, 16]
+//   var ate = numeros.filter(function(elemento, index) {
+//     return elemento % 2 === 0
+//   })
+
+//   console.log(ate); // [ 2, 4, 8, 12, 16 ]
+
+//   var contemDivisivelPor3 = numeros.some(function(elemento, index) {
+//     return elemento % 3 === 0
+//   })
+
+//   console.log(contemDivisivelPor3); // true
+  
+// }())
+
+// // 1. [ 2, 4, 8, 12, 16 ] [ 0, 3, 0, 0, 9, 0, 12]
+// // 2. [ 2, 4, 8, 12, 16 ] [ 3, 9, 12]
+// // 3. [ 2, 4, 8, 12, 16 ] true
+// // 4. [ 2, 4, 8, 12, 16 ] false
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var recipientes = [2, 0, false, "", '12', true]
+//   var recipientes = recipientes.filter(Boolean)
+
+//   console.log(recipientes);
+
+//   var recipientes = recipientes.filter(Number)
+
+//   console.log(recipientes);
+
+//   var recipientes = recipientes.filter(String)
+
+//   console.log(recipientes);
+
+//   var recipientes = recipientes.filter(Object)
+
+//   console.log(recipientes);
+
+// }())
+
+// // 1. [ 2, '12', true ] [ 2, '12', true ] [ 2, '12', true ] [ 2, '12', true ]
+// // 2. [false, true] [ 2 ] ['12'] [ ]
+// // 3. [2,0,false,"", '12', true] [2,0,false,"", '12', true] [2,0,false,"", '12', true] [2,0,false,"", '12', true]
+// // 4. [ 2, '12', true ] [ 2, '12', true, false ] [ 2, '12', true,false ] [ 2, '12', true,false]
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+
+//   var lista = ['foo', 'bar', 'joao', 'rita']
+
+//   console.log(lista.slice(1)); // ['bar', 'joao', 'rita']
+//   console.log(lista.slice(1, 3)); // ['bar', 'joao']
+//   console.log(lista.slice()); // ['foo', 'bar', 'joao', 'rita']
+//   console.log(lista.slice(2, 2)); // []
+//   console.log(lista); // [ 'foo', 'bar', 'joao', 'rita' ]
+
+// }())
+
+// // 1. [ 'bar', 'joao', 'rita' ] [ 'bar', 'joao' ] [ 'foo', 'bar', 'joao', 'rita' ] [] [ 'foo', 'bar', 'joao', 'rita' ]
+// // 2. [ 'bar', 'joao', 'rita' ] [ 'bar', 'joao','rita ] [ 'foo', 'bar', 'joao', 'rita' ] [] [ 'foo', 'bar', 'joao', 'rita' ]
+// // 3. [ 'joao', 'rita' ] [ 'bar', 'joao' ] [ 'foo', 'bar', 'joao', 'rita' ] [] [ 'foo', 'bar', 'joao', 'rita' ]
+// // 4. [ 'foo' ] [ 'bar', 'joao' ] [ 'foo', 'bar', 'joao', 'rita' ] [] [ 'foo', 'bar', 'joao', 'rita' ]
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var lista = ['foo', 'bar', 'joao']
+
+//   console.log(lista.splice(1)); // [ 'bar', 'john' ]
+//   console.log(lista.splice(1, 2)); // []
+//   console.log(lista); // ['foo']
+
+// }())
+
+// // 1. [ 'bar', 'john' ] [] [ 'foo' ]
+// // 2. [ 'bar', 'john' ] [] [ 'bar', 'john' ]
+// // 3. [ 'bar', 'john' ] [ 'bar', 'john' ] [ 'bar', 'john' ]
+// // 4. [ 'bar', 'john' ] [] []
+
+
+// // Qual seria a saída do código a seguir?
+// (function() {
+//   var arrayNum = [2, 8, 15, 16, 23, 42]
+
+//   arrayNum.sort()
+
+//   console.log(arrayNum); // 3. [ 15, 16, 2, 23, 42, 8 ]
+// }())
+
+// // 1. [2, 8, 15, 16, 23, 42]
+// // 2. [42, 23, 26, 15, 8, 2]
+// // 3. [ 15, 16, 2, 23, 42, 8 ]
+// // 4. [ 2, 8, 15, 16, 23, 42 ]
+
+
+// // Qual seria a saída do seguinte código ?
+// function funcA() {
+
+//   console.log("funcA", this);
+
+//   (function internaFuncA1() {
+//     console.log("internaFuncA1", this);
+
+//     (function internaFuncA2() {
+//       console.log("internaFuncA2", this);
+//     }())
+//   }())
+// }
+
+// console.log(funcA);
+
+// // 1. funcA Window {...} innerFunc1 Window {...} innerFunA2 Window {...}
+// // 2. undefined
+// // 3. Type Error
+// // 4. ReferenceError: this is not defined
+
+// // Resposta 1. funcA Window {...} innerFunc1 Window {...} innerFunA2 Window {...}
+
+
+// // Qual seria a saída do seguinte código ?
+// var obj = {
+//   mensagem: "Ola",
+
+//   internaMensagem: !(function() {
+//     console.log(this.mensagem); // undefined
+//   }())
+// }
+
+// console.log(obj.internaMensagem); // true
+
+// // 1. ReferenceError: this.mensagem is not defined
+// // 2. undefined
+// // 3. Type Error
+// // 4. undefined true
+
+
+// // Qual seria a saída do seguinte código ?
+// var obj = {
+//   mensagem: "Ola",
+
+//   internaMensagem: function() {
+//     return this.mensagem
+//   }
+// }
+
+// console.log(obj.internaMensagem()); // Ola
+
+// // 1. Ola
+// // 2. undefined
+// // 3. Type Error
+// // 4. ReferenceError: this.message is not defined
+
+
+// // Qual seria a saída do seguinte código ?
+
+// var obj = {
+//   mensagem: 'Ola',
+//   internaMensagem: function() {
+//     (function() {
+//       console.log(this.mensagem); // undefined
+//     }())
+//   }
+// }
+// console.log(obj.internaMensagem());
+
+
+// // 1. Type Error
+// // 2. Ola
+// // 3. undefined 
+// // 4. ReferenceError: this.mensagem is not defined
+
+
+// // Qual seria a saída do seguinte código ?
+// var obj = {
+//   mensagem: 'Ola',
+//   internaMensagem: function() {
+
+//     var self =  this;
+
+//     (function() {
+//       console.log(self.mensagem); // Ola
+//     }())
+//   }
+// }
+// console.log(obj.internaMensagem()); 
+
+// // 1. Type Error
+// // 2. 'Ola' 
+// // 3. undefined 
+// // 4. ReferenceError: self.mensagem is not defined
+
+
+// // Qual seria a saída do seguinte código ?
+// function minhaFunc() {
+//   console.log(this.mensagem); // undefined
+// }
+
+// minhaFunc.mensagem = 'Ola Joao'
+
+// console.log(minhaFunc()); 
+
+// // 1. Type Error
+// // 2. 'Hi John'
+// // 3. undefined 
+// // 4. ReferenceError: this.mensagem is not defined
+
+
+// Qual seria a saída do seguinte código ?
+
+// function minhaFunc() {
+//   console.log(minhaFunc.mensagem); // Ola Joao
+// }
+
+// minhaFunc.mensagem = 'Ola Joao'
+
+// console.log(minhaFunc()); 
+
+// // 1. Type Error
+// // 2. 'Ola Joao'
+// // 3. undefined
+// // 4. ReferenceError: this.message is not defined
+
+
+// // Qual seria a saída do seguinte código ?
+// function minhaFunc() {
+
+//   minhaFunc.mensagem = 'Ola Joao'
+
+//   console.log(minhaFunc.mensagem); // Ola Joao
+// }
+
+// console.log(minhaFunc()); 
+
+// // 1. Type Error
+// // 2. 'Ola Joao'
+// // 3. undefined
+// // 4. ReferenceError: this.message is not defined
+
+
+// // Qual seria a saída do seguinte código ?
+
+// function minhaFunc() {
+//   console.log(arguments.length);
+// }
+
+// console.log(minhaFunc()); // 0
+// console.log(minhaFunc("a", "b")); // 2
+// console.log(minhaFunc("a","b","c","d")); // 4
+
+// // 1. 2 2 2
+// // 2. 0 2 4
+// // 3. undefined
+// // 4. ReferenceError
+
+
+// // Qual seria a saída do seguinte código ?
+
+// function Pessoa(nome, idade) {
+//   this.nome = nome || "Joao";
+//   this.idade = idade || 24;
+//   this.exibirNome = function() {
+//     console.log(this.nome);
+//   }
+// }
+
+// Pessoa.nome = "Joao";
+// Pessoa.exibirNome = function() {
+//   console.log(this.nome);
+// }
+
+// var pessoa1 = new Pessoa('Joao');
+
+// pessoa1.exibirNome();
+
+// Pessoa.exibirNome();
+
+// // 1. Joao Pessoa
+// // 2. Joao Joao
+// // 3. Joao undefined
+// // 4. Joao Joao
+
+// // Resposta 1. Joao Pessoa -  VERIFICAR
+
+
+// // Qual seria a saída do seguinte código ?
+
+// function gerenciadorSenha() {
+//   var password = '12345678'
+//   this.usuarioNome = 'Joao'
+
+//   return {
+//     pwd: password
+//   }
+// }
+
+// var usuarioInfo = gerenciadorSenha()
+
+// console.log(usuarioInfo.pwd); // 12345678
+// console.log(usuarioInfo.usuarioNome); // undefined
+
+// // 1. 12345678 Window
+// // 2. 12345678 Joao
+// // 3. 12345678 undefined
+// // 4. undefined undefined
+
+
+// // Qual seria a saída do seguinte código ?
+// var colaboradorId = 'aq123'
+
+// function Colaborador() {
+//   this.colaboradorId = 'bq1uy'
+  
+// }
+
+// console.log(Colaborador.colaboradorId); // undefined
+
+// // 1. Reference Error
+// // 2. aq123
+// // 3. bq1uy
+// // 4. undefined
+
+
+// // Qual seria a saída do seguinte código ?
+
+// var colaboradorId = 'aq123'
+
+// function Colaborador() {
+//   this.colaboradorId = 'bq1uy'
+// }
+
+// console.log(new Colaborador().colaboradorId); // bq1uy
+
+// Colaborador.prototype.colaboradorId = 'kj182'
+// Colaborador.prototype.TrabalhoId = '1BJKSJ'
+
+// console.log(new Colaborador().TrabalhoId); // 1BJKSJ
+// console.log(new Colaborador().colaboradorId); // bq1uy
+
+// // 1. bq1uy 1BJKSJ bq1uy undefined
+// // 2. bq1uy 1BJKSJ bq1uy
+// // 3. bq1uy 1BJKSJ kj182
+// // 4. undefined 1BJKSJ kj182
+
+
+// // Qual seria a saída do seguinte código ?
+
+// var colaboradorId = 'aq123';
+// (function Colaborador() {
+//   try {
+//     throw 'foo123';
+
+//   } catch (colaboradorId) {
+//     console.log(colaboradorId); // foo123
+//   }
+//   console.log(colaboradorId); // aq123
+// }())
+
+// // 1. foo123 aq123
+// // 2. foo123 foo123
+// // 3. aq123 aq123
+// // 4. foo123 undefined
+
+
+// // Qual seria a saída do seguinte código ?
+// (function() {
+//   var saudacao = 'Ola Mundo';
+//   var cumprimentar = [].filter.call(saudacao, function(elemento, index) {
+//     return index > 5
+//   })
+
+//   console.log(cumprimentar); // 4. [ 'n', 'd', 'o' ]
+// }())
+
+// // 1. Ola Mundo
+// // 2. undefined
+// // 3. Mundo
+// // 4. [ 'n', 'd', 'o' ]
+
+
+// // Qual seria a saída do seguinte código ?
+// (function() {
+//   var fooConta = {
+//     nome: 'Joao',
+//     quantia: 4000,
+//     deduzaQuantia: function(quantia) {
+//       this.quantia -= quantia;
+
+//       return 'Total da quantia restante na conta: ' + this.quantia
+//     }
+//   }
+//   console.log(fooConta);
+
+//   var barConta = {
+//     nome: 'Joao',
+//     quantia: 6000
+//   };
+
+//   var retirarValorPor =  function(totalQuantia) {
+    
+//     return fooConta.deduzaQuantia.bind(barConta, totalQuantia) 
+//   }
+
+//   console.log(retirarValorPor(400)()); // Total da quantia restante na conta: 5600 Pegamos 6000 - 400 = 5600
+//   console.log(retirarValorPor(300)()); // Total da quantia restante na conta: 5300 Pegamos 5600 - 300 = 5300
+
+// }())
+
+// // 1. Total da quantia restante na conta: 5600 Total da quantia restante na conta: 5300
+// // 2. undefined undefined
+// // 3. Total da quantia restante na conta: 3600 Total da quantia restante na conta: 3300
+// // 4. Total da quantia restante na conta: 5600 Total da quantia restante na conta: 5600
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var fooConta = {
+//     nome: 'Joao',
+//     quantia: 4000,
+//     deduzaQuantia: function(quantia) {
+//       this.quantia -= quantia
+
+//       console.log(quantia);
+
+//       return this.quantia
+//     }
+//   }
+//   var barConta = {
+//     nome: 'Joao',
+//     quantia: 6000
+//   }
+
+//   var retirarValorPor = function(totalQuantia) {
+
+//     console.log(barConta.quantia);
+//     return fooConta.deduzaQuantia.apply(barConta, [totalQuantia])
+//   }
+
+//   console.log(retirarValorPor(400)); // 5600 Pegamos 6000 - 400 = 5600
+//   console.log(retirarValorPor(300)); // 5300 Pegamos 5600 - 300 = 5300
+//   console.log(retirarValorPor(200)); // 5100 Pegamos 5300 - 200 = 5100
+
+// }())
+
+// // 1. 5600 5300 5100
+// // 2. 3600 3300 3100
+// // 3. 5600 3300 5100
+
+
+
+//  Qual seria a saída do código a seguir?
+
+// (function saudarNovoCliente() {
+//   console.log('Ola ' + this.nome); // A. Ola Joao
+// }.bind({
+//   nome: 'Joao'
+// })())
+
+// // A. Ola Joao
+// // Reference Error
+// // Window
+// // undefined
+
+
+// //  Qual seria a saída do código a seguir?
+
+// function buscarDadosDoServidor(apiUrl) {
+//   var nome = "Joao";
+
+//   return {
+//     then: function(fn) {
+//       fn(nome)
+//     }
+//   }
+// }
+
+// buscarDadosDoServidor('www.google.com').then(function(nome) {
+//   console.log(nome); // Joao
+// })
+
+// // A. Joao
+// // B. undefined
+// // C. Reference Error
+// // D. fn is not defined
+
+
+// //  Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var arrayNumero = [2, 8, 15, 16, 23, 42]
+
+//   Array.prototype.sort = function(a, b) {
+//     return a - b 
+//   }
+
+//   arrayNumero.sort()
+
+//   console.log(arrayNumero); // [ 2, 8, 15, 16, 23, 42 ]
+// }());
+
+// (function() {
+
+//   var numeroArray = [2, 8, 15, 16, 23, 42]
+
+//   numeroArray.sort(function(a,b) {
+
+//     if (a == b) {
+      
+//       return 0;
+
+//     } else {
+//       return a < b ? -1 : 1;
+//     }
+//   })
+
+//   console.log(numeroArray); // [ 2, 8, 15, 16, 23, 42 ]
+// }());
+
+// (function() {
+
+//   var numeroArray = [2, 8, 15, 16, 23, 42]
+
+//   numeroArray.sort(function(a, b) {
+
+//     return a - b;
+//   })
+
+//   console.log(numeroArray); // [ 2, 8, 15, 16, 23, 42 ]
+// }());
+
+// // 1. [ 2, 8, 15, 16, 23, 42 ] [ 2, 8, 15, 16, 23, 42 ] [ 2, 8, 15, 16, 23, 42 ]
+// // 2 undefined undefined undefined
+// // 3. [42, 23, 16, 15, 8, 2] [42, 23, 16, 15, 8, 2] [42, 23, 16, 15, 8, 2]
+// // 4. Reference Error
+
+
+// //  Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   function digaOla() {
+
+//     var nome = "Ola Joao"
+
+//     return {
+
+//       nomeCompleto: nome
+//     }
+//   }
+//   console.log(digaOla().nomeCompleto); // Ola Joao
+// })()
+
+// // 1. Ola Joao
+// // 2. undefined
+// // 3. Reference Error
+// // 4. Uncaught TypeError: Cannot read property 'nomeCompleto' of undefined
+
+
+// //  Qual seria a saída do código a seguir?
+
+// function buscarNumero() {
+
+//   return (2, 4, 5)
+// }
+
+// var numero = buscarNumero()
+
+// console.log(numero); // 1. 5
+
+// // 1. 5
+// // 2. undefined
+// // 3. 2
+// // 4. (2,4,5)
+
+
+// //  Qual seria a saída do código a seguir?
+// function buscarNumero() {
+
+//   return;
+// }
+
+// var numero = buscarNumero()
+
+// console.log(numero); // undefined
+
+
+// // 1. null
+// // 2. undefined
+// // 3. ""
+// // 4. 0
+
+
+// // Qual seria a saída do código a seguir?
+// function mul(x) {
+
+//   return function(y) {
+
+//     return [x*y, function(z) {
+
+//       return x * y + z 
+//     }]
+//   }
+// }
+
+// console.log(mul(2)(3)[0]); // 2 * 3 + 0 = 6
+// console.log(mul(2)(3)[1](4)); // 2 * 3 * 1 + 4 = 10
+
+// // 1. 6, 10
+// // 2. undefined undefined
+// // 3. Reference Error
+// // 4. 10, 6
+
+// // Resposta 1. 6, 10
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// function mul(x) {
+
+//   return function(y) {
+
+//     return {
+//       resultado: x * y,
+//       soma: function(z) {
+
+//         return x * y + z 
+//       }
+//     }
+//   }
+// }
+
+// console.log(mul(2)(3).resultado); // 2 * 3 = 6
+// console.log(mul(2)(3).soma(4)); // 2 * 3 + 4 = 10
+
+// // 1. 6, 10
+// // 2. undefined undefined
+// // 3. Reference Error
+// // 4. 10, 6
+
+
+// // Qual das seguintes palavras-chave é usada para definir uma variável em Javascript?
+
+// A. var 
+// B. let 
+// C. ambos A e B 
+// D. Nenhuma das acima
+
+// Resposta C. As palavras-chave var e let são usadas para definir uma variável em Javascript.
+
+
+// // Ao encontrar declarações vazias, o que o Javascript Interpreter faz?
+
+// A. Lança um erro.
+// B. Ignora as declarações.
+// C. Dá um aviso.
+// D. Nenhuma das acima.
+
+// Resposta: B. Em Javascript, o interpretador ignorará as instruções vazias sempre que as encontrar.
+
+
+// Qual será a saída do seguinte trecho de código?
+
+// a = 5 + "9";
+
+// document.write(a); // 59 - o primeiro número é do tipo inteiro e o segundo do tipo string. O trecho de código dá prioridade ao tipo de string e os concatena devido ao operador '+'.
+
+// A. Erro de Compilação
+// B. 14
+// C. Erro tempo de execução 
+// D. 59
+
+
+// // Qual será a saída do seguinte trecho de código?
+// var a = "Escalador"
+// var resultado = a.substring(2, 4);
+
+// console.log(resultado); // ca
+
+// // A. al 
+// // B. ala
+// // C. ca
+// // D. calad
+
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// var x = 12;
+// var y = 8;
+// var res = eval("x + y")
+
+// console.log(res); // 20
+
+// // A. 20
+// // B. x + y
+// // C. 128 
+// // D. Nehuma
+
+
+// Qual palavra-chave é usada para verificar se uma determinada propriedade é válida ou não?
+
+// 1. in
+// 2. is in 
+// 3. exists 
+// 4. lies 
+
+// Resposta 1. in - A palavra-chave in é usada para verificar se a propriedade fornecida é válida ou não em Javascript.
+
+
+// Qual é o uso da tag <noscript> em Javascript?
+
+// 1. O conteúdo é exibido por navegadores não baseados em JS>
+// 2. Limpa todos os cookies e cache;
+// 3. Ambos 1 e 2.
+// 4. Nunhuma
+
+// Resposta 1. A tag <noscript> é exibida apenas por navegadores não JavaScript.
+
+
+// // Qual será a saída do seguinte trecho de código?
+// (function() {
+
+//   setTimeout(() => console.log(1), 2000)
+//   console.log(2);
+//   setTimeout(() => console.log(3), 0)
+//   console.log(4);
+// })();
+
+// // 1. 1234
+// // 2. 2341
+// // 3. 2431
+// // 4. 4321
+
+// // Resposta 3. 2431 - Primeiro o 2 é impresso com o console.log, então mesmo com um atraso de 0ms, 
+//                      // o 4 é impresso antes do 3 porque JS executa setTimeout com a API da Web, 
+//                      //  e assim toda a função é executada primeiro. Por último, após um atraso de 2000ms, o 1 é impresso.
+
+
+// // Qual será a saída do seguinte trecho de código?
+// (function(a) {
+
+//   return (function() {
+
+//     console.log(a); // 3. 21 - Mesmo que a seja definido na função externa, devido ao fechamento, as funções internas têm acesso a ela.
+
+//     a = 6;
+//   })()
+// })(21)
+
+// // 1. 6
+// // 2. NaN
+// // 3. 21
+// // 4. Nenhuma das acima 
+
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// function resolver(arr, rotacoes) {
+
+//   if(rotacoes == 0) return arr 
+
+//   for(let i = 0; i < rotacoes; i++) {
+
+//     let elemento = arr.pop()
+
+//     arr.unshift(elemento)
+//   }
+
+//   return arr
+// }
+
+// resolver([44, 1, 22, 111], 5)
+
+// 1. [111, 44, 1, 22]
+// 2. [44, 1, 22, 111]
+// 3. [111, 44, 1, 22]
+// 4. [1, 22, 111, 44]
+
+
+
+// // Qual será a saída para o seguinte trecho de código?
+
+// function Func() {
+
+//   document.getElementById("exemplo").innerHTML = Math.sqrt(81)
+// }
+
+// Func()
+
+// 1. 9
+// 2. 81
+// 3. Erro 
+// 4. 0 
+
+// Resposta 1. 9 - O método sqrt() retorna a raiz quadrada do parâmetro passado, que está em uma função javascript embutida.
+
+
+// Quando o valor de um operador é NULL, o typeof retornado pelo operador unário é:
+
+// 1. boolean
+// 2. undefined
+// 3. Object
+// 4. Integer
+
+// Resposta 3. Object - Qualquer valor NULL de operador sempre retornará typeof object.
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// var a = 1;
+// var b = 0;
+
+// while (a <= 3) {
+  
+//   a++;
+
+
+//   b += a * 2
+
+//   // print(b)
+//   console.log(b);
+// }
+
+// // 1. 4 10 18 
+// // 2. 1 2 3
+// // 3. 1 4 7
+// // 4. Nenhuma das acimas
+
+// // Resposta 1. 4 10 18 - O loop será executado 3 vezes, antes de atender à condição de saída. 
+//                       // O primeiro valor de b será 2 * 2 = 4, 
+//                       //            seguido por 4 + 3 * 2 = 10 e, 
+//                      // em seguida, o valor de 10 + 4 * 2 = 18.
+
+
+
+// O que a instrução “depurador” do Javascript faz?
+
+// 1. Ele irá depurar todos os erros no progrma em tempo de execução 
+// 2. Ele atua como um ponto de interrupção em um programa.
+// 3. Ele depurará o erro na instrução atual, se houver.
+// 4. Tudo o que precede.
+
+// Resposta 2. A instrução 'debugger' é usada para configurar os pontos de interrupção em prováveis ​
+//​pontos de erro no trecho de código, usando a janela do depurador.
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// var a = Math.max()
+// var b = Math.min()
+
+// console.log(a); // -Infinity
+// console.log(b); // Infinity
+
+// 1. -Infinity Infinity
+// 2. Infinity -Infinity
+// 3. Infinity Infinity
+// 4. -Infinity -Infinity
+
+// Resposta 1. -Infinity Infinity - O método Math.max() retorna -Infinity por padrão 
+              // e o método Math.min() retorna o valor Infinity por padrão quando passado sem nenhum parâmetro.
+
+            
+// // Qual será a saída do seguinte trecho de código?
+
+// var a = Math.max() < Math.min(); 
+// var b = Math.max() > Math.min() 
+
+// console.log(a); // verdadeiro (true)
+// console.log(b); // falso (false)
+
+// 1. true false 
+// 2. false true 
+// 3. true true 
+// 4. false false 
+
+// Resposta 1. true true - Math.max() é menor que Math.min() porque Math.max() retorna -Infinity e Math.min() retorna Infinity.
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// var a = true + true + true * 3;
+
+// console.log(a); // 4. 5 - true é considerado o número 1 quando usado em qualquer expressão aritmética, portanto, a expressão é avaliada como 5.
+
+// // 1. 3
+// // 2. 0 
+// // 3. Erro 
+// // 4. 5
+
+
+// // Qual é a saída do seguinte trecho de código?
+
+// console.log(NaN === NaN); // 2. falso(false) - NaN não é considerado igual a NaN mesmo depois de usar o operador de igualdade estrita.
+
+// // 1. true
+// // 2. false 
+// // 3. undefined
+// // 4. Erro
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// console.log(typeof(NaN)); // 2. Number - é definido para ser do tipo número apesar de seu nome (não um número).
+
+// // 1. Object
+// // 2. Number
+// // 3. String
+// // 4. Nenhuma das acima 
+
+
+// // O que o método 'toLocateString()' faz em JS?
+// 1. Retorna uma representação de objeto localizada.
+// 2. Retorna uma string analisada. 
+// 3. Retorna uma representação de string localizada de um objeto. 
+// 4. Nenhuma das acimas.
+
+// Resposta 3. retorna uma representação de string específica local desse objeto usando a localidade do ambiente.
+
+
+// O processo no qual um objeto ou estrutura de dados é traduzido em um formato adequado 
+// para transferência em uma rede ou armazenamento é chamado?
+
+// 1. Serialização de Objetos. 
+// 2. Encapsulamento de Objetos.
+// 3. Herança de objeto.
+// 4. Nenhuma das acima.
+
+// Resposta 1. A Serialização de Objetos é o processo no qual um objeto ou estrutura de dados é traduzido em um formato adequado para transferência em uma rede ou armazenamento.
+
+
+// Qual função é usada para serializar um objeto em uma string JSON em Javascript?
+
+// 1. stringify()
+// 2. parse()
+// 3. convert() 
+// 4. Nenhuma das acima 
+
+// Resposta 1. A função JSON.stringify() é usada para converter um objeto JSON em formato de string.
+
+
+// Os 3 atributos básicos do objeto em Javascript são:
+
+// 1. classe, protótipo, parâmetros dos objetos.
+// 2. classe, protótipo, sinalizador extensível do objeto. 
+// 3. classe, parâmetros, sinalizador extensível do objeto. 
+// 4. classes, objeto nativo e sinalizador extensível de interfaces e objetos. 
+
+// Resposta 2 e 4 - Em geral para objetos em Javascript, os objetos são associados a 3 atributos básicos, Classe, protótipo, sinalizador extensível do objeto.
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// let soma = 0;
+// const a = [1, 2, 3];
+
+// a.forEach(buscarSoma);
+
+// console.log(soma); // 1. 6 - O trecho de código calcula a soma dos números em uma matriz, usando o método de loops forEach.
+
+// function buscarSoma(elemento) {
+
+//   soma += elemento
+// }
+
+// buscarSoma()
+
+// // 1. 6
+// // 2. 1
+// // 3. 2
+// // 4. Nenhuma das acima 
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// a = [1, 2, 3, 4, 5];
+
+// console.log(a.slice(2, 4)); // 1. 3, 4
+
+// 1. 3, 4
+// 2. 2, 3
+// 3. 2, 4, 5
+// 4. 2, 3, 4
+
+
+// // Qual será a saída do seguinte trecho de código?
+// console.log(parseInt("123Ola")); // 123
+// console.log(parseInt("Ola123")); // NaN 
+
+// // 1. 123 NaN 
+// // 2. 123Ola ola123
+// // 3. NaN NaN 
+// // 4. 123 123
+
+// // Resposta 1. - O método parseInt() converte uma string em um inteiro, se possível. Se a string começar com um número, ela converterá essa parte numérica e a retornará. Caso contrário, ele retornará NaN.
+
+
+// Quais das seguintes opções são closures em Javascript?
+
+// 1. variaveis 
+// 2. Funções 
+// 3. Objetos 
+// 4. Todos acima são
+
+// Resposta 4. Todos acima são
+
+
+// // Qual das opções a seguir não é uma framework Javascript?
+
+// 1. Node 
+// 2. Vue 
+// 3. React 
+// 4. Cassandra
+
+// Resposta 4. Cassandra 
+
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// var a = 'hello';
+// var soma = 0;
+
+// for(var i = 0; i < a.length; i++) {
+
+//   soma += (a[i] - 'a');
+// }
+
+// console.log(soma); // 1. NaN  - o a[i] - 'a' não é tipificado para um tipo inteiro e, portanto, o resultado é NaN.
+
+// // 1. 47 
+// // 2. NaN 
+// // 3. 0
+// // 4. Nenhuma das acima 
+
+
+// // Qual palavra-chave é usada para declarar uma função assíncrona em Javascript?
+
+// 1. async
+// 2. await
+// 3. setTimeout
+// 4. Nenhuma das acima
+
+// Resposta 1. async
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// const set = new Set();
+
+// set.add(5)
+// set.add('Ola')
+// set.add({nome: 'Escalar'})
+
+// for(let item of set) {
+
+//   console.log(item + 6); // 3. 11 Ola6 [object Object]6 - Os primeiros 2 números são adicionados como números inteiros, 
+//   // seguidos pela concatenação de strings. Finalmente, uma vez que ambos não são do tipo string, JS stringifica tanto o objeto quanto o número e os concatena. Quando um objeto é encadeado, ele é lido como [object Object] e então concatenado.
+// }
+
+// // 1. 11 NaN NaN 
+// // 2. 11 NaN [object Object]
+// // 3. 11 Ola6 [object Object]6
+// // 4. Nenhuma das acima 
+
+// Como os objetos são comparados quando são verificados com o operador de igualdade estrita?
+
+// 1. O Conteúdo dos objetos é comparado 
+// B. Suas referências são comparadas 
+// 3. Ambos A e B 
+// 4. Nenhuma das acima
+
+// Resposta B. Suas referências são comparadas  - Em Javascript, os objetos são passados ​​por referência e, portanto, o operador de igualdade estrita compara suas referências.
+
+
+// O que o operador … faz em JS?
+
+// 1. É usado para espalhar iteráveis para elementos individuais.
+// 2. É usado para descrever um tipo de dados de tamanho indefinido.dados
+// 3. Não existe tal operador 
+// 4. Nenhuma das acima 
+
+// Resposta 1. É usado para espalhar iteráveis para elementos individuais. -  O operador … é usado para espalhar iteráveis ​​para elementos individuais em Javascript e também é chamado de operador de propagação.
+
+
+// // Qual será a saída do seguinte trecho de código?
+// const exemplo = ({ a, b, c }) => {
+
+//   console.log(a, b, c);
+// }
+// exemplo(0, 1, 2)
+
+// // 1. 0 1 2 
+// // 2. 0 undefined undefined
+// // 3. undefined undefined undefined
+// // 4. Nenhuma das acima 
+
+// Resposta 3. undefined undefined undefined - Como estamos passando números individuais em vez de um único objeto para a função, o Javascript inicializará os parâmetros do objeto com seu valor padrão de undefined.
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// let a = [1, 2, 3, 4, 5, 6];
+// var esquerda = 0, direita = 5;
+// var encontrado = false;
+// var objetivo = 5;
+
+// while(esquerda <= direita){
+
+//   var meio = Math.floor((esquerda + direita) / 2);
+
+//   console.log(meio);
+
+//   if (a[meio] == objetivo) {
+    
+//     encontrado = true;
+//     break;
+
+//   } else if (a[meio] < objetivo) {
+    
+//     esquerda = meio + 1;
+
+//   } else {
+
+//     direita = meio - 1
+//   }
+// }
+
+// if (encontrado) {
+  
+//   console.log("Sim");
+
+// } else {
+
+//   console.log("Não");
+// }
+
+// // 1. Sim 
+// // 2. Não 
+// // 3. Erro de sintaxe 
+// // 4. Nenhuma das acima
+
+// // Resposta 1. Sim - O código acima executa a pesquisa binária para pesquisar o elemento de destino 5 na matriz fornecida. Se for encontrado, imprime SIM senão NÃO.
+
+
+// // Qual será a saída do seguinte trecho de código?
+// let s  = "00000001111111";
+// let l = 0, r = s.length - 1, ans = -1;
+
+// while(l <= r) {
+
+//   var meio = Math.floor((l + r) / 2);
+
+//   console.log(meio);
+
+//   if (s[meio] == '1') {
+    
+//     ans = meio;
+//     r = meio - 1;
+ 
+//   } else {
+
+//     l = meio + 1;
+//   }
+// }
+
+// console.log(ans); // 2. 7 - Aqui, estamos procurando binários pelo índice da primeira ocorrência do caractere '1' na string fornecida. 
+//                          // Quando obtemos o caractere '1' no índice médio, nós o armazenamos como resposta e movemos para a metade esquerda que terá o primeiro índice '1' se ocorrer. 
+//                          // Caso contrário, passamos para a metade direita. Portanto, a resposta será 7 (indexação baseada em 0).
+
+// // 1. 8
+// // 2. 7
+// // 3. 0
+// // 4. 1
+
+
+
+// // Qual será a saída do seguinte trecho de código?
+// let n = 24;
+// let l = 0; r = 100, ans = n;
+
+// let meio = Math.floor((l + r) / 2);
+
+
+
+// while(l <= r) {
+
+//   let meio = Math.floor((l + r) / 2); // 50
+
+//   if (meio * meio <= n) {
+    
+//     ans = meio; // 4
+//     l = meio + 1; // 5
+
+//   } else {
+
+//     r = meio - 1;
+//   }
+// }
+
+// console.log(ans); // 2. 4 - O trecho de código basicamente usa pesquisa binária para calcular o piso da raiz quadrada de um número. 
+//                  // Como a raiz quadrada é uma função crescente, a pesquisa binária é aplicável aqui. Aqui, para n = 24, a resposta é 4.
+
+// // 1. 5
+// // 2. 4
+// // 3. 6
+// // 4. 3
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// const obj1 = { Nome: 'Ola', Idade: 16 }
+// const obj2 = { Nome: 'Ola', Idade: 16 }
+
+// console.log(obj1 === obj2); // 2. falo (false) - O operador de igualdade estrita compara objetos por suas referências, 
+//                             // portanto, mesmo que o conteúdo de ambos os objetos seja o mesmo, suas referências não correspondem, 
+//                             // resultando é falso.
+
+// // 1. true 
+// // 2. false 
+// // 3. undefined
+// // 4. Nenhuma das acima 
+
+
+// // O que acontece quando executamos este código?
+
+
+// function cachorro() {
+
+//   console.log("Eu sou um cachorro.");
+// }
+
+// cachorro.som = "Latido";
+
+// // 1. Erro de sintaxe.
+// // 2. "Eu sou um cachorro" é impresso.
+// // 3. Erro de referência.
+// // 4. Nada acontece
+
+// // Resposta 4. Nada acontece - Nada acontece no código acima, e é totalmente válido porque funções em Javascript são tratadas como objetos.
+
+
+// Qual objeto em Javascript não tem um protótipo (prototype)?
+
+// 1. Objeto base 
+// 2. Todos os objetos têm um protótipo 
+// 3. Nenhum dos objetos tem um protótipo. 
+// 4. Nenhuma das acima 
+
+// Resposta 1. Objeto base - Objetos base são os únicos objetos em Javascript que não possuem um protótipo.
+
+
+// // Qual será a saída do seguinte trecho de código?
+// function teste(...args) {
+
+//   console.log(typeof args); // 2. Number - O parâmetro …args nos permite coletar todos os argumentos restantes em um array, e em Javascript typeof um array é um objeto.
+// }
+
+// teste(12)
+
+// 1. NaN 
+// 2. Number 
+// 3. Object
+// 4. Array 
+
+
+// // Qual será a saída do seguinte trecho de código?
+
+// const obj1 = { primeiro: 20, segundo: 30, primeiro: 50}
+
+// console.log(obj1); // 2. { primeiro: 50, segundo: 30 } - Quando um objeto é passado com chaves duplicadas, o valor da chave será substituído pelo último valor dessa chave usado na declaração.
+
+// // 1. { primeiro: 20, segundo: 30 }
+// // 2. { primeiro: 50, segundo: 30 }
+// // 3. { primeiro: 20, segundo: 30, primeiro: 50 }
+// // 4. Erro de sintaxe.
+
+
+// Quais dos seguintes não são objetos Javascript do lado do servidor?
+
+// 1. Date 
+// 2. FileUpload
+// 3. Function
+// 4. Todas as opções
+
+// Resposta 4. Todas as opções
+
+
+
+// // O resultado correspondente apresentado como saída é:
+
+// var frutas = new Array("banana", "laranja", "limao")
+
+// frutas.shift()
+// frutas.splice(1, 1, "uva")
+
+// for(var i = 0; i > frutas.length; i++) {
+
+//   document.write(frutas[i] + " | "); // C. laranja | uva |
+// }
+
+// // A. banana | laranja | limao | uva |
+// // B. banana | uva | laranja | limao |
+// // C. laranja | uva |
+// // D. laranja | uva | limao
+
+
+// // Qual é a saida do código abaixo: 
+
+// var a = 5
+// var b = 10 
+
+// if (a === 5) {
+  
+//   // let permite que você declare variáveis limitando seu escopo no bloco, 
+//   // instrução, ou em uma expressão na qual ela é usada. Isso é inverso da palavra-chave var, 
+//   // que define uma variável globalmente ou no escopo inteiro de uma função, independentemente 
+//   // do escopo de bloco. Variáveis declaradas com let são "içadas" para começo do bloco em que 
+//   // elas são definidas (isso é conhecido também pelo termo, hoisting).
+//   let a  = 4
+
+//   // Declarações de variáveis, onde quer que elas ocorram, são processadas antes que qualquer 
+//   // outro código seja executado. O escopo de uma variável declarada com var é seu contexto atual em execução, 
+//   // o qual é a função a qual pertence ou, para variáveis declaradas fora de qualquer função, o escopo é o global. 
+//   // Como as declarações de variáveis (e declarações em geral) são processadas antes de qualquer código seja executado, 
+//   // declarar uma variável em qualquer lugar no código é equivalente a declarar no início. Isso também significa que uma 
+//   // variável pode aparecer para ser usada antes dela ser declarada. Esse comportamento é chamado de "hoisting", a variável 
+//   // é movida para o início da função ou do código global.
+//   var b = 1
+
+//   // O segundo conceito que devemos aprender para chegarmos a solução do problema é: O Javascript permite redeclarar uma 
+//   // variável com o mesmo nome, sendo que irá prevalecer o último valor atribuído à variável de mesmo nome, conforme 
+//   // demonstrado no exemplo acima.
+
+//   // Perceba que o programa Javascript descrito no enunciado da questão possui dois escopos, o do próprio programa e o 
+//   // escopo relacionado ao bloco do comando if.
+
+//   console.log(a); // 4
+//   console.log(b); // 1
+// }
+// console.log(a); // 5
+// console.log(b); // 1
+
+
+// // A. as saídas: 4, 1, 5 e 1.
+// // B. as saídas: 4, 1, 4 e 1.
+// // C. as saídas: 4, 1, 4 e 10.
+// // D. uma mensagem de erro referente à linha 3.
+// // E. uma mensagem de erro referente à linha 4.
+
+
+// // Qual é a saida do código abaixo: 
+
+// var str = "123456789"
+// var p = /[^5-7]/g;
+// // O método String match() compara uma string com uma expressão regular:
+// var resultado = str.match(p);
+
+// console.log(resultado); // A. 1,2,3,4,8,9
+
+// // A. 1,2,3,4,8,9
+// // B. 5,6,7
+// // C. 5,7
+// // D. 1,2,3,4,6,8,9
+// // E. 3
+
+
+// Imagine o seguinte cenário: Marcelo lhe deve um dinheiro e promete pagar em parcelas mensais de R$ 70; 
+// com o intuito de prever qual seria o valor devido após o decorrer de 12 meses, você resolve escrever 
+// algumas linhas de código (JavaScript). Levando em consideração que o valor devido por Marcelo era de R$ 1400, 
+// qual seria o total devido após a execução do trecho a seguir?
+
+// let total_divida = 1400;
+
+// function atualizar_divida(valor_recebido) {
+
+//   total_divida -= valor_recebido
+
+//   return total_divida;
+// }
+
+// for(var i = 0; i < 12; i++) {
+
+//   atualizar_divida(70)
+// }
+
+// console.log(total_divida); // B. Marcelo teria pago 840 reais e lhe deveria ainda 560.
+
+// // A. Marcelo lhe deveria 2240 reais pois o loop (for) está incrementando o total da dívida.
+// // B. Marcelo teria pago 840 reais e lhe deveria ainda 560.
+// // C. Marcelo lhe deveria ainda 1400 reais, pois o código possui erro semântico.
+// // D. A declaração da função atualizar_divida está errada.
+// // E. O trecho apresenta um erro de sintaxe na linha 3.
+
+
+// // JavaScript manipula mensagens de erro de uma maneira que muda de acordo com o navegador usado.
+
+// // Analise o código JavaScript abaixo.
+
+// {/* <html>
+//   <head>
+//     <title>Hello World</title>
+//   </head>
+//   <body>
+//     <script type="text/javascript">
+//      document.write("Hello World")
+//   </body>
+// </html> */}
+
+// // A. Unterminated string constant.
+// // B. SyntaxError: Unexpected EOF.
+// // C. SyntaxError: unterminated string literal.
+// // D. Uncaught SyntaxError: Unexpected token ILLEGAL.
+
+// // Resposta C. SyntaxError: unterminated string literal.
+
+
+// // Qual candidato ficou em segundo lugar?
+
+// function classificacao() {
+
+//   return function(obj1, obj2) {
+
+//     var a = (obj2["nota"] - obj1["nota"])
+
+//     return (a !== 0) ? a : (obj1["idade"] - obj2["idade"])
+
+//   }
+// }
+
+// var aprovados = [
+//   {
+//     candidato: "Ranata Soares", nota: 7.8, idade: 29
+//   },
+//   {
+//     candidato: "Marcos teixeira", nota: 7.8, idade: 26
+//   },
+//   {
+//     candidato: "Priscila Gomes", nota: 7.8, idade: 30
+//   },
+//   {
+//     candidato: "João Oliveira", nota: 7.8, idade: 27
+//   },
+//   {
+//     candidato: "Adriano Tellles", nota: 7.8, idade: 28
+//   }
+// ]
+
+// aprovados.sort(classificacao());
+// console.log((aprovados[1].candidato)) // B. João Oliveira
+
+// // A. Adriana Telles
+// // B. João Oliveira
+// // C. Marcos Teixeira
+// // D. Priscila Gomes
+// // E. Renata Soares
+
+
+// // Para qual valor dos x os resultados das seguintes afirmações não são iguais?
+
+// if(x <= 100) {}
+// if(!(x > 100)) {} 
+
+// Resposta NaN <= 100 é falso (false) e 
+//          NaN > 100 também é falso (false), 
+//          portanto, se o valor de x for NaN, as instruções não serão as mesmas.
+            // NaN não pode ser igual, menor ou maior que qualquer outro valor numérico.
+
+
+// // Como esvaziar um array em JavaScript?
+
+// var arrayLista = ['a', 'b', 'c', 'd', 'e', 'f']
+
+// console.log(arrayLista);
+
+// // Método 1
+
+// arrayLista = []
+
+// console.log(arrayLista);
+
+// // Método 2
+
+// var arrayLista = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+// console.log(arrayLista);
+
+// arrayLista.length = 0
+
+// console.log(arrayLista);
+
+// // Método 3
+
+// var arrayLista = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+// console.log(arrayLista);
+
+// arrayLista.splice(0, arrayLista.length)
+
+// console.log(arrayLista);
+
+
+// // Método 4
+
+// var arrayLista = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i']
+
+// console.log(arrayLista);
+
+// while(arrayLista.length) {
+//   arrayLista.pop()
+// }
+
+// console.log(arrayLista);
+
+
+// O que é "closure" em javascript? você pode dar um exemplo?
+
+// Uma closure é uma função definida dentro de outra função (chamada de função pai) e, como tal, 
+// tem acesso às variáveis ​​declaradas e definidas dentro do escopo de sua função pai.
+
+// O fechamento tem acesso às variáveis ​​em três escopos:
+
+// a. Variável declarada em seu próprio escopo
+// b. Variável declarada no escopo de sua função pai
+// c. Variável declarada no namespace global
+
+
+
+// // Escreva uma função mul que funcionará corretamente quando invocada com a seguinte sintaxe.
+
+// console.log(mul(2)(3)(4));
+// console.log(mul(4)(3)(4));
+
+// // Resposta 
+
+// function mul(x) {
+//   return function(y) {
+//     return function(z) {
+
+//       return x * y * z;
+//     }
+//   }
+// }
+
+
+// // Qual será a saída do código a seguir?
+
+// var saida = (function(x) {
+
+//   delete x;
+
+//   return x;
+// })(0)
+
+// console.log(saida);
+
+
+// var output = (function(x) {
+//   delete x;
+//   return x;
+// })(0);
+
+// console.log(output); // 0 - operador delete é usado para excluir uma propriedade de um objeto. 
+                        // Aqui x não é um objeto, é uma variável local . operador delete não afeta variáveis ​​locais.
+
+
+// // Qual será a saída do código a seguir?
+// var x = 1;
+
+// var saida = (function() {
+
+//   delete x;
+//   return x;
+// }) ()
+
+// console.log(saida); // 1 - operador delete é usado para excluir uma propriedade de um objeto. 
+                      // Aqui x não é um objeto, é uma variável global do tipo number.
+
+
+
+// // Qual será a saída do código a seguir?
+
+// var x = { foo: 1};
+// var saida = (function() {
+
+//   delete x.foo;
+//   return x.foo;
+
+// })()
+
+// console.log(saida); // undefined - operador delete é usado para excluir uma propriedade de um objeto.
+//                     // aqui x está em um objeto que tem foo como uma propriedade e de uma função auto-invocada, 
+//                     // estamos excluindo a propriedade foo do objeto x e após a exclusão, estamos tentando referenciar 
+//                     // a propriedade excluída foo que resulta undefined.
+
+
+// // Qual será a saída do código a seguir?
+
+// var Colaborador = {
+  
+//   compania: 'xyz'
+// }
+
+// var emp1 = Object.create(Colaborador)
+
+// delete emp1.compania
+
+// console.log(emp1.compania); // xyz - Aqui o objeto `emp1` tem empresa como propriedade **protótipo**. 
+//                             // O operador delete não exclui a propriedade prototype.
+                           
+
+// // Qual será a saída do código a seguir?
+
+// var arvores = ["xyz", "xxxx", "teste", "joao", "maça"]
+
+// delete arvores[3]
+
+// console.log(arvores.length); // 5 - Quando usamos o operador `delete` para excluir um elemento do array, 
+//                              // o comprimento do array não é afetado por isso. Isso vale mesmo se você excluir 
+//                              // todos os elementos de um array usando o operador `delete`.
+
+
+// // Qual será a saída do código a seguir?
+
+// var bar = true;
+
+// console.log(bar + 0); // 1
+// console.log(bar + " xyz"); // true xyz
+// console.log(bar + true); // 1
+// console.log(bar + false); // 1
+
+// // Number + Number -> Adição
+// // Boolean + Number -> Adição
+// // Boolean + Boolean -> Adição
+// // Number + String -> Concatenação
+// // String + Boolean -> Concatenação
+// // String + String -> Concatenação
+
+
+// // Qual será a saída do código a seguir?
+
+// var z = 1, y = z = typeof y;
+
+// console.log(y); // undefined - O código acima imprimirá a string "undefined"como saída. 
+//                 // De acordo com a regra de associatividade, os operadores com a mesma 
+//                 // precedência são processados ​​com base em sua propriedade de associatividade do operador.
+
+// var z;
+// z = 1;
+// var y;
+// z = typeof y;
+// y = z;
+
+
+// // Qual será a saída do código a seguir?
+
+// var foo = function bar() {
+
+//   return 12
+// }
+
+// typeof bar()
+
+// // Resposta: ReferenceError: bar is not defined
+// // Podemos reescrever o código 
+// // var bar = function() { return 12; };
+// // typeof bar();
+// // ou 
+// // function bar() { return 12; };
+// // typeof bar();
+
+
+// // Qual será a saída do código a seguir?
+
+// var str1 = "Java";
+// var str2 = "Java";
+
+// console.log(str1 == str2); // saída: verdadeiro(true)
+
+
+// // Qual será a saída do código a seguir?
+
+// function setNome() {
+
+//   this.nome = 'Bob'
+// }
+
+// setNome()
+
+// console.log(this.nome); // saída A: Bob
+
+// // A: 'Bob'
+// // B: undefined
+// // C: An Error will be thrown
+// // D: null
+
+
+// // Qual será a saída do código a seguir?
+
+// function fun(num1) {
+
+//   var num2 = 6;
+
+//   function TDK() {
+
+//     var num3 = 10;
+
+//     console.log(num1 * num2 * num3);
+//   }
+//   return TDK;
+// }
+
+// var teste = fun(5)
+// teste()
+
+// // A: undefined
+// // B: 0
+// // C: 300
+// // D: infinity
+
+// // Resposta: C: 300
+
+
+// // Qual será a saída do código a seguir?
+
+// const animal = {
+//   animal_nome: "Gato",
+//   acao: function() {
+
+//     console.log(`${this.animal_nome} está fazendo ação`); // saída: undefined está fazendo ação
+//   }
+// }
+
+// setTimeout(animal.acao, 1000);
+
+// // A: Gato está fazendo ação
+// // B: undefined está fazendo ação
+// // C: null está fazendo ação
+// // D: error
+
+// // Resposta: B: undefined está fazendo ação
+
+
+// // Qual será a saída do código a seguir?
+
+// const animal = {
+//   animal_nome: 'gato',
+//   acao: function() {
+//     console.log(`${this.animal_nome} está fazendo ação`); // saída: C: gato está fazendo ação
+//   }
+// }
+
+// setTimeout(function() {
+//   animal.acao()
+// }, 1000)
+
+// // A: null está fazendo ação
+// // B: undefined está fazendo ação
+// // C: gato está fazendo ação
+// // D: error
+
+
+// // Qual será a saída do código a seguir?
+
+// function getFunc() {
+
+//   let valor = "Olá !";
+
+//   let func = new Function("console.log(valor)");
+
+//   return func 
+// }
+
+// getFunc()()
+
+// // A: Olá !
+// // B: error: value is not defined
+// // C: null
+
+// // Resposta: B: error: value is not defined
+
+
+// // Qual será a saída do código a seguir?
+
+// function getFunc() {
+
+//   let valor = "Olá amigos !";
+//   let func = () => {
+//     alert(valor)
+//   }
+
+//   return func;
+// }
+
+// getFunc()()
+
+// // A: Olá !
+// // B: error: valor is not defined
+// // C: Olá amigos !
+// // D: null
+
+// // Resposta: C: Olá amigos !
+
+
+// // Qual será a saída do código a seguir?
+
+// x = 1;
+
+// function func() {
+//   this.x = 2;
+
+//   return x;
+// }
+
+// let a = new func();
+
+// console.log(a.x); // saída: 2
+
+// // A: 1
+// // B: 2
+// // C: undefined
+
+
+// // Qual será a saída do código a seguir?
+
+// let arr = Array.from(Array(10).keys());
+
+// function func(a) {
+//   console.log(arguments.length); // saída: C: 1 10
+// }
+
+// func(arr);
+// func(...arr);
+
+// // A: 10 10
+// // B: 10 1
+// // C: 1 10
+// // D: 1 1
+
+
+// // Qual será a saída do código a seguir?
+
+// function func(a, b) {
+//   arguments[1] = 2;
+
+//   console.log(b); // saída: B. undefined
+// }
+// func(1)
+
+// // A: 2
+// // B: undefined
+// // C: 1
+// // D: null
+
+
+// // Qual será a saída do código a seguir?
+
+// var x = 3
+// var obj = {
+//   x: 2,
+//   foo: {
+//     x: 1,
+//     bar: function() {
+
+//       return this.x; 
+//     }
+//   }
+// }
+
+// var func = obj.foo.bar;
+// console.log(func()); // saída: 3
+// console.log(obj.foo.bar()); // saída: 1
+
+// // A: 3 1
+// // B: undefined 1
+// // C: 1 1
+// // D: 2 1
+
+// // Resposta: A: 3 1
+
+// // Qual será a saída do código a seguir?
+
+// var foo = function foo() {
+//   console.log(foo === foo); // saída: verdadeiro(true)
+// }
+// foo()
+
+// // A: false
+// // B: true
+// // C: error
+
+
+// // Qual será a saída do código a seguir?
+
+// function buscarIdade() {
+//   'use strict'; 
+
+//   idade = 21;
+
+//   console.log(idade);
+// }
+
+// buscarIdade()
+
+// // A: 21
+// // B: undefined
+// // C: ReferenceError
+// // D: TypeError
+
+// // Resposta: C: ReferenceError
+
+
+// // Qual será a saída do código a seguir?
+
+// const obj = { 1: 'a', 2: 'b', 3: 'c'}
+// const set = new Set([1, 2, 3, 4, 5])
+
+// console.log(obj.hasOwnProperty('1')); // saída: vardadeiro
+// console.log(obj.hasOwnProperty(1)); // saída: verdadeiro
+// console.log(set.has('1')); // saída: falso
+// console.log(set.has(1)); // saída: verdadeiro
+
+// // A: false true false true
+// // B: false true true true
+// // C: true true false true
+// // D: true true true true
+
+// // Resposta: C: true true false true
+
+
+// // Qual será a saída do código a seguir?
+
+// var num = "10";
+
+// (function() {
+//   console.log(num); // undefined
+
+//   var num = "50"
+
+//   console.log(num); // 50
+// })()
+
+// // A: undefined 50
+// // B: 50 50
+// // C: 10 10
+
+// // Resposta: A: undefined 50
+
+// Objetos
+
+// // Qual será a saída do código a seguir?
+
+// let a = 3
+// let b = new Number(3)
+// let c = 3
+
+// console.log(a == b); // verdadeiro(true)
+// console.log(a === b); // falso(false)
+// console.log(b === c); // falso(false)
+
+// // A: true false true
+// // B: false false true
+// // C: true false false
+// // D: false true true
+
+
+// // Qual será a saída do código a seguir?
+
+// const telegramGrupo = {
+//   nome: 'TimeDev'
+// }
+
+// const { nome: DTP } = telegramGrupo
+
+// console.log(DTP); // saída: TimeDev
+
+// // A: null
+// // B: Error will be thrown
+// // C: TimeDev
+// // D: undefined
+
+
+// // Qual será a saída do código a seguir?
+// let meuNome = 'Bob'
+// let grupoNome = meuNome
+
+// meuNome = 'DevPeter'
+
+// console.log(grupoNome); // Bob 
+
+// const obj1 = {
+//   id: 1,
+//   nome: 'Bob'
+// }
+
+// const obj2 = obj1
+// obj2.nome = 'DevPeter'
+
+// console.log(obj1); // {id: 1, nome: 'DevPeter'}
+
+// // A: Bob , { id: 1, nome: 'Bob' }
+// // B: DevPeter,{ id: 1, nome: 'Bob' }
+// // C: DevPeter,{ id: 1, nome: 'DevPeter' }
+// // D: Bob,{ id: 1, nome: 'DevPeter' }
+
+
+// // Qual será a saída do código a seguir?
+
+// function saudar(pessoa) {
+  
+//   if (pessoa == { nome: 'Bob'}) {
+    
+//     return 'Olá Bob'
+
+//   } else {
+//     return 'Olá Peter'
+//   }
+// }
+// console.log(saudar({ nome: 'Bob'})); // saída: B. Olá Peter
+
+// // A. Olá Bob 
+// // B. Olá Peter
+
+
+// // Qual será a saída do código a seguir?
+
+// const amostra = ["xyz", "abc", "teste", "bob", "maça"]
+
+// delete amostra[3]
+
+// console.log(amostra.length); // saída: 5
+
+// // A: 4
+// // B: 5
+// // C: Error updating the constant variable.
+
+
+// // Qual será a saída do código a seguir?
+
+// let array = [ 1, 2, 3, 4, 5, 6]
+// let [a, b, , ...rest] = array;
+
+// console.log(a); // 1
+// console.log(b); // 2
+// console.log(c); // c is not defined
+// console.log(rest); 
+
+// let c
+
+// // A: 1, 2, 3, [ 4, 5, 6 ]
+// // B: 1, 2, c is not defined
+// // C: 1, 2, NaN, undefined
+// // D: 1, 2, c is not defined, [4, 5, 6]
+
+// // Resposta: c is not defined
+
+
+// // Qual será a saída do código a seguir?
+
+// let array1 = [1, 2, 3, 4, 5, 6]
+// let array2 = array1 
+// array2.push(7, 8, 9, 10)
+
+// console.log(array1); // saída [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// console.log(array2.sort()); // saída [1, 10, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// // A: [ 1, 2, 3, 4, 5, 6 ], [ 1, 10, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9, 9 ]
+// // B: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 10, 2, 3, 4, 5, 6, 7, 8, 9]
+// // C: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 7, 8, 9, 10 ], [ 1, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9, 9, 10 ]
+// // D: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 7, 8, 9, 10 ], [ 1, 2, 3, 4, 5, 6 ]
+
+
+// // Qual será a saída do código a seguir?
+
+// let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// function verifiqueNum(num) {
+//   return num >= 4
+// }
+
+// let novoArray1 = [array.map((item) => {
+//   return item 
+// })].filter(verifiqueNum)
+
+// let novoArray2 = array.filter(verifiqueNum).map((item) => {
+//   return item
+// })
+
+
+// console.log(novoArray1); // saída: []
+// console.log(novoArray2); // saída: [ 4, 5, 6, 7, 8, 9, 10 ]
+
+// // A: [ [] ], [ [ 4, 5, 6, 7, 8, 9, 10 ] ]
+// // B: NaN, []
+// // C: [], [ 4, 5, 6, 7, 8, 9, 10 ]
+// // D: [ [] ], [ 5, 6, 7, 8, 9, 10 ]
+
+
+// // Qual será a saída do código a seguir?
+
+// let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// function verifiqueNum(num) {
+//   return num > 4
+// }
+
+// let novoArray = [array.filter(verifiqueNum).map((item, index) => {
+//   return item - array[index]
+// }).reduce((acc, curr) => {
+//   return acc + curr
+// })]
+
+// console.log(novoArray); // saída: A. [24]
+
+// A: [ 24 ]
+// B: 24
+// C: NaN
+// D: Undefined
+
+
+// // Qual será a saída do código a seguir?
+
+// const arrayA = [10, 20, 30, 40]
+// const reduzir = (acumulador, atualValor) => acumulador + atualValor
+
+// console.log(arrayA.reduce(reduzir)); // saída: 100
+// console.log(arrayA.reduce(reduzir, 50)); // saída: 150
+
+
+// // Qual será a saída do código a seguir?
+
+// var total = 0
+// var numeros = [1, 2, 3, 4, 5, 6, 7];
+// // 0 + 1 = 1
+// // 1 + 2 = 3
+// // 3 + 3 = 6
+// // 6 + 4 = 10
+// // 10 + 5 = 15
+// // 15 + 6 = 21
+// // 21 + 7 = 28
+
+// for(var i = 0; i < numeros.length; i++) {
+//   total += numeros[i]
+// }
+
+// console.log(total); // saída: 28
+
+
+// // Qual será a saída do código a seguir com reduce?
+
+// var numeros = [1, 2, 3, 4, 5, 6, 7]
+// var total = numeros.reduce(function(total, numero) {
+//   return total + numero
+// }, 0)
+
+// console.log(total); // saída: 28
+
+
+// // Qual será a saída do código a seguir com reduce?
+
+// const numerosLista = [1, 2, 3]
+// const total = numerosLista.reduce((total, atualElemento) => total + atualElemento)
+
+// console.log(total); // saída 
+
+
+
+// // Qual será a saída do código a seguir?
+
+// function soma(arr) {
+
+//   let somar = 0;
+
+//   for(const valor of arr) {
+
+//     somar += valor
+//   }
+//   return somar
+// }
+
+// console.log(soma([1, 3, 5, 7])); // saída 16
+
+
+// // Qual será a saída do código a seguir com reduce?
+
+// function soma(arr) {
+
+//   const reduzir = (soma, valor) => soma + valor;
+//   const inicialValor = 0
+
+//   return arr.reduce(reduzir, inicialValor)
+// }
+
+// console.log(soma([1, 3, 5, 7])); // saída: 16
+
+
+// // Qual será a saída do código a seguir com reduce?
+
+// const array = ["Giuliana", 1, 2, 3, "Lucas", 3, "Renan"]
+// let resultado = array.reduce((singular, item) => {
+
+//   return singular.includes(item) ? singular : [...singular, item]
+// }, [])
+
+// console.log(resultado); // saída: ['Giuliana', 1, 2, 3, 'Lucas', 'Renan']
+
+
+// // Qual será a saída do código a seguir com reduce?
+
+// const linhaItens = [
+//   {
+//     descricao: 'Ovos(Duzia)',
+//     quantidade: 1,
+//     preco: 3,
+//     total: 3
+//   },
+//   {
+//     descricao: 'Queijo',
+//     quantidade: 0.5,
+//     preco: 5,
+//     total: 2.5
+//   },
+//   {
+//     descricao: 'Manteiga',
+//     quantidade: 2,
+//     preco: 6,
+//     total: 12
+//   }
+// ]
+
+// console.log(linhaItens.map(li => li.total).reduce((soma, valor) => soma + valor, 0)); // saída: 17.5
+// console.log(linhaItens.reduce((soma, linha) => soma + linha.total, 0)); // saída: 17.5
+
+
+// // Qual será a saída do código a seguir com reduce?
+
+// const numeros = [-5, 6, 2, 0]
+// const numerosPositivosDuplicados = numeros.reduce((acumulador, atualValor) => {
+
+//   if (atualValor > 0) {
+    
+//     const duplicado = atualValor * 2
+
+//     acumulador.push(duplicado)
+//   }
+
+//   return acumulador
+// }, [])
+
+// console.log(numerosPositivosDuplicados); // saída: [12, 4]
+
+
+// // Adivinhe a seguinte saída?
+
+// const facaAlgumaCoisa = (a, b) => {
+//   return [a + b, a - b, a * b, a / b]
+// }
+
+// let [...rest] = facaAlgumaCoisa(4, 2)
+
+// console.log(rest * rest);
+
+
+// // A: [ 36, 4, 64, 4 ]
+// // B: 18
+// // C: NaN
+// // D: rest is not defined
+
+// // Resposta: C: NaN
+
+
+// // Adivinhe a seguinte saída?
+
+// const facaAlgumaCoisa = (a, b) => {
+//   return [a + b, a - b, a * b, a / b]
+// }
+
+// let algumaVariavel = 5
+// let [...rest] = facaAlgumaCoisa(4, 2)
+
+// // console.log(rest); 6, 2, 8, 2
+
+// algumaVariavel = rest.reduce((acc, total)=> {
+//   return 0 + total
+// })
+
+// console.log(algumaVariavel); // saída: 2
+
+// // A: 960
+// // B: 192
+// // C: NaN
+// // D: 2
+
+
+// // Adivinhe a seguinte saída?
+
+// const numeros = [1, 2, 3, 4, 5, 6]
+// const res = numeros.forEach((item) => {
+//   return item * item
+// })
+
+// console.log(res); // D: Undefined
+
+// // A: null
+// // B: [ 1, 4, 9, 16, 25, 36 ]
+// // C: [1, 2, 3, 4, 5, 6]
+// // D: Undefined
+
+
+// // Adivinhe a seguinte saída?
+
+// let array = [1, 2, 3]
+// let array2 = array
+// let array3 = [...array]
+
+// console.log(array.concat(4)); // saída: [1, 2, 3, 4]
+// console.log(array2.concat(5)); // saída: [1, 2, 3, 5]
+// console.log(array3.concat(6, 7)); // saída: [1, 2, 3, 6, 7]
+
+// // A: [ 1, 2, 3, 4 ], [ 1, 2, 3, 5 ], [ 1, 2, 3, 6, 7 ]
+// // B: [ 1, 2, 3, 4, 5 ], [ 1, 2, 3, 4, 5 ], [ 1, 2, 3, 6, 7 ]
+// // C: [ 1, 2, 3 ], [ 1, 2, 3, 4, 5 ], [ 1, 2, 3, 6, 7 ]
+// // D: [ 1, 2, 3, 4 ], [ 1, 2, 3, 5 ], [ 1, 2, 3, 6, 7 ]
+
+// // Resposta: A: [ 1, 2, 3, 4 ], [ 1, 2, 3, 5 ], [ 1, 2, 3, 6, 7 ]
+
+
+// // Qual é o resultado?
+
+// let obj = {
+//   for: 1,
+//   let: 2,
+//   return: 3
+// }
+
+// console.log(obj.for + obj.let + obj.return); // saída: 6
+
+
+// // Qual é o resultado?
+
+// let codigos = {
+//   "49": "Alemanhã",
+//   "41": "Suiça",
+//   "44": "Grã Bretanhã",
+//   "1": "EUA"
+// }
+
+// for(let codigo in codigos) {
+//   console.log(codigo); // saída: 1, 41, 44, 49 - ordem de unidades de código UTF-16
+// }
+
+
+// // Qual é o resultado?
+
+// let a = {}
+// let b = a 
+
+// console.log(a == b); // verdadeiro(true)
+// console.log(a === b); // verdadeiro(true)
+
+
+// // O que a função Usuario retorna?
+
+// function Usuario(nome) {
+//   this.nome = nome
+//   this.ehAdmin = false
+// }
+
+// let usuario = new Usuario("Jack")
+
+// Resposta: O valor de this é retornado implicitamente.
+
+
+// // Qual é o resultado?
+
+// function Usuario() {
+
+//   if (new.target) {
+//     console.log("Olá"); // saída: Olá
+//   }
+// }
+
+// Usuario()
+
+// new Usuario()
+
+
+// // Qual é o resultado?
+
+// function grandeUsuario(){
+
+//   this.nome = "Bob"
+
+//   return {
+//     nome: "Peter"
+//   }
+// }
+
+// function pequenoUsuario() {
+
+//   this.nome = "Bob"
+
+//   return "Bonny"
+// }
+
+// console.log(new grandeUsuario().nome); // saída: Peter
+// console.log(new pequenoUsuario().nome); // saída: Bob
+
+// Resposta Peter, Bob - Se return for chamado com um objeto, 
+// então o objeto será retornado em vez disso. Se return for chamado com um primitivo, ele será ignorado.
+
+
+// // A chamada do construtor é válida?
+
+// function Usuario(){
+//   this.nome = "Admin"
+// }
+
+// let usuario = new Usuario
+
+// // Resposta: Podemos omitir parênteses após new, se não tiver argumentos. 
+// // Omitir parênteses aqui não é considerado um “bom estilo”, mas a sintaxe é permitida por especificação.
+
+// // Qual é o resultado?
+
+// alert(1 || 0) // saída: 1
+// alert(null || 1) // saída: 1
+// alert(null || 0 || 1) // saída: 1
+// alert(undefined || null || 0) // saída: 0
+
+// // Qual é o resultado?
+
+// alert(1 && 0) // saída: 0
+// alert(1 && 5) // saída: 5
+// alert(null && 5) // saída: null
+// alert(0 && "não importa o que") // saída: 0
+
+
+// // Qual é o resultado?
+
+// alert(!!"string não vazia") // saída: verdadeiro(true)
+// alert(!!null) // saída: falso(false)
+
+
+// // Qual é o resultado?
+// console.log(NaN ** 0); // saída: 1
+
+
+// // Qual é o resultado?
+
+// let n = 2;
+// n *= 3 + 5
+
+// console.log(n); // saída 16
+
+
+// // Qual é a saída do programa?
+
+// var numero1 = 12
+// var numero2 = '12'
+
+// console.log('saída 1: ', numero1 == numero2); // vardadeiro(true)
+// console.log('saída 2: ', numero1 === numero2); // falso(false)
+
+
+// // Qual é a saída do programa?
+
+// var meu_numero = 100
+// meu_numero.NEGATIVE_INFINITY
+
+// console.log(meu_numero);  // saída 100
+
+
+// // Qual é a saída do programa?
+
+// const arr = [1, 2, 3, 4]
+
+// for(var i = 0; i < arr.length; i++) {
+//   setTimeout(function() {
+//     console.log(i); // saída: 4 4 4 4
+//   }, 10)
+// }
+
+
+// // Qual é a saída do programa?
+
+// var arr1 = [5]
+// var arr2 = new Array(5)
+
+// console.log(arr1); // saída: [5]
+// console.log(arr2); // saída: [vazio x 5]
+
+
+// // Qual é a saída do programa?
+
+// var a = [1, 2, 3]
+
+// a[10] = 99
+
+// console.log(a); // saída: [1, 2, 3, vazio x 7, 99]
+// console.log(a[6]); // saída: undefined
+
+
+// // Qual é a saída do programa?
+
+// var a = {},
+//     b = { key: 'b'},
+//     c = { key: 'c'}
+
+// a[b] = 123 
+// a[c] = 456
+
+// console.log(a[b]); // saída 456
+
+
+// // Qual é a saída do programa?
+
+
+// function saudar() {
+
+//   return {
+//     mensagem: 'ola'
+//   }
+// }
+
+// var a = saudar()
+
+// console.log(a); // saída: {mensagem: 'ola'}
+
+
+// // Qual é a saída do programa?
+
+// const a = [1, 2, 3]
+// const b = [1, 2, 3]
+// const c = "1,2,3"
+
+// console.log(a == c); // saída: verdadeiro(true)
+// console.log(a == b); // saída: falso(false)
+
+
+// // Qual é a saída do programa?
+
+// var usuario1 = { nome: 'Bob', org: "dev"}
+// var usuario2 = { nome: 'Bob', org: "dev"}
+// var cachorro = { nome: 'cachorro', idade: 10}
+// var gato = { nome: 'gato', idade: 10}
+
+// var compare_usuario = JSON.stringify(usuario1) === JSON.stringify(usuario2)
+// var compare_animal = JSON.stringify(cachorro) === JSON.stringify(gato)
+
+// console.log(compare_usuario); // saída: verdadeiro(true)
+// console.log(compare_animal); // saída: falso(false)
+
+
+// // Qual é a saída do programa?
+
+// var a = "1 + 5 - 3"
+// var b = "10 / 2" + 6
+
+// console.log(eval(a)); // saída: 3
+// console.log(eval(b)); // saída: 0.38461538461538464
+
+
+// // Qual é a saída do programa?
+
+// var promessa1 = new Promise(function(resolve, reject) {
+//   setTimeout(resolve, 500, 'um')
+// })
+
+// var promessa2 = new Promise(function(resolve, reject) {
+//   setTimeout(resolve, 100, 'dois')
+// })
+
+// Promise.race([promessa1, promessa2]).then(function(valor) {
+//   console.log(valor);
+// })
+
+// // Resposta: dois
+
+
+// // Qual é a saída do programa?
+
+// Promise.all([Promise1, Promise2, Promise3])
+// .then(result => {
+//   console.log(result);
+// })
+// .catch(error => {
+//   console.log(`Erro nas promessas ${error}`);
+// })
+
+// // Resposta: Promise1 is not defined
+
+
+// // Qual é a saída do programa?
+
+// const funcaoUnaria = a => console.log(a + 10); // saída: 15
+// funcaoUnaria(5)
+
+
+// // Qual é a saída do programa?
+
+// const superiorOrdemFunc = () => console.log('Olá Mundo!'); // saída: Olá Mundo!
+// const superiorOrdem = RetornarsuperiorOrdemFunc => RetornarsuperiorOrdemFunc()
+
+// superiorOrdem(superiorOrdemFunc)
+
+
+// // Qual é a saída do programa?
+
+// var frutas = [ "Banana", "Laranja", "Limão", "Maça", "Manga"]
+// var citrus = frutas.slice(1, 3)
+
+// console.log(frutas); // saída: ['Banana', 'Laranja', 'Limão', 'Maça', 'Manga']
+// console.log(citrus); // saída: ['Laranja', 'Limão']
+
+// // Usando emenda
+// var frutas = ["Banana", "Laranja", "Maça", "Manga"]
+
+// frutas.splice(2, 0, "Limão", "Kiwi")
+
+// console.log(frutas); // saída: ['Banana', 'Laranja', 'Limão', 'Kiwi', 'Maça', 'Manga']
+
+
+// // Qual é a saída do programa?
+
+// var obj1 = [{ id: 1, nome: 'Bob'}, { id: 2, nome: 'Peter'}]
+
+// console.log(JSON.stringify(obj1)); // saída: [{"id":1,"nome":"Bob"},{"id":2,"nome":"Peter"}]
+
+// var obj2 = '{ "id": 9, "nome": "Bob", "idade": "20", "cidade": "Porto Alegre" }'
+
+// console.log(JSON.parse(obj2)); // saída: {id: 9, nome: 'Bob', idade: '20', cidade: 'Porto Alegre'}
+
+
+// // Qual é a saída do programa?
+
+// const a = [1, 2, 3]
+// const ex1 = a.forEach((num, index) => {
+
+// })
+
+// const ex2 = a.map(num => {
+//   return num * 2
+// })
+
+// console.log(ex1); // saída: undefined
+// console.log(ex2); // saída: [2, 4, 6]
+
+
+// // Qual é a saída do programa?
+
+// var a = (! +[] + [] + ![])
+
+// console.log(a.length); // saída: 9
+
+
+// // Qual é a saída do programa?
+
+// console.log(018 - 017); // saída: 3
+// console.log(undefined * 2); // saída: NaN
+// console.log(null * 2); // saída: 0
+// console.log("" * 2); // saída: 0
+
+
+// // Qual é a saída do programa?
+
+// var numeros = [1, 4, 9]
+// var dobros = numeros.map(function(num) {
+
+//   return num * 2 
+// })
+
+// console.log(dobros); // saída: [2, 8, 18]
+
+
+// // Qual é a saída do programa?
+
+// var listaProdutos = ["geladeira", "fogão", "coifa"]
+// var listaEmMaiuscula = listaProdutos.map(primeiraEmMaiuscula)
+
+// function primeiraEmMaiuscula(elemento) {
+
+//   return elemento.charAt(0).toUpperCase() + elemento.slice(1)
+// }
+
+// console.log("Array Original : " + listaProdutos); // saída: Array Original : geladeira,fogão,coifa
+// console.log("Array retornado pelo método map() : " + listaEmMaiuscula); // saída: Array retornado pelo método map() : Geladeira,Fogão,Coifa
+
+
+// // Qual é a saída do programa?
+
+// var arrayNomes = [
+//   {
+//     nome: 'Maria',
+//     sobrenome: 'Souza'
+//   },
+//   {
+//     nome: 'João',
+//     sobrenome: 'Gonçalves'
+//   },
+//   {
+//     nome: 'Pedro',
+//     sobrenome: 'Silva'
+//   }
+// ]
+
+// var nomeCompleto = arrayNomes.map(concatenarNomes)
+// var nomeCompletoArray = arrayNomes.map(concatenarNomesArrayObjetos)
+
+// function concatenarNomes(elemento) {
+
+//   let nome = elemento.nome + " " + elemento.sobrenome
+
+  
+
+//   return nome
+// }
+
+// console.log(nomeCompleto); // saída: ['Maria Souza', 'João Gonçalves', 'Pedro Silva']
+
+// // Também podemos devolver o resultado como uma array de objetos.
+
+// function concatenarNomesArrayObjetos(elemento) {
+
+  
+//   let nomeArrayObjetos = {}
+
+//   nomeArrayObjetos["Seu Nome Completo é"] = elemento.nome + " " + elemento.sobrenome
+
+//   return nomeArrayObjetos
+
+// }
+
+// console.log(nomeCompletoArray); // saída 0 : {Seu Nome Completo é: 'Maria Souza'}
+//                                       // 1 : {Seu Nome Completo é: 'João Gonçalves'}
+//                                       // 2 : {Seu Nome Completo é: 'Pedro Silva'}
+
+
+
+// // Qual é a saída do programa?
+
+// setTimeout(function(){
+//   console.log('primeira linha');
+// }, 0)
+
+// console.log('segunda linha');
+
+// console.log('terceira linha');
+
+// // Resposta: segunda linha
+//           // terceira linha
+//           // primeira linha
+
+
+// // Qual é a saída do programa?
+
+// var str = "As melhores coisas da vida são de graça"
+// var patt = new RegExp("m")
+
+// var rest_teste = patt.test(str)
+// var res_exec = patt.exec(str)
+
+// console.log(rest_teste); // verdadeiro(true)
+// console.log(res_exec); // ['m', index: 3, input: 'As melhores coisas da vida são de graça', groups: undefined]
+
+
+// // Qual é a saída do programa?
+
+// var x = { nome: 'Bob' }
+// var y = Object.assign({}, x)
+
+// console.log(y); // saída: {nome: 'Bob'}
+
+
+// // Qual é a saída do programa?
+
+// var data = new Date()
+// var n = data.toISOString()
+
+// console.log(n); // YYYY-MM-DDTHH:mm:ss.sssZ
+
+
+// // Qual é a saída do programa?
+
+// var a 
+
+// console.log(typeof a); // saída: undefined
+// console.log(typeof null); // saída Object
+
+
+// // Qual é a saída do programa?
+
+// var array = [1, 2, 6, 5, 3, 2, 6]
+
+// console.log(...new Set(array)); // saída: 1 2 6 5 3
+
+// console.log(array.filter((item, index) => array.indexOf(item) === index)); // saída: [1, 2, 6, 5, 3]
+
+// console.log(array.reduce((uniq, item) => uniq.includes(item) ? uniq : [...uniq, item], [])); // saída: [1, 2, 6, 5, 3]
+
+
+// // Qual é a saída do programa?
+
+// let usuario = new Object()
+
+// usuario.nome = 'Bob'
+// usuario.idade = 20
+
+// console.log(usuario); // {nome: 'Bob', idade: 20}
+
+// delete usuario.idade
+
+// console.log(usuario); // {nome: 'Bob'}
+
+
+// // Qual é a saída do programa?
+
+// let nome = 'Bob'
+
+// const idade = 18
+
+// nome = "Peter"
+// idade = 20
+
+// console.log(nome);
+// console.log(idade);
+
+// // Resposta: TypeError: Assignment to constant variable.
+
+
+// // Qual é a saída do programa?
+
+// var numero = ["Um", "Dois", "Três", "Quatro"]
+
+// console.log(numero.pop()); // saída: Quatro
+// console.log(numero.shift()); //  saída: Um
+
+
+// // Qual é a saída do programa?
+
+// var estudante = { nome: 'Bob', idade: 20}
+
+// delete estudante.idade
+
+// console.log(estudante); // saída: {nome: 'Bob'}
+
+// // Qual é a saída do programa abaixo?
+
+// function altura() {
+
+//   var altura = 123.56;
+//   var tipo = (altura >= 190) ? "alto" : "curto";
+
+//   return tipo;
+// }
+
+// altura()
+
+// // a) curto
+// // b) 123.56
+// // c) alto
+// // d) 190
+
+// // Resposta a. curto
+
+
+// // Qual é a saída do programa abaixo?
+
+// function javascript() {
+
+//   document.getElementById("demo").innerHTML = Math.abs(-7.25)
+// }
+
+// javascript()
+
+// a) -7.25
+// b) 7.25
+// c) -7
+// d) 7
+
+// Resposta B. 7,25
+
+
+// // Qual é a saída do programa abaixo?
+
+// var a = 5, b = 1;
+// var obj = {a : 10}
+
+// with(obj) {
+
+//   alert(b)
+// }
+
+// // a) 1
+// // b) 10
+// // c) 5
+// // d) Error
+
+// Resposta: a - Primeiramente o intérprete verifica obj para a propriedade b.
+//               Mas ele não encontra nenhuma propriedade b, então pega o valor de fora do objeto dentro do trecho de código JavaScript.
+
+
+// // Qual é um trecho de código JavaScript mais eficiente?
+
+// for(var num = 10; num >= 1; num--) {
+//   document.writeln(num)
+// }
+
+// var num = 10;
+
+// while(num >= 1) {
+//   document.writeln(num)
+//   num++;
+// }
+
+// a) Código 1
+// b) Código 2
+// c) Código 1 e Código 2
+// d) Não é possível comparar
+
+// Resposta: a - O código 1 seria um código JS mais eficiente. 
+//               De fato, o segundo código entrará em erro de tempo de execução, 
+//               pois o valor de num nunca será menor ou igual a um.
+
+
+
+// // // Qual será a saída do seguinte código JavaScript?
+
+// // function imprimirArray(a) {
+
+// //   var len = a.length, i = 0;
+
+// //   if(len == 0) 
+// //      console.log("Array Vazio");
+// //   else {
+
+// //     do {
+// //       console.log(a[i]);
+// //     } while(++i < len)
+// //   }
+// // }
+
+// // imprimirArray()
+
+// // // a) Imprime "Array Vazio"
+// // // b) Imprime 0 no comprimento do array
+// // // c) Imprime os números no array na ordem
+// // // d) Imprime os números no array na ordem inversa
+
+// Resposta: c Explicação: A instrução do/while cria um loop que executa um bloco de código javascript uma vez, 
+//                         antes de verificar se a condição é verdadeira, então repetirá o loop enquanto a condição for verdadeira. 
+//                         Portanto, o iterador percorre o array e os imprime na ordem normal.
+
+
+// // O que acontece no seguinte trecho de código JavaScript:
+
+//   var js = 0;
+
+//   while(js > 10) {
+
+//     console.log(js);
+//     js++;
+//   }
+
+// // a) Uma exceção é lançada
+// // b) Os valores de js são registrados ou armazenados em um determinado local ou armazenamento
+// // c) O valor de js de 0 a 9 é exibido no console
+// // d) Um erro é exibido
+
+// // Resposta: c Explicação: Em JavaScript, Console.log é uma função predefinida que aceita o valor como argumento. 
+//                           //  No momento da execução do código, console.log imprime esse valor no argumento para o console.
+
+
+// Qual será a saída do seguinte código JavaScript?
+
+// Qual dos seguintes tipos de escopo o JavaScript usa?
+
+// a) Sequencial
+// b) Segmental
+// c) Lexical
+// d) Literal
+
+// Resposta: c - Explicação: JavaScript, como a maioria das linguagens de programação atuais, emprega escopo léxico. Isso significa que as funções são executadas com o escopo da variável em vigor quando foram definidas, em vez do escopo da variável em vigor quando são invocadas.
+
+
+// Qual é a diferença básica entre JavaScript e Java?
+
+// a) As funções são consideradas como campos
+// b) As funções são valores, e não há distinção rígida entre métodos e campos
+// c) As variáveis ​​são específicas
+// d) Não há diferença
+
+// Resposta: b - Explicação: Java é uma linguagem de programação orientada a objetos, enquanto JS é uma linguagem de script orientada a objetos. 
+                          // A principal diferença entre JavaScript e Java é que funções são valores, enquanto métodos e campos não são claramente definidos.
+
+
+                        
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// var quiz = [1, 2, 3];
+// var js = [6, 7, 8];
+// var resultado = quiz.concat(js);
+
+// document.writeln(resultado) // saída 1, 2, 3, 6, 7, 8
+
+// // a) 1, 2, 3, 6, 7, 8
+// // b) 123
+// // c) 1, 2, 3
+// // d) Error
+
+
+// // Qual será a função do seguinte programa JavaScript?
+
+// var escopo = "js escopo";
+
+// function verifiqueEscopo() {
+
+//   var escopo = "javascript escopo";
+
+//   function f() {
+
+//     return escopo;
+//   }
+//   return f;
+// }
+
+// // a) Retorna o valor no escopo
+// // b) Retorna o valor nulo
+// // c) Mostra uma mensagem de erro
+// // d) Retorna a exceção
+
+// // Resposta a - Explicação: O Ambiente Léxico é um objeto que está conectado com cada função em execução, bloco de código e o script como um todo em JavaScript. O valor em scope é retornado pelo snippet de código acima.
+
+
+// Que tipo de linguagem JavaScript é
+
+// 1. Orientado a Objeto
+// 2. Baseado em objetos
+// 3. Linguagem de montagem
+// 4. Alto nível
+
+// Resposta: B. JavaScript não é uma linguagem puramente baseada em OOP (programação orientada a objetos) como PHP, 
+// java ou muitas outras linguagens, embora seja uma linguagem baseada em objetos. Não é a linguagem baseada em OOP, 
+// porque não possui três propriedades básicas de linguagens de programação orientadas a objetos, como polimorfismo, encapsulamento e herança.
+
+
+// // Qual das opções a seguir é a saída correta para o seguinte código JavaScript:
+
+// var x = 5, y = 1;
+// var obj = { x: 10 }
+
+// while(obj) {
+//   console.log(y); // saída A. 1
+// }
+
+// // a. 1
+// // b. Error
+// // c. 10
+// // d. 5
+
+
+// Em JavaScript, o que é um bloco de instrução?
+
+// 1. Bloco condicional
+// 2. bloco que combina várias instruções em uma única instrução composta
+// 3. bloco condicional e uma única instrução
+// 4. bloco que contém uma única instrução
+
+// Resposta B. Um bloco de instrução pode ser entendido como o conjunto de zero ou mais instruções. 
+// Em geral, um bloco de instrução tem definição comum "que combina uma ou várias instruções em uma única instrução para facilitar.
+
+
+// Quando o intérprete encontra uma declaração vazia, o que ele fará
+
+// a. Mostra um aviso
+// b. Solicita o preenchimento da declaração
+// c. Lança um erro
+// d. Ignora as declarações
+
+// Resposta: D. Ignora as declarações - Em JavaScript, quando o interpretador encontra uma instrução vazia, 
+                                     // ele normalmente ignora ou não responde a essa instrução vazia. 
+                                     // As declarações vazias também às vezes são muito úteis, como usamos 
+                                     // as declarações vazias para criar loops para nada.
+
+                            
+// // O que acontecerá se o seguinte código JavaScript for executado?
+
+// var contar = 0;
+
+// while(contar < 10) {
+
+//   console.log(contar);
+//   contar++;
+// }
+
+// // a. Um erro é exibido
+// // b. Uma exceção é lançada
+// // c. Os valores da variável de contagem são registrados ou armazenados em um local ou armazenamento específico
+// // d. O valor da contagem de 0 a 9 é exibido no console
+
+// // Resposta: C. A função "console.log()" usada na função acima é uma das funções predefinidas do JavaScript. 
+//              // Ele recebe valores como argumentos passados ​​a ele e exibe esse valor em argumentos dentro do console quando o código é executado.
+
+
+// // Qual das opções a seguir é a saída correta para o seguinte código JavaScript:
+
+// var grade = 'C';
+// var resultado;
+
+// switch(grade) {
+
+//   case 'A':
+//     resultado += " 10";
+//     break;
+
+//   case 'B': 
+//     resultado += " 9";
+//     break;
+
+//   case 'C':
+//     resultado += " 8"
+//     break;
+
+//   default:
+//     resultado += " 0"
+// }
+
+// console.log(resultado); // saída: C. undefined 8
+
+
+// // a. 10
+// // b. 9
+// // c. 8
+// // d. 0
+
+
+// // Qual das opções a seguir é a saída correta para o seguinte código JavaScript:
+
+// var x = 3;
+// var y = 2;
+// var z = 0;
+
+// if(x == y)
+//   console.log(x);
+
+// else if(x == y)
+//    console.log(x);
+
+// else 
+//    console.log(z);
+
+// // a. 3
+// // b. 0
+// // c. Error
+// // d. 2
+
+// Resposta: b. 0
+
+
+// Qual das seguintes variáveis ​​tem precedência sobre as outras se os nomes forem os mesmos?
+
+// a. Variavel global 
+// b. O elemento local
+// c. Os dois acima
+// d. Nenhuma das acima
+
+// Resposta B. Explicação: Em JavaScript, a variável local tem precedência sobre a variável global 
+// se o nome das variáveis ​​locais e globais for o mesmo.
+
+
+// Qual das opções a seguir é usada como início literal hexadecimal?
+
+// a. 00
+// b. 0x
+// c. 0X
+// d. Tanto 0x quanto 0X
+
+// Resposta: D. Explicação: Em geral, X e x podem ser usados ​​para denotar os valores hexadecimais, 
+// portanto, qualquer literal inteiro que comece com 0X ou 0x denota um número hexadecimal.
+
+
+// Quando há um valor indefinido ou infinito durante uma computação aritmética em um programa, o JavaScript imprime?
+
+// a. Imprime um erro de exceção
+// b. Imprime um erro de estouro
+// c. Exibe "Infinito"
+// d. Imprime o valor como tal
+
+// Resposta: C. Explicação: No caso em que o resultado de qualquer expressão aritmética estar além do maior número representável, 
+// o JavaScript imprime o infinito. Da mesma forma, se o resultado de qualquer operação numérica estiver além do maior número negativo, 
+// o JavaScript imprime infinito negativo.
+
+
+
+// // Qual das opções a seguir é a saída correta para o seguinte código JavaScript:
+
+// var a = 0;
+// var b = 0;
+
+// while (a < 3) {
+  
+//   a++;
+//   b += a;
+
+//   console.log(b); // saída: A. 136
+                     // 0 += 1 = 1
+                     // 1 += 2 = 3
+                     // 3 += 3 = 6
+// }
+
+// // A) 136
+// // B) 123
+// // C) 013
+// // D) 01
+
+// // Qual das opções a seguir é a saída correta para o código JavaScript fornecido?
+
+// var porrada = new Function("num1", "num2", "return Math.pow(num1, num2)");
+// document.writeln(porrada(2,3)); // saída: 8
+
+// // 1. 8
+// // 2. 3
+// // 3. 6
+// // 4. Error
+
+// // Qual das opções a seguir é a saída correta para o código JavaScript fornecido?
+
+//   function codigo(id, nome) {
+
+//     this.id = id;
+//     this.nome = nome;
+//   }
+
+//   function pCodigo(id, nome) {
+
+//     codigo.call(this, id, nome)
+//   }
+
+//   console.log(new pCodigo(004, "James Dio").nome);
+
+// // 1. James Dio
+// // 2. compilation error
+// // 3. runtime error
+// // 4. undefined
+
+
+// // Qual das opções a seguir é a saída correta para o seguinte código JavaScript fornecido:
+
+// function suaFuncao() {
+
+//   document.getElementById("teste").innerHTML = Math.cbrt(2); // saída: D. 1.2599210498948732
+
+//   // A) 972
+//   // B) 81
+//   // C) 9
+//   // D) 1.2599210498948732
+
+// }
+
+// suaFuncao()
+
+
+// // Qual é a saída do programa abaixo:
+
+
+// var a = 0
+// var b = 0
+
+// while (a < 3) {
+  
+//   a++
+
+//   b += a
+
+//   console.log(b); // saída: a. 1 3 6
+//                  // 0 + 1 = 1
+//                  // 1 + 2 = 3
+//                  // 3 + 3 = 6
+// }
+
+// // a. 136
+// // b. 123
+// // c. 013
+// // d. 01
+
+
+
+// // Qual das opções a seguir seria a saída correta para o código JavaScript fornecido?
+
+
+// var comprimento = 5;
+// var x = 5;
+// var comprimento = 4;
+
+// for(var j = comprimento; j >= 0; j--) {
+
+//   console.log(x); // saída: D. 5 3 1 -1 -3 - O valor da variável x diminuirá 2 vezes quando o corpo do loop for executado 
+//                                    // e o corpo executará 4 vezes até que o valor da variável de j seja 0.
+//   x = x - 2
+// }
+
+// // A) 5 5 5 5
+// // B) 5 3 2 1
+// // C) 5 3 1
+// // D) 5 3 1 -1 -3
+
+
+// // Qual das opções a seguir seria a saída correta para o código JavaScript fornecido?
+
+// var x = 0;
+
+// for(x;x < 10; x++)
+//    console.log(x); // saída: C. 0 1 2 3 4 5 6 7 8 9
+
+//   // A) 10
+//   // B) erro
+//   // C) 0 1 2 3 4 5 6 7 8 9
+//   // D) 5
+
+
+// // Considere o seguinte trecho de código JavaScript:
+
+// function fun() {
+
+//   if(0 === undefined)
+//      debugger;
+// } 
+
+// // Qual é o papel da instrução "debugger"?
+
+// // A) É um tipo de palavra-chave que é usada para depurar todo o programa de uma só vez
+// // B) Não fará nada, embora seja um ponto de interrupção
+// // C) Ele irá depurar o erro nessa declaração
+// // D) Todos acima mencionados
+
+// // Resposta B. Um programa pode conter vários erros como erros de sintaxe, erros lógicos, etc, 
+// // e para muitos deles não há mensagens de alerta e também não há indicações para encontrar os erros.
+// // Portanto, para encontrar a localização do erro e corrigi-lo, o desenvolvedor configura os pontos 
+// // de interrupção no código duvidoso usando a janela do debugger.
+
+
+// // Qual das opções a seguir é a saída correta para o código JavaScript fornecido?
+
+// const obj = { 
+//   prop:12
+// }
+
+// Object.preventExtensions(obj)
+
+// console.log(Object.isExtensible(obj)); // saída: D. falso(false) - Object.preventExtensions() apenas impede a inclusão de 
+//                                                                 // novas propriedades que já foram adicionadas a um objeto.
+//                                                                 // Essa mudança não é reversível, o que significa que uma vez 
+//                                                                 // que um objeto se torna não extensível, ele não pode ser 
+//                                                                 // alterado para extensível.
+
+// // A) 12
+// // B) error
+// // C) true
+// // D) false
+
+
+// // // Qual é a saída do código abaixo?
+
+// // function x() {
+
+// //   console.log(2 + 5 + "8"); // saída: D. 78
+// // }
+
+// // // A) 258
+// // // B) Error 
+// // // C) 7
+// // // D) 78
+
+// x()
+
+
+// // Qual é a saída do código abaixo?
+
+// var tamanho = 5;
+// var x = 5;
+// var tamanho = 4;
+
+// for(var j = tamanho; j > 0; j--) {
+
+//   console.log(x); // saída: A. 5555
+//   // xx = x - 2;
+// }
+
+// // A) 5555
+// // B) 5321
+// // C) 531
+// // D) 531-1-3
+
+
+
+// // Qual é a saída?
+
+// var a = "Global"
+// var x = a.lastIndexOf("G")
+
+// console.log(x); // saída: 0
+
+
+// // Qual é a saída?
+
+// var minhaVar = Boolean('false')
+
+// document.getElementById('demo').innerHTML = minhaVar;
+
+// // A) undefined
+// // B) error 
+// // C) true 
+// // D) false 
 
 
 // // Qual é a saída do código a seguir?
@@ -2869,3 +6809,615 @@
 
 // virarDireita([2, 3, 4, 5, 7], 3)
 // virarDireita([44, 1, 22, 111], 5)
+// function x() {
+
+//   console.log(2 + 5 + "8"); // saída: C. 78
+// }
+
+// x()
+
+// // A) 258
+// // B) 7
+// // C) 78
+// // D) Erro de compilação
+
+
+// // Qual é a saída do código a seguir?
+
+// num1 = 5
+
+// function cal() {
+
+//   num1 = 10
+//   num2 = 5
+
+//   num3 = num2 * num1 
+
+//   console.log(num3); // saída: B. 50
+// }
+
+// cal()
+
+// // A) 25
+// // B) 50
+// // C) 100
+// // D) Erro
+
+
+// // Qual é a saída do código a seguir?
+
+// var a = 10;
+
+// if(a == a++)
+
+// console.log(a); // saída D. 11
+
+// // A) Error
+// // B) 10
+// // C) 1010
+// // D) 11
+
+
+// // Qual é a saída do código a seguir?
+
+// a = 8 + 8;
+
+// console.log(16); // saída: A) 16
+
+// // A) 16
+// // B) Erro de compilação 
+// // C) 88
+// // D) Erro de tempo de execução
+
+
+// // Qual é a saída do código a seguir?
+
+// x = 7 + "7";
+
+// console.log(x); // saída: D. 77
+
+// // A) Erro 
+// // B) 7
+// // C) 14 
+// // D) 77
+
+
+
+// // Qual será a saída do código abaixo?
+
+// class Rect {
+
+//   constructor(h, w) {
+
+//     this.height = h;
+//     this.width = w;
+//   }
+
+//   get foo() {
+//     return this.foo();
+//   }
+
+//   foo() {
+//     return this.height * this.width
+//   }
+// }
+
+// const sq = new Rect(5, 20)
+
+// console.log(sq.foo()); // saída: B. 100
+
+// // A) this.height * this.width
+// // B) 100
+// // C) Error 
+// // D) 5 * 20
+
+
+// // Qual será a saída do código abaixo?
+
+// var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+// var minhaArray = array.filter(v => v % 3 === 0);
+
+// console.log(minhaArray); saída: C. [3, 6, 9, 12, 15]
+
+// A) [1, 2, 4, 5, 7, 8, 10, 11, 13, 14]
+// B) minhaArray
+// C) [3, 6, 9, 12, 15]
+// D) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+
+// // Qual será a saída do código abaixo?
+
+
+// var x = 5
+// var y = 2
+// var z = x % y 
+
+// console.log(z); // saída: B. 1
+
+// // A) 0
+// // B) 1
+// // C) 2
+// // D) 5
+
+
+// // Qual é a saída do código abaixo?
+
+// txt1 = "um";
+// txt1 += "dois"
+
+// console.log(txt1); // saída: A. umdois
+
+// // A) umdois
+// // B) um dois
+// // C) error 
+// // D) undefined
+
+// document.getElementById("demo").innerHTML = z; // saída: A. 1
+
+// // A) 1
+// // B) 2
+// // C) 3
+// // D) 4
+
+
+// // Qual será a saída do código abaixo?
+
+// var x = 123e5;
+
+// document.getElementById("demo").innerHTML = x; // saída: B. 12300
+
+// // A) 0.0123
+// // B) 12300
+// // C) Error 
+// // D) undefined
+
+
+// // Qual será a saída do código abaixo?
+
+// function minhaFuncao() {
+
+//   var res = "";
+
+//   res = res + Number.isFinite(5-2)
+
+//   document.getElementById("demo").innerHTML = res; // saída B. verdadeiro(true)
+// }
+
+// minhaFuncao()
+
+// // A) 4
+// // B) true 
+// // C) false 
+// // D) error
+
+
+// // Qual será a saída do código abaixo?
+
+// function saida(opcao) {
+
+//   return (opcao ? "sim" : "nao")
+// }
+
+// ans = true;
+
+// console.log(saida(ans)); // saída: A. sim
+
+// // A) sim
+// // B) nao
+// // C) Erro em tempo de execução
+// // D) Erro de compilação
+
+
+// // Qual será a saída do código abaixo?
+
+// var obj = {
+
+//   length: 20,
+//   height: 35
+// }
+
+// if('breadth' in obj === false) {
+
+//   obj.breadth = 12
+// }
+
+// console.log(obj.breadth); // saída: B. 12
+
+// // A) 20
+// // B) 12
+// // C) undefined
+// // D) error 
+
+
+// // Qual será a saída do código abaixo?
+
+// function calAltura() {
+
+//   var altura = 123.56;
+//   var tipo = (altura >= 190) ? "alto" : "curto";
+
+//   console.log(tipo); // saída: D. curto
+
+//   return tipo;
+
+// }
+
+// calAltura()
+
+// // A) 123.56
+// // B) 190
+// // C) alto
+// // D) curto
+
+
+// // Qual será a saída do código abaixo?
+
+// let a = "Ola";
+// let b = " mundo"
+
+// console.log(a + b); // saída: C. Ola mundo
+
+// // A) Ola 
+// // B) mundo 
+// // C) Ola mundo 
+// // D) undefined
+
+
+// // Qual será a saída do código abaixo?
+
+// var a = [1, 2, 3, 4, 5];
+
+// var novoArray = a.slice(0, 3)
+
+// console.log(novoArray); // saída: A. [1, 2, 3]
+
+// // A) [1, 2, 3]
+// // B) [4, 5]
+// // C) [1, 2, 3, 4]
+// // D) [1, 2, 3, 4, 5]
+
+
+// // Qual será a saída do código abaixo? 
+
+// var soma = 0;
+// var arr = [10, 15, 20, 30]
+
+// arr.forEach(function minhaFuncao(elemento) {
+
+//   soma = soma + elemento 
+// })
+
+// console.log(soma); // saída: B. 75
+
+// // A) 70
+// // B) 75
+// // C) 10
+// // D) Erro 
+
+
+// // Qual será a saída do código abaixo?
+
+// var valores = ["um", "dois", "tres"]
+// var ans = valores.shift()
+
+// console.log(ans); // saída: A. um
+
+// // A) um 
+// // B) dois 
+// // C) tres 
+// // D) Erro 
+
+
+// // Qual será a saída do código abaixo?
+
+// var arr = [1, 2, 3]
+// var rev = arr.reverse()
+
+// console.log(rev); // saída: B. [3, 2, 1]
+
+// // A) 1, 2, 3
+// // B) 3, 2, 1
+// // C) 3 
+// // D) 1
+
+
+// // Qual será a saída do código abaixo?
+
+// function emp(id, nome) {
+
+//   this.id = id;
+//   this.nome = nome 
+// }
+
+// e = new emp(103, "Bob Marley")
+
+// console.log(e.id + " " + e.nome); // saída: C. 103 Bob Marley
+
+// // A) 103 bob Marley
+// // B) 103 
+// // C) 103 Bob Marley
+// // D) Bob Marley
+
+
+// // Qual será a saída do código abaixo?
+
+// var emp = new Object() 
+
+// emp.nome = "Bob Marley"
+// emp.profissão = "cantor"
+
+// console.log(emp.nome + ", " + "profissão: " + emp.profissão); // saída: B. Bob Marley, profissão: cantor
+
+// // A) profissão: cantor
+// // B) Bob Marley, profissão: cantor
+// // C) Bob Marley
+// // D) cantor
+
+
+// // Qual será a saída do código abaixo?
+
+// function Colaborador(nome, salario) {
+
+//   this.nome = nome 
+//   this.salario = salario 
+//   this.alterarSalario = AlterarSalario
+
+//   function AlterarSalario(outroSalario) {
+
+//     this.salario = outroSalario
+//   }
+// }
+
+// colaborador = new Colaborador("João Santos", 3000)
+// colaborador.alterarSalario(4500)
+
+// console.log(colaborador.nome + ", " + "salário: " + colaborador.salario); // saída: D. João Santos, salário: 4500
+
+// // A) João Santos, salário: 3000
+// // B) João Santos
+// // C) salário: 4500
+// // D) João Santos, salário: 4500
+
+
+// // Qual será a saída do código abaixo?
+
+// const obj = {
+
+//   10: 'do',
+//   21: 're',
+//   23: 'mi'
+// }
+
+// console.log(Object.entries(obj)[2]); // saída: D. ['23', 'mi']
+
+// // A) ['mi', '23']
+// // B) ['10', 'do']
+// // C) ['21', 're']
+// // D) ['23', 'mi']
+
+
+// // Qual será a saída do código abaixo?
+
+// const obj1 = {
+
+//   a: 10,
+//   b: 15,
+//   c: 18
+// }
+
+// const obj2 = Object.assign({
+//   c: 7,
+//   d: 1,
+// }, obj1)
+
+// console.log(obj2.c, obj2.d); // saída: B. 18, 1
+
+// A) 7,1
+// B) 18, 1
+// C) undefined
+// D) Error 
+
+
+// // Qual será a saída do código abaixo?
+
+// function Pessoa() {
+
+//   this.nome = 'bob';
+// }
+
+// function obj() {
+
+//   obj.call(this);
+// }
+
+// obj.prototype = Object.create(Pessoa.prototype);
+
+// const app = new obj();
+
+// console.log(app.nome);
+
+
+// // Qual será a saída do código abaixo?
+
+// const objeto1 = {}
+
+// Object.defineProperties(objeto1, {
+
+//   propriedade: {
+//     value: 10
+//   }
+// })
+
+// console.log(objeto1.propriedade); // saída: B. 10
+
+// // A) 0
+// // B) 10
+// // C) undefined
+// // D) Erro 
+
+
+// // Qual será a saída do código abaixo?
+
+// var x = 8;
+
+// if(x > 9) {
+
+//   console.log(9);
+
+// } else {
+
+//   console.log(x); // saída: C. 8
+// }
+
+// // A) 9
+// // B) 0
+// // C) 8
+// // D) Undefined
+
+
+// Qual será a saída do código abaixo?
+
+
+
+// // EXPLIQUE O RESULTADO DA SAÍDA:
+
+// localStorage.setItem('teste', 100500);
+// location.reload(true)
+// localStorage.setItem('teste1', 100501)
+
+// setTimeout(function() {
+
+//   localStorage.setItem('teste2', 100502)
+// })
+
+// setTimeout(function() {
+
+//   localStorage.setItem('teste3', 100503)
+// }, 100)
+
+// console.log(localStorage.getItem('teste'));
+// console.log(localStorage.getItem('teste1'));
+// console.log(localStorage.getItem('teste2'));
+// console.log(localStorage.getItem('teste3'));
+
+
+// // Qual é a saída do programa abaixo?
+
+// function paraLibras(quilos) {
+
+//   if (isNaN(quilos)) {
+    
+//     return 'Não é um número! Não pode ser um peso.'
+//   }
+
+//   return quilos * 2.2;
+// }
+
+// console.log(paraLibras('isto é um teste')); // saída: Não é um número! Não pode ser um peso.
+// console.log(paraLibras('100')); // saída: 220.00000000000003
+
+
+// // Qual é a saída do programa abaixo?
+
+// function soma(a, b, c) {
+
+//   return a + b + c;
+// }
+
+// const nums = [15, 25, 35]
+
+// console.log(soma(...nums)); // saída: 75
+
+
+
+// // Qual é a saída do programa abaixo?
+
+// function criarContador() {
+
+//   let contar = 0;
+
+//   function incrementar(){
+
+//     contar++
+
+//     console.log(contar);
+//   }
+
+//   return incrementar;
+// }
+
+// const add = criarContador()
+// add() // 1
+// add() // 2
+// add() // 3
+
+
+// // Qual é a saída do programa abaixo?
+
+// var estudante = {
+
+//   nome: "Bob",
+//   buscarNome: function() {
+
+//     console.log(this.nome); // saída: Bob
+//   }
+// }
+
+// estudante.buscarNome()
+
+
+// // Qual é a saída do programa abaixo?
+
+// var estudante = {
+//   nome: 'Bob',
+//   buscarNome: function() {
+
+//     console.log(this.nome);
+//   }
+// }
+
+// var outroEstudante = {
+//   nome: 'Peter'
+// }
+
+// estudante.buscarNome.call(outroEstudante) // saída: Peter
+
+
+// // Qual é a saída do programa abaixo?
+
+// function digaOi() {
+
+//   console.log("Ola " + this.nome); // saída: Ola Bob
+// }
+
+// var pessoa = { nome: 'Bob'}
+
+// digaOi.call(pessoa)
+
+
+// // Qual é a saída do programa abaixo?
+
+// function digaOi(adjetivo) {
+
+//   console.log("Ola " + this.nome + ", você é " + adjetivo ); // saída: Ola Bob, você é incrível
+// }
+
+// var obj = { nome: 'Bob'}
+
+// digaOi.call(obj, "incrível")
+
+
+// // Qual é a saída do programa abaixo?
+
+// const pessoa = {
+//   nome: 'Bob'
+// }
+
+// function saudacao(saudar, mensagem) {
+
+//   return `${ saudar } ${ this.nome }. ${ mensagem }`
+// }
+
+// let resultado = saudacao.apply(pessoa, ['Ola', 'Como você está?'])
+
+// console.log(resultado); // saída: Ola Bob. Como você está?
