@@ -2754,3 +2754,118 @@
 // console.log(iterador.next().value) // E
 // console.log(iterador.next().value) // S
 // console.log(iterador.next().value) // 6
+
+
+// // Explique o que é uma função de retorno de chamada e forneça um exemplo simples:
+
+// function modificaArray(arr, callback) {
+
+//   // fazer algo para chegar aqui
+//   arr.push(100)
+
+//   // em seguida, execute a função de retorno de chamada que foi passada
+//   callback()
+// }
+
+// var arr = [1, 2, 3, 4, 5]
+
+// modificaArray(arr, function() {
+
+//   console.log("O array foi modificado", arr);
+// })
+
+
+// // Qual é a saída do código a seguir?
+
+// let obj = {
+
+//   id: "1",
+//   nome: "usuario22",
+//   idade: "26",
+//   trabalho: "programador"
+// }
+
+// console.log(Object.keys(obj)); // saída: ['id', 'nome', 'idade', 'trabalho']
+
+// console.log(Object.values(obj)); // saída: ['1', 'usuario22', '26', 'programador']
+
+// console.log(Object.entries(obj)); // saída: ['id', '1']
+//                                         //  ['nome', 'usuario22']
+//                                         //  ['idade', '26']
+//                                         //  ['trabalho', 'programador']
+
+
+
+// // Qual é a saída do código a seguir?
+
+// const b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// for(let i = 0; i < 10; i++) {
+
+//   setTimeout(() => console.log(b[i]), 1000) // saída: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+// }
+
+// for(var i = 0; i < 10; i++) {
+
+//   setTimeout(() => console.log(b[i]), 1000) // saída: undefined undefined undefined undefined undefined undefined undefined undefined undefined undefined
+//  }
+
+
+// // Qual é a saída do código a seguir?
+
+// const encontrarVogais =  str => {
+
+//   let contar = 0
+//   const vogais = ['a', 'e', 'i', 'o', 'u']
+
+//   for(let char of str.toLowerCase()) {
+
+//     if (vogais.includes(char)) {
+      
+//       contar++
+//     }
+//   }
+//   return contar 
+// }
+
+// console.log(encontrarVogais("Valeu"));
+
+
+// // Qual é a saída do código a seguir?
+
+// var primeiraPalavra = "Java"
+// var segundaPalavra = "Javascript"
+
+// console.log(ehAnagrama(primeiraPalavra, segundaPalavra)) // saída: falso(false)
+
+// function ehAnagrama(um, dois) {
+
+//   var a = um.toLowerCase()
+//   var b = dois.toLowerCase()
+
+//   a = a.split("").sort().join("")
+//   b = b.split("").sort().join("")
+
+//   return a === b
+// }
+
+
+// // Qual é a saída do código a seguir?
+
+// function virarDireita(array, rodar) {
+
+//   if(rodar == 0)
+//      return array
+
+//      for(let i = 0; i < rodar; i++) {
+
+//       let elemento = array.pop()
+      
+//       array.unshift(elemento)
+
+//      }
+//   return array 
+// }
+
+// virarDireita([2, 3, 4, 5, 7], 3)
+// virarDireita([44, 1, 22, 111], 5)
