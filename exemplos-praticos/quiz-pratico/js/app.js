@@ -7920,3 +7920,38 @@
 // let resultado = saudacao.apply(pessoa, ['Ola', 'Como você está?'])
 
 // console.log(resultado); // saída: Ola Bob. Como você está?
+
+
+// // O que é desestruturação de objetos?
+
+// // A desestruturação de objetos é uma maneira de extrair propriedades de um objeto (ou uma matriz).
+// // Antes do ES6, você precisaria fazer isso para extrair as propriedades de um objeto:
+
+// // const PessoaDetalhes = {
+// //   nome: "Bob",
+// //   idade: 42,
+// //   casado: false 
+// // }
+
+// // const nome = PessoaDetalhes.nome 
+// // const idade = PessoaDetalhes.idade
+// // const casado = PessoaDetalhes.casado
+
+// // console.log(nome);
+// // console.log(idade);
+// // console.log(casado);
+
+// // Mas desde o ES6 você pode fazer isso com uma linha de código utilizando a desestruturação de objetos:
+
+
+// const PessoaDetalhes = {
+//   nome: "Bob",
+//   idade: 42,
+//   casado: false 
+// }
+
+// const { nome, idade, casado } = PessoaDetalhes
+
+// console.log(nome);
+// console.log(idade);
+// console.log(casado);
