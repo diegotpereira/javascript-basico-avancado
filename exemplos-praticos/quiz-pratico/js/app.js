@@ -8348,3 +8348,194 @@
 // // 2: 10
 // // 3: SyntaxError
 // // 4: Promise {<rejected>: 10}
+
+
+// // Qual é a saída do código abaixo
+
+// function atraso() {
+
+//   return new Promise(resolve => setTimeout(resolve, 2000))
+// }
+
+// async function atrasoLog(item) {
+
+//   await atraso()
+
+//   console.log(item);
+// }
+
+// async function processoArray(array) {
+//   array.forEach(item => {
+
+//     await atrasoLog(item)
+//   })
+// }
+
+// processoArray([1, 2, 3, 4])
+
+
+// // 1: SyntaxError 
+// // 2: 1, 2, 3, 4
+// // 3: 4, 4, 4, 4
+// // 4: 4, 3, 2, 1
+
+// // Resposta: 1. Erro de sintaxe - Embora “processArray” seja uma função assíncrona, a função anônima que usamos forEaché síncrona.
+                                  // Se você usar await dentro de uma função síncrona, ele gerará um erro de sintaxe.
+
+
+
+// // Qual é a saída do código abaixo
+
+// function atraso() {
+
+//   return new Promise((resolve) => setTimeout(resolve, 2000))
+// }
+
+// async function atrasoLog(item) {
+
+//   await atraso()
+
+//   console.log(item);
+// }
+
+// async function processoArray(array) {
+//   array.forEach(async(item) => {
+
+//     await atrasoLog(item)
+//   })
+//   console.log("Processo completo!");
+// }
+
+// processoArray([1, 2, 3, 4])
+
+
+// // 1: 1 2 3 5 e Processo concluído!
+// // 2: 5 5 5 5 e Processo concluído!
+// // 3: Processo concluído! e 5 5 5 5
+// // 4: Processo concluído! e 1 2 3 5
+
+// // Resposta 4. Processo concluído! e 1 2 3 5
+
+
+// // Qual é a saída do código abaixo
+
+// var set = new Set()
+
+// set.add("+0").add("-0").add(NaN).add(undefined).add(NaN)
+
+// console.log(set); // saída: 1. {'+0', '-0', NaN, undefined} - Set tem poucas exceções da verificação de igualdade,
+                                                              // 1. Todos os valores de NaN são iguais
+                                                              // 2. Ambos +0 e -0 considerados como valores diferentes
+
+
+// // 1: Set(4) {"+0", "-0", NaN, undefined}
+// // 2: Set(3) {"+0", NaN, undefined}
+// // 3: Set(5) {"+0", "-0", NaN, undefined, NaN}
+// // 4: Set(4) {"+0", NaN, undefined, NaN}
+
+
+// // Qual é a saída do código abaixo
+
+// const sym1 = Symbol("um")
+// const sym2 = Symbol("dois")
+
+// const sym3 = Symbol.for("dois")
+// const sym4 = Symbol.for("dois")
+
+
+// console.log(sym1 === sym2, sym3 === sym4); // saída 3. falso(false), verdadeiro(true)
+
+// // 1: verdade, verdade
+// // 2: verdadeiro, falso
+// // 3: falso, verdadeiro
+// // 4: falso, falso
+
+
+
+// // Qual é a saída do código abaixo
+
+// const sym1 = new Symbol("um")
+
+// console.log(sym1);
+
+
+// // 1: SyntaxError
+// // 2: one
+// // 3: Symbol('one')
+// // 4: Symbol
+
+// // Resposta 4. Symbol - Symbol é apenas uma função padrão e não um construtor de objetos.
+
+
+// // Qual é a saída do código abaixo
+
+// let meuNumero = 100
+// let minhaString = "100"
+
+// if (!typeof meuNumero === "string") {
+  
+//   console.log("Não é uma string!");
+
+// } else {
+
+//   console.log("É uma string");
+// }
+
+// if (!typeof minhaString === "number") {
+//   console.log("Não é um número");
+
+// } else {
+//   console.log("É um número!");
+// }
+
+// // 1: Erro de sintaxe
+// // 2: Não é uma string!, Não é um número!
+// // 3: Não é uma string!, É um número!
+// // 4: É uma string!, É um número!
+
+// // Resposta 4. É uma string!, É um número!
+
+
+// // Qual é a saída do código abaixo:
+
+// console.log(
+//   JSON.stringify({
+//     minhaArray: ["um", undefined, function() {}, Symbol("")]
+//   })
+// );
+
+// console.log(
+//   JSON.stringify({ [Symbol.for("um")]: "um"}, Symbol.for("um"))
+// );
+
+
+// // 1: {"myArray":['one', undefined, {}, Symbol]}, {}
+// // 2: {"myArray":['one', null,null,null]}, {}
+// // 3: {"myArray":['one', null,null,null]}, "{ [Symbol.for('one')]: 'one' }, [Symbol.for('one')]"
+// // 4: {"myArray":['one', undefined, function(){}, Symbol('')]}, {}
+
+// // Resposta: 2. {"myArray":['one', null,null,null]}, {}
+
+
+// // Qual é a saída do código abaixo
+
+// class A {
+
+//   constructor() {
+//     console.log(new.target.name); // saída A B
+//   }
+// }
+
+// class B extends A {
+
+//   constructor() {
+//     super();
+//   }
+// }
+
+// new A()
+// new B()
+
+
+// // 1: A, A
+// // 2: A, B
