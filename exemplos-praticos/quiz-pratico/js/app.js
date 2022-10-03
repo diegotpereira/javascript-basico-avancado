@@ -7258,6 +7258,278 @@
 
 // // Qual será a saída do código abaixo?
 
+// var add = new Function("num1", "num2", "return num1 + num2")
+
+// console.log(add(2, 5)); saída: 7
+
+// // A) 2
+// // B) 5
+// // C) Erro 
+// // D) 7
+
+
+// // Qual será a saída do código abaixo?
+
+// var a = 3.7
+// var b = 2
+
+// a = Math.ceil(a)
+
+// console.log(a * b);  // saída: D. 8 - Math.ceil retorna o menor número inteiro maior ou igual a "x".
+
+// // A) 6
+// // B) 7.4 
+// // C) 7.5
+// // D) 8
+
+
+// // Qual será a saída do código abaixo?
+
+// var a = 2.99
+// var ans = Math.floor(a) * Math.floor(a)
+
+// console.log(ans); // saída: D. 4 - Math.floor(x) retorna o menor número inteiro dentre o número "x". a = 2 * 2 a =4
+
+// // A) 9
+// // B) 8.31
+// // C) Erro
+// // D) 4
+
+
+// // Qual será a saída do código abaixo?
+
+// var a = 225
+
+// console.log(Math.sqrt(a)); //saída B) 15
+
+// // A) 225
+// // B) 15
+// // C) Err 
+// // D) undefined
+
+
+// // Qual será a saída do código abaixo?
+
+// function imprimirArray(a) {
+
+//   var len = a.length, i = 0
+
+//   if(len == 0)
+
+//      console.log("Array Vazio");
+
+//   else {
+
+//     do{
+
+//       console.log(a[i]);
+
+//     } while(++i < len)
+//   }
+// }
+
+
+// // A) Imprime os números na matriz em ordem 
+// // B) Imprime os números na matriz na ordem inversa
+// // C) Imprime 0 no comprimento da matriz
+// // D) Imprime "Matriz Vazia"
+
+// // Resposta: A. Imprime os números na matriz em ordem 
+
+
+// // Qual será o código equivalenre do seguinte código JavaScript?
+
+// for(var p in o)
+//    console.log(o[p]);
+
+// // A) for(var i = 0; i < a.length; i++) {
+// //   console.log(a[i]);
+// // }
+
+// // B) for(int i = 0; i < a.length; i++) {
+// //   console.log(a[i]);
+// // }
+
+// // C) for(var i = 0; i <= a.length; i++) {
+// //   console.log(a[i]);
+// // }
+
+// // D) for(var i = 1; i < a.length; i++) {
+// //   console.log(a[i]);
+// // }
+
+// // Resposta: A. 
+
+
+
+// // Qual será a saída do código abaixo?
+
+// function alcance(comprimento) {
+
+//   var a = 9
+
+//   for(var i = 0; i < comprimento; i++) {
+
+//     console.log(a); // saída B. 9 9 9 
+//   }
+// }
+
+// alcance(3)
+
+// // A) 5 
+// // B) 9 9 9
+// // C) 2 
+// // D) Erro 
+
+
+// // Qual será a saída do código abaixo?
+
+// var a = 10
+
+// do {
+
+//   a += 1
+
+//   console.log(a); // saída: D> 11
+
+
+// } while (a < 5);
+
+// // A) 11121314
+// // B) 1112
+// // C) 12345
+// // D) 11
+
+
+// // Qual será a saída do código abaixo?
+
+// var a = 0
+// var b = 0
+
+// console.log(a++);
+// console.log(b += a);
+
+// while(a < 3) {
+
+//   a++;
+
+//   b += a;
+
+//   console.log(b); // saída A. 1 3 6 
+//                           //1.  a++ = 0
+//                           //    b += a = 1
+//                           //2 . 1++ = 2
+//                           //    1 += 2 = 3
+//                           //3.  2++ = 3
+//                           //    3 += 3 = 6
+// }
+
+// // A) 1 3 6 
+// // B) 1 2 3
+// // C) 0 1 3
+// // D) 0 1
+
+
+
+// // Qual será a saída do código abaixo?
+
+// var tamanho = 5
+// var a = 5 
+// var tamanho = 4
+
+// for(var j = tamanho; j >= 0; j--) {
+
+//   console.log(a); // saída: C. 5 3 1 -1 -3
+//                           // 1. a = 5
+//                           // 2. a = 5 - 2 = 3
+//                           // 3. a = 3 - 2 = 1 
+//                           // 4. a = 1 - 2 = -1
+//                           // 5. a = -1 - 2 = -3
+//   a = a - 2 
+// }
+
+// // A) 5 5 5 5
+// // B) 5 3 2 1
+// // C) 5 3 1 -1
+// // D) 5 3 1
+
+
+// // Qual será a saída do código abaixo?
+
+// var a  = 0
+
+// for(a; a < 5; a++)
+
+// console.log(a); // saída: C. 4 - 0 1 2 3 4
+
+// // A) 0 
+// // B) Erro 
+// // C) 4 
+// // D) 5
+
+
+// // Qual será a saída do código abaixo?
+
+// livro[tipoDado] =  valor_atribuicao 
+
+// // A) Um integer 
+// // B) Uma String 
+// // C) Um Objeto 
+// // D) Ponto Flutuante
+
+// // Resposta B. Uma String
+
+// Para determinar se um objeto é o protótipo de (ou faz parte da cadeia de protótipos de) outro objeto, deve-se usar o:
+
+// A) Método isPrototypeOf()
+// B) Método equals()
+// C) operador === 
+// D) operador ==
+
+// Resposta A. O método isPrototypeOf() lhe permite checar se um objeto está ou não 
+// na cadeia de protótipos (cadeia hieráquica) de um outro objeto.
+
+
+// // Identifique o processo realizado no seguinte trecho de código JavaScript?
+
+// o = {
+//   x: 1,
+//   y:{
+//     z: [false, null]
+//   }
+// }
+
+// s = JSON.stringify(o)
+// p = JSON.parse(s)
+
+// console.log(p); // saída: B. Serialização de Objetos
+
+// // A) Encapsulamento de Objetos
+// // B) Serialização de Objetos 
+// // C) Abstração do objeto 
+// // D) Codificação de Objetos 
+
+
+// // Qual é a saída do programa abaixo:
+
+// const objeto1 = {}
+
+// a = Symbol('a')
+// b = Symbol('b')
+
+// objeto1[a] = 'harry'
+// objeto1[b] = 'derry'
+
+
+// const objetoSimbolos = Object.getOwnPropertySymbols(objeto1) // saída B. 2
+
+// console.log(objetoSimbolos.length);
+
+// // A) 0 
+// // B) 2
+// // C) 1
+// // D) Erro 
+
 // var x = 8;
 
 // if(x > 9) {
@@ -7385,6 +7657,20 @@
 
 // // Qual é a saída do programa abaixo?
 
+// const obj1 = {
+
+//   propriedade1: 21
+// }
+
+// const descritor1 = Object.getOwnPropertyDescriptor(obj1, 'propriedade1')
+
+// console.log(descritor1.configurable); // saída: verdadeiro(true)
+// console.log(descritor1.enumerable); // saída: verdadeiro(true)
+
+// // A) true 21 
+// // B) true false 
+// // C) true true 
+// // D) false false 
 // function digaOi() {
 
 //   console.log("Ola " + this.nome); // saída: Ola Bob
@@ -7397,6 +7683,22 @@
 
 // // Qual é a saída do programa abaixo?
 
+// const obj1 = {
+
+//   propriedade1: '10'
+// }
+
+// const obj2 = Object.freeze(obj1)
+
+// obj2.propriedade1 = '20'
+
+// console.log(obj2.propriedade1); // saída: A. 10 - Object. freeze() congela um objeto: isto é, 
+//                                                // impede que novas propriedades sejam adicionadas a ele.
+
+// // A) 10
+// // B) 20
+// // C) Erro de tempo de execução
+// // D) Erro de compilação
 // function digaOi(adjetivo) {
 
 //   console.log("Ola " + this.nome + ", você é " + adjetivo ); // saída: Ola Bob, você é incrível
@@ -7408,6 +7710,203 @@
 
 
 // // Qual é a saída do programa abaixo?
+
+// const objeto1 = {
+
+//   propriedade1: 20
+// }
+
+// console.log(Object.is(objeto1)); // saída: C. falso(false) - Object.is() determina se dois valores correspondem ao mesmo valor.
+// // A) 20 
+// // B) true 
+// // C) false 
+// // D) error 
+
+
+// // Qual é a saída do programa abaixo?
+
+// const obj = {
+//   prop: 12
+// }
+
+// Object.preventExtensions(obj)
+
+// console.log(Object.isExtensible(obj)); // saída: B. falso(false) - não é exetensivel 
+
+// // A) 12
+// // B) false 
+// // C) true 
+// // D) erro
+
+
+// // Qual é a saída do programa abaixo?
+
+// var a = 5, b = 1
+// var obj = {
+
+//   a: 10
+// }
+
+// with(obj) {
+
+//   console.log(b); // saída: C. 1
+// }
+
+// // A) 10
+// // B) Error
+// // C) 1
+// // D) 5
+
+
+// // Qual é o código mais eficiente?
+
+// // código 1
+
+// for(var num = 10; num > 1; num--) {
+
+//   console.log(num);
+// }
+
+// // código 2
+
+// var num = 10
+
+// while(num >= 1) {
+  
+//   console.log(num);
+//   num++
+// }
+
+// // A) código 1
+// // B) código 2
+// // C) Ambos código 1 e código 2
+// // D) Não tem comparação
+
+// // Resposta: A. código 1
+
+
+// // Qual é a saída do programa abaixo?
+
+// var contar = 0
+
+// while (contar < 10) {
+
+//   console.log(contar); // saída: 0 1 2 3 4 5 6 7 8 9
+//    contar++
+
+   
+// }
+   
+// // Qual é a saída do programa abaixo?
+   
+// var a = 1
+
+// if(a > 10) {
+
+//   console.log(10);
+
+// } else {
+
+//   console.log(a); // saída: C. 1
+// }
+
+// // A) 10
+// // B) 0 
+// // C) 1
+// // D) undefined
+
+
+// // Qual é a saída do programa abaixo?
+
+// var grade = 'B'
+// var resultado 
+
+// switch(grade) {
+
+
+  
+//   case 'A':
+    
+//       resultado += "10";
+//       break;
+    
+
+//   case 'B':
+    
+//       resultado += "9";
+//       break;
+    
+
+//   case 'C':
+    
+//       resultado += "8";
+//       break;
+    
+
+//   default:
+//     resultado += "0"
+// }
+
+// console.log(resultado); // saída: B
+
+// // Qual é a saída do programa abaixo?
+
+// var grade = 'A'
+// var resultado 
+
+// switch(grade) {
+
+//   case 'A':
+//     resultado += "10"
+
+//   case 'B':
+//     resultado += "9"
+// }
+
+
+// // Qual é a saída do programa abaixo?
+
+// var a = 4
+// var b = 1
+// var c = 0
+
+// if(a == b)
+//    console.log(a);
+// else if(a == c)
+//    console.log(a);
+// else 
+//    console.log(c);
+
+// // A) 4
+// // B) 1
+// // C) Erro 
+// // D) 0
+
+// // Resposta: D. 0
+
+
+// // Qual é a saída do programa abaixo?
+
+// var grade = 'A'
+// var resultado 
+
+// switch(grade) {
+
+//   case 'A': 
+//      resultado += "10"
+
+//   case 'B':
+//      resultado += "9"
+    
+//   case 'C':
+//      resultado += "8"
+
+//   default:
+//      resultado += "0"
+// }
+
+// console.log(resultado);
+
 
 // const pessoa = {
 //   nome: 'Bob'
