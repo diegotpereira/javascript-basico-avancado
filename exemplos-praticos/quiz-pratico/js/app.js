@@ -7955,3 +7955,396 @@
 // console.log(nome);
 // console.log(idade);
 // console.log(casado);
+
+// // Encontre o enésimo maior elemento em uma matriz ordenada:
+
+// let arr = [12, 34, 21, 14, 67, 35, 64, 25]
+// arr.sort((a, b) => a - b)
+
+// let n
+// const maiorEl = arr[arr.length - n]
+
+// console.log(maiorEl);
+
+
+// // Imprima todos os elementos duplicados de um array
+
+// let arr = [1, 1, 5, 6, 7, 7, 8, 9, 3, 4, 4]
+
+// function removerDuplicados(ar) {
+
+//   let resultado = ar.filter((item, index) => {
+//     return ar.indexOf(item) !== index 
+//   })
+//   return resultado
+// }
+
+// console.log(removerDuplicados(arr)); // saída: [1, 7, 4]
+
+
+// // Qual é a saída do código abaixo?
+
+// var carro =  new Veiculo("Honda", "branco", "2010", "UK")
+// console.log(carro); // saída: 4. Veiculo {model: 'Honda', cor: 'branco', ano: '2010', pais: 'UK'}
+
+// function Veiculo(model, cor, ano, pais) {
+//   this.model = model 
+//   this.cor = cor 
+//   this.ano = ano 
+//   this.pais = pais 
+// }
+
+// // 1. undefined
+// // 2. ReferenceError
+// // 3. null 
+// // 4. {model: 'Honda', cor: 'branco', ano: '2010', pais: 'UK'}
+
+
+// // Qual é a saída do código abaixo?
+
+// function foo() {
+
+//   let x = (y = 0)
+//   x++
+//   y++
+
+//   return x
+// }
+
+// console.log(foo(), typeof x, typeof y); // saída 3. 1 'undefined' 'number
+
+// // 1. 1, undefined e undefined
+// // 2. ReferenceError
+// // 3. 1, undefined e number 
+// // 4. 1, number e number 
+
+
+// // Qual é a saída do código abaixo?
+
+// function principal() {
+
+//   console.log("A");
+
+//   setTimeout(function imprimir() {
+
+//     console.log("B");
+//   },  0)
+
+//   console.log("C");
+// }
+
+// principal()
+
+// // 1. A, B e C
+// // 2. B, A e C
+// // 3. A e C 
+// // 4. A, C e B
+
+// // Resposta 4. A, C e B
+
+
+// // Qual é a saída da verificação de igualdade abaixo
+
+// console.log(0.1 + 0.2 === 0.3); // saída: falso(false) - ponto flutuante gera binário e influencia no resultado da operação.
+
+// // 1. false 
+// // 2. true 
+
+
+// // Qual é a saída do código abaixo
+
+// var y = 1
+
+// if (function f() {}) {
+  
+//   y += typeof f 
+// }
+
+// console.log(y); // saída: 4 1undefined
+
+// // 1: 1function
+// // 2: 1object
+// // 3: ReferenceError
+// // 4: 1undefined
+
+
+// // Qual é a saída do código abaixo
+
+// function foo() {
+
+//   return;
+
+//   {
+//     mensagem: "Olá Mundo"
+//   }
+// }
+
+// console.log(foo()); // saída: 3. undefined
+
+// // 1: Olá Mundo
+// // 2: Object {message: "Olá Mundo"}
+// // 3: Undefined
+// // 4: SyntaxError
+
+
+// // Qual é a saída do código abaixo
+
+// var meusCaracteres = ["a", "b", "c", "d"]
+
+// delete meusCaracteres[0]
+
+// console.log(meusCaracteres); // saída: "b", "c", "d"
+// console.log(meusCaracteres[0]); // saída: undefined
+// console.log(meusCaracteres.length); // saída: 4
+
+
+// // 1: [empty, 'b', 'c', 'd'], empty, 3
+// // 2: [null, 'b', 'c', 'd'], empty, 3
+// // 3: [empty, 'b', 'c', 'd'], undefined, 4
+// // 4: [null, 'b', 'c', 'd'], undefined, 4
+
+// // Resposta 3. [empty, 'b', 'c', 'd'], undefined, 4
+
+
+// // Qual é a saída do código abaixo?
+
+// var array1 = new Array(3)
+
+// console.log(array1); // saída: [empty × 3]
+
+// var array2 = []
+// array2[2] = 100 
+
+// console.log(array2); // saída: [empty × 2, 100]
+
+// // 1: [undefined × 3], [undefined × 2, 100], [undefined × 3]
+// // 2: [empty × 3], [empty × 2, 100], [empty × 3]
+// // 3: [null × 3], [null × 2, 100], [null × 3]
+// // 4: [], [100], []
+
+
+// // Qual é a saída do código abaixo?
+
+// const obj = {
+//   prop1: function() {
+//     return 0
+//   },
+//   prop2() {
+//     return 1
+//   },
+//   ["prop" + 3]() {
+//     return 2
+//   }
+// }
+
+// console.log(obj.prop1()); // saída 0
+// console.log(obj.prop2()); // saída: 1
+// console.log(obj.prop3()); // saída: 2
+
+// // 1: 0, 1, 2
+// // 2: 0, { return 1 }, 2
+// // 3: 0, { return 1 }, { return 2 }
+// // 4: 0, 1, undefined
+
+
+// // Qual é a saída do código abaixo?
+
+// console.log(1 < 2 < 3); // saída: verdadeiro(true) - as expressões são avaliadas da esquerda para direita.
+// console.log(3 > 2 > 1); // saída: falso(false)
+
+
+// //  Qual é a saída do código abaixo no modo não estrito
+
+// function imprimirNumeros(primeiro, segundo, primeiro) {
+
+//   console.log(primeiro, segundo, primeiro);
+// }
+
+// imprimirNumeros(1, 2, 3) // saída: 2. 3, 2, 1
+
+// // 1: 1, 2, 3
+// // 2: 3, 2, 3
+// // 3: SyntaxError: Duplicate parameter name not allowed in this context
+// // 4: 1, 2, 1
+
+
+// //  Qual é a saída do código abaixo no modo não estrito
+
+// function imprimirNumeros = (primeiro, segundo, primeiro) => {
+
+//   console.log(primeiro, segundo, primeiro);
+// }
+
+// imprimirNumeros(1, 2, 3)
+
+// // 1: 1, 2, 3
+// // 2: 3, 2, 3
+// // 3: SyntaxError: Duplicate parameter name not allowed in this context
+// // 4: 1, 2, 1
+
+// // Resposta: 3. Ao contrário das funções regulares, as funções de seta 
+                // não permitem parâmetros duplicados no modo estrito ou não estrito.
+
+
+// // Qual é a saída do código abaixo
+
+// const arrowFunc = () => arguments.length
+
+// console.log(arrowFunc(1, 2, 3));
+
+
+// // 1: ReferenceError: arguments is not defined
+// // 2: 3
+// // 3: undefined
+// // 4: null
+
+// // Resposta: 1: ReferenceError: arguments is not defined
+
+
+// // Qual é a saída do código abaixo
+
+// console.log(String.prototype.trimLeft.name === "trimLeft");
+// console.log(String.prototype.trimLeft.name === "trimStart");
+
+
+// // 1: True, False
+// // 2: False, True
+
+// // Resposta: false, true - Para ser consistente com funções como String.prototype.padStart, 
+//                         // o nome do método padrão para aparar os espaços em branco é considerado como trimStart.
+//                         // Devido a razões de compatibilidade com a web, o antigo nome do método 'trimLeft' ainda 
+//                         // atua como um alias para 'trimStart'. 
+//                         // Portanto, o protótipo para 'trimLeft' é sempre 'trimStart'
+
+
+// // Qual é a saída do código abaixo
+
+// console.log(Math.max()); // 4. -Infinity - é o comparador inicial porque quase todos os outros valores são maiores.
+//                                        // Portanto, quando nenhum argumento for fornecido, -Infinity será retornado.
+
+// // 1: undefined
+// // 2: Infinity
+// // 3: 0
+// // 4: -Infinity
+
+
+// // Qual é a saída do código abaixo
+
+// console.log(10 == [10]); // saída: verdadeiro(true)
+// console.log(10 == [[[[[[[10]]]]]]]); // saída: verdadeiro(true)
+
+// // 1: True, True
+// // 2: True, False
+// // 3: False, False
+// // 4: False, True
+
+
+// // Qual é a saída do código abaixo
+
+// console.log(10 + "10"); // saída: 1010
+// console.log(10 - "10"); // saída: 0
+
+
+// // 1: 20, 0
+// // 2: 1010, 0
+// // 3: 1010, 10-10
+// // 4: NaN, NaN
+
+
+// // Qual é a saída do código abaixo
+
+// console.log([0] == false);
+
+// if ([0]) {
+//   console.log("Eu sou verdadeiro");
+
+// } else {
+//   console.log("Eu sou Falso");
+// }
+
+// // 1: True, Eu sou verdadeiro
+// // 2: True, Eu sou Falso
+// // 3: False, Eu sou verdadeiro
+// // 4: False, Eu sou Falso
+
+// Resposta 1. True, Eu sou verdadeiro
+
+
+// // Qual é a saída do código abaixo
+
+// console.log([1, 2] + [3, 4]); // saída: 4. 1,23,4 - O operador + não se destina ou é definido para matrizes. 
+//                                                  // Então ele converte arrays em strings e os concatena.
+
+// // 1: [1,2,3,4]
+// // 2: [1,2][3,4]
+// // 3: SyntaxError
+// // 4: 1,23,
+
+
+// // Qual é a saída do código abaixo
+
+// const numeros = new Set([1, 2, 2, 3, 4])
+
+// console.log(numeros); // saída: {1, 2, 3, 4}
+
+// const navegador = new Set("Firefox")
+
+// console.log(navegador); // saída: {"F", "i", "r", "e", "f", "o", "x"}
+
+// // 1: {1, 2, 3, 4}, {"F", "i", "r", "e", "f", "o", "x"}
+// // 2: {1, 2, 3, 4}, {"F", "i", "r", "e", "o", "x"}
+// // 3: [1, 2, 3, 4], ["F", "i", "r", "e", "o", "x"]
+// // 4: {1, 1, 2, 3, 4}, {"F", "i", "r", "e", "f", "o", "x"}
+
+
+
+// // Qual é a saída do código abaixo
+
+// console.log(NaN === NaN); // saída 2. Falso
+
+// // 1: Verdadeiro
+// // 2: Falso
+
+
+// // Qual é a saída do código abaixo
+
+// let numeros = [1, 2, 3, 4, NaN]
+
+// console.log(numeros.indexOf(NaN)); // 4. -1 - O indexOfusa o operador de igualdade estrita (===) internamente e NaN === NaNé avaliado como falso.
+//                                            // Como indexOf não poderá encontrar NaN dentro de um array, ele retorna -1 sempre.
+
+
+// // 1: 4
+// // 2: NaN
+// // 3: Erro de sintaxe
+// // 4: - 
+
+
+// // Qual é a saída do código abaixo
+
+// let [a, ...b,] = [1, 2, 3, 4, 5]
+
+// console.log(a, b);
+
+// // 1: 1, [2, 3, 4, 5]
+// // 2: 1, {2, 3, 4, 5}
+// // 3: Erro de sintaxe
+// // 4: 1, [2, 3, 4]
+
+// // Resposta: 3. Erro de sintaxe - Ao usar parâmetros rest, vírgulas à direita não são permitidas e lançarão um SyntaxError.
+//                                // Se você remover a vírgula à direita, ele exibirá a 1ª resposta
+
+
+// // Qual é a saída do código abaixo
+
+// async function func() {
+//   return 10
+// }
+
+// console.log(func()); // saída: 1. Promise {<fulfilled>: 10}
+
+
+// // 1: Promise {<fulfilled>: 10}
+// // 2: 10
+// // 3: SyntaxError
+// // 4: Promise {<rejected>: 10}
