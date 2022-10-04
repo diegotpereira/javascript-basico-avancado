@@ -8539,3 +8539,41 @@
 
 // // 1: A, A
 // // 2: A, B
+
+
+// // Qual é a saída do código abaixo:
+
+// const [x, ...y, z] = [1, 2, 3, 4]
+
+// console.log(x, y, z);
+
+
+// // 1: 1, [2, 3], 4
+// // 2: 1, [2, 3, 4], indefinido
+// // 3: 1, [2], 3
+// // 4: Erro de sintaxe
+
+// // Resposta 4. Ele lança um erro de sintaxe porque o elemento rest não deve ter uma vírgula à direita.
+
+
+// // Qual é a saída do código abaixo
+
+// const { a: x = 10, b: y = 20 } = { a: 30}
+
+// console.log(x); // saída: 30
+// console.log(y); // saída: 20
+
+// // 1: 30, 20
+// // 2: 10, 20
+// // 3: 10, indefinido
+// // 4: 30, indefinido
+
+
+// Qual é a saída do código abaixo
+
+function area({ altura = 10, largura = 20}) {
+
+  console.log(altura * largura );
+}
+
+area()
