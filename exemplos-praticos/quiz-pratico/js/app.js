@@ -2755,7 +2755,7 @@
 // console.log(iterador.next().value) // S
 // console.log(iterador.next().value) // 6
 
-
+,
 // // Explique o que é uma função de retorno de chamada e forneça um exemplo simples:
 
 // function modificaArray(arr, callback) {
@@ -7919,7 +7919,7 @@
 
 // let resultado = saudacao.apply(pessoa, ['Ola', 'Como você está?'])
 
-// console.log(resultado); // saída: Ola Bob. Como você está?
+// console.log(resultado); // saída: Ola Bob. Como você está?,
 
 
 // // O que é desestruturação de objetos?
@@ -8541,6 +8541,7 @@
 // // 2: A, B
 
 
+
 // // Qual é a saída do código abaixo:
 
 // const [x, ...y, z] = [1, 2, 3, 4]
@@ -8558,6 +8559,119 @@
 
 // // Qual é a saída do código abaixo
 
+// var set = new Set()
+// set.add("um")
+// set.add("dois")
+
+// for(let elementos of set) {
+
+//   console.log(elementos + " ");
+// }
+
+// // A) um 
+// // B) dois 
+// // C) um dois 
+// // D) undefined
+
+// // Resposta: C. um dois
+
+
+// // Qual é a saída do código abaixo
+
+// var set = new Set()
+
+// set.add("AngularJS")
+// set.add("Bootstrap")
+// set.delete("Bootstrap")
+
+// console.log(set.size); // saída: B. 1
+
+// // // A) 2
+// // // B) 1
+// // // C) 0
+// // // D) undefined
+
+
+// // Qual é a saída do código abaixo
+
+// // var set = new Set()
+
+// set.add("um")
+// set.add("dois")
+// set.add("tres")
+// set.clear()
+
+// console.log(set.size); // saída: D. 0
+
+// // A) um 
+// // B) 1
+// // C) 2
+// // D) 0
+
+
+// // Qual é a saída do código abaixo
+
+// var set = new Set()
+
+// set.add("um")
+// set.add("dois")
+
+// var itr = set.values()
+
+// console.log(itr.next().value); // saída: A. um
+
+// // A) um 
+// // B) dois 
+// // C) erro 
+// // D) undefined
+
+
+// // Qual é a saída do código abaixo
+
+// var set = new Set()
+
+// set.add("1")
+// set.add("2")
+
+// console.log(set.has("3")); // saída: C. falso(false)
+
+// // A) 3
+// // B) true 
+// // C) false 
+// // D) 2
+
+
+// // Qual é a saída do código abaixo
+
+// const props = [
+//   {
+//     id: 1,
+//     nome: "João"
+//   },
+//   {
+//     id: 2,
+//     nome: "Jack"
+//   },
+//   {
+//     id: 3,
+//     nome: "Tom"
+//   }
+// ]
+
+// const [,, { nome }] = props;
+
+// console.log(nome); // saída: 1. Tom
+
+// // 1: Tom
+// // 2: Error
+// // 3: undefined
+// // 4: Joao
+
+
+
+// // Qual é a saída do código abaixo
+
+
 // const { a: x = 10, b: y = 20 } = { a: 30}
 
 // console.log(x); // saída: 30
@@ -8569,11 +8683,124 @@
 // // 4: 30, indefinido
 
 
-// Qual é a saída do código abaixo
+// // Qual é a saída do código abaixo
 
-function area({ altura = 10, largura = 20}) {
+// function area({ altura = 10, largura = 20}) {
 
-  console.log(altura * largura );
-}
+//   console.log(altura * largura );
+// }
 
-area()
+// area()
+
+// function verificarTipo(num = 1) {
+//   console.log(typeof num);
+// }
+
+// verificarTipo() // saída: number
+// verificarTipo(undefined) // saída: number
+// verificarTipo("") // saída: string
+// verificarTipo(null) // saída: object
+
+
+// // 1: number, undefined, string, object
+// // 2: undefined, undefined, string, object
+// // 3: number, number, string, object
+// // 4: number, number, number, number
+
+
+// // Qual é a saída do código abaixo
+
+// function add(item, items = []) {
+
+//   items.push(item)
+
+//   return items;
+// }
+
+// console.log(add("Laranja")); // saída: ['Laranja']
+// console.log(add("Maça")); // saída: ['Maça']
+
+// // 1: ['Laranja'], ['Laranja', 'Maça']
+// // 2: ['Laranja'], ['Maça']
+
+
+// // Qual é a saída do código abaixo
+
+// function saudar(saudacao, nome, mensagem = saudacao + " " + nome)  {
+//   console.log(saudacao, nome, mensagem);
+// }
+
+// saudar("Ola", "João") // saída: Ola João Ola João
+// saudar("Ola", "João", "Bom dia!") // saída: Ola João Bom dia!
+
+// // 1) Erro de sintaxe
+// // 2) Ola João Ola João, Ola João Bom dia!
+
+
+// // Qual é a saída do código abaixo
+
+// function externa(f = interna()) {
+
+//   function interna() {
+
+//     return "Interna"
+//   }
+// }
+
+// externa()
+
+// // 1) ReferenceError: interna is not defined
+// // 2) Interna 
+
+
+// // Qual é a saída do código abaixo
+
+// function minhaFunc(x, y, ...muitosMaisArgs) {
+
+//   console.log(muitosMaisArgs);
+// }
+
+// minhaFunc(1, 2, 3, 4, 5) // saída: [3, 4, 5]
+// minhaFunc(1, 2) // []
+
+// // 1: [3, 4, 5], undefined
+// // 2: SyntaxError
+// // 3: [3, 4, 5], []
+// // 4: [3, 4, 5], [undefined]
+
+
+// // Qual é a saída do código abaixo
+
+// const obj = { key: "valor"}
+// const array = [...obj]
+
+// console.log(array);
+
+
+// // 1: ['key', 'value']
+// // 2: TypeError
+// // 3: []
+// // 4: ['key']
+
+// // Resposta: 2. TypeError
+
+
+// // Qual é a saída do código abaixo
+
+// function* minhaGenFun() {
+//   yield 1;
+//   yield 2;
+//   yield 3;
+// }
+
+// var minhaGenObj = new minhaGenFun()
+
+// console.log(minhaGenObj.next().value);
+
+// // 1: 1
+// // 2: undefined
+// // 3: SyntaxError
+// // 4: TypeError
+
+// // Resposta: 4. TypeError
+
