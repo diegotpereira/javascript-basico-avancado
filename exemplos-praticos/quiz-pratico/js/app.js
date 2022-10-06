@@ -9134,13 +9134,74 @@
 
 
 
-// Quais são os tipos de conversão?
+// // Quais são os tipos de conversão?
 
-// Resposta: para String, para boolean, para number;
+// // Resposta: para String, para boolean, para number;
 
-// Conversão de String usa a função String(). A coerção implícita é ativada 
-// pelo operador binário "+", quando qualquer operando é uma string 
+// // Conversão de String usa a função String(). A coerção implícita é ativada 
+// // pelo operador binário "+", quando qualquer operando é uma string 
 
-String(123) // explicito 
-123 + '' // implícito
+// String(123) // explicito 
+// 123 + '' // implícito
 
+
+// // Quais são as formas possíveis de criar objetos em JavaScript?
+
+// // 1. Construtor de Objetos - A maneira mais simples de criar um objeto vazio é usando o construtor Object. 
+// //  1.1 A atualmente está abordagem não é recomendada.
+
+// var Object = new Object()
+
+// // 2. Método de criação do  Objeto 
+// // 2.1 O método create de Object cria um novo objeto passando o objeto protótiopo como parâmetro
+
+// var objeto = Object.create(null);
+
+// // 3. Sintaxe literal do objeto
+// // 3.1 A sintaxe literal de objeto(ou inicializador de objeto) é conjunto de pares nome-valor separados por vírgulas entre chaves.
+// // 3.2 Esta é a maneira mais fácil de criar um objeto.
+
+// var objeto = {
+//   nome: 'Bob',
+//   idade: 34
+// }
+
+// // 4. Construtor de função
+// // 4.1 Crie qualquer função e aplique o novo operador para criar instâncias de objetos.
+
+// function Pessoa(nome) {
+//   this.nome = nome;
+//   this.idade = 21
+// }
+
+// var objeto = new Pessoa("Bob")
+
+// // 5. Construtor de função com protótipo:
+// // 5.1 Isso é semelhante ao construtor de funções, mas usa protótipo para suas propriedades e métodos
+
+// function Pessoa() {}
+// Pessoa.prototype.nome = "Bob"
+
+// var objeto = new Pessoa()
+
+// // 6. Sintaxe da classe ES6
+// // 6.1 Introduz recurso de classe para criar os objetos
+
+// class Pessoa {
+
+//   constructor(nome) {
+
+//     this.nome = nome 
+//   }
+// }
+
+// var objeto = new Pessoa("Bob")
+
+// // 7. Padrão Singleton
+// // 7.1 Um singleton é um objeto que só pode ser instanciado uma vez.
+// // 7.2 Chamadas repetidas para seu construtor retornam a mesma instância 
+// // e dessa forma pode-se garantir que elas não criem várias instâncias acidentalmente.
+
+// var objeto = new (function() {
+//   this.nome = "Bob"
+// })()
