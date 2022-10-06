@@ -2755,7 +2755,7 @@
 // console.log(iterador.next().value) // S
 // console.log(iterador.next().value) // 6
 
-,
+
 // // Explique o que é uma função de retorno de chamada e forneça um exemplo simples:
 
 // function modificaArray(arr, callback) {
@@ -8804,3 +8804,294 @@
 
 // // Resposta: 4. TypeError
 
+
+// // Qual é a saída do código abaixo
+
+// const num = 0o38;
+
+// console.log(num);
+
+// // 1: Erro de sintaxe
+// // 2: 38
+
+// // Resposta 1. Erro de sintaxe - (fora do intervalo de 0 a 7) no literal octal, o JavaScript lançará um SyntaxError. 
+
+
+// // Qual é a saída do código abaixo
+
+// const quadroObj = new Quadrado(10)
+
+// console.log(quadroObj.area);
+
+// class Quadrado {
+
+//   constructor(length) {
+
+//     this.length = length
+//   }
+
+//   get area() {
+
+//     return this.length * this.length
+//   }
+//   set area(value) {
+
+//     this.area = value
+//   }
+// }
+
+// // 1: 100
+// // 2: ReferenceError
+
+// // Resposta: 2. ReferenceError
+
+
+// // Qual é a saída do código abaixo
+
+// function Pessoa() {}
+
+// Pessoa.prototype.walk = function() {
+
+//   return this;
+// }
+
+// Pessoa.run = function() {
+
+//   return this;
+// }
+
+// let usuario = new Pessoa()
+// let walk = usuario.walk
+
+// console.log(walk()); // saída: Window
+
+// let run = Pessoa.run 
+
+// console.log(run()); // saída: Window
+
+// // 1: undefined, undefined
+// // 2: Person, Person
+// // 3: SyntaxError
+// // 4: Window, Window
+
+
+
+// // Qual é a saída do código abaixo
+
+// class Veiculo {
+  
+//   constructor(nome) {
+
+//     this.nome = nome
+//   }
+
+//   iniciar() {
+
+//     console.log(`${this.nome} veículo iniciado`);
+//   }
+// }
+
+// class Carro extends Veiculo {
+
+//   iniciar() {
+
+//     console.log(`${this.nome} carro iniciado`);
+//     super.iniciar()
+//   }
+// }
+
+// const carro = new Carro("BMW")
+
+// console.log(carro.iniciar());
+
+
+// // 1: Erro de sintaxe
+// // 2: veículo BMW iniciado, carro BMW iniciado
+// // 3: BMW carro iniciado, BMW veículo iniciado, undefined
+// // 4: O carro BMW começou, o carro BMW começou
+
+// // Resposta 3. BMW carro iniciado, BMW veículo iniciado, undefined - A palavra-chave super é usada para chamar métodos de uma superclasse
+
+
+// // Qual é a saída do código abaixo
+
+// const USUARIO  = { idade: 30 }
+// USUARIO.idade = 25
+
+// console.log(USUARIO.idade); // saída: 2. 25
+
+// // 1: 30
+// // 2: 25
+// // 3: Erro de tipo não capturado
+// // 4: Erro de sintaxe
+
+
+// // Qual é a saída do código abaixo
+
+// console.log("🙂" === "🙂"); // saída: verdadeiro(true) - Emojis são unicodes e o unicode para símbolo de sorriso é "U+1F642".
+//                                                        // A comparação unicode dos mesmos emojis é equivalente à comparação de strings.
+
+// // 1: falso
+// // 2: verdadeiro
+
+
+// // Qual é a saída do código abaixo?
+
+// console.log(typeof typeof typeof true); // saída: 1. string - O operador typeof em qualquer primitiva retorna um valor de string.
+
+// // 1: string
+// // 2: boolean
+// // 3: NaN
+// // 4: number
+
+
+// // Qual é a saída do código abaixo?
+
+// let zero = new Number(0)
+
+// if (zero) {
+  
+//   console.log("If");
+
+// } else {
+  
+//   console.log("Else");
+// }
+
+
+// // 1: If
+// // 2: Else
+// // 3: NaN
+// // 4: SyntaxError
+
+// // Resposta: 1. If
+
+
+// // Qual é a saída do código abaixo no modo não estrito?
+
+// let msg = "Bom dia!"
+
+// msg.nome = "João"
+
+// console.log(msg.nome); // 4. undefined - Ele retorna undefined para o modo não estrito e retorna Error para o modo estrito.
+
+
+// // 1: ""
+// // 2: Error
+// // 3: John
+// // 4: Undefined
+
+
+
+// // Qual é a saída do código abaixo?
+
+// let contar = 10;
+
+// (function internaFunc() {
+
+//   if (contar === 10) {
+    
+//     let contar = 11
+
+//     console.log(contar); // saída: 1. 11
+//   }
+
+//   console.log(contar); // saída: 1. 10
+// })()
+
+
+// // 1: 11, 10
+// // 2: 11, 11
+// // 3: 10, 11
+// // 4: 10, 10
+
+
+// // Qual é a saída do código abaixo?
+
+
+// console.log(true && 'ola'); // saída: ola
+// console.log(true && 'ola' && 1); // saída: 1
+// console.log(true && '' && 0); // saída: ''
+
+
+// // Qual é a saída do código abaixo?
+
+// let arr = [1, 2, 3];
+// let str = "1, 2, 3";
+
+// console.log(arr == str); // saída 3. verdadeiro(true) - Arrays têm sua própria implementação do método (toString()) 
+//                                                      // que retorna uma lista de elementos separados por vírgulas.
+//                                                      // Para evitar a conversão do tipo de array, devemos usar === para comparação.
+
+
+// // 1: false
+// // 2: Error
+// // 3: true
+
+
+// // Qual é a saída do código abaixo?
+
+// buscarMensagem() 
+
+// var buscarMensagem = () => {
+
+//   console.log("Bom dia!");
+// }
+
+// // 1: bom dia
+// // 2: buscarMensagem não é uma função
+// // 3: buscarMensagem não está definido
+// // 4: undefined
+
+// // Resposta 2. buscarMensagem não é uma função
+
+
+// // Qual é a saída do código abaixo?
+
+// let rapidaPromise = Promise.resolve()
+
+// rapidaPromise.then(() => console.log("promise finalizado"));
+
+// console.log("programa finalizado");
+
+
+// // 1: programa terminado
+// // 2: Não é possível prever a ordem
+// // 3: programa finalizado, promise finalizado
+// // 4: promise finalizado, programa finalizado
+
+// // Resposta 3. programa finalizado, promise finalizado - Mesmo que uma promessa seja resolvida imediatamente, ela não será executada imediatamente porque seus manipuladores. 
+//               // then/catch/finally ou callbacks (também conhecidos como tarefa) são colocados na fila.
+//               // Sempre que o mecanismo JavaScript fica livre do programa atual, ele puxa uma tarefa da fila e a executa.
+//               // Esta é a razão pela qual a última instrução é impressa antes do log do manipulador de promessa.
+
+
+// // Qual é a saída do código abaixo?
+
+// console.log('Primeira Linha')
+// ['a', 'b', 'c'].forEach((elemento) => console.log(elemento))
+// console.log('Terceira Linha')
+
+
+// // 1: Primeira Linha, depois imprima a, b, c em uma nova linha e, finalmente, imprima Terceira Linha como próxima linha
+// // 2: Primeira Linha, imprima a, b, c em uma primeira linha e imprima Terceira Linha como próxima linha
+// // 3: Erro de ponto e vírgula ausente
+// // 4: Não é possível ler as propriedades de indefinido
+
+// // Resposta 4. Não é possível ler as propriedades de indefinido
+
+
+// // Qual é a saída do código abaixo?
+
+// var of = ['of']
+
+// for(var of of of) {
+
+//   console.log(of); // saida: 1. ofr
+// }
+
+
+// // 1: of
+// // 2: SyntaxError: Unexpected token of
+// // 3: SyntaxError: Identifier 'of' has already been declared
+// // 4: ReferenceError: of is not defined
