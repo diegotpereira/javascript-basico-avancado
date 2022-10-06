@@ -2755,7 +2755,7 @@
 // console.log(iterador.next().value) // S
 // console.log(iterador.next().value) // 6
 
-,
+
 // // Explique o que é uma função de retorno de chamada e forneça um exemplo simples:
 
 // function modificaArray(arr, callback) {
@@ -8804,3 +8804,48 @@
 
 // // Resposta: 4. TypeError
 
+// // O que é hoisting (elevação ou içamento) no JavaScript e como ele funciona.
+
+// // Significa que o motor JavaScript move as declarações de variáveis 
+// // para o topo do script(escopo).
+// // O escopo pode ser local e global.
+
+// a = 1
+ 
+// console.log("a " + a); // saída: a 1
+
+// var a
+
+
+// Explique a difrença entre os operadores “ == “ e “ === “.
+
+// // Resposta: Ambos são operadores de comparação.
+// // A diferença que "==" é usado para comparar valores
+// // enquanto "===", compara valores e tipos.
+
+// var x = 2
+// var y = "2"
+
+// console.log(x == y); // saída: verdadeiro(true)
+// console.log(x === y); // saída: falso(false)
+
+
+// Explique coerção implícita:
+
+// Javascript é uma linguagem fracamente tipada, valores 
+// também podem ser convertidos etre diferentes tipos automaticamente
+// e isso é chamado de coerção de tipos implícita(implicit type coercion).
+// Um operador que faz a comparação ativa e coerção de tipos e o "==";
+
+
+
+
+// Quais são os tipos de conversão?
+
+// Resposta: para String, para boolean, para number;
+
+// Conversão de String usa a função String(). A coerção implícita é ativada 
+// pelo operador binário "+", quando qualquer operando é uma string 
+
+String(123) // explicito 
+123 + '' // implícito
