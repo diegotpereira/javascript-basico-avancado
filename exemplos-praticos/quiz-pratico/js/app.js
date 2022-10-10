@@ -9205,3 +9205,374 @@
 // var objeto = new (function() {
 //   this.nome = "Bob"
 // })()
+
+
+// // Qual é o tipo dos valores abaixo?
+
+// var a 
+// console.log(typeof a); // saída undefined
+
+// var b = "ola mundo"
+// console.log(typeof b); // saída: string
+
+// var c = 42
+// console.log(typeof c); // saída: number
+
+// d = true 
+// console.log(typeof d); // saída: boolean
+
+// e = null 
+// console.log(typeof e); // saída: object
+
+// f = undefined
+// console.log(typeof f); // saída: undefined
+
+// g = { b: "c"}
+// console.log(typeof g); // saída: object
+
+
+// // Qual é o tipo de objeto?
+
+// // var obj = {
+
+// //   a: "ola mundo",
+// //   b: 42,
+// //   c: true 
+// // }
+
+// // console.log(obj.a); // saída: ola mundo
+// // console.log(obj.b); // saída: 42
+// // console.log(obj.c); // saída: true
+
+// // console.log(obj["a"]); // saída: ola mundo
+// // console.log(obj["b"]); // saída: 42
+// // console.log(obj["c"]); // saída: true
+
+// var obj = {
+//   a: "ola mundo",
+//   b: 42
+// }
+
+// var b = "a"
+
+// console.log(obj[b]); // saída: ola mundo
+// console.log(obj["b"]); // saída: 42
+
+
+// // Explique arrays(matrizes) em JavaScript
+
+// // Um array é um objeto que contém valores(de qualquer tipo) não particulamente
+// // em propriedades/chaves nomeadas, mas em posiões indexadas numericamente.
+
+// var arr = [
+//   "ola mundo",
+//   42,
+//   true
+// ]
+// console.log(arr[0]); // saída: ola mundo
+// console.log(arr[1]) // saída: 42
+// console.log(arr[2]); // saída: true 
+// console.log(arr.length); // saída: 3
+
+// console.log(typeof arr); // saída: object
+
+
+// // O que é o modo estrito?
+
+// O "use strict" é novo recurso do ECMAScript 5 que permite colocar um programa ou 
+// função em um contexto operacional.
+
+
+// // O que é um Polyfill?
+
+// Um polyfill é essencialmente o código específico(ou plugin) que permitira que você tivesse alguma
+// funcionalidade específica que você espera em navegadores atuais para também funcionar em outros navegadores
+// que não suportem funcionalidades incorporadas.
+
+
+
+// // Qual é a saída do programa abaixo?
+
+// var foo = 10
+
+// function minhaFunc() {
+
+//   foo = 11;
+
+//   console.log(foo); // saída: 11
+// }
+
+// console.log(foo); // saída: 10
+
+// minhaFunc()
+
+// console.log(foo); // saída: 11
+
+
+// // Qual é a saída do programa abaixo?
+
+// minhaFunc() 
+
+// function minhaFunc() {
+
+//   console.log(bar); // saída: undefined
+
+//   var bar =  11
+
+//   console.log(bar); // saida: 11
+// }
+
+
+
+// // Qual é a saída do programa abaixo?
+
+// console.log(0 == 1); // saida: false
+// console.log(0 == "0"); // saida: true 
+// console.log(0 === "0"); // saida: false
+// console.log(true == 1); // saída: true
+// console.log(false == 0); // saída: true
+// console.log(1 + 2 + "3"); // saída: 33
+// console.log(1 + "2" + "3"); // saída: 123
+// console.log("1" + 2); // saída: 12
+// console.log("1" + "3" + 2); // saída: 132
+
+
+// // Qual é a saída do programa abaixo?
+
+// function parent(foo, bar) {
+
+//   var x = foo
+
+//   function child() {
+
+//     console.log(x); // saída: undefined
+//     console.log(foo); // saída: undefined
+//     console.log(bar); // saída: undefined
+//   }
+
+//   console.log(x); // saída: undefined
+
+//   child()
+// }
+
+// parent()
+
+
+// // Corrija o programa abaixo para imprimir valores de 0 a 9
+
+// // ORIGINAL
+// // for (var i = 0; i < 9; i++) {
+// //   setTimeout(function () {
+// //     console.log(); //Should print from 0 to 9
+// //   }, 0);
+// // }
+
+// // CORRIGIDO
+// for(let i = 0;i <= 9;i++){
+  
+//   setTimeout(function() {
+
+//     console.log(i);
+//   }, 0)
+// }
+
+
+// // Escreva uma função que permita fazer isso.
+
+// // var addSeis = criarBase(6)
+// // addSeis(10) // retornar 16
+// // addSeis(21) // retornar 27 
+
+// function criarBase(baseNumero) {
+
+//   return function(N) {
+
+//     return baseNumero + N
+//   }
+// }
+
+// var addSeis = criarBase(6)
+// console.log(addSeis(10)); // saída:  16
+// console.log(addSeis(21)); // saída: 27
+
+
+// // Como você verificaria se um número é um número inteiro?
+
+// function ehInt(num) {
+
+//   return num % 1 === 0
+// }
+
+// console.log(ehInt(4)); // saída: verdadeiro(true)
+// console.log(ehInt(12.2)); // saída: falso(false)
+// console.log(ehInt(0.3)); // saída: falso(false)
+
+
+// // Dados os seguintes requesitos:
+
+// const passageiros = [
+//   {
+//     id: 1,
+//     passageiroNome: "Freddie Mercury",
+//     ehVegetarianoOuVegano: false,
+//     voosConectados: 4
+//   },
+//   {
+//     id: 2,
+//     passageiroNome: "Amy Winehouse",
+//     ehVegetarianoOuVegano: true,
+//     voosConectados: 4
+//   },
+//   {
+//     id: 3,
+//     passageiroNome: "Kurt Kobain",
+//     ehVegetarianoOuVegano: true,
+//     voosConectados: 3
+//   },
+//   {
+//     id: 4,
+//     passageiroNome: "Michael Jackson",
+//     ehVegetarianoOuVegano: true,
+//     voosConectados: 1
+//   }
+// ]
+
+// // // como obter os nomes dos passageiros: 
+
+// // // A primeira solução é através de um método 'for loop'.
+// // const passageiroNome = []
+
+// // for(let i = 0; i < passageiros.length; i++) {
+
+// //   passageiroNome.push(passageiros[i].passageiroNome)
+// // } 
+
+// // console.log("Passageiros", passageiroNome); // saída: Passageiros ['Freddie Mercury', 'Amy Winehouse', 'Kurt Kobain', 'Michael Jackson']
+
+// // // A segunda solução é através da função ' forEach '.
+
+// // const passageirosNomes = []
+
+// // passageiros.forEach((passageiro) => {
+
+// //   passageirosNomes.push(passageiro.passageiroNome)
+// // })
+
+// // console.log(passageirosNomes); // saída: ['Freddie Mercury', 'Amy Winehouse', 'Kurt Kobain', 'Michael Jackson']
+
+// // // A terceira solução e através do 'map'
+
+// // const passageiroNomes = passageiros.map((passageiro) => passageiro.passageiroNome)
+
+// // console.log(passageiroNomes); // saída: ['Freddie Mercury', 'Amy Winehouse', 'Kurt Kobain', 'Michael Jackson']
+
+
+// // // como conseguir cantores vegetarianos/veganos
+
+// // // A primeira solução é através de um método 'for loop'.
+
+// // const passageiroNomeVegetariano = []
+
+// // for(let i = 0; i < passageiros.length; i++) {
+
+// //   if (passageiros[i].ehVegetarianoOuVegano) {
+    
+// //     passageiroNomeVegetariano.push(passageiros[i].passageiroNome)
+// //   }
+// // }
+
+// // console.log(passageiroNomeVegetariano); // saída: ['Amy Winehouse', 'Kurt Kobain', 'Michael Jackson']
+
+
+// // // A segunda solução é através da função ' forEach '.
+
+// // const passageirosNome = []
+
+// // passageiros.forEach((passageiro) => {
+
+// //   if(passageiro.ehVegetarianoOuVegano)
+// //      passageirosNome.push(passageiro.passageiroNome)
+// // })
+
+// // console.log(passageirosNome); // saída: ['Amy Winehouse', 'Kurt Kobain', 'Michael Jackson']
+
+
+// // // A terceira solução é resolver com 'Filter' e 'Map'
+
+// // const passageirosNomess = passageiros.filter((passageiro) => passageiro.ehVegetarianoOuVegano).map((passageiro) => passageiro.passageiroNome)
+
+// // console.log(passageirosNomess); // saída: ['Amy Winehouse', 'Kurt Kobain', 'Michael Jackson']
+
+
+// // Como classificar os passageiros por voos de conexão
+
+// // const meses = ['Março', 'Janeiro', 'Fevereiro', 'Dezembro']
+// // meses.sort()
+
+// // console.log(meses);
+
+// // Ordenação - Ordem Crescente
+
+// const numeroDeVoos = passageiros.sort((passageiro1, passageiro2) => {
+
+//   passageiro1.voosConectados - passageiro2.voosConectados
+// })
+
+// console.log(numeroDeVoos); // saída: 
+// // [{…}, {…}, {…}, {…}]
+// // 0 : {id: 1, passageiroNome: 'Freddie Mercury', ehVegetarianoOuVegano: false, voosConectados: 4}
+// // 1 : {id: 2, passageiroNome: 'Amy Winehouse', ehVegetarianoOuVegano: true, voosConectados: 4}
+// // 2 : {id: 3, passageiroNome: 'Kurt Kobain', ehVegetarianoOuVegano: true, voosConectados: 3}
+// // 3 : {id: 4, passageiroNome: 'Michael Jackson', ehVegetarianoOuVegano: true, voosConectados: 1}
+
+
+
+// // Como remover o elemento da matriz com base na propriedade do objeto?
+
+// var meuArray = [
+//   {
+//     campo: "id",
+//     operador: "eq"
+//   },
+//   {
+//     campo: "cStatus",
+//     operadort: "eq"
+//   },
+//   {
+//     campo: "dinheiro",
+//     operador: "eq"
+//   }
+// ]
+
+
+// meuArray = meuArray.filter(function(obj) {
+
+//   return obj.campo !== "dinheiro"
+// })
+
+// console.log(meuArray); // saída: 0 : {campo: 'id', operador: 'eq'}
+//                               // 1 : {campo: 'cStatus', operadort: 'eq'}
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// console.log(+ "meow"); // saída: NaN
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var resultado 
+
+// for(var i = 5; i > 0; i--) {
+
+//   resultado = resultado + i 
+// }
+
+// console.log(resultado); // saída: NaN
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var a = 1.2 
+
+// console.log(typeof a); // saída: number
