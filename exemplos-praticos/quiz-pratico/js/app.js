@@ -9205,3 +9205,295 @@
 // var objeto = new (function() {
 //   this.nome = "Bob"
 // })()
+
+
+// // Colete livros da matriz de objetos e retorne a coleção de livros como uma matriz
+
+// let amigos = [
+//   {
+//     nome: 'Bob',
+//     livros: ['A história do reggae', 'Ska'],
+//     idade: 21
+//   },
+//   {
+//     nome: 'George',
+//     livros: ['Revolução dos Bichos', 'Fazenda'],
+//     idade: 22
+//   },
+//   {
+//     nome: 'José',
+//     livros: ['O evangelho', 'segundo'],
+//     idade: 23
+//   }
+// ]
+
+// let resultado = amigos.reduce((pre, curr) => {
+
+//   return [...pre, ...curr.livros]
+// }, [])
+
+// console.log(resultado); // saída: ['A história do reggae', 'Ska', 'Revolução dos Bichos', 
+                                    // 'Fazenda', 'O evangelho', 'segundo']
+
+
+                    
+// Escopo
+// O escopo é a área do código na qual é possível acessar e/ou modificar uma da variável, 
+// função ou objeto durante o tempo de execução.
+// O escopo global é criado automaticamente de qualquer lugar no código.
+// O escopo local é adicionado toda vez que você define uma função, classe, estrutura de 
+// fluxo(for ou if) ou módulo. Ele permite a visualização de variáveis apenas internamente, as 
+// variáveis definidas não são visíveis fora desse escopo específico.
+
+// // Definimos a variável de escopo global
+// let usuario = { nome: 'Maria'}
+
+// function escopoInterno() {
+
+//   console.log(usuario.nome); // saida: Maria
+
+//   // variável de escopo local
+//   let outroNome = { nome: 'João'}
+
+//   console.log(outroNome); // saída: {nome: 'João'}
+// }
+
+// console.log(outroNome); // saída: outroNome is not defined
+// escopoInterno()
+
+
+// // Closures
+// // O clausure dá acesso ao escopo de uma função externa a partir de uma função interna.
+
+// function construirIncremento(degrau) {
+
+//   let valor = 0
+
+//   return function() {
+
+//     valor = valor + degrau
+
+//     return valor
+//   }
+// }
+
+// const incrementoPor2 = construirIncremento(2)
+
+// console.log(incrementoPor2()); // saída: 2
+// console.log(incrementoPor2()); // saída: 4
+
+// const incrementoPor10 = construirIncremento(10)
+
+// console.log(incrementoPor10()); // saída: 10
+
+// console.log(valor); // saída: ReferenceError: valor is not defined
+
+
+// // IIFE(Immediately Invoked Function Expression) - Expressão de função imediatamente invocada, 
+// //é uma função definida como uma expressão e é executada imediatamente após a sua criação,
+// // crindo um escopo local totalmente inacessível para o mundo externo.
+
+// (function() {
+
+//   const usuario = { nome: 'Bob'}
+
+//   console.log(usuario.nome); // Bob
+// })()
+
+// console.log(usuario.nome); // saída: ReferenceError: usuario is not defined
+
+
+// Callback
+
+// O Callback é uma função passada recebe outra função(o Callback)
+// como argumento, e a executa em momento pré-acordado.
+
+
+// // Qual é o objetivo do escopo dinâmico?
+
+// // (A) As variáveis ​​podem ser declaradas fora do escopo
+// // (B) As variáveis ​​devem ser declaradas fora do escopo
+// // (C) As variáveis ​​não podem ser declaradas fora do escopo
+// // (D) Nenhum dos mencionados
+
+// Resposta: A. As variáveis ​​podem ser declaradas fora do escopo
+
+// // A coleção não ordenada de propriedades, cada uma com um nome e um valor é chamada:
+
+// // (A) Uma String
+// // (B) Objeto
+// // (C) Objeto serializado
+// // (D) Todos os mencionados
+
+// Resposta: B. Objeto
+
+
+// // Nesse trecho, nome e sobrenome são:
+
+// var livro = {
+//   "titulo principal": "JavaScript",
+//   'sub-titulo': "O guia definitivo",
+//   autor: {
+//     nome: "Davi",
+//     sobrenome: "Flanagan"
+//   }
+// }
+
+
+// // (A) propriedades
+// // (B) valores de propriedade
+// // (C) nomes de propriedade
+// // (D) objetos
+
+// // Resposta: C. Nomes de propriedades 
+
+
+// // O que são clausures?
+
+// // (A) Objetos de função
+// // (B) Escopo onde as variáveis ​​da função são resolvidas
+// // (C) Ambos os objetos Function e Scope onde as variáveis ​​da função são resolvidas
+// // (D) Nenhum dos mencionados
+
+// Resposta: C. Ambos os objetos Function e Scope onde as variáveis ​​da função são resolvidas
+
+
+// // Quais das opções a seguir são exemplos de fechamentos?
+
+
+// // (A) Objetos
+// // (B) Variáveis
+// // (C) Funções
+// // (D) Todos os mencionados
+
+// Resposta: D. Todos os mencionados
+
+
+// // Qual é a função deste trecho de código?
+
+// var escopo =  "escopo global"
+
+// function verifiqueEscopo() {
+
+//   var escopo = "escopo local"
+
+//   function f() {
+
+//     return escopo 
+//   }
+
+//   return f
+// }
+
+
+// // (A) Retorna valor nulo
+// // (B) Exceção de retorno
+// // (C) Retorna o valor no escopo
+// // (D) Nenhum dos mencionados
+
+// Resposta: C. Retorna o valor no escopo
+
+
+// // Qual é a regra fundamental do escopo lexical?
+
+// // (A) As funções são declaradas no escopo
+// // (B) As funções são executadas usando a cadeia de escopo
+// // (C) Ambos
+// // (D) Nenhum
+
+// Resposta: B. As funções são executadas usando a cadeia de escopo
+
+
+// // Qual é a abordagem oposta ao escopo lexical?
+
+// // (A) Escopo literal
+// // (B) Escopo estático
+// // (C) Escopo dinâmico
+// // (D) Escopo genérico
+
+// Resposta C. Escopo dinâmico
+
+
+// // Que tipo de expressão é "new Ponto(2, 3)"?
+
+// // (A) Expressão Primária
+// // (B) Expressão de Criação de Objetos
+// // (C) Expressão de Invocação
+// // (D) Expressão de Chamada do Construtor
+
+// Resposta: B. Expressão de Criação de Objetos
+
+// // Qual é a saída do código abaixo?
+
+// var a = 5, b = 1
+// var obj = {
+//   a: 10
+// }
+
+// with(obj) {
+
+//   console.log(b); // saída: C. 1
+// }
+
+
+// // (A) 10 
+// // (B) Error 
+// // (C) 1 
+// // (D) 5 
+
+
+// // Um bloco de instruções é um?
+
+// // (A) bloqueio condicional
+// // (B) bloco que contém uma única instrução
+// // (C) bloco condicional e instrução única
+// // (D) bloco que combina várias instruções em uma única instrução composta
+
+// Resposta: D. bloco que combina várias instruções em uma única instrução composta
+
+
+// // O "var" e "function" são 
+
+// // (A) Palavras-chave
+// // (B) Declarações de declaração
+// // (C) Tipos de dados
+// // (D) Protótipos
+
+// Resposta B. Declarações de declaração
+
+
+// // Qual é a saída do código abaixo:
+
+// function imprimirArray(a) {
+
+//   var len = a.length, i = 0
+
+//   if(len == 0)
+//      console.log("Array vazio");
+
+//   else {
+
+//     do {
+
+//       console.log(a[i]);
+
+//     } while(++i < len)
+//   }
+// }
+
+// // (A) Imprime os números na matriz em ordem
+// // (B) Imprime os números na matriz na ordem inversa
+// // (C) Imprime 0 no comprimento da matriz
+// // (D) Imprime “Matriz Vazia”
+
+// Resposta: A. Imprime os números na matriz em ordem
+
+
+// // Qual método retorna o caractere no índice especificado?
+
+// // (A) characterAt() 
+// // (B) getCharAt() 
+// // (C) charAt() 
+// // (D) Nenhuma das anteriores
+
+// Respota: C. charAt()
