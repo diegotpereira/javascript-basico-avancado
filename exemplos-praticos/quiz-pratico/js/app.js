@@ -9576,3 +9576,610 @@
 // var a = 1.2 
 
 // console.log(typeof a); // saída: number
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var x = 10 
+
+// if(x) {
+
+//   let x = 4
+// }
+
+// console.log(x); // saída: 10
+
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// console.log(1 + - "1" + 2); // saída: 2
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// (function(x) {
+
+//   return (function(y) {
+
+//     console.log(x); // saída: 20
+//   })(10)
+// }) (20)
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var num = 20
+// var buscarNumero = function() {
+
+//   console.log(num); // saída: undefined
+
+//   var num = 10
+// }
+
+// buscarNumero()
+
+
+// // Prever a saída do seguinte código JavaScrip?
+
+// function f1() {
+
+//   num = 10
+// }
+
+// f1()
+
+// console.log("window.num: " + window.num); // saída: window.num: 10
+
+
+// // Prever a saída do seguinte código JavaScrip?
+
+// console.log("(null + undefined): " + (null + undefined)); // saída: (null + undefined): NaN
+
+
+// // Prever a saída do seguinte código JavaScrip?
+
+// (function() {
+
+//   var a = (b = 3)
+// })()
+
+// console.log("valor de a : " + a); // saída: ReferenceError: a is not defined
+// console.log("valor de b : " + b);
+
+
+// // Prever a saída do seguinte código JavaScrip?
+
+// var y = 1
+
+// if (function f(){}) {
+  
+//   y += typeof f
+// }
+
+// console.log(y); // saída: 1undefined
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var k = 1
+
+// if(1) {
+//   eval(function foo() {})
+
+//   k += typeof foo
+// }
+
+// console.log(k); // saída: 1undefined
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var k = 1
+
+// if(1) {
+
+//   function foo() {}
+
+//   k += typeof foo
+// }
+
+// console.log(k); // saída: 1function
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// console.log("(-1 / 0): " + -1 / 0); // saída: (-1 / 0): -Infinity
+// console.log("(1 / 0): " + 1 / 0); // saída: (1 / 0): Infinity
+// console.log("(0 / 0): " + 0 / 0); // saída: (0 / 0): NaN
+// console.log("(0 / 1): " + 0 / 1); // saída: (0 / 1): 0
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var a = 4
+// var b = "5"
+// var c = 6
+
+
+// console.log("(a + b): " + (a + b)); // saída: (a + b): 45
+// console.log("(a - b): " + (a - b)); // saída: (a - b): -1
+// console.log("(a * b): " + a * b); // saída: (a * b): 20
+// console.log("(a / b): " + a / b); // saída: (a / b): 0.8
+// console.log("(a % b): " + (a % b)); // saída: (a % b): 4
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// console.log("MAX : " + Math.max(10, 2, NaN)); // saída: MAX : NaN
+// console.log("MAX : " + Math.max()); // saída: MAX : -Infinity
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// (function() {
+
+//   var a = (b = 3)
+
+// })()
+
+// console.log("a definido? " + (typeof a !== "undefined")); // saída: a definido? false
+// console.log("b definido? " + (typeof b !== "undefined")); // saída: b definido? true
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var meuObjeto = {
+
+//   foo: "bar",
+//   func: function() {
+
+//     var self = this;
+
+//     console.log("outra func: this.foo = " + this.foo); // saída: outra func: this.foo = bar
+//     console.log("outra func: self.foo = " + self.foo); // saída: outra func: self.foo = undefined
+
+//     (function() {
+
+//       console.log("interna func: this.foo = " + this.foo); // saída: interna func: this.foo = undefined
+//       console.log("interna func: self.foo = " + self.foo); // saída: interna func: self.foo = bar
+//     })()
+//   }
+// }
+
+// meuObjeto.func()
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// console.log(0.1 + 0.2); // saída 0.30000000000000004
+// console.log(0.1 + 0.2 == 0.3); // saída: false
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// (function() {
+
+//   console.log(1);
+
+//   setTimeout(function() {
+
+//     console.log(2);
+//   }, 1000)
+
+//   setTimeout(function() {
+
+//     console.log(3);
+//   }, 0)
+
+//   console.log(4);
+// })()
+
+// // Resposta: saída 1, 4, 3, 2
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var arr1 = "joao".split("")
+// console.log(arr1);
+// var arr2 = arr1.reverse()
+// var arr3 = "maria".split("")
+
+// arr2.push(arr3)
+
+// console.log("array 1: comprimento = " + arr1.length + " ultimo = " + arr1.slice(-1)); // saída: array 1: comprimento = 5 ultimo = m,a,r,i,a
+// console.log("array 2: comprimento = " + arr2.length + " ultimo = " + arr2.slice(-1)); // saída: array 2: comprimento = 5 ultimo = m,a,r,i,a
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// console.log(1 + "2" + "2"); // saída: 122
+// console.log(1 + +"2" + "2"); // saída: 32
+// console.log(1 + -"1" + "2"); // saída: 02
+// console.log(+"1" + "1" + "2"); // saída: 112
+// console.log("A" -  "B" + "2"); // saída: NaN2
+// console.log("A" - "B" + 2); // saída: NaN
+
+
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// for(var i = 0; i < 5; i++) {
+
+//   setTimeout(function() {
+
+//     console.log(i);
+//   }, i * 1000)
+// }
+
+// Resposta: saída: 5, 5, 5, 5, 5
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// for(var i = 0; i < 5; i++) {
+
+//   (function(x) {
+
+//     setTimeout(function() {
+
+//       console.log(x);
+//     }, x * 1000)
+//   })(i)
+// }
+// Resposta: saída
+// 0
+// 1
+// 2
+// 3
+// 4
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// console.log("0 || 1 = " + (0 || 1)); // saída: 0 || 1 = 1
+// console.log("1 || 2 = " + (1 || 2)); // saída: 1 || 2 = 1
+// console.log("0 && 1 = " + (0 && 1)); // saída: 0 && 1 = 0
+// console.log("1 && 2 = " + (1 && 2)); // saída: 1 && 2 = 2
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// console.log(false == "0"); // saída: verdadeiro(true)
+// console.log(false === "0"); // saída: falso(false)
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var a = {},
+//     b = { key: "b"},
+//     c = { key: "c"}
+
+// a[b] = 123
+
+// a[c] = 456
+
+// console.log(a[b]); // saída 456
+
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// console.log(
+//   (function f(n) {
+
+//     return n > 1 ? n * f(n - 1) : n
+//   })(10)
+// ); // saída 3628800
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// (function(x) {
+
+//   return (function(y) {
+
+//     console.log(x); // saída: 1
+//   })(2)
+// })(1)
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var heroi = {
+
+//   _nome: "Peter Parker",
+//   buscarIdentidadeSecreta: function() {
+
+//     return this._nome
+//   }
+// }
+
+// var roubouIdentidadeSecreta = heroi.buscarIdentidadeSecreta
+
+// console.log(roubouIdentidadeSecreta()); // saída: undefined
+// console.log(heroi.buscarIdentidadeSecreta()); // saída: Peter Parker
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var length = 10;
+
+// function fn() {
+
+//   console.log(this.length);
+// }
+
+// var obj = {
+
+//   length: 5,
+//   metodo: function(fn) {
+//     fn()
+//     arguments[0]();
+//   }
+// }
+
+// obj.metodo(fn, 1) // saída 10, 2
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// (function() {
+
+//   try {
+    
+//     throw new Error()
+//   } catch (x) {
+    
+//     var x = 1,
+//         y = 2
+
+//     console.log(x); // saída: 1
+//   }
+//   console.log(x); // saída: undefined
+//   console.log(y); // saída: 2
+// })()
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var x = 21
+// var garota = function() {
+
+//   console.log(x); // saída: undefined
+
+// var x = 20
+// }
+
+// garota()
+
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// console.log(1 < 2 < 3); // saída verdadeiro(true)
+// console.log(3 > 2 > 1); // saída falso(false)
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// console.log(typeof typeof 1); // saída: string
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// var b = 1
+
+// function outra() {
+
+//   var b = 2
+
+//   function interna() {
+
+//     b++
+//     var b = 3
+
+//     console.log(b); // saída: 3
+//   }
+//   interna()
+// }
+
+// outra()
+
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// x = 10
+
+// console.log(x); // saída: 10
+
+// var x
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// const arr = [1, 2]
+// arr.push(3)
+
+// console.log(arr); // saída: 1, 2, 3
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+// let soma = (a, b) => {
+
+//   a + b
+// }
+
+// console.log(soma(10, 20)); // saída: undefined, palavra-chave return está faltando
+
+
+
+
+// // Prever a saída do seguinte código JavaScript?
+
+
+// var arr = ["javascript", "typescript", "es6"]
+// var buscarValor = (value) => {
+
+//   return arr.filter((item) => {
+
+//     return item.indexOf(value) > - 1
+//   })
+// }
+
+// console.log(buscarValor("script")); // saída: ['javascript', 'typescript']
+
+
+
+// // Escreva o programa usando a função fatarrow?
+
+// var a = [1, 2, 3, 4]
+
+// function somaUsandoFuncao(acc, value) {
+
+//   return acc + value
+// }
+
+// var somaDoArrayUsandoFunc = a.reduce(somaUsandoFuncao)
+
+// console.log(somaDoArrayUsandoFunc); // saída: 10
+
+
+// // Escreva um programa que imprima os números de 1 a 15. 
+// // Mas para múltiplos de três imprima "java" em vez do 
+// // número e para os múltiplos de cinco imprima "script". 
+// // Para números que são múltiplos de três e cinco imprima "javascript"?
+
+
+// for(var i = 1; i <= 15; i++) {
+
+//   if(i % 15 == 0) 
+//      console.log("javascript");
+  
+//   else if(i % 3 == 0)
+//      console.log("java");
+
+//   else if(i % 5 == 0)
+//      console.log("script");
+
+//   else 
+//      console.log(i);
+// }
+
+// // Resposta:  saída: 1
+// //                   2
+// //                   java
+// //                   4
+// //                   script
+// //                   java
+// //                   7
+// //                   8
+// //                   java
+// //                   script
+// //                   11
+// //                   java
+// //                   13
+// //                   14
+// //                   javascript
+
+
+// // Qual será a saída do código a seguir?
+
+// var saida = (function(x) {
+
+//   delete x;
+//   return x;
+// })(0)
+
+// console.log(saida); // saída: 0 - O operador delete é usado para excluir uma propriedade de um objeto.
+//                               // Aqui x não é um objeto, é uma variável local.
+//                               // O operador delete não afeta variáveis ​​locais.
+
+
+// // Qual será a saída do código a seguir?
+
+// var x = 1
+// var saida = (function() {
+
+//   delete x
+//   return x 
+// })()
+
+// console.log(saida); // saída: 1 - O operador delete é usado para excluir uma propriedade de um objeto.
+//                                // Aqui x não é um objeto, é uma variável global do tipo number.
+
+
+
+// // Qual será a saída do código a seguir?
+
+// var x = {
+
+//   foo: 1
+// }
+// var saida = (function() {
+
+//   delete x.foo
+
+//   return x.foo
+// })()
+
+// console.log(saida); // saída: undefined - O operador delete é usado para excluir uma propriedade de um objeto.
+//                                       // Aqui x está um objeto que tem foo como uma propriedade e de uma função auto-invocada,
+//                                       // estamos excluindo a propriedade foo do objeto x e após a exclusão,
+//                                       // estamos tentando referenciar a propriedade excluída foo que resulta undefined.
+
+
+
+// // Qual será a saída do código a seguir?
+
+// var Colaborador = {
+
+//   empresa: "xyz"
+// }
+
+// var colaborador1 = Object.create(Colaborador)
+
+// delete colaborador1.empresa
+
+// console.log(colaborador1.empresa); // saída: xyz - Aqui o objeto colaborador1 ganhou companhia como propriedade do protótipo. 
+//                                                  // O operador delete não exclui a propriedade prototype.
+//                                                  // objeto colaborador1 não tem empresa como sua própria propriedade.
+//                                                  // você pode testá-lo console.log(colaborador1.hasOwnProperty('empresa')); // saída: false
+//                                                  // No entanto, podemos excluir a propriedade da empresa diretamente do objeto Colaborador usando delete Colaborador.empresa 
+//                                                  // ou também podemos excluir do objeto colaborador1 usando __proto__ propriedade delete colaborador1.__proto__.empresa.
+
+
+
+
+
+
+// // Qual será a saída do código a seguir?
+
+// var arvores = ["xyz", "xxxx", "teste", "uva", "maça"]
+
+// delete arvores[3]
+
+// console.log(arvores.length); // saída: 5 - Quando usamos o operador delete para excluir um elemento da matriz,
+//                                        //  o comprimento da matriz não é afetado por isso.
+//                                        //  Isso vale mesmo se você excluir todos os elementos de uma matriz usando o operador delete.
+
+
+
+// // Qual será a saída do código a seguir?
+
+// var bar = true 
+
+// console.log(bar + 0); // saída: 1
+// console.log(bar + "xyz"); // saída: truexyz
+// console.log(bar + true); // saída: 2
+// console.log(bar + false); // saída: 1
+
+// // Number + Number -> Adição
+// // Boolean + Number -> Adição
+// // Boolean + Boolean -> Adição
+// // Number + String -> Concatenação
+// // String + Boolean -> Concatenação
+// // String + String -> Concatenação
