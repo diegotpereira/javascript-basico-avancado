@@ -598,11 +598,11 @@
 // // Qual é a saída?
 // const mapa = [1, 2, 3].map(num => {
 
-  
+
 //   if(typeof num === 'number')  return 
 
 //   return num * 2
-  
+
 // })
 
 // console.log(mapa) // C: [undefined, undefined, undefined]
@@ -702,7 +702,7 @@
 // }
 
 // Cachorro.prototype.latido = function() {
-  
+
 //   console.log(`Woof Eu sou ${this.nome}`)
 // }
 
@@ -923,7 +923,7 @@
 //   const responda = yield 'Você goste de JavaScript?'
 
 //   if (responda !== 'Sim') {
-    
+
 //     return 'Oh não... Acho que erramos aqui'
 //   }
 //   return 'JavaScript te ama de volta ❤️'
@@ -1030,7 +1030,7 @@
 //     // Na segunada vez é true (verdadeiro)
 //     // Na terceira vez 5 * 2 = 10 Do Cache retorna 10
 //     if (num in cache) {
-      
+
 //       // Na segunda vez Do cache vale 20
 //       // Na terceira vez Do Cache retorna 20 já anteriormente registrado
 //       return `Do Cache! ${cache[num]}`
@@ -1459,7 +1459,7 @@
 // function compareMembros(pessoa1, pessoa2 = pessoa) {
 //   if (pessoa1 !== pessoa2) {
 //     console.log('Não é o mesmo!');
-     
+
 //   } else {
 //     console.log('Eles são os mesmos!');
 //   }
@@ -1799,7 +1799,7 @@
 // }
 
 // minhaFunc(1, 2, 3) // D: undefined undefined undefined
- 
+
 // // A: 1 2 3
 // // B: {1: 1} {2: 2} {3: 3}
 // // C: { 1: undefined } undefined undefined
@@ -1885,7 +1885,7 @@
 //     console.log(await minhaPromise);
 
 //   } catch {
-    
+
 //     throw new Error('Opa não funcionou')
 
 //   } finally {
@@ -2164,14 +2164,14 @@
 // var pessoa = {
 //     nome: 'Bunny Wailer',
 //     idade: 21,
-    
+
 // }
 
 // console.log(pessoa);
 // pessoa[Symbol.iterator] = function* () { 
 //      yield 1
 //      yield 2
-    
+
 // }
 
 
@@ -2821,7 +2821,7 @@
 //   for(let char of str.toLowerCase()) {
 
 //     if (vogais.includes(char)) {
-      
+
 //       contar++
 //     }
 //   }
@@ -3072,7 +3072,7 @@
 //   // 4. ["nome", "salario", "pais"]
 
 //   // Resposta 4. ["nome", "salario", "pais"] - enumerable é verdadeiro (true) se e somente se esta propriedade aparece durante enumeração das propriedades no objeto correspondente.
-                                                  // Valor padrão é false.
+// Valor padrão é false.
 
 
 // // Qual seria a saída do código a seguir?
@@ -3284,9 +3284,9 @@
 // (function() {
 
 //   var array = new Array('a', 'b', 'c', 'd', 'e')
-  
+
 //   array[10] = 'f'
-  
+
 
 //   delete array[10]
 
@@ -3360,7 +3360,7 @@
 //   })
 
 //   console.log(contemDivisivelPor3); // true
-  
+
 // }())
 
 // // 1. [ 2, 4, 8, 12, 16 ] [ 0, 3, 0, 0, 9, 0, 12]
@@ -3662,7 +3662,7 @@
 
 // function Colaborador() {
 //   this.colaboradorId = 'bq1uy'
-  
+
 // }
 
 // console.log(Colaborador.colaboradorId); // undefined
@@ -3749,7 +3749,7 @@
 //   };
 
 //   var retirarValorPor =  function(totalQuantia) {
-    
+
 //     return fooConta.deduzaQuantia.bind(barConta, totalQuantia) 
 //   }
 
@@ -3860,7 +3860,7 @@
 //   numeroArray.sort(function(a,b) {
 
 //     if (a == b) {
-      
+
 //       return 0;
 
 //     } else {
@@ -4168,7 +4168,7 @@
 // var b = 0;
 
 // while (a <= 3) {
-  
+
 //   a++;
 
 
@@ -4215,9 +4215,9 @@
 // 4. -Infinity -Infinity
 
 // Resposta 1. -Infinity Infinity - O método Math.max() retorna -Infinity por padrão 
-              // e o método Math.min() retorna o valor Infinity por padrão quando passado sem nenhum parâmetro.
+// e o método Math.min() retorna o valor Infinity por padrão quando passado sem nenhum parâmetro.
 
-            
+
 // // Qual será a saída do seguinte trecho de código?
 
 // var a = Math.max() < Math.min(); 
@@ -4469,12 +4469,12 @@
 //   console.log(meio);
 
 //   if (a[meio] == objetivo) {
-    
+
 //     encontrado = true;
 //     break;
 
 //   } else if (a[meio] < objetivo) {
-    
+
 //     esquerda = meio + 1;
 
 //   } else {
@@ -4484,7 +4484,7 @@
 // }
 
 // if (encontrado) {
-  
+
 //   console.log("Sim");
 
 // } else {
@@ -4511,10 +4511,10 @@
 //   console.log(meio);
 
 //   if (s[meio] == '1') {
-    
+
 //     ans = meio;
 //     r = meio - 1;
- 
+
 //   } else {
 
 //     l = meio + 1;
@@ -4545,7 +4545,7 @@
 //   let meio = Math.floor((l + r) / 2); // 50
 
 //   if (meio * meio <= n) {
-    
+
 //     ans = meio; // 4
 //     l = meio + 1; // 5
 
@@ -4668,7 +4668,7 @@
 // var b = 10 
 
 // if (a === 5) {
-  
+
 //   // let permite que você declare variáveis limitando seu escopo no bloco, 
 //   // instrução, ou em uma expressão na qual ela é usada. Isso é inverso da palavra-chave var, 
 //   // que define uma variável globalmente ou no escopo inteiro de uma função, independentemente 
@@ -4821,7 +4821,7 @@
 // Resposta NaN <= 100 é falso (false) e 
 //          NaN > 100 também é falso (false), 
 //          portanto, se o valor de x for NaN, as instruções não serão as mesmas.
-            // NaN não pode ser igual, menor ou maior que qualquer outro valor numérico.
+// NaN não pode ser igual, menor ou maior que qualquer outro valor numérico.
 
 
 // // Como esvaziar um array em JavaScript?
@@ -4918,7 +4918,7 @@
 // })(0);
 
 // console.log(output); // 0 - operador delete é usado para excluir uma propriedade de um objeto. 
-                        // Aqui x não é um objeto, é uma variável local . operador delete não afeta variáveis ​​locais.
+// Aqui x não é um objeto, é uma variável local . operador delete não afeta variáveis ​​locais.
 
 
 // // Qual será a saída do código a seguir?
@@ -4931,7 +4931,7 @@
 // }) ()
 
 // console.log(saida); // 1 - operador delete é usado para excluir uma propriedade de um objeto. 
-                      // Aqui x não é um objeto, é uma variável global do tipo number.
+// Aqui x não é um objeto, é uma variável global do tipo number.
 
 
 
@@ -4954,7 +4954,7 @@
 // // Qual será a saída do código a seguir?
 
 // var Colaborador = {
-  
+
 //   compania: 'xyz'
 // }
 
@@ -4964,7 +4964,7 @@
 
 // console.log(emp1.compania); // xyz - Aqui o objeto `emp1` tem empresa como propriedade **protótipo**. 
 //                             // O operador delete não exclui a propriedade prototype.
-                           
+
 
 // // Qual será a saída do código a seguir?
 
@@ -5364,9 +5364,9 @@
 // // Qual será a saída do código a seguir?
 
 // function saudar(pessoa) {
-  
+
 //   if (pessoa == { nome: 'Bob'}) {
-    
+
 //     return 'Olá Bob'
 
 //   } else {
@@ -5595,7 +5595,7 @@
 // const numerosPositivosDuplicados = numeros.reduce((acumulador, atualValor) => {
 
 //   if (atualValor > 0) {
-    
+
 //     const duplicado = atualValor * 2
 
 //     acumulador.push(duplicado)
@@ -6068,7 +6068,7 @@
 
 //   let nome = elemento.nome + " " + elemento.sobrenome
 
-  
+
 
 //   return nome
 // }
@@ -6079,7 +6079,7 @@
 
 // function concatenarNomesArrayObjetos(elemento) {
 
-  
+
 //   let nomeArrayObjetos = {}
 
 //   nomeArrayObjetos["Seu Nome Completo é"] = elemento.nome + " " + elemento.sobrenome
@@ -6348,10 +6348,10 @@
 // d) Não há diferença
 
 // Resposta: b - Explicação: Java é uma linguagem de programação orientada a objetos, enquanto JS é uma linguagem de script orientada a objetos. 
-                          // A principal diferença entre JavaScript e Java é que funções são valores, enquanto métodos e campos não são claramente definidos.
+// A principal diferença entre JavaScript e Java é que funções são valores, enquanto métodos e campos não são claramente definidos.
 
 
-                        
+
 
 // // Qual será a saída do seguinte código JavaScript?
 
@@ -6436,11 +6436,11 @@
 // d. Ignora as declarações
 
 // Resposta: D. Ignora as declarações - Em JavaScript, quando o interpretador encontra uma instrução vazia, 
-                                     // ele normalmente ignora ou não responde a essa instrução vazia. 
-                                     // As declarações vazias também às vezes são muito úteis, como usamos 
-                                     // as declarações vazias para criar loops para nada.
+// ele normalmente ignora ou não responde a essa instrução vazia. 
+// As declarações vazias também às vezes são muito úteis, como usamos 
+// as declarações vazias para criar loops para nada.
 
-                            
+
 // // O que acontecerá se o seguinte código JavaScript for executado?
 
 // var contar = 0;
@@ -6556,14 +6556,14 @@
 // var b = 0;
 
 // while (a < 3) {
-  
+
 //   a++;
 //   b += a;
 
 //   console.log(b); // saída: A. 136
-                     // 0 += 1 = 1
-                     // 1 += 2 = 3
-                     // 3 += 3 = 6
+// 0 += 1 = 1
+// 1 += 2 = 3
+// 3 += 3 = 6
 // }
 
 // // A) 136
@@ -6625,7 +6625,7 @@
 // var b = 0
 
 // while (a < 3) {
-  
+
 //   a++
 
 //   b += a
@@ -6800,7 +6800,7 @@
 //      for(let i = 0; i < rodar; i++) {
 
 //       let elemento = array.pop()
-      
+
 //       array.unshift(elemento)
 
 //      }
@@ -7578,7 +7578,7 @@
 // function paraLibras(quilos) {
 
 //   if (isNaN(quilos)) {
-    
+
 //     return 'Não é um número! Não pode ser um peso.'
 //   }
 
@@ -7772,7 +7772,7 @@
 // var num = 10
 
 // while(num >= 1) {
-  
+
 //   console.log(num);
 //   num++
 // }
@@ -7794,11 +7794,11 @@
 //   console.log(contar); // saída: 0 1 2 3 4 5 6 7 8 9
 //    contar++
 
-   
+
 // }
-   
+
 // // Qual é a saída do programa abaixo?
-   
+
 // var a = 1
 
 // if(a > 10) {
@@ -7824,24 +7824,24 @@
 // switch(grade) {
 
 
-  
+
 //   case 'A':
-    
+
 //       resultado += "10";
 //       break;
-    
+
 
 //   case 'B':
-    
+
 //       resultado += "9";
 //       break;
-    
+
 
 //   case 'C':
-    
+
 //       resultado += "8";
 //       break;
-    
+
 
 //   default:
 //     resultado += "0"
@@ -7897,7 +7897,7 @@
 
 //   case 'B':
 //      resultado += "9"
-    
+
 //   case 'C':
 //      resultado += "8"
 
@@ -8056,7 +8056,7 @@
 // var y = 1
 
 // if (function f() {}) {
-  
+
 //   y += typeof f 
 // }
 
@@ -8183,7 +8183,7 @@
 // // 4: 1, 2, 1
 
 // // Resposta: 3. Ao contrário das funções regulares, as funções de seta 
-                // não permitem parâmetros duplicados no modo estrito ou não estrito.
+// não permitem parâmetros duplicados no modo estrito ou não estrito.
 
 
 // // Qual é a saída do código abaixo
@@ -8380,7 +8380,7 @@
 // // 4: 4, 3, 2, 1
 
 // // Resposta: 1. Erro de sintaxe - Embora “processArray” seja uma função assíncrona, a função anônima que usamos forEaché síncrona.
-                                  // Se você usar await dentro de uma função síncrona, ele gerará um erro de sintaxe.
+// Se você usar await dentro de uma função síncrona, ele gerará um erro de sintaxe.
 
 
 
@@ -8424,8 +8424,8 @@
 // set.add("+0").add("-0").add(NaN).add(undefined).add(NaN)
 
 // console.log(set); // saída: 1. {'+0', '-0', NaN, undefined} - Set tem poucas exceções da verificação de igualdade,
-                                                              // 1. Todos os valores de NaN são iguais
-                                                              // 2. Ambos +0 e -0 considerados como valores diferentes
+// 1. Todos os valores de NaN são iguais
+// 2. Ambos +0 e -0 considerados como valores diferentes
 
 
 // // 1: Set(4) {"+0", "-0", NaN, undefined}
@@ -8473,7 +8473,7 @@
 // let minhaString = "100"
 
 // if (!typeof meuNumero === "string") {
-  
+
 //   console.log("Não é uma string!");
 
 // } else {
@@ -8880,7 +8880,7 @@
 // // Qual é a saída do código abaixo
 
 // class Veiculo {
-  
+
 //   constructor(nome) {
 
 //     this.nome = nome
@@ -8951,11 +8951,11 @@
 // let zero = new Number(0)
 
 // if (zero) {
-  
+
 //   console.log("If");
 
 // } else {
-  
+
 //   console.log("Else");
 // }
 
@@ -8991,7 +8991,7 @@
 // (function internaFunc() {
 
 //   if (contar === 10) {
-    
+
 //     let contar = 11
 
 //     console.log(contar); // saída: 1. 11
@@ -9105,7 +9105,7 @@
 // // O escopo pode ser local e global.
 
 // a = 1
- 
+
 // console.log("a " + a); // saída: a 1
 
 // var a
@@ -9233,10 +9233,10 @@
 // }, [])
 
 // console.log(resultado); // saída: ['A história do reggae', 'Ska', 'Revolução dos Bichos', 
-                                    // 'Fazenda', 'O evangelho', 'segundo']
+// 'Fazenda', 'O evangelho', 'segundo']
 
 
-                    
+
 // Escopo
 // O escopo é a área do código na qual é possível acessar e/ou modificar uma da variável, 
 // função ou objeto durante o tempo de execução.
@@ -9497,3 +9497,124 @@
 // // (D) Nenhuma das anteriores
 
 // Respota: C. charAt()
+
+
+// // Qual dos seguintes não é um evento de mouse?
+
+// // (A) onmousescroller 
+// // (B) onclick 
+// // (C) onmouseover 
+// // (D) onmousemove 
+
+// Resposta A. onmousescroller
+
+
+// // Como saber o número de elementos de um formulário?
+
+// // (A) document.meuForm.elements.count 
+// // (B) document.meuForm.length 
+// // (C) document.meuForm.count 
+// // (D) document.meuForm.elements.length 
+
+// Resposta D. document.meuForm.elements.length
+
+
+// // Qual método retorna a string começando na posição especificada?
+
+// // (A) substr() 
+// // (B) getSubstring() 
+// // (C) slice() 
+// // (D) Nenhuma das acima
+
+// Resposta A. substr()
+
+// // A tag <noscript> funcionará______________
+
+// // (A) apenas com scripts externos
+// // (B) com scripts internos e externos
+// // (C) se existe javascript ou não
+// // (D) apenas em navegadores que não sabem o que é javascript.
+
+// Resposta C. se existe ou não
+
+
+// // Qual destes contém uma instrução executável?
+
+// // (A) // var x = 0; // var y = 0;
+// // (B) /* var x = 0; // var y = 0; */
+// // (C) /* var x = 0; */ var y = 0;
+// // (D) // var x = 0; /* var y = 0; */
+
+// Resposta C. 
+
+
+// // O que é escopo lexical?
+
+// // O escopo léxico descreve como funções aninhadas têm acesso às variáveis
+// // definidas nos escopos parseInt.
+
+// const minhaFunc = () => {
+
+//   let meuValor = 2
+
+//   console.log(meuValor);
+
+//   const filhaFunc = () => { // tem acesso á variável meuValor que é definido no escopo pai de minhaFunc
+//                             // O escopo léxico de filhaFunc permite acesso ao escopo pai.
+
+//     console.log();
+//   }
+
+//   filhaFunc()
+// }
+// minhaFunc()
+
+
+// // O que é um fechamento(closures) em JavaScript?
+
+// // Um fechamento é uma função que tem acesso ao escopo pai 
+// // mesmo depois que a função pai foi fechada. 
+
+// const minhaFunc = () => {
+
+//   let meuValor = 2
+
+//   console.log(meuValor);
+
+//   const filhaFunc = () => {
+
+//     console.log(meuValor += 1);
+
+    
+//   }
+
+//   return filhaFunc
+// }
+// const resultado = minhaFunc()
+
+// console.log(resultado);
+
+// resultado()
+// resultado()
+// resultado()
+
+
+
+// // Qual é a abordagem oposta ao escopo lexical?
+
+// // (A) Escopo literal
+// // (B) Escopo estático
+// // (C) Escopo dinâmico
+// // (D) Escopo genérico
+
+// Resposta: C. Escopo dinâmico
+
+
+// // Qual é o objetivo do escopo dinâmico?
+
+// // (A) As variáveis ​​podem ser declaradas fora do escopo
+// // (B) As variáveis ​​devem ser declaradas fora do escopo
+// // (C) As variáveis ​​não podem ser declaradas fora do escopo
+// // (D) Nenhum dos mencionados
+
+// Resposta A. As variáveis ​​podem ser declaradas fora do escopo
