@@ -11552,3 +11552,736 @@
 // // 2. Ola
 // // 3. undefined, undefined
 // // 4. ReferenceError: this.message is not defined
+
+
+// // Qual seria a saída do código a seguir?
+
+// var obj = {
+
+//   mensagem: "Ola",
+//   internaMensagem: function() {
+
+//     var self = this;
+
+//     (function() {
+
+//       console.log(self.mensagem); // saída: Ola
+//     })()
+//   }
+// }
+
+// console.log(obj.internaMensagem()); // saída: undefined
+
+
+// // 1. Type Error
+// // 2. 'Hello'
+// // 3. undefined
+// // 4. ReferenceError: self.message is not defined
+
+
+// // Qual seria a saída do código a seguir?
+
+
+// function minhaFUnc() {
+
+//   console.log(this.mensagem); // saída: undefined
+// }
+
+// minhaFUnc.mensagem = "Ola João";
+
+// console.log(minhaFUnc()); // saída: undefined
+
+// // 1. Type Error
+// // 2. 'Ola João'
+// // 3. undefined, undefined
+// // 4. ReferenceError: this.message is not defined
+
+
+// // Qual seria a saída do código a seguir?
+
+// function minhaFunc() {
+
+//   console.log(minhaFunc.mensagem); // saída: Ola João
+// }
+
+// minhaFunc.mensagem = "Ola João";
+
+// console.log(minhaFunc()); // saída: undefined
+
+
+// // 1. Type Error
+// // 2. 'Ola João'
+// // 3. undefined
+// // 4. ReferenceError: this.message is not defined
+
+
+// // Qual seria a saída do código a seguir?
+
+// function minhaFunc() {
+
+//   minhaFunc.mensagem = "Ola João";
+
+//   console.log(minhaFunc.mensagem); // saída: Ola João
+// }
+
+// console.log(minhaFunc()); // saída: undefined
+
+
+// // 1. Type Error
+// // 2. 'Ola João', undefined
+// // 3. undefined
+// // 4. ReferenceError: this.message is not defined
+
+
+// // Qual seria a saída do código a seguir?
+
+// function minhaFunc(param1, param2) {
+
+//   console.log(minhaFunc.length); // saída: 2 2 2
+// }
+
+// console.log(minhaFunc()); // saída: undefined
+// console.log(minhaFunc("a", "b")); // saída: undefined
+// console.log(minhaFunc("a", "b", "c", "d")); // saída: undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// function minhaFunc() {
+
+//   console.log(arguments.length); // saída: 0 2 4 
+// }
+
+// console.log(minhaFunc()); // saída: undefined
+// console.log(minhaFunc("a", "b")); // saída: undefined
+// console.log(minhaFunc("a", "b", "c", "d")); // saída: undefined
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// function Person(name, age) {
+//   this.name = name || "John";
+//   this.age = age || 24;
+//   this.displayName = function () {
+//     console.log(this.name); // saída: John
+//   };
+// }
+
+// Person.name = "John";
+// Person.displayName = function () {
+//   console.log(this.name); // saída: Person
+// };
+
+// var person1 = new Person("John");
+// person1.displayName();
+// Person.displayName();
+
+
+// // 1. John Person
+// // 2. John John
+// // 3. John undefined
+// // 4. John John
+
+
+// // Qual seria a saída do código a seguir?
+
+// function senhaMsg() {
+
+//   var senha = "12345678";
+//   this.usuarioNome = "João";
+//   return {
+
+//     pwd: senha,
+//   };
+// }
+
+// var usuarioInfo =  senhaMsg();
+
+// console.log(usuarioInfo.pwd); // saída: 12345678
+// console.log(usuarioInfo.usuarioNome); // saída: undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// var colaboradorId = "aq123";
+
+// function Colaborador() {
+
+//   this.colaboradorId = "bq1uy";
+// }
+
+// console.log(Colaborador.colaboradorId); // saída: undefined
+
+
+// // 1. Reference Error
+// // 2. aq123
+// // 3. bq1uy
+// // 4. undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// var colaboradorId = "aq123";
+
+// function Colaborador() {
+
+//   this.colaboradorId = "bq1uy";
+// }
+
+// console.log(new Colaborador().colaboradorId); // saída: bq1uy
+
+// Colaborador.prototype.colaboradorId = "kj182";
+// Colaborador.prototype.TrabalhoId = "1BJKSJ";
+
+// console.log(new Colaborador().TrabalhoId); // saída: 1BJKSJ
+// console.log(new Colaborador().colaboradorId); // saída: bq1uy
+
+// // 1. bq1uy 1BJKSJ bq1uy undefined
+// // 2. bq1uy 1BJKSJ bq1uy
+// // 3. bq1uy 1BJKSJ kj182
+// // 4. undefined 1BJKSJ kj182
+
+
+// // Qual seria a saída do código a seguir?
+
+// var colaboradorId = "aq123";
+
+// (function Colaborador() {
+
+//   try {
+
+//     throw "foo123";
+    
+//   } catch (colaboradorId) {
+    
+//     console.log(colaboradorId); // saída: foo123
+//   }
+
+//   console.log(colaboradorId); // saída: aq123
+// })()
+
+// // 1. foo123 aq123
+// // 2. foo123 foo123
+// // 3. aq123 aq123
+// // 4. foo123 undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var saudar = "Ola mundo";
+//   var paraSaudar = [].filter.call(saudar, function(elemento, indice) {
+
+//     return indice > 5;
+//   })
+
+//   console.log(paraSaudar); // saída: ['n', 'd', 'o']
+// })()
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var fooConta = {
+
+//     nome: "João",
+//     quantia: 4000,
+//     deduzirQuantia: function(quantia) {
+
+//       this.quantia -= quantia;
+
+//       return "Quantia total restante da conta: " + this.quantia;
+//     }
+//   }
+
+//   var barConta = {
+//     nome: "João",
+//     quantia: 6000,
+//   }
+
+//   var retirarValorPor = function(quantiaTotal) {
+
+//     return fooConta.deduzirQuantia.bind(barConta, quantiaTotal)
+//   }
+
+//   console.log(retirarValorPor(400)()); // saída: Quantia total restante da conta: 5600
+//   console.log(retirarValorPor(300)()); // saída: Quantia total restante da conta: 5300
+// })()
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var fooConta = {
+
+//     nome: "João",
+//     quantia: 4000,
+//     deduzirQuantia: function(quantia) {
+
+//       this.quantia -= quantia;
+
+//       return this.quantia;
+//     }
+//   }
+
+//   var barConta = {
+//     nomer: "João",
+//     quantia: 6000,
+//   }
+
+//   var retirarValorPor = function(quantiaTotal) {
+
+//     return fooConta.deduzirQuantia.apply(barConta, [quantiaTotal]);
+//   }
+
+//   console.log(retirarValorPor(400)); // saída: 5600
+//   console.log(retirarValorPor(300)); // saída: 5300
+//   console.log(retirarValorPor(200)); // saída: 5100
+// })()
+
+// // 1. 5600 5300 5100
+// // 2. 3600 3300 3100
+// // 3. 5600 3300 5100
+// // 4. undefined undefined undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var fooConta = {
+
+//     nome: "João",
+//     quantia: 6000,
+//     deduzirQuantia: function(quantia) {
+
+//       this.quantia -= quantia;
+
+//       return this.quantia;
+//     }
+//   }
+
+//   var barConta = {
+//     nome: "João",
+//     quantia: 4000,
+//   }
+
+//   var retirarValorPor = function(quantiaTotal) {
+
+//     return fooConta.deduzirQuantia.call(barConta, quantiaTotal)
+//   };
+
+//   console.log(retirarValorPor(400)); // saída: 3600
+//   console.log(retirarValorPor(300)); // saída: 3300
+//   console.log(retirarValorPor(200)); // saída: 3100 
+// })()
+
+
+// // 1. 5600 5300 5100
+// // 2. 3600 3300 3100
+// // 3. 5600 3300 5100
+// // 4. undefined undefined undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function saudarNovoCliente() {
+
+//   console.log("Ola " + this.nome); // saída: Ola João
+// }.bind({
+//   nome: "João"
+// })())
+
+// // 1. Ola João 
+// // 2. Reference Error
+// // 3. Window
+// // 4. undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// function buscarDadoDoServidor(apiUrl) {
+
+//   var nome = "João";
+
+//   return {
+
+//     then: function(fn) {
+
+//       fn(nome);
+//     }
+//   }
+// }
+
+// buscarDadoDoServidor("www.google.com").then(function(nome) {
+
+//   console.log(nome); // saída: 1. João
+// })
+
+// // 1. João 
+// // 2. undefined
+// // 3. Reference Error
+// // 4. fn is not defined
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var arrayNum = [2, 8, 15, 16, 23, 42];
+
+//   Array.prototype.sort = function(a, b) {
+
+//     return a - b;
+//   }
+
+//   arrayNum.sort();
+
+//   console.log(arrayNum); // saída: [2, 8, 15, 16, 23, 42]
+// })();
+
+// (function() {
+
+//   var numeroArray = [2, 8, 15, 16, 23, 42];
+//   numeroArray.sort(function(a, b) {
+
+//     if (a == b) {
+      
+//       return 0;
+
+//     } else {
+
+//       return a < b ? -1 : 1;
+//     }
+//   })
+
+//   console.log(numeroArray); // saída: [2, 8, 15, 16, 23, 42]
+// })();
+
+// (function() {
+
+//   var numeroArray = [2, 8, 15, 16, 23, 42];
+//   numeroArray.sort(function(a,b) {
+
+//     return a - b;
+//   })
+
+//   console.log(numeroArray); // saída: [2, 8, 15, 16, 23, 42]
+// })()
+
+
+// // 1. [ 2, 8, 15, 16, 23, 42 ] [ 2, 8, 15, 16, 23, 42 ] [ 2, 8, 15, 16, 23, 42 ]
+// // 2. undefined undefined undefined
+// // 3. [42, 23, 16, 15, 8, 2] [42, 23, 16, 15, 8, 2] [42, 23, 16, 15, 8, 2]
+// // 4. Reference Error
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   function digaOla() {
+
+//     var nome = "Ola João";
+
+//     return;
+
+//     {
+//       nomeCompleto: nome
+//     }
+//   }
+
+//   console.log(digaOla().nomeCompleto);
+// })()
+
+// // 1. Ola João
+// // 2. undefined
+// // 3. Reference Error
+// // 4. Uncaught TypeError: Cannot read property 'nomeCompleto' of undefined
+
+// Resposta: 4. Uncaught TypeError: Cannot read property 'nomeCompleto' of undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// function buscarNumero() {
+
+//   return 2, 4, 5;
+// }
+
+// var numero = buscarNumero();
+
+// console.log(numero); // saída: 1. 5
+
+// // 1. 5
+// // 2. undefined
+// // 3. 2
+// // 4. (2,4,5)
+
+
+// // Qual seria a saída do código a seguir?
+
+// function buscarNumero() {
+
+//   return;
+// }
+
+// var numero = buscarNumero();
+
+// console.log(numero); // saída: 2. undefined
+
+
+// // 1. null
+// // 2. undefined
+// // 3. ""
+// // 4. 0
+
+
+// // Qual seria a saída do código a seguir?
+
+// function mul(x) {
+
+//   return function(y) {
+
+//     return [
+
+//       x * y,
+  
+//       function(z) {
+  
+//         return x * y + z;
+//       }
+//     ]
+//   }
+// }
+
+// console.log(mul(2)(3)[0]); // saída: 6
+// console.log(mul(2)(3)[1](4));// saída: 10
+
+// // 1. 6, 10
+// // 2. undefined undefined
+// // 3. Reference Error
+// // 4. 10, 6
+
+
+// // Qual seria a saída do código a seguir?
+
+// function mul(x) {
+
+//   return function(y) {
+
+//     return {
+
+//       resultado: x * y,
+
+//       soma: function(z) {
+
+//         return x * y + z;
+//       }
+//     }
+//   }
+// }
+
+// console.log(mul(2)(3).resultado); // saída: 6
+// console.log(mul(2)(3).soma(4)); // saída: 10
+
+// // 1. 6, 10
+// // 2. undefined undefined
+// // 3. Reference Error
+// // 4. 10, 6
+
+
+// // Qual seria a saída do código a seguir?
+
+// function mul(x) {
+
+//   return function(y) {
+
+//     return function(z) {
+
+//       return function(w) {
+
+//         return function(p) {
+
+//           return x * y * z * w * p;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// console.log(mul(2)(3)(4)(5)(6)); // saída: 1. 720
+
+
+// // 1. 720 
+// // 2. undefined
+// // 3. Reference Error
+// // 4. Type Error
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// var foo = 10 + "20"
+
+// console.log(foo); // saída: '1020'
+
+
+// // Qual é o resultado dos dois alertas abaixo?
+
+// var foo = "Ola";
+
+// (function() {
+
+//   var bar = " mundo";
+
+//   alert(foo + bar ) // saída: Ola mundo
+// })()
+
+// alert(foo + bar ) // saída:  ReferenceError: bar is not defined
+
+
+// // Qual é o valor de foo.length?
+
+// var foo = [];
+
+// foo.push(1)
+// foo.push(2);
+
+// console.log(foo.length); // saída: 2
+
+
+
+// // Qual é o valor de foo.x?
+
+// var foo = {
+//   n: 1
+// }
+
+// var bar = foo;
+
+// foo.x = foo = {
+//   n: 2
+// }
+
+// console.log(foo.x); // saída: undefined
+
+
+// // O que o código a seguir imprime?
+
+// console.log("um");
+
+// setTimeout(function() {
+
+//   console.log("dois");
+// }, 0)
+
+// console.log("três");
+
+// Resposta um, três, dois 
+
+
+// // Qual seria o resultado de 1+2+'3'?
+
+// console.log(1 + 2 + "3"); // saída: 33
+
+
+// // Escreva um script que retorne o número de ocorrências do caractere dado uma string como entrada?
+
+// function contarCaracteres(str) {
+
+//   return str 
+//      .replace(/ /g, "")
+//      .toLowerCase()
+//      .split()
+//      .reduce((arr, character) => {
+
+//       if (character in arr) {
+        
+//         arr[character]++;
+
+//       } else {
+
+//         arr[character] = 1;
+//       }
+
+//       return arr;
+//      }, {})
+// }
+
+// console.log(contarCaracteres("a raposa marrom pula sobre o cachorro preguiçoso")); // saída: {araposamarrompulasobreocachorropreguiçoso: 1}
+
+
+
+// // Qual é o valor de window.foo?
+
+// console.log(window.foo || (window.foo = "bar")); // saída: bar
+
+
+// // Qual é o resultado dos dois alerts abaixo?
+
+// var foo = "Ola";
+
+// (function() {
+
+//   var bar = " mundo";
+
+//   alert(foo + bar); // saída: Ola mundo
+// })()
+
+// alert(foo + bar) // saída: ReferenceError: bar is not defined
+
+
+
+// // Qual é o valor de foo.x?
+
+// var foo = {
+//   n: 1
+// }
+
+// var bar  = foo;
+// foo.x = foo = {
+//   n: 2
+// }
+
+// console.log(foo.x); // saída: undefined
+
+
+// Qual é o valor de g?
+
+f = g = 0;
+
+console.log(g);
+
+(function() {
+
+  try {
+    
+    f = function() {
+
+      return f();
+    } && f();
+
+  } catch (e) {
+    
+    return g++ && f();
+
+  } finally {
+
+    return ++g;
+  }
+
+  function f() {
+
+    g += 5;
+
+    return 0;
+  }
+})()
+
+console.log(g);
