@@ -10598,3 +10598,957 @@
 
 // Resposta A. As variáveis ​​podem ser declaradas fora do escopo
 
+
+// Qual será a saída do código a seguir?
+
+// var foo = function bar() {
+
+//   return 12
+// }
+
+// typeof bar() // saída ReferenceError: bar is not defined
+
+// function bar() {
+
+//   return 12
+// }
+
+// console.log(typeof bar()); // saída: number
+
+
+
+// // Qual será a saída do código a seguir?
+
+// bar();
+
+// (function abc() {
+
+//   console.log("algo");
+// })()
+
+// function bar() {
+
+//   console.log("bar foi chamado");
+// }
+
+// // Resposta: saída: bar foi chamado, algo
+
+
+
+// // Qual será a saída do código a seguir?
+
+// var salario = "R$ 1000";
+
+// (function() {
+
+//   console.log("O salário original foi " + salario); // saída: O salário original foi undefined
+
+//   var salario = "R$ 5000"
+
+//   console.log("Meu novo salário " + salario ); // saída: Meu novo salário R$5000
+// })()
+
+
+
+// // Qual será a saída do código a seguir?
+
+// function Usuario(nome) {
+
+//   this.nome = nome || "Bob"
+// }
+
+// var pessoa = (new Usuario("xyz")["localização"] = "BRA")
+
+// console.log(pessoa); // saída: BRA - Aqui new Usuario("xyz") cria um novo objeto 
+//                                   // e uma propriedade criada nele localização e BRA foi atribuído ao local da propriedade do objeto e que foi referenciado pela pessoa.
+//                                   // a atribuição em si retornará o valor mais à direita: no nosso caso é "BRA".
+//                                   // Em seguida, ele será atribuído à pessoa.
+
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// var strA = 'Oi aqui'
+// var strB = strA
+// strB = "Adeus aqui!"
+
+// console.log(strA); // saída: Oi aqui - Aqui estamos lidando com strings aqui.
+                                       // Strings são passadas por valor, ou seja, copiadas.
+
+
+// // Qual seria a saída do código a seguir?
+
+// var objA = {
+//   prop1: 42
+// }
+// var objB = objA
+// objB.prop1 = 90 
+
+// console.log(objA); // saída: {prop1: 90} - Aqui estamos lidando com objetos - 
+//                                         // Os objetos são passados ​​por referência,
+//                                         // ou seja objA e objB apontam para o mesmo objeto na memória.
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// var arrA = [0, 1, 2, 3, 4, 5]
+// var arrB = arrA
+// arrB[0] = 42
+
+// console.log(arrA); // saída: [42, 1, 2, 3, 4, 5] - Arrays são objetos em JavaScript e são passados ​​e atribuídos por referência.
+//                                                 // É por isso que ambos arrA e arrB apontam para a mesma matriz [0,1,2,3,4,5].
+//                                                 // É por isso que mudar o primeiro elemento do arrBtambém irá modificar arrA: é o mesmo array na memória.
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// var arrA = [0, 1, 2, 3, 4, 5]
+// var arrB = arrA.slice()
+// arrB[0] = 42
+
+// console.log(arrA); // saída:  [0, 1, 2, 3, 4, 5] - A função slice copia todos os elementos do array retornando o novo array.
+//                                                 // É por isso arrAe arrBreferencia duas matrizes completamente diferentes.
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// var arrA = [
+//   {
+//     prop1: "valor do array A!"
+//   },
+//   {
+//     algumaProp: "também o valor do array A!"
+//   },
+//   3,
+//   4,
+//   5
+// ]
+
+// var arrB = arrA 
+// arrB[0].prop1 = 42
+
+// console.log(arrA); // saída: Arrays são objetos em JS, então ambas as variáveis ​​arrA e arrB apontam para o mesmo array.
+//                            // Mudar arrB[0]é o mesmo que mudararrA[0].
+//                            // 0: {prop1: 42}, 
+//                            // 1: {algumaProp: 'também o valor da matriz A!'}, 
+//                            // 2: 3, 
+//                            // 3: 4, 
+//                            // 4: 5
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// var arrA = [
+//   {
+//     prop1: "valor de array A!!"
+//   },
+//   {
+//     algumaProp: "também o valor do array A!"
+//   },
+//   3, 
+//   4,
+//   5
+// ]
+
+// var arrB = arrA.slice()
+// arrB[0].prop1 = 42 
+// arrB[3] = 20
+
+// console.log(arrA); // saída A função slice copia todos os elementos do array retornando o novo array.
+//                   // No entanto, ele não faz cópia profunda.
+//                   // Em vez disso, ele faz uma cópia superficial.
+//                   // 0: {prop1: 42}
+//                   // 1: {algumaProp: 'também o valor do array A!'}
+//                   // 2: 3,
+//                   // 3: 4, 
+//                   // 4: 5
+
+
+
+// // Como a função slice pode ser implementada?
+
+// function slice(arr) {
+
+//   var resultado = []
+
+//   for(i = 0; i < arr.length; i++) {
+
+//     resultado.push(arr[i])
+//   }
+
+//   return resultado
+// }
+
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// console.log(colaboradorId);
+
+// var colaboradorId = "19000"
+
+// // 1. Algum valor
+// // 2. undefined
+// // 3. Erro de tipo
+// // 4. ReferenceError: colaboradorId não está definido
+
+// Resposta: 2. undefined
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// var colaboradorId = "1234abe";
+
+// (function() {
+
+//   console.log(colaboradorId); // saída: 2. undefined
+
+//   var colaboradorId = "12345"
+// })()
+
+
+// // 1. '122345'
+// // 2. undefined
+// // 3. Erro de tipo
+// // 4. ReferenceError: employeeId não está definido
+
+
+// // Qual seria a saída do código a seguir?
+
+// var colaboradorId = "1234abe";
+
+// (function() {
+
+//   console.log(colaboradorId); // saída: undefined
+
+//   var colaboradorId = "12345";
+
+//   (function() {
+
+//     var colaboradorId = "abc12345";
+//   })()
+// })()
+
+// // 1. '122345'
+// // 2. undefined
+// // 3. '1234abe'
+// // 4. ReferenceError: employeeId não está definido
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   console.log(typeof exibirFunc); // saída: 1. undefined
+
+//   var exibirFunc = function() {
+
+//     console.log("Oi, estou dentro do exibirFunc");
+//   }
+// })()
+
+// // 1. undefined
+// // 2. função
+// // 3. 'Olá, estou dentro do exibirFunc'
+// // 4. ReferenceError: exibirFunc não está definido
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// var colaboradorId = "abc123"
+
+// function foo() {
+
+//   colaboradorId = "123bcd"
+
+//   return 
+// }
+
+// foo()
+
+// console.log(colaboradorId); // saída: 2. 123bcd
+
+// // 1. undefined
+// // 2. '123bcd'
+// // 3. 'abc123'
+// // 4. ReferenceError: colaboradorId não está definido
+
+
+// // Qual seria a saída do código a seguir?
+
+// var colaboradorId = "abc123"
+
+// function foo() {
+
+//   colaboradorId = "123bcd"
+
+//   return 
+
+//   function colaboradorId() {}
+// }
+
+// foo()
+
+// console.log(colaboradorId); // saída: 3. abc123
+
+
+// // 1. undefined
+// // 2. '123bcd'
+// // 3. 'abc123'
+// // 4. ReferenceError: colaboradorId não está definido
+
+
+// // Qual seria a saída do código a seguir?
+
+// var colaboradorId = "abc123"
+
+// function foo() {
+
+//   colaboradorId()
+
+//   return 
+
+//   function colaboradorId() {
+
+//     console.log(typeof colaboradorId); // saída: 2. function
+//   }
+// }
+
+// foo()
+
+
+// // 1. undefined
+// // 2. function
+// // 3. string
+// // 4. ReferenceError: colaboradorId is not defined
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// function foo() {
+
+//   colaboradorId();
+
+//   var produto = "Carro";
+
+//   return;
+
+//   function colaboradorId() {
+
+//     console.log(produto); // saída: 1. undefined
+//   }
+// }
+
+// foo()
+
+// // 1. undefined
+// // 2. Type Error
+// // 3. 'Car'
+// // 4. ReferenceError: produto is not defined
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function foo() {
+
+//   bar();
+
+//   function bar() {
+
+//     abc()
+
+//     console.log(typeof abc); // saída: function
+//   }
+
+//   function abc() {
+
+//     console.log(typeof bar); // saída: function
+//   }
+// })()
+
+
+// // 1. undefined undefined
+// // 2. Type Error
+// // 3. function function
+// // 4. ReferenceError: bar is not defined
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   'use strict'
+
+//   var pessoa = {
+    
+//     nome: "João"
+//   }
+
+//   pessoa.salario = "R$10000"
+//   pessoa["pais"] = "BRA"
+
+//   Object.defineProperty(pessoa, "telefoneNo", {
+
+//     valor: "8888888888",
+//     enumerable: true,
+//   })
+
+//   console.log(Object.keys(pessoa)); // saída: 3. ['nome', 'salario', 'pais', 'telefoneNo']
+// })()
+
+// // 1. Type Error
+// // 2. undefined
+// // 3. ['nome', 'salario', 'pais', 'telefoneNo'
+// // 4. ['nome', 'salario', 'pais']
+
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function(){
+
+//   'use strict'
+
+//   var pessoa = {
+
+//     nome: "João"
+//   }
+
+//   pessoa.salario = "R$10000"
+//   pessoa["pais"] = "BRA"
+
+//   Object.defineProperty(pessoa, "telefoneNo", {
+
+//     valor: "888888888",
+//     enumerable: false
+//   })
+
+//   console.log(Object.keys(pessoa)); // saída: ['nome', 'salario', 'pais']
+// })()
+
+
+// // 1. TypeError
+// // 2. undefined
+// // 3. ['nome', 'salario', 'pais', 'telefoneNo']
+// // 4. ['nome', 'salario', 'pais']
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var objA = {
+
+//     foo: "foo",
+//     bar: "bar"
+//   }
+
+//   var objB = {
+
+//     foo: "foo",
+//     bar: "bar"
+//   }
+
+//   console.log(objA == objB); // saída: false
+//   console.log(objA === objB); // saída: false
+// })()
+
+// // 1. false true
+// // 2. false false
+// // 3. true false
+// // 4. true true
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var objA = new Object({ foo: "foo"})
+//   var objB = new Object({ foo: "foo"})
+
+//   console.log(objA == objB); // saída: false
+//   console.log(objA === objB); // saída: false
+// })()
+
+// // 1. false true
+// // 2. false false
+// // 3. true false
+// // 4. true true
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function(){
+
+//   var objA = Object.create({
+
+//     foo: "foo"
+//   })
+
+//   var objB = Object.create({
+
+//     foo: "foo"
+//   })
+  
+//   console.log(objA == objB); // saída: false
+//   console.log(objA === objB); // saída: false
+// })()
+
+// // 1. false true
+// // 2. false false
+// // 3. true false
+// // 4. true true
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var objA = Object.create({
+
+//     foo: "foo"
+//   })
+
+//   var objB = Object.create(objA)
+
+//   console.log(objA == objB); // saída: false
+//   console.log(objA === objB); // saída: false
+// })()
+
+
+// // 1. false true
+// // 2. true true
+// // 3. true false
+// // 4. false false
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var objA = Object.create({
+
+//     foo: "foo"
+//   })
+
+//   var objB = Object.create(objA)
+
+//   console.log(objA.toString() == objB.toString()); // saída: true
+//   console.log(objA.toString() === objB.toString()); // saída: true
+// })()
+
+
+// // 1. false true
+// // 2. true true
+// // 3. true false
+// // 4. false false
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var objA = Object.create({
+
+//     foo: "foo"
+//   })
+
+//   var objB = objA 
+
+//   console.log(objA == objB); // saída: true
+//   console.log(objA === objB); // saída: true
+//   console.log(objA.toString() == objB.toString()); // saída: true
+//   console.log(objA.toString() === objB.toString()); // saída: true
+// })()
+
+// // 1. true true true false
+// // 2. true false true true
+// // 3. true true true true
+// // 4. true true false false
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var objA = Object.create({
+
+//     foo: "foo"
+//   })
+
+//   var objB = objA
+//   objB.foo = "bar"
+
+//   console.log(objA.foo); // saída: bar
+//   console.log(objB.foo); // saída: bar
+// })()
+
+
+// // 1. foo bar
+// // 2. bar bar
+// // 3. foo foo
+// // 4. bar foo
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function(){
+
+//   var objA = Object.create({
+
+//     foo: "foo"
+//   })
+
+//   var objB = objA 
+//   objB.foo = "bar"
+
+//   delete objA.foo 
+
+//   console.log(objA.foo); // saída: foo
+//   console.log(objB.foo); // saída: foo
+// })()
+
+
+
+// // 1. foo bar
+// // 2. bar bar
+// // 3. foo foo
+// // 4. bar foo
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var objA = {
+
+//     foo: "foo"
+//   }
+
+//   var objB = objA 
+//   objB.foo = "bar"
+
+//   delete objA.foo 
+
+//   console.log(objA.foo); // saída: undefined
+//   console.log(objB.foo); // saída: undefined
+// })()
+
+
+// // 1. foo bar
+// // 2. undefined undefined
+// // 3. foo foo
+// // 4. undefined bar
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var array = new Array("100")
+
+//   console.log(array); // saida: ['100']
+//   console.log(array.length); // saída: 1
+// })()
+
+// // 1. undefined undefined
+// // 2. [undefined × 100] 100
+// // 3. ["100"] 1
+// // 4. ReferenceError: array is not defined
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var array1 = []
+//   var array2 = new Array(100)
+//   var array3 = new Array(["1","2", "3", 4, 5.6])
+
+//   console.log(array1); // saída: []
+//   console.log(array2); // saída: (100) [empty × 100]
+//   console.log(array3); // saída: [Array(5)]
+//   console.log(array3.length); // saída: 1
+// })()
+
+// // 1. [] [] [Array[5]] 1
+// // 2. [] [undefined × 100] Array[5] 1
+// // 3. [] [] ['1',2,'3',4,5.6] 5
+// // 4. [] [] [Array[5]] 5
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function(){
+
+//   var array = new Array("a", "b", "c", "d", "e")
+//   array[10] = "f"
+
+//   delete array[10]
+
+//   console.log(array.length); // saída: 1. 11
+// })()
+
+// 1. 11
+// 2. 5
+// 3. 6
+// 4. undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function(){
+
+//   var animal = ["vaca", "cavalo"]
+//   animal.push("gato")
+//   animal.push("cachorro", "rato", "cabra")
+
+//   console.log(animal.length); // saída: 3. 6
+// })()
+
+// // 1. 4
+// // 2. 5
+// // 3. 6
+// // 4. undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function(){
+
+//   var animal = ["vaca", "cavalo"]
+//   animal.push("gato")
+//   animal.push("cachorro", "rato", "cabra")
+
+//   console.log(animal); // saída: 2. ['vaca', 'cavalo', 'gato', 'cachorro', 'rato', 'cabra']
+// })()
+
+// // 1. ['vaca', 'cavalo', 'gato', 'cachorro', 'rato']
+// // 2. ['vaca', 'cavalo', 'gato', 'cachorro', 'rato', 'cabra']
+// // 3. Type Error
+// // 4. undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var array = [1, 2, 3, 4, 5]
+
+//   console.log(array.indexOf(2)); // saída 1
+
+//   console.log([ { nome: "João" }, { nome: "João" }].indexOf({ nome: "João"})); // -1
+//   console.log([[1], [2], [3], [4]].indexOf([3])); // saída: -1
+//   console.log("abcdefgh".indexOf("e")); // saída: 4
+// })()
+
+// // 1. 1 -1 -1 4
+// // 2. 1 0 -1 4
+// // 3. 1 -1 -1 -1
+// // 4. 1 undefined -1 4
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var array = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6]
+
+//   console.log(array.indexOf(2)); // saída: 1
+//   console.log(array.indexOf(2, 3)); // saída: 6
+//   console.log(array.indexOf(2, 10)); // saída: -1
+// })()
+
+// // 1. 1 -1 -1
+// // 2. 1 6 -1
+// // 3. 1 1 -1
+// // 4. 1 undefined undefined
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var numeros = [2, 3, 4, 8, 9, 11, 13, 12, 16]
+//   var ate = numeros.filter(function(elemento, indice) {
+
+//     return elemento % 2 === 0
+//   })
+
+//   console.log(ate); // saída: [2, 4, 8, 12, 16]
+
+//   var contemDivisivelPor3 = numeros.some(function(elemento, indice) {
+
+//     return elemento % 3 === 0
+//   })
+
+//   console.log(contemDivisivelPor3); // saída: true
+// })()
+
+
+// // 1. [ 2, 4, 8, 12, 16 ] [ 0, 3, 0, 0, 9, 0, 12]
+// // 2. [ 2, 4, 8, 12, 16 ] [ 3, 9, 12]
+// // 3. [ 2, 4, 8, 12, 16 ] true
+// // 4. [ 2, 4, 8, 12, 16 ] false
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var containers = [2, 0, false, "", "12", true]
+//   var containers = containers.filter(Boolean)
+//   console.log(containers); // saída: [2, '12', true]
+
+//   var containers = containers.filter(Number)
+//   console.log(containers); // saída: [2, '12', true]
+
+//   var containers = containers.filter(String)
+//   console.log(containers); // saída: [2, '12', true]
+
+//   var containers = containers.filter(Object)
+//   console.log(containers); // saída: [2, '12', true]
+
+// // 1. [ 2, '12', true ] [ 2, '12', true ] [ 2, '12', true ] [ 2, '12', true ]
+// // 2. [false, true] [ 2 ] ['12'] [ ]
+// // 3. [2,0,false,"", '12', true] [2,0,false,"", '12', true] [2,0,false,"", '12', true] [2,0,false,"", '12', true]
+// // 4. [ 2, '12', true ] [ 2, '12', true, false ] [ 2, '12', true,false ] [ 2, '12', true,false]
+
+
+// })()
+
+
+
+
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var lista = ["foo", "bar", "joao", "ritz"]
+
+//   console.log(lista.slice(1)); // saída: ['bar', 'joao', 'ritz']
+//   console.log(lista.slice(1, 3)); // saída: ['bar', 'joao']
+//   console.log(lista.slice()); // saída: ['foo', 'bar', 'joao', 'ritz']
+//   console.log(lista.slice(2, 2)); // saída: []
+//   console.log(lista); // saída: ['foo', 'bar', 'joao', 'ritz']
+
+// // 1. [ 'bar', 'john', 'ritz' ] [ 'bar', 'john' ] [ 'foo', 'bar', 'john', 'ritz' ] [] [ 'foo', 'bar', 'john', 'ritz' ]
+// // 2. [ 'bar', 'john', 'ritz' ] [ 'bar', 'john','ritz ] [ 'foo', 'bar', 'john', 'ritz' ] [] [ 'foo', 'bar', 'john', 'ritz' ]
+// // 3. [ 'john', 'ritz' ] [ 'bar', 'john' ] [ 'foo', 'bar', 'john', 'ritz' ] [] [ 'foo', 'bar', 'john', 'ritz' ]
+// // 4. [ 'foo' ] [ 'bar', 'john' ] [ 'foo', 'bar', 'john', 'ritz' ] [] [ 'foo', 'bar', 'john', 'ritz' ]
+// })()
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var lista = ["foo", "bar", "joao"]
+  
+//   console.log(lista.splice(1)); // saída: ['bar', 'joao']
+//   console.log(lista.splice(1, 2)); // saída: []
+//   console.log(lista); // saída: ['foo']
+
+//   // 1. [ 'bar', 'john' ] [] [ 'foo' ]
+//   // 2. [ 'bar', 'john' ] [] [ 'bar', 'john' ]
+//   // 3. [ 'bar', 'john' ] [ 'bar', 'john' ] [ 'bar', 'john' ]
+//   // 4. [ 'bar', 'john' ] [] []
+// })()
+
+
+
+// // Qual seria a saída do código a seguir?
+
+// (function() {
+
+//   var arrayNum = [2, 8, 15, 16, 23, 42]
+//   arrayNum.sort()
+
+//   console.log(arrayNum); // saída: 3. [15, 16, 2, 23, 42, 8]
+// })()
+
+
+// // 1. [2, 8, 15, 16, 23, 42]
+// // 2. [42, 23, 26, 15, 8, 2]
+// // 3. [ 15, 16, 2, 23, 42, 8 ]
+// // 4. [ 2, 8, 15, 16, 23, 42 ]
+
+
+// Qual seria a saída do código a seguir?
+
+//  var obj = {
+
+//    mensagem: "ola",
+//    internaMensagem: !(function() {
+
+//     console.log(this.mensagem); // saída: undefined
+//    })()
+//  }
+
+//  console.log(obj.internaMensagem); // saída: true
+
+// // 1. ReferenceError: this.message is not defined
+// // 2. undefined
+// // 3. Type Error
+// // 4. undefined true
+
+
+// // Qual seria a saída do código a seguir?
+
+//  var obj = {
+
+//    mensagem: "Ola",
+//    internaMensagem: function() {
+
+//     return this.mensagem
+//    }
+//  }
+
+//  console.log(obj.internaMensagem()); // saída: 1. Ola
+
+
+//   // 1. Ola
+//   // 2. undefined
+//   // 3. Type Error
+//   // 4. ReferenceError: this.message is not defined
+
+
+// Qual seria a saída do código a seguir?
+
+
+// var obj = {
+
+//   mensagem: "Ola",
+//   internaMensagem: function() {
+
+//     (function() {
+
+//       console.log(this.mensagem); // saída: undefined
+//     })()
+//   }
+// }
+
+// console.log(obj.internaMensagem()); // saída: undefined
+
+
+// // 1. Type Error
+// // 2. Ola
+// // 3. undefined, undefined
+// // 4. ReferenceError: this.message is not defined
