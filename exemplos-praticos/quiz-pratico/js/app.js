@@ -12252,36 +12252,265 @@
 // console.log(foo.x); // saída: undefined
 
 
-// Qual é o valor de g?
+// // Qual é o valor de g?
 
-f = g = 0;
+// f = g = 0;
 
-console.log(g);
+// (function() {
 
-(function() {
-
-  try {
+//   try {
     
-    f = function() {
+//     f = function() {
 
-      return f();
-    } && f();
+//       return f();
+//     } && f();
 
-  } catch (e) {
+//   } catch (e) {
     
-    return g++ && f();
+//     return g++ && f();
 
-  } finally {
+//   } finally {
 
-    return ++g;
-  }
+//     return ++g;
+//   }
 
-  function f() {
+//   function f() {
 
-    g += 5;
+//     g += 5;
 
-    return 0;
-  }
-})()
+//     return 0;
+//   }
+// })()
 
-console.log(g);
+// console.log(g); // saída: 6
+
+
+
+// // Qual será a saída?
+
+// function b(b) {
+
+//   return this.b && b(b);
+// }
+
+// console.log(b(b.bind(b))); // saída: undefined
+
+
+
+// // Explique o código abaixo. Quantas vezes a função createVal é chamada?
+
+// function criarVal() {
+
+//   return Math.random()
+// }
+
+// function fun(val = criarVal()) {
+
+//   console.log(val);
+// }
+
+// fun()
+// fun(5)
+
+// // Resposta: A função criarVal() será executada apenas uma vez.
+
+
+
+// // Qual será a saída?
+
+// function digaOi() {
+
+//   console.log(this.nome);
+//   console.log(this.idade);
+
+//   var nome = "Bob"
+//   let idade = 21
+// }
+
+// digaOi()
+
+// // A: Bob and undefined
+// // B: Bob and ReferenceError
+// // C: ReferenceError and 21
+// // D: undefined and ReferenceError
+
+// Resposta D. undefined and ReferenceError
+
+
+// // // Qual é a saída?
+
+// // for(var i = 0; i < 3; i++) {
+
+// //   setTimeout(() => console.log(i), 1);
+// // }
+
+// // for(let i = 0; i < 3; i++) {
+
+// //   setTimeout(() => console.log(i), 1);
+// // }
+
+// // // Resposta: saída: C. 3 3 3 0  1 2 
+
+// A: 0 1 2e0 1 2
+// B: 0 1 2e3 3 3
+// C: 3 3 3e0 1 2
+
+
+// // Qual é a saída?
+
+// const forma = {
+
+//   raio: 10,
+//   diametro() {
+
+//     return this.raio * 2;
+//   },
+//   perimetro: () => 2 * Math.PI * this.raio,
+// };
+
+// console.log(forma.diametro()); // saída: 20
+// console.log(forma.perimetro()); // saída: NaN
+
+
+// // A: 20 and 62.83185307179586
+// // B: 20 and NaN
+// // C: 20 and 63
+// // D: NaN and 63
+
+
+
+// // Qual é a saída?
+
+// console.log(+true); // saída: 1 - O mais unário(++) tenta converter um operando em um número. trueé 1, e false é 0.
+// console.log(!"Bob"); // saída: NaN - 
+
+// // A: 1 e false
+// // B: false e NaN
+// // C: false e false
+
+
+// // Qual é a verdadeira?
+
+// const passaro = {
+
+//   tamanho: "pequeno",
+// }
+
+// const rato = {
+
+//   nome: "Mickey",
+//   pequeno: true 
+// }
+
+
+// // A: rato.passaro.tamanho não é válido
+// // B: rato[passaro.tamanho]não é válido
+// // C: rato[passaro["tamanho"]]não é válido
+
+// // Resposta A. rato.passaro.tamanho não é válido - Em JavaScript, todas as chaves de objeto são strings (a menos que seja um símbolo). 
+//                                                 // Mesmo que não possamos digitá -los como strings, eles sempre são convertidos em strings sob o capô.
+//                                                 // JavaScript interpreta (ou unboxes) instruções.
+//                                                 // Quando usamos a notação de colchetes, ela vê o primeiro colchete de abertura [e continua até encontrar o colchete de fechamento ].
+//                                                 // Só então, ele irá avaliar a declaração.
+
+
+
+
+
+
+
+// // Qual é a verdadeira?
+
+// let c = { 
+
+//   saudacao: "Oi!"
+// }
+
+// let d; 
+
+// d = c;
+
+// c.saudacao = "Ola"
+
+// console.log(d.saudacao); // saída: A. Ola
+
+// // A: Ola
+// // B: Oi!
+// // C: undefined
+// // D: ReferenceError
+// // E: TypeError
+
+
+// // Qual é a verdadeira?
+
+// let a = 3;
+// let b = new Number(3)
+// let c = 3;
+
+// console.log(a == b); // saída: verdadeiro(true)
+// console.log(a === b); // saída: falso(false)
+// console.log(b === c); // saída: falso(false)
+
+
+// // A: true false true
+// // B: false false true
+// // C: true false false
+// // D: false true true
+
+// // Resposta C. true false false - new Number() é um construtor de função embutido.
+//                                // Embora pareça um número, não é realmente um número:
+//                                // tem vários recursos extras e é um objeto.
+//                                // Quando usamos o ==operador, ele apenas verifica se tem o mesmo valor.
+//                                // Quando usamos o ===operador, tanto o valor quanto o tipo devem ser os mesmos.
+                        
+
+
+// // Qual é a saída?
+
+// class Camaleao {
+
+//   static alterarCor(novaCor) {
+
+//     this.novaCor = novaCor
+
+//     return this.novaCor
+//   }
+
+//   constructor({
+
+//     novaCor = "verde"
+//   } = {}) {
+
+//     this.novaCor = novaCor
+//   }
+// }
+
+// const fred = new Camaleao({ novaCor: "roxo"})
+
+// console.log(fred.alterarCor("laranja"));
+
+
+// // A: laranja
+// // B: roxo
+// // C: verde
+// // D: TypeError
+
+// // Resposta: D. TypeError - A função alterarCor é estática.
+//             // Métodos estáticos são projetados para viver apenas no construtor no qual são criados
+//             // e não podem ser transmitidos a nenhum filho.
+//             // Como fred é filho,
+//             // a função não é transmitida e não está disponível na instância fred.
+
+  
+// // Qual é a saída?
+
+// let saudacao;
+
+// saudacaon = {};
+
+// console.log(saudacaon); // saída: A. {}
+
+
+// // A: {}
+// // B: ReferenceError: greetign is not defined
+// // C: undefined
