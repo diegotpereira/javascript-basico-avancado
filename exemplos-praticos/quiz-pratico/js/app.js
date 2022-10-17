@@ -12351,9 +12351,9 @@
 
 // // // Resposta: saída: C. 3 3 3 0  1 2 
 
-// A: 0 1 2e0 1 2
-// B: 0 1 2e3 3 3
-// C: 3 3 3e0 1 2
+// A: 0 1 2 e 0 1 2
+// B: 0 1 2 e 3 3 3
+// C: 3 3 3 e 0 1 2
 
 
 // // Qual é a saída?
@@ -12512,5 +12512,16 @@
 
 
 // // A: {}
-// // B: ReferenceError: greetign is not defined
+// // B: ReferenceError: saudacaon is not defined
 // // C: undefined
+
+
+
+// O que acontece quando fazemos isso?
+
+function bark() {
+
+  console.log("woof!");
+}
+
+bark.animal = "cachorro";
