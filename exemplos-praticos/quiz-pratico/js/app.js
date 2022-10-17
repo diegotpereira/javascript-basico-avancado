@@ -12514,3 +12514,117 @@
 // // A: {}
 // // B: ReferenceError: greetign is not defined
 // // C: undefined
+
+
+// // Como você encontra o valor mínimo e máximo em uma matriz?
+
+// var marcas = [50, 20, 70, 60, 45, 30, 90];
+
+// function acharMin(arr) {
+
+//   return Math.min.apply(null, arr)
+// }
+
+// function acharMax(arr) {
+
+//   return Math.max.apply(null, arr)
+// }
+
+// console.log(acharMin(marcas)); // saída: 20
+// console.log(acharMax(marcas)); // saída: 90
+
+
+
+// // Como você encontra valores mínimos e máximos sem funções matemáticas?
+
+// var marcas = [50, 20, 70, 60, 45, 30];
+
+// function acharMin(arr) {
+
+//   var comprimento = arr.length;
+//   var min = Infinity;
+
+//   while(comprimento--) {
+
+//     if(arr[comprimento] < min) {
+
+//       min = arr[comprimento];
+//     }
+//   }
+
+//   return min;
+// }
+
+// function acharMax(arr) {
+
+//   var comprimento = arr.length;
+//   var max = -Infinity;
+
+//   while(comprimento--) {
+
+//     if(arr[comprimento] > max) {
+
+//       max = arr[comprimento];
+//     }
+//   }
+
+//   return max;
+// }
+// console.log(acharMin(marcas)); // saída: 20
+// console.log(acharMax(marcas)); // saída: 70
+
+
+// // Como você inverte uma matriz?
+
+// let numeros = [1, 2, 5, 3, 4];
+
+// numeros.sort((a, b) => b - a); // [5, 4, 3, 2, 1]
+// numeros.reverse();
+
+// console.log(numeros); // saída: [1, 2, 3, 4, 5]
+
+
+
+// // Como você inverte uma matriz?
+
+// function verifique(str) {
+
+//   if (str instanceof String) {
+    
+//     return "É um objeto de string"
+
+//   } else {
+
+//     if (typeof str === "string") {
+      
+//       return "É um literal de string"
+
+//     } else {
+
+//       return "outro tipo"
+//     }
+//   }
+// }
+
+// var literalString = "Oi eu sou string literal";
+// var objStr = new String("Oi eu sou objeto string");
+
+// console.log(verifique(literalString)); // saída: É um literal de string
+// console.log(verifique(objStr)); // saída: É um objeto de string
+
+
+// Como você faz a primeira letra da string em maiúscula?
+
+// function capitalizePrimeiraLetra(string) {
+
+//   let arr = string.split(" "); // ['Ola', 'mundo']
+
+//   for(var i = 0; i < arr.length; i++) {
+
+//     arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+
+//   }
+//   return arr.join(" ");
+// }
+
+// console.log(capitalizePrimeiraLetra("ola mundo")); // saída: Ola Mundo
