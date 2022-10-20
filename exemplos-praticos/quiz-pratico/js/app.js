@@ -12645,3 +12645,888 @@
 
 
 
+// // Qual é a saída do programa?
+
+// function Pessoa(primeiroNone, segundoNome) {
+
+//   this.primeiroNone = primeiroNone;
+//   this.segundoNome = segundoNome;
+// }
+
+
+// const membro = new Pessoa("Bob", "Marley");
+// Pessoa.buscarNomeCompleto = function() {
+
+//   return `${this.primeiroNone} ${this.segundoNome}`
+// }
+
+// console.log(membro.buscarNomeCompleto()); // saída: A: TypeError
+
+// // A: TypeError
+// // B: SyntaxError
+// // C: Lydia Hallie
+// // D: undefined undefined
+
+
+
+// // Qual é a saída do programa?
+
+// function Pessoa(nome, sobrenome) {
+
+//   this.nome = nome 
+//   this.sobrenome = sobrenome
+// }
+
+// const bob = new Pessoa("Bob", "Marley") // saída: Pessoa {nome: 'Bob', sobrenome: 'Marley'}
+// const peter = Pessoa("Peter", "Tosh") // saída: undefined
+
+// console.log(bob);
+// console.log(peter);
+
+
+// // Qual é a saída?
+
+// function soma(a, b) {
+
+//   return a + b
+// }
+
+// console.log(soma(1, "2")); // saída: 12
+
+
+// // Qual é a saída?
+
+// let numero = 0;
+
+// console.log(numero++); // saída: 0
+// console.log(++numero); // saída: 2
+// console.log(numero); // saída: 2
+
+
+// A: 1 1 2
+// B: 1 2 2
+// C: 0 2 2
+// D: 0 1 2
+
+
+// // Qual é a saída?
+
+// function buscarPessoaInfo(um, dois, tres) {
+
+//   console.log(um); // saída: ['', ' tem ', ' anos de idade.', raw: Array(3)]
+//   console.log(dois); // saída: Bob
+//   console.log(tres); // saída: 21
+// }
+
+// const pessoa = "Bob";
+// const idade = 21;
+
+// buscarPessoaInfo`${pessoa} tem ${idade} anos de idade`;
+// console.log(idade);
+
+// // 1. "Bob" 21 ["", " tem ", " anos de idade "] 
+// // 2. ['', ' tem ', ' anos de idade.', raw: Array(3)]
+// // 3. "Bob" ["", " tem ", " anos de idade "] 21
+
+// // Resposta : Se você usar literais de modelo marcados, o valor do primeiro argumento será sempre uma matriz dos valores de string.
+//             // Os argumentos restantes obtêm os valores das expressões passadas!
+
+
+
+// // Qual é a saída?
+
+// function verifiqueidade(dado) {
+
+
+//   if (dado === { idade: 18 }) {
+    
+//     console.log("Você é um adulto!");
+
+//   } else if (dado == { idade: 18}) {
+    
+//     console.log("Você ainda é um adulto.");
+
+//   } else {
+
+//     console.log(`Hmm.. Você não tem idade, eu acho`);
+//   }
+// }
+
+// verifiqueidade({ idade: 18})
+
+// // 1. Você é um adulto!
+// // 2. Você ainda é um adulto.
+// // 3. Hmm.. Você não tem idade, eu acho
+
+// Resposta: 3. Hmm.. Você não tem idade, eu acho
+
+
+// // Qual é a saída?
+
+// function buscarIdade(...args) {
+
+//   console.log(typeof args); // saída: object - O parâmetro rest ( ...args.) nos permite "coletar" todos os argumentos restantes em um array.
+//                                             // Um array é um objeto, então typeof argsretorna"object"
+// }
+
+// buscarIdade(21) 
+
+
+// // A: "number"
+// // B: "array"
+// // C: "object"
+// // D: "NaN"
+
+
+// // Qual é a saída?
+
+// function buscarIdade() {
+
+//   'use strict'
+
+//   idade = 21;
+
+//   console.log(idade);
+// }
+
+// buscarIdade();
+
+
+// // A: 21
+// // B: undefined
+// // C: ReferenceError
+// // D: TypeError
+
+// // Resposta: C. ReferenceError: idade is not defined
+
+
+// // Qual é a saída?
+
+// const soma = eval("10 * 10 + 5");
+
+// console.log(soma); // saída: A. 105
+
+// // A: 105
+// // B: "105"
+// // C: TypeError
+// // D: "10*10+5"
+
+
+
+// // Qual é a saída?
+
+// var num = 8;
+// var num = 10;
+
+// console.log(num); // saída: B. 10 - Com a palavra-chave var você pode declarar várias variáveis ​​com o mesmo nome.
+//                                  //  variável então manterá o valor mais recente.
+//                                  // Você não pode fazer isso com letou constporque eles têm escopo de bloco.
+
+
+// // A: 8
+// // B: 10
+// // C: SyntaxError
+// // D: ReferenceError
+
+
+// // Qual é a saída?
+
+// const obj = { 1: "a", 2: "b", 3: "c"};
+// const set = new Set([1, 2, 3, 4, 5]);
+
+// console.log(obj.hasOwnProperty("1")); // saída: true
+// console.log(obj.hasOwnProperty(1)); // saída: true
+// console.log(set.has("1")); // saída: false
+// console.log(set.has(1)); // saída: true
+
+
+// // Qual é a saída?
+
+// const obj = { a: "um", b: "dois", a: "tres"};
+
+// console.log(obj); // saída: {a: 'tres', b: 'dois'}
+
+
+// A: false true false true
+// B: false true true true
+// C: true true false true
+// D: true true true true
+
+
+// // Qual é a saída?
+
+// for(let i = 1; i < 5; i++) {
+
+//   if(i === 3) continue;
+
+//   console.log(i); // saída: C. 1 2 4
+
+// A: 1 2
+// B: 1 2 3
+// C: 1 2 4
+// D: 1 3 4
+
+// // Qual é a saída?
+
+// String.prototype.dePizzaBob = () => {
+
+//   return "Basta dar pizza Lydia já!";
+
+// }
+  
+//   const nome = "Bob"
+
+//   nome.dePizzaBob()
+
+// // A: "Basta dar pizza Lydia já!"
+// // B: TypeError: not a function
+// // C: SyntaxError
+// // D: undefined
+
+// Resposta A. Basta dar pizza Lydia já!
+
+
+// // Qual é a saída?
+
+// const a = {}
+// const b = { key: "b"}
+// const c = { key: "c"}
+
+// a[b] = 123
+// a[c] = 456
+
+// console.log(a[b]); // saída: 456 - As chaves de objeto são convertidas automaticamente em strings.
+//                                 // Estamos tentando definir um objeto como chave para objeto a, com o valor de 123.
+//                                 // No entanto, quando stringificamos um objeto, ele se torna "[Object object]".
+//                                 // Então o que estamos dizendo aqui, é que a["Object object"] = 123.
+//                                 // Então, podemos tentar fazer o mesmo novamente.
+//                                 // "c" é outro objeto que estamos implicitamente stringificando. Então, a["Object object"] = 456.
+//                                 // Então, registramos a[b], que na verdade é a["Object object"].
+//                                 // Nós apenas configuramos isso para 456, então ele retorna 456.
+
+
+// A: 123
+// B: 456
+// C: undefined
+// D: ReferenceError
+
+
+// // Qual é a saída?
+
+// const foo = () => console.log("Primeiro");
+// const bar = () => setTimeout(() => console.log("Segundo"))
+// const baz = () => console.log("Terceiro");
+
+// bar()
+// foo()
+// baz()
+
+// // saida: 
+
+// // Primeiro
+// // Terceiro
+// // Segundo
+
+
+// // Qual é a saída?
+
+// const pessoa = { nome: "Lidia"};
+
+// function digaOi(idade) {
+
+//   console.log(`${this.nome} está ${idade}`); // saída: D. Lidia está 21
+// }
+
+// digaOi.call(pessoa, 21);
+// digaOi.bind(pessoa, 21);
+
+// // A: undefined is 21 Lidia is 21
+// // B: function function
+// // C: Lidia is 21 Lidia is 21
+// // D: Lidia is 21
+
+
+// // Qual é a saída?
+
+// function digaOi() { 
+
+//   return (() => 0)()
+// }
+
+// console.log(typeof digaOi()); // saída: B. number -  A função "digaOi" retorna o valor retornado da função imediatamente invocada (IIFE).
+//                                     //  Esta função retornou 0, que é do tipo "number".
+//                                     // existem apenas 7 tipos internos: null, undefined, boolean, number, string, object e symbol.
+//                                     // "function"não é um tipo, já que funções são objetos do tipo "object".
+
+
+// // A: "object"
+// // B: "number"
+// // C: "function"
+// // D: "undefined"
+
+
+
+// // Quais desses valores são falsos?
+
+// 0;
+// new Number(0)
+// ("")
+// (" ")
+// new Boolean(false)
+// undefined
+
+
+// // A: 0, '', undefined
+// // B: 0, new Number(0), '', new Boolean(false), undefined
+// // C: 0, '', new Boolean(false), undefined
+// // D: Todos eles são falsos
+
+// Resposta A. 0, '', undefined - Existem apenas seis valores falsos:
+//                             undefined, null, NaN, 0, '' (string vazia), false;
+
+
+// // Qual é a saída?
+
+// console.log(typeof typeof 1); // saída: B. string - typeof 1 retorna "number".
+//                                                 // typeof "number" retorna "string"
+
+// // A: "number"
+// // B: "string"
+// // C: "object"
+// // D: "undefined"
+
+
+// // Qual é a saída?
+
+// const numeros = [1, 2, 3];
+// numeros[10] = 11;
+
+// console.log(numeros); // saida: C. [1, 2, 3, vazio x 7, 11] - Quando você define um valor para um elemento em uma matriz que excede o comprimento da matriz, 
+                                                              // o JavaScript cria algo chamado "slots vazios". 
+                                                              // Eles realmente têm o valor de undefined, mas você verá algo como:
+                                                              // [1, 2, 3, 7 x empty, 11]
+                                                              // dependendo de onde você o executa (é diferente para cada navegador, nó, etc.)
+
+
+// // A: [1, 2, 3, 7 x null, 11]
+// // B: [1, 2, 3, 11]
+// // C: [1, 2, 3, 7 x empty, 11]
+// // D: SyntaxError
+
+
+
+// // Qual é a saída?
+
+// (() => {
+
+//   let x, y;
+
+//   try {
+    
+//     throw new Error();
+
+//   } catch (x) {
+    
+//     (x = 1), (y = 2);
+
+//     console.log(x); // saída: 1
+//   }
+
+//   console.log(x); // saída: undefined
+//   console.log(y); // saída: 2
+// })()
+
+// // A: 1 undefined 2
+// // B: undefined undefined undefined
+// // C: 1 1 2
+// // D: 1 undefined undefined
+
+// Resposta: 1. 1 undefined 2 - O bloco catch recebe o argumento x.
+//           // Isso não é o mesmo x que a variável quando passamos argumentos.
+//           // Essa variável x tem escopo de bloco.
+//           // Mais tarde, definimos essa variável com escopo de bloco igual a 1,
+//           // e definimos o valor da variável y. 
+//           // Agora, registramos a variável com escopo de bloco x, que é igual a 1.
+//           // Fora do bloco catch, x ainda é undefined, e y é 2.
+
+
+// // Qual é a saída?
+
+// console.log([
+//   [0, 1],
+//   [2, 3]
+// ].reduce(
+//   (acc, cur) => {
+
+//     return acc.concat(cur)
+//   },
+//   [1, 2]
+// )); // saída: C. [1, 2, 0, 1, 2, 3] - [1, 2] é o nosso valor inicial.
+//                                 // Este é o valor com o qual começamos e o valor do primeiro acc.
+//                                 // Durante a primeira rodada, acc é [1,2], e cur é [0, 1].
+//                                 // Nós os concatenamos, o que resulta em [1, 2, 0, 1].
+//                                 // Então, [1, 2, 0, 1] é acc e [2, 3] é cur.
+//                                 // Por fim Nós os concatenamos e obtemos[1, 2, 0, 1, 2, 3]
+
+// // A: [0, 1, 2, 3, 1, 2]
+// // B: [6, 1, 2]
+// // C: [1, 2, 0, 1, 2, 3]
+// // D: [1, 2, 6]
+
+
+// // Qual é a saída?
+
+// console.log(!!null); // saída: false
+// console.log(!!""); // saída: false
+// console.log(!!1); // saída: true
+
+// // A: false true false
+// // B: false false true
+// // C: false true true
+// // D: true true false
+
+
+// // O que o setIntervalmétodo retorna no navegador?
+
+// setInterval(() => console.log("Oi"), 1000);
+
+
+// // A: um id único
+// // B: a quantidade de milissegundos especificada
+// // C: a função passada
+// // D:undefined
+
+// Resposta: A. Ele retorna um id exclusivo. Este id pode ser usado para limpar esse intervalo com a clearInterval()função.
+
+
+// // O que isso retorna?
+
+// console.log([..."Bob"]); // saída: ['B', 'o', 'b'] - Uma string é um iterável. O operador spread mapeia cada caractere de um iterável para um elemento.
+
+// A: ["B", "o", "b"]
+// B: ["Bob"]
+// C: [[], "Bob"]
+// D: [["B", "o", "b"]]
+
+
+// // Qual é a saída?
+
+// function* generator(i) {
+
+//   yield i;
+
+//   yield i * 2;
+// }
+
+// const gen = generator(10);
+
+// console.log(gen.next().value); // saída: 10
+// console.log(gen.next().value); // saída: 20
+
+// // A: [0, 10], [10, 20]
+// // B: 20, 20
+// // C: 10, 20
+// // D: 0, 10 and 10, 20
+
+// Reposta C. 10 20 - As funções regulares não podem ser interrompidas no meio do caminho após a invocação
+//                 // No entanto, uma função geradora pode ser "parada" no meio do caminho e depois continuar de onde parou.
+//                 // Toda vez que uma função geradora encontra uma palavra-chave "yield", a função produz o valor especificado depois dela.
+//                 // Observe que a função geradora nesse caso não retorna o valor, ela produz o valor.
+//                 // Primeiro, inicializamos a função geradora com iigual a 10. 
+//                 // Chamamos a função geradora usando o método next().
+//                 // A primeira vez que invocamos a função do gerador, i é igual a 10.
+//                 // Ele encontra a primeira palavra-chave yield: produz o valor de i.
+//                 //  O gerador agora está "pausado" e 10 é registrado.
+//                 // Então, invocamos a função novamente com o método next().
+//                 //  Ele começa a continuar de onde parou anteriormente, ainda com iigual a 10.
+//                 // Agora, ele encontra a próxima palavra-chave yield e produz i * 2.
+//                 // i é igual a 10, então ele retorna 10 * 2, que é 20.
+
+
+// // O que isso retorna?
+// const primeiroPromise = new Promise((res, rej) => {
+
+//   setTimeout(res, 500, "um");
+// })
+
+// const segundoPromise = new Promise((res, rej) => {
+
+//   setTimeout(res, 100, "dois");
+// })
+
+// Promise.race([primeiroPromise, segundoPromise]).then((res) => console.log(res)); // saída: B. dois - Quando passamos várias promessas para o método Promise.race, ele resolve/rejeita a primeira promessa que resolve/rejeita.
+//                                                                                                   // Para o método setTimeout, passamos um timer: 500ms para a primeira promessa ( firstPromise), e 100ms para a segunda promessa ( secondPromise).
+//                                                                                                   // Isso significa que o secondPromise resolve primeiro com o valor de 'dois'. res agora contém o valor de 'dois', que é registrado.
+
+
+// // A: "um"
+// // B: "dois"
+// // C: "dois" "um"
+// // D: "um" "dois"
+
+
+
+// // // Qual é a saída?
+
+// let pessoa = { nome: "Bob"};
+// const membros = [pessoa];
+// pessoa = null; 
+
+// // console.log(membros); // saída: D. [{ name: "Bob"}] - Primeiro, declaramos uma variável pessoa com o valor de um objeto que possui uma propriedade nome.
+//                                                       // Em seguida, declaramos uma variável chamada membros. Definimos o primeiro elemento desse array 
+//                                                       // igual ao valor da variável pessoa. Os objetos interagem por referência ao defini-los iguais entre si. 
+//                                                       // Ao atribuir uma referência de uma variável a outra, você faz uma cópia dessa referência. 
+//                                                       // (note que eles não têm a mesma referência!)
+//                                                       // Em seguida, definimos a variável pessoa igual a null.
+//                                                       // Estamos apenas modificando o valor da variável pessoa, e não o primeiro elemento do array, pois esse 
+//                                                       // elemento tem uma referência diferente (copiada) ao objeto. O primeiro elemento membros ainda mantém sua 
+//                                                       // referência ao objeto original. Quando registramos o array membros, o primeiro elemento ainda mantém o valor do objeto, 
+//                                                       // que é registrado.
+
+// // // A: null
+// // // B: [null]
+// // // C: [{}]
+// // // D: [{ name: "Bob"}]
+
+
+
+// // Qual é a saída?
+
+// const pessoa = {
+
+//   nome: "Bob",
+//   idade: 21,
+// }
+
+// for(const item in pessoa) {
+
+//   console.log(item); // saída: B. nome idade - Com um for-inloop, podemos iterar por meio de chaves de objeto, neste caso nome e idade
+//                                             // Sob o capô, as chaves do objeto são strings (se não forem um símbolo).
+//                                             // Em cada loop, definimos o valor de item igual à chave atual sobre a qual está iterando.
+//                                             // Primeiro, item é igual a nome, e é registrado. Então, item é igual a idade, que é registrado.
+
+                                    
+// }
+
+
+// // A: { nome: "Bob" }, { idade: 21 }
+// // B: "nome", "idade"
+// // C: "Bob", 21
+// // D: ["nome", "Bob"], ["idade", 21]
+
+
+// // Qual é a saída?
+
+// console.log(3 + 4 + "5"); // saída: 75
+
+
+// // Qual é o valor de num?
+
+// const num = parseInt("7 * 6", 10);
+
+// console.log(num); // saída: C. 7 - Apenas os primeiros números na string são retornados.
+                                  // Com base na raiz (o segundo argumento para especificar que tipo de número queremos analisar: base 10, hexadecimal, octal, binário, etc.),
+                                  // parseIntverifica se os caracteres na string são válidos.
+                                  // Quando encontra um caractere que não é um número válido na base,
+                                  // ele para de analisar e ignora os caracteres a seguir.
+                                  // *não é um número válido. Ele analisa apenas "7"o decimal 7. numagora tem o valor de 7.
+
+
+// // A: 42
+// // B: "42"
+// // C: 7
+// // D: NaN
+
+
+
+
+// // Qual é a saída?
+
+// console.log([1, 2, 3].map((num) => {
+
+//   if(typeof num === "number") return;
+
+//   return num * 2;
+// })); // saída: C. [undefined, undefined, undefined]
+
+
+
+// // A: []
+// // B: [null, null, null]
+// // C: [undefined, undefined, undefined]
+// // D: [ 3 x empty ]
+
+
+
+
+// // Qual é a saída?
+
+// function buscarInfo(membro, ano) {
+
+//   membro.nome = "Bob"
+//   ano = "1998";
+// }
+
+// const pessoa = { nome: "Peter"}
+// const aniversario = "1997"
+
+// buscarInfo(pessoa, aniversario)
+
+// console.log(pessoa, aniversario); // saída: {nome: 'Bob'}, '1997'
+
+
+
+// // Qual é a saída?
+
+// function saudacao() {
+
+//   throw "Ola mundo!"
+// }
+
+// function digaOi() {
+
+//   try {
+//     const dado = saudacao()
+
+//     console.log("Estoun trabalhando!", dado);
+//   } catch (error) {
+    
+//     console.log("Oh ocorreu um erro: ", error); // saída: Oh ocorreu um erro:  Ola mundo! - Com a instrução throw, podemos criar erros personalizados.
+//                                                                                          // Uma exceção pode ser uma string , um número , um booleano ou um objeto .
+//                                                                                          // Nesse caso, nossa exceção é a string 'Ola mundo!'
+//                                                                                          // Com a instrução catch, podemos especificar o que fazer se uma exceção for lançada no bloco try. 
+//                                                                                          // Uma exceção é lançada: a string 'Ola mundo'.
+//                                                                                          // eagora é igual a essa string, que registramo
+    
+//   }
+// }
+
+
+// digaOi()
+
+
+
+// // Qual é a saída?
+
+// function Carro() {
+
+//   this.faca = "Lamborghini"
+
+//   return  {
+
+//     faca: "Maserati"
+//   }
+// }
+
+// const meuCarro = new Carro()
+
+// console.log(meuCarro.faca); // saída: B. Maserati
+
+// // A: "Lamborghini"
+// // B: "Maserati"
+// // C: ReferenceError
+// // D: TypeError
+
+
+
+// // Qual é a saída?
+
+// (() => {
+
+//   let x = (y = 10)
+// })()
+
+
+// console.log(typeof x); // saída: undefined - variáveis ​​declaradas com a palavra-chave let têm escopo de bloco
+// console.log(typeof y); // saída: number
+
+// // A: "undefined", "number"
+// // B: "number", "number"
+// // C: "object", "number"
+// // D: "number", "undefined"
+
+
+// // Qual é a saída?
+
+// class Cachorro {
+
+//   constructor(nome) {
+
+//     this.nome = nome 
+//   }
+// }
+
+// Cachorro.prototype.latido = function() {
+
+//   console.log(`Ufa eu sou ${this.nome}`); // saída: Ufa eu sou Mara
+// }
+
+// const pet = new Cachorro("Mara")
+
+// pet.latido()
+
+
+// // A: "Ufa eu sou Mara", TypeError
+// // B: "Ufa eu sou Mara", "Ufa eu sou Mara"
+// // C: "Ufa eu sou Mara", undefined
+// // D: TypeError, TypeError
+
+
+// // Qual é a saída?
+
+// const set = new Set([1, 1, 2, 3, 4])
+
+// console.log(set); // saída: {1, 2, 3, 4} - O objeto Set é uma coleção de valores únicos: um valor só pode ocorrer uma vez em um conjunto.
+
+// // A: [1, 1, 2, 3, 4]
+// // B: [1, 2, 3, 4]
+// // C: {1, 1, 2, 3, 4}
+// // D: {1, 2, 3, 4}
+
+
+// // Qual é a saída?
+
+// const numeros = [1, 2, 3, 4, 5];
+// const [y] = numeros;
+
+// console.log(y); // saída: C. 1
+
+// // A: [[1, 2, 3, 4, 5]]
+// // B: [1, 2, 3, 4, 5]
+// // C: 1
+// // D: [1]
+
+
+// // Qual é a saída?
+
+// const usuario = { nome: "Bob", idade: 21 };
+// const admin = { admin: true, ...usuario};
+
+// console.log(admin); // saída: {admin: true, nome: 'Bob', idade: 21}
+
+// // A: { admin: true, usuario: { name: "Bob", idade: 21 } }
+// // B: { admin: true, name: "Bob", idade: 21 }
+// // C: { admin: true, usuario: ["Bob", 21] }
+// // D: { admin: true }
+
+
+// // Qual é a saída?
+
+// const pessoa = { nome: "Bob"}
+
+// Object.defineProperty(pessoa, "idade", { valor: 21});
+
+// console.log(pessoa); // saída: {nome: 'Bob', idade: undefined}
+// console.log(Object.keys(pessoa)); // saída: ['nome']
+
+
+// // A: { nome: "Bob", idade: 21 }, ["nome", "idade"]
+// // B: { nome: "Bob", idade: 21 }, ["nome"]
+// // C: { nome: "Bob"}, ["nome", "idade"]
+// // D: { nome: "Bob"}, ["idade"]
+
+
+
+
+
+// Trabalhando com o DOM
+
+// document.write("<h1>Zero</h1>")
+
+// let zero = document.getElementsByTagName("h1")[0]
+
+// zero.style.color = "red";
+// zero.style.font = "bold 80px Arial"
+// zero.style.textAlign = "center"
+
+// console.log(
+//   "%czero %cweb %cescola",
+//   "color: red; font-size: 40px",
+//   "color: green; weight: Bold; font-size: 40px",
+//   "color: white; weight: Bold; background-color: blue; font-size: 40px"
+// );
+
+
+// Console
+
+// console.group("Grupo1");
+// console.log("Mensagem um");
+// console.log("Mensagem dois");
+
+// console.group("Grupo filho")
+// console.log("Menagem um");
+// console.log("Mensagem dois");
+
+// console.group("Grupo de netos")
+// console.log("Menagem um");
+// console.log("Mensagem dois");
+
+// console.groupEnd()
+// console.groupEnd()
+// console.groupEnd()
+
+// console.group("Grupo 2")
+// console.log("Menagem um");
+// console.log("Mensagem dois");
+
+// console.log();
+// console.table(["zero", "Bob", "Peter", "Bunny", "Aston"])
+
+
+// // Tipos de dados e variáveis
+
+// let numeroUm = 10, 
+//     numeroDois = 20
+
+// // concatenação normal
+// console.log(numeroUm + "" + numeroDois); // saída: 1020
+
+// // tipo de dados usando concatinação normal
+// console.log(typeof (numeroDois + "" + numeroDois)); // saída: string
+
+// // usando literais de modelo
+// console.log(`${numeroUm}${numeroDois}`); // saída: 1020
+
+// // tipo de dados usando literais de modelo
+// console.log(typeof `${numeroUm}${numeroDois}`); // saída: string
+
+// // usando concatenar normal 20, depois nova linha e depois 10
+// console.log(numeroDois + "\n" + numeroUm); // saída: 20 
+//                                                   // 10 
+
+// // usando literais de modelo 20, depois nova linha, depois 10
+// console.log(`${numeroDois}\n${numeroUm}`); // saída: 20 
+//                                                   // 10
+
+// console.log(zero.innerHTML);
+// console.log(typeof zero);
+
+// console.log(
+//   '`I\'m In\n\\\\\nLove \\\\ """ \'\'\'\n++ with ++\n\\"""\\"""\n""Javascript""``'
+// );
+
+
+
+// let a = 21
+// let b = 20
+// let dd = (d = a)
+// let ee = (e = b)
+// let c = d + "" + e 
+
+// console.log(`_${d}_${(c + "_").repeat(++dd % --ee)}${++e}_`); // saída: _21_2120_2120_2120_21_
+
+
+// operadores 
+
+// console.log(10 * 20 * 15 * 3 * 190 % 10 * 400); // saída: 0
+
+let num = 3 
+
+// solução um 
+console.log(num + num); // saída: 6
+
+// solução dois
+console.log(num + +`${num}`); // saída: 6
+
+// solução três 
+console.log(num + true + true + true);
