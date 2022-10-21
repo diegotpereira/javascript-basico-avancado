@@ -1,0 +1,59 @@
+[
+    {
+        "usuarioId": 10,
+        "autor": "Autor 1",
+        "categoria": "Um",
+        "titulo":  "Artigo titulo número 1",
+        "descricao": "Artigo Descrição número 1"
+    },
+    {
+        "usuarioId": 20,
+        "autor": "Autor 2",
+        "categoria": "Dois",
+        "titulo":  "Artigo titulo número 2",
+        "descricao": "Artigo Descrição número 2"
+    },
+    {
+        "usuarioId": 30,
+        "autor": "Autor 3",
+        "categoria": "Três",
+        "titulo": "Artigo titulo número 3",
+        "descricao": "Artigo Descrição número 3"
+    },
+    {
+        "usuarioId": 40,
+        "autor": "Autor 4",
+        "categoria": "Quatro",
+        "titulo": "Artigo titulo número 4",
+        "descricao": "Artigo Descrição número 4"
+    },
+    {
+        "usuarioId": 50,
+        "autor": "Autor 5",
+        "categoria": "Cinco",
+        "titulo": "Artigo titulo número 5",
+        "descricao": "Artigo Descrição número 5"
+    },
+    {
+        "usuarioId": 60,
+        "autor": "Autor 6",
+        "categoria": "Seis",
+        "titulo": "Artigo titulo número 6",
+        "descricao": "Artigo Descrição número 6"
+    },
+    {
+        "usuarioId": 70,
+        "autor": "Autor 7",
+        "categoria": "Sete",
+        "titulo": "Artigo titulo número 7",
+        "descricao": "Artigo Descrição número 7"
+    },
+    {
+        "usuarioId": 80,
+        "autor": "Autor 8",
+        "categoria": "Oito",
+        "titulo": "Artigo titulo número 8",
+        "descricao": "Artigo Descrição número 8"
+    }
+    
+]

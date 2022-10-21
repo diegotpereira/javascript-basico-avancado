@@ -13516,17 +13516,251 @@
 // console.log(`_${d}_${(c + "_").repeat(++dd % --ee)}${++e}_`); // saída: _21_2120_2120_2120_21_
 
 
-// operadores 
+// // operadores 
 
-// console.log(10 * 20 * 15 * 3 * 190 % 10 * 400); // saída: 0
+// // console.log(10 * 20 * 15 * 3 * 190 % 10 * 400); // saída: 0
 
-let num = 3 
+// let num = 3 
 
-// solução um 
-console.log(num + num); // saída: 6
+// // solução um 
+// console.log(num + num); // saída: 6
 
-// solução dois
-console.log(num + +`${num}`); // saída: 6
+// // solução dois
+// console.log(num + +`${num}`); // saída: 6
 
-// solução três 
-console.log(num + true + true + true);
+// // solução três
+// console.log(num + true + true + true); // saída: 6
+
+// // solução quatro 
+// console.log(num - `${-num}`); // saída: 6
+
+// // solução cinco
+// console.log(-num++ + ++num + --num);
+
+// // solução seis
+// console.log((num * num * num * num) % (++num + num++)); // saída: 6
+
+
+// // Questão 2
+
+// let num = "10";
+
+// // solução um
+// console.log(+num + +num); // saída: 20
+
+// // solução dois
+// console.log(Number(num) + Number(num)); // saída: 20
+
+// // solução três
+// console.log(num - -num); // saída: 20
+
+// // solução quatro
+// console.log((num + num) / (num >> true)); // saída: 20 / 1 = 20
+
+
+// // strings
+
+// let usuarioNome = "Zero"
+
+// // console.log(usuarioNome.split("")); // saída: ['z', 'e', 'r', 'o']
+// // console.log(usuarioNome.split("")[0].toLowerCase()); // saída: z
+
+// // console.log(usuarioNome.slice(0, 1)); // saída: z
+// // console.log(usuarioNome.slice(0, 1).toLowerCase()); saída: z
+
+// // console.log(usuarioNome.substring(0, 1)); // saída: z
+// // console.log(usuarioNome.substring(0, 1).toLowerCase()); // saída: z
+
+// // console.log(usuarioNome.substr(0, 1)); // saída: z
+// // console.log(usuarioNome.substr(0, 1).toLowerCase()); // saída: z
+
+// // console.log(usuarioNome.charAt(0)); // saída: z
+// // console.log(usuarioNome.charAt(0).toLowerCase()); // saída: z
+
+// // console.log(usuarioNome[0].toLowerCase().repeat(3)); // saída: z z z
+
+
+// // Strings questão 2
+
+// let palavra = "Zero"
+// let letraZ = "z"
+// let letraE = "e"
+// let letraO = "O"
+
+// // console.log(palavra.includes(letraZ)); // saída: false
+
+// // console.log(palavra.toLowerCase()); // saída: zero
+// // console.log(palavra.toLowerCase().endsWith(letraE.toLowerCase)); // false
+
+// // console.log(palavra.toLowerCase()); // saída: zero
+// // console.log(palavra.toLowerCase().endsWith(letraO.toLowerCase())); // saída: true
+
+
+// Strings questão 3
+
+// console.log(100 == "100"); // saída: true
+// console.log(100 < 1000); // saída: true
+// console.log(110 > 100 && 10 < 20); // saída: true
+// console.log(-10 == "-10"); // saída: true
+
+// console.log(typeof -50); // saída: number
+// console.log(typeof +"-40"); // saída: number
+// // console.log(typeof -50 === typeof +"-40");
+
+
+
+//  Promises
+
+// let meuDado = fetch("./json/meuJson.json");
+
+// meuDado
+// .then((resultado) => {
+
+//   let dado = resultado.json()
+
+//   return dado;
+// })
+// .then((resultado) => {
+
+//   resultado.length = 3;
+
+//   return resultado;
+// })
+// .then((resultado) => {
+
+//   for(let i = 0; i < resultado.length; i++) {
+
+//     let div = document.createElement("div")
+//     let h3 = document.createElement("h3")
+//     let p =  document.createElement("p")
+
+//     let h3Texto = document.createTextNode(resultado[i].titulo)
+//     let pTexto = document.createTextNode(resultado[i].descricao);
+
+//     p.append(pTexto)
+//     h3.appendChild(h3Texto)
+//     div.append(h3, p);
+    
+//     document.body.appendChild(div)
+    
+//   }
+// })
+
+// Promise
+
+// // let minhaPromessa = new Promise((res, rej) => {
+
+// //   let requisicao = new XMLHttpRequest();
+
+// //   requisicao.open("GET", "./json/meuJson.json")
+// //   requisicao.send();
+
+// //   console.log(requisicao);
+
+// //   requisicao.onload = function() {
+
+// //     if (this.readyState === 4 && this.status === 200) {
+      
+// //       res(requisicao.response)
+
+// //       console.log(this.response);
+
+// //     } else {
+
+// //       rej(Error("Não encontrado"))
+// //     }
+// //   }
+// // })
+// // .then((resultado) => {
+
+// //   let meuDado = JSON.parse(resultado)
+
+// //   meuDado.length = 5
+
+// //   return meuDado
+
+// // })
+// // .then((resultado) => {
+
+// //   for(let i = 0; i < resultado.length; i++) {
+
+// //     let div = document.createElement("div")
+// //     let h3 = document.createElement("h3")
+// //     let p = document.createElement("p")
+
+// //     let h3Texto = document.createTextNode(resultado[i].titulo)
+// //     let pTexto = document.createTextNode(resultado[i].descricao)
+
+// //     h3.append(h3Texto)
+// //     p.append(pTexto)
+// //     div.append(h3, p)
+
+// //     document.body.append(div)
+// //   }
+// // })
+
+
+
+// AJAX e JSON
+
+// let requisicao = new XMLHttpRequest();
+
+// requisicao.open("GET", "./json/meuJson.json");
+// requisicao.send();
+
+// requisicao.onreadystatechange = function() {
+
+//   if (this.status == 200 && this.readyState == 4) {
+    
+//     let meuDado = JSON.parse(this.response)
+
+//     console.log(meuDado);
+
+//     let atualizarDado = JSON.stringify(meuDado)
+
+//     console.log(atualizarDado);
+
+//     let outraDiv = document.createElement("div")
+
+//     outraDiv.setAttribute("id", "dado")
+
+//     for(let i = 0; i < meuDado.length; i++) {
+
+//       let div = document.createElement("div")
+//       let h2 = document.createElement("h2")
+//       let h2Texto = document.createTextNode(meuDado[i].titulo)
+
+//       let p1 = document.createElement("p")
+//       let p1Texto = document.createTextNode(meuDado[i].descricao)
+
+//       let p2 = document.createElement("p")
+//       let p2Texto = document.createTextNode(meuDado[i].autor)
+
+//       let p3 = document.createElement("p")
+//       let p3Texto = document.createTextNode(meuDado[i].categoria)
+
+//       h2.append(h2Texto)
+//       p1.append(p1Texto)
+//       p2.append(p2Texto)
+//       p3.append(p3Texto)
+
+//       div.append(h2, p1, p2, p3)
+//       outraDiv.append(div)
+//     }
+
+//     document.body.prepend(outraDiv)
+//   }
+// }
+
+
+let requisicao = new XMLHttpRequest()
+
+requisicao.open("GET", "./json/meuJson.json", true)
+requisicao.send()
+requisicao.onreadystatechange = function() {
+
+  if (this.status == 200 && this.readyState == 4) {
+    console.log(requisicao.responseText);
+    console.log("Dados Carregados");
+  }
+}
