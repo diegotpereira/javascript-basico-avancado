@@ -13520,13 +13520,80 @@
 
 // console.log(10 * 20 * 15 * 3 * 190 % 10 * 400); // saída: 0
 
-let num = 3 
 
-// solução um 
-console.log(num + num); // saída: 6
+// Questão 1
 
-// solução dois
-console.log(num + +`${num}`); // saída: 6
+// let num = 3 
 
-// solução três 
-console.log(num + true + true + true);
+// // solução um 
+// console.log(num + num); // saída: 6
+
+// // solução dois
+// console.log(num + +`${num}`); // saída: 6
+
+// // solução três 
+// console.log(num + true + true + true); // saída: 6
+
+// // solução quatro
+// console.log(num + true + true + true); // saída: 6
+
+// // solução cinco
+// console.log(-num++ + ++num + --num); // saída: 6
+
+// // solução seis
+// console.log((num * num * num * num) % (++num + num++)); // saída: 6
+
+
+
+// // Questão 2
+
+// let num = "10";
+
+// // solução 1
+// // console.log(+num + +num); // saída: 20
+
+// // solução 2
+// // console.log(Number(num) + Number(num)); // saída: 20
+
+// // solução 3
+// // console.log(num - -num); // saída: 20
+
+// // solução 4
+// // console.log((num * num) / (num >> true)); // saída: 100 / 5 = 20
+
+
+// solução 3
+
+// console.log(100_000); // saída: 100000
+// console.log(5e4 + 5e4); // saída: 100000
+
+// suas soluções
+
+// console.log(Number("100000")); // saída: 100000
+
+// Math.pow() é usado para aumentar a potência de um número
+// console.log(Math.pow(10, 6)); // saída: 10 * 10 * 10 * 10 * 10 *10 = 100000
+// console.log(10 ** 6); // saída: 10 * 10 * 10 * 10 * 10 *10 = 100000
+
+// Math.sqrt() em JavaScript é usado para a raiz quadrada do número passado como parâmetro para a função. 
+// console.log(1e12); // saída: 1000000000000
+// console.log(Math.sqrt(1e12)); // saída: 1000000
+
+// Math.floor é usado para arredondar o número passado como um parâmetro para seu inteiro 
+// mais próximo na direção para baixo do arredondamento, ou seja, em direção ao valor menor.
+// console.log(1e6); // saída: 1000000
+// console.log(1e6 + 0.5); // saída: 1000000 + 0.5 = 1000000.5
+// console.log(Math.floor(1e6 + 0.5)); // saída: 1000000
+
+// // Math.ceil() em JavaScript é usada para arredondar o número passado como parâmetro para seu 
+// // inteiro mais próximo na direção para cima do arredondamento, ou seja, em direção ao valor maior.
+// console.log((1e6 - 0.5)); // saída: 999999.5
+// console.log(Math.ceil(1e6 - 0.5)); // saída: 1000000
+
+// // Math.round() em JavaScript é usada para arredondar o número passado como parâmetro para o número inteiro mais próximo.
+// console.log(1e6 + 0.2); // saída: 1000000.2
+// console.log(Math.round(1e6 + 0.2)); saída: 1000000
+
+
+//
+console.log(Number.parseInt("1000000 Ali")); // saída: 1000000
