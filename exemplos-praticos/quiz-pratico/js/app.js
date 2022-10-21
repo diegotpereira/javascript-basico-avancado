@@ -13528,8 +13528,10 @@
 // // solução dois
 // console.log(num + +`${num}`); // saída: 6
 
+
 // // solução três
 // console.log(num + true + true + true); // saída: 6
+
 
 // // solução quatro 
 // console.log(num - `${-num}`); // saída: 6
@@ -13764,3 +13766,6 @@ requisicao.onreadystatechange = function() {
     console.log("Dados Carregados");
   }
 }
+
+
+
