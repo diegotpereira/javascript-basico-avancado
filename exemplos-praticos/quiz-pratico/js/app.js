@@ -13594,9 +13594,7 @@
 // console.log(1e6 + 0.2); // saída: 1000000.2
 // console.log(Math.round(1e6 + 0.2)); saída: 1000000
 
-
-//
-console.log(Number.parseInt("1000000 Ali")); // saída: 1000000
+// console.log(Number.parseInt("1000000 Ali")); // saída: 1000000
 // let num = 3 
 
 // // solução um 
@@ -13832,17 +13830,88 @@ console.log(Number.parseInt("1000000 Ali")); // saída: 1000000
 // }
 
 
-let requisicao = new XMLHttpRequest()
+// // exemplo 2
 
-requisicao.open("GET", "./json/meuJson.json", true)
-requisicao.send()
-requisicao.onreadystatechange = function() {
+// let requisicao = new XMLHttpRequest()
 
-  if (this.status == 200 && this.readyState == 4) {
-    console.log(requisicao.responseText);
-    console.log("Dados Carregados");
+// requisicao.open("GET", "./json/meuJson.json", true)
+// requisicao.send()
+// requisicao.onreadystatechange = function() {
+
+//   if (this.status == 200 && this.readyState == 4) {
+//     console.log(requisicao.responseText);
+//     console.log("Dados Carregados");
+//   }
+// }
+
+
+
+
+// // Programa orientado a objetos
+
+// const obj = {
+//   usuarioNome: "zero",
+//   id: 10,
+//   pontuacao: 1000,
+//   pais: "Egito"
+// }
+
+// console.log(obj); // saída: {usuarioNome: 'zero', id: 10, pontuacao: 1000, pais: 'Egito'}
+
+// Object.defineProperties(obj, {
+
+//   id: { enumerable: false },
+//   pontuacao: { writable: false }
+// })
+
+
+// console.log(obj); // saída: {usuarioNome: 'zero', pontuacao: 1000, pais: 'Egito', id: 10}
+
+// delete obj.pais
+
+// obj.pontuacao = 500
+
+// console.log(obj); // saída: {usuarioNome: 'zero', pontuacao: 1000, id: 10}
+
+// for(let prop in obj) {
+
+//   console.log(`${prop} => ${obj[prop]}`); // saída: usuarioNome => zero
+//                                           // saída: pontuacao => 1000
+// }
+
+// console.log(obj); // saída: {usuarioNome: 'zero', pontuacao: 1000, id: 10}
+
+
+
+// // Programa 2
+
+// String.prototype.addAmor = function() {
+
+//   return `Eu amo ${minhaString} na escola web`
+// }
+
+// let minhaString = "JavaScript"
+
+// console.log(minhaString.addAmor());
+
+
+// Programa 3
+
+class Usuario {
+  #c;
+  constructor(usuarioNome, cartao) {
+    this.u = usuarioNome
+    this.#c = cartao 
+  }
+
+  transform() {
+
+    let credito = this.#c;
+    credito = typeof credito == String ? credito : credito.toString();
+    let creditoRe = /\d{4}/g;
+    
+    let resultado = credito.match(creditoRe)
+
+
   }
 }
-
-
-
