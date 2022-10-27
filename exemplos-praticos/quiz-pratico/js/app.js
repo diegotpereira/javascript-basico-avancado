@@ -13895,23 +13895,666 @@
 // console.log(minhaString.addAmor());
 
 
-// Programa 3
+// // Programa 3
 
-class Usuario {
-  #c;
-  constructor(usuarioNome, cartao) {
-    this.u = usuarioNome
-    this.#c = cartao 
-  }
+// class Usuario {
+//   #c;
+//   constructor(usuarioNome, cartao) {
+//     this.u = usuarioNome
+//     this.#c = cartao 
+//   }
 
-  transform() {
+//   transform() {
 
-    let credito = this.#c;
-    credito = typeof credito == String ? credito : credito.toString();
-    let creditoRe = /\d{4}/g;
+//     let credito = this.#c;
+//     credito = typeof credito == String ? credito : credito.toString();
+//     let creditoRe = /\d{4}/g;
     
-    let resultado = credito.match(creditoRe)
+//     let resultado = credito.match(creditoRe)
+
+//     resultado = resultado.map(function(e, index) {
+
+//       return index < resultado.length - 1 ? e + "-": e;
+//     })
+
+//     resultado = resultado.join("");
+
+//     return resultado;
+
+//   }
+
+//   get exibirDado() {
+
+//     return `Ola ${this.u} O número do seu cartão de crédito é ${this.transform()}`
+//   }
+// }
+
+// // Não edite nada abaixo
+
+// let usuarioUm = new Usuario("Bob", "1234-5678-1234-5678")
+// let usuarioDois = new Usuario("Peter", "1234567812345678")
+// let usuarioTres = new Usuario("Bonny", 1234567812345678)
+
+// console.log(usuarioUm.exibirDado); // saída: Ola Bob O número do seu cartão de crédito é 1234-5678-1234-5678
+
+// console.log(usuarioDois.exibirDado); // saída: Ola Peter O número do seu cartão de crédito é 1234-5678-1234-5678
+
+// console.log(usuarioTres.exibirDado); // saída: Ola Bonny O número do seu cartão de crédito é 1234-5678-1234-5678
+
+// console.log(usuarioUm.c); // saída: undefined
 
 
-  }
+// // Programa 4
+
+// class Telefone {
+
+//   constructor(nome, serie, preco) {
+
+//     this.nome = nome 
+//     this.serie = serie
+//     this.preco = preco
+//   }
+// }
+
+// // Escreva a aula do Tablet aqui
+// class Tablet extends Telefone {
+
+//   constructor(nome, serie, preco, tamanho) {
+
+//     super(nome, serie, preco)
+
+//     this.tamanho = tamanho || "Unknown"
+//   }
+
+//   detalheCompleto() {
+
+//     return `${ this.nome } Série é ${ this.serie } e tamanho é ${ this.tamanho }`
+//   }
+// }
+
+// let TabelaUm = new Tablet("IPad", 100200300, 1500, 12.9);
+// let TabelaDois = new Tablet("Nokia", 350450650, 800, 10.5);
+// let TabelaTres = new Tablet("LG", 250450650, 650);
+
+// console.log(`${TabelaUm.detalheCompleto()}`); // saída: IPad Série é 100200300 e tamanho é 12.9
+
+// console.log(`${ TabelaDois.detalheCompleto()}`); // saída: Nokia Série é 350450650 e tamanho é 10.5
+
+// console.log(`${ TabelaTres.detalheCompleto()}`); // saída: LG Série é 250450650 e tamanho é Unknown
+
+
+// // Programa 5
+
+// class Carro {
+
+//   constructor(nome, modelo, preco) {
+
+//     this.n = nome
+//     this.m= modelo 
+//     this.p = preco
+//   }
+
+//   rodar() {
+
+//     return `O carro está em movimento`
+//   }
+
+//   parar() {
+
+//     return `O carro está parado`
+//   }
+// }
+
+// carroUm = new Carro("MG", "2022", 420000)
+// carrDois = new Carro("Toyota", "2022", 450000)
+// carroTres = new Carro("Hyundai", "2022", 500000)
+
+// console.log(
+//   `Carro Um nome é ${ carroUm.n } e modelo é ${ carroUm.m } e preço é ${ carroUm.p }`
+// ); // saída: Carro Um nome é MG e modelo é 2022 e preço é 420000
+
+// console.log(carroUm.rodar()); // saída: O carro está em movimento
+
+
+
+
+// Expressões Regulares
+
+// // Questão 1
+
+// let url1 = "elzero.org";
+// let url2 = "http://elzero.org";
+// let url3 = "https://elzero.org";
+// let url4 = "https://www.elzero.org";
+// let url5 = "https://www.elzero.org:8080/articles.php?id=100&cat=topics";
+
+// let re = /(https?:\/\/)?(www.)?elzero.org(:?\d+\/\w+\.\w+\?id=\d+&cat=\w+)?/gi;
+
+// console.log(url1.match(re)); // saída: ['elzero.org']
+
+// console.log(url2.match(re)); // saída: ['http://elzero.org']
+
+// console.log(url3.match(re)); // saída: ['https://elzero.org']
+
+// console.log(url4.match(re)); // saída: ['https://www.elzero.org']
+
+// console.log(url5.match(re)); // saída: 'https://www.elzero.org:8080/articles.php?id=100&cat=topics']
+
+
+// // Pergunta 2
+
+// let data1 = "25/10/1982"
+// let data2 = "25 - 10 - 1982"
+// let data3 = " 25 10 1982"
+// let data4 = "25 10 82"
+
+// let re = /(\d+( |\/| - ))+\d+/gi;
+         
+// console.log(data1.match(re)); // saída: ['25/10/1982']
+
+// console.log(data2.match(re)); // saída: ['25 - 10 - 1982']
+
+// console.log(data3.match(re)); // saída: ['25 10 1982']
+
+// console.log(data4.match(re)); // saída: ['25 10 82']
+
+
+// // Programa 3
+
+// let re = /https?:\/\/(?:[-\w]+\.)?([-\w]+)\.\w+(?:\.\w+)?\/?.*/i;
+
+// // s? - opcional
+// // \/ - escapar
+// // ?: - grupo sem captura
+// // [-\w] - qualquer caractere exceto espaço em branco
+// // \. - período
+// // .* - qualquer caractere [0 ou mais]
+// // \w+ - qualquer palavra [1 ou mais]
+// // i - não diferencia maiúsculas de minúsculas
+
+
+// // Programa 4
+
+// let telefone = "+(995)-123 (4567)"
+// let telefoneRe = /\+\(\d{3}\)-\d{3} \(\d{4}\)/gi;
+
+// console.log(telefone.match(telefoneRe)); // saída: ['+(995)-123 (4567)']
+
+
+// // Programa 5
+
+// let especialNomes = "Os10O OsO Os100O Osa100O Os1000 Os100m"
+// let especialNomesRe = /Os\d*O/gi;
+
+// console.log(especialNomes.match(especialNomesRe)); // saída: ['Os10O', 'OsO', 'Os100O']
+
+
+// // Programa 6
+
+// let ip = "2001:db8:3333:4444:5555:6666:7777:8888";
+// let ipRe = /(\w+\d+:){7}/gi;
+
+// console.log(ip.match(ipRe)); // saída: ['2001:db8:3333:4444:5555:6666:7777:']
+
+
+
+
+// /// Map e Set
+
+// let conjuntoNumeros = new Set().add(10)
+
+// conjuntoNumeros.add(20).add(conjuntoNumeros.size)
+
+// console.log(conjuntoNumeros); // saída: {10, 20, 2}
+
+// console.log([...conjuntoNumeros]); // saída: [10, 20, 2]
+
+// console.log(+[...conjuntoNumeros]); // saída: NaN
+
+// console.log([...conjuntoNumeros].slice()); // saída: [10, 20, 2]
+
+// console.log(conjuntoNumeros.size - 1); // saída: 2
+
+// console.log(+[...conjuntoNumeros].slice(conjuntoNumeros.size - 1)); // saída: 2
+
+// var n = [1, 2, 3]
+
+// console.log(n); [1, 2, 3]
+
+
+var obj = {
+
+  foo: 20,
+  bar: 30
 }
+
+// const { foo, bar } = obj
+
+// console.log(foo, bar); // saída: 20 30
+
+// const foo = obj.foo 
+
+// console.log(foo); // saída: 20
+
+// var arr = [0, 5, 10]
+// const [primeiro, segundo] = arr 
+
+// console.log(primeiro, segundo); // saída: 0 5
+
+
+// // Programa 2
+
+// let meuAmigos = ["Bob", "Peter", "Bunny", "Junior"]
+
+// console.log(meuAmigos.sort()); // saída: ['Bob', 'Bunny', 'Junior', 'Peter']
+// console.log([...new Set(meuAmigos)].sort()); // saída: ['Bob', 'Bunny', 'Junior', 'Peter']
+
+
+// // Programa 3
+
+// let meuInfo = {
+
+//   usuarioNome: "Bob",
+//   funcao: "Admin",
+//   nacionalidade: "Jamaica"
+// }
+
+// let meuInfoMap = new Map(Object.entries(meuInfo))
+
+// // console.log(meuInfoMap); // saída: {'usuarioNome' => 'Bob', 'funcao' => 'Admin', 'nacionalidade' => 'Jamaica'}
+// // console.log(meuInfoMap.size); // saída: 3
+// // console.log(meuInfoMap.has("funcao")); // saída: true
+
+
+// // Programa 4
+
+// let numero = 100020003000;
+
+// // console.log(numero.toString()); // saída: 100020003000
+
+// // console.log(...new Set(numero.toString())); // saída: 1 0 2 3 
+
+// // console.log(
+// //   +[...new Set(numero.toString())]
+// //   .filter(function(e) {
+
+// //     return +e;
+// //   })
+// //   .join("")
+// // ); // saída: 123
+
+
+// // Programa 5
+
+// let oNome = "Ozero"
+
+// a1 = oNome.split("");
+// a2 = Array.from(oNome)
+// a3 = [...oNome]
+// a4 = Array(...oNome)
+// a5 = Array(oNome).map((x) => x.split("")).flatMap((x) => x)
+
+// console.log(a1); // saída: ['O', 'z', 'e', 'r', 'o']
+// console.log(a2); // saída: ['O', 'z', 'e', 'r', 'o']
+// console.log(a3); // saída: ['O', 'z', 'e', 'r', 'o']
+// console.log(a4); // saída: ['O', 'z', 'e', 'r', 'o']
+// console.log(a5); // saída: ['O', 'z', 'e', 'r', 'o']
+
+
+// // Programa 6
+
+// let caracteres = ["Z", "Y", "A", "D", "E", 10, 1]
+// let numeroDeNumeros = caracteres.filter((x) => typeof x === "number")
+
+// // console.log(numeroDeNumeros); // saída: [10, 1]
+
+// let novoArray = [...numeroDeNumeros, ...caracteres.filter((x) => typeof x === "string")]
+
+// // console.log(novoArray); // saída: [10, 1]
+
+// // console.log(novoArray.copyWithin(0, numeroDeNumeros.length, numeroDeNumeros.length * 2)); //saída: ['Z', 'Y', 'Z', 'Y', 'A', 'D', 'E']
+
+
+
+// Atribuição via desestruturação - (destructuring assignment)
+
+// // Programa 1
+
+// let meuNumeros = [1, 2, 3, 4, 5]
+// let [a, b, c, d, e] = meuNumeros
+
+// console.log(a * e); // saída: 5
+
+
+// // Programa 2
+
+// let minhasHabilidades = [
+
+//   "HTML",
+//   "CSS",
+//   "JavaScript",
+//   ["PHP", "Python", ["Django", "Laravel"]]
+// ]
+
+// // console.log(minhasHabilidades); // saída: ['HTML', 'CSS', 'JavaScript', Array(3)]
+
+// let [a, b, c, [d, e, [f, g]]] = minhasHabilidades
+
+// console.log(`Minhas Habilidades: ${a}, ${b}, ${c}, ${d}, ${e}, ${f}, ${g}`); // saída: Minhas Habilidades: HTML, CSS, JavaScript, PHP, Python, Django, Laravel
+
+
+// // Programa 3
+
+// let arr1 = ["Bob", "Peter", "Bonny"]
+// let arr2 = ["Kurt", "Cris", "Dave"]
+// let arr3 = ["Jimmy", "Robert", "John"]
+
+// let arr4 = arr1.concat(arr2, arr3)
+
+// // console.log(arr4); // saída: ['Bob', 'Peter', 'Bonny', 'Kurt', 'Cris', 'Dave', 'Jimmy', 'Robert', 'John']
+
+// let [c, , , , , , , a, b] = arr4
+
+// // console.log([c, , , , , , , a, b]); // saída: ['Bob', vazio x 6, 'Robert', 'John']
+
+// console.log(`Meus melhores amigos: ${a}, ${b}, ${c}`); // saída: Meus melhores amigos: Robert, John, Bob
+
+
+// // Programa 4
+
+// const membro = {
+
+//   idade: 30,
+//   trabalhando: false,
+//   nacionalidade: "Brasil",
+//   hobbies: ["Leitura", "Natação", "Programação"]
+// };
+
+// const {
+
+//   idade: a,
+//   trabalhando: w,
+//   nacionalidade: c,
+//   hobbies: [h1, h3]
+
+// } = membro;
+
+
+// console.log(`Minha idade é ${a} e eu ${w ? "" : "não"} estou trabalhando`); // saída: Minha idade é 30 e eu não estou trabalhando
+
+// console.log(`Eu moro no ${c}`); // saída: Eu moro no Brasil
+
+// console.log(`Meus hobbies são ${h1} e ${h3}`); // saída: Meus hobbies são Leitura e Natação
+
+
+// // Programa 5
+
+// const jogo = {
+
+//   titulo: "YS",
+//   desenvolvido: "Falcom",
+//   lançamentos: {
+//     "Oath In Felghana" : ["EUA", "Japão"],
+//     "Ark Of Napishtim": {
+
+//       EUA: "R$ 20",
+//       JAP: "R$ 10"
+//     },
+//     original: "R$ 30"
+//   }
+// }
+
+// let {
+
+//   titulo: t,
+//   desenvolvido: d,
+//   lançamentos: {"Oath In Felghana": o, "Ark Of Napishtim" : a, original: ou}, 
+// } = jogo
+
+// let [u, j] = o;
+// let { EUA: u_preco, JAP: j_preco} = a;
+
+// [o, a] = [Object.keys(jogo.lançamentos)[0], Object.keys(jogo.lançamentos)[1]]
+
+
+// // console.log(`Meus jogos favoritos são ${t} estilo`); // saída: Meus jogos favoritos são YS estilo
+
+// // console.log(`Meu melhor lançamento é ${o} Foi lançado nos ${u} & ${j}`); // saída: Meu melhor lançamento é Oath In Felghana Foi lançado nos EUA & Japão
+
+// // console.log(`Embora eu ame ${a}`); // saída: Embora eu ame Ark Of Napishtim
+
+// // console.log(`${a} Preço nos EUA é ${u_preco}`); // saída: Ark Of Napishtim Preço nos EUA é R$ 20
+
+// // console.log(`${a} Preço nos EUA é ${j_preco}`); // saída: Ark Of Napishtim Preço nos EUA é R$ 10
+
+// console.log(`O preço de origem é ${ou}`); // saída: O preço de origem é R$ 30
+
+
+// // Programa 6
+
+// let escolha = 1
+
+// let meusAmigos = [
+//   {
+//     titulo: "Bob",
+//     idade: 39,
+//     acessível: true,
+//     habilidades: ["HTML", "CSS"]
+//   },
+//   {
+//     titulo: "Peter",
+//     idade: 25,
+//     acessível: true,
+//     habilidades: ["Python", "Django"]
+//   },
+//   {
+//     titulo: "Bonny",
+//     idade: 33,
+//     acessível: false,
+//     habilidades: ["PHP", "Laravel"]
+//   }
+// ]
+
+// function buscarAmigo(escola) {
+
+//   function desestruturacao({ titulo, idade, acessível, habilidades: [, habilidade ]} = meusAmigos[escola - 1]) {
+
+//     console.log(titulo); // saída: Bob
+//     console.log(idade); // saída: 39
+//     acessível ? console.log("Acessível") : console.log("Não Acessível"); // saída: Acessível
+//     console.log(habilidade); // saída: CSS
+//   }
+
+//   desestruturacao()
+// }
+
+// buscarAmigo(escolha)
+
+
+// Modelo de objeto do navegador
+
+// // Programa 1
+
+// let divContainer = document.createElement("div").cloneNode(true)
+// let selecionarCaixa = document.createElement("select").cloneNode(true)
+// let opcao = document.createElement("option").cloneNode(true)
+
+// let opcaoLista1 = ["Open", "Roboto", "Cairo"]
+// let opcaoLista2 = ["red", "blue", "green", "yellow", "pink", "black"]
+
+// for(let i = 0; i < 3; i++) {
+
+//   opcao.value = opcaoLista1[i].toLowerCase()
+
+//   let texto = document.createTextNode(opcaoLista1[i])
+
+//   opcao.appendChild(texto)
+
+//   selecionarCaixa.appendChild(opcao.cloneNode(true))
+
+//   if (selecionarCaixa.lastChild.value == window.localStorage.getItem("font-family")) {
+
+//     selecionarCaixa.lastChild.selected = true 
+    
+//   }
+
+//   opcao.removeChild(opcao.lastChild)
+// }
+
+// selecionarCaixa.classList.add("font-family")
+
+// divContainer.appendChild(selecionarCaixa.cloneNode(true))
+
+// selecionarCaixa.classList.remove("font-family")
+
+// for(let i = 0; i < 3; i++) {
+
+//   selecionarCaixa.removeChild(selecionarCaixa.lastChild)
+// }
+
+// for(let i = 0; i < 6; i++) {
+
+//   opcao.value = opcaoLista2[i].toLowerCase()
+
+//   let texto = document.createTextNode(opcaoLista2[i])
+//   opcao.appendChild(texto)
+
+//   selecionarCaixa.appendChild(opcao.cloneNode(true))
+
+//   if (selecionarCaixa.lastChild.value == window.localStorage.getItem("color")) {
+    
+
+//     selecionarCaixa.lastChild.selected = true 
+//   }
+
+//   opcao.removeChild(opcao.lastChild)
+// }
+
+// selecionarCaixa.classList.add("color")
+
+
+// divContainer.appendChild(selecionarCaixa.cloneNode(true))
+// selecionarCaixa.classList.remove("color")
+
+// for(let i = 0; i < 6; i++) {
+
+//   selecionarCaixa.removeChild(selecionarCaixa.lastChild)
+// }
+
+// for(let i = 16; i < 16 + 15; i++) {
+
+//   opcao.value = i + "px"
+
+//   let texto = document.createTextNode(i)
+//   opcao.appendChild(texto)
+//   selecionarCaixa.appendChild(opcao.cloneNode(true))
+
+//   if (i == window.localStorage.getItem("font-size")) {
+    
+//     selecionarCaixa.lastChild.selected = true
+//   }
+
+//   selecionarCaixa.classList.add("font-size")
+// }
+
+// divContainer.appendChild(selecionarCaixa.cloneNode(true))
+// selecionarCaixa.classList.remove("font-size")
+
+// for(let i = 16; i < 16 + 15; i++) {
+
+//   selecionarCaixa.removeChild(selecionarCaixa.lastChild)
+// }
+
+// document.body.prepend(divContainer)
+
+// let fontStorage = document.querySelector(".font-family")
+// let colorStorage = document.querySelector(".color")
+// let fontSizeStorage = document.querySelector(".font-size")
+
+// window.addEventListener("load", function(e) {
+
+//   fontStorage.value = this.window.localStorage.getItem("font-family")
+//   colorStorage.value = this.window.localStorage.getItem("color")
+//   fontSizeStorage.value = this.window.localStorage.getItem("font-size")
+// })
+
+// this.document.styleSheets[1].cssRules[0].style.setProperty("--font-family-s", this.window.localStorage.getItem("font-family"))
+// this.document.styleSheets[1].cssRules[0].style.setProperty("--color-s", this.window.localStorage.getItem("color"))
+// this.document.styleSheets[1].cssRules[0].style.setProperty("--font-size-s", this.window.localStorage.getItem("font-size"))
+// window.addEventListener("change", function(e) {
+
+//   if (e.target.classList.contains("font-family")) {
+    
+//     this.window.localStorage.setItem("font-family", e.target.value)
+
+//   } else if(e.target.classList.contains("color")) {
+
+//     this.window.localStorage.setItem("color", e.target.value)
+
+//   } else if (e.target.classList.contains("font-size")) {
+    
+//     this.window.localStorage.setItem("font-size", e.target.value)
+//   }
+
+//   if (1) {
+    
+//     this.document.styleSheets[1].cssRules[0].style.setProperty("--font-family-s", this.window.localStorage.getItem("font-family"))
+//     this.document.styleSheets[1].cssRules[0].style.setProperty("--color-s", this.window.localStorage.getItem("color"))
+//     this.document.styleSheets[1].cssRules[0].style.setProperty("--font-size-s", this.window.localStorage.getItem("font-size"))
+//   }
+// })
+
+
+// Programa 2
+
+let forma = document.createElement("form")
+let entrada = document.createElement("input")
+let selecionar = document.createElement("select")
+let opcoes = document.createElement("option")
+
+let tipos = ["text", "password", "number"]
+let linguagens = ["Inlgês", "Arabe", "Espanhol", "Alemão", "Frances"]
+
+// percorrendo array tipos
+for(let i = 0; i < 3; i++) {
+
+  entrada.setAttribute("type", tipos[i])
+  forma.appendChild(entrada.cloneNode(true))
+}
+
+forma.appendChild(selecionar)
+
+// percorrendo array linguagens 
+
+for(let i = 0; i < 5; i++) {
+
+  // opcoes.setAttribute("value", linguagens[i])
+}
+
+
+document.body.prepend(forma)
+
+let entradaTexto = document.querySelector("input[type=text]")
+let entradaSenha = document.querySelector("input[type=password]")
+let entradaNumero = document.querySelector("input[type=number]")
+let selecionarLinguagem =document.querySelector("select")
+
+window.addEventListener("change", function(e) {
+  
+  window.sessionStorage.setItem("entradaTexto", entradaTexto.value)
+
+  entradaTexto.value = window.sessionStorage.getItem("entradaTexto")
+})
+
+window.addEventListener("load", function(e) {
+
+  entradaTexto.value = window.sessionStorage.getItem("entradaTexto")
+  entradaSenha.value = window.sessionStorage.getItem("entradaSenha")
+  entradaNumero.value = window.sessionStorage.getItem("entradaNumero")
+
+
+  
+  // entradaSenha.value = window.sessionStorage.getItem("entradaSenha")
+  // entradaNumero.value = window.sessionStorage.getItem("entradaNumero")
+  // selecionarLinguagem.value = window.sessionStorage.getItem("selecionarLinguagem")
+})
