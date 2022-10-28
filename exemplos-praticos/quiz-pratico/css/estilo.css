@@ -36,7 +36,7 @@ select {
 
 /* Programa 2 */
 
-* {
+/* * {
     font-size: 1.1em;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
@@ -47,7 +47,12 @@ form {
     align-items: center;
     justify-content: space-around;
     width: 600px;
-    min-height: ;
+    min-height: 400px;
+    height: fit-content;
+    background-color: #00d79e;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
 }
 
 input {
@@ -69,4 +74,26 @@ select {
     border: none;
     outline: none;
     padding: 5px;
+} */
+
+div {
+    width: 600px;
+    height: 200px;
+    background-color: #EEE;
+    border: 0.5px solid rgb(89, 89, 89);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
 }

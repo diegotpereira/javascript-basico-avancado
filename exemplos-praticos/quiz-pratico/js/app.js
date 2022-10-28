@@ -14505,56 +14505,200 @@ var obj = {
 // })
 
 
+// // Programa 2
+
+// let forma = document.createElement("form")
+// let entrada = document.createElement("input")
+// let selecionar = document.createElement("select")
+// let opcoes = document.createElement("option")
+
+// let tipos = ["text", "password", "number"]
+// let linguagens = ["Inglês", "Arabe", "Espanhol", "Alemão", "Frances"]
+
+// // percorrendo array tipos
+// for(let i = 0; i < 3; i++) {
+
+//   entrada.setAttribute("type", tipos[i])
+//   forma.appendChild(entrada.cloneNode(true))
+// }
+
+// forma.appendChild(selecionar)
+
+// // percorrendo array linguagens 
+
+// for(let i = 0; i < 5; i++) {
+
+//   opcoes.setAttribute("value", linguagens[i])
+
+//   let texto = document.createTextNode(linguagens[i])
+//   opcoes.appendChild(texto)
+
+//   selecionar.appendChild(opcoes.cloneNode(true))
+
+//   opcoes.removeChild(opcoes.lastChild)
+// }
+
+
+// document.body.prepend(forma)
+
+// let entradaTexto = document.querySelector("input[type=text]")
+// let entradaSenha = document.querySelector("input[type=password]")
+// let entradaNumero = document.querySelector("input[type=number]")
+// let selecionarLinguagem =document.querySelector("select")
+
+// window.addEventListener("change", function(e) {
+  
+//   window.sessionStorage.setItem("entradaTexto", entradaTexto.value)
+//   window.sessionStorage.setItem("entradaSenha", entradaSenha.value)
+//   window.sessionStorage.setItem("entradaNumero", entradaNumero.value)
+//   window.sessionStorage.setItem("selecionarLinguagem", selecionarLinguagem.value)
+
+//   entradaTexto.value = window.sessionStorage.getItem("entradaTexto")
+//   entradaSenha.value = window.sessionStorage.getItem("entradaSenha")
+//   entradaNumero.value = window.sessionStorage.getItem("entradaNumero")
+//   selecionarLinguagem.value = window.sessionStorage.getItem("selecionarLinguagem")
+// })
+
+// window.addEventListener("load", function(e) {
+
+//   entradaTexto.value = window.sessionStorage.getItem("entradaTexto")
+//   entradaSenha.value = window.sessionStorage.getItem("entradaSenha")
+//   entradaNumero.value = window.sessionStorage.getItem("entradaNumero")
+//   selecionarLinguagem.value - window.sessionStorage.getItem("selecionarLinguagem")
+// })
+
+
+// // Programa 3 
+
+// let resposta = prompt("Imprimir número de - até")
+// let numeroRespostas =  resposta.split("-")
+
+// console.log(numeroRespostas);
+
+// let inicial = Math.min(...numeroRespostas)
+// let final = Math.max(...numeroRespostas)
+
+// console.log(inicial); // saída: 10
+// console.log(final); // saída: 10
+
+// for(let i = inicial; i <= final; i++) {
+
+//   console.log(i); // saída: 10
+// }
+
+
+// // Programa 4
+
+// let aparecer = function() {
+  
+
+//   let minhaDiv = document.createElement("div")
+//   minhaDiv.classList = "minha-div"
+
+//   meuH2 = document.createElement("h2")
+//   meuH2.textContent = "Bem-Vindo"
+
+//   minhaDiv.appendChild(meuH2)
+
+//   meuP = document.createElement("p")
+//   meuP.textContent = "Bem-vindo ao quiz JavaScript"
+
+//   minhaDiv.appendChild(meuP)
+
+  
+//   meuBotao = document.createElement("button")
+//   meuBotao.textContent = "X"
+
+//   meuBotao.addEventListener("click", function() {
+
+//     minhaDiv.remove()
+
+//   })
+
+//   minhaDiv.appendChild(meuBotao)
+
+//   setTimeout(function() {
+
+//     document.body.appendChild(minhaDiv)
+//   }, 5000)
+// }
+
+// aparecer()
+
+
+// // Programa 5
+
+// div = document.querySelector("div")
+
+// let contar = setInterval(function() {
+
+//   div.textContent = +div.textContent -1
+
+//   if (+div.textContent === 0) {
+    
+//     clearInterval(contar)
+//   }
+// }, 1000)
+
+
+// // Programa 6
+
+// div = document.querySelector("div")
+
+// let contar = setInterval(function() {
+
+//   div.textContent =+ div.textContent -1
+
+//   if (+div.textContent === 0) {
+    
+//     window.location.href = "https://github.com/diegotpereira"
+//   }
+// }, 1000)
+
+
+// // Programa 7
+
+// div = document.querySelector("div")
+
+// let contar = setInterval(function() {
+
+//   div.textContent = +div.textContent -1
+
+//   if (+div.textContent === 5) {
+    
+//     window.open("https://github.com/diegotpereira")
+//   }
+
+//   if(+div.textContent === 0) {
+
+//     clearInterval(contar)
+//   }
+// }, 1000)
+
+
+
+
+
+/// Modelo de objeto de documento (DOM)
+
+
+// // Programa 1
+
+// window.onload = function() {
+
+//   let links = document.querySelectorAll(".open")
+
+//   for(let i = 0; i < links; i++) {
+
+//     if(links[i].innerHTML === "zero")
+
+//     links[i].click()
+//   }
+// }
+
+
 // Programa 2
 
-let forma = document.createElement("form")
-let entrada = document.createElement("input")
-let selecionar = document.createElement("select")
-let opcoes = document.createElement("option")
-
-let tipos = ["text", "password", "number"]
-let linguagens = ["Inlgês", "Arabe", "Espanhol", "Alemão", "Frances"]
-
-// percorrendo array tipos
-for(let i = 0; i < 3; i++) {
-
-  entrada.setAttribute("type", tipos[i])
-  forma.appendChild(entrada.cloneNode(true))
-}
-
-forma.appendChild(selecionar)
-
-// percorrendo array linguagens 
-
-for(let i = 0; i < 5; i++) {
-
-  // opcoes.setAttribute("value", linguagens[i])
-}
-
-
-document.body.prepend(forma)
-
-let entradaTexto = document.querySelector("input[type=text]")
-let entradaSenha = document.querySelector("input[type=password]")
-let entradaNumero = document.querySelector("input[type=number]")
-let selecionarLinguagem =document.querySelector("select")
-
-window.addEventListener("change", function(e) {
-  
-  window.sessionStorage.setItem("entradaTexto", entradaTexto.value)
-
-  entradaTexto.value = window.sessionStorage.getItem("entradaTexto")
-})
-
-window.addEventListener("load", function(e) {
-
-  entradaTexto.value = window.sessionStorage.getItem("entradaTexto")
-  entradaSenha.value = window.sessionStorage.getItem("entradaSenha")
-  entradaNumero.value = window.sessionStorage.getItem("entradaNumero")
-
-
-  
-  // entradaSenha.value = window.sessionStorage.getItem("entradaSenha")
-  // entradaNumero.value = window.sessionStorage.getItem("entradaNumero")
-  // selecionarLinguagem.value = window.sessionStorage.getItem("selecionarLinguagem")
-})
+let atualElemento = document.querySelector('[title="Atual"]')
+let paraRemover = document.querySelector(".classes-para-remover")
+let paraAdd = document.querySelector(".classes-para-add")
