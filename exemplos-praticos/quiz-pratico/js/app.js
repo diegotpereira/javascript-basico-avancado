@@ -6170,19 +6170,21 @@
 // console.log(usuario); // {nome: 'Bob'}
 
 
-// // Qual é a saída do programa?
+// // // Qual é a saída do programa?
 
-// let nome = 'Bob'
+// // let nome = 'Bob'
 
-// const idade = 18
+// // const idade = 18
 
-// nome = "Peter"
-// idade = 20
+// // nome = "Peter"
+// // idade = 20
 
-// console.log(nome);
-// console.log(idade);
+// // console.log(nome);
+// // console.log(idade);
 
-// // Resposta: TypeError: Assignment to constant variable.
+// // // Resposta: TypeError: Assignment toLowerCase()
+// atualElemento.classList.add(valorReduzido) constant variable.
+// paraAdd.value = ""
 
 
 // // Qual é a saída do programa?
@@ -9361,12 +9363,14 @@
 
 // // Corrija o programa abaixo para imprimir valores de 0 a 9
 
-// // ORIGINAL
-// // for (var i = 0; i < 9; i++) {
-// //   setTimeout(function () {
-// //     console.log(); //Should print from 0 to 9
-// //   }, 0);
-// // }
+// // // ORIGINAL
+// // // for (var i = 0; i < 9; i++) {
+// // //   setTimeout(function () {
+// // //     console.log(); //Should print from 0 toLowerCase()
+// atualElemento.classList.add(valorReduzido) 
+// paraAdd.value = ""
+// // //   }, 0);
+// // // }
 
 // // CORRIGIDO
 // for(let i = 0;i <= 9;i++){
@@ -14122,13 +14126,13 @@
 // console.log(n); [1, 2, 3]
 
 
-var obj = {
+// var obj = {
 
-  foo: 20,
-  bar: 30
-}
+//   foo: 20,
+//   bar: 30
+// }
 
-// const { foo, bar } = obj
+// // const { foo, bar } = obj
 
 // console.log(foo, bar); // saída: 20 30
 
@@ -14697,8 +14701,724 @@ var obj = {
 // }
 
 
-// Programa 2
+// // Programa 2
 
-let atualElemento = document.querySelector('[title="Atual"]')
-let paraRemover = document.querySelector(".classes-para-remover")
-let paraAdd = document.querySelector(".classes-para-add")
+// let atualElemento = document.querySelector('[title="Atual"]')
+// let paraRemover = document.querySelector(".classes-para-remover")
+// let paraAdd = document.querySelector(".classes-para-add")
+
+// spanParente = document.querySelector(".classes-lista div")
+
+// paraAdd.onblur = function() {
+
+//   spanParente.innerHTML = ""
+
+//   let valor = paraAdd.value.split(" ")
+
+//   for(let i = 0; i < valor.length; i++) {
+
+//     valorReduzido = valor[i].toLowerCase()
+//     atualElemento.classList.add(valorReduzido)
+//     paraAdd.valor = ""
+//   }
+
+//   for(let i = 0; i < atualElemento.classList.length; i++) {
+
+//     let span = document.createElement("span").cloneNode(true)
+//     spanTexto = document.createTextNode(atualElemento.classList[i])
+//     span.appendChild(spanTexto)
+//     spanParente.appendChild(span)
+//   }
+// };
+
+// paraRemover.onblur = function() {
+
+//   spanParente.innerHTML = ""
+
+//   let valor = paraRemover.value.split(" ")
+
+//   for(let i = 0; i < valor.length; i++) {
+
+//     valorReduzido = valor[i].toLowerCase()
+//     atualElemento.classList.remove(valorReduzido)
+//     paraRemover.valor = ""
+//   }
+
+//   for(let i = 0; i < atualElemento.classList.length; i++) {
+
+//     let span = document.createElement("span").cloneNode(true)
+//     spanTexto = document.createTextNode(atualElemento.classList[i])
+//     span.appendChild(spanTexto)
+//     spanParente.appendChild(span)
+//   }
+// }
+
+
+// // Programa 3
+
+// let outraDiv = document.querySelector(".seu-elemento")
+// let outroP = document.querySelector("p")
+
+// outroP.remove()
+
+// let depoisDiv = document.createElement("div").cloneNode(true)
+
+// depoisDiv.setAttribute("class", "iniciar")
+// depoisDiv.setAttribute("title", "Iniciar elemento")
+// depoisDiv.setAttribute("data-value", "Iniciar")
+
+// depoisDiv.innerHTML = "Iniciar"
+
+// outraDiv.before(depoisDiv)
+
+// let antesDiv = document.createElement("div").cloneNode(true)
+
+// antesDiv.setAttribute("class", "fim")
+// antesDiv.setAttribute("title", "Elemento Final")
+// antesDiv.setAttribute("data-value", "Fim")
+
+// antesDiv.innerHTML = "Fim"
+
+// outraDiv.after(antesDiv)
+
+
+// // Programa 4
+
+// let span = document.querySelector("div span")
+
+// // nextSibling retorna o próximo nó irmão como um nó de elemento, 
+// // um nó de texto ou um nó de comentário
+// let letraDepois = span.nextSibling.nextSibling.nextSibling
+// let letraAntes = letraDepois.textContent.trim()
+
+// console.log(letraAntes);
+
+
+// // Programa 5
+
+// document.onclick = function(e)  {
+
+//   e.preventDefault()
+
+//   console.log(`Esse é ${e.target.nodeName}`);
+// }
+
+
+/// Objetos e metodos
+
+// // Programa 1
+
+// membro = {
+
+//   nome: "zero",
+//   idade: 38,
+//   pais: "Egito",
+
+//   detalhesCompletos: function() {
+
+//     return `Meu nome é ${this.nome}, Minha idade é ${this.idade}, eu amo no ${this.pais}`
+//   }
+// }
+
+// console.log(membro.nome); // saída: zero
+// console.log(membro.idade); // saída: 38
+// console.log(membro.pais); // saída: Egito
+// console.log(membro.detalhesCompletos()); // saída: Meu nome é zero, Minha idade é 38, eu amo no Egito
+
+
+// // Programa 2
+
+// objMetodoUm = {
+
+//   property: "Metodo Um"
+// }
+
+// console.log(objMetodoUm.property); // saída: Metodo Um
+
+
+// objMetodoDois = new Object({ property: "Metodo Dois"})
+
+// console.log(objMetodoDois.property); // saída: Metodo Dois
+
+
+// objMetodoTres = Object.create({ property: "Metodo Tres"})
+
+// console.log(objMetodoTres.property); // saída: Metodo Tres
+
+
+// objMetodoQuatro = Object.assign({ property: "Metodo Quatro"})
+
+// console.log(objMetodoQuatro.property); // saída: Metodo Quatro
+
+
+// // Programa 3
+
+// let a = 1
+
+// let tresNumeros = {
+
+//   b: 2,
+//   c: 3,
+//   d: 4
+// }
+
+// let doisNUmeros = {
+//   e: 5,
+//   f: 6
+// }
+
+
+// finalObjeto = Object.assign(doisNUmeros, tresNumeros, { a: a})
+
+// console.log(finalObjeto); // saida: {e: 5, f: 6, b: 2, c: 3, d: 4, …}
+
+
+// // Programa 4
+
+// let minhaFavJogos = {
+
+//   "Trinity Universe" : {
+//     editora: "NIS AMERICA",
+//     preco: 40
+//   },
+//   "Titan Quest" : {
+//     editora: "THQ",
+//     tresMelhores: {
+//       um: "Immortal Throne",
+//       dois: "Ragnarok",
+//       tres: "Atlantis"
+//     },
+//     preco: 50
+//   },
+
+//   YS: {
+//     editora: "Falcom",
+//     tresMelhores: {
+//       um: "Oath in Felghana",
+//       dois: "Ark Of Napishtim",
+//       tres: "origin"
+//     },
+//     preco: 40
+//   }
+// }
+
+// let objetoComprimento = Object.keys(minhaFavJogos).length
+
+// // console.log(objetoComprimento); // saída: 3
+
+// for(let i = 0; i < objetoComprimento; i++) {
+
+//   // console.log(`O nome do jogo é ${Object.keys(minhaFavJogos)[i]}`); // saída: O nome do jogo é Trinity Universe
+//                                                                            // O nome do jogo é Titan Quest
+//                                                                            // O nome do jogo é YS
+
+//   // console.log(`A editora é ${Object.values(minhaFavJogos)[i].editora}`); // saída: A editora é NIS AMERICA
+//                                                                                 // A editora é THQ
+//                                                                                 // A editora é Falcom
+
+                                                                        
+//   // console.log(`O preço é ${Object.values(minhaFavJogos)[i].preco}`); // saída: O preço é 40
+//                                                                             // O preço é 50
+//                                                                             // O preço é 40
+
+
+//   if (Object.values(minhaFavJogos)[i]["tresMelhores"]) {
+    
+//     // console.log(" - O jogo tem lançamentos"); // saída: - O jogo tem lançamentos
+//     // console.log(`Primeiro => ${Object.values(minhaFavJogos)[i]["tresMelhores"]["um"]}`); //  saída: Primeiro => Immortal Throne
+//                                                                                                  // - O jogo tem lançamentos
+//                                                                                                  // Primeiro => Oath in Felghana
+    
+    
+//     // console.log(`Segundo => ${Object.values(minhaFavJogos)[i]["tresMelhores"]["dois"]}`); // saída: Segundo => Ragnarok
+//     //                                                                                              // Segundo => Ark Of Napishtim                                                                                              
+
+
+
+//     // console.log(`Terceiro => ${Object.values(minhaFavJogos)[i]["tresMelhores"]["tres"]}`); // saída: Atlantis
+//     //                                                                                               // origin
+
+
+//     console.log("#".repeat(20)); // saída: ####################
+//   }
+// }
+
+
+
+// Funções de ordem superior
+
+
+// // Programa 1
+
+// let mix = [1, 2, 3, "O", 4, "z", "e", "r", 5, "o"];
+
+// let arr = mix.map(function(letra) {
+
+//   return isNaN(letra) ? letra : ""
+// })
+// .reduce(function(acc, atual) {
+
+//   return acc + atual
+// })
+
+// console.log(arr); // saída: Ozero
+
+
+// // Programa 2 
+
+// let meuString = "OOzeerrrooo"
+
+// let arr = meuString.split("").filter(function(letra, indice) {
+
+//   return letra !== meuString[index + 1]
+// })
+// .reduce((acc, current) => acc + current)
+
+// console.log(arr); // saída: OOzeerrrooo
+
+
+// // Programa 3
+
+// let meuString = ["O", "z", ["e", "r"], "o"]
+// let arr = meuString.reduce(function(acumulador, atual) {
+
+//   return acumulador + atual
+// })
+// .split(",")
+
+// .reduce((acumulador, atual) => acumulador + atual)
+
+// console.log(arr); // saída: Ozero
+
+
+// // Programa 4
+
+// let numerosEhStrings = [1, 20, -10, -20, 5, "A", 3, "B", "C"]
+// let novoArray = numerosEhStrings.filter(function(character) {
+
+//   return !isNaN(character)
+// })
+// .map(function(character) {
+
+//   return -character
+// })
+
+// console.log(novoArray); // saída: [-1, -20, 10, 20, -5, -3]
+
+
+// // Programa 5
+
+// let numeros = [2, 12, 11, 5, 10, 1, 99]
+
+// resultado = numeros.reduce(function(acumulador, atual) {
+
+//   return atual % 2 == 0 ? acumulador * atual : acumulador + atual 
+// }, 1)
+
+// console.log(resultado); // saída: 500
+// // 2,12,11,5,10,1,9921211510199
+
+
+// Funções de ordem superior
+
+
+// // Programa 1
+
+// let mix = [1, 2, 3, "O", 4, "z", "e", "r", "o"]
+// let arr = mix
+
+// .map(function(letra) {
+
+//   return isNaN(letra) ? letra : ""
+// })
+// .reduce(function(acumulador, atual) {
+
+//   return acumulador + atual
+// })
+
+// console.log(arr); // saída: Ozero
+
+
+// // Programa 2
+
+// let minhaString = "OOzzzzzzerooo"
+// let arr = minhaString
+
+// .split("")
+// .filter(function(letra, indice) {
+
+//   return letra !== minhaString[indice + 1]
+// })
+// .reduce((acumulador, atual) => acumulador + atual)
+
+
+// console.log(arr); // saída: Ozero
+
+
+// // Programa 3 
+
+// let meuArray = ["O", "z", ["e", "r"], "o"]
+// let arr = meuArray
+// .reduce(function(acumulador, atual) {
+
+//   return acumulador + atual 
+// })
+// .split(",")
+// .reduce((acumulador, atual) => acumulador + atual)
+
+
+// console.log(arr); // saída: Ozero
+
+
+// // Programa 4
+
+// let numerosEhStrings = [1, 10, -10, -20, 5, "A", 3, "B", "C"]
+// let novoArr = numerosEhStrings
+// .filter(function(character) {
+
+//   return !isNaN(character)
+// })
+// .map(function(character) {
+
+//   return -character
+// })
+
+// console.log(novoArr); // saída: [-1, -10, 10, 20, -5, -3]
+
+
+// // Programa 5
+
+// let numeros = [2, 12, 11, 5, 10, 1, 99]
+
+// resultado = numeros.reduce(function(acumulador, atual) {
+
+//   return atual % 2 == 0 ? acumulador * atual : acumulador + atual
+// }, 1)
+
+
+// console.log(resultado); // saída: 500
+
+
+// Função e escopos
+
+// // Programa 1
+
+// function digaOla(oNome, oGenero) {
+
+//   if(oGenero === "Masculino") console.log(`Ola Sr ${oNome}`);
+//   else if(oGenero === "Feminino") console.log(`Olá Sra ${oNome}`);
+//   else console.log(`Ola ${oNome}`);
+// }
+
+// // 
+
+// digaOla("Bob", "Masculino") // saída: Ola Sr Bob
+// digaOla("Peter", "Feminino") // saída: Olá Sra Peter
+// digaOla("Bonny") // saída: Ola Bonny
+
+
+// // Programa 2 
+
+// function calcular (primeiroNum, segundoNum, operacao) {
+
+//   if (segundoNum == undefined) {
+    
+//     console.log("Segundo número não encontrado");
+
+//   } else {
+
+//     if(operacao == "add") console.log(primeiroNum + segundoNum);
+//     else if(operacao == "subtrair") console.log(primeiroNum - segundoNum);
+//     else if(operacao == "multiplicar") console.log(primeiroNum * segundoNum);
+//     else if(operacao == undefined) console.log(primeiroNum + segundoNum);
+//   }
+// }
+
+// // calculos
+
+// // calcular(20) // saída: Segundo número não encontrado
+// // calcular(20, 30) // saída: 50
+// // calcular(20, 30, "add") // saída: 50
+// // calcular(20, 30, "subtrair") // saída: -10
+// // calcular(20, 30, "multiplicar") // saída: 600
+
+
+// // Programa 3
+
+// function idadeNoTempo(aIdade) {
+
+//   if (aIdade > 10 && aIdade <= 100) {
+    
+//     console.log(`${ aIdade } anos`); // saída: 38 anos
+//     console.log(`${ aIdade * 12 } meses`);  // saida: 456 meses
+//     console.log(`${ aIdade * 12 *4 } semanas`); // saída: 1824 semanas
+//     console.log(`${ aIdade * 12 * 4 * 7 } dias`); // saída: 12768 dias
+//     console.log(`${ aIdade * 12 * 4 * 7 * 24 } horas`); // saída: 306432 horas
+//     console.log(`${ aIdade * 12 * 4 * 7 * 24 * 60 } minutos`); // saída: 18385920 minutos
+//     console.log(`${ aIdade * 12 * 4 * 7 * 60 * 60 } segundos`); // saída: 45964800 segundos
+
+//   } else console.log("Idade fora do intervalo"); // saída: Idade fora do intervalo
+// }
+
+// idadeNoTempo(110)
+// idadeNoTempo(38)
+
+
+// // Programa 4
+
+// function verificarStatus(a, b, c) {
+
+//   let primeiro = typeof a 
+//   let segundo = typeof b 
+//   let terceiro = typeof c
+//   let arranjo = []
+
+//   primeiro == "string" ? arranjo.push(a) : segundo == "string" ? arranjo.push(b) : arranjo.push(c)
+//   primeiro == "number" ? arranjo.push(a) : segundo == "number" ? arranjo.push(b) : arranjo.push(c)
+//   primeiro == "boolean" ? arranjo.push(a) : segundo == "boolean" ? arranjo.push(b) : arranjo.push(c)
+
+//   arranjo[2] == true ? (arranjo[2] = "Disponível") : (arranjo[2] = "Não Disponível"); 
+//   console.log(`Olá ${arranjo[0]}, Sua idade é ${arranjo[1]}, Você tem ${arranjo[2]} Para contratar`); // saída: Olá Bob, Sua idade é 38, Você tem Disponível Para contratar
+//                                                                                                              // Olá Bob, Sua idade é 38, Você tem Disponível Para contratar
+//                                                                                                              // Olá Bob, Sua idade é 38, Você tem Disponível Para contratar
+//                                                                                                              // Olá Bob, Sua idade é 38, Você tem Não Disponível Para contratar
+
+// }
+
+
+// verificarStatus("Bob", 38, true)
+// verificarStatus(38, "Bob", true)
+// verificarStatus(true, 38, "Bob")
+// verificarStatus(false, "Bob", 38)
+
+
+// // Programa 5
+
+// function criarSelecaoCaixa(iniciarAno, finalizarAno) {
+
+//   document.write(`<select>`)
+
+//   for(let i = iniciarAno; i <= finalizarAno; i++) {
+
+//     document.write(`<option value="${i}"> ${i} </option>`)
+    
+//   }
+//   document.write(`</select>`)  
+// }
+
+// criarSelecaoCaixa(2000, 2001)
+
+
+// // Programa 6
+
+// function multiplicar(...numeros) {
+
+//   let resultado = 1
+
+//   if (numeros.length === 0) {
+    
+//     console.log(0);
+
+//     return 0;
+//   }
+
+//   for(let i = 0; i < numeros.length; i++) {
+
+//     if(typeof numeros[i] !== "number") continue;
+
+//     else {
+
+//       resultado *= Math.floor(numeros[i])
+//     }
+//   }
+
+//   console.log(resultado); // saída: 200
+//                                  // 300
+//                                  // 1000
+// }
+
+
+// multiplicar(10, 20)
+// multiplicar("A", 10, 30)
+// multiplicar(100.5, 10, "B")
+
+
+
+// Loop - While
+
+// // Programa 1
+
+// let amigos = ["José", "Pedro", "Roberto", 1, 2, "Paulo", "Fernando"]
+// let indice = 0
+// let contar = 0
+
+
+// while(indice < amigos.length) {
+
+//   indice += contar.toFixed(contar).length
+
+//   if(typeof amigos[indice] == "string" && !amigos[indice].startsWith("P")) {
+
+//     console.log(amigos[indice]); // saída: Roberto 
+//                                         // Fernando
+//   }
+// }
+
+
+// // Programa 2
+
+// let inicial = 10
+// let final = 100
+// let excluir = 40
+
+// for(let i = inicial;  i <= final; i += inicial) {
+
+//   if(i == excluir) continue;
+
+//   console.log(i); // saída: 20
+//                          // 30
+//                          // 50
+//                          // 60
+//                          // 70
+//                          // 80 
+//                          // 90
+//                          // 100
+// }
+
+
+// // Programa 3
+
+// let inicial = 10
+// let final = 0
+// let parar = 3
+
+// for(let i = inicial; i >= final; i--) {
+
+//   console.log(i < 10 ? "0" + i : i); // saída: 10
+//                                             // 09
+//                                             // 08
+//                                             // 07
+//                                             // 06
+//                                             // 05
+//                                             // 04
+//                                             // 03
+
+//   if(i == parar) break;
+// }
+
+
+// // Programa 4
+
+// let inicial = 1
+// let final = 6
+// let desligar = 2
+
+// for(let i = inicial; i <= final; i++) {
+
+//   console.log(i); // saída: 1
+//                          // 2
+//                          // 3
+//                          // 4
+//                          // 5
+//                          // 6
+
+//   console.log(`-- ${desligar}`); // saída --2
+//   console.log(`-- ${final - desligar}`); // saída: --4
+// }
+
+
+// // Programa 5
+
+// let indice = 10;
+// let pular = 2;
+// let final = 0;
+
+// for(;;) {
+
+//   if(indice <= pular) break;
+
+//   console.log(indice); // saída: 10
+//                              //  8
+//                              //  6
+//                              // 4
+//   indice -= pular;
+// }
+
+
+// // Programa 6
+
+// let amigos = ["Bob", "Peter", "Bonny", "Junior", "Kurt", "Cris", "Dave"]
+// let letra = "a"
+
+// for(let i = letra.indexOf(letra); i < amigos.length; i++) {
+
+//   if (amigos[i].startsWith(letra.toUpperCase())) {
+//     amigos.splice(i, letra.length)
+//   }
+// }
+
+// for(let i = letra.indexOf(letra); i < amigos.length; i++) {
+
+//   console.log(`${ i + letra.length } => ${amigos[i]} `); // saída: 1 => Bob 
+//                                                                 // 2 => Peter 
+//                                                                 // 3 => Bonny 
+//                                                                 // 4 => Junior 
+//                                                                 // 5 => Kurt 
+//                                                                 // 6 => Cris 
+//                                                                 // 7 => Dave 
+// }
+
+
+// // Programa 7
+
+// let inicial = 0
+// let nomeTrocado = "oZero"
+// let nome = []
+
+// for(let i = inicial; i < nomeTrocado.length; i++) {
+
+//   if (nomeTrocado[i] == nomeTrocado[i].toUpperCase()) {
+    
+//     nome.push(nomeTrocado[i].toLocaleLowerCase())
+
+//   } else {
+
+//     nome.push(nomeTrocado[i].toUpperCase())
+//   }
+// }
+
+// console.log(nome.join("")); // saída: OzERO
+
+
+// // Programa 8
+
+// let inicial = 0
+// let mix = [1, 2, 3, "A", "B", "C", 4]
+
+// for(let i = inicial; i < mix.length; i++) {
+
+//   if(i == inicial) continue;
+
+//   if ((typeof mix[i] ===  "number")) {
+    
+//     console.log(mix[i]); // saída: 2
+//                                 // 3
+//                                 // 4
+//   }
+// }
+
+
+
+// Programa 9
+
+let indice = 10
+let pular = 2
+let final = 0
+
+for(;;) {
+
+  if(indice <= pular) break;
+
+  console.log(indice);
+  indice -= pular;
+}

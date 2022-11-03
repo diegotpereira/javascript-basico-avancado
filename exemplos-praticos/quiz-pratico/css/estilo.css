@@ -76,7 +76,7 @@ select {
     padding: 5px;
 } */
 
-div {
+/* div {
     width: 600px;
     height: 200px;
     background-color: #EEE;
@@ -96,4 +96,61 @@ h2 {
 
 p {
     text-align: center;
+} */
+
+
+
+
+/* DOM  */
+
+/* // Programa 1 */
+
+/* body {
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+.atribuir {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.atribuir input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+}
+
+.atribuir input:focus {
+    outline: none;
+    border-color: #ccc;
+}
+
+.atribuir [title="Atual"] {
+
+    padding: 20px;
+    margin: 10px auto;
+    width: 610px;
+    background-color: #f1f0f0;
+}
+
+.atribuir .classes-lista {
+    padding: 20px;
+    margin: 10px auto;
+    width: 610px;
+    background-color: #f1f0f0;
+}
+
+.atribuir .classes-lista h5 {
+    margin: 0 0 10px;
+    text-align: left;
+}
+
+.atribuir .classes-lista div span {
+    background-color: #ff5722;
+    padding: 6px 10px 8px;
+    margin-right: 5px;
+    border-radius: 6px;
+    color: white;
+    display: inline-flex;
+    margin-bottom: 5px;
+} */
