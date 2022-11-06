@@ -15409,16 +15409,137 @@
 
 
 
-// Programa 9
+// // Programa 9
 
-let indice = 10
-let pular = 2
-let final = 0
+// let indice = 10
+// let pular = 2
+// let final = 0
 
-for(;;) {
+// for(;;) {
 
-  if(indice <= pular) break;
+//   if(indice <= pular) break;
 
-  console.log(indice);
-  indice -= pular;
-}
+//   console.log(indice);
+//   indice -= pular;
+// }
+
+
+
+// Arrays e Metodos
+
+// // Programa 1
+
+// let meusAmigos = ["Bob", "Peter", "Bonny", "Junior"]
+// let num = 3
+// let meusAmigos2 = meusAmigos
+
+// meusAmigos2.pop()
+
+// console.log(meusAmigos); // saída: ['Bob', 'Peter', 'Bonny']
+
+// console.log(meusAmigos.splice(false, num)); // saída: ['Bob', 'Peter', 'Bonny']
+
+
+// // Programa 2
+
+// let amigos = ['Bob', 'Peter', 'Bonny', 'Junior']
+
+// amigos.pop()
+// amigos.shift()
+
+// console.log(amigos); // saída: ['Peter', 'Bonny']
+
+
+// // Programa 3
+
+// let arrUm = ["C", "D", "X"]
+// let arrDois = ["A", "B", "Z"]
+// let finalArr = []
+
+// finalArr = arrUm.concat(arrDois).sort().reverse()
+
+// console.log(finalArr); // saída: ['Z', 'X', 'D', 'C', 'B', 'A']
+
+
+// // Programa 4
+
+// let webSite = "Go"
+// let palavras = [`${webSite}ogle`, "Facebook", ["O-zero", "Web", "Escola"]]
+
+// console.log(palavras.reverse()[0][0].slice(webSite.length, webSite.length + palavras.length + true).toUpperCase()); // saída: ZERO
+
+
+// // Programa 5
+
+// let agulha = "JS"
+// let palheiro = ["PHP", "JS", "Python"]
+
+// let res = palheiro.includes(agulha)
+
+// if (res) {
+  
+//   console.log("encontrado"); // saída: encontrado
+// }
+
+// let res1 = palheiro.indexOf(agulha)
+
+// if (res1 != -1) {
+  
+//   console.log("encontrado"); // saída: encontrado
+// }
+
+// let res2 = palheiro.lastIndexOf(agulha)
+
+// if ((res2 != -1)) {
+  
+//   console.log("encontrado"); // saída: encontrado
+// }
+
+
+// // Programa 6
+
+// let arr1 = ["A", "C", "X"]
+// let arr2 = ["D", "E", "F", "Y"]
+// let todosArrs = []
+
+// todosArrs = arr1.concat(arr2).sort().splice(arr2.length, arr1.length).join("").toLowerCase()
+
+// console.log(todosArrs); // saída: fxy
+
+
+// Comparação e Operadores Lógicos
+
+// // Programa 1
+
+// console.log(100 == "100"); // saída: true 
+// console.log(100 < 1000); // saída: true
+// console.log(110 > 100 && 10 < 20); // saída: true
+// console.log(-10 == "-10"); // saída: true
+// console.log(typeof -50 === typeof +"-40"); // saída: true
+// console.log(typeof 10 == typeof -"-40"); // saída: true
+// console.log(typeof "10" != typeof 10); // saída: true
+// console.log(!20 == false); // saída: true
+
+
+// // Programa 2
+
+// let num1 = 10
+// let num2 = 20
+
+// console.log(num1 < num2); // saída: true
+// console.log(typeof num1 === typeof num2); // saída: true
+// console.log(num1 <= num2); // saída: true
+// console.log(num1 != num2); // saída: true
+// console.log(num1 !== num2); // saída: true
+// console.log(!(num1 > num2)); // saída: true
+
+
+// Programa 3
+
+let a = 20
+let b = 30
+let c = 10
+
+console.log((a < b && a < c) || a < b); // saída: true
+console.log(a < b || a > c); // saída: true 
+console.log(!(a > b) && !(a > b) && !(a < c) && !(a < c)); // saída: true
