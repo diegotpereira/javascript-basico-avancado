@@ -15875,3 +15875,131 @@
 
 //   document.body.appendChild(btn)
 // }
+
+
+// // Qual será a saída do código abaixo para o console e por quê?
+
+// var arr1 = "joao".split('');
+// var arr2 = arr1.reverse();
+// var arr3 = "jones".split('');
+
+// arr2.push(arr3)
+
+// // console.log(arr1); // saída: j o a o 
+// // console.log(arr2); // saída: o a o j
+// // console.log(arr2); // saída: ['o', 'a', 'o', 'j', ['j', 'o', 'n', 'e', 's']]
+
+// // console.log("array 1: comprimento = " + arr1.length + " ultimo = " + arr1.slice(-1)); // saída: array 1: comprimento = 5 ultimo = j,o,n,e,s
+// // console.log("array 2: comprimento = " + arr2.length + " ultimo = " + arr2.slice(-1)); // saída: array 2: comprimento = 5 ultimo = j,o,n,e,s
+
+
+// Qual será a saída do código abaixo para o console e por quê?
+
+// console.log(1 + "2" + "2"); // saída: 122
+// console.log(1 + +"2" + "2"); // saída: 32
+// console.log(1 + -"1" + "2"); // saída: 02
+// console.log(+"1" + "1" + "2"); // saída: 122
+// console.log("A" - "B" + "2"); // saída: NaN2
+// console.log("A" - "B" + 2); // saída: NaN
+
+
+// Qual será a saída do código abaixo para o console?
+
+// console.log("0 || 1 = " + (0 || 1)); // saída: 0 || 1 = 1
+// console.log("1 || 2 = " + (1 || 2)); // saída: 1 || 2 = 1
+// console.log("0 && 1 = " + (0 && 1)); // saída: 0 && 1 = 0
+// console.log("1 && 2 = " + (1 && 2)); // saída: 1 && 2 = 2
+
+
+// Qual será a saída do código abaixo para o console?
+
+// console.log(false == '0'); // saída: true
+// console.log(false === '0'); // saída: false
+
+
+// // Qual será a saída do código abaixo para o console?
+
+// var a = {}, 
+//     b = { key: 'b'},
+//     c = { key: 'c'};
+
+// a[b] = 123;
+// a[c] = 456;
+
+// console.log(a[b]); // saída: 456 
+
+
+// // Qual será a saída do código abaixo para o console?
+
+// console.log((
+//   function f(n) {
+
+//     return ((n > 1) ? n * f(n - 1) : n)
+//   }
+// )(10)); // saída: 3628800
+
+// // // Resposta f(1): retorna n, qual é 1
+// //             f(2): retorna 2 * f(1), qual é 2
+// //             f(3): retorna 3 * f(2), qual é 6
+// //             f(4): retorna 4 * f(3), qual é 24
+// //             f(5): retorna 5 * f(4), qual é 120
+// //             f(6): retorna 6 * f(5), qual é 720
+// //             f(7): retorna 7 * f(6), qual é 5040
+// //             f(8): retorna 8 * f(7), qual é 40320
+// //             f(9): retorna 9 * f(8), qual é 362880
+// //             f(10): retorna 10 * f(9), qual é 3628800
+
+
+// // Considere o trecho de código abaixo. Qual será a saída do console e por quê?
+
+// (function(x) {
+
+//   return (function(y) {
+
+//     console.log(x); // saída: 1
+//   })(2)
+// })(1);
+
+
+// // Considere o trecho de código abaixo. Qual será a saída do console e por quê?
+
+// var heroi = {
+//   _nome: 'Jane Doe',
+//   buscarIdentidadeSecreta: function() {
+
+//     return this._nome;
+//   }
+// };
+
+// var roubouIdentidadeSecreta = heroi.buscarIdentidadeSecreta;
+
+// console.log(roubouIdentidadeSecreta()); // saída: undefined porque estamos extraindo o método do objeto heroi, 
+//                                                // então roubouIdentidadeSecreta() está sendo invocado no 
+//                                                // contexto global (ou seja, o objeto da janela) onde a 
+//                                                // propriedade _nome não existe.
+// console.log(heroi.buscarIdentidadeSecreta()); // saída: Jane Doe
+
+
+
+// Considere o trecho de código abaixo. Qual será a saída do console?
+
+var length  = 10;
+
+function fn() {
+
+  console.log(this.length ); // saída: 10 2 
+}
+
+var obj = {
+
+  length : 5,
+  metodo: function(fn) {
+
+    fn();
+    arguments[0]();
+  }
+};
+
+obj.metodo(fn, 1);
+
+
