@@ -15534,12 +15534,344 @@
 // console.log(!(num1 > num2)); // saída: true
 
 
-// Programa 3
+// // Programa 3
 
-let a = 20
-let b = 30
-let c = 10
+// let a = 20
+// let b = 30
+// let c = 10
 
-console.log((a < b && a < c) || a < b); // saída: true
-console.log(a < b || a > c); // saída: true 
-console.log(!(a > b) && !(a > b) && !(a < c) && !(a < c)); // saída: true
+// console.log((a < b && a < c) || a < b); // saída: true
+// console.log(a < b || a > c); // saída: true 
+// console.log(!(a > b) && !(a > b) && !(a < c) && !(a < c)); // saída: true
+
+
+
+// // Qual será a saída do seguinte trecho de código JavaScript?
+
+// var texto1 = "quizjavascript_"
+// var texto2 = "javascriptquiz"
+
+// document.getElementById("demo").innerHTML = texto1 + texto2 // saída: quizjavascript_javascriptquiz
+
+
+// // Qual será a saída do seguinte trecho de código JavaScript?
+
+// var js = 10
+// js *= 5
+
+// document.getElementById("demo").innerHTML = js // saída: 50
+
+
+// // Qual será a saída do seguinte trecho de código JavaScript?
+
+// function altura(){
+//   var altura = 123.56
+//   var tipo = (altura >= 190) ? "alto" : "curto"
+
+//   console.log(tipo);
+
+//   return tipo
+// }
+
+// altura() // saída: curto
+
+
+// // Qual será a saída do seguinte trecho de código JavaScript?
+
+// function javascript() {
+
+//   document.getElementById("demo").innerHTML = Math.abs(-7.25)
+// }
+
+// // a) -7.25
+// // b) 7.25
+// // c) -7
+// // d) 7
+
+// javascript() // saída: d) 7
+
+
+// // Qual será a saída do seguinte trecho de código JavaScript?
+
+// var a = 5, b = 1
+// var obj = {
+//   a: 10
+// }
+
+// with(obj) {
+
+//   alert(b) // saída: a) 1
+// }
+
+
+// // a) 1
+// // b) 10
+// // c) 5
+// // d) Error
+
+
+// // Qual é um trecho de código JavaScript mais eficiente?
+
+// // codigo 1
+// // for(var num = 10; num >= 1; num--) {
+
+// //   document.writeln(num)
+// // }
+
+// // codigo 2
+// var num = 10
+
+// while(num >= 1) {
+
+//   document.writeln(num)
+//   num++
+// }
+
+// // a) Código 1
+// // b) Código 2
+// // c) Código 1 e Código 2
+// // d) Não é possível comparar
+
+// // Resposta a) código 1 - o segundo 
+// // código entrará em erro de tempo de execução, pois o valor de num nunca será menor ou igual a um.
+
+
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// function imprimirArray(a) {
+
+//   var len = a.length, i = 0
+
+//   if(len == 0)
+//     console.log("Array Vazio");
+  
+//   else {
+
+//   do{
+//     console.log(a[i]);
+//     } while (++i < len) {
+      
+//     }
+//   }
+// }
+
+// // a) Imprime "Array Vazio"
+// // b) Imprime 0 no comprimento do array
+// // c) Imprime os números no array na ordem
+// // d) Imprime os números no array na ordem inversa
+
+// // Resposta C) A instrução do/while cria um loop que executa um bloco de código javascript uma vez,
+//             // antes de verificar se a condição é verdadeira, então repetirá o loop enquanto a condição for verdadeira.
+
+
+
+// // O que acontece no seguinte trecho de código JavaScript?
+
+// var js = 0
+
+// while (js < 10) {
+//   console.log(js);
+//   js++
+// }
+
+
+// // a) Uma exceção é lançada
+// // b) Os valores de js são registrados ou armazenados em um determinado local ou armazenamento
+// // c) O valor de js de 0 a 9 é exibido no console
+// // d) Um erro é exibido
+
+// // Resposta: c) Console.log é uma função predefinida que aceita o valor como argumento. 
+//              // No momento da execução do código, console.log imprime esse valor no argumento para o console.
+
+
+// // O que acontece no seguinte trecho de código JavaScript?
+
+// var quiz = [1, 2, 3]
+// var js = [6, 7, 8]
+// var resultado = quiz.concat(js)
+
+// document.writeln(resultado) // saída: 1,2,3,6,7,8
+
+
+// // a) 1, 2, 3, 6, 7, 8
+// // b) 123
+// // c) 1, 2, 3
+// // d) Error
+
+
+
+// // O que acontece no seguinte trecho de código JavaScript?
+
+// var escopo = "js escopo"
+
+// function verificaEscopo() {
+
+//   var escopo = "javascript escopo"
+
+//   function f() {
+
+//     return escopo
+//   }
+
+//   return f
+// }
+
+// console.log(escopo); // saída js escopo
+
+// // a) Retorna o valor no escopo
+// // b) Retorna o valor nulo
+// // c) Mostra uma mensagem de erro
+// // d) Retorna a exceção
+
+// // Resposta a) 
+
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// var a = 0
+
+// for(a; a < 5; a++)
+
+// console.log(a); // saída: b) 0 1 2 3 4 
+
+
+// // a) 4
+// // b) 5
+// // c) 0
+// // d) erro
+
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// function minhaFunc() {
+
+//   console.log(nome); // saída: undefined
+//   console.log(idade); //  daída: ReferenceError
+
+//   var nome = 'BBBootstrap'
+//   let idade  = 21
+// }
+
+// minhaFunc()
+
+// // 1. undefined and ReferenceError
+// // 2. BBBootstrap and undefined
+// // 3. ReferenceError and 21
+// // 4. BBBootstrap and ReferenceError
+
+
+// // Considere as duas funções abaixo. Ambos retornarão a mesma coisa? Por que ou por que não?
+
+// function foo1() 
+// {
+//   return {
+//     bar: "ola"
+//   };
+// }
+
+// function foo2() 
+// {
+//   return 
+//   {
+//     bar: "ola"
+//   };
+// }
+
+// console.log("foo1 retornos: "); // saída: foo1 retornos: 
+// console.log(foo1()); // saída: {bar: 'ola'}
+
+// console.log("foo2 retornos: "); // saída: foo2 retornos:
+// console.log(foo2()); // saída: undefined
+
+// // Resposta: A difrença está no uso de pontos e virgulas.
+
+
+// // Qual é a saída e explique:
+
+// // console.log(0.1 + 0.2); // saída: 0.30000000000000004
+
+// // console.log(0.1 + 0.2 == 0.3); // saída: false 
+
+// // Resposta: Números em JavaScript são todos tratados com precisão de ponto flutuante e, como tal, nem sempre podem produzir os resultados esperados.”
+
+// function saoOsNumerosQuaseIguais(num1, num2) {
+
+//   // Math.abs() é usado para retornar o valor absoluto de um número. 
+//   return Math.abs(num1 - num2) < Number.EPSILON
+// }
+
+// console.log(saoOsNumerosQuaseIguais(0.1 + 0.2, 0,3)); // saída: false
+
+
+// // Em que ordem os números 1 - 4 serão registrados no console quando o código abaixo for executado? porque?
+
+// (function() {
+//   console.log(1);
+
+//   setTimeout(function() {
+
+//     console.log(2);
+//   }, 1000);
+
+//   setTimeout(function() {
+
+//     console.log(3);
+//   }, 0);
+
+//   console.log(4);
+// })() // saída: 1 4 3 2
+
+
+// // Considere o seguinte trecho de código
+
+// // for(var i = 0; i < 5; i++) {
+
+// //   var btn = document.createElement('button')
+
+// //   btn.appendChild(document.createTextNode('Button ' + i))
+
+// //   btn.addEventListener('click', function() {
+
+// //     console.log(i);
+// //   });
+
+// //   document.body.appendChild(btn)
+// // }
+
+// // Resposta -  O número 5 sempre será registrado no console. 
+//             // Isso porque, no momento em que o onclickmétodo é 
+//             // invocado (para qualquer um dos botões), o loop for 
+//             // já foi concluído e a variável ijá possui valor 5.
+            
+
+// // ou podemos substituir o loop com método for pelo forEach
+
+// // ['a', 'b', 'c', 'd', 'e'].forEach(function(value,  i) {
+
+// //   var btn = document.createElement('button');
+
+// //   btn.appendChild(document.createTextNode('Button ' + i));
+// //   btn.addEventListener('click', function() {
+
+// //     console.log(i);
+// //   });
+
+// //   document.body.appendChild(btn);
+// // })
+
+// // uma solução simples do ES¨/ES2015 seria o uso de let i em vez de var i
+
+// for(let i = 0; i < 5; i++) {
+
+//   var btn = document.createElement('button')
+
+//   btn.appendChild(document.createTextNode('Button ' + i))
+
+//   btn.addEventListener('click', function() {
+
+//     console.log(i);
+//   });
+
+//   document.body.appendChild(btn)
+// }
