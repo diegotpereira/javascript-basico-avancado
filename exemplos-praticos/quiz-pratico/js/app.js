@@ -15981,25 +15981,74 @@
 
 
 
-// Considere o trecho de código abaixo. Qual será a saída do console?
+// // Considere o trecho de código abaixo. Qual será a saída do console?
 
-var length  = 10;
+// var length  = 10;
 
-function fn() {
+// function fn() {
 
-  console.log(this.length ); // saída: 10 2 
-}
+//   console.log(this.length ); // saída: 10 2 
+// }
 
-var obj = {
+// var obj = {
 
-  length : 5,
-  metodo: function(fn) {
+//   length : 5,
+//   metodo: function(fn) {
 
-    fn();
-    arguments[0]();
-  }
-};
+//     fn();
+//     arguments[0]();
+//   }
+// };
 
-obj.metodo(fn, 1);
+// obj.metodo(fn, 1);
 
 
+// // Considere o trecho de código abaixo. Qual será a saída do console?
+
+// (function() {
+
+//   try {
+    
+//     throw new Error();
+
+//   } catch (x) {
+    
+//     var x = 1, y = 2;
+
+//     console.log(x); // saída: 1
+//   }
+
+//   console.log(x); // saída: undefined
+//   console.log(y); // saída: 2
+// })();
+
+
+
+// // Considere o trecho de código abaixo. Qual será a saída do console?
+
+// var x = 21;
+// var garota = function() {
+
+//   console.log(x); // saída: undefined
+
+//   var x = 20;
+// };
+
+// garota();
+
+
+// // Considere o trecho de código abaixo. Qual será a saída do console?
+
+// console.log(1 < 2 < 3); // saída: true
+// console.log(3 > 2 > 1); // saída: false - compara 3 > 2 = 1; 1 > 1 = false
+
+
+// // // Considere o trecho de código abaixo. Qual será a saída do console?
+
+// meuArray = ['a', 'b', 'c', 'd'];
+
+// meuArray = ['inicial', ...meuArray];
+
+// meuArray = [...meuArray, 'final']
+
+// console.log(meuArray); // saída: ['inicial', 'a', 'b', 'c', 'd', 'final']
