@@ -16052,3 +16052,458 @@
 // meuArray = [...meuArray, 'final']
 
 // console.log(meuArray); // saída: ['inicial', 'a', 'b', 'c', 'd', 'final']
+
+
+// // Qual será a saída do código a seguir?
+
+// console.log("50" + 50 - 50); // saída: primeiro - "50" + 50 = 5050; 
+                                       // segundo  - 5050 - 50 = 5000
+// console.log(+ 50 - 50);
+// console.log("50" + 50);
+// console.log("50" - 50);
+
+// // A. 5000
+// // B. 50
+// // C. 500
+// // D. 505050
+
+
+
+// // Qual será a saída do código a seguir?
+
+// function externa() {
+
+//   var a = 10;
+
+//   function interna() {
+
+//     var b = 10;
+
+//     return a + b;
+//   }
+
+//   return interna();
+// }
+
+// console.log(externa()); // saída: 20
+
+// // A. 10
+// // B. 20
+// // C. Undefined
+// // D. Error
+
+
+// // Qual será a saída do código a seguir?
+
+// function add(a, b) {
+
+//   return a + b;
+// }
+
+// function conte (...numeros)  {
+
+//   var contar = 0;
+
+//   for(let num of numeros) {
+
+//     contar += num;
+//   }
+
+//   return contar;
+// }
+
+// console.log(add(10, 20, 40), conte(10, 20, 40)); // saída: B. 30 70
+
+// // A. Error
+// // B. 30, 70
+// // C. Undefined, 70
+// // D. 30, 30
+
+
+// // Qual será a saída do código a seguir?
+
+// var contar = 0;
+// var num = 70;
+
+// console.log(contar += num); // saída: 70
+// console.log(contar -= num); // saída: -70
+
+
+
+// // Qual será a saída do código a seguir?
+
+// console.log("A");
+
+// setTimeout(function() {
+//   console.log("B");
+// }, 0);
+
+// console.log("C");
+
+// setTimeout(function() {
+//   console.log("D");
+// }, 1000)
+
+
+// // Resposta: saida: A C B D 
+
+
+// // O que será exibido no console?
+
+// for(var i = 0; i < 5; i++) {
+
+//   setTimeout(function() {
+
+//     console.log(i); // saída: C. 5 5 5 5 5
+//   }, i);
+// }
+
+// // A. 0 1 2 3 4
+// // B. 0 0 0 0 0
+// // C. 5 5 5 5 5
+// // D. 0 5 5 5 5
+
+
+
+// // O que será exibido no console?
+
+// for(let i = 0; i < 5; i++) {
+
+//   setTimeout(function() {
+
+//     console.log(i); // saída: A. 0 1 2 3 4 
+//   }, i);
+// }
+
+
+// // A. 0 1 2 3 4
+// // B. 0 0 0 0 0
+// // C. 5 5 5 5 5
+// // D. 0 5 5 5 5
+
+
+// // O que será exibido no console?
+
+// function tringulo() {
+
+//   var altura = 10;
+//   let base = 20;
+
+//   var altura = 20;
+//   let base = 30;
+
+//   return 0.5 * base * altura;
+// }
+
+// // A. 100
+// // B. SyntaxError: Identifier ‘height’ has already been declared
+// // C. 300
+// // D. SyntaxError: Identifier ‘base’ has already been declared
+
+// // Resposta: D. SyntaxError: Identifier ‘base’ has already been declared
+
+
+
+// // Qual será o valor de retorno de retangulo?
+
+// function retangulo() {
+
+//   var altura = 10;
+//   let base = 20;
+
+//   if (altura > 5) {
+    
+//     let base = 10;
+//   }
+
+//   return base * altura;
+// }
+
+// console.log(retangulo()); // saida: 200
+
+// // A. 200
+// // B. 100
+// // C. Infinite loop
+// // D. SyntaxError: Identifier ‘base’ has already been declared
+
+
+// // Qual será o valor de retorno de retangulo?
+
+// var x = "Volvo" + 16 + 4
+
+// console.log(x); // saída: Volvo164 
+
+
+
+// // JavaScript é a linguagem de programação do _____.
+
+// // A. Desktop
+// // B. Mobile
+// // C. Web
+// // D. Server
+
+// Resposta: C. Javascript é uma linguagem de programação em Web.
+
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// // console.log(Math.round(107.5)); // saída: 108
+// // console.log(Math.sqrt(49));
+
+// const atual = new Date();
+
+// console.log(atual); // saída: Sat Nov 12 2022 22:39:28 GMT-0300 (Horário Padrão de Brasília)
+
+
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// const valores = [10, 20, 30];
+// const resultado = valores.map(minhaFunc);
+
+// console.log("Resultado : ", resultado); // saída: [100, 400, 900]
+
+// function minhaFunc(valor, indice, array) {
+
+//   return valor * valor;
+// }
+
+
+// // A. Result: 10,20,30
+// // B. Result: 10*10,20*20,30*30
+// // C. Result: 100,400,900
+// // D. ValueError
+
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// const arr = [10, 20, 30];
+// let resultado = 0;
+
+// arr.forEach(minhaFunc);
+
+// console.log("Resultado: ", resultado); // saída: A. Resultado: 60
+
+// function minhaFunc(valor, indice, array) {
+
+//   resultado += valor;
+// }
+
+
+// // A. Resultado: 60
+// // B. Resultado: 102030
+// // C. Resultado: 10,20,30
+// // D. ValueError
+
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// Programa 1
+
+//  var carros = ["Honda", "Hyundai", "Mahindra"];
+//  var resultado = carros.unshift("Toyota", "Ford");
+
+//  console.log("[", resultado, "]", carros); // saída: ['Toyota', 'Ford', 'Honda', 'Hyundai', 'Mahindra']
+
+// Programa 2
+
+// var carros = ["Honda", "Hyundai", "Mahindra"];
+// var resultado = carros.shift();
+
+// console.log("Resultado: ", carros); // saída: ['Hyundai', 'Mahindra']
+
+// // Programa 3
+
+// var valores = [10, 20, 30, 40];
+
+// var resultado = valores.reduceRight(function(x, y) {
+
+//   return (x + y);
+// });
+
+// console.log("Resultado: " + resultado); // saída: Resultado: 100
+
+
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// var msgs = new Array("Ola", "Oi", "Manhã!");
+
+// for(i = 0; i < msgs.length; i++) {
+
+//   document.write(msgs[i] + " | "); // saída: Ola | Oi | Manhã! |
+// }
+
+
+
+// Qual será a saída do seguinte código JavaScript?
+
+// var a;
+
+// console.log(a);
+
+// var b = 10;
+// console.log(b++); // saída: 10
+// console.log(b); // saída: 11
+// console.log(b++); // saída: 11
+// console.log(b); // saída: 12
+// console.log(b++); // saída: 12
+// console.log(b); // saída: 13
+
+// var a = 10
+// console.log(a = 20); // saída: 20
+
+// console.log(+2 + 2); // saída: 4
+// console.log(+2 - 2); // saída: 0
+
+// var a = 10;
+
+// if(a == 20);
+//    console.log(a); // saída: 10
+
+// var a = 10;
+
+// if(a == a++)
+//    console.log(a); // saída: 11
+
+// (A) Erro
+// (B) Nada é impresso
+// (C) 10
+// (D) 11
+
+// var a = 10;
+
+// if (a == a++) {
+//   console.log(a); // saída: 11
+// }
+
+// for(var i = 0; i < 5; i++) {
+//   console.log(i++); // 0 0 - saída: 0 2 4 
+//                     // 1 2
+//                     // 2 4
+//                     // 3
+//                     // 4
+// }
+
+// for(var i = 0; i < 5; i++);
+// {
+//   console.log(i++); // saída: 5
+// }
+
+// for(var i = 0; i++<5;) {
+//   console.log(i); // saída 1 2 3 4 5
+// }
+
+// // Programa 
+
+// // var primeiroNomes = ["c", "c++", "java", "python", "perl"];
+
+// // for(var i = 0; i < primeiroNomes.length; i++) {
+
+// //   if(i % 2 === 0)
+// //      continue;
+// //      console.log(i); // 1 3
+// // }
+
+// (A) 012345
+// (B) 01234
+// (C) 135
+// (D) 13
+
+// // Programa 
+
+// var primeiroNomes = [];
+
+// for(var i = 0; i <= primeiroNomes; i++) {
+
+//   console.log("JavaScript"); // saída: JavaScript
+// }
+
+
+// // (A) Error
+// // (B) Nothing is printed
+// // (C) Javascript
+// // (D) JavascriptJavascript
+
+
+
+
+
+
+
+
+
+
+
+
+// // Qual é a saída do programa abaixo?
+
+// var questao = "Sua especie?";
+// var respostaPadrao = "humano";
+// var saida = prompt(questao, respostaPadrao);
+
+// document.write(saida); // saída: humano
+
+// // (A) Nada é impresso
+// // (B) humano
+// // (C) Error
+// // (D) NaN
+
+
+// // Programa 
+
+// var valorMath = Math.floor('f');
+
+// console.log(valorMath); // saída: D. NaN
+
+// // (A) It is Error
+// // (B) Nothing is printed
+// // (C) 0 is the output
+// // (D) NaN is the output
+
+// // var valorMath = Math.ceil(0);
+
+// // console.log(valorMath); // saída: 0
+
+// (A) 1
+// (B) 0
+// (C) NaN
+// (D) None of the above
+
+// console.log(parseFloat('77.3') + "#"); // saída: 77.3#
+// console.log(parseInt('77') + "#"); // saída: 77#
+// console.log(parseInt('123.45') + "#"); // saída: 123#
+// console.log(Number("2.34" ) + "#"); // saída 2.34#
+
+// // Programa 
+
+// re = /[-]/;
+// target = "254-96-9163";
+
+// resultado = target.split(re);
+
+// console.log(resultado[0] + resultado[1]); // saída: B. 2.34#
+
+// // (A) 350
+// // (B) 25496
+// // (C) 254-96
+// // (D) Error
+
+
+// Programa 
+
+re = /s/;
+target = "1 2 3 4 5";
+
+resultado = target.split(re);
+
+console.log(resultado.length + " & "); // saída: 1 &
+
+var temp = 0;
+
+for(i = 0; i < resultado.length; i++) {
+
+  temp += parseInt(resultado[i]);
+}
+
+console.log(temp); // saída: 1
