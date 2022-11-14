@@ -16054,7 +16054,6 @@
 // console.log(meuArray); // saída: ['inicial', 'a', 'b', 'c', 'd', 'final']
 
 
-<<<<<<< HEAD
 // // Qual será a saída do código a seguir?
 
 // console.log("50" + 50 - 50); // saída: primeiro - "50" + 50 = 5050; 
@@ -16508,7 +16507,6 @@ for(i = 0; i < resultado.length; i++) {
 }
 
 console.log(temp); // saída: 1
-=======
 
 // Exemplos Arrays
 
@@ -17123,4 +17121,3 @@ console.log(temp); // saída: 1
 
 //   console.log(4);
 // })() // saída: 1 4 3 2 
->>>>>>> bdd123bd3b2974afbb335de2964a8f60e9d7f9ed
