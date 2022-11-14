@@ -16054,6 +16054,7 @@
 // console.log(meuArray); // saída: ['inicial', 'a', 'b', 'c', 'd', 'final']
 
 
+<<<<<<< HEAD
 // // Qual será a saída do código a seguir?
 
 // console.log("50" + 50 - 50); // saída: primeiro - "50" + 50 = 5050; 
@@ -16507,3 +16508,619 @@ for(i = 0; i < resultado.length; i++) {
 }
 
 console.log(temp); // saída: 1
+=======
+
+// Exemplos Arrays
+
+// // slice
+
+// const animais = ['anta', 'bison', 'camelo', 'pato', 'elefante']
+
+// // console.log(animais.slice(2, 4)); // saída: ['camelo', 'pato']
+
+// // console.log(animais.slice(-2)); // saída: ['pato', 'elefante']
+
+
+// // iterador
+
+// var arr = ['w', 'y', 'k', 'o', 'p']
+
+// for(let letra of arr) {
+
+//   console.log(letra); // saída: w y k o p
+// }
+
+// var arr = ['w', 'y', 'k', 'o', 'p'];
+// var eArr = arr[Symbol.iterator]();
+
+// console.log(eArr.next().value); w 
+// console.log(eArr.next().value); y 
+// console.log(eArr.next().value); k 
+// console.log(eArr.next().value); o 
+// console.log(eArr.next().value); p 
+
+
+// // O método at() recebe um valor inteiro e 
+// // retorna o item referente ao index dele, 
+// // permitindo valores positivos ou negativos.
+
+// const carrinho = ['maça', 'banana', 'pera']
+
+// function retornarUltimo(arr) {
+
+//   return arr.at(-1)
+// }
+
+// const item1 = retornarUltimo(carrinho)
+
+// console.log(item1); // saída: pera
+
+// carrinho.push('laranja')
+
+// const item2 = retornarUltimo(carrinho)
+
+// console.log(item2); // saída: laranja
+
+
+// // copyWithin() copia parte de um array para outra localização dentro deste mesmo array e o retorna, sem alterar seu tamanho.
+
+// console.log([1, 2, 3, 4, 5].copyWithin(0, 3)); // saída: [4, 5, 3, 4, 5]
+
+
+// // entries() retorna um novo objeto Array Iterator que contém os pares chave/valor para cada índice no array.
+
+// var arr = ['a', 'b', 'c'];
+// var eArr = arr.entries()
+
+// console.log(eArr.next().value); // saída: [0, 'a']
+
+// console.log(eArr.next().value); // saída: [1, 'b']
+
+// console.log(eArr.next().value); // saída: [2, 'c']
+
+
+// // every() testa se todos os elementos do array passam pelo teste implementado pela função fornecida. Este método retorna um valor booleano.
+
+// const estaAbaixoDoLimite = (atualValor) => atualValor < 40;
+// const array1 = [1, 30, 39, 29, 10, 13];
+
+// console.log(array1.every(estaAbaixoDoLimite)); // saída: true
+
+
+// // fill() preenche todos os valores do array a partir do índice inicial a um índice final com um valor estático.
+
+// console.log([1, 2, 3].fill(4)); // saída: [4, 4, 4]
+// console.log([1, 2, 3].fill(4, 1)); // saída: [1, 4, 4]
+
+
+// filter() cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida.
+
+// const palavras = ['spray', 'linha', 'elite', 'exuberante', 'destruição', 'presente' ];
+// const resultado = palavras.filter(palavra => palavra.length > 6);
+
+// console.log(resultado); // saída: ['exuberante', 'destruição', 'presente']
+
+// Programa 2
+
+// function ehGrandeSuficiente(valor) {
+
+//   return valor >= 10;
+// }
+
+// var filtrado = [12, 5, 8, 130, 44].filter(ehGrandeSuficiente);
+
+// console.log(filtrado); // saída: [12, 130, 44]
+
+// // Programa 3
+
+// var arr = [
+//   {
+//     id: 15
+//   },
+//   {
+//     id: -1
+//   },
+//   {
+//     id: 0
+//   },
+//   {
+//     id: 3
+//   },
+//   {
+//     id: 12.2
+//   },
+//   {},
+//   {
+//     id: null
+//   },
+//   {
+//     id: NaN
+//   },
+//   {
+//     id: 'undefined'
+//   }
+// ];
+
+// var entradasInvalidas = 0
+
+// function filtrarPorId(obj) {
+
+//   if ('id' in obj && typeof(obj.id) === 'number' && !isNaN(obj.id)) {
+//     return true;
+
+//   } else {
+//     entradasInvalidas++;
+
+//     return false;
+//   }
+// }
+
+// var arrPorID = arr.filter(filtrarPorId);
+
+// console.log('Array Filtrado\n', arrPorID); // saída:  
+//                                                       // 0 : {id: 15}
+//                                                       // 1 : {id: -1}
+//                                                       // 2 : {id: 0}
+//                                                       // 3 : {id: 3}
+//                                                       // 4 : {id: 12.2}
+
+// console.log('Número inválido de entradas = ', entradasInvalidas); // saída: Número inválido de entradas =  4
+
+
+// // Programa 4
+
+// var frutas = ['maca', 'banana', 'uvas', 'manga', 'laranja'];
+
+// function fitrarItens(consulta) {
+
+//   return frutas.filter(function(elemento) {
+
+//     return elemento.toLowerCase().indexOf(consulta.toLowerCase()) > -1;
+//   })
+// }
+
+// console.log(fitrarItens('an')); // saída: ['banana', 'manga', 'Laranja']
+// console.log(fitrarItens('ac')); // saída: ['maca']
+
+
+// find() retorna o valor do primeiro elemento do array que satisfizer a função de teste provida. 
+
+// // Programa 1
+
+// const array1 = [5, 12, 8, 134, 44];
+// const encontrado = array1.find(elemento => elemento > 10);
+
+// console.log(encontrado); // saída: 12
+
+// // Programa 2
+
+// const inventario = [
+//   {
+//     nome: 'maças',
+//     quantidade: 2
+//   },
+//   {
+//     nome: 'bananas',
+//     quantidade: 0
+//   },
+//   {
+//     nome: 'cerejas',
+//     quantidade: 5
+//   }
+// ];
+
+// function ehCereja(fruta) {
+
+//   return fruta.nome === 'cerejas'
+// }
+
+// console.log(inventario.find(ehCereja)); // saída: {nome: 'cerejas', quantidade: 5}
+
+// // Programa 3
+
+// function ehPrimo(elemento, indice, array){
+
+//   var inicial = 2;
+
+//   // Math.sqrt - raiz quadrada
+//   while(inicial <= Math.sqrt(elemento)) {
+
+//     if (elemento % inicial++ < 1) {
+      
+//       return false;
+//     }
+//   }
+
+//   return elemento > 1;
+// }
+
+// console.log([4, 6, 8, 12].find(ehPrimo)); // saída: undefined
+// console.log([4, 5, 8, 12].find(ehPrimo)); // saída: 5
+
+
+// // findIndex() retorna o índice no array do primeiro elemento que satisfizer 
+// // a função de teste provida. 
+// // Caso contrário, retorna -1, indicando que nenhum elemento passou no teste.
+
+// function ehPrimo(elemento, indice, array) {
+
+//   var inicial = 2;
+
+//   while(inicial <= Math.sqrt(elemento)) {
+
+//     if(elemento % inicial++ < 1) {
+
+//       return false;
+//     }
+//   }
+
+//   return elemento > 1;
+// }
+
+// console.log([4, 6, 8, 12].findIndex(ehPrimo)); // saída -1
+// console.log([4, 6, 7, 12].findIndex(ehPrimo)); // saída: 2
+
+
+// // flat() cria um novo array com todos elementos sub-arrays 
+// // concatenados nele de forma recursiva até a profundidade especificada
+
+// const arr1 = [0, 1, 2, [3, 4]];
+
+// console.log(arr1.flat()); // saída: [0, 1, 2, 3, 4]
+
+// const arr2 = [0, 1, 2, [[[3, 4]]]];
+
+// console.log(arr2.flat(2)); // saída:  [0, 1, 2, [3, 4]]
+
+
+// // flatMap() primeiro mapeia cada elemento usando uma função de 
+// // mapeamento e, em seguida, nivela o resultado em um novo array.
+
+// const arr1 = [1, 2, [3], [4, 5], 6, []];
+// const achatado = arr1.flatMap(num => num);
+
+// console.log(achatado); // saída:  [1, 2, 3, 4, 5, 6]
+
+
+// forEach() executa uma dada função em cada elemento de um array.
+
+// Programa 1
+// const array1 = ['a', 'b', 'c'];
+
+// array1.forEach(elemento => console.log(elemento)); // saída: a , b, c
+
+// Programa 2 
+
+// function logarElementosMatriz(elemento, indice, array) {
+
+//   console.log("a[" + indice + "] = " + elemento); // saída: a[0] = 2
+//                                                          // a[1] = 5
+//                                                          // a[2] = 9
+// }
+
+// [2, 5, 9].forEach(logarElementosMatriz);
+
+
+// // Prever a saída do seguinte código JS?
+
+// const a = {
+//   msg: 'OI'
+// };
+
+// const b = a;
+
+// b.msg = "OLA";
+
+// console.log(a, b); // saída: {msg: 'OLA'} {msg: 'OLA'}
+
+
+// // Prever a saída do seguinte código JS?
+
+// let a = [1, 2, 3];
+// let b = [4, 5, 6];
+
+// console.log(a + b); // saída: 1,2,34,5,6]
+
+
+// // Prever a saída do seguinte código JS?
+
+// const arr = [10, 20, 30];
+// arr.push(40)
+
+// console.log(arr); // saída: [10, 20, 30, 40]
+
+// // const arr1 = [10, 20, 30]
+// // arr1 = [];
+
+// // // console.log(arr1); // saída: Error
+
+// const arr2 = [10, 20, 30];
+// arr2[2] = 50;
+
+// console.log(arr2); // saída: [10, 20, 50]
+
+
+// // Prever a saída do seguinte código JS?
+
+// var obj = {
+//   nome: "bob",
+//   buscarNome: function() {
+//     console.log(this.nome); // saída: bob peter
+//   }
+// }
+
+// var buscarNome = obj.buscarNome;
+// var obj2 = {
+//   nome: "peter", buscarNome
+// };
+
+// obj.buscarNome()
+// obj2.buscarNome()
+
+
+// // Prever a saída do seguinte código JS?
+
+// const pessoa = {
+//   nome: 'bob'
+// };
+
+// const array = [pessoa, pessoa, pessoa];
+
+// array[1].nome = "";
+
+// console.log(array[0].nome); // saída: undefined
+
+
+// // Prever a saída do seguinte código JS?
+
+// var a = 1;
+
+// function b() {
+
+//   a = 10;
+
+//   return;
+
+//   function a() {}
+// }
+
+// b();
+
+// console.log(a); // saída: 1
+
+
+// // Prever a saída do seguinte código JS?
+
+// async function algo() {
+
+//   console.log('1');
+
+//   let promise = new Promise((resolve, reject) => {
+    
+//     setTimeout(() => {
+
+//       console.log('2');
+//       resolve('doar!')
+//     }, 100)
+//   });
+
+//   await promise;
+
+//   setTimeout(() => {
+
+//     console.log('3');
+//   }, 100);
+
+//   console.log('4');
+// }
+
+// algo();
+
+// console.log('5');
+
+// // Resposta 1 5 2 4 3
+
+
+// // Prever a saída do seguinte código JS?
+
+// console.log(+"ola"); // saída: NaN
+
+
+// // Prever a saída do seguinte código JS?
+
+// var resultado;
+
+// for(var i = 5; i > 0; i--) {
+
+//   resultado = resultado + i;
+// }
+
+// console.log(resultado); // NaN
+
+
+// // Prever a saída do seguinte código JS?
+
+// var a = 1.2;
+
+// console.log(typeof a); // saída: number
+
+
+// // Prever a saída do seguinte código JS?
+
+// var x = 10;
+
+// if(x) {
+//   let x = 4;
+// }
+
+// console.log(x); // saída: 10
+
+
+// // Prever a saída do seguinte código JS?
+
+// console.log(1 + -"1" + 2); // saída: 2
+
+
+// // Prever a saída do seguinte código JS?
+
+// (function(x) {
+
+//   return (function(y) {
+
+//     console.log(x); // saída: 20
+//   })(10);
+// })(20);
+
+
+// // Prever a saída do seguinte código JS?
+
+// var num = 20;
+// var buscarNumero = function() {
+
+//   console.log(num); // saída: undefined
+
+//   var num = 10;
+// }
+
+// buscarNumero()
+
+
+// // Prever a saída do seguinte código JS?
+
+// function f1() {
+//   num = 10;
+// }
+
+// f1();
+
+// console.log("window.num: " + window.num); // saída: window.num: 10
+
+
+// // Prever a saída do seguinte código JS?
+
+// console.log("(null + undefined): " + (null + undefined)); // saída: (null + undefined): NaN
+
+
+// // Prever a saída do seguinte código JS?
+
+// (function() {
+
+//   var a = (b = 3);
+// })();
+
+// // console.log("valor de a: " + a); // saída: a is not defined
+// // console.log("valor de b: " + b); // saída: valor de b: 3
+
+
+
+// // Prever a saída do seguinte código JS?
+
+// var y = 1;
+
+// if (function f() {}) {
+  
+//   y += typeof f;
+// }
+
+// console.log(y); // saída: 1undefined
+
+
+// // Prever a saída do seguinte código JS?
+
+// var k = 1;
+
+// if (1) {
+//   eval(function foo() {});
+
+//   k += typeof foo;
+// }
+
+// console.log(k); // saída: 1undefined
+
+
+// // Prever a saída do seguinte código JS?
+
+// console.log("(-1 / 0): " + -1 / 0); // saída: (-1 / 0): -Infinity
+// console.log("(1 / 0): " + 1 / 0); // saída: (1 / 0): Infinity
+// console.log("(0 / 0): " + 0 / 0); // saída: (0 / 0): NaNs
+// console.log("(0 / 1): " + 0 / 1); // saída: (0 / 1): 0
+// console.log(+1); // saída: 1
+
+
+
+// // Prever a saída do seguinte código JS?
+
+// var a = 4;
+// var b = '5';
+
+// console.log("(a + b): " + (a + b)); // saída: (a + b): 45
+// console.log("(a - b): " + (a - b)); // saída: (a - b): -1
+// console.log("(a * b): " + (a * b)); // saída: (a * b): 20
+// console.log("(a / b): " + (a / b)); // saída: (a / b): 0.8
+// console.log("(a % b): " + (a % b)); // saída: (a % b): 4
+
+
+// // Prever a saída do seguinte código JS?
+
+// console.log("Max : " + Math.max(10, 2, NaN)); // saída: Max : NaN
+// console.log("Max : " + Math.max()); // saída: Max : -Infinity
+// console.log("Max : " + Math.max(2, 3, 43, 5, 1)); // saída: 43
+
+
+// // Prever a saída do seguinte código JS?
+
+// (function() {
+
+//   var a = (b = 3);
+// })()
+
+// console.log("a definido? " + (typeof a !== "undefined")); // saída: a definido? false
+// console.log("b definido? " + (typeof b !== "undefined")); // saída: b definido? true
+
+
+// // Prever a saída do seguinte código JS?
+
+// var meuObjeto = {
+//   foo: "bar",
+//   func: function() {
+
+//     var self = this;
+
+//     console.log("função externa: this.foo = " + this.foo); // saída: função externa: this.foo = bar
+//     console.log("função externa: self.foo = " + self.foo); // saída: função externa: self.foo = bar
+    
+//     (function() {
+//       console.log("função interna: this.foo = " + this.foo); // saída: função interna: this.foo = undefined
+//       console.log("função interna: self.foo = " + self.foo); // saída: função interna: self.foo = bar
+//     })();
+//   }
+// };
+
+// meuObjeto.func();
+
+
+
+// // Prever a saída do seguinte código JS?
+
+// console.log(0.1 + 0.2); // saída: 0.30000000000000004
+// console.log(0.1 + 0.2 == 0.3); // saída: false
+
+
+
+// // Prever a saída do seguinte código JS?
+
+// (function() {
+
+//   console.log(1);
+
+//   setTimeout(function() {
+//     console.log(2);
+//   }, 1000);
+
+//   setTimeout(function() {
+//     console.log(3);
+//   }, 0);
+
+//   console.log(4);
+// })() // saída: 1 4 3 2 
+>>>>>>> bdd123bd3b2974afbb335de2964a8f60e9d7f9ed
