@@ -16490,23 +16490,23 @@
 // // (D) Error
 
 
-// Programa 
+// // Programa 
 
-re = /s/;
-target = "1 2 3 4 5";
+// re = /s/;
+// target = "1 2 3 4 5";
 
-resultado = target.split(re);
+// resultado = target.split(re);
 
-console.log(resultado.length + " & "); // saída: 1 &
+// console.log(resultado.length + " & "); // saída: 1 &
 
-var temp = 0;
+// var temp = 0;
 
-for(i = 0; i < resultado.length; i++) {
+// for(i = 0; i < resultado.length; i++) {
 
-  temp += parseInt(resultado[i]);
-}
+//   temp += parseInt(resultado[i]);
+// }
 
-console.log(temp); // saída: 1
+// console.log(temp); // saída: 1
 
 // Exemplos Arrays
 
@@ -17121,3 +17121,270 @@ console.log(temp); // saída: 1
 
 //   console.log(4);
 // })() // saída: 1 4 3 2 
+
+
+// // Qual é a saída do programa abaixo:
+
+// var cidade = new Array("Assunção", "Montevidéu", "Brasília", "Buenos Aires");
+
+// cidade.push("Bogotá");
+
+// console.log(cidade); // saída: ['Assunção', 'Montevidéu', 'Brasília', 'Buenos Aires', 'Bogotá']
+
+
+
+// // Qual é a saída do programa abaixo:
+
+// var cidade = new Array("Assunção", "Montevidéu", "Brasília", "Buenos Aires");
+
+// console.log(cidade.slice(2)); // saída: ['Brasília', 'Buenos Aires']
+
+
+// // Qual é a saída do programa abaixo:
+
+
+// var cidade = new Array("Assunção", "Montevidéu", "Brasília", "Buenos Aires");
+
+// // console.log(cidade.shift()); // saída: Assunção
+// // console.log(cidade.sort()); // saída: ['Assunção', 'Brasília', 'Buenos Aires', 'Montevidéu']
+
+
+// // Qual é a saída do programa abaixo:
+
+// function ehInteiro(num) {
+//   return num % 1 === 0;
+// }
+
+// console.log(ehInteiro(4)); // saída: true
+// console.log(ehInteiro(12.2)); // saída:  false
+// console.log(ehInteiro(0.3)); // saída: false
+
+
+// // Qual é a saída do programa abaixo:
+
+// (function() {
+
+//   var a = b = 5;
+
+// })()
+
+// console.log(b); // saída: 5
+
+
+
+// // Qual é a saída do programa abaixo:
+
+// function multiplicar(a) {
+
+//   console.log(a); // saída: 5
+
+//   return function(b) {
+
+//     console.log(b); // saída: 6
+
+//     return a * b;
+//   }
+// }
+
+// console.log(multiplicar(5)(6)); // saída: 30
+
+
+// // Qual é a saída do programa abaixo:
+
+// function nomeCompleto() {
+
+//   return "Olá, esse é " + this.primeiro + " " + this. ultimo;
+// }
+
+// console.log(nomeCompleto()); // saída: Olá, esse é undefined undefined
+
+
+// var pessoa = {
+//   primeiro: "Foo", 
+//   ultimo: "Bar"
+// }
+
+// console.log(nomeCompleto.bind(pessoa)()); // saída: Olá, esse é Foo Bar
+
+
+// // Qual é a saída do programa abaixo:
+
+// var arrayLista = ['a', 'b', 'c', 'd', 'e', 'f'];
+// var outroArrayLista = arrayLista;
+// arrayLista = [];
+
+// console.log(outroArrayLista); // saída: ['a', 'b', 'c', 'd', 'e', 'f']
+
+
+
+// // Qual é a saída do programa abaixo:
+
+// var arrayLista = ['a', 'b', 'c', 'd', 'e', 'f'];
+// var outroArrayLista = arrayLista;
+// arrayLista.length = 0;
+
+// console.log(outroArrayLista); // saída: []
+
+
+// // Qual é a saída do programa abaixo:
+
+// var a = "42";
+// var b = 42;
+
+// console.log(a == b); // saída: true
+// console.log(a === b); // saída: false
+
+
+// // Qual é a saída do programa abaixo:
+
+// const pessoa = { // const cria uma ligação imutável
+//   nome: "Diego"
+// }
+
+// let animal = {
+//   especie: "cobra"
+// }
+
+// Object.freeze(pessoa); // Object.freeze isso torno objeto imutável
+
+// pessoa.nome = "Pereira";
+
+// console.log(pessoa); // saída: {nome: 'Diego'}
+
+
+// // Qual é a saída do programa abaixo:
+
+// const arr = [1, 2, 3];
+
+// const dobro = arr.map(function(elemento) {
+
+//   return elemento * 2;
+// });
+
+// console.log(dobro); // saída: [2, 4, 6]
+
+
+
+// // Qual é a saída do programa abaixo:
+
+// var x = {
+//   foo: 1
+// }
+
+// var saida = (function() {
+
+//   delete x.foo;
+//   return x.foo;
+// })()
+
+// console.log(saida); // saída: undefined
+
+
+// // Qual é a saída do programa abaixo:
+
+// var Colaborador = {
+//   empresa: 'xyz'
+// }
+
+// var colaborador1 = Object.create(Colaborador);
+
+// delete colaborador1.empresa
+
+// console.log(colaborador1.hasOwnProperty('empresa')); // saída: false
+
+// console.log(colaborador1.empresa); // saída: xyz
+
+
+// // Qual é a saída do programa abaixo:
+
+// function script() {
+//   let n = 0;
+
+//   return {
+
+//     proximo: function() {
+
+//       console.log(n);
+
+//       if(n < 10) {
+
+//         n += 2;
+
+//         return {
+//           valor: n/2,
+//           completo: false 
+//         }
+
+//       } else {
+
+//         return {
+
+//           valor: -1,
+//           completo: true 
+//         }
+//       }
+//     }
+//   }
+// }
+
+// saida = "";
+
+// const n = script();
+// x = n.proximo();
+
+// while(x.completo == false) {
+
+//   console.log(x.valor);
+//   saida += x.valor + "/"; // valor 1 2 3 4 5
+//   x = n.proximo();
+// }
+
+// alert(saida); // saída: 1/2/3/4/5/
+
+
+// // Qual é a saída do programa abaixo:
+
+// let o = {
+//   um: 1,
+//   dois: 2,
+//   tres: 3
+// };
+
+// for(let p in o) 
+//   console.log(p); // saída: um dois tres
+
+
+//  // Qual é a saída do programa abaixo:
+
+//  var x1 = 16;
+//  var x2 = "16";
+//  var x3 = [1, 2, 3];
+
+// //  console.log(x3[0] == 1); // saída: true
+// //  console.log(x1 == x2); // saída: true
+// // console.log(x1 === x2); // saída: false
+// // console.log(true == x1); // saída: false
+// // console.log(true == x3[0]); // saída: true
+
+
+//  // Qual é a saída do programa abaixo:
+
+//  var x = 0;
+
+//  for(var i = 10; i < 15; i++) {
+
+//   x += i;
+//  }
+
+//  console.log(x); // saída: 60
+
+
+
+// // Qual é a saída do programa abaixo:
+
+// var str = "123456789";
+// var p = /[^5-7]/g;
+
+// var resultado = str.match(p);
+
+// console.log(resultado); // saída: ['1', '2', '3', '4', '8', '9']

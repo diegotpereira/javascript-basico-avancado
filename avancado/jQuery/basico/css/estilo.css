@@ -38,9 +38,125 @@
     /* display: none; */
 /* }  */
 
-#animacao {
+/* #animacao {
     background: #98bf21;
     height: 100px;
     width: 100px;
     position: absolute;
+} */
+
+
+/* Programa 9 */
+
+/* .toggler {
+    width: 500px;
+    height: 200px;
+    position: relative;
+}
+
+#botao {
+    padding: .5em 1em;
+    text-decoration: none;
+}
+
+#efeito {
+    width: 240px;
+    height: 135px;
+    padding: 0.4em;
+    position: relative;
+    background: #fff;    
+}
+
+#efeito h3 {
+    margin: 0;
+    padding: 0.4em;
+    text-align: center;
+} */
+
+/* Programa 10 */
+
+/* #div1 {
+    width: 90px;
+    height: 90px;
+    display: none;
+    background-color: black;
+} */
+
+
+/* Programa 11
+
+#div1 {
+    width: 90px;
+    height: 90px;
+    display: none;
+    background-color: black;
+    border-radius: 20px;
+}
+
+#div2 {
+    width: 90px;
+    height: 90px;
+    display: none;
+    background-color: green;
+    border-radius: 20px;
+}
+
+
+#div3 {
+    width: 90px;
+    height: 90px;
+    display: none;
+    background-color: blue;
+    border-radius: 20px;
+}
+
+#div4 {
+    width: 90px;
+    height: 90px;
+    display: none;
+    background-color: red;
+    border-radius: 20px;
+}
+
+#div5 {
+    width: 90px;
+    height: 90px;
+    display: none;
+    background-color: purple;
+    border-radius: 20px;
+} */
+
+
+/* Programa 12
+p {
+    color: blue;
+    margin: 8px;
+}
+
+b {
+    color: red;
+} */
+
+
+/* Programa
+
+p {
+    color: red;
+    margin: 4px;
+}
+
+b {
+    color: blue;
+} */
+
+#p1 {
+    background-color: #ff0000;
+}
+
+#p2 {
+    background-color: #00ff00;
+}
+
+#p3 {
+     background-color: #0000ff;
 }
