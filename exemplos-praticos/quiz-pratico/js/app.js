@@ -17388,3 +17388,121 @@
 // var resultado = str.match(p);
 
 // console.log(resultado); // saída: ['1', '2', '3', '4', '8', '9']
+
+
+
+// // Analise o seguinte código escrito na linguagem Javascript:
+
+// var frutas = new Array("banana", "laranja", "limao");
+
+// frutas.shift(); // laranja | limao
+// frutas.splice(1, 1, "uva"); // laranja | uva
+// for(var i = 0; i < frutas.length; i++) {
+
+//   document.write(frutas[i] + " | "); // saída: laranja | limao 
+// }
+
+
+// // Qual é a saída do código abaixo:
+
+// var a = 5;
+// var b = 10;
+
+// if(a === 5) {
+
+//   let a = 4;
+//   var b = 1;
+
+//   console.log(a); // saída: 4
+//   console.log(b); // saida: 1;
+// }
+
+// console.log(a); // saída: 5
+// console.log(b); // saída: 1
+
+
+// // Qual é a saída do código abaixo:
+
+// var str = "123456789";
+// var p = /[^5-7]/g;
+// var resultado = str.match(p);
+
+// console.log(resultado); // saída: ['1', '2', '3', '4', '8', '9'];
+
+
+
+// // Qual é a saída do código abaixo:
+
+// let total_divida = 1400;
+
+// function atualizar_divida(valor_recebido) {
+
+//   // valor_pagar = total_divida -= valor_recebido;
+//   total_divida -= valor_recebido;
+
+//   // return valor_pagar;
+// }
+
+// for(var i = 0; i < 12; i++) {
+
+//   atualizar_divida(70);
+// }
+
+// console.log(total_divida);
+
+// // atualizar_divida(400);
+
+// // console.log(valor_pagar);
+
+
+// // // A) Marcelo lhe deveria 2240 reais pois o loop (for) está incrementando o total da dívida.
+// // // B) Marcelo teria pago 840 reais e lhe deveria ainda 560.
+// // // C) Marcelo lhe deveria ainda 1400 reais, pois o código possui erro semântico.
+// // // D) A declaração da função atualizar_divida está errada.
+// // // E) O trecho apresenta um erro de sintaxe na linha 3.
+
+// // Resposta B. Marcelo teria pago 840 reais e lhe deveria ainda 560.
+
+
+
+var aprovados = [
+  {
+    candidato: "Renata Soares",
+    nota: 7.8,
+    idade: 29
+  },
+  {
+    candidato: "Marcos Teixeira",
+    nota: 7.9,
+    idade: 26
+  },
+  {
+    candidato: "Priscila Silva",
+    nota: 6.9,
+    idade: 30
+  },
+  {
+    candidato: "João Oliveira",
+    nota: 8.2,
+    idade: 26
+  },
+  {
+    candidato: "Adriana Telles",
+    nota: 4.7,
+    idade: 28
+  }
+];
+
+aprovados.sort(classificacao());
+
+document.write(aprovados[1], aprovados.candidato);
+
+function classificacao() {
+
+  return function(objeto1, objeto2) {
+
+    var a = (objeto2['nota'] - objeto1['nota']);
+
+    return (a !== 0) ? a : (objeto1['idade'] - objeto2['idade']);
+  }
+}
