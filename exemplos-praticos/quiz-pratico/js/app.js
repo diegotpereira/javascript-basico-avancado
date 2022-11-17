@@ -16054,6 +16054,459 @@
 // console.log(meuArray); // saída: ['inicial', 'a', 'b', 'c', 'd', 'final']
 
 
+// // Qual será a saída do código a seguir?
+
+// console.log("50" + 50 - 50); // saída: primeiro - "50" + 50 = 5050; 
+                                       // segundo  - 5050 - 50 = 5000
+// console.log(+ 50 - 50);
+// console.log("50" + 50);
+// console.log("50" - 50);
+
+// // A. 5000
+// // B. 50
+// // C. 500
+// // D. 505050
+
+
+
+// // Qual será a saída do código a seguir?
+
+// function externa() {
+
+//   var a = 10;
+
+//   function interna() {
+
+//     var b = 10;
+
+//     return a + b;
+//   }
+
+//   return interna();
+// }
+
+// console.log(externa()); // saída: 20
+
+// // A. 10
+// // B. 20
+// // C. Undefined
+// // D. Error
+
+
+// // Qual será a saída do código a seguir?
+
+// function add(a, b) {
+
+//   return a + b;
+// }
+
+// function conte (...numeros)  {
+
+//   var contar = 0;
+
+//   for(let num of numeros) {
+
+//     contar += num;
+//   }
+
+//   return contar;
+// }
+
+// console.log(add(10, 20, 40), conte(10, 20, 40)); // saída: B. 30 70
+
+// // A. Error
+// // B. 30, 70
+// // C. Undefined, 70
+// // D. 30, 30
+
+
+// // Qual será a saída do código a seguir?
+
+// var contar = 0;
+// var num = 70;
+
+// console.log(contar += num); // saída: 70
+// console.log(contar -= num); // saída: -70
+
+
+
+// // Qual será a saída do código a seguir?
+
+// console.log("A");
+
+// setTimeout(function() {
+//   console.log("B");
+// }, 0);
+
+// console.log("C");
+
+// setTimeout(function() {
+//   console.log("D");
+// }, 1000)
+
+
+// // Resposta: saida: A C B D 
+
+
+// // O que será exibido no console?
+
+// for(var i = 0; i < 5; i++) {
+
+//   setTimeout(function() {
+
+//     console.log(i); // saída: C. 5 5 5 5 5
+//   }, i);
+// }
+
+// // A. 0 1 2 3 4
+// // B. 0 0 0 0 0
+// // C. 5 5 5 5 5
+// // D. 0 5 5 5 5
+
+
+
+// // O que será exibido no console?
+
+// for(let i = 0; i < 5; i++) {
+
+//   setTimeout(function() {
+
+//     console.log(i); // saída: A. 0 1 2 3 4 
+//   }, i);
+// }
+
+
+// // A. 0 1 2 3 4
+// // B. 0 0 0 0 0
+// // C. 5 5 5 5 5
+// // D. 0 5 5 5 5
+
+
+// // O que será exibido no console?
+
+// function tringulo() {
+
+//   var altura = 10;
+//   let base = 20;
+
+//   var altura = 20;
+//   let base = 30;
+
+//   return 0.5 * base * altura;
+// }
+
+// // A. 100
+// // B. SyntaxError: Identifier ‘height’ has already been declared
+// // C. 300
+// // D. SyntaxError: Identifier ‘base’ has already been declared
+
+// // Resposta: D. SyntaxError: Identifier ‘base’ has already been declared
+
+
+
+// // Qual será o valor de retorno de retangulo?
+
+// function retangulo() {
+
+//   var altura = 10;
+//   let base = 20;
+
+//   if (altura > 5) {
+    
+//     let base = 10;
+//   }
+
+//   return base * altura;
+// }
+
+// console.log(retangulo()); // saida: 200
+
+// // A. 200
+// // B. 100
+// // C. Infinite loop
+// // D. SyntaxError: Identifier ‘base’ has already been declared
+
+
+// // Qual será o valor de retorno de retangulo?
+
+// var x = "Volvo" + 16 + 4
+
+// console.log(x); // saída: Volvo164 
+
+
+
+// // JavaScript é a linguagem de programação do _____.
+
+// // A. Desktop
+// // B. Mobile
+// // C. Web
+// // D. Server
+
+// Resposta: C. Javascript é uma linguagem de programação em Web.
+
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// // console.log(Math.round(107.5)); // saída: 108
+// // console.log(Math.sqrt(49));
+
+// const atual = new Date();
+
+// console.log(atual); // saída: Sat Nov 12 2022 22:39:28 GMT-0300 (Horário Padrão de Brasília)
+
+
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// const valores = [10, 20, 30];
+// const resultado = valores.map(minhaFunc);
+
+// console.log("Resultado : ", resultado); // saída: [100, 400, 900]
+
+// function minhaFunc(valor, indice, array) {
+
+//   return valor * valor;
+// }
+
+
+// // A. Result: 10,20,30
+// // B. Result: 10*10,20*20,30*30
+// // C. Result: 100,400,900
+// // D. ValueError
+
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// const arr = [10, 20, 30];
+// let resultado = 0;
+
+// arr.forEach(minhaFunc);
+
+// console.log("Resultado: ", resultado); // saída: A. Resultado: 60
+
+// function minhaFunc(valor, indice, array) {
+
+//   resultado += valor;
+// }
+
+
+// // A. Resultado: 60
+// // B. Resultado: 102030
+// // C. Resultado: 10,20,30
+// // D. ValueError
+
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// Programa 1
+
+//  var carros = ["Honda", "Hyundai", "Mahindra"];
+//  var resultado = carros.unshift("Toyota", "Ford");
+
+//  console.log("[", resultado, "]", carros); // saída: ['Toyota', 'Ford', 'Honda', 'Hyundai', 'Mahindra']
+
+// Programa 2
+
+// var carros = ["Honda", "Hyundai", "Mahindra"];
+// var resultado = carros.shift();
+
+// console.log("Resultado: ", carros); // saída: ['Hyundai', 'Mahindra']
+
+// // Programa 3
+
+// var valores = [10, 20, 30, 40];
+
+// var resultado = valores.reduceRight(function(x, y) {
+
+//   return (x + y);
+// });
+
+// console.log("Resultado: " + resultado); // saída: Resultado: 100
+
+
+
+// // Qual será a saída do seguinte código JavaScript?
+
+// var msgs = new Array("Ola", "Oi", "Manhã!");
+
+// for(i = 0; i < msgs.length; i++) {
+
+//   document.write(msgs[i] + " | "); // saída: Ola | Oi | Manhã! |
+// }
+
+
+
+// Qual será a saída do seguinte código JavaScript?
+
+// var a;
+
+// console.log(a);
+
+// var b = 10;
+// console.log(b++); // saída: 10
+// console.log(b); // saída: 11
+// console.log(b++); // saída: 11
+// console.log(b); // saída: 12
+// console.log(b++); // saída: 12
+// console.log(b); // saída: 13
+
+// var a = 10
+// console.log(a = 20); // saída: 20
+
+// console.log(+2 + 2); // saída: 4
+// console.log(+2 - 2); // saída: 0
+
+// var a = 10;
+
+// if(a == 20);
+//    console.log(a); // saída: 10
+
+// var a = 10;
+
+// if(a == a++)
+//    console.log(a); // saída: 11
+
+// (A) Erro
+// (B) Nada é impresso
+// (C) 10
+// (D) 11
+
+// var a = 10;
+
+// if (a == a++) {
+//   console.log(a); // saída: 11
+// }
+
+// for(var i = 0; i < 5; i++) {
+//   console.log(i++); // 0 0 - saída: 0 2 4 
+//                     // 1 2
+//                     // 2 4
+//                     // 3
+//                     // 4
+// }
+
+// for(var i = 0; i < 5; i++);
+// {
+//   console.log(i++); // saída: 5
+// }
+
+// for(var i = 0; i++<5;) {
+//   console.log(i); // saída 1 2 3 4 5
+// }
+
+// // Programa 
+
+// // var primeiroNomes = ["c", "c++", "java", "python", "perl"];
+
+// // for(var i = 0; i < primeiroNomes.length; i++) {
+
+// //   if(i % 2 === 0)
+// //      continue;
+// //      console.log(i); // 1 3
+// // }
+
+// (A) 012345
+// (B) 01234
+// (C) 135
+// (D) 13
+
+// // Programa 
+
+// var primeiroNomes = [];
+
+// for(var i = 0; i <= primeiroNomes; i++) {
+
+//   console.log("JavaScript"); // saída: JavaScript
+// }
+
+
+// // (A) Error
+// // (B) Nothing is printed
+// // (C) Javascript
+// // (D) JavascriptJavascript
+
+
+
+
+
+
+
+
+
+
+
+
+// // Qual é a saída do programa abaixo?
+
+// var questao = "Sua especie?";
+// var respostaPadrao = "humano";
+// var saida = prompt(questao, respostaPadrao);
+
+// document.write(saida); // saída: humano
+
+// // (A) Nada é impresso
+// // (B) humano
+// // (C) Error
+// // (D) NaN
+
+
+// // Programa 
+
+// var valorMath = Math.floor('f');
+
+// console.log(valorMath); // saída: D. NaN
+
+// // (A) It is Error
+// // (B) Nothing is printed
+// // (C) 0 is the output
+// // (D) NaN is the output
+
+// // var valorMath = Math.ceil(0);
+
+// // console.log(valorMath); // saída: 0
+
+// (A) 1
+// (B) 0
+// (C) NaN
+// (D) None of the above
+
+// console.log(parseFloat('77.3') + "#"); // saída: 77.3#
+// console.log(parseInt('77') + "#"); // saída: 77#
+// console.log(parseInt('123.45') + "#"); // saída: 123#
+// console.log(Number("2.34" ) + "#"); // saída 2.34#
+
+// // Programa 
+
+// re = /[-]/;
+// target = "254-96-9163";
+
+// resultado = target.split(re);
+
+// console.log(resultado[0] + resultado[1]); // saída: B. 2.34#
+
+// // (A) 350
+// // (B) 25496
+// // (C) 254-96
+// // (D) Error
+
+
+// // Programa 
+
+// re = /s/;
+// target = "1 2 3 4 5";
+
+// resultado = target.split(re);
+
+// console.log(resultado.length + " & "); // saída: 1 &
+
+// var temp = 0;
+
+// for(i = 0; i < resultado.length; i++) {
+
+//   temp += parseInt(resultado[i]);
+// }
+
+// console.log(temp); // saída: 1
 
 // Exemplos Arrays
 
@@ -16668,349 +17121,3 @@
 
 //   console.log(4);
 // })() // saída: 1 4 3 2 
-
-
-// // Prever a saída do seguinte código JS?
-
-// var a = new Array(1990, 1992, 1994, 1996, 2002, 2012);
-// var b = [];
-// c = [];
-
-// function calcularIdade(ano) {
-//   return 2022 - ano;
-// }
-
-// for(var i = 0; i < a.length; i++) {
-//   b[i] = calcularIdade(a[i]);
-// }
-
-// for(var i = 0; i < a.length; i++) {
-//   if (b[i] >= 18) {
-    
-//     console.log(b[i]); // saída: 32 30 28 26 20
-//     c[i] = true;
-
-//   } else {
-//     c[i] = false;
-//   }
-// }
-
-// console.log(c); // saída: [true, true, true, true, true, false]
-
-
-// // Encontre a frequência dos elementos na matriz
-
-// // // Usando Reduce
-
-// // let arr = ["ola", "mundo", "java", "ola", "java"];
-
-// // function contarPalavra(p) {
-// //   let resultado = p.reduce((todosNomes, nome) => {
-
-// //     if(nome in todosNomes) {
-
-      
-// //       todosNomes[nome]++;
-
-// //     } else {
-      
-// //       todosNomes[nome] = 1
-// //     }
-
-// //     return todosNomes;
-// //   }, {});
-// //   return resultado;
-// // }
-
-// // console.log(contarPalavra(arr)); // saída: {ola: 2, mundo: 1, java: 2}
-
-// // // Usando Objeto.
-
-// // let arr = ["ola", "mundo", "java", "ola", "java"];
-
-// // function contarPalavra(p) {
-
-// //   var contar = {};
-
-// //   p.forEach((item) => {
-
-// //     if (contar[item]) {
-      
-// //       contar[item]++;
-
-// //     } else {
-
-// //       contar[item] = 1;
-// //     }
-// //   })
-
-// //   return contar;
-// // }
-
-
-// console.log(contarPalavra(arr)); // saída: {ola: 2, mundo: 1, java: 2}
-
-
-// // Agrupar itens com base na idade de uma determinada matriz de objetos
-
-// let pessoa = [
-//   {
-//     nome: 'Alice',
-//     idade: 21
-//   },
-//   {
-//     nome: 'Max',
-//     idade: 20,
-//   },
-//   {
-//     nome: 'Julia',
-//     idade: 20
-//   }
-// ];
-
-// function grupoPor(ar) {
-
-//   var verificar = {};
-
-//   ar.forEach((item) => {
-
-//     if (!verificar[item.idade]) {
-      
-//       verificar[item.idade] = [item];
-
-//     } else {
-
-//       verificar[item.idade].push(item);
-//     }
-//   })
-
-//   return verificar;
-// }
-
-// console.log(grupoPor(pessoa)); // saída: 20: 0: {nome: 'Max', idade: 20}, 1: {nome: 'Julia', idade: 20} e 21: 0 {nome: 'Alice', idade: 21}
-
-
-// // Programe para verificar uma string com colchetes balanceados.
-
-// const ehValido = (str) => {
-
-//   let s = str.replace(/\s+/g, '');
-
-//   if(s.length % 2 !== 0) return false;
-
-//   const pilha = [];
-//   const mapa = new Map([
-//     ['(', ')'],
-//     ['[', ']'],
-//     ['{', '}']
-//   ]);
-
-//   for(let i = 0; i < s.length; i+= 1) {
-
-//     if (mapa.has(s[i])) {
-      
-//       pilha.push(mapa.get(s[i]));
-
-//     } else if(s[i] !== pilha.pop()) {
-
-//       return false;
-//     }
-//   }
-
-//   return pilha.length === 0;
-// };
-
-// let str1 = "({} [] ({}))";
-// let str2 = "}}";
-
-// // console.log(ehValido(str1)); // saída: true
-// console.log(ehValido(str2)); // saída: false
-
-
-// // Encontre os pares de elementos da matriz para os quais 
-// // a soma é igual ao valor de destino fornecido
-
-// let ar = [1, 2, 3, 4, 6, 7, 8, 9];
-
-// function duasSoma(ar, target) {
-
-//   let hash = {};
-//   let soma = [];
-
-//   ar.forEach((item) => {
-
-//     // console.log(item); // saída: 1 2 3 4 6 7 8 9
-//     // console.log(target); // saída: 9
-
-//     let diferente = target - item;
-
-//     // 9 - 1 = 8
-//     // 8 - 1 = 7
-//     // 7 - 1 = 6
-//     // 6 - 1 = 5 -> não tem
-//     // 4 - 1 = 3
-//     // 3 - 1 = 2
-//     // 2 - 1 = 1
-
-//     if(hash[diferente.toString()] !== undefined) {
-
-//       soma.push([item, diferente]);
-//     }
-
-//     hash[item.toString()] = item;
-//   })
-
-//   return soma;
-// }
-
-// console.log(duasSoma(ar, 9)); // saída: 0:[6, 3], 1:[7, 2], 2: [8, 1]
-
-
-// // Encontre o número que falta na matriz não classificada 
-// // com complexidade O(n)
-
-// let ar = [2, 7, 8, 5, 1, 4, 3, 6];
-
-// function encontrar(a) {
-
-//   let l = a.length;
-//   let soma = 1;
-
-//   for(let i = 2; i <= (l + 1); i++) {
-
-//     soma = soma + i;
-//     soma = soma - a[i - 2];
-//   }
-
-
-//   return soma;
-// }
-
-
-// console.log(encontrar(ar)); // saída: 9
-
-
-// // Encontre o número que falta na matriz classificada
-// // com complexidade O(n)
-
-// let ar = [1, 3, 4, 6, 7, 8, 10];
-
-// function encontre(a) {
-
-//   let encontrar = [];
-
-//   for(let i = 0; i < ar.length; i++) {
-
-//     if (!(ar[i + 1] - ar[i] == 1) && !(ar[i + 1] == undefined)) {
-      
-//       encontrar.push(ar[i] + 1);
-//     }
-//   }
-
-//   return encontrar;
-// }
-
-// console.log(encontre(ar)); // saída: [2, 5, 9]
-
-
-// // Encontre o enésimo maior elemento em uma matriz classificada
-
-// let arr = [12, 34, 21, 14, 67, 35, 64, 25]; // 12 14 21 25 34 35 64 67
-// n = 2;
-
-// arr.sort((a, b) => a - b);
-
-// // console.log(arr.length); // 6
-// const maiorlemento = arr[arr.length - n];
-
-// console.log(maiorlemento); // saída: 64
-
-
-// // Remova duplicatas de uma matriz e retorne valores 
-// // exclusivos em complexidade O(n).
-
-// let arr = [1, 2, 3, 4, 3, 6, 5, 4];
-
-// function unica(arr) {
-
-//   let itens = {};
-
-//   arr.forEach((item) => {
-
-//     if (!itens[item]) {
-//       itens[item] = item;
-//     }
-//   });
-
-//   return Object.values(itens);
-// }
-
-// console.log(unica(arr)); // saída: [1, 2, 3, 4, 5, 6]
-
-
-
-// // Imprima todos os elementos duplicados de um array
-
-// let arr = [1, 1, 5, 6, 7, 7, 8, 9, 3, 4, 4];
-
-// function removerDuplicado(ar) {
-
-//   let resultado = ar.filter((item, indice) => {
-
-//     return ar.indexOf(item) !== indice;
-//   });
-
-//   return resultado;
-// }
-
-// console.log(removerDuplicado(arr)); // saída: [1, 7, 4]
-
-
-
-// // Colete livros de uma matriz de objetos e retorne a coleção de livros como uma matriz
-
-// let amigos = [
-//   {
-//     nome: 'Ana',
-//     livros: ['Biblia', 'Harry Poter'],
-//     idade: 21
-//   },
-//   {
-//     nome: 'Bob',
-//     livros: ['Guerra e Paz', 'Romeu e Julieta'],
-//     idade: 26
-//   },
-//   {
-//     nome: 'Alice',
-//     livros: ['O Senhor dos Anéis', 'O Iluminado'],
-//     idade: 18
-//   }
-// ]
-
-
-// let resultado = amigos.reduce((pre, atual) => {
-
-//   return [...pre, ...atual.livros];
-// },[]);
-
-
-// console.log(resultado); // saída: ['Biblia', 'Harry Poter', 'Guerra e Paz', 'Romeu e Julieta', 'O Senhor dos Anéis', 'O Iluminado']
-
-
-// // O que é Closure em JavaScript?
-
-// var outroNum = 100;
-
-// function outroFN() {
-
-//   var internoNum = 50;
-
-//   function internoFn(){
-
-//     return outroNum + internoNum;
-//   }
-
-//   return internoFn();
-// }
-
-// console.log(outroFN()); // saída: 150 - closure é basicamente uma função dentro de outra função.
