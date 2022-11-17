@@ -17811,46 +17811,152 @@
 // // Resposta B. Marcelo teria pago 840 reais e lhe deveria ainda 560.
 
 
+// // Qual é a saída do código abaixo:
 
-var aprovados = [
-  {
-    candidato: "Renata Soares",
-    nota: 7.8,
-    idade: 29
-  },
-  {
-    candidato: "Marcos Teixeira",
-    nota: 7.9,
-    idade: 26
-  },
-  {
-    candidato: "Priscila Silva",
-    nota: 6.9,
-    idade: 30
-  },
-  {
-    candidato: "João Oliveira",
-    nota: 8.2,
-    idade: 26
-  },
-  {
-    candidato: "Adriana Telles",
-    nota: 4.7,
-    idade: 28
-  }
-];
+// var aprovados = [
+//   {
+//     candidato: "Renata Soares",
+//     nota: 7.8,
+//     idade: 29
+//   },
+//   {
+//     candidato: "Marcos Teixeira",
+//     nota: 7.9,
+//     idade: 26
+//   },
+//   {
+//     candidato: "Priscila Silva",
+//     nota: 6.9,
+//     idade: 30
+//   },
+//   {
+//     candidato: "João Oliveira",
+//     nota: 8.2,
+//     idade: 26
+//   },
+//   {
+//     candidato: "Adriana Telles",
+//     nota: 4.7,
+//     idade: 28
+//   }
+// ];
 
-aprovados.sort(classificacao());
+// aprovados.sort(classificacao());
 
-document.write(aprovados[1], aprovados.candidato);
+// document.write(aprovados[1], aprovados.candidato);
 
-function classificacao() {
+// function classificacao() {
 
-  return function(objeto1, objeto2) {
+//   return function(objeto1, objeto2) {
 
-    var a = (objeto2['nota'] - objeto1['nota']);
+//     var a = (objeto2['nota'] - objeto1['nota']);
 
-    return (a !== 0) ? a : (objeto1['idade'] - objeto2['idade']);
-  }
-}
+//     return (a !== 0) ? a : (objeto1['idade'] - objeto2['idade']);
+//   }
+// }
 
+
+// // Qual é a saída do código abaixo:
+
+// function exibir() {
+
+//   var set = new Set();
+//   set.add("Angular.js");
+//   set.add("Vue.js");
+//   set.add("React.js");
+
+//   for(elementos of set) {
+
+//     document.write(elementos); // saída: Angular.jsVue.jsReact.js
+//   }
+// }
+
+// exibir()
+
+
+// // Qual é a saída do código abaixo:
+
+// function exibir() {
+
+//   var a = 10;
+//   var b = 0.7;
+//   var c = "11d5";
+
+//   document.write(a + "" + b + " + c + "); // saída: 100.7 + c +
+// }
+
+// exibir();
+
+
+// // Qual é a saída do código abaixo:
+
+// const masculino = ['Micael', 'Alex', 'Bob'];
+// const feminino = ['Julia', 'Soraia'];
+
+// const combinar = [...masculino, ...feminino];
+
+// console.log(combinar); // saída: ['Micael', 'Alex', 'Bob', 'Julia', 'Soraia']
+
+
+// // Qual é a saída do código abaixo:
+
+// let  i = 0;
+
+// // while(i < 3){
+
+// //   console.log(i); // saída: 0 1 2
+// //   i++;
+// // }
+
+// for(let i = 0; i < 3; i++) {
+
+//   console.log(i); // saída: 0 1 2
+// }
+
+
+// // Qual é a saída do código abaixo:
+
+// let usuario = {
+//   nome: 'Bob',
+//   buscarNome: function() {
+
+//     return this.nome;
+//   }
+// }
+
+// console.log(usuario.buscarNome()); // saída: Bob
+
+
+// // Qual é a saída do código abaixo:
+
+// function Usuario(nome) {
+//   this.nome = nome;
+// }
+
+// Usuario.prototype.buscarNome = function() {
+
+//   return this.nome;
+// }
+
+// let usuario = new Usuario('Bob');
+
+// console.log(usuario.buscarNome()); // saída: Bob
+
+
+// // Qual é a saída do código abaixo:
+
+// function digaOla(saudar) {
+
+//   console.log(`${saudar} ${this.nome}`);
+// }
+
+// let bob = {
+//   nome: 'Bob'
+// };
+
+// let adam = {
+//   nome: 'Adam'
+// };
+
+// digaOla.call(bob, "Ola"); // saída: Ola Bob
+// digaOla.call(adam, "Oi"); // saída: Oi Adam
