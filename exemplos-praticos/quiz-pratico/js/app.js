@@ -17960,3 +17960,172 @@
 
 // digaOla.call(bob, "Ola"); // saída: Ola Bob
 // digaOla.call(adam, "Oi"); // saída: Oi Adam
+
+
+// // Qual é a saída do código abaixo:
+
+// var arrayAssociativo = {
+//   um: "Dado",
+//   dois: "JavaScript",
+//   tres: 435,
+//   quatro: true
+// };
+
+// var contar = 0;
+
+// for(valorArray in arrayAssociativo) {
+
+//   contar = contar + 1;
+// }
+
+// console.log(contar); // saída: 4
+
+
+// // Qual é a saída do código abaixo:
+
+// var cursos = ['JavaScript', 'Java', 'C', 'C++', 'Python'];
+
+// console.log(cursos.length);
+
+// delete cursos[2]; // o operador de exclusão realmente não afeta todo o comprimento da matriz, pois as operações removem apenas o valor que está lá na posição.
+
+// console.log(cursos.length);
+// console.log(cursos); // saída: ['JavaScript', 'Java', vazio, 'C++', 'Python']
+
+
+
+// // Qual é a saída do código abaixo:
+
+// function unicoArray(nomes_duplos) {
+
+//   var unico = [];
+
+//   arr.forEach(function(i) {
+
+//     if(!unico[i]) {
+//       unico[i]  = true;
+//     }
+//   });
+
+//   return Object.keys(unico);
+// }
+
+// var arr = [1, 5, 2, 4, 1, 6, 5, 6, 3, 4];
+
+// console.log(unicoArray(arr)); // saída: ['1', '2', '3', '4', '5', '6']
+
+
+
+// // Qual é a saída do código abaixo:
+
+// function unicoArray(arr) {
+
+//   var novoSet = arr.filter(function(elemento, indice, auto) {
+
+//     return indice == auto.indexOf(elemento);
+//   })
+
+//   return novoSet;
+// }
+
+
+// var arr = [1, 5, 2, 4, 1, 6];
+
+// console.log(unicoArray(arr)); // saída: [1, 5, 2, 4, 6]
+
+
+
+// // Qual é a saída do código abaixo:
+
+// var array = ["Bob", 1982, 1.0, true];
+// var msg = "Array: [";
+
+// for(var i = 0; i < array.length - 1; i++) {
+
+//   msg += array[i] + ", ";
+// }
+
+// msg += array[array.length - 1] + "]";
+
+// console.log(msg); // Array: [Bob, 1982, 1, true]
+
+
+
+// // // Como fazer um obj completamente imutável, congele cada objeto em obj.
+
+// // com deep freeze:
+
+// // let pessoa = {
+// //   nome: 'Leonardo',
+// //   profissao: {
+// //     nome: 'desenvolvedor'
+// //   }
+// // };
+
+// // Object.freeze(pessoa);
+
+// // pessoa.profissao.nome = 'medico';
+
+// // console.log(pessoa); // saída: {nome: 'Leonardo, profissao: nome: medico}
+
+
+// // sem deep freeze:
+
+// function congelamentoImutavel(objeto) {
+
+//   let propNomes = Object.getOwnPropertyNames(objeto);
+
+//   for(let nome  of propNomes) {
+
+//     let valor = objeto[nome];
+//     objeto[nome] = valor && typeof valor === "objeto" ? congelamentoImutavel(valor) : valor;
+//   }
+
+//   return Object.freeze(objeto);
+// }
+
+// let pessoa = {
+//   nome: 'Bob',
+//   profissao: {
+//     nome: 'cantor'
+//   }
+// };
+
+// congelamentoImutavel(pessoa);
+// pessoa.profissao.nome = 'medico';
+
+// console.log(pessoa); // saída: {nome: 'Bob', profissao: {nome: 'medico}}
+
+
+
+// JavaScript é uma linguagem de passagem por referência ou passagem por valor?
+
+// // É sempre passado por value , mas para objetos o valor da variável é uma referência. 
+// // Por causa disso, quando você passa um objeto e altera seus membros , essas alterações 
+// //  persistem fora da função. Isso faz com que pareça passar por referência. Mas se você 
+// // realmente alterar o valor da variável do objeto, verá que a alteração não persiste, provando 
+// // que realmente é passada por valor.
+
+// function mudarCoisas(a, b, c) {
+
+//   a = a * 10;
+//   b.item = "alterado";
+//   c = {
+//     item: "alterado"
+//   }
+// }
+
+// var num = 10;
+// var obj1 = {
+//   item: "alterado"
+// }
+
+// var obj2 = {
+//   item: "alterado"
+// }
+
+// mudarCoisas(num, obj1, obj2);
+
+// // console.log(num); // saída: 10
+// // console.log(obj1.item); // saída: alterado
+// // console.log(obj2.item); // saída: alterado
