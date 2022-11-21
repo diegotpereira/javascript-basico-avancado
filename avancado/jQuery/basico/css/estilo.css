@@ -149,7 +149,7 @@ b {
     color: blue;
 } */
 
-#p1 {
+/* #p1 {
     background-color: #ff0000;
 }
 
@@ -159,4 +159,29 @@ b {
 
 #p3 {
      background-color: #0000ff;
+} */
+
+/* p {
+    background: lightblue;
+    margin: 6px 0;
+} */
+
+
+/* div {
+    margin:10px;
+    padding:12px; 
+    border:2px solid #666; 
+    width:60px;
+}
+
+.div1 {
+    background-color: yellow;
+} */
+
+.div2 {
+    background-color: green;
+}
+
+.div3 {
+    background-color: red;
 }
