@@ -17123,6 +17123,353 @@
 // })() // saída: 1 4 3 2 
 
 
+
+// // Prever a saída do seguinte código JS?
+
+// var a = new Array(1990, 1992, 1994, 1996, 2002, 2012);
+// var b = [];
+// c = [];
+
+// function calcularIdade(ano) {
+//   return 2022 - ano;
+// }
+
+// for(var i = 0; i < a.length; i++) {
+//   b[i] = calcularIdade(a[i]);
+// }
+
+// for(var i = 0; i < a.length; i++) {
+//   if (b[i] >= 18) {
+    
+//     console.log(b[i]); // saída: 32 30 28 26 20
+//     c[i] = true;
+
+//   } else {
+//     c[i] = false;
+//   }
+// }
+
+// console.log(c); // saída: [true, true, true, true, true, false]
+
+
+// // Encontre a frequência dos elementos na matriz
+
+// // // Usando Reduce
+
+// // let arr = ["ola", "mundo", "java", "ola", "java"];
+
+// // function contarPalavra(p) {
+// //   let resultado = p.reduce((todosNomes, nome) => {
+
+// //     if(nome in todosNomes) {
+
+      
+// //       todosNomes[nome]++;
+
+// //     } else {
+      
+// //       todosNomes[nome] = 1
+// //     }
+
+// //     return todosNomes;
+// //   }, {});
+// //   return resultado;
+// // }
+
+// // console.log(contarPalavra(arr)); // saída: {ola: 2, mundo: 1, java: 2}
+
+// // // Usando Objeto.
+
+// // let arr = ["ola", "mundo", "java", "ola", "java"];
+
+// // function contarPalavra(p) {
+
+// //   var contar = {};
+
+// //   p.forEach((item) => {
+
+// //     if (contar[item]) {
+      
+// //       contar[item]++;
+
+// //     } else {
+
+// //       contar[item] = 1;
+// //     }
+// //   })
+
+// //   return contar;
+// // }
+
+
+// console.log(contarPalavra(arr)); // saída: {ola: 2, mundo: 1, java: 2}
+
+
+// // Agrupar itens com base na idade de uma determinada matriz de objetos
+
+// let pessoa = [
+//   {
+//     nome: 'Alice',
+//     idade: 21
+//   },
+//   {
+//     nome: 'Max',
+//     idade: 20,
+//   },
+//   {
+//     nome: 'Julia',
+//     idade: 20
+//   }
+// ];
+
+// function grupoPor(ar) {
+
+//   var verificar = {};
+
+//   ar.forEach((item) => {
+
+//     if (!verificar[item.idade]) {
+      
+//       verificar[item.idade] = [item];
+
+//     } else {
+
+//       verificar[item.idade].push(item);
+//     }
+//   })
+
+//   return verificar;
+// }
+
+// console.log(grupoPor(pessoa)); // saída: 20: 0: {nome: 'Max', idade: 20}, 1: {nome: 'Julia', idade: 20} e 21: 0 {nome: 'Alice', idade: 21}
+
+
+// // Programe para verificar uma string com colchetes balanceados.
+
+// const ehValido = (str) => {
+
+//   let s = str.replace(/\s+/g, '');
+
+//   if(s.length % 2 !== 0) return false;
+
+//   const pilha = [];
+//   const mapa = new Map([
+//     ['(', ')'],
+//     ['[', ']'],
+//     ['{', '}']
+//   ]);
+
+//   for(let i = 0; i < s.length; i+= 1) {
+
+//     if (mapa.has(s[i])) {
+      
+//       pilha.push(mapa.get(s[i]));
+
+//     } else if(s[i] !== pilha.pop()) {
+
+//       return false;
+//     }
+//   }
+
+//   return pilha.length === 0;
+// };
+
+// let str1 = "({} [] ({}))";
+// let str2 = "}}";
+
+// // console.log(ehValido(str1)); // saída: true
+// console.log(ehValido(str2)); // saída: false
+
+
+// // Encontre os pares de elementos da matriz para os quais 
+// // a soma é igual ao valor de destino fornecido
+
+// let ar = [1, 2, 3, 4, 6, 7, 8, 9];
+
+// function duasSoma(ar, target) {
+
+//   let hash = {};
+//   let soma = [];
+
+//   ar.forEach((item) => {
+
+//     // console.log(item); // saída: 1 2 3 4 6 7 8 9
+//     // console.log(target); // saída: 9
+
+//     let diferente = target - item;
+
+//     // 9 - 1 = 8
+//     // 8 - 1 = 7
+//     // 7 - 1 = 6
+//     // 6 - 1 = 5 -> não tem
+//     // 4 - 1 = 3
+//     // 3 - 1 = 2
+//     // 2 - 1 = 1
+
+//     if(hash[diferente.toString()] !== undefined) {
+
+//       soma.push([item, diferente]);
+//     }
+
+//     hash[item.toString()] = item;
+//   })
+
+//   return soma;
+// }
+
+// console.log(duasSoma(ar, 9)); // saída: 0:[6, 3], 1:[7, 2], 2: [8, 1]
+
+
+// // Encontre o número que falta na matriz não classificada 
+// // com complexidade O(n)
+
+// let ar = [2, 7, 8, 5, 1, 4, 3, 6];
+
+// function encontrar(a) {
+
+//   let l = a.length;
+//   let soma = 1;
+
+//   for(let i = 2; i <= (l + 1); i++) {
+
+//     soma = soma + i;
+//     soma = soma - a[i - 2];
+//   }
+
+
+//   return soma;
+// }
+
+
+// console.log(encontrar(ar)); // saída: 9
+
+
+// // Encontre o número que falta na matriz classificada
+// // com complexidade O(n)
+
+// let ar = [1, 3, 4, 6, 7, 8, 10];
+
+// function encontre(a) {
+
+//   let encontrar = [];
+
+//   for(let i = 0; i < ar.length; i++) {
+
+//     if (!(ar[i + 1] - ar[i] == 1) && !(ar[i + 1] == undefined)) {
+      
+//       encontrar.push(ar[i] + 1);
+//     }
+//   }
+
+//   return encontrar;
+// }
+
+// console.log(encontre(ar)); // saída: [2, 5, 9]
+
+
+// // Encontre o enésimo maior elemento em uma matriz classificada
+
+// let arr = [12, 34, 21, 14, 67, 35, 64, 25]; // 12 14 21 25 34 35 64 67
+// n = 2;
+
+// arr.sort((a, b) => a - b);
+
+// // console.log(arr.length); // 6
+// const maiorlemento = arr[arr.length - n];
+
+// console.log(maiorlemento); // saída: 64
+
+
+// // Remova duplicatas de uma matriz e retorne valores 
+// // exclusivos em complexidade O(n).
+
+// let arr = [1, 2, 3, 4, 3, 6, 5, 4];
+
+// function unica(arr) {
+
+//   let itens = {};
+
+//   arr.forEach((item) => {
+
+//     if (!itens[item]) {
+//       itens[item] = item;
+//     }
+//   });
+
+//   return Object.values(itens);
+// }
+
+// console.log(unica(arr)); // saída: [1, 2, 3, 4, 5, 6]
+
+
+
+// // Imprima todos os elementos duplicados de um array
+
+// let arr = [1, 1, 5, 6, 7, 7, 8, 9, 3, 4, 4];
+
+// function removerDuplicado(ar) {
+
+//   let resultado = ar.filter((item, indice) => {
+
+//     return ar.indexOf(item) !== indice;
+//   });
+
+//   return resultado;
+// }
+
+// console.log(removerDuplicado(arr)); // saída: [1, 7, 4]
+
+
+
+// // Colete livros de uma matriz de objetos e retorne a coleção de livros como uma matriz
+
+// let amigos = [
+//   {
+//     nome: 'Ana',
+//     livros: ['Biblia', 'Harry Poter'],
+//     idade: 21
+//   },
+//   {
+//     nome: 'Bob',
+//     livros: ['Guerra e Paz', 'Romeu e Julieta'],
+//     idade: 26
+//   },
+//   {
+//     nome: 'Alice',
+//     livros: ['O Senhor dos Anéis', 'O Iluminado'],
+//     idade: 18
+//   }
+// ]
+
+
+// let resultado = amigos.reduce((pre, atual) => {
+
+//   return [...pre, ...atual.livros];
+// },[]);
+
+
+// console.log(resultado); // saída: ['Biblia', 'Harry Poter', 'Guerra e Paz', 'Romeu e Julieta', 'O Senhor dos Anéis', 'O Iluminado']
+
+
+// // O que é Closure em JavaScript?
+
+// var outroNum = 100;
+
+// function outroFN() {
+
+//   var internoNum = 50;
+
+//   function internoFn(){
+
+//     return outroNum + internoNum;
+//   }
+
+//   return internoFn();
+// }
+
+// console.log(outroFN()); // saída: 150 - closure é basicamente uma função dentro de outra função.
+
+
 // // Qual é a saída do programa abaixo:
 
 // var cidade = new Array("Assunção", "Montevidéu", "Brasília", "Buenos Aires");
@@ -17464,45 +17811,321 @@
 // // Resposta B. Marcelo teria pago 840 reais e lhe deveria ainda 560.
 
 
+// // Qual é a saída do código abaixo:
 
-var aprovados = [
-  {
-    candidato: "Renata Soares",
-    nota: 7.8,
-    idade: 29
-  },
-  {
-    candidato: "Marcos Teixeira",
-    nota: 7.9,
-    idade: 26
-  },
-  {
-    candidato: "Priscila Silva",
-    nota: 6.9,
-    idade: 30
-  },
-  {
-    candidato: "João Oliveira",
-    nota: 8.2,
-    idade: 26
-  },
-  {
-    candidato: "Adriana Telles",
-    nota: 4.7,
-    idade: 28
-  }
-];
+// var aprovados = [
+//   {
+//     candidato: "Renata Soares",
+//     nota: 7.8,
+//     idade: 29
+//   },
+//   {
+//     candidato: "Marcos Teixeira",
+//     nota: 7.9,
+//     idade: 26
+//   },
+//   {
+//     candidato: "Priscila Silva",
+//     nota: 6.9,
+//     idade: 30
+//   },
+//   {
+//     candidato: "João Oliveira",
+//     nota: 8.2,
+//     idade: 26
+//   },
+//   {
+//     candidato: "Adriana Telles",
+//     nota: 4.7,
+//     idade: 28
+//   }
+// ];
 
-aprovados.sort(classificacao());
+// aprovados.sort(classificacao());
 
-document.write(aprovados[1], aprovados.candidato);
+// document.write(aprovados[1], aprovados.candidato);
 
-function classificacao() {
+// function classificacao() {
 
-  return function(objeto1, objeto2) {
+//   return function(objeto1, objeto2) {
 
-    var a = (objeto2['nota'] - objeto1['nota']);
+//     var a = (objeto2['nota'] - objeto1['nota']);
 
-    return (a !== 0) ? a : (objeto1['idade'] - objeto2['idade']);
-  }
-}
+//     return (a !== 0) ? a : (objeto1['idade'] - objeto2['idade']);
+//   }
+// }
+
+
+// // Qual é a saída do código abaixo:
+
+// function exibir() {
+
+//   var set = new Set();
+//   set.add("Angular.js");
+//   set.add("Vue.js");
+//   set.add("React.js");
+
+//   for(elementos of set) {
+
+//     document.write(elementos); // saída: Angular.jsVue.jsReact.js
+//   }
+// }
+
+// exibir()
+
+
+// // Qual é a saída do código abaixo:
+
+// function exibir() {
+
+//   var a = 10;
+//   var b = 0.7;
+//   var c = "11d5";
+
+//   document.write(a + "" + b + " + c + "); // saída: 100.7 + c +
+// }
+
+// exibir();
+
+
+// // Qual é a saída do código abaixo:
+
+// const masculino = ['Micael', 'Alex', 'Bob'];
+// const feminino = ['Julia', 'Soraia'];
+
+// const combinar = [...masculino, ...feminino];
+
+// console.log(combinar); // saída: ['Micael', 'Alex', 'Bob', 'Julia', 'Soraia']
+
+
+// // Qual é a saída do código abaixo:
+
+// let  i = 0;
+
+// // while(i < 3){
+
+// //   console.log(i); // saída: 0 1 2
+// //   i++;
+// // }
+
+// for(let i = 0; i < 3; i++) {
+
+//   console.log(i); // saída: 0 1 2
+// }
+
+
+// // Qual é a saída do código abaixo:
+
+// let usuario = {
+//   nome: 'Bob',
+//   buscarNome: function() {
+
+//     return this.nome;
+//   }
+// }
+
+// console.log(usuario.buscarNome()); // saída: Bob
+
+
+// // Qual é a saída do código abaixo:
+
+// function Usuario(nome) {
+//   this.nome = nome;
+// }
+
+// Usuario.prototype.buscarNome = function() {
+
+//   return this.nome;
+// }
+
+// let usuario = new Usuario('Bob');
+
+// console.log(usuario.buscarNome()); // saída: Bob
+
+
+// // Qual é a saída do código abaixo:
+
+// function digaOla(saudar) {
+
+//   console.log(`${saudar} ${this.nome}`);
+// }
+
+// let bob = {
+//   nome: 'Bob'
+// };
+
+// let adam = {
+//   nome: 'Adam'
+// };
+
+// digaOla.call(bob, "Ola"); // saída: Ola Bob
+// digaOla.call(adam, "Oi"); // saída: Oi Adam
+
+
+// // Qual é a saída do código abaixo:
+
+// var arrayAssociativo = {
+//   um: "Dado",
+//   dois: "JavaScript",
+//   tres: 435,
+//   quatro: true
+// };
+
+// var contar = 0;
+
+// for(valorArray in arrayAssociativo) {
+
+//   contar = contar + 1;
+// }
+
+// console.log(contar); // saída: 4
+
+
+// // Qual é a saída do código abaixo:
+
+// var cursos = ['JavaScript', 'Java', 'C', 'C++', 'Python'];
+
+// console.log(cursos.length);
+
+// delete cursos[2]; // o operador de exclusão realmente não afeta todo o comprimento da matriz, pois as operações removem apenas o valor que está lá na posição.
+
+// console.log(cursos.length);
+// console.log(cursos); // saída: ['JavaScript', 'Java', vazio, 'C++', 'Python']
+
+
+
+// // Qual é a saída do código abaixo:
+
+// function unicoArray(nomes_duplos) {
+
+//   var unico = [];
+
+//   arr.forEach(function(i) {
+
+//     if(!unico[i]) {
+//       unico[i]  = true;
+//     }
+//   });
+
+//   return Object.keys(unico);
+// }
+
+// var arr = [1, 5, 2, 4, 1, 6, 5, 6, 3, 4];
+
+// console.log(unicoArray(arr)); // saída: ['1', '2', '3', '4', '5', '6']
+
+
+
+// // Qual é a saída do código abaixo:
+
+// function unicoArray(arr) {
+
+//   var novoSet = arr.filter(function(elemento, indice, auto) {
+
+//     return indice == auto.indexOf(elemento);
+//   })
+
+//   return novoSet;
+// }
+
+
+// var arr = [1, 5, 2, 4, 1, 6];
+
+// console.log(unicoArray(arr)); // saída: [1, 5, 2, 4, 6]
+
+
+
+// // Qual é a saída do código abaixo:
+
+// var array = ["Bob", 1982, 1.0, true];
+// var msg = "Array: [";
+
+// for(var i = 0; i < array.length - 1; i++) {
+
+//   msg += array[i] + ", ";
+// }
+
+// msg += array[array.length - 1] + "]";
+
+// console.log(msg); // Array: [Bob, 1982, 1, true]
+
+
+
+// // // Como fazer um obj completamente imutável, congele cada objeto em obj.
+
+// // com deep freeze:
+
+// // let pessoa = {
+// //   nome: 'Leonardo',
+// //   profissao: {
+// //     nome: 'desenvolvedor'
+// //   }
+// // };
+
+// // Object.freeze(pessoa);
+
+// // pessoa.profissao.nome = 'medico';
+
+// // console.log(pessoa); // saída: {nome: 'Leonardo, profissao: nome: medico}
+
+
+// // sem deep freeze:
+
+// function congelamentoImutavel(objeto) {
+
+//   let propNomes = Object.getOwnPropertyNames(objeto);
+
+//   for(let nome  of propNomes) {
+
+//     let valor = objeto[nome];
+//     objeto[nome] = valor && typeof valor === "objeto" ? congelamentoImutavel(valor) : valor;
+//   }
+
+//   return Object.freeze(objeto);
+// }
+
+// let pessoa = {
+//   nome: 'Bob',
+//   profissao: {
+//     nome: 'cantor'
+//   }
+// };
+
+// congelamentoImutavel(pessoa);
+// pessoa.profissao.nome = 'medico';
+
+// console.log(pessoa); // saída: {nome: 'Bob', profissao: {nome: 'medico}}
+
+
+
+// JavaScript é uma linguagem de passagem por referência ou passagem por valor?
+
+// // É sempre passado por value , mas para objetos o valor da variável é uma referência. 
+// // Por causa disso, quando você passa um objeto e altera seus membros , essas alterações 
+// //  persistem fora da função. Isso faz com que pareça passar por referência. Mas se você 
+// // realmente alterar o valor da variável do objeto, verá que a alteração não persiste, provando 
+// // que realmente é passada por valor.
+
+// function mudarCoisas(a, b, c) {
+
+//   a = a * 10;
+//   b.item = "alterado";
+//   c = {
+//     item: "alterado"
+//   }
+// }
+
+// var num = 10;
+// var obj1 = {
+//   item: "alterado"
+// }
+
+// var obj2 = {
+//   item: "alterado"
+// }
+
+// mudarCoisas(num, obj1, obj2);
+
+// // console.log(num); // saída: 10
+// // console.log(obj1.item); // saída: alterado
+// // console.log(obj2.item); // saída: alterado
