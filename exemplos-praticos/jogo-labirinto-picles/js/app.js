@@ -1,52 +1,13 @@
-var labirintoTela = document.getElementById('labirintoTela');
-var ctx = labirintoTela.getContext('2d');
-var duende;
-var finalDuende;
-var labirinto, desenhar, jogador;
-var dificuldade;
+function rand(max) {
+    return Math.floor(Math.random() * max);
+}
+function shuffle(a) {
 
-window.onload = function() {
-
-    let exibirLargura = $('#exibir').width();
-    let exibirAltura = $('#exibir').height();
-
-    if (exibirAltura < exibirLargura) {
-        ctx.canvas.width = exibirAltura - exibirAltura / 100;
-        ctx.canvas.height = exibirAltura - exibirAltura / 100;
-    } else {
-        ctx.canvas.width = exibirLargura - exibirLargura / 100;
-        ctx.canvas.height - exibirLargura - exibirLargura / 100;
+    for(let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
     }
-
-    var completoUm = false;
-    var completoDois = false;
-
-    if (completoUm === true && completoDois === true) {
-        
-        console.log("Rodando");
-        setTimeout(function() {
-
-            fazerLabirinto();
-
-        }, 500);
-    }
-    duende = new Image()
-    duende.src = "https://image.ibb.co/dr1HZy/Pf_RWr3_X_Imgur.png" + 
-    "?" +
-    new Date().getTime();
-    duende.setAttribute("crossOrigin", " ");
-    duende.onload = function() {
-        duende = alterarBrilho(1.2, duende);
-
-    }
-    finalDuende = new Image();
-    finalDuende.src = "https://image.ibb.co/b9wqnJ/i_Q7m_U25_Imgur.png" +
-    "?" + 
-    new Date().getTime();
-    finalDuende.setAttribute("crossOrigin", " ");
-    finalDuende.onload = function() {
-        finalDuende = alterarBrilho(1.1, finalDuende);
-    }
+    return a;
 }
 
 function alterarBrilho(fator, duende) {
@@ -86,26 +47,6 @@ function toggleVisablity(id) {
     }
 }
 
-window.onresize = function() {
-
-    let exibirLargura = $('#exibir').width();
-    let exibirAltura = $('#exibir').height();
-
-    if (exibirAltura < exibirLargura) {
-        ctx.canvas.width = exibirAltura - exibirAltura / 100;
-        ctx.canvas.height = exibirAltura - exibirAltura / 100;
-    } else {
-        ctx.canvas.width = exibirLargura - exibirLargura / 100;
-        ctx.canvas.height - exibirLargura - exibirLargura / 100;
-    }
-    cellSize = labirintoTela.width / dificuldade;
-
-    if (jogador != null) {
-        
-        draw.redesenharLabirinto(cellSize);
-        jogador.redesenharJogador(cell);
-    }
-}
 function Labirinto(Width, Height) {
 
     var labirintoMapa;
@@ -269,18 +210,6 @@ function Labirinto(Width, Height) {
     definirIniciarTerminar();
 }
 
-function rand(max) {
-    return Math.floor(Math.random() * max);
-}
-function shuffle(a) {
-
-    for(let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-}
-
 function desenharLabirinto(Labirinto, ctx, cellSize) {
     var mapa = Labirinto.map();
     var cellSize = cellSize;
@@ -334,25 +263,7 @@ function desenharLabirinto(Labirinto, ctx, cellSize) {
         }
     }
 }
-function fazerLabirinto() {
 
-    if (jogador != undefined) {
-        jogador.unbindKeyDown();
-        jogador = null;
-    }
-
-    var e = document.getElementById('dificuldadeSel')
-
-    dificuldade = e.options[e.selectedIndex].value;
-    cellSize = labirintoTela.width / dificuldade;
-    labirinto = new Labirinto(dificuldade, dificuldade);
-    desenhar = new desenharLabirinto(labirinto, ctx, cellSize);
-    jogador = new Jogador(labirinto, labirintoTela, cellSize, exibirVitoriaBagunca, duende);
-
-    if (document.getElementById('labirintoContainer').style.opacity < "100") {
-        document.getElementById('labirintoContainer').style.opacity = "100";
-    }
-}
 function Jogador(labirinto, c, _cellsize, onComplete, duende = null) {
 
     var ctx = c.getContext('2d');
@@ -534,4 +445,98 @@ function Jogador(labirinto, c, _cellsize, onComplete, duende = null) {
     desenharDuende(labirinto.iniciarCoord())
 
     this.bindKeyDown()
+}
+
+
+var labirintoTela = document.getElementById('labirintoTela');
+var ctx = labirintoTela.getContext('2d');
+var duende;
+var finalDuende;
+var labirinto, desenhar, jogador;
+var dificuldade;
+
+
+window.onload = function() {
+
+    let exibirLargura = $('#exibir').width();
+    let exibirAltura = $('#exibir').height();
+
+    if (exibirAltura < exibirLargura) {
+        ctx.canvas.width = exibirAltura - exibirAltura / 100;
+        ctx.canvas.height = exibirAltura - exibirAltura / 100;
+    } else {
+        ctx.canvas.width = exibirLargura - exibirLargura / 100;
+        ctx.canvas.height - exibirLargura - exibirLargura / 100;
+    }
+
+    var completoUm = false;
+    var completoDois = false;
+
+    if (completoUm === true && completoDois === true) {
+        
+        console.log("Rodando");
+        setTimeout(function() {
+
+            fazerLabirinto();
+
+        }, 500);
+    }
+    duende = new Image()
+    duende.src = "https://image.ibb.co/dr1HZy/Pf_RWr3_X_Imgur.png" + 
+    "?" +
+    new Date().getTime();
+    duende.setAttribute("crossOrigin", " ");
+    duende.onload = function() {
+        duende = alterarBrilho(1.2, duende);
+
+    }
+    finalDuende = new Image();
+    finalDuende.src = "https://image.ibb.co/b9wqnJ/i_Q7m_U25_Imgur.png" +
+    "?" + 
+    new Date().getTime();
+    finalDuende.setAttribute("crossOrigin", " ");
+    finalDuende.onload = function() {
+        finalDuende = alterarBrilho(1.1, finalDuende);
+    }
+}
+
+window.onresize = function() {
+
+    let exibirLargura = $('#exibir').width();
+    let exibirAltura = $('#exibir').height();
+
+    if (exibirAltura < exibirLargura) {
+        ctx.canvas.width = exibirAltura - exibirAltura / 100;
+        ctx.canvas.height = exibirAltura - exibirAltura / 100;
+    } else {
+        ctx.canvas.width = exibirLargura - exibirLargura / 100;
+        ctx.canvas.height - exibirLargura - exibirLargura / 100;
+    }
+    cellSize = labirintoTela.width / dificuldade;
+
+    if (jogador != null) {
+        
+        draw.redesenharLabirinto(cellSize);
+        jogador.redesenharJogador(cell);
+    }
+}
+
+function fazerLabirinto() {
+
+    if (jogador != undefined) {
+        jogador.unbindKeyDown();
+        jogador = null;
+    }
+
+    var e = document.getElementById('dificuldadeSel')
+
+    dificuldade = e.options[e.selectedIndex].value;
+    cellSize = labirintoTela.width / dificuldade;
+    labirinto = new Labirinto(dificuldade, dificuldade);
+    desenhar = new desenharLabirinto(labirinto, ctx, cellSize);
+    jogador = new Jogador(labirinto, labirintoTela, cellSize, exibirVitoriaBagunca, duende);
+
+    if (document.getElementById('labirintoContainer').style.opacity < "100") {
+        document.getElementById('labirintoContainer').style.opacity = "100";
+    }
 }
