@@ -18129,3 +18129,284 @@
 // // console.log(num); // saída: 10
 // // console.log(obj1.item); // saída: alterado
 // // console.log(obj2.item); // saída: alterado
+
+
+
+// // Qual será a saída do seguinte código?
+
+// var pessoa = {
+//   nome: 'João',
+//   sobrenome: 'Silva',
+//   id: 001,
+//   nomeCompleto: function() {
+
+//     return this.nome + "" + sobrenome;
+//   }
+// }
+
+// console.log(pessoa);
+
+
+
+// // Qual será a saída do seguinte código?
+
+// function modificarArray(arr, callback) {
+//   arr.push(100);
+//   callback();
+// }
+
+
+// var arr = [1, 2, 3, 4, 5];
+// modificarArray(arr, function() {
+//   console.log("matriz foi modificada", arr); // saída: matriz foi modificada [1, 2, 3, 4, 5, 100];
+// });
+
+
+
+// // Qual será a saída do seguinte código?
+
+// function Colaborador(nome, posicao, anoContratado) {
+//   this.nome = nome;
+//   this.posicao = posicao;
+//   this.anoContratado = anoContratado;
+// };
+
+// const empregado = new Colaborador("Bob Marley", "Desenvolvedor Software", 2022);
+
+// console.log(empregado); // saída: {nome: 'Bob Marley', posicao: 'Desenvolvedor Software', anoContratado: 2022}
+
+
+
+// // Qual será a saída do seguinte código?
+
+// const obj1 = {
+//   resultado: 0
+// };
+
+// const obj2 = {
+//   resultado: 0
+// };
+
+// function reduzirAdd() {
+//   let resultado = 0;
+
+//   for(let i = 0, len = arguments.length; i < len; i++) {
+//     resultado += arguments[i];
+//   }
+
+//   this.resultado = resultado;
+// }
+
+// console.log(reduzirAdd.apply(obj1, [1, 2, 3, 4, 5])); // saída: undefined
+// console.log(reduzirAdd.call(obj2, 1, 2, 3, 4, 5)); // saída: undefined
+
+
+// // Qual será a saída do seguinte código?
+
+// const detalhes = {
+//   nome: 'Marco',
+//   buscarNome() {
+//     return this.nome
+//   }
+// }
+
+// console.log(detalhes.buscarNome()); // saída: Marco
+
+
+// // Qual será a saída do seguinte código?
+
+// function add(a, b) {
+//   console.log(this); // saída: Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+//   return a + b;
+// }
+
+// add(1, 5);
+
+// const chamar ={
+//   method(callback){
+//     callback();
+//   }
+// }
+
+// chamar.method(function() {
+//   console.log(this); // saída: Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+// });
+
+
+
+// // Qual será a saída do seguinte código?
+
+// funcaoIcada();
+// naoIcadoFunc();
+
+// function funcaoIcada() {
+//   console.log("eu sou içado"); // saída: eu sou içado
+// }
+
+
+// var naoIcadoFunc = function() {
+//   console.log("Eu não serei içado!"); // saída: TypeError: naoIcadoFunc is not a function
+// }
+
+
+// // Quais são as formas de criar objetos em JavaScript?
+
+// // // A) Usando Object Literal .
+
+// // const pessoa = {
+// //   nome: 'Bob',
+// //   saudacao() {
+// //     return `Olá, eu sou ${ this.nome }`
+// //   }
+// // }
+
+// // console.log(pessoa.saudacao()); // saída: Oláeu sou Bob
+
+
+// // // B) Usando Funções Construtoras.
+
+// // function Pessoa(nome) {
+// //   this.nome = nome;
+// // }
+
+// // Pessoa.prototype.saudacao = function() {
+// //   return `Olá, Eu sou ${ this.nome }`;
+// // }
+
+// // const marca = new Pessoa("Bob");
+
+// // console.log(marca.saudacao());
+
+
+// // C) Usando o método Object.create.
+
+// const pessoa = {
+//   saudacao() {
+
+//     return `Olá, eu sou ${ this.nome }`;
+//   }
+// }
+
+// const exibirPessoa = Object.create(pessoa);
+
+// exibirPessoa.nome = "Bob";
+
+// console.log(exibirPessoa.saudacao()); // saída: Olá, eu sou Bob
+
+
+
+// // Como verificar se uma determinada propriedade existe em um objeto?
+
+// // // A) usando o operador in 
+
+// const pessoa = {
+//   "prop" : "blabla",
+//   "prop2": "kkkkkk"
+// };
+
+// // console.log("prop" in pessoa); // true
+// // console.log("prop1" in pessoa); // false
+
+
+// // // B) usando o operador hasOwnProperty
+
+// // console.log(pessoa.hasOwnProperty("prop2")); // true
+// // console.log(pessoa.hasOwnProperty("prop1")); // false
+
+
+// // C)  usando a notação de colchetes obj["prop"]
+
+// console.log(pessoa["prop"]); // blabla
+// console.log(pessoa["prop1"]); // undefined
+
+
+
+// // O que são Valor Padrão de Parâmetros
+
+// // // versão ES5
+
+// // function add(a, b) {
+// //   a = a || 0;
+// //   b = b || 0;
+
+// //   return a + b;
+// // }
+
+// // // // versão ES6
+
+// // // function add(a = 0, b = 0) {
+// // //   return a + b;
+// // // }
+
+// // console.log(add(1)); // saída: 1
+
+
+// // podemos usar Destructuring em Default Parâmetros .
+
+// function buscarPrimeiro([primeiro, ...rest]= [0, 1]) {
+//   return primeiro;
+// }
+
+// console.log(buscarPrimeiro()); // saída: 0
+// console.log(buscarPrimeiro([10, 20, 30])); // saída: 10
+
+
+// // O que é Hoisting?
+
+// // São variáveis elevadas ao topo de suas 
+// // funções/escopo local
+
+// // // sem elevação (Hoisting)
+
+// // console.log(num); // undefined
+
+// // var num = 5
+
+
+// // // com elevação (Hoisting)
+
+// // num = 5;
+
+// // console.log(num); // saída: 5
+
+// // var num;
+
+// // // funções sem Hoisting
+
+// // function funcNome() {
+// //   console.log("Quiz"); // saída: Quiz
+// // }
+
+// // funcNome();
+
+
+// // funções com Hoisting
+
+// funcNome();
+
+// function funcNome() {
+//   console.log("quiz"); // saída: quiz
+// }
+
+
+// // O que são funções callback?
+
+// // Em JavaScript, funções são objetos.
+// // Uma função callback é uma função passada 
+// // a outra função como argumento, que é então 
+// // invocado dentro da função externa para completar 
+// // algum tipo de rotina ou ação.
+
+// function quadrado(numero) {
+//   console.log(numero * numero); // saída: 25
+// }
+
+// function func(callback) {
+
+//   const numero = 5;
+
+//   callback(numero);
+// }
+
+// func(quadrado);
