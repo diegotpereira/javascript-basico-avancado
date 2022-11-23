@@ -18410,3 +18410,439 @@
 // }
 
 // func(quadrado);
+
+
+// // O que são Closures em JavaScript?
+
+// // A capacidade de uma função acessar variáveis ​​e 
+// // funções que estão lexicamente fora de seu escopo 
+// // são chamadas de Closures.
+
+// function bemvindo() {
+
+//   const nome = "quiz";
+
+//   function exibirNome() {
+
+//     console.log(nome); // saída: quiz
+//   }
+
+//   exibirNome();
+// }
+
+// bemvindo();
+
+
+// // O que são funções assíncronas em JavaScript?
+
+// // As funções assíncronas são aquelas funções que 
+// // usam o comportamento assíncrono baseado em promessas 
+// // sem o uso explícito de uma Promise.
+
+// function resolverApos2Segundos() {
+
+//   return new Promise(resolve => {
+
+//     setTimeout(() => {
+//       resolve('quiz')
+//     }, 2000);
+//   });
+// }
+
+// async  function asyncChamada() {
+
+//   const resultado = await resolverApos2Segundos();
+
+
+//   console.log(resultado);
+// }
+
+// asyncChamada(); // saída: quiz
+
+
+
+// // Qual é o propósito dos construtores em JavaScript?
+
+// // O construtor é usado em JavaScript para criar 
+// // objetos com propriedades e métodos semelhantes.
+
+// function Estudante(nome, idade, marca) {
+//   this.nome = nome;
+//   this.idade = idade;
+//   this.marca = marca;
+// }
+
+// const estudanteUm = new Estudante('Bob', 50, 98);
+// const estudanteDois = new Estudante('Peter', 37, 97);
+
+// console.log(estudanteUm); // saída: {nome: 'Bob', idade: 50, marca: 98}
+// console.log(estudanteDois); // saída: {nome: 'Peter', idade: 37, marca: 97}
+
+
+// // O que é desestruturação (Destructuring) de objetos em JavaScript?
+
+// // A desestruturação de objeto ou atribuição de desestruturação 
+// // é uma abordagem pela qual as propriedades de um objeto ou valores 
+// // de uma matriz podem ser descompactados diretamente para diferentes variáveis.
+
+// // // sem Destructuring de objetos
+
+// // const curso = {
+// //   nome: 'O que é Destructuring?',
+// //   ehPago: true,
+// //   custo: {
+// //     quantia: 999,
+// //     moeda: 'BRL'
+// //   }
+// // };
+
+// // const nome = curso.nome;
+// // const ehPago =  curso.ehPago;
+// // const quantia = curso.custo;
+
+// // console.log(nome); // saída: O que é Destructuring?
+// // console.log(ehPago); // saída: true
+// // console.log(quantia); // saída: {quantia: 999, moeda: 'BRL'}
+
+
+// // // com Destructuring de objetos
+
+// // const curso = {
+// //   nome: 'O que é Destructuring?',
+// //   ehPago: true,
+// //   custo: {
+// //     quantia: 999,
+// //     moeda: 'BRL'
+// //   }
+// // };
+
+
+// // const { nome, ehPago, custo} = curso;
+
+// // console.log(nome); // saída: O que é Destructuring?
+// // console.log(ehPago); // saída: true
+// // console.log(custo); // saída: {quantia: 999, moeda: 'BRL'}
+
+
+// // // com desestruturação de objeto e com alias para propriedades
+
+// // const curso = {
+// //   nome: 'O que é Destructuring?',
+// //   ehPago: true,
+// //   custo: {
+// //     quantia: 999,
+// //     moeda: 'BRL'
+// //   }
+// // };
+
+// // const { nome: cursoNome, ehPago, custo: cursoCusto } = curso;
+
+// // console.log(cursoNome); // saída: O que é Destructuring?
+// // console.log(ehPago); // saída: true
+// // console.log(cursoCusto); // saída: {quantia: 999, moeda: 'BRL'}
+
+
+// // // Desestruturação Parcial de Objetos
+
+// // const curso = {
+// //   nome: 'O que é Destructuring?',
+// //   website: 'github/diegotpereira',
+// //   ehPago: true,
+// //   custo: 999
+// // };
+
+// // const { nome, custo, ...rest} = curso;
+
+// // console.log(nome); // saída: O que é Destructuring?
+// // console.log(custo); // saída: true
+// // console.log(rest); // saída: {website: 'github/diegotpereira', ehPago: true}
+
+
+// // Desestruturação de Array
+
+// const nums = [4, 5, 6, 7];
+// const [primeiro, segundo, ...rest] = nums;
+
+// console.log(primeiro); // saída: 4
+// console.log(segundo); // saída: 5
+// console.log(rest); // saída: [6, 7]
+
+
+// // O que é a sintaxe de spread ou operador de spread?
+
+// // O operador/sintaxe spread pode ser usado onde todos 
+// // os elementos de uma matriz ou objeto precisam ser 
+// // incluídos em uma lista. 
+// // O operador spread descompacta todos os elementos 
+// // como valores que podem ser usados. 
+
+// // // argumentos de função
+
+// // function soma(num1, num2, num3) {
+
+// //   return num1 + num2 + num3;
+// // }
+
+
+// // const numeros = [5, 7, 2, 1, 3];
+// // const resultado = soma(...numeros);
+
+// // console.log(resultado); // saída: 14
+
+// // // adicionando elementos no array
+
+// // let numeros = [5, 7, 2, 1, 3];
+
+// // numeros = [...numeros, 4, 5, 8];
+
+// // console.log(numeros); // saída: [5, 7, 2, 1, 3, 4, 5, 8]
+
+
+// // // Mesclando dois arrays
+
+// // let numeros = [5, 7, 2, 1, 3];
+// // const novoNumeros = [4, 5, 8];
+
+// // numeros = [...numeros, ...novoNumeros];
+
+// // console.log(numeros); // saída: [5, 7, 2, 1, 3, 4, 5, 8]
+
+// // // desestruturação de objetos
+
+// // const obj = { 'primeiroNome': 'Bob', 'ultimoNome': 'Marley'};
+// // const clonarObjeto = { ...obj };
+
+// // console.log(clonarObjeto); // saída: {primeiroNome: 'Bob', ultimoNome: 'Marley'}
+
+
+// // Desestruturação de objetos - novas propriedades
+
+// const obj = { 'primeiroNome': 'Bob', 'ultimoNome': 'Marley'};
+// const pais = 'JAMAICA';
+
+// console.log({
+//   ...obj, pais, empresa: ['The Wailers', 'Bob Marley', 'Peter Tosh']
+// }); // saída: {primeiroNome: 'Bob', ultimoNome: 'Marley', pais: 'JAMAICA', empresa: Array(3)}
+
+
+// // O que é Rest Syntax ou Rest Operator?
+
+// // // argumentos da função
+
+// // function minhaFuncao(a, b, ...rest) {
+
+// //   console.log("a", a); // saída: a um
+// //   console.log("b", b); // saída: b dois
+// //   console.log("rest", rest); // saída: rest['tres', 'quatro', 'cinco']
+// // }
+
+// // minhaFuncao("um", "dois", "tres", "quatro", "cinco");
+
+// // // Desestruturação de Array 
+
+// // let numeros = [5, 7, 2, 1, 3];
+
+// // numeros = [a, b, c, ...rest];
+
+// // console.log(a);
+// // console.log(b);
+// // console.log(c);
+// // console.log(rest);
+
+
+// // Qual é a diferença entre map() e forEach() em JavaScript?
+
+// // // O método forEach() itera sobre uma lista (ou um array) 
+// // // e executa algumas operações em cada um dos elementos.
+
+// // const array = [1, 2, 3, 4, 5];
+
+// // array.forEach(elemento => {
+
+// //   console.log(elemento); // saída: 1 2 3 4 5
+// // });
+
+
+// // // O método map() itera sobre uma lista, aplica alguma 
+// // // função de retorno de chamada a cada elemento e constrói uma matriz 
+// // // a partir dos resultados. Não causa nenhuma alteração na lista em que foi chamado.
+
+// // const array = [1, 2, 3, 4, 5];
+// // const mapa = array.map(elemento => elemento * elemento);
+
+// // console.log(mapa); // saída: [1, 4, 9, 16, 25]
+
+
+// // O que são os métodos call(), apply() e bind() em JavaScript?
+
+// // O call() é um método em JavaScript que nos ajuda a chamar uma 
+// // função com um determinado objeto como o valor 'this'. O método 
+// // call() recebe todos os argumentos individualmente.
+
+// // // metodo call
+
+// // const pessoaUm = {
+// //   nome: 'Bob',
+// //   sobrenome: 'Marley'
+// // }
+
+// // const buscarNomeCompleto = function(empresa, pais) {
+
+// //   console.log(this.nome + " " + this.sobrenome + ", " + empresa + ", " + pais);
+// // }
+
+// // const pessoaDois = {
+// //   nome: 'Peter',
+// //   sobrenome: 'Tosh'
+// // }
+
+// // buscarNomeCompleto.call(pessoaUm, 'Reggae', 'Jamaica'); // saída: Bob Marley, Reggae, Jamaica
+// // buscarNomeCompleto.call(pessoaDois, 'Reggae', 'Jamaica'); // saída: Peter Tosh, Reggae, Jamaica
+
+// // // metodo apply()
+
+// // // O método apply() é semelhante ao método call(). 
+// // // A única diferença é que o método apply() usa um array como argumento enquanto eles foram tomados 
+// // // individualmente como argumentos no caso do método call().
+
+// // const pessoaUm = {
+// //   nome: 'Bob',
+// //   sobrenome: 'Marley'
+// // }
+
+// // const buscarNomeCompleto = function(empresa, pais) {
+
+// //   console.log(this.nome + " " + 
+// //               this.sobrenome + ", " + 
+// //               empresa + ", " + 
+// //               pais);
+// // }
+
+// // const pessoaDois = {
+// //   nome: 'Peter',
+// //   sobrenome: 'Tosh'
+// // }
+
+// // buscarNomeCompleto.apply(pessoaUm, ['Reggae', 'Jamaica']); // saída: Bob Marley, Reggae, Jamaica
+// // buscarNomeCompleto.apply(pessoaDois, ['Reggae', 'Jamaica']); // saída: Peter Tosh, Reggae, Jamaica
+
+
+// // Método bind()
+
+// // O método bind() é usado para criar uma nova função a partir 
+// // de outra função com um determinado objeto como thisargumento. 
+// // Ele cria uma cópia da função e a vincula ao objeto para o qual 
+// // foi chamada. Ele não invoca a função imediatamente e a nova cópia 
+// // precisa ser invocada separadamente. 
+
+// const pessoaUm = {
+//   nome: 'Bob',
+//   sobrenome: 'Marley'
+// }
+
+// const buscarNomeCompleto = function(empresa, pais) {
+
+//   console.log(this.nome + " " + this.sobrenome + ", " + empresa + ", " + pais); // saída: Bob Marley, Reggae,Jamaica, undefined
+// }
+
+// const buscarDetalhePrimeiraPessoa = buscarNomeCompleto.bind(pessoaUm, ["Reggae", "Jamaica"]);
+// buscarDetalhePrimeiraPessoa();
+
+
+
+// // Como você cria um polyfill para a função bind()?
+
+// // Polyfill é uma maneira de implementar um recurso JavaScript não compatível com navegadores da Web mais antigos. 
+// // Usando o polyfill, novos recursos podem ser disponibilizados nas versões mais antigas. Vejamos como podemos 
+// // implementar a funcionalidade de uma função bind().
+
+// Function.prototype.encadernacaoPersonalizada = function(thisArg, ...args) {
+
+//   const fn = this;
+
+//   return function(...fnArgs) {
+
+//     fn.apply(thisArg, [...args, ...fnArgs]);
+//   }
+// }
+
+// const pessoaUm = {
+//   nome: 'Bob',
+//   sobrenome: 'Marley'
+// }
+
+// function exibirNomeCompleto(empresa, pais) {
+
+//   console.log(this.nome + " " + 
+//               this.sobrenome + ", " + 
+//               empresa + ", " + 
+//               pais);
+// }
+
+// const exibirDetalhesPrimeiraPessoa = exibirNomeCompleto.encadernacaoPersonalizada(pessoaUm, ["Reggae"]);
+
+// exibrDeitalhesPrimeiraPessoa("Jamaica"); // saída: Bob Marley, Reggae, Jamaica
+
+
+
+// // Qual será a saída do código abaixo para o console?
+
+// let contar = 0;
+// const numeros = [0, 1, 2, 3];
+
+// numeros.forEach(num => {
+//   if(num)
+//      contar +=1;
+// });
+
+// console.log(contar); // saída 3
+
+
+// // Qual será a saída do código abaixo para o console?
+
+// let aleatorioValor = {
+//   nome: "bob"
+// }
+
+// aleatorioValor = 23;
+
+// if(!typeof aleatorioValor === "string") {
+
+//   console.log("isso não é uma string!");
+
+// } else {
+  
+//   console.log("Isso sim é uma string");
+// }
+
+// // Reposta: saída: isso não é uma string!
+
+
+
+// // Qual será a saída do código abaixo para o console?
+
+// function Pessoa(nome, sobrenome) {
+//   this.nome = nome;
+//   this.sobrenome = sobrenome;
+// }
+
+// const jim = new Pessoa('Jim', 'Farrey');
+// const brad = Pessoa('Brad', 'Zitt');
+
+// console.log(jim); // saída: {nome: 'Jim', sobrenome: 'Farrey'}
+// console.log(brad); // saída: undefinded
+
+
+// // Qual será a saída do código abaixo para o console?
+
+// let c = {
+//   saudar: 'Ola Estudante!'
+// };
+
+// let d;
+
+// d = c;
+
+// c.saudar = 'Ola Estudante';
+
+// console.log(d.saudar); // saída: Ola Estudant
