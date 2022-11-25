@@ -18845,4 +18845,77 @@
 
 // c.saudar = 'Ola Estudante';
 
-// console.log(d.saudar); // saída: Ola Estudant
+// console.log(d.saudar); // saída: Ola Estudante
+
+
+// // Progrma que encontra o par de números que possui a menor diferença dentro de um array
+
+// function menorNumero(arr) {
+
+//   arr.sort((a, b) => a - b);
+
+//   let resultado = [];
+//   let minDif = arr[1] - arr[0];
+
+//   for(let index = 2; index < arr.length; index += 1){
+
+//     minDif = Math.min(minDif, arr[index] - arr[index - 1]);
+//   }
+
+//   for(let index = 1; index < arr.length; index += 1) {
+
+//     if(arr[index] - arr[index - 1] === minDif) {
+
+//       resultado.push(arr[index - 1], arr[index]);
+//     }
+//   }
+
+//   return resultado;
+// }
+// console.log(menorNumero([5, 4, 3, 2])); // saída: [2, 3, 3, 4, 4, 5]
+
+
+// Número mínimo de tijolos que podem ser cruzados
+
+function menosTijolos(muro) {
+
+  let mapa = new Map();
+
+  let resposta = 0;
+
+  for(let lista of muro) {
+
+    let largura = 0;
+
+    for(let i = 0; i < lista.length - 1; i++) {
+
+      // Adicione a largura da corrente
+      // tijolo na largura total
+      largura += lista[i];
+
+      // Incrementa número de tijolos
+      // terminando nesta posição de largura
+      if(mapa.has(largura)) {
+
+        mapa.set(largura, mapa.get(largura) + 1);
+
+      } else {
+
+        mapa.set(largura, 1);
+      }
+
+      // // Atualiza a variável, resposta
+      resposta = Math.max(resposta, mapa.get(largura));
+    }
+  }
+
+  console.log(muro.length - resposta);
+}
+
+let arr = [
+  [1, 2, 2, 1], [3, 1, 2],
+  [1, 3, 2], [2, 4],
+  [3, 1, 2], [1, 3, 1, 1]
+];
+
+menosTijolos(arr);
