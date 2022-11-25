@@ -35,11 +35,11 @@ function alterarBrilho(fator, duende) {
     return duendeSaidaPut;
 
 }
-function exibirVitoriaBagunca(moves) {
-    document.getElementById('moves').innerHTML = "Você se moveu " + moves + "Passos.";
-    toggleVisablity('Message-Container');
+function exibirVitoriaBagunca(mover) {
+    document.getElementById('mover').innerHTML = "Você se moveu " + mover + "Passos.";
+    alterarVisibilidade('mensagem-container');
 }
-function toggleVisablity(id) {
+function alterarVisibilidade(id) {
     if (document.getElementById(id).style.visibility == "visible") {
         document.getElementById(id).style.visibility = "hidden";
     } else {
@@ -105,7 +105,7 @@ function Labirinto(Width, Height) {
     }
     function definirLabirinto() {
         var ehComp = false;
-        var mover = false;
+        var move = false;
         var cellsVisited = 1;
         var numLoops = 0;
         var maxLoops = 0;
@@ -116,7 +116,7 @@ function Labirinto(Width, Height) {
         var numCells = width * height;
 
         while(!ehComp) {
-            mover = false;
+            move = false;
             labirintoMapa[pos.x][pos.y].visitado = true ;
 
             if (numLoops >= maxLoops) {
@@ -146,12 +146,12 @@ function Labirinto(Width, Height) {
                         }
                         cellsVisited++ 
 
-                        mover = true;
+                        move = true;
                         break;
                     }
                 }
             }
-            if (!mover) {
+            if (!move) {
                 
                 pos = labirintoMapa[pos.x][pos.y].priorPos;
             }
@@ -210,7 +210,7 @@ function Labirinto(Width, Height) {
     definirIniciarTerminar();
 }
 
-function desenharLabirinto(Labirinto, ctx, cellSize) {
+function desenharLabirinto(Labirinto, ctx, cellSize, finalDuende = null) {
     var mapa = Labirinto.map();
     var cellSize = cellSize;
     var desenharFinalMetodo;
@@ -342,7 +342,7 @@ function Jogador(labirinto, c, _cellsize, onComplete, duende = null) {
 
     var ctx = c.getContext('2d');
     var desenharDuende;
-    var moves = 0;
+    var mover = 0;
 
     desenharDuende = desenharDuendeCirculo;
 
@@ -377,7 +377,7 @@ function Jogador(labirinto, c, _cellsize, onComplete, duende = null) {
         ctx.fill();
 
         if (coord.x === labirinto.endCoord().x && coord.y === labirinto.endCoord().y) {
-            onComplete(moves);
+            onComplete(mover);
             jogador.unbindKeyDown();
         }
     }
@@ -396,7 +396,7 @@ function Jogador(labirinto, c, _cellsize, onComplete, duende = null) {
             cellSize - offsetRight
         )
         if (coord.x === labirinto.fimCoord().x && coord.y === labirinto.fimCoord().y) {
-            onComplete(moves)
+            onComplete(mover)
             jogador.unbindKeyDown()
         }
     }
@@ -413,7 +413,7 @@ function Jogador(labirinto, c, _cellsize, onComplete, duende = null) {
     }
     function verificar(e) {
         var celula = mapa[cellCoords.x][cellCoords.y]
-        moves++ 
+        mover++ 
 
         switch(e.keyCode) {
             case 65:
@@ -527,6 +527,7 @@ var ctx = labirintoTela.getContext('2d');
 var duende;
 var finalDuende;
 var labirinto, desenhar, jogador;
+var cellSize;
 var dificuldade;
 
 
@@ -599,9 +600,9 @@ window.onresize = function() {
     if (jogador != null) {
         
         draw.redesenharLabirinto(cellSize);
-        jogador.redesenharJogador(cell);
+        jogador.redesenharJogador(cellSize);
     }
-}
+};
 
 function fazerLabirinto() {
 
