@@ -1,0 +1,21 @@
+h1 {
+    color: black;
+    line-height: 100vh;
+    text-align: center;
+    font-size: 60px;
+}
+
+span {
+    opacity: 0;
+    transition: all .2s ease-in-out;
+    display: inline-block;
+    translate: (-100px, -100px);
+    filter: blur(4px)
+}
+
+.desaparece {
+    opacity: 1;
+    transition: all .2s ease-in-out;
+    transform: (0px, 0px);
+    filter: blur(0px);
+}
