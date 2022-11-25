@@ -18846,3 +18846,357 @@
 // c.saudar = 'Ola Estudante';
 
 // console.log(d.saudar); // saída: Ola Estudant
+
+
+// // O que faz a função map em uma coleção?
+
+// const cores = ['branco', 'azul', 'vermelho'];
+
+// const resultado = cores.map((corAtual) => {
+
+//   console.log(corAtual); // saída: branco azul vermelho
+
+//   return corAtual.toUpperCase();
+// })
+
+// console.log(resultado); // saída:  ['BRANCO', 'AZUL', 'VERMELHO']
+
+
+// // Encontre o maior e o menor número do array
+
+// const numeros = [3, 96, 34, 2, 15, 79, 9, 8, 10];
+
+// const maiorNumero = (arr) => {
+
+//   let maior = arr.reduce((acc, curr) => acc > curr ? acc : curr);
+
+//   console.log(maior);
+// }
+
+// maiorNumero(numeros); // saída: 96
+
+// const menorNumero = (arr) => {
+
+//   let menor = arr.reduce((ac, cur) => ac < cur ? ac : cur);
+
+//   console.log(menor);
+// }
+
+// menorNumero(numeros); // saída: 2
+
+
+
+// // Perguntas do hackerrank - Declare Let e Const 
+
+// 'use strict';
+
+// let inputString = '';
+// let currentLine = 0;
+
+// function readLine() {
+//     return inputString[currentLine++];
+// }
+
+// function principal() {
+
+//   let r = readLine();
+//   const PI = Math.PI;
+
+//   try {
+    
+//     PI = 0;
+//     console.log(PI);
+//   } catch (error) {
+//     console.log("Você declarou 'PI' corretamente como uma constante.");
+//   }
+// }
+
+// principal(); // saída: Você declarou 'PI' corretamente como uma constante.
+
+
+// // Programa 2 Tipos de dados
+
+// function performOperation(secondInteger, secondDecimal, secondString) {
+
+//   const firstInteger = 4;
+//   const firstDecimal = 4.0;
+//   const firstString = 'HackerRank';
+
+//   // Escreva o código que usa console.log para imprimir a soma de 
+//   // 'firstInteger' e 'secondInteger' (convertido em um tipo Number) em uma nova linha.
+//   console.log(firstInteger + Number(secondInteger)); // saída: 8
+
+//   // Escreva o código que usa console.log para imprimir a soma de 
+//   // 'firstDecimal' e 'secondDecimal' (convertido em um tipo Number) em uma nova linha.
+//   console.log(firstDecimal + Number(secondDecimal)); // saída: 8
+
+//   // Escreva o código que usa console.log para imprimir a concatenação de 
+//   // 'firstString' e 'secondString' em uma nova linha. A variável 'firstString' 
+//   // deve ser impressa primeiro
+//   console.log(firstString.concat(secondString)); // saída: HackerRankteste
+// }
+
+// performOperation(4, 4.0, "teste");
+
+
+// // Complete a função vogalsAndConsonants.
+
+// function vowelsAndConsonants(s) {
+
+//   var vogais = "aeiou";
+
+//   for(var i = 0; i < s.length; i++) {
+
+//     if (vogais.search(s[i]) != -1) {
+      
+//       console.log(s[i]);
+//     }
+//   }
+
+//   for(var i = 0; i < s.length; i++) {
+
+//     if(vogais.search(s[i]) == -1) {
+
+//       console.log(s);
+//     }
+//   }
+
+//   // var vogais = ['a', 'e', 'i', 'o', 'u'];
+//   // var vogais_consoantes = [];
+//   // var consoantes = "";
+
+//   // for(var idx = 0; idx < s.length; idx++) {
+    
+//   //   if (vogais.indexOf(s[idx]) !== -1) {
+      
+//   //     console.log(s[idx]);
+
+//   //   } else {
+
+//   //     consoantes += s[idx] + '\n';
+//   //   }
+//   // }
+
+//   // console.log(consoantes);
+// }
+
+// vowelsAndConsonants();
+
+
+// // Escreva a expressão regular
+
+// let inputString = '';
+// let currentLine = 0;
+
+// function readLine() {
+//   return inputString[currentLine++];
+// }
+
+// function main() {
+//   const re = regexVar();
+//   const s = readLine();
+  
+//   console.log(re.test(s));
+// }
+
+// function regexVar() {
+
+//   var re = RegExp(/^([aeiou]).*\1$/);
+
+//   return re;
+// }
+
+// main();
+
+
+// // Conclua a função reverseString
+
+// let inputString = '';
+// let currentLine = 0;
+
+// function main() {
+//   const s = eval(readLine());
+  
+//   reverseString(s);
+// }
+
+// function readLine() {
+//   return inputString[currentLine++];
+// }
+
+// function reverseString(s) {
+
+//   try {
+//     s = s.split('').reverse().join('');
+
+//   } catch (error) {
+    
+//     console.log(error.message);
+
+//   } finally {
+
+//     console.log(s);
+//   }
+// }
+
+// main();
+
+
+// // Crie um proograma que calcule a area utilizando Herança
+
+// class Rectangle {
+//   constructor(w, h) {
+//       this.w = w;
+//       this.h = h;
+//   }
+// }
+
+// Rectangle.prototype.area = function() {
+
+//   return (this.w * this.h);
+// }
+
+// class Square extends Rectangle {
+
+//   constructor(s) {
+
+//     super(s, s);
+//   }
+// }
+
+// if (JSON.stringify(Object.getOwnPropertyNames(Square.prototype)) === JSON.stringify([ 'constructor' ])) {
+//   const rec = new Rectangle(3, 4);
+//   const sqr = new Square(3);
+  
+//   console.log(rec.area()); // saída: 12
+//   console.log(sqr.area()); // saída: 9
+// } else {
+//   console.log(-1);
+//   console.log(-1);
+// }
+
+
+// // Modifique e retorne a matriz para que todos os elementos pares 
+// // sejam duplicados e todos os elementos ímpares sejam triplicados
+
+// let inputString = '';
+// let currentLine = 0;
+
+// function readLine() {
+
+//   return inputString[currentLine++];
+// }
+
+
+// function principal() {
+//   const n = +(readLine());
+//   const a = readLine().split(' ').map(Number);
+  
+//   console.log(modifyArray(a).toString().split(',').join(' '));
+// }
+
+
+// // const nums = 5;
+
+// function modificarArray(nums) {
+
+//   return (nums || []).map(num => num *(num % 2 === 0 ? 2 : 3))
+// }
+
+// principal();
+
+
+// // Crie grid de botoes
+
+// var l = "4";
+// var a = ["1", "2", "3", "6", "9", "8", "7", "4"];
+// var b = ["1", "2", "3", "6", "9", "8", "7", "4"];
+
+// var rodar = function() {
+
+//   for(var i = 7; i > 0; i--) {
+//     a[i] = a[i - 1];
+//   }
+
+//   a[0] = l;
+//   l = a[7];
+
+//   for(var i = 0; i < 8; i++) {
+
+//     document.getElementById("btn"+b[i]).innerText =a[i];
+//   }
+  
+// }
+
+
+
+// // Somar os elementos de uma matriz
+
+
+// const arr = [1, 2, 3, 4, 5];
+// const soma = arr.reduce(function(a, b) {
+
+//   return a + b;
+// }, 0);
+
+// console.log('Array:', arr); // saída: Array(5)
+// console.log('Soma:', soma); // saída: 15
+
+
+// // Agora, vamos reduzir o comprimento do nosso código 
+// // usando uma função de seta(arrow function)
+
+// const arr = ['primeiro', 'segundo', 'terceiro', 'quatro', 'quinto'];
+// const len = arr.map(s => s.length);
+
+// console.log('Array:', arr); // saída: ['primeiro', 'segundo', 'terceiro', 'quatro', 'quinto']
+// console.log('Comprimento:', len); // saída: [8, 7, 8, 6, 6]
+
+
+
+// // Encontrar elementos de matriz maiores que um valor
+
+// const arr = [1, 2, 3, 4, 5];
+// const maiorQue3 = arr.filter(function(a) {
+
+//   return a > 3;
+// });
+
+// console.log('Array:', arr); // saída: [1, 2, 3, 4, 5]
+// console.log('Elementos maiores que:', maiorQue3); // saída: [4, 5]
+
+
+// // Agora, vamos reduzir o comprimento do nosso código usando uma 
+// // função de seta(Arrow Function):
+
+// const arr = [1, 2, 3, 4, 5];
+// const maiorQue3 = arr.filter(a => a > 3);
+
+// console.log('Array:', arr); // saída: [1, 2, 3, 4, 5]
+// console.log('Elementos maiores que 3:', maiorQue3); // saída: [4, 5]
+
+
+// Defina a saída do programa abaixo
+
+// const facaArray = (...values) => {
+
+//   return values
+// };
+
+// console.log('Array:', facaArray(1, 2, 3, 4)); // saída: [1, 2, 3, 4]
+// console.log('Array:', facaArray(1, 2, 3, 4, 5, 6)); // saída: [1, 2, 3, 4, 5, 6]
+
+// const obterSoma = (a, b) => {
+
+//   return a + b;
+// }
+
+// console.log('1 + 2 =', obterSoma(1, 2)); // saída: 1 + 2 = 3
+
+// const saudar = 'Ola, Mundo.';
+// const capitalizar = (minhaString) => {
+
+//   return minhaString.toUpperCase()
+// };
+
+// console.log(saudar, '=>', capitalizar(saudar)); // saída: Ola, Mundo. => OLA, MUNDO.

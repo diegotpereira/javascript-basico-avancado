@@ -154,3 +154,22 @@ p {
     display: inline-flex;
     margin-bottom: 5px;
 } */
+
+/* body {
+    background-color: aqua;
+}
+.botoesContainer {
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+}
+
+.botoesContainer > .botao {
+    
+    width: 100%;
+    height: 48px;
+    font-size: 24px;
+} */
