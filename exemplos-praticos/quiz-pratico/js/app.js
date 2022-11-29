@@ -19200,3 +19200,128 @@
 // };
 
 // console.log(saudar, '=>', capitalizar(saudar)); // saída: Ola, Mundo. => OLA, MUNDO.
+
+
+// Programa Botao Container
+
+// window.onload = () => {
+    
+//   const botoes5 = document.getElementById('btn5');
+  
+//   botoes5.addEventListener('click', () => {
+      
+//       let arr = [
+          
+//           document.getElementById('btn1').innerText,
+//           document.getElementById('btn2').innerText,
+//           document.getElementById('btn3').innerText,
+//           document.getElementById('btn6').innerText,
+//           document.getElementById('btn9').innerText,
+//           document.getElementById('btn8').innerText,
+//           document.getElementById('btn7').innerText,
+//           document.getElementById('btn4').innerText
+//       ];
+      
+//       arr = [...arr.slice(arr.length - 1), ...arr.slice(0, arr.length - 1)];
+      
+//       document.getElementById('btn1').innerText = arr[0],
+//       document.getElementById('btn2').innerText = arr[1],
+//       document.getElementById('btn3').innerText = arr[2],
+//       document.getElementById('btn6').innerText = arr[3],
+//       document.getElementById('btn9').innerText = arr[4],
+//       document.getElementById('btn8').innerText = arr[5],
+//       document.getElementById('btn7').innerText = arr[6],
+//       document.getElementById('btn4').innerText = arr[7]
+//   });
+// }
+
+
+// // Questão 5 Tutorial(hackerrank) - Template Literals
+
+// function sides(literals, ...expressions) {
+    
+//   var area = expressions[0];
+//   var perimeter = expressions[1];
+
+//   var s1 = (perimeter + Math.sqrt(perimeter * perimeter - 16 * area)) / 4;
+//   var s2 = (perimeter - Math.sqrt(perimeter * perimeter - 16 * area)) / 4;
+
+//   var array = [s1, s2];
+
+//   var arraySort = array.sort(function(a, b) {
+
+//       return a - b;
+//   });
+
+//   return arraySort;
+  
+// }
+
+
+
+// // Questão 6 Tutorial(hackerrank) - Dates
+
+// function getDayName(dateString) {
+
+//   let dayName;
+
+//   const diasNomes = [
+//     "Domingo",
+//     "Segunda",
+//     "Terca",
+//     "Quarta",
+//     "Quinta",
+//     "Sexta",
+//     "Sabado"
+//   ];
+
+//   let data = new Date(dateString);
+//   console.log(data);
+
+//   dayName = diasNomes[data.getDay()];
+
+//   return dayName;
+// }
+
+// console.log(getDayName("12/11/2022"));
+
+// //
+
+// function regexVar() {
+//   /*
+//    * Declare a RegExp object variable named 're'
+//    * It must match a string that starts with 'Mr.', 'Mrs.', 'Ms.', 'Dr.', or 'Er.', 
+//    * followed by one or more letters.
+//    */
+  
+  
+//   let re = /^(Mr|Mrs|Ms|Dr|Er)(\.)([a-zA-Z])+$/;
+//   /*
+//    * Do not remove the return statement
+//    */
+//   return re;
+// }
+
+// console.log(regexVar(Mr.x));
+
+
+// // Dia 6: operador bit a bit (Bitwise operator)
+
+// function obterMaximoMenosK(n, k) {
+
+//   var maxI = 0;
+//   var atual = -1;
+
+//   for(var i = 0; i < n; i++) {
+
+//     for(var j = i + 1; j <= n; j++) {
+
+//       atual = i & j;
+
+//       if(atual < k && atual > maxI) {
+
+//         maxI = atual;
+//       }
+//     }
+//   }
+// }
