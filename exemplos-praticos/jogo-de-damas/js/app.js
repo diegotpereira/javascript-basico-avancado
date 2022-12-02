@@ -3,55 +3,56 @@ let pretos = document.querySelectorAll("tr:nth-child(n + 6) div");
 
 const clicado = e => {
 
-    // e.target.classList.toogle('active');
+    e.target.classList.toggle("active");
 
-    // let cor = e.target.classList.contains("vermelho") ? "vermelho" : "preto";
-    // let coroado = e.target.classList.contains("coroado") ? true : false;
+    let cor = e.target.classList.contains("vermelho") ? "vermelho" : "preto";
+    let coroado = e.target.classList.contains("coroado") ? true : false;
 
-    // // Desativar ou ativar peças não ativas
-    // if (cor === "vermelho") {
+    // Desativar ou ativar peças não ativas
+    if (cor === "vermelho") {
         
-    //     for(vermelho of vermelhos) {
+        for(vermelho of vermelhos) {
 
-    //         vermelho.classList.toogle("disabled");
-    //     }
-    // } else {
+            vermelho.classList.toggle("disabled");
+        }
+    } else {
 
-    //     for(preto of pretos) {
+        for(preto of pretos) {
             
-    //         preto.classList.toogle("disabled");
-    //     }
-    // }
+            preto.classList.toggle("disabled");
+        }
+    }
 
-    // e.target.classList.remove("disabled");
+    e.target.classList.remove("disabled");
 
-    // let celula = e.path[1].cellIndex;
-    // let linha = e.path[2].rowIndex;
-    // let opcoes = encontrarOpcoes(cor, linha, celula, coroado);
+    let celula = e.path[1].cellIndex;
+    let linha = e.path[2].rowIndex;
+    let opcoes = encontrarOpcoes(cor, linha, celula, coroado);
     
-    // // Percorra todas as opções, verificando se cada uma já está sendo exibida ou não.
-    // // Se a opção já estiver sendo exibida, remova-a, caso contrário, exiba-a e chame a função move dentro do onclick.
-    // opcoes.forEach(function(opcao) {
+    // Percorra todas as opções, verificando se cada uma já está sendo exibida ou não.
+    // Se a opção já estiver sendo exibida, remova-a, caso contrário, exiba-a e chame a função move dentro do onclick.
+    opcoes.forEach(function(opcao) {
 
-    //     if (opcao.posicao.classList.contains("opcoes")) {
+        if (opcao.posicao.classList.contains("opcoes")) {
             
-    //         opcao.posicao.classList.remove(...opcao.posicao.classList);
-    //         opcao.posicao.classList.remove(cor);
+            opcao.posicao.classList.remove(...opcao.posicao.classList);
+            opcao.posicao.classList.remove(cor);
 
-    //     } else if (!opcao.posicao.classList.contains(cor)) {
+        } else if (!opcao.posicao.classList.contains(cor)) {
             
-    //         opcao.posicao.classList.add("opcoes");
-    //         opcao.posicao.classList.add(cor);
+            opcao.posicao.classList.add("opcoes");
+            opcao.posicao.classList.add(cor);
 
-    //         if (coroado) {
-    //             opcao.posicao.classList.add("coroado");
-    //         }
+            if (coroado) {
+                opcao.posicao.classList.add("coroado");     
+            }
 
-    //         opcao.posicao.onclick = function chamarManipulador(event) {
+            opcao.posicao.onclick = function chamarManipulador(event) {
 
-    //         }
-    //     }
-    // })
+                mover(event, e.target, opcoes, cor, opcao.comer);
+            }
+        }
+    });
 }
 
 const mover = (e, prevPos, outrasOpcoes, cor, comer) => {
@@ -101,75 +102,114 @@ const mover = (e, prevPos, outrasOpcoes, cor, comer) => {
 
             if(opcao.comer.state && !opcao.posicao.classList.contains(cor)) {
                 
+                opcao.posicao.classList.add("opcoes");
+                opcao.posicao.classList.add(cor);
+
+                e.target.classList.add("active");
+
+                if(coroado) {
+
+                    opcao.posicao.classList.add("coroado");
+                }
+
+                opcao.posicao.onclick = function chamarManipulador(event) {
+
+                    mover(event, e.target, opcoes, cor, opcao.comer);
+                };
+            } else {
+
+                alterarCor(cor);
             }
-        })
+        });
+    } else {
+
+        alterarCor(cor);
+    }
+
+    if (e.path[2].rowIndex === 0 || e.path[2].rowIndex === 7) {
+        
+        coroa(e.target);
     }
 }
 
 const encontrarOpcoes = (cor, linha, celula, coroado) => {
 
-//     let opcao1 = {
-//         posicao: null,
-//         comer: {
-//             state: false,
-//             pos: null
-//         }
-//     }
+    let opcao1 = {
+        posicao: null,
+        comer: {
+            state: false,
+            pos: null
+        }
+    },
 
-//     if (cor === "vermelho") {
+    opcao3 = {
+        posicao: null,
+        comer: {
+            state: false,
+            pos: null
+        }
+    }
+
+    if (cor === "vermelho") {
         
-//         // Declare os valores iniciais para as 2 primeiras opções
-//         opcao1.posicao = document.querySelectorAll(
-//             `tr:nth-of-type(${linha + 2}) td:nth-of-type(${celula}) div`
-//         )
-//     }
+        // Declare os valores iniciais para as 2 primeiras opções
+        opcao1.posicao = document.querySelectorAll(
+            `tr:nth-of-type(${linha + 2}) td:nth-of-type(${celula}) div`
+        )
+    }
+
+    if(coroado) {
+        opcao3.posicao = document.querySelector(
+            `tr:nth-of-type(${linha}) td:nth-of-type(${celula}) div`
+        )
+    }
 };
 
-// const  mudancaVire = cor => {
+const  mudancaVire = cor => {
 
-//     vermelhos = document.querySelectorAll(".vermelho:not(.opcoes)");
-//     pretos = document.querySelectorAll(".preto:not(.opcoes)");
+    vermelhos = document.querySelectorAll(".vermelho:not(.opcoes)");
+    pretos = document.querySelectorAll(".preto:not(.opcoes)");
 
-//     // 
-//     if (vermelho === vermelhos) {
+    // 
+    if (vermelho === vermelhos) {
         
-//         for(vermelho of vermelhos) {
+        for(vermelho of vermelhos) {
 
-//             vermelho.classList.add("disabeld");
-//             vermelho.addEventListener("click", clicado);
-//         }
+            vermelho.classList.add("disabeld");
+            vermelho.addEventListener("click", clicado);
+        }
 
-//         for(preto of pretos) {
+        for(preto of pretos) {
 
-//             preto.classList.remove("disabled");
-//             preto.addEventListener("click", clicado);
-//         }
-//     } else {
+            preto.classList.remove("disabled");
+            preto.addEventListener("click", clicado);
+        }
+    } else {
         
-//         for(vermelho of vermelhos) {
+        for(vermelho of vermelhos) {
 
-//             vermelho.classList.remove("disabled");
-//         }
+            vermelho.classList.remove("disabled");
+        }
 
-//         for(preto of pretos) {
+        for(preto of pretos) {
 
-//             preto.classList.add("disabled");
-//         }
-//     }
-// };
+            preto.classList.add("disabled");
+        }
+    }
+};
 
-// const coroa = peca => {
+const coroa = peca => {
 
-//     peca.classList.add("coroado", "coroando");
+    peca.classList.add("coroado", "coroando");
 
-//     document.documentElement.style.setProperty("--shake-anim", "0.2s shake");
+    document.documentElement.style.setProperty("--shake-anim", "0.2s shake");
 
-//     setTimeout(() => {
+    setTimeout(() => {
 
-//         document.documentElement.style.setProperty("--shake-anim", "none");
-//         peca.classList.remove("coroando");
-//     }, 1000);
-// };
+        document.documentElement.style.setProperty("--shake-anim", "none");
+        peca.classList.remove("coroando");
+    }, 1000);
+};
 
 for(vermelho of vermelhos) {
 
