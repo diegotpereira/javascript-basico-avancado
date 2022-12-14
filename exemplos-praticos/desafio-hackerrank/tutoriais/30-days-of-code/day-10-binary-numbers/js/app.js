@@ -1,57 +1,44 @@
 
 
+let stringEntrada = ['5'];
+let entradaAtual = 0;
+
+function lerEntrada() {
+
+    return stringEntrada[entradaAtual++];
+}
+
 function principal() {
 
-    var n = 5;
-    var arr = [2, 1, 0];
+    const n = parseInt(lerEntrada().trim(), 10);
+    const array = n.toString(2).split('');
+    console.log(array);
+    let maximo = 0;
+    let atual = 0;
 
-    while(n != 0) {
+    for(let i = 0, iTotal = array.length; i < iTotal; i++) {
 
-        if(n % 2 == 0) 
-
-            arr.push(0);
-
-        if(n % 2 == 1)
-
-
-            arr.push(1);
- 
-        // console.log(n); // 5 2 1
-        n = Math.floor(n / 2);
-        // console.log(n); // 2 1 0
-
-    }
-
-    // console.log(n); // 0
-    var atual = 0 
-    var max = 0;
-
-    for(let i = 0; i < arr.length; i++) {
-
-
-        if(arr[i] == 1)
-
+        if (array[i] == 1) {
+            
             atual++;
+             
+        } else if (array[i] == 0) {
+            
+            if(atual > maximo) {
 
-        else if(arr[i] == 0) {
-
-            if(atual > max)
-
-                max = atual;
+                maximo = atual;
+            }
 
             atual = 0;
         }
     }
 
-    console.log(atual);
-    console.log(max);
+    if(atual > maximo) {
 
-    if(atual > max) 
+        maximo = atual;
+    }
 
-         max = atual;
-
-
-    console.log(max);
+    console.log(maximo);
 }
 
 principal();
