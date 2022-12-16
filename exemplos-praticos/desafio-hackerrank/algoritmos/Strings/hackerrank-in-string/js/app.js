@@ -10,52 +10,63 @@ function principal() {
 
     const q = parseInt(lerEntrada().trim(), 10);
 
-    // const primeiraMultiplaEntrada = lerEntrada().replace(/\s+$/g, '').split(' ');
+    for(let i = 0; i < q; i++) {
 
-    const s = lerEntrada();
-    const hr = lerEntrada();
+        const s = lerEntrada();
 
-    const resultado = hackerrankInString(q, s, hr);
-    
-    console.log(resultado);
-
-    // for(let i = 0; i < q; i++) {
-
-    //     const s = lerEntrada();
-    //     const s2 = lerEntrada();
-
-    //     const resultado = hackerrankInString(q, s, s2);
+        const resultado = hackerrankInString(s);
         
-    //     console.log(resultado);
-    // }
+        console.log(resultado);
+    }
 }
 
 principal();
 
-function hackerrankInString(q, s, hr) {
+// function hackerrankInString(s) { // s = "hereiamstackerrank"
+  
+//   let entradaFixa = 'hackerrank'.split('') // entradaFixa = Array(10) 0: h, 1: a, 2: c, 3: k, 4: e, 5: r, 6: r, 7: a, 8: n, 9: k
+//   let entrada = s.split(''); // entrada = (18) 
+//                               // 0: h, 1: e, 2: r, 3: e, 4: i, 5: a, 6: m, 7: s, 8: t, 9: a, 10: c, 11: k, 12: e, 13: r, 14: r, 15: a, 16: n, 17: k, 
+//                               // s = hereiamstackerrank
+//   let j = 0;
 
-    // var hr = 'hackerrank';
-    var out = ''; var idx = 0;
+//   if(entrada.length < entradaFixa.length) {
 
-    while (q > 0) {
-      out = '';
-      idx = 0;
-    //   s = readLine();     
-      if (s.length < hr.length) {
-        return 'NO';
-        q--;
-        continue;
-      }
-      for (var i = 0; i < s.length; i++) {
-        idx = s.indexOf(hr[i], idx);
-        if (idx < 0 ) break;
-        out = out + s[idx];
-        if (idx === s.length - 1) break;
-        idx++;
-      }
-      out === hr ? 'YES' : 'NO';
-      q--;
+//     return 'NAO'
+//   }
 
-      return out;
+//   for(let i = 0; i < entrada.length; i++) {
+
+//     if(entrada[i] === entradaFixa[j]) {
+
+//       j++;
+//     }
+//   }
+
+//   return j === entradaFixa.length ? 'SIM' : 'NAO';
+// }
+
+
+function hackerrankInString(s) {
+
+  //  imprima YES em uma nova linha 
+  // se a string contiver hackerrank, 
+  // caso contrário, imprima NO.
+  let entrada = "hackerrank";
+  let index = 0;
+
+  for(let i = 0; i < s.length; i++) {
+
+    if(s.charAt(i) === entrada.charAt(index)) {
+
+      index++;
     }
+
+    if (index == entrada.length) {
+      
+      return "Sim";
+    }
+  }
+
+  return "NAO"
 }
