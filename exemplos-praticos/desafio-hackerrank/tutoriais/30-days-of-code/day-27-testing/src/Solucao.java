@@ -116,4 +116,29 @@ public class Solucao {
             throw new AssertionError("resultado é diferente do resultado esperado");
         }
     }
+    public static void TesteExatamenteDoisMinimosDiferentes() {
+
+        int[] seq = DadosTesteExatamenteDoisMinimosDiferentes.obter_array();
+
+        if(seq.length > 2) {
+
+            throw new AssertionError("menos de 2 elementos no array");
+        }
+        
+        int[] temp = seq.clone();
+        Arrays.sort(temp);
+
+        if(!(temp[0] == temp[1] && (temp.length == 2 || temp[1] < temp[2]))) {
+
+            throw new AssertionError("não há exatamente dois mínimos na matriz");
+        }
+
+        int resultado_esperado = DadosTesteExatamenteDoisMinimosDiferentes.obter_resultado_esperado();
+        int resultado = minimo_indice(seq);
+
+        if (resultado != resultado_esperado) {
+            
+            throw new AssertionError("resultado é diferente do resultado esperado");
+        }
+    }
 }

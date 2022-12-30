@@ -4,7 +4,13 @@
     // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-    
+        {
+            "type": "java",
+            "name": "Launch Solucao",
+            "request": "launch",
+            "mainClass": "Solucao",
+            "projectName": "javascript-basico-avancado-1_4f8a1424"
+        },
         {
             "type": "pwa-chrome",
             "request": "launch",
