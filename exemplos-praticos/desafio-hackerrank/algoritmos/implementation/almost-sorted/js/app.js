@@ -13,9 +13,6 @@ function principal() {
 
     almostSorted(arr);
 
-    // const resultado = almostSorted(arr);
-
-    // console.log(resultado);
 }
 
 principal();
