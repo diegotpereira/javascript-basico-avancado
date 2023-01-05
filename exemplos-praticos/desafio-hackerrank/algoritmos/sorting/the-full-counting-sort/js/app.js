@@ -15,7 +15,8 @@ function principal() {
 
     for(let index = 0; index < n; index += 1) {
 
-        arr[index] = lerEntrada().replace(/\s+$/g, '').split(' ');
+        // arr[index] = lerEntrada().replace(/\s+$/g, '').split(' ');
+        console.log(arr);
     }
 
     const resultado = countSort(arr);
