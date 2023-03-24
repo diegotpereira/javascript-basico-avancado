@@ -19325,3 +19325,97 @@
 //     }
 //   }
 // }
+
+// // A função deve retornar um novo array contendo apenas os objetos com idade 
+// // superior a 25 e o nome em letras maiúsculas. O array resultante deve estar em ordem alfabética ascendente pelo nome.
+// array = [
+//   {
+//     nome: 'Joao',
+//     idade: 21
+//   },
+//   {
+//     nome: 'Janaina',
+//     idade: 29
+//   },
+//   {
+//     nome: 'Jack',
+//     idade: 19
+//   },
+//   {
+//     nome: 'Gil',
+//     idade: 35
+//   },
+//   {
+//     nome: 'Jim',
+//     idade: 27
+//   }
+// ];
+
+// function filtrarEhClassificar(array) {
+
+//   return array
+//     .filter(obj => obj.idade > 25)
+//     .map(obj => ({
+//       nome: obj.nome.toUpperCase(),
+//       idade: obj.idade
+//     }))
+//     .sort((a, b) => a.nome.localeCompare(b.nome));
+
+// }
+
+// console.log(filtrarEhClassificar(array));
+
+
+// // Escreva uma função que receba uma string contendo uma expressão matemática e retorne o resultado da avaliação dessa expressão.
+// // A expressão pode conter os seguintes operadores: +, -, *, /. A expressão pode conter também parênteses para indicar a precedência de operações.
+
+// const expressao = '2 * (3 + 5) - 6 / 2';
+// const resultado = avaliarExpressão(expressao);
+
+// console.log(resultado);
+
+// function avaliarExpressão(expressao) {
+
+//   let resultado;
+
+//   try {
+    
+//     resultado = eval(expressao);
+
+//   } catch (error) {
+    
+//     resultado = 'Erro de sintaxe da expressão'
+//   }
+
+//   return resultado; // 13
+// }
+
+
+// Escreva uma função que receba uma lista de números inteiros e retorne a soma dos números que são múltiplos de 3 ou 5.
+const numeros = [10, 20, 30];
+const resultado = somaMultiplos(numeros);
+
+
+console.log(resultado);
+
+// function somaMultiplos(numeros) {
+
+//   return numeros
+//     .filter(num => num % 3 == 0 || num % 5 == 0)
+//     .reduce((acc, num) => acc + num, 0);
+// }
+
+function somaMultiplos(numeros) {
+
+  let soma = 0;
+
+  for (let index = 0; index < numeros.length; index += 1) {
+    
+    if (numeros[index] % 3 === 0 || numeros[index] % 5 === 0) {
+      
+      soma += numeros[index]
+    }
+  }
+
+  return soma;
+}
