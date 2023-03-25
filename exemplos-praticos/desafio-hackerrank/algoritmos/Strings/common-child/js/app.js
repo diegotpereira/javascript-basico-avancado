@@ -147,17 +147,66 @@ principal();
 // }
 
 
+// function commonChild(s1, s2) {
+
+//     let anterior = Array(s2.length + 1).fill(0);
+//     let atual = [...anterior];
+
+//     [...s1].forEach(r => {
+
+//         [...s2].forEach((v, i) => atual[i + 1] = (r == v) ? anterior[i] + 1 : Math.max(anterior[i + 1], atual[i]));
+
+//         [anterior, atual] = [atual, anterior];
+//     });
+
+//     return anterior.pop();
+// }
+
+// function commonChild(s1, s2) {
+
+//     const maxTabulacao = new Array(s1.length + 1).fill(0)
+//                                                  .map(item => new Array(s2.length + 1).fill(0));
+
+//     for (let index = 1; index < s1.length + 1; index += 1) {
+        
+//         for (let compare = 1; compare < s2.length + 1; compare += 1) {
+            
+//             if (s1[index - 1] === s2[compare - 1]) {
+                
+//                 maxTabulacao[index][compare] = maxTabulacao[index - 1][compare - 1] + 1;
+
+//             } else {
+
+//                 const anteriorLinhaMx = maxTabulacao[index - 1][compare];
+//                 const anteriorColunaMax = maxTabulacao[index][compare - 1];
+
+//                 maxTabulacao[index][compare] = Math.max(anteriorLinhaMx, anteriorColunaMax);
+//             }
+            
+//         }
+//     }
+
+//     return maxTabulacao[s1.length][s2.length];
+// }
+
 function commonChild(s1, s2) {
 
-    let anterior = Array(s2.length + 1).fill(0);
-    let atual = [...anterior];
+    return [].reduce.call(s1, (a, letra1, i) => {
 
-    [...s1].forEach(r => {
+        a[i + 1] = [0];
 
-        [...s2].forEach((v, i) => atual[i + 1] = (r == v) ? anterior[i] + 1 : Math.max(anterior[i + 1], atual[i]));
+        [].forEach.call(s2, (letra2, j) => {
 
-        [anterior, atual] = [atual, anterior];
-    });
+            if (letra1 === letra2) {
+                
+                a[i + 1][j + 1] = a[i][j] + 1;
 
-    return anterior.pop();
+            } else {
+
+                a[i + 1][j + 1] = Math.max(a[i + 1][j], a[i][j + 1]);
+            }
+        });
+
+        return a;
+    }, [Array(s2.length + 1).fill(0)])[s2.length][s1.length];
 }
