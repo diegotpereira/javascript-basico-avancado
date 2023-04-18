@@ -19326,6 +19326,219 @@
 //   }
 // }
 
+<<<<<<< HEAD
+
+// Escreva uma função em JavaScript que mostre na tela a mensagem “Bom dia, Mundo!!!”. 
+
+// document.write("Bom dia, Ola Mundo");
+
+// // Escreva uma função que mostre na tela um número fornecido pelo usuário, porém invertido. 
+// // Por exemplo, o usuário fornece o número 875 e a função mostra na tela o número 578.
+
+// function inverterNum(num) {
+
+//   var inverso = 0;  
+
+//   while (num != 0) {
+    
+    
+//     inverso = inverso * 10;
+//     inverso = inverso + num % 10;
+//     num = Math.trunc(num / 10);
+//   }
+
+//   return inverso;
+// }
+
+// console.log(inverterNum(12));
+
+
+// // Função para verificar se uma matriz contém três números inteiros consecutivos que somam 7
+// function temSomaConsecutiva7(array) {
+
+//   // função percorre cada conjunto de três elementos consecutivos na matriz
+//   for (let index = 0; index < array.length - 2; index++) {
+
+//     const element = array[index] + array[index + 1] + array[index + 2];
+
+//     // soma os três elementos e verifica se a soma é igual a 7
+//     if (element === 7) {
+      
+//       return true;
+//     }
+    
+//   }
+
+//   return false;
+// }
+
+
+// console.log(temSomaConsecutiva7([1, 2, 4, 2, 1, 0])); // true
+// console.log(temSomaConsecutiva7([1, 2, 3, 4, 5, 6])); // false
+// console.log(temSomaConsecutiva7([0, -1, 7, 8, 9])); // true
+
+
+// // Função para verificar se uma string contém todos os caracteres únicos
+// function temCaracteresUnicos(str) {
+
+//   var charSet = new Set();
+
+//   for (let index = 0; index < str.length; index += 1) {
+
+//     var caracter = str.charAt(index);
+
+//     if (charSet.has(caracter)) {
+
+//       return false;
+//     }
+    
+//     charSet.add(caracter);
+//   }
+
+//   return true;
+// }
+
+// console.log(temCaracteresUnicos('abcde')); // true
+// console.log(temCaracteresUnicos('aabbcc')); // false
+// console.log(temCaracteresUnicos('ola mundo')); // false
+// console.log(temCaracteresUnicos('abcdefghijklmnopqrstuvwxyz')); // true
+
+
+// // Suponha que você tenha um array de objetos que representam produtos em uma loja 
+// // virtual. Cada objeto tem as seguintes propriedades: id (número), name (string), 
+// // price (número) e stock (número). Escreva uma função em JavaScript que receba esse 
+// // array de produtos e retorne um novo array com os produtos ordenados pelo nome em ordem 
+// // alfabética, mas com os produtos com estoque igual a 0 no final do array.
+
+// const produtos = [
+//   {
+//     id: 1,
+//     nome: 'Mouse',
+//     preco: 50.0,
+//     estoque: 3
+//   },
+//   {
+//     id: 2,
+//     nome: 'Teclado',
+//     preco: 100.0,
+//     estoque: 5
+//   },
+//   {
+//     id: 3,
+//     nome: 'Monitor',
+//     preco: 500.0,
+//     estoque: 0
+//   },
+//   {
+//     id: 4,
+//     nome: 'Cabo HDMI',
+//     preco: 20.0,
+//     estoque: 0
+//   },
+//   {
+//     id: 5,
+//     nome: 'Caixa de Som',
+//     preco: 80.0,
+//     estoque: 2
+//   }
+// ];
+
+// function ordenaProdutosPorNomeEEstoque(produtos) {
+
+//   const produtosComEstoque = produtos.filter(function(p) {
+
+//     return p.estoque > 0 ;
+//   });
+
+//   // ordena os produtos filtrados pelo nome em ordem alfabética
+//   const produtosOrdenados = produtosComEstoque.sort(function(a, b) {
+
+//     if (a.nome < b.nome) {
+      
+//       return -1;
+//     }
+
+//     if (a.nome > b.nome) {
+      
+//       return 1;
+//     }
+
+//     return 0;
+//   });
+
+//   const produtosSemEstoque = produtos.filter(function(p) {
+
+//     return p.estoque === 0;
+//   });
+
+//   // console.log(produtosComEstoque);
+
+//   return produtosOrdenados.concat(produtosSemEstoque)
+// }
+
+// console.log(ordenaProdutosPorNomeEEstoque(produtos));
+
+// // [
+// //   { id: 5, nome: "Caixa de Som", preco: 80.0, estoque: 2 },
+// //   { id: 1, nome: "Mouse", preco: 50.0, estoque: 3 },
+// //   { id: 2, nome: "Teclado", preco: 100.0, estoque: 5 },
+// //   { id: 3, nome: "Monitor", preco: 500.0, estoque: 0 },
+// //   { id: 4, nome: "Cabo HDMI", preco: 20.0, estoque: 0 }
+// // ]
+
+
+// Suponha que você tenha um array de objetos que representam vendas de um e-commerce. Cada objeto tem as seguintes propriedades: id (número), product (string), price (número), quantity (número) e date (string no formato "yyyy-mm-dd"). Escreva uma função em JavaScript que receba esse array de vendas e retorne um objeto com as seguintes propriedades:
+
+// totalRevenue: a receita total (preço multiplicado pela quantidade) de todas as vendas no array.
+// revenueByMonth: um objeto que contém a receita total de vendas para cada mês, onde as chaves são os meses no formato "yyyy-mm" e os valores são os totais de receita.
+
+const vendas = [
+  
+  { id: 1, produto: "Mouse", preco: 50.0, quantidade: 2, data: "2022-01-01" },
+  { id: 2, produto: "Teclado", preco: 100.0, quantidade: 1, data: "2022-01-15" },
+  { id: 3, produto: "Monitor", preco: 500.0, quantidade: 1, data: "2022-02-05" },
+  { id: 4, produto: "Cabo HDMI", preco: 20.0, quantidade: 3, data: "2022-02-10" },
+  { id: 5, produto: "Caixa de Som", preco: 80.0, quantidade: 2, data: "2022-03-20" }
+]
+function analisaVendas(vendas) {
+
+  let receitaTotal = 0;
+  let receitaDoMes = {};
+
+  // percorre cada venda no array de vendas
+  vendas.forEach(function(v) {
+
+    // calcula a receita dessa venda
+    const receitaVenda = v.preco * v.quantidade;
+
+    // adiciona a receita dessa venda à receita total
+    receitaTotal += receitaVenda;
+
+    // extrai o mês da data da venda
+    const mes = v.data.slice(0, 7);
+
+    // adiciona a receita dessa venda à receita do mês correspondente
+    if (receitaDoMes[mes]) {
+      
+      receitaDoMes[mes] += receitaVenda;
+
+    } else {
+
+      receitaDoMes[mes] = receitaVenda;
+    }
+
+  });
+
+  return {
+
+    receitaTotal: receitaTotal,
+    receitaDoMes: receitaDoMes
+  }
+
+}
+
+console.log(analisaVendas(vendas));
+=======
 // // A função deve retornar um novo array contendo apenas os objetos com idade 
 // // superior a 25 e o nome em letras maiúsculas. O array resultante deve estar em ordem alfabética ascendente pelo nome.
 // array = [
@@ -19419,3 +19632,4 @@ function somaMultiplos(numeros) {
 
   return soma;
 }
+>>>>>>> 3f4ac21df7f9b2a2b63ac6dec3a282bae153d8fa
